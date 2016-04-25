@@ -1,0 +1,4 @@
+name = Kultuurikava Search
+description = Search pages which use Kultuurikava API
+package = Kuhuminna
+core = 7.x

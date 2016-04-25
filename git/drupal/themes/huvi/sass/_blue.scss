@@ -1,0 +1,21 @@
+// Blue sheme overrides
+body {
+  &.blue-scheme {
+
+    // Header overrides
+    header.l-header {
+      
+      // Section illustration
+      .section-illustration {
+        &.event-section-illustration {
+          background: url(../images/huvitegevused-mobile-logo.png) no-repeat center bottom;
+          @include at-breakpoint($tab) {
+            background: url(../images/huvitegevused-logo.png) no-repeat center bottom;
+          }
+        }
+      }
+      
+    }
+
+  }
+}

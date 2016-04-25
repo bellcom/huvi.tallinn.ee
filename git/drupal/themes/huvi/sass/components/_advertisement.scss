@@ -1,0 +1,223 @@
+@import "susyone";
+
+.banner {
+
+  display: inline-block;
+  text-align: left;
+  .banner-inner {
+    position: relative;
+  }
+
+  .field--name-field-adv-main-text{
+    font-size: 18px;
+    font-weight: bold;
+
+    @include at-breakpoint($tab) {
+      font-size: 18px;
+    }
+
+    @include at-breakpoint($desk) {
+      font-size: 22px;
+    }
+  }
+  .field--name-field-adv-secondary-text{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .field--name-field-adv-image {
+
+    overflow :hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+  }
+
+  &.large-banner {
+
+    .field--name-field-adv-image {
+
+      overflow :hidden;
+
+      img {
+        display: block;
+        width: auto;
+        max-width: none;
+      }
+    }
+
+    .banner-content {
+      position: absolute;
+      left: 0;
+      //right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30%;
+      height: 100%;
+      //width: 215px;
+      background: rgba(228, 96, 0, 0.4);
+      padding: 10px;
+
+      .banner-content-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .field--name-field-adv-main-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .field--name-field-adv-secondary-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+    }
+
+  }
+
+  &.small-banner {
+    width: 100%;
+
+
+    .banner-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      .banner-content-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .field--name-field-adv-main-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(228, 96, 0, 0.4);
+        width: 100%;
+        padding: 10px;
+      }
+
+      .field--name-field-adv-secondary-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+      }
+
+    }
+
+  }
+
+}
+
+
+.l-region--highlighted {
+  h2.block__title {
+    display: none;
+  }
+  .block--views {
+    display:inline-block;
+    width: 32.8%;
+    @include at-breakpoint($desk) {
+      width: 33%;
+    }
+  }
+  #block-views-advertisement-block-7,
+  #block-views-advertisement-block-8 {
+    width: 100% !important;
+    .view-empty {
+      margin-top: 0;
+    }
+  }
+}
+.view-advertisement {
+  .view-content {
+    overflow: hidden;
+    padding-top: 0px;
+    margin: 0;
+
+    .views-row {
+      overflow: hidden;
+      //text-align: center;
+      //display:inline;
+      //float: left;
+      margin: 0;
+      //width: 32.3333%;
+
+      &.total_banners_1{
+        //width: 99%;
+      }
+      &.total_banners_2{
+        //width: 49%;
+      }
+    }
+  }
+}
+
+#block-views-banner-management-block-1,
+#block-views-banner-management-block-2,
+#block-views-banner-management-block-3,
+#block-views-banner-management-block-5,
+#block-views-banner-management-block-6,
+#block-views-banner-management-block-7 {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+}
+
+#block-views-advertisement-block-9,
+#block-views-advertisement-block-10,
+.view-advertisement.view-display-id-block_9,
+.view-advertisement.view-display-id-block_10 {
+  width: 100%;
+  .view-content {
+    display: block;
+    .views-row {
+      display: inline-block;
+      width: 32.8%;
+      @include at-breakpoint($desk) {
+        width: 33%;
+      }
+    }
+  }
+  .view-empty {
+    margin-top: 0;
+  }
+  .view-display-id-block_7,
+  .view-display-id-block_8 {
+    .view-content {
+      .views-row {
+        width: 100%;
+      }
+    }
+  }
+}
+.view-display-id-block_7,
+.view-display-id-block_8 {
+  >div.view-empty {
+    margin-top: 0px;
+  }
+}

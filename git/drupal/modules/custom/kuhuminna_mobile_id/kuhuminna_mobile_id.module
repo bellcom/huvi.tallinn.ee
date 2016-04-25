@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Code for the Kuhuminna Utils module.
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function kuhuminna_mobile_id_menu() {
+  $items = array();
+
+  $items["mobileid"] = array(
+    'page callback' => 'kuhuminna_mobile_id_file',
+    'file' => 'openid_php/index.php',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function kuhuminna_mobile_id_index() {
+  include 'mobile_id/index.php';
+}

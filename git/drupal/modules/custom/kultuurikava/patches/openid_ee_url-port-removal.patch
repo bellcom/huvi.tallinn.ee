@@ -1,0 +1,58 @@
+From 167bb058e8186489c6fc33f0517b8de690cf1877 Mon Sep 17 00:00:00 2001
+From: KaarelElissaar <kaarel@exove.com>
+Date: Mon, 29 Jun 2015 16:33:53 +0300
+Subject: [PATCH] url fix
+
+---
+ openid_ee.module | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/openid_ee.module b/openid_ee.module
+index 5fe6993..b47ae32 100644
+--- a/openid_ee.module
++++ b/openid_ee.module
+@@ -6,7 +6,7 @@
+ 
+ 
+ /**
+- * openid.ee login form 
++ * openid.ee login form
+  */
+ function openid_ee_login_form($form, &$form_state) {
+ 
+@@ -15,20 +15,20 @@ function openid_ee_login_form($form, &$form_state) {
+   if (!$user->uid > 0) {
+ 
+     drupal_add_css(drupal_get_path('module', 'openid_ee') . '/openid_ee.css');
+-        
++
+     $form['openid_identifier'] = array(
+       '#type' => 'hidden',
+-      '#default_value' => 'https://openid.ee:10443', // @todo make URL into a variable
++      '#default_value' => 'https://openid.ee', // @todo make URL into a variable
+       '#id' => 'edit-openid-ee-identifier-card',
+     );
+ 
+     $form['submit'] = array(
+       '#type' => 'submit',
+       '#value' => t('ID card'),
+-      '#attributes' => array('class' => array('openid-ee-button')), 
+-    
++      '#attributes' => array('class' => array('openid-ee-button')),
++
+   );
+-    
++
+     $form['openid.return_to'] = array(
+       '#type' => 'hidden',
+       '#value' => url('openid/authenticate', array('absolute' => TRUE, 'query' => user_login_destination())),
+@@ -67,4 +67,4 @@ function openid_ee_block_view($delta) {
+   }
+ }
+ 
+-// print_r(drupal_get_form('openid_ee_login_form'));
+\ No newline at end of file
++// print_r(drupal_get_form('openid_ee_login_form'));
+-- 
+2.3.2 (Apple Git-55)
+

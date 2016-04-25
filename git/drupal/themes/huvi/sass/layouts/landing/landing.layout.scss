@@ -1,0 +1,443 @@
+﻿/*******************************************************************************
+ * simple.layout.scss
+ *
+ * Styling of the "simple" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+@import "susyone";
+$textOrange: #ff6600;
+$uritusedBG: #f36722;
+$huvitegevusedBG: #0099cc;
+
+
+// Susy Variables
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 20px;
+$horz-spacing-unit: 0em;
+
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: 0px;
+
+$container-style: magic;
+$container-width: 100%;
+
+// Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
+$tab: 44em 12; // At 44em use 12 columns.
+$desk: 70em 12; // At 70em use 16 columns.
+
+
+.l-header,
+.l-main,
+.l-footer {
+  @include container; // Define these elements as the grid containers.
+  margin-bottom: $vert-spacing-unit;
+}
+
+.l-region--highlighted,
+.l-region--help,
+.l-region--sidebar-first,
+.l-region--sidebar-second {
+  margin-bottom: $vert-spacing-unit;
+}
+
+@include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
+  .l-header,
+  .l-main,
+  .l-footer {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+  }
+
+  .sidebar-first-wrapper {
+    @include span-columns(6, 12);
+  }
+
+  .sidebar-second-wrapper {
+    @include span-columns(6 omega, 12);
+  }
+}
+
+@include at-breakpoint($desk) {
+  .l-header,
+  .l-main,
+  .l-footer {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+  }
+
+}
+
+body {
+  height: 100%;
+  background: #008dbc;
+}
+
+.sidebar-first-wrapper,
+.sidebar-second-wrapper {
+  overflow: hidden;
+  position: relative;
+  //min-height: 250px;
+  height: 40vh;
+  @include at-breakpoint($tab){
+    min-height: 100vh;
+    height: auto;
+  }
+}
+.sidebar-first-wrapper{
+  //background: #f36722 url('../../../images/uritused-mobile-bg.png') no-repeat right center;
+  background: #f36722 url('../../../images/landing/landing-events-bg.png') no-repeat center bottom;
+  border-bottom: 2px solid #eaeaea;
+  .landing-box{
+    padding-bottom: 15px;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    @include at-breakpoint($tab){
+      top: 0;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+
+}
+.sidebar-second-wrapper{
+  //background: #008dbc url('../../../images/huvi-mobile-bg.png') no-repeat left center;
+  background: #008dbc url('../../../images/landing/landing-huvitegevused-bg.png') no-repeat center top;
+  .landing-box{
+    padding-bottom: 15px;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    @include at-breakpoint($tab){
+      top: 0;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}
+
+.l-page{
+  position: relative;
+}
+
+.footer-logo{
+  display: none;
+  text-indent: -9999px;
+  @include at-breakpoint($tab){
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: url('../../../images/logo_tallinn.png') no-repeat top left;
+    width: 112px;
+    height: 25px;
+  }
+}
+
+.landing-description {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #7e7e7e;
+  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+
+@include at-breakpoint($tab){
+
+  body {
+    height: auto;
+    background: none;
+  }
+  .landing-description {
+    display: none;
+  }
+
+  .sidebar-first-wrapper {
+    background-color: #ffffff; // Old browsers
+    @include filter-gradient(#ffffff, #e46000, vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #ffffff 20%,#ee8d47 80%,#e46000 100%));
+    padding-top: 0;
+    border-bottom: 0;
+  }
+
+  .sidebar-second-wrapper {
+    // needs latest Compass, add '@import "compass"' to your scss
+    background-color: #ffffff; // Old browsers
+    @include filter-gradient(#ffffff, #008ec2, vertical); // IE6-8
+    // IE9 SVG, needs conditional override of 'filter' to 'none'
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #ffffff 20%,#54bddf 80%,#008ec2 100%));
+    padding-top: 0;
+  }
+}
+
+.sidebar-second-wrapper, .sidebar-first-wrapper{
+  @include at-breakpoint($tab){
+    padding-bottom: 200px;
+  }
+}
+
+
+.landing-box {
+  //margin-left: 30px;
+  ul.landing-box-listing {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    display: none;
+    li{
+      display: inline;
+      font-size: 16px;
+      line-height: 22px;
+      color: white;
+      text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60);
+      -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60);
+      -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.60);
+      @include at-breakpoint($tab){
+        color: #555555;
+        text-shadow: none;
+        -webkit-text-shadow: none;
+        -moz-text-shadow: none;
+      }
+      :first-child:before{
+        content: '';
+        display: none;
+      }
+      &:before{
+        content: '•';
+        padding-right: 5px;
+        display: inline-block;
+      }
+
+    }
+    @include at-breakpoint($tab) {
+      display: block;
+    }
+
+  }
+  .landing-box-link{
+    text-align: center;
+    display: block;
+    width: 240px;
+    line-height: 60px;
+    margin: auto;
+    height: 60px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow:    0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+    box-shadow:         0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+
+    &.landing-box-link-desk {
+      display: none;
+      @include at-breakpoint($tab) {
+        display: block;
+      }
+    }
+
+    &.landing-box-link-mobile {
+
+      width: 223px;
+      font-family: 'Open Sans', sans-serif;
+      @include at-breakpoint($tab) {
+        display: none;
+      }
+    }
+
+    .sidebar-first-wrapper &{
+      background-color: #ff810a; // Old browsers
+      @include filter-gradient(#ff810a, #ff7011, vertical); // IE6-8
+      // IE9 SVG, needs conditional override of 'filter' to 'none'
+      $experimental-support-for-svg: true;
+      @include background-image(linear-gradient(top,  #ff810a 0%,#ff7011 100%));
+      border-bottom: 4px solid #a74d0c;
+      &:hover {
+        background-color: #FFC690; // Old browsers
+        @include filter-gradient(#FFC690, #ff7011, vertical); // IE6-8
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        $experimental-support-for-svg: true;
+        @include background-image(linear-gradient(top,  #FFC690 0%,#ff7011 100%));
+        border-bottom: 4px solid #a74d0c;
+
+      }
+    }
+    .sidebar-second-wrapper &{
+      background-color: #0db3d9; // Old browsers
+      @include filter-gradient(#0db3d9, #14a1d0, vertical); // IE6-8
+      // IE9 SVG, needs conditional override of 'filter' to 'none'
+      $experimental-support-for-svg: true;
+      @include background-image(linear-gradient(top,  #0db3d9 0%,#14a1d0 100%));
+      border-bottom: 4px solid #0c77a6;
+      &:hover {
+        background-color: #A2ECFD; // Old browsers
+        @include filter-gradient(#A2ECFD, #14a1d0, vertical); // IE6-8
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        $experimental-support-for-svg: true;
+        @include background-image(linear-gradient(top,  #A2ECFD 0%,#14a1d0 100%));
+        border-bottom: 4px solid #0c77a6;
+      }
+    }
+  }
+  h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: white;
+    display: none;
+    @include at-breakpoint($tab) {
+      display: block;
+    }
+
+  }
+  @include at-breakpoint($tab) {
+    width: 300px;
+    background-color: #f9f9f9;
+    margin-bottom: 50px;
+    margin-top: 240px;
+    position: relative;
+    z-index: 9;
+
+    .sidebar-first-wrapper &{
+      float: right;
+      margin-right: 60px;
+      h2{
+        color: #e15f00;
+      }
+    }
+    .sidebar-second-wrapper &{
+      float: left;
+      margin-left: 60px;
+      h2{
+        color: #42aee6;
+      }
+    }
+
+    .landing-description {
+      display: none;
+    }
+  }
+
+  @include at-breakpoint($desk) {
+    .sidebar-first-wrapper &{
+      margin-right: 90px;
+    }
+
+    .sidebar-second-wrapper &{
+      margin-left: 90px;
+    }
+  }
+
+  .landing-box-image {
+    display: none;
+    @include at-breakpoint($tab){
+      width: 100%;
+      height: 175px;
+      overflow: hidden;
+      display: block;
+    }
+  }
+  .landing-sidebar-edit-link {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+  }
+}
+
+header.l-header .l-branding{
+  margin: 0;
+}
+
+header.l-header{
+  height: 20vh;
+  min-height: 160px;
+  background: #eaeaea;
+  margin: 0;
+  @include at-breakpoint($tab){
+    height: auto;
+    background: none;
+    position: absolute;
+    z-index: 9;
+    left: 50%;
+    margin-left: -360px;
+  }
+  @include at-breakpoint($desk){
+    margin-left: -390px;
+  }
+  .site-logo{
+    width: 187px;
+    height: 80px;
+  }
+}
+
+body{
+  //min-height: 100%;
+}
+
+.l-main{
+  margin:0;
+  @include at-breakpoint($tab){
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+.intro-text {
+  display: block;
+  font-weight: bold;
+  font-size: 1.14em;
+  line-height: 1.4em;
+  position: relative;
+  padding: 0 20px;
+  max-width: 550px;
+  text-align: center;
+  background: #EAEAEA;
+  margin: auto;
+  z-index: 1;
+  padding: 0 20px;
+  margin: auto;
+  font-weight: bold;
+
+  background: #EAEAEA;
+  @include at-breakpoint($tab){
+    position: absolute;
+    text-align: right;
+    width: 700px;
+    font-size: 1.1em;
+    margin: auto;
+    margin-top: 88px;
+    max-width: inherit;
+    padding: 0;
+    line-height: 1.2em;
+    background: none;
+  }
+  @include at-breakpoint($desk){
+    font-size: 1.14em;
+    width: 776px;
+    text-align: center;
+  }
+}

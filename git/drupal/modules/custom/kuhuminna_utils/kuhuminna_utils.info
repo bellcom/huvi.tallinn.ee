@@ -1,0 +1,5 @@
+name = Kuhuminna Utils
+description = Some hooks
+package = Kuhuminna
+core = 7.x
+scripts[] = kuhuminna_utils.js
