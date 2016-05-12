@@ -972,19 +972,19 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 }
 
 #events_search_form .views-exposed-widget,
-.view-event-listing .views-exposed-widgets .views-exposed-widget {
+.view-event-listing-fixed .views-exposed-widgets .views-exposed-widget {
   padding: 0;
 }
 #events_search_form .form-item-region, #events_search_form .form-item-category, #events_search_form .form-type-radios.form-item-time,
 #events_search_form #edit-field-categories-event-value-i18n-wrapper,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper,
 #events_search_form #edit-field-schedule-city-id-value-wrapper,
-.view-event-listing .views-exposed-widgets .form-item-region,
-.view-event-listing .views-exposed-widgets .form-item-category,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
   position: relative;
   cursor: pointer;
   background: white;
@@ -996,12 +996,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-event-value-i18n-wrapper::after,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper::after,
 #events_search_form #edit-field-schedule-city-id-value-wrapper::after,
-.view-event-listing .views-exposed-widgets .form-item-region::after,
-.view-event-listing .views-exposed-widgets .form-item-category::after,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
   content: '';
   background: url("../images/down-arrow.png") no-repeat top left;
   display: block;
@@ -1017,12 +1017,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper::after,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper::after,
   #events_search_form #edit-field-schedule-city-id-value-wrapper::after,
-  .view-event-listing .views-exposed-widgets .form-item-region::after,
-  .view-event-listing .views-exposed-widgets .form-item-category::after,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time::after,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region::after,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category::after,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
     display: none;
   }
 }
@@ -1031,12 +1031,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper,
   #events_search_form #edit-field-schedule-city-id-value-wrapper,
-  .view-event-listing .views-exposed-widgets .form-item-region,
-  .view-event-listing .views-exposed-widgets .form-item-category,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -1049,24 +1049,24 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-event-value-i18n-wrapper.active,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper.active,
 #events_search_form #edit-field-schedule-city-id-value-wrapper.active,
-.view-event-listing .views-exposed-widgets .form-item-region.active,
-.view-event-listing .views-exposed-widgets .form-item-category.active,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.active,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.active {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.active {
   background: #434343;
 }
 #events_search_form .form-item-region.open::after, #events_search_form .form-item-category.open::after, #events_search_form .form-type-radios.form-item-time.open::after,
 #events_search_form #edit-field-categories-event-value-i18n-wrapper.open::after,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open::after,
 #events_search_form #edit-field-schedule-city-id-value-wrapper.open::after,
-.view-event-listing .views-exposed-widgets .form-item-region.open::after,
-.view-event-listing .views-exposed-widgets .form-item-category.open::after,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open::after,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open::after {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open::after {
   background: url("../images/up-arrow.png") no-repeat top left;
 }
 @media (min-width: 44em) {
@@ -1074,12 +1074,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper.open label:first-child,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open label:first-child,
   #events_search_form #edit-field-schedule-city-id-value-wrapper.open label:first-child,
-  .view-event-listing .views-exposed-widgets .form-item-region.open label:first-child,
-  .view-event-listing .views-exposed-widgets .form-item-category.open label:first-child,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open label:first-child {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open label:first-child {
     background: #f36722;
   }
 }
@@ -1087,12 +1087,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-event-value-i18n-wrapper label,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper label,
 #events_search_form #edit-field-schedule-city-id-value-wrapper label,
-.view-event-listing .views-exposed-widgets .form-item-region label,
-.view-event-listing .views-exposed-widgets .form-item-category label,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time label,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region label,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category label,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
   height: 38px;
   line-height: 40px;
   text-align: center;
@@ -1108,12 +1108,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-event-value-i18n-wrapper label:first-child,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper label:first-child,
 #events_search_form #edit-field-schedule-city-id-value-wrapper label:first-child,
-.view-event-listing .views-exposed-widgets .form-item-region label:first-child,
-.view-event-listing .views-exposed-widgets .form-item-category label:first-child,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region label:first-child,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category label:first-child,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
   background: #f36722;
   color: white;
   height: auto;
@@ -1131,12 +1131,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper label:first-child,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper label:first-child,
   #events_search_form #edit-field-schedule-city-id-value-wrapper label:first-child,
-  .view-event-listing .views-exposed-widgets .form-item-region label:first-child,
-  .view-event-listing .views-exposed-widgets .form-item-category label:first-child,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
     height: 28px;
     line-height: 28px;
     font-size: 14px;
@@ -1159,12 +1159,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper label,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper label,
   #events_search_form #edit-field-schedule-city-id-value-wrapper label,
-  .view-event-listing .views-exposed-widgets .form-item-region label,
-  .view-event-listing .views-exposed-widgets .form-item-category label,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
     height: 28px;
     line-height: 28px;
     border-radius: 0px;
@@ -1182,24 +1182,24 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-time,
 #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
 #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-region,
-.view-event-listing .views-exposed-widgets .form-item-region.open #edit-time,
-.view-event-listing .views-exposed-widgets .form-item-region.open #edit-category,
-.view-event-listing .views-exposed-widgets .form-item-region.open #edit-region,
-.view-event-listing .views-exposed-widgets .form-item-category.open #edit-time,
-.view-event-listing .views-exposed-widgets .form-item-category.open #edit-category,
-.view-event-listing .views-exposed-widgets .form-item-category.open #edit-region,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
   display: block;
 }
 @media (min-width: 44em) {
@@ -1213,24 +1213,24 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-time,
   #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
   #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-region,
-  .view-event-listing .views-exposed-widgets .form-item-region.open #edit-time,
-  .view-event-listing .views-exposed-widgets .form-item-region.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-region.open #edit-region,
-  .view-event-listing .views-exposed-widgets .form-item-category.open #edit-time,
-  .view-event-listing .views-exposed-widgets .form-item-category.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-category.open #edit-region,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
     display: table;
     width: 85%;
   }
@@ -1240,12 +1240,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
   #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-region.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-category.open #edit-category,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category {
     display: table;
   }
 }
@@ -1256,18 +1256,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-region .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-time .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-region .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-time .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
   display: table-cell;
   width: 50%;
 }
@@ -1279,18 +1279,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
     display: table-cell;
     width: 10%;
     padding-left: 15%;
@@ -1303,18 +1303,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets .form-item-region .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets .form-item-category .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type {
   padding: 0 15px;
 }
 #events_search_form .form-item-region #edit-time, #events_search_form .form-item-region #edit-category, #events_search_form .form-item-region #edit-region,
@@ -1333,30 +1333,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-time,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-category,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-region,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-time,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-category,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-region,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
   display: none;
   overflow: hidden;
   background: white;
@@ -1377,30 +1377,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen {
   display: block;
 }
 @media (min-width: 44em) {
@@ -1420,30 +1420,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-time,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-region,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-time,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-region,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
     display: table;
     width: 85%;
     margin-left: 14.3%;
@@ -1464,30 +1464,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
 }
@@ -1507,30 +1507,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category label:hover,
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region label:hover,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget label:hover,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-time label:hover,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-category label:hover,
-.view-event-listing .views-exposed-widgets .form-item-region #edit-region label:hover,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget label:hover,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-time label:hover,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-category label:hover,
-.view-event-listing .views-exposed-widgets .form-item-category #edit-region label:hover,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget label:hover,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-time label:hover,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category label:hover,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-region label:hover,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region label:hover,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget label:hover {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget label:hover {
   cursor: pointer;
 }
 @media (min-width: 44em) {
@@ -1538,12 +1538,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-category,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-category,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category {
     display: table;
   }
 }
@@ -1552,12 +1552,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-item {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-item {
     width: auto;
   }
 }
@@ -1569,18 +1569,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
   clear: none;
@@ -1596,18 +1596,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
   display: block;
@@ -1625,18 +1625,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
     border: none;
@@ -1656,18 +1656,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd),
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd) {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
 @media (min-width: 44em) {
@@ -1678,18 +1678,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
 }
@@ -1700,18 +1700,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets .form-item-region .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets .form-item-category .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
@@ -1723,30 +1723,30 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios input,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes input,
-.view-event-listing .views-exposed-widgets .form-item-region .form-radios input,
-.view-event-listing .views-exposed-widgets .form-item-region .form-checkboxes input,
-.view-event-listing .views-exposed-widgets .form-item-category .form-radios input,
-.view-event-listing .views-exposed-widgets .form-item-category .form-checkboxes input,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-radios input,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes input,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios input,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios input,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios input,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes input {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes input {
   display: none;
 }
 #events_search_form .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
   width: 50%;
   float: left;
 }
@@ -1755,12 +1755,12 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
     width: 10%;
     float: none;
   }
@@ -1775,18 +1775,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
@@ -1800,18 +1800,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
-.view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
 @media (min-width: 44em) {
@@ -1825,18 +1825,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
@@ -1850,18 +1850,18 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
   #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
@@ -1874,23 +1874,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
-  .view-event-listing .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
 }
 #events_search_form .views-submit-button,
-.view-event-listing .views-exposed-widgets .views-submit-button {
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button {
   margin-top: -50px;
   right: 0;
   position: relative;
@@ -1899,7 +1899,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 }
 @media (min-width: 44em) {
   #events_search_form .views-submit-button,
-  .view-event-listing .views-exposed-widgets .views-submit-button {
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     margin: 0;
     margin-top: -44px;
     right: 5%;
@@ -1910,13 +1910,13 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 }
 @media (min-width: 70em) {
   #events_search_form .views-submit-button,
-  .view-event-listing .views-exposed-widgets .views-submit-button {
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     right: auto;
     margin-left: 580px;
   }
 }
 #events_search_form .views-submit-button .form-submit,
-.view-event-listing .views-exposed-widgets .views-submit-button .form-submit {
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   padding: 8px 10px 30px 10px;
   border: 1px solid #a2a2a2;
   border-left: none;
@@ -1930,16 +1930,16 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 }
 @media (min-width: 44em) {
   #events_search_form .views-submit-button .form-submit,
-  .view-event-listing .views-exposed-widgets .views-submit-button .form-submit {
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
     padding: 4px 10px 28px 10px;
   }
 }
 #events_search_form .views-submit-button .throbber,
-.view-event-listing .views-exposed-widgets .views-submit-button .throbber {
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button .throbber {
   display: none !important;
 }
 #events_search_form input[type="submit"],
-.view-event-listing .views-exposed-widgets input[type="submit"] {
+.view-event-listing-fixed .views-exposed-widgets input[type="submit"] {
   background: #f36722;
   border: none;
   text-align: center;
@@ -1960,7 +1960,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 }
 
 body.blue-scheme #events_search_form .views-submit-button .form-submit,
-body.blue-scheme .view-event-listing .views-exposed-widgets .views-submit-button .form-submit {
+body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   background: #0099cc;
 }
 
@@ -3553,7 +3553,7 @@ body.blue-scheme #huvi-loader {
   .section-huvitegevused .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
     margin-left: 275px;
   }
-  .section-huvitegevused #events_search_form .views-submit-button, .section-huvitegevused .view-event-listing .views-exposed-widgets .views-submit-button {
+  .section-huvitegevused #events_search_form .views-submit-button, .section-huvitegevused .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     margin-left: 600px;
   }
   .section-huvitegevused .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {

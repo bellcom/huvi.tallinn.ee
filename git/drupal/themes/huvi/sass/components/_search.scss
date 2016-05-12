@@ -222,7 +222,7 @@
 }
 
 #events_search_form,
-.view-event-listing .views-exposed-widgets{
+.view-event-listing-fixed .views-exposed-widgets{
   .views-exposed-widget {
     padding: 0;
   }
@@ -548,7 +548,7 @@
 }
 body.blue-scheme {
   #events_search_form,
-  .view-event-listing .views-exposed-widgets {
+  .view-event-listing-fixed .views-exposed-widgets {
     .views-submit-button {
       .form-submit {
         background: #0099cc;
