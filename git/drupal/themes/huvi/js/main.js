@@ -104,11 +104,11 @@
     });
 
     // Change free event checkbox text
-    if($('#block-views-event-listing-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-block #edit-field-isfree-value-wrapper > label').text());
+    if($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
     }
-    if($('#block-views-event-listing-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-block-6 #edit-field-isfree-value-wrapper > label').text());
+    if($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
 
     // refresh the page when resetting filters
@@ -143,7 +143,7 @@
         $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
 
         // Bugfix for QuickTabs and view filters to get along
-        $('.view-event-listing .form-type-bef-checkbox label').click(function() {
+        $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function() {
           //if($(this).closest('.block--views').hasClass('first-click-done')) {
             if($(this).prev().is(':checked')) {
               $(this).prev().removeAttr('checked');
@@ -151,7 +151,7 @@
             else {
               $(this).prev().attr('checked', 'checked');
             }
-            $(this).closest('.block--views').find('input#edit-submit-event-listing').trigger('click');
+            $(this).closest('.block--views').find('input#edit-submit-event-listing-fixed').trigger('click');
             /*
           }
           else {
@@ -172,7 +172,7 @@
 
 
     // Bugfix for QuickTabs and view filters to get along
-    $('.view-event-listing .form-type-bef-checkbox label').click(function() {
+    $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function() {
       //if($(this).closest('.block--views').hasClass('first-click-done')) {
         if($(this).prev().is(':checked')) {
           $(this).prev().removeAttr('checked');
@@ -180,7 +180,7 @@
         else {
           $(this).prev().attr('checked', 'checked');
         }
-        $(this).closest('.block--views').find('input#edit-submit-event-listing').trigger('click');
+        $(this).closest('.block--views').find('input#edit-submit-event-listing-fixed').trigger('click');
       /*
       }
       else {
@@ -192,15 +192,15 @@
 
     // Disable clicking on filters when automatically submitting searchbox text
     /*
-    $('.view-event-listing .view-filters').before('<div class="empty-filters-overlay"></div>');
+    $('.view-event-listing-fixed .view-filters').before('<div class="empty-filters-overlay"></div>');
     $('.empty-filters-overlay').hide();
-    $('.view-event-listing form .form-item-combine input').keyup(function() {
+    $('.view-event-listing-fixed form .form-item-combine input').keyup(function() {
       $('.empty-filters-overlay').show();
     });
     */
 
-    $('.page-uritused .view-event-listing form').attr('action', '/uritused');
-    $('.page-huvitegevused .view-event-listing form').attr('action', '/huvitegevused');
+    $('.page-uritused .view-event-listing-fixed form').attr('action', '/uritused');
+    $('.page-huvitegevused .view-event-listing-fixed form').attr('action', '/huvitegevused');
 
     $('.schedule-show-all').click(function() {
       $('.schedule-item').removeClass('schedule-hidden');
@@ -241,21 +241,21 @@
 
 
   $(document).ajaxComplete(function() {
-    $('.page-uritused .view-event-listing form').attr('action', '/uritused');
-    $('.page-huvitegevused .view-event-listing form').attr('action', '/huvitegevused');
+    $('.page-uritused .view-event-listing-fixed form').attr('action', '/uritused');
+    $('.page-huvitegevused .view-event-listing-fixed form').attr('action', '/huvitegevused');
     // Disable clicking on filters when automatically submitting searchbox text
     /*
-    $('.view-event-listing .view-filters').before('<div class="empty-filters-overlay"></div>');
+    $('.view-event-listing-fixed .view-filters').before('<div class="empty-filters-overlay"></div>');
     setTimeout(function() {
       $('.empty-filters-overlay').hide();
-      var searchInput = $('.view-event-listing form .form-item-combine input:visible');
+      var searchInput = $('.view-event-listing-fixed form .form-item-combine input:visible');
       if(searchInput.length > 0) {
         var strLength = searchInput.val().length * 2;
         searchInput.focus();
         searchInput[0].setSelectionRange(strLength, strLength);
       }
     }, 100);
-    $('.view-event-listing form .form-item-combine input').keyup(function() {
+    $('.view-event-listing-fixed form .form-item-combine input').keyup(function() {
       $('.empty-filters-overlay').show();
     });
     */
@@ -326,15 +326,15 @@
 
 
     // Change free event checkbox text
-    if($('#block-views-event-listing-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-block #edit-field-isfree-value-wrapper > label').text());
+    if($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
     }
-    if($('#block-views-event-listing-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-block-6 #edit-field-isfree-value-wrapper > label').text());
+    if($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+      $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
 
     // refresh the page when resetting filters
-    $('.view-event-listing .views-exposed-widget.views-reset-button').click(function(event) {
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
       location.reload();
     });
@@ -372,7 +372,7 @@
     checkFilters();
 
     // Bugfix for QuickTabs and view filters to get along
-    $('.view-event-listing .form-type-bef-checkbox label').click(function() {
+    $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function() {
       //if($(this).closest('.block--views').hasClass('first-click-done')) {
         if($(this).prev().is(':checked')) {
           $(this).prev().removeAttr('checked');
