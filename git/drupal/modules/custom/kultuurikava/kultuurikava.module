@@ -972,6 +972,7 @@ function kultuurikava_node_to_event($node) {
           $date_format = 'D, d.m.Y H:i';
           $event_key = 0;
           foreach($n->{$field}['und'] as $key => $val) {
+           if (isset($val['value'])) {
             $collections = entity_load('field_collection_item', array($val['value']));
             foreach($collections as $c) {
 
@@ -1018,6 +1019,7 @@ function kultuurikava_node_to_event($node) {
               }
             }
           }
+         } 
         }
         break;
       case 'ticketurl':
