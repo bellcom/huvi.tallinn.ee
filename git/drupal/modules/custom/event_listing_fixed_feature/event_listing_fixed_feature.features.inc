@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * clone_of_event_listing_feature.features.inc
+ * event_listing_fixed_feature.features.inc
  */
 
 /**
