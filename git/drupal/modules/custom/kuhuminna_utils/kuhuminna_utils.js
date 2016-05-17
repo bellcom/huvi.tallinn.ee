@@ -107,12 +107,13 @@
       $('form.node-event-form').attr('action', fa);
 
       // Check not published checkbox and save event
-      $('#edit-actions #edit-preview').click(function(event) {
+    /*  
+	$('#edit-actions #edit-preview').click(function(event) {
         event.preventDefault();
         $('.field-name-field-unpublish input').attr('checked', 'checked');
         $('#edit-actions #edit-submit').trigger('click');
       });
-
+*/
       $('#edit-actions #edit-submit').click(function(event) {
         $('.date-clear.form-text[maxlength="30"]').each(function() {
           if($(this).val().length > 0) {
