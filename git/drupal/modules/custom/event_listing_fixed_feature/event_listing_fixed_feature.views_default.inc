@@ -1648,15 +1648,14 @@ echo $date;
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
   /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
-  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
-  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now +1 year';
-  $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
+  +  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '>=';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'second';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
+ +  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
   /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
