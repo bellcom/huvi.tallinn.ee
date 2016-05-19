@@ -31,3 +31,24 @@ function huvi_omega_layout_alter(&$layout) {
     $layout = 'landing';
   }
 }
+
+function huvi_views_pre_render(&$view) {
+  if ($view->name == 'event_listing_fixed') {
+     foreach($view->result as $r => $result) {
+     if (date('H:i', $result->field_data_field_schedule_date_field_schedule_date_value) == '00:00')
+       $all_day_events[] = $result; 
+     else
+        $rows[date('d.m.y', $result->field_data_field_schedule_date_field_schedule_date_value)][] = $result;         
+    }
+    foreach ($all_day_events as $date => $row) {
+       $rows[date('d.m.y', $row->field_data_field_schedule_date_field_schedule_date_value)][] = $row;
+    }
+    
+    $new_result = Array();
+    
+    foreach ($rows as $row) 
+      foreach ($row as $result)
+           $new_result[] = $result;   
+    $view->result = $new_result;
+  }
+}
