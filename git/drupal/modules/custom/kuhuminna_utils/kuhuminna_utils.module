@@ -588,15 +588,3 @@ function kuhuminna_utils_user_logout($account) {
   watchdog('kuhuminna_logout', (string)$result, array(), WATCHDOG_INFO);
   */
 }
-/**
- * Implementation of hook_views_query_alter
- * @param type $view
- * @param type $query 
- */
-function kuhuminna_utils_views_query_alter(&$view, &$query) {
-  if ($view->name == 'event_listing_fixed') {
-    $view->query->orderby[0]['field'] = "UNIX_TIMESTAMP(FROM_UNIXTIME(field_data_field_schedule_date_field_schedule_date_value, '%Y-%m-%d'))";
-    $view->query->orderby[1]['field'] = "CASE  FROM_UNIXTIME(field_data_field_schedule_date_field_schedule_date_value, '%h:%i') WHEN '00:00' THEN field_data_field_schedule_date_field_schedule_date_value ELSE UNIX_TIMESTAMP(FROM_UNIXTIME(field_data_field_schedule_date_field_schedule_date_value, '%Y-%m-%d')) END";
-    $view->query->orderby[1]['direction'] = "ASC";
-  }
-}
