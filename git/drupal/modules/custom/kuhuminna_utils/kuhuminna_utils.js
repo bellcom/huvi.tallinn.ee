@@ -119,7 +119,7 @@
           if($(this).val().length > 0) {
             if($(this).parent().siblings().find('.date-clear.form-text').val().length < 1) {
               console.log('no_value');
-              $(this).parent().siblings().find('.date-clear.form-text').val('00:00');
+              $(this).parent().siblings().find('.date-clear.form-text').val('23:55');
             }
             else {
               console.log('has_value');
