@@ -349,15 +349,6 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['id'] = 'field_schedule_date_value_1';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['year_range'] = '-0:+0';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
@@ -839,11 +830,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'tomorrow +1 day 3 hours';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'tomorrow';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Content: Ürituse kategooriad (field_categories_event) (translated) */
@@ -927,14 +919,6 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now +1 day';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
@@ -1092,7 +1076,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'second';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'Friday this week ';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Monday next week + 3 hours';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Monday next week';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
@@ -1332,7 +1316,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'php',
+      'field' => 'field_schedule_date_1',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -1375,7 +1359,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     'format_type' => 'only_time',
     'fromto' => 'value',
     'multiple_number' => '1',
-    'multiple_from' => 'now',
+    'multiple_from' => '',
     'multiple_to' => '',
     'show_repeat_rule' => 'hide',
   );
@@ -1442,6 +1426,130 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Tüüp (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'uritus' => 'uritus',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_schedule' => 'field_schedule',
+  );
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = '12AM first day of next month ';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
+  /* Filter criterion: Content: Ürituse kategooriad (field_categories_event) (translated) */
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator_id'] = 'field_categories_event_value_i18n_op';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa?';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'field_schedule_place' => 'field_schedule_place',
+    'field_description' => 'field_description',
+  );
+  /* Filter criterion: Content: Märgi, kui üritus on tasuta (field_isfree) */
+  $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
+  $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Global: PHP */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
+  return true;
+}';
 
   /* Display: Activity */
   $handler = $view->new_display('block', 'Activity', 'block_6');
@@ -1651,10 +1759,11 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now +1 year';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) (translated) */
@@ -1964,11 +2073,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'hour';
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'tomorrow + 3 hours';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) (translated) */
@@ -2052,15 +2162,6 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
@@ -2278,11 +2379,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'tomorrow +1 day 3 hours';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'tomorrow';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) (translated) */
@@ -2366,15 +2468,6 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now +1 day';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
@@ -2612,14 +2705,24 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'hour';
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'Monday next week + 3 hours';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Sunday this week';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'Friday this week';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Monday next week';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['id'] = 'field_schedule_date_value_1';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now - 5 minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['year_range'] = '-0:+5';
   /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
@@ -2701,19 +2804,11 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'Friday this week';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -2927,10 +3022,11 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'last day of this month';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of this month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
@@ -3015,15 +3111,6 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
@@ -3261,10 +3348,10 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'last day of next month';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = '12AM first day of next month';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
@@ -3349,15 +3436,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg - end date (field_schedule_date:value2) */
-  $handler->display->display_options['filters']['field_schedule_date_value2']['id'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'first day of next month';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['add_delta'] = 'yes';
   $export['event_listing_fixed'] = $view;
 
   return $export;
