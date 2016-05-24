@@ -1,0 +1,53 @@
+--- modules/openid/openid.module	2015-08-19 13:06:11.000000000 +0300
++++ modules/openid/openid_patched.module	2015-08-19 13:05:55.000000000 +0300
+@@ -103,7 +103,9 @@
+ function openid_user_login(&$edit, $account) {
+   if (isset($_SESSION['openid'])) {
+     // The user has logged in via OpenID.
+-    user_cookie_save(array_intersect_key($_SESSION['openid']['user_login_values'], array_flip(array('openid_identifier'))));
++    if(is_array($_SESSION['openid']['user_login_values'])) {
++      user_cookie_save(array_intersect_key($_SESSION['openid']['user_login_values'], array_flip(array('openid_identifier'))));
++    }
+     unset($_SESSION['openid']);
+   }
+ }
+@@ -658,6 +660,11 @@
+  * @param $response Response values from the OpenID Provider.
+  */
+ function openid_authentication($response) {
++  if(!$response['openid.sreg.nickname']) {
++    $response['openid.sreg.nickname'] = $response['openid.sreg.fullname'];
++  }
++  $response['status'] = 'success';
++
+   $identity = $response['openid.claimed_id'];
+   $account = user_external_load($identity);
+
+@@ -693,10 +700,28 @@
+
+     $form_state['values'] = array();
+     $form_state['values']['op'] = t('Create new account');
++
++    $form_state['values']['name'] = $response['openid.sreg.nickname'];
++    if(!$response['openid.sreg.email']) {
++      $response['openid.sreg.email'] = str_replace(' ', '', strtolower($response['openid.sreg.nickname'])) . '@eesti.ee';
++    }
++    $form_state['values']['mail'] = $response['openid.sreg.email'];
++    $rand_pass = user_password(16);
++    $form_state['values']['pass']['pass1'] = $rand_pass;
++    $form_state['values']['pass']['pass2'] = $rand_pass;
++
+     drupal_form_submit('user_register_form', $form_state);
+
+     if (!empty($form_state['user'])) {
+       module_invoke_all('openid_response', $response, $form_state['user']);
++
++      $authmap = db_insert('authmap')
++        ->fields(array(
++            'uid' => $form_state['values']['uid'],
++            'authname' => $identity,
++            'module' => 'openid',
++        ))->execute();
++
+       drupal_goto();
+     }
