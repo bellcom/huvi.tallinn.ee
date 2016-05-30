@@ -1,0 +1,3636 @@
+body.cke_editable {
+  background: none !important;
+}
+
+/* No files to import found in abstractions/**\/* */
+.buymain {
+  margin-bottom: 10px;
+  position: relative;
+}
+.buymain .buy a.buy-link {
+  background: #56a900;
+  color: #fff;
+  padding: 5px 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.buymain .buymenu {
+  background-color: #fff;
+  border: 3px solid #56a900;
+  border-radius: 5px;
+  clear: left;
+  float: left;
+  position: absolute;
+  top: 35px;
+  z-index: 100;
+  display: none;
+}
+.buymain .buymenu ul {
+  list-style: none;
+  margin: 3px 3px 0 3px;
+  padding: 0;
+}
+.buymain .buymenu ul li a {
+  display: block;
+}
+
+.share-buttons ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.share-buttons ul li {
+  display: inline;
+}
+
+img, media {
+  max-width: 100%;
+}
+
+.banner {
+  display: inline-block;
+  text-align: left;
+}
+.banner .banner-inner {
+  position: relative;
+}
+.banner .field--name-field-adv-main-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (min-width: 44em) {
+  .banner .field--name-field-adv-main-text {
+    font-size: 18px;
+  }
+}
+@media (min-width: 70em) {
+  .banner .field--name-field-adv-main-text {
+    font-size: 22px;
+  }
+}
+.banner .field--name-field-adv-secondary-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+.banner .field--name-field-adv-image {
+  overflow: hidden;
+}
+.banner .field--name-field-adv-image img {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+.banner p {
+  margin: 0;
+}
+.banner a {
+  color: white;
+}
+.banner.large-banner .field--name-field-adv-image {
+  overflow: hidden;
+}
+.banner.large-banner .field--name-field-adv-image img {
+  display: block;
+  width: auto;
+  max-width: none;
+}
+.banner.large-banner .banner-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  height: 100%;
+  background: rgba(228, 96, 0, 0.4);
+  padding: 10px;
+}
+.banner.large-banner .banner-content .banner-content-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.banner.large-banner .banner-content .field--name-field-adv-main-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.banner.large-banner .banner-content .field--name-field-adv-secondary-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.banner.small-banner {
+  width: 100%;
+}
+.banner.small-banner .banner-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.banner.small-banner .banner-content .banner-content-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.banner.small-banner .banner-content .field--name-field-adv-main-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(228, 96, 0, 0.4);
+  width: 100%;
+  padding: 10px;
+}
+.banner.small-banner .banner-content .field--name-field-adv-secondary-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.l-region--highlighted h2.block__title {
+  display: none;
+}
+.l-region--highlighted .block--views {
+  display: inline-block;
+  width: 32.8%;
+}
+@media (min-width: 70em) {
+  .l-region--highlighted .block--views {
+    width: 33%;
+  }
+}
+.l-region--highlighted #block-views-advertisement-block-7,
+.l-region--highlighted #block-views-advertisement-block-8 {
+  width: 100% !important;
+}
+.l-region--highlighted #block-views-advertisement-block-7 .view-empty,
+.l-region--highlighted #block-views-advertisement-block-8 .view-empty {
+  margin-top: 0;
+}
+
+.view-advertisement .view-content {
+  overflow: hidden;
+  padding-top: 0px;
+  margin: 0;
+}
+.view-advertisement .view-content .views-row {
+  overflow: hidden;
+  margin: 0;
+}
+
+#block-views-banner-management-block-1,
+#block-views-banner-management-block-2,
+#block-views-banner-management-block-3,
+#block-views-banner-management-block-5,
+#block-views-banner-management-block-6,
+#block-views-banner-management-block-7 {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+}
+
+#block-views-advertisement-block-9,
+#block-views-advertisement-block-10,
+.view-advertisement.view-display-id-block_9,
+.view-advertisement.view-display-id-block_10 {
+  width: 100%;
+}
+#block-views-advertisement-block-9 .view-content,
+#block-views-advertisement-block-10 .view-content,
+.view-advertisement.view-display-id-block_9 .view-content,
+.view-advertisement.view-display-id-block_10 .view-content {
+  display: block;
+}
+#block-views-advertisement-block-9 .view-content .views-row,
+#block-views-advertisement-block-10 .view-content .views-row,
+.view-advertisement.view-display-id-block_9 .view-content .views-row,
+.view-advertisement.view-display-id-block_10 .view-content .views-row {
+  display: inline-block;
+  width: 32.8%;
+}
+@media (min-width: 70em) {
+  #block-views-advertisement-block-9 .view-content .views-row,
+  #block-views-advertisement-block-10 .view-content .views-row,
+  .view-advertisement.view-display-id-block_9 .view-content .views-row,
+  .view-advertisement.view-display-id-block_10 .view-content .views-row {
+    width: 33%;
+  }
+}
+#block-views-advertisement-block-9 .view-empty,
+#block-views-advertisement-block-10 .view-empty,
+.view-advertisement.view-display-id-block_9 .view-empty,
+.view-advertisement.view-display-id-block_10 .view-empty {
+  margin-top: 0;
+}
+#block-views-advertisement-block-9 .view-display-id-block_7 .view-content .views-row,
+#block-views-advertisement-block-9 .view-display-id-block_8 .view-content .views-row,
+#block-views-advertisement-block-10 .view-display-id-block_7 .view-content .views-row,
+#block-views-advertisement-block-10 .view-display-id-block_8 .view-content .views-row,
+.view-advertisement.view-display-id-block_9 .view-display-id-block_7 .view-content .views-row,
+.view-advertisement.view-display-id-block_9 .view-display-id-block_8 .view-content .views-row,
+.view-advertisement.view-display-id-block_10 .view-display-id-block_7 .view-content .views-row,
+.view-advertisement.view-display-id-block_10 .view-display-id-block_8 .view-content .views-row {
+  width: 100%;
+}
+
+.view-display-id-block_7 > div.view-empty,
+.view-display-id-block_8 > div.view-empty {
+  margin-top: 0px;
+}
+
+.blue-scheme footer .l-footer--main-wrapper .l-footer--main-container {
+  background: #006699;
+  background-image: url("../images/huvitegevused-footer.png");
+  background-repeat: no-repeat;
+  background-position-x: 99.5%;
+  background-position-y: 98%;
+  font-size: 14px;
+}
+.blue-scheme footer .l-footer--main-wrapper .l-footer--main-container .goto-events {
+  width: 162px;
+  height: 195px;
+  background: red;
+  background: url("../images/footer-huvi-ribbon.png") no-repeat top left;
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  margin-top: 27px;
+}
+.blue-scheme footer .l-footer--main-wrapper .l-footer--main-container .goto-events span {
+  display: block;
+  padding: 75px 24px 19px 12px;
+  color: white;
+}
+
+.l-footer--main-container {
+  background-image: url("../images/uritused-footer.png");
+  background-repeat: no-repeat;
+  background-position-x: 99.5%;
+  background-position-y: 98%;
+}
+.l-footer--main-container a {
+  text-decoration: none;
+}
+.l-footer--main-container a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.l-footer--bottom-container {
+  margin-top: -20px;
+  padding: 0 !important;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-top: 5px;
+  color: transparent;
+  width: 112px;
+  height: 38px;
+  background: url("../images/logo_tallinn.png") center center no-repeat;
+  text-indent: -9999px;
+  margin-left: 30px;
+}
+@media (min-width: 44em) {
+  .footer-logo {
+    height: 25px;
+    margin-right: 30px;
+  }
+}
+
+.footer-fb-logo {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: -3px;
+  width: 107px;
+  height: 38px;
+  background: url("../images/fb-footer.png") center center no-repeat;
+  text-indent: -9999px;
+}
+@media (min-width: 44em) {
+  .footer-fb-logo {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 44em) {
+  .copyright, .footer-logo, .footer-fb-logo {
+    float: right;
+  }
+}
+
+footer .l-footer--top-container,
+footer .l-footer--main-container,
+footer .l-footer--bottom-container {
+  *zoom: 1;
+  max-width: 960px;
+  max-width: 60rem;
+  _width: 960px;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .l-footer--top-container:after,
+footer .l-footer--main-container:after,
+footer .l-footer--bottom-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 44em) {
+  footer .l-footer--top-container,
+  footer .l-footer--main-container,
+  footer .l-footer--bottom-container {
+    max-width: 960px;
+    max-width: 60rem;
+  }
+}
+footer .l-footer--top-wrapper .l-footer--top-container .footer-logo {
+  display: inline-block;
+  width: 112px;
+  height: 25px;
+  background: url("../images/logo_tallinn.png") center center no-repeat;
+  margin: 0 auto;
+  text-indent: -9999px;
+}
+footer .l-footer--bottom-wrapper {
+  margin-top: 30px;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container {
+  text-align: center;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container .l-region--footer-bottom {
+  float: left;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container .l-region--footer-bottom p {
+  margin: 4px 0;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container .l-region--footer-bottom p a {
+  text-decoration: none;
+  color: #3c7cbf;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container .l-region--footer-bottom .footer-tel {
+  color: gray;
+}
+footer .l-footer--bottom-wrapper .l-footer--bottom-container .copyright {
+  text-align: center;
+  color: #fff;
+  margin-top: -5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+@media (min-width: 44em) {
+  footer .l-footer--bottom-wrapper .l-footer--bottom-container .copyright {
+    display: inline-block;
+  }
+}
+footer .l-footer--main-wrapper {
+  display: none;
+}
+@media (min-width: 44em) {
+  footer .l-footer--main-wrapper {
+    display: block;
+    position: relative;
+  }
+}
+footer .l-footer--main-wrapper .l-footer--main-container {
+  background-color: #ac4800;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+@media (min-width: 44em) {
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-second,
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-third,
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-fourth {
+    width: 23.72881%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-first {
+    position: absolute;
+    bottom: -22px;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-second {
+    margin-left: 23.72881%;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-third,
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-fourth {
+    float: right;
+    margin-right: 0;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-third .block,
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-fourth .block {
+    line-height: 19px;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-third .block a,
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-fourth .block a {
+    color: white;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-third {
+    float: left;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .goto-activities {
+    width: 162px;
+    height: 195px;
+    background: red;
+    background: url("../images/footer-uritused-ribbon.png") no-repeat top left;
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    margin-top: 27px;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .goto-activities span {
+    display: block;
+    padding: 70px 24px 19px 12px;
+    color: white;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region h2.block__title {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region #block-block-1 h2.block__title {
+    font-size: 21px;
+    border-bottom: none;
+    background: url("../images/custom-white-border.png") no-repeat left bottom;
+    margin-bottom: 0;
+    padding-bottom: 18px;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region #block-block-1 p {
+    margin-top: -5px;
+    margin-left: 30px;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region .menu {
+    margin: 0;
+    padding: 0;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region .menu .leaf {
+    list-style-image: none;
+    list-style-type: none;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region .menu .leaf a {
+    color: white;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+  }
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region .button {
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background: #33cc33;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+}
+@media (min-width: 44em) and (min-width: 70em) {
+  footer .l-footer--main-wrapper .l-footer--main-container .l-region .button:hover {
+    letter-spacing: 0.5px;
+  }
+}
+
+header.l-header {
+  height: 175px;
+  background: #f36722;
+}
+@media (min-width: 44em) {
+  header.l-header {
+    background: transparent;
+    background: radial-gradient(9em circle at bottom right, #c85501, rgba(0, 0, 0, 0));
+    height: auto;
+  }
+}
+header.l-header .l-branding {
+  margin-top: 20px;
+}
+@media (min-width: 44em) {
+  header.l-header .l-branding {
+    margin-top: 0px;
+  }
+}
+header.l-header .l-branding a.site-logo {
+  display: block;
+  background: url("../images/mobile-logo.png") top left no-repeat;
+  width: 187px;
+  height: 80px;
+  text-indent: -9999px;
+}
+@media (min-width: 44em) {
+  header.l-header .l-branding a.site-logo {
+    background: url("../images/logo_orange.png") center center no-repeat;
+  }
+}
+header.l-header .ribbon {
+  display: block;
+  padding: 14px 25px 17px 20px;
+  float: right;
+  margin-top: 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 12px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  float: right;
+  margin-right: -10px;
+}
+@media (min-width: 44em) {
+  header.l-header .ribbon {
+    margin: 0;
+    margin-top: 5px;
+    text-indent: -9999px;
+    padding: 0;
+    text-indent: 55px;
+    line-height: 58px;
+    font-size: 16px;
+  }
+}
+header.l-header .ribbon.events-link {
+  background: url("../images/ribbon-orange-mobile-btn.png") no-repeat 0 0;
+  width: 140px;
+  height: 50px;
+  line-height: 12px;
+}
+@media (min-width: 44em) {
+  header.l-header .ribbon.events-link {
+    background: url("../images/ribbon-orange-btn.png") no-repeat 0 0;
+    width: 275px;
+    height: 63px;
+    margin-right: -41px;
+    line-height: 55px;
+  }
+  header.l-header .ribbon.events-link:hover {
+    text-indent: 53px;
+    font-weight: bold;
+  }
+}
+header.l-header .ribbon.activities-link {
+  background: url("../images/ribbon-blue-mobile-btn.png") no-repeat 0 0;
+  width: 138px;
+  height: 49px;
+}
+@media (min-width: 44em) {
+  header.l-header .ribbon.activities-link {
+    background: url("../images/ribbon-blue-btn.png") no-repeat 0 0;
+    width: 295px;
+    height: 63px;
+    margin-right: -34px;
+  }
+  header.l-header .ribbon.activities-link:hover {
+    text-indent: 53px;
+    font-weight: bold;
+  }
+}
+header.l-header .section-illustration.event-section-illustration {
+  background: url(../images/uritused-mobile-logo.png) no-repeat center bottom;
+  height: 100px;
+  width: 100%;
+  margin-top: -10px;
+}
+@media (min-width: 44em) {
+  header.l-header .section-illustration.event-section-illustration {
+    height: 82px;
+    margin-top: 0px;
+    background: url(../images/uritused-logo.png) no-repeat center bottom;
+  }
+}
+header.l-header .top-bar {
+  margin-bottom: 15px;
+}
+header.l-header .top-bar .top-bar-right .l-region--top-bar-right {
+  margin-top: 5px;
+}
+header.l-header .top-bar .top-bar-right .block {
+  float: right;
+  color: #666666;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+header.l-header .top-bar .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date {
+  margin-right: 20px;
+  padding-top: 5px;
+}
+header.l-header .top-bar .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
+  font-weight: bold;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+header.l-header .top-bar .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather .weather {
+  overflow: hidden;
+  line-height: 20px;
+}
+header.l-header .top-bar .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather .weather .weather-icon {
+  display: block;
+  float: left;
+  margin-right: 3px;
+}
+header.l-header .top-bar .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather .weather .weather-icon img {
+  display: block;
+}
+header.l-header .top-bar .top-bar-right #block-block-6 p {
+  padding-top: 5px;
+  margin: 0;
+  padding-right: 5px;
+}
+header.l-header .top-bar .top-bar-right #block-block-6 .username a {
+  color: #666666;
+  text-decoration: none;
+}
+header.l-header .top-bar .top-bar-right #block-block-6 .logout-link {
+  margin-left: 10px;
+}
+header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
+  color: #2C89AF;
+  text-decoration: none;
+}
+
+.blue-scheme header.l-header {
+  background: #0099cc;
+}
+@media (min-width: 44em) {
+  .blue-scheme header.l-header {
+    background: transparent;
+    background: radial-gradient(9em circle at bottom right, #0099cc, rgba(0, 0, 0, 0));
+  }
+}
+.blue-scheme header.l-header .ribbon.events-link {
+  background: url(../images/ribbon-orange-mobile-btn.png) top left no-repeat;
+}
+@media (min-width: 44em) {
+  .blue-scheme header.l-header .ribbon.events-link {
+    background: url(../images/ribbon-orange-btn.png) top left no-repeat;
+  }
+}
+@media (min-width: 44em) {
+  .blue-scheme header.l-header .l-branding a.site-logo {
+    background: url("../images/logo-blue.png") center center no-repeat;
+  }
+}
+.blue-scheme header.l-header .section-illustration {
+  background: url("../images/huvitegevused-mobile-logo.png") bottom center no-repeat;
+}
+@media (min-width: 44em) {
+  .blue-scheme header.l-header .section-illustration {
+    background: url("../images/huvitegevused-logo.png") bottom center no-repeat;
+  }
+}
+
+.form-item {
+  clear: both;
+  text-align: center;
+}
+.form-item.form-item-keyword {
+  display: inline-block;
+}
+
+.form-item {
+  /*
+  &.active{
+    input:checked + label{
+      background: none;
+    }
+  }
+  */
+}
+.form-item input:checked + label {
+  background: #ccc;
+}
+
+.form-item.form-type-checkbox.form-item-free,
+#edit-field-isfree-value-wrapper {
+  text-align: right;
+  margin-top: 6px;
+  display: inline-block;
+  margin-left: 5%;
+}
+.form-item.form-type-checkbox.form-item-free > label,
+#edit-field-isfree-value-wrapper > label {
+  display: none !important;
+}
+@media (min-width: 44em) {
+  .form-item.form-type-checkbox.form-item-free,
+  #edit-field-isfree-value-wrapper {
+    margin-left: 0;
+    float: left;
+    width: 50%;
+  }
+}
+.form-item.form-type-checkbox.form-item-free .views-widget,
+#edit-field-isfree-value-wrapper .views-widget {
+  float: right;
+}
+.form-item.form-type-checkbox.form-item-free label,
+#edit-field-isfree-value-wrapper label {
+  color: #515151;
+  font-size: 14px;
+  font-weight: normal;
+  margin-right: 20px;
+  cursor: pointer;
+  background: url(../images/checkbox.png) no-repeat left bottom;
+  padding: 5px 0 4px 30px;
+  height: 24px;
+  display: inline-block;
+}
+.form-item.form-type-checkbox.form-item-free input:checked + label,
+#edit-field-isfree-value-wrapper input:checked + label {
+  background-position: left top;
+}
+.form-item.form-type-checkbox.form-item-free input,
+#edit-field-isfree-value-wrapper input {
+  margin-right: 10px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.form-item.form-type-checkbox.form-item-free input:hover,
+#edit-field-isfree-value-wrapper input:hover {
+  cursor: pointer;
+}
+
+.event-group {
+  overflow: hidden;
+}
+
+.event-group-title,
+.event-group > h3 {
+  color: white;
+  background-color: #FF6600;
+  font-size: 16px;
+}
+@media (min-width: 70em) {
+  .event-group-title,
+  .event-group > h3 {
+    width: 150px;
+  }
+}
+
+.event-item .time,
+.event-item .name,
+.event-item .category,
+.event-item .place {
+  float: left;
+  padding: 7px 3px;
+}
+
+.event-item .time {
+  width: 150px;
+}
+
+.event-item .name {
+  width: 300px;
+}
+
+.event-item .category {
+  width: 150px;
+}
+
+.event-item .place {
+  width: 250px;
+}
+
+.bef-checkboxes {
+  display: table;
+  width: 100%;
+}
+
+.fixwidth,
+.fixwidth > .field-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#edit-full-text,
+.views-widget-filter-combine {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  clear: both;
+}
+@media (min-width: 70em) {
+  #edit-full-text,
+  .views-widget-filter-combine {
+    padding-top: 0;
+  }
+}
+#edit-full-text .form-item-keyword,
+.views-widget-filter-combine .form-item-keyword {
+  text-align: left;
+}
+#edit-full-text .views-widget,
+.views-widget-filter-combine .views-widget {
+  width: 100%;
+  display: inline-block;
+}
+@media (min-width: 70em) {
+  #edit-full-text .views-widget,
+  .views-widget-filter-combine .views-widget {
+    width: 50%;
+  }
+}
+#edit-full-text label,
+.views-widget-filter-combine label {
+  display: none;
+}
+@media (min-width: 70em) {
+  #edit-full-text label,
+  .views-widget-filter-combine label {
+    display: block;
+    color: #ff6600;
+    margin-right: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+}
+#edit-full-text .form-item,
+.views-widget-filter-combine .form-item {
+  display: inline-block;
+  width: 90%;
+}
+@media (min-width: 70em) {
+  #edit-full-text .form-item,
+  .views-widget-filter-combine .form-item {
+    width: auto;
+  }
+}
+#edit-full-text #edit-submit,
+.views-widget-filter-combine #edit-submit {
+  color: white;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  background-color: #f36722;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  height: 39px;
+  display: inline-block;
+  clear: both;
+  margin: 0;
+  display: none;
+}
+@media (min-width: 70em) {
+  #edit-full-text #edit-submit,
+  .views-widget-filter-combine #edit-submit {
+    padding: 8px 20px 10px 40px;
+    background-image: url("../images/searchIcon.png");
+    background-repeat: no-repeat;
+    background-position: 15px 10px;
+    display: inline-block;
+  }
+}
+#edit-full-text #edit-keyword,
+#edit-full-text input,
+.views-widget-filter-combine #edit-keyword,
+.views-widget-filter-combine input {
+  width: 100%;
+  border: 1px solid #a2a2a2;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 11px 15px 9px;
+  box-shadow: inset 0 3px 7px 0 #cdcdcd;
+  margin-top: 20px;
+}
+@media (min-width: 44em) {
+  #edit-full-text #edit-keyword,
+  #edit-full-text input,
+  .views-widget-filter-combine #edit-keyword,
+  .views-widget-filter-combine input {
+    margin-top: 7px;
+    padding: 7px 15px 7px;
+  }
+}
+@media (min-width: 70em) {
+  #edit-full-text #edit-keyword,
+  #edit-full-text input,
+  .views-widget-filter-combine #edit-keyword,
+  .views-widget-filter-combine input {
+    width: 450px;
+    display: inline-block;
+    background: #fff;
+  }
+}
+#edit-full-text #edit-keyword:focus,
+#edit-full-text input:focus,
+.views-widget-filter-combine #edit-keyword:focus,
+.views-widget-filter-combine input:focus {
+  outline: none;
+}
+
+#events_search_form .views-exposed-widget,
+.view-event-listing-fixed .views-exposed-widgets .views-exposed-widget {
+  padding: 0;
+}
+#events_search_form .form-item-region, #events_search_form .form-item-category, #events_search_form .form-type-radios.form-item-time,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper,
+#events_search_form #edit-field-schedule-city-id-value-wrapper,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
+  position: relative;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  margin: 0;
+  width: 100%;
+}
+#events_search_form .form-item-region::after, #events_search_form .form-item-category::after, #events_search_form .form-type-radios.form-item-time::after,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper::after,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper::after,
+#events_search_form #edit-field-schedule-city-id-value-wrapper::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
+  content: '';
+  background: url("../images/down-arrow.png") no-repeat top left;
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 26px;
+  top: 13px;
+  right: 20px;
+  z-index: 9;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region::after, #events_search_form .form-item-category::after, #events_search_form .form-type-radios.form-item-time::after,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper::after,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper::after,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper::after,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region::after,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category::after,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper::after,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper::after {
+    display: none;
+  }
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region, #events_search_form .form-item-category, #events_search_form .form-type-radios.form-item-time,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+#events_search_form .form-item-region.active, #events_search_form .form-item-category.active, #events_search_form .form-type-radios.form-item-time.active,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper.active,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper.active,
+#events_search_form #edit-field-schedule-city-id-value-wrapper.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.active {
+  background: #434343;
+}
+#events_search_form .form-item-region.open::after, #events_search_form .form-item-category.open::after, #events_search_form .form-type-radios.form-item-time.open::after,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper.open::after,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper.open::after,
+#events_search_form #edit-field-schedule-city-id-value-wrapper.open::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open::after {
+  background: url("../images/up-arrow.png") no-repeat top left;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region.open label:first-child, #events_search_form .form-item-category.open label:first-child, #events_search_form .form-type-radios.form-item-time.open label:first-child,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper.open label:first-child,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open label:first-child,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open label:first-child {
+    background: #f36722;
+  }
+}
+#events_search_form .form-item-region label, #events_search_form .form-item-category label, #events_search_form .form-type-radios.form-item-time label,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper label,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper label,
+#events_search_form #edit-field-schedule-city-id-value-wrapper label,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region label,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category label,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
+  height: 38px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 9;
+  padding: 0 5px;
+}
+#events_search_form .form-item-region label:first-child, #events_search_form .form-item-category label:first-child, #events_search_form .form-type-radios.form-item-time label:first-child,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper label:first-child,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+#events_search_form #edit-field-schedule-city-id-value-wrapper label:first-child,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region label:first-child,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category label:first-child,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
+  background: #f36722;
+  color: white;
+  height: auto;
+  padding: 7px 0 1px;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 22px;
+  box-shadow: inset 1px 10px 20px -14px #333333;
+  -webkit-box-shadow: inset 1px 10px 20px -14px #333333;
+  -moz-box-shadow: inset 1px 10px 20px -14px #333333;
+  -o-box-shadow: inset 1px 10px 20px -14px #333333;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region label:first-child, #events_search_form .form-item-category label:first-child, #events_search_form .form-type-radios.form-item-time label:first-child,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper label:first-child,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label:first-child,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label:first-child {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 15%;
+    float: left;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    position: absolute;
+    z-index: 10;
+  }
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region label, #events_search_form .form-item-category label, #events_search_form .form-type-radios.form-item-time label,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper label,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper label,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper label {
+    height: 28px;
+    line-height: 28px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+  }
+}
+#events_search_form .form-item-region.open #edit-time, #events_search_form .form-item-region.open #edit-category, #events_search_form .form-item-region.open #edit-region, #events_search_form .form-item-category.open #edit-time, #events_search_form .form-item-category.open #edit-category, #events_search_form .form-item-category.open #edit-region, #events_search_form .form-type-radios.form-item-time.open #edit-time, #events_search_form .form-type-radios.form-item-time.open #edit-category, #events_search_form .form-type-radios.form-item-time.open #edit-region,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+#events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+#events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+#events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
+  display: block;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region.open #edit-time, #events_search_form .form-item-region.open #edit-category, #events_search_form .form-item-region.open #edit-region, #events_search_form .form-item-category.open #edit-time, #events_search_form .form-item-category.open #edit-category, #events_search_form .form-item-category.open #edit-region, #events_search_form .form-type-radios.form-item-time.open #edit-time, #events_search_form .form-type-radios.form-item-time.open #edit-category, #events_search_form .form-type-radios.form-item-time.open #edit-region,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-region {
+    display: table;
+    width: 85%;
+  }
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region.open #edit-category, #events_search_form .form-item-category.open #edit-category, #events_search_form .form-type-radios.form-item-time.open #edit-category,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper.open #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper.open #edit-category {
+    display: table;
+  }
+}
+#events_search_form .form-item-region #edit-region .form-item, #events_search_form .form-item-region #edit-time .form-item, #events_search_form .form-item-category #edit-region .form-item, #events_search_form .form-item-category #edit-time .form-item, #events_search_form .form-type-radios.form-item-time #edit-region .form-item, #events_search_form .form-type-radios.form-item-time #edit-time .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
+  display: table-cell;
+  width: 50%;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region #edit-region .form-item, #events_search_form .form-item-region #edit-time .form-item, #events_search_form .form-item-category #edit-region .form-item, #events_search_form .form-item-category #edit-time .form-item, #events_search_form .form-type-radios.form-item-time #edit-region .form-item, #events_search_form .form-type-radios.form-item-time #edit-time .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-item {
+    display: table-cell;
+    width: 10%;
+    padding-left: 15%;
+  }
+}
+#events_search_form .form-item-region .form-item.form-type-checkbox.form-item-region-pohja-tallinn, #events_search_form .form-item-region #edit-region .form-item.form-type-bef-checkbox:last-of-type, #events_search_form .form-item-category .form-item.form-type-checkbox.form-item-region-pohja-tallinn, #events_search_form .form-item-category #edit-region .form-item.form-type-bef-checkbox:last-of-type, #events_search_form .form-type-radios.form-item-time .form-item.form-type-checkbox.form-item-region-pohja-tallinn, #events_search_form .form-type-radios.form-item-time #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-item.form-type-checkbox.form-item-region-pohja-tallinn,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-item.form-type-bef-checkbox:last-of-type {
+  padding: 0 15px;
+}
+#events_search_form .form-item-region #edit-time, #events_search_form .form-item-region #edit-category, #events_search_form .form-item-region #edit-region,
+#events_search_form .form-item-region .views-widget, #events_search_form .form-item-category #edit-time, #events_search_form .form-item-category #edit-category, #events_search_form .form-item-category #edit-region,
+#events_search_form .form-item-category .views-widget, #events_search_form .form-type-radios.form-item-time #edit-time, #events_search_form .form-type-radios.form-item-time #edit-category, #events_search_form .form-type-radios.form-item-time #edit-region,
+#events_search_form .form-type-radios.form-item-time .views-widget,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
+  display: none;
+  overflow: hidden;
+  background: white;
+}
+#events_search_form .form-item-region #edit-time.mobileOpen, #events_search_form .form-item-region #edit-category.mobileOpen, #events_search_form .form-item-region #edit-region.mobileOpen,
+#events_search_form .form-item-region .views-widget.mobileOpen, #events_search_form .form-item-category #edit-time.mobileOpen, #events_search_form .form-item-category #edit-category.mobileOpen, #events_search_form .form-item-category #edit-region.mobileOpen,
+#events_search_form .form-item-category .views-widget.mobileOpen, #events_search_form .form-type-radios.form-item-time #edit-time.mobileOpen, #events_search_form .form-type-radios.form-item-time #edit-category.mobileOpen, #events_search_form .form-type-radios.form-item-time #edit-region.mobileOpen,
+#events_search_form .form-type-radios.form-item-time .views-widget.mobileOpen,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen {
+  display: block;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region #edit-time, #events_search_form .form-item-region #edit-category, #events_search_form .form-item-region #edit-region,
+  #events_search_form .form-item-region .views-widget, #events_search_form .form-item-category #edit-time, #events_search_form .form-item-category #edit-category, #events_search_form .form-item-category #edit-region,
+  #events_search_form .form-item-category .views-widget, #events_search_form .form-type-radios.form-item-time #edit-time, #events_search_form .form-type-radios.form-item-time #edit-category, #events_search_form .form-type-radios.form-item-time #edit-region,
+  #events_search_form .form-type-radios.form-item-time .views-widget,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
+    display: table;
+    width: 85%;
+    margin-left: 14.3%;
+  }
+  #events_search_form .form-item-region #edit-time .form-checkboxes, #events_search_form .form-item-region #edit-category .form-checkboxes, #events_search_form .form-item-region #edit-region .form-checkboxes,
+  #events_search_form .form-item-region .views-widget .form-checkboxes, #events_search_form .form-item-category #edit-time .form-checkboxes, #events_search_form .form-item-category #edit-category .form-checkboxes, #events_search_form .form-item-category #edit-region .form-checkboxes,
+  #events_search_form .form-item-category .views-widget .form-checkboxes, #events_search_form .form-type-radios.form-item-time #edit-time .form-checkboxes, #events_search_form .form-type-radios.form-item-time #edit-category .form-checkboxes, #events_search_form .form-type-radios.form-item-time #edit-region .form-checkboxes,
+  #events_search_form .form-type-radios.form-item-time .views-widget .form-checkboxes,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes {
+    width: 100%;
+  }
+}
+#events_search_form .form-item-region #edit-time label:hover, #events_search_form .form-item-region #edit-category label:hover, #events_search_form .form-item-region #edit-region label:hover,
+#events_search_form .form-item-region .views-widget label:hover, #events_search_form .form-item-category #edit-time label:hover, #events_search_form .form-item-category #edit-category label:hover, #events_search_form .form-item-category #edit-region label:hover,
+#events_search_form .form-item-category .views-widget label:hover, #events_search_form .form-type-radios.form-item-time #edit-time label:hover, #events_search_form .form-type-radios.form-item-time #edit-category label:hover, #events_search_form .form-type-radios.form-item-time #edit-region label:hover,
+#events_search_form .form-type-radios.form-item-time .views-widget label:hover,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time label:hover,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category label:hover,
+#events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region label:hover,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region label:hover,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget label:hover {
+  cursor: pointer;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region #edit-category, #events_search_form .form-item-category #edit-category, #events_search_form .form-type-radios.form-item-time #edit-category,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category {
+    display: table;
+  }
+}
+@media (min-width: 44em) and (min-width: 44em) {
+  #events_search_form .form-item-region #edit-category .form-item, #events_search_form .form-item-category #edit-category .form-item, #events_search_form .form-type-radios.form-item-time #edit-category .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-item {
+    width: auto;
+  }
+}
+
+#events_search_form .form-item-region .form-radios .form-item, #events_search_form .form-item-region .form-checkboxes .form-item, #events_search_form .form-item-category .form-radios .form-item, #events_search_form .form-item-category .form-checkboxes .form-item, #events_search_form .form-type-radios.form-item-time .form-radios .form-item, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
+  width: 50%;
+  float: left;
+  clear: none;
+  border-bottom: 1px solid #bebebe;
+  background: white;
+  margin: 0;
+  position: relative;
+}
+#events_search_form .form-item-region .form-radios .form-item.active::after, #events_search_form .form-item-region .form-checkboxes .form-item.active::after, #events_search_form .form-item-category .form-radios .form-item.active::after, #events_search_form .form-item-category .form-checkboxes .form-item.active::after, #events_search_form .form-type-radios.form-item-time .form-radios .form-item.active::after, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item.active::after,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after {
+  content: '';
+  background: url("../images/close.png") no-repeat top left;
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 3px;
+  right: 0px;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region .form-radios .form-item, #events_search_form .form-item-region .form-checkboxes .form-item, #events_search_form .form-item-category .form-radios .form-item, #events_search_form .form-item-category .form-checkboxes .form-item, #events_search_form .form-type-radios.form-item-time .form-radios .form-item, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
+    width: auto;
+    float: none;
+    border: none;
+    display: table-cell;
+    width: 100%;
+    white-space: nowrap;
+    border: none;
+    border-right: 1px solid #bebebe;
+    background: white;
+    height: 28px;
+  }
+}
+#events_search_form .form-item-region .form-radios .form-item:nth-child(odd), #events_search_form .form-item-region .form-checkboxes .form-item:nth-child(odd), #events_search_form .form-item-category .form-radios .form-item:nth-child(odd), #events_search_form .form-item-category .form-checkboxes .form-item:nth-child(odd), #events_search_form .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd), #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd),
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd) {
+  border-right: 1px solid #bebebe;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region .form-radios .form-item:last-of-type, #events_search_form .form-item-region .form-checkboxes .form-item:last-of-type, #events_search_form .form-item-category .form-radios .form-item:last-of-type, #events_search_form .form-item-category .form-checkboxes .form-item:last-of-type, #events_search_form .form-type-radios.form-item-time .form-radios .form-item:last-of-type, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type {
+    border-right: none;
+  }
+}
+#events_search_form .form-item-region .form-radios .form-item.active, #events_search_form .form-item-region .form-checkboxes .form-item.active, #events_search_form .form-item-category .form-radios .form-item.active, #events_search_form .form-item-category .form-checkboxes .form-item.active, #events_search_form .form-type-radios.form-item-time .form-radios .form-item.active, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item.active,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active {
+  background: #434343;
+  box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
+  color: white;
+}
+#events_search_form .form-item-region .form-radios input, #events_search_form .form-item-region .form-checkboxes input, #events_search_form .form-item-category .form-radios input, #events_search_form .form-item-category .form-checkboxes input, #events_search_form .form-type-radios.form-item-time .form-radios input, #events_search_form .form-type-radios.form-item-time .form-checkboxes input,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios input,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios input,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios input,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios input,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes input {
+  display: none;
+}
+#events_search_form .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
+  width: 50%;
+  float: left;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-event-value-i18n .form-item {
+    width: 10%;
+    float: none;
+  }
+}
+#events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
+  width: 50%;
+  float: left;
+}
+#events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd), #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd), #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+#events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd),
+.view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
+  border-right: 1px solid #bebebe;
+}
+@media (min-width: 44em) {
+  #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
+    width: 9%;
+    float: none;
+  }
+  #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1), #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1), #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1),
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
+    border-right: none;
+  }
+  #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label, #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label,
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
+    padding-left: 7px;
+  }
+}
+#events_search_form .views-submit-button,
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button {
+  margin-top: -50px;
+  right: 0;
+  position: relative;
+  float: right;
+  margin-right: 12px;
+}
+@media (min-width: 44em) {
+  #events_search_form .views-submit-button,
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
+    margin: 0;
+    margin-top: -44px;
+    right: 5%;
+    margin-top: 74px;
+    float: right;
+    position: absolute;
+  }
+}
+@media (min-width: 70em) {
+  #events_search_form .views-submit-button,
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
+    right: auto;
+    margin-left: 580px;
+  }
+}
+#events_search_form .views-submit-button .form-submit,
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
+  padding: 8px 10px 30px 10px;
+  border: 1px solid #a2a2a2;
+  border-left: none;
+  font-size: 15px !important;
+  line-height: 24px;
+  width: 55px;
+  text-align: center;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 20px;
+  box-shadow: none;
+}
+@media (min-width: 44em) {
+  #events_search_form .views-submit-button .form-submit,
+  .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
+    padding: 4px 10px 28px 10px;
+  }
+}
+#events_search_form .views-submit-button .throbber,
+.view-event-listing-fixed .views-exposed-widgets .views-submit-button .throbber {
+  display: none !important;
+}
+#events_search_form input[type="submit"],
+.view-event-listing-fixed .views-exposed-widgets input[type="submit"] {
+  background: #f36722;
+  border: none;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  color: white;
+  height: 25px;
+  padding: 0 8px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size: 15px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+body.blue-scheme #events_search_form .views-submit-button .form-submit,
+body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
+  background: #0099cc;
+}
+
+.empty-filters-overlay {
+  position: absolute;
+  width: 97%;
+  height: 90px;
+  max-width: 940px;
+  z-index: 30;
+}
+
+.block--quicktabs {
+  padding-bottom: 30px;
+}
+.block--quicktabs h2.block__title {
+  display: none;
+}
+
+ul.quicktabs-tabs {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  margin: 0;
+}
+ul.quicktabs-tabs::before {
+  content: "Aeg";
+  text-align: center;
+  background: #f36722;
+  color: white;
+  height: auto;
+  padding: 7px 0 1px;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 22px;
+  box-shadow: inset 1px 10px 20px -14px #333333;
+  -webkit-box-shadow: inset 1px 10px 20px -14px #333333;
+  -moz-box-shadow: inset 1px 10px 20px -14px #333333;
+  -o-box-shadow: inset 1px 10px 20px -14px #333333;
+  width: 100%;
+  display: block;
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs::before {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    padding: 0;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 15%;
+    float: left;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    position: relative;
+    z-index: 10;
+    margin-right: -7px;
+  }
+}
+ul.quicktabs-tabs::after {
+  content: '';
+  background: url("../images/down-arrow.png") no-repeat top left;
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 26px;
+  top: 13px;
+  right: 20px;
+  z-index: 9;
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs::after {
+    display: none;
+  }
+}
+ul.quicktabs-tabs.open::after {
+  background: url("../images/up-arrow.png") no-repeat top left;
+}
+ul.quicktabs-tabs.open label:first-child {
+  background: #a74d0c;
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs.open label:first-child {
+    background: #f36722;
+  }
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-bottom: 7px;
+    overflow: hidden;
+  }
+}
+ul.quicktabs-tabs li {
+  height: 38px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  display: block;
+  z-index: 9;
+  width: 50%;
+  float: left;
+  border-bottom: 1px solid #bebebe;
+  display: none;
+}
+ul.quicktabs-tabs li:nth-child(odd) {
+  border-right: 1px solid #bebebe;
+}
+ul.quicktabs-tabs li.mobileOpen {
+  display: block;
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs li.mobileOpen {
+    display: table-cell;
+  }
+}
+@media (min-width: 44em) {
+  ul.quicktabs-tabs li {
+    height: 28px;
+    line-height: 24px;
+    display: block;
+    float: none;
+    border-bottom: none;
+    width: 10%;
+    display: table-cell;
+    position: relative;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-right: 1px solid #bebebe;
+  }
+}
+ul.quicktabs-tabs li.active {
+  background: #ccc;
+}
+ul.quicktabs-tabs li a {
+  display: block;
+  text-decoration: none;
+}
+ul.quicktabs-tabs li:last-of-type {
+  border-right: none;
+}
+
+.events {
+  margin-top: 20px;
+}
+.events .noresults {
+  text-align: center;
+  font-weight: bold;
+  margin: 40px 0;
+}
+
+.event-group-title,
+.event-group > h3 {
+  border-top: #fedcc3;
+  height: 26px;
+  line-height: 28px;
+  background: #ff6600;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  padding: 0 10px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.event-group > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.event-group > ul li {
+  list-style: none;
+}
+.event-group .event-item {
+  overflow: hidden;
+  border-bottom: 1px solid #f5a776;
+  font-size: 14px;
+}
+.event-group .event-item:nth-child(even) {
+  background: #dadace;
+}
+.event-group .event-item a {
+  color: black;
+  text-decoration: none;
+}
+.event-group .event-item .time, .event-group .event-item .name, .event-group .event-item .category {
+  font-size: 14px;
+  padding: 4px 3px;
+}
+
+.pager__item {
+  padding: 0;
+  margin: 5px 0;
+  display: inline-block;
+}
+.pager__item a {
+  color: white;
+  text-decoration: none;
+  line-height: 30px;
+  padding: 8px 9px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  background: #ff6600;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
+}
+.pager__item a:hover {
+  opacity: 0.6;
+}
+.pager__item.pager__item--first, .pager__item.pager__item--last {
+  display: none;
+}
+.pager__item.pager__item--previous a, .pager__item.pager__item--previous a:hover {
+  text-indent: 6px;
+  background: url("../images/prev-btn.png") no-repeat 0 4px;
+  box-shadow: none;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  height: 45px;
+  width: 90px;
+  display: block;
+}
+.pager__item.pager__item--next a, .pager__item.pager__item--next a:hover {
+  background: url("../images/next-btn.png") no-repeat 0 4px;
+  box-shadow: none;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+  height: 45px;
+  display: block;
+  width: auto;
+}
+.pager__item:hover a {
+  text-decoration: underline;
+}
+.pager__item.pager__item--current a {
+  text-decoration: underline;
+  background: #b34800;
+}
+.pager__item.pager__item--current {
+  line-height: 30px;
+  padding: 0px 9px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  background: #cd6502;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
+  background: #b34800;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ajax-progress.ajax-progress-throbber {
+  position: absolute;
+}
+
+.event-group {
+  margin-top: 5px;
+}
+.event-group .event-item {
+  overflow: hidden;
+  border-bottom: 1px solid #f5a776;
+  font-size: 14px;
+}
+.event-group .event-item:nth-child(even) {
+  background: #dadace;
+}
+.event-group .event-item:hover {
+  background: #fff;
+}
+.event-group .event-item a {
+  color: black;
+  text-decoration: none;
+}
+.event-group .event-item a:hover {
+  color: #ff6600;
+}
+.event-group .event-item .category, .event-group .event-item .place {
+  display: none;
+}
+.event-group .event-item .time {
+  width: 25%;
+}
+.event-group .event-item .name {
+  width: 75%;
+}
+.event-group .event-item .time, .event-group .event-item .name, .event-group .event-item .category {
+  font-size: 14px;
+  padding: 4px 3px;
+}
+.event-group .event-item .time {
+  width: 85px;
+}
+@media (min-width: 70em) {
+  .event-group .event-item .time, .event-group .event-item .name, .event-group .event-item .category, .event-group .event-item .place {
+    display: block;
+    font-size: 14px;
+    padding: 4px 3px;
+    text-indent: 5px;
+  }
+  .event-group .event-item .name {
+    width: 300px;
+  }
+  .event-group .event-item .category {
+    width: 150px;
+  }
+  .event-group .event-item .time {
+    width: 150px;
+  }
+}
+
+#block-quicktabs-aeg-huvitegevus #quicktabs-aeg_huvitegevus {
+  padding-top: 35px;
+}
+@media (min-width: 44em) {
+  #block-quicktabs-aeg-huvitegevus #quicktabs-aeg_huvitegevus {
+    padding: 0;
+  }
+}
+
+.blue-scheme #block-quicktabs-aeg-huvitegevus ul.quicktabs-tabs::before,
+.blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-categories-activity-value-i18n-wrapper > label,
+.blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label,
+.blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
+  background-color: #0099cc;
+}
+.blue-scheme #block-quicktabs-aeg-huvitegevus .views-widget-filter-combine > label {
+  color: #0099cc;
+}
+.blue-scheme .event-group .event-item {
+  border-bottom: 1px solid #0099cc;
+}
+.blue-scheme .event-group .event-item a:hover {
+  color: #0099cc;
+}
+.blue-scheme .event-group-title,
+.blue-scheme .event-group > h3 {
+  background: #0099cc;
+}
+.blue-scheme #edit-full-text #edit-submit {
+  background-color: #0099cc;
+}
+.blue-scheme #edit-full-text label {
+  color: #0099cc;
+}
+.blue-scheme #events_search_form .form-type-radios.form-item-time label:first-child, .blue-scheme #events_search_form .form-item-category label:first-child, .blue-scheme #events_search_form .form-item-region label:first-child {
+  background: #0099cc;
+}
+.blue-scheme #events_search_form .form-type-radios.form-item-time.open label:first-child, .blue-scheme #events_search_form .form-item-category.open label:first-child, .blue-scheme #events_search_form .form-item-region.open label:first-child {
+  background: #0b76a4;
+}
+@media (min-width: 44em) {
+  .blue-scheme #events_search_form .form-type-radios.form-item-time.open label:first-child, .blue-scheme #events_search_form .form-item-category.open label:first-child, .blue-scheme #events_search_form .form-item-region.open label:first-child {
+    background: #0099cc;
+  }
+}
+.blue-scheme #events_search_form input[type="submit"] {
+  background: #0099cc;
+}
+.blue-scheme .pager__item a {
+  background: #0099cc;
+}
+.blue-scheme .pager__item.pager__item--next a, .blue-scheme .pager__item.pager__item--next a:hover {
+  background: url("../images/next-btn-blue.png") no-repeat 0 4px;
+}
+.blue-scheme .pager__item.pager__item--previous a, .blue-scheme .pager__item.pager__item--previous a:hover {
+  background: url("../images/prev-btn-blue.png") no-repeat 0 4px;
+}
+.blue-scheme .pager__item.pager__item--current {
+  background: #015a77;
+}
+
+#events_search_form .form-type-radios.form-item-time label:first-child {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+body.blue-scheme header.l-header .section-illustration.event-section-illustration {
+  background: url(../images/huvitegevused-mobile-logo.png) no-repeat center bottom;
+}
+@media (min-width: 44em) {
+  body.blue-scheme header.l-header .section-illustration.event-section-illustration {
+    background: url(../images/huvitegevused-logo.png) no-repeat center bottom;
+  }
+}
+
+body.html.blue-scheme {
+  background: linear-gradient(to bottom, #ffffff 0%, #0099cc 60%, #0099cc 60%, #0099cc 100%);
+  background: -webkit-linear-gradient(to bottom, #ffffff 0%, #0099cc 60%, #0099cc 60%, #0099cc 100%);
+  background: -moz-linear-gradient(to bottom, #ffffff 0%, #0099cc 60%, #0099cc 60%, #0099cc 100%);
+  background-color: #0099cc;
+  background-repeat: no-repeat;
+}
+
+p, h1, a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  line-height: 1.2em;
+}
+
+body.logged-in .toolbar-menu {
+  display: none;
+}
+body.logged-in.page-admin .l-main, body.logged-in.node-type-landing-page .l-main, body.logged-in.page-link-click-count-stats .l-main {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+}
+body.logged-in.page-user-edit footer .footer-fb-logo, body.logged-in.page-loodud footer .footer-fb-logo, body.logged-in.page-kasutajad footer .footer-fb-logo, body.logged-in.page-otsing footer .footer-fb-logo, body.logged-in.page-banner-listing footer .footer-fb-logo {
+  margin-right: 10px;
+}
+body.logged-in.page-user-edit footer .l-region--footer-bottom p, body.logged-in.page-loodud footer .l-region--footer-bottom p, body.logged-in.page-kasutajad footer .l-region--footer-bottom p, body.logged-in.page-otsing footer .l-region--footer-bottom p, body.logged-in.page-banner-listing footer .l-region--footer-bottom p {
+  margin-left: 10px;
+}
+
+.node--webform.node-unpublished {
+  background-color: white;
+  padding: 20px;
+}
+
+body.logged-in.page-node-add-event, body.logged-in.page-node-edit.node-type-event, body.logged-in.page-loodud, body.logged-in.page-user, body.logged-in.page-user-edit, body.logged-in.page-otsing, body.logged-in.page-kasutajad, body.logged-in.page-node-760, body.logged-in.page-node-764, body.logged-in.page-banner-listing, body.logged-in.node-type-advertisement, body.logged-in.page-node-add-advertisement, body.logged-in.page-node-edit, body.logged-in.page-admin, body.logged-in.node-type-landing-page, body.logged-in.page-link-click-count-stats, body.logged-in.node-type-webform, body.logged-in.page-403, body.logged-in.page-otsing-kasutaja-uritused {
+  background: #E5F3FC;
+  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+body.logged-in.page-node-add-event h1, body.logged-in.page-node-edit.node-type-event h1, body.logged-in.page-loodud h1, body.logged-in.page-user h1, body.logged-in.page-user-edit h1, body.logged-in.page-otsing h1, body.logged-in.page-kasutajad h1, body.logged-in.page-node-760 h1, body.logged-in.page-node-764 h1, body.logged-in.page-banner-listing h1, body.logged-in.node-type-advertisement h1, body.logged-in.page-node-add-advertisement h1, body.logged-in.page-node-edit h1, body.logged-in.page-admin h1, body.logged-in.node-type-landing-page h1, body.logged-in.page-link-click-count-stats h1, body.logged-in.node-type-webform h1, body.logged-in.page-403 h1, body.logged-in.page-otsing-kasutaja-uritused h1 {
+  line-height: inherit;
+}
+body.logged-in.page-node-add-event header.l-header, body.logged-in.page-node-edit.node-type-event header.l-header, body.logged-in.page-loodud header.l-header, body.logged-in.page-user header.l-header, body.logged-in.page-user-edit header.l-header, body.logged-in.page-otsing header.l-header, body.logged-in.page-kasutajad header.l-header, body.logged-in.page-node-760 header.l-header, body.logged-in.page-node-764 header.l-header, body.logged-in.page-banner-listing header.l-header, body.logged-in.node-type-advertisement header.l-header, body.logged-in.page-node-add-advertisement header.l-header, body.logged-in.page-node-edit header.l-header, body.logged-in.page-admin header.l-header, body.logged-in.node-type-landing-page header.l-header, body.logged-in.page-link-click-count-stats header.l-header, body.logged-in.node-type-webform header.l-header, body.logged-in.page-403 header.l-header, body.logged-in.page-otsing-kasutaja-uritused header.l-header {
+  height: auto;
+  background: none;
+}
+body.logged-in.page-node-add-event header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit.node-type-event header.l-header .l-branding a.site-logo, body.logged-in.page-loodud header.l-header .l-branding a.site-logo, body.logged-in.page-user header.l-header .l-branding a.site-logo, body.logged-in.page-user-edit header.l-header .l-branding a.site-logo, body.logged-in.page-otsing header.l-header .l-branding a.site-logo, body.logged-in.page-kasutajad header.l-header .l-branding a.site-logo, body.logged-in.page-node-760 header.l-header .l-branding a.site-logo, body.logged-in.page-node-764 header.l-header .l-branding a.site-logo, body.logged-in.page-banner-listing header.l-header .l-branding a.site-logo, body.logged-in.node-type-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-add-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit header.l-header .l-branding a.site-logo, body.logged-in.page-admin header.l-header .l-branding a.site-logo, body.logged-in.node-type-landing-page header.l-header .l-branding a.site-logo, body.logged-in.page-link-click-count-stats header.l-header .l-branding a.site-logo, body.logged-in.node-type-webform header.l-header .l-branding a.site-logo, body.logged-in.page-403 header.l-header .l-branding a.site-logo, body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-branding a.site-logo {
+  background: url("../images/logo-blue.png") center center no-repeat;
+}
+body.logged-in.page-node-add-event header.l-header .l-navigation,
+body.logged-in.page-node-add-event header.l-header .l-section-illustration, body.logged-in.page-node-edit.node-type-event header.l-header .l-navigation,
+body.logged-in.page-node-edit.node-type-event header.l-header .l-section-illustration, body.logged-in.page-loodud header.l-header .l-navigation,
+body.logged-in.page-loodud header.l-header .l-section-illustration, body.logged-in.page-user header.l-header .l-navigation,
+body.logged-in.page-user header.l-header .l-section-illustration, body.logged-in.page-user-edit header.l-header .l-navigation,
+body.logged-in.page-user-edit header.l-header .l-section-illustration, body.logged-in.page-otsing header.l-header .l-navigation,
+body.logged-in.page-otsing header.l-header .l-section-illustration, body.logged-in.page-kasutajad header.l-header .l-navigation,
+body.logged-in.page-kasutajad header.l-header .l-section-illustration, body.logged-in.page-node-760 header.l-header .l-navigation,
+body.logged-in.page-node-760 header.l-header .l-section-illustration, body.logged-in.page-node-764 header.l-header .l-navigation,
+body.logged-in.page-node-764 header.l-header .l-section-illustration, body.logged-in.page-banner-listing header.l-header .l-navigation,
+body.logged-in.page-banner-listing header.l-header .l-section-illustration, body.logged-in.node-type-advertisement header.l-header .l-navigation,
+body.logged-in.node-type-advertisement header.l-header .l-section-illustration, body.logged-in.page-node-add-advertisement header.l-header .l-navigation,
+body.logged-in.page-node-add-advertisement header.l-header .l-section-illustration, body.logged-in.page-node-edit header.l-header .l-navigation,
+body.logged-in.page-node-edit header.l-header .l-section-illustration, body.logged-in.page-admin header.l-header .l-navigation,
+body.logged-in.page-admin header.l-header .l-section-illustration, body.logged-in.node-type-landing-page header.l-header .l-navigation,
+body.logged-in.node-type-landing-page header.l-header .l-section-illustration, body.logged-in.page-link-click-count-stats header.l-header .l-navigation,
+body.logged-in.page-link-click-count-stats header.l-header .l-section-illustration, body.logged-in.node-type-webform header.l-header .l-navigation,
+body.logged-in.node-type-webform header.l-header .l-section-illustration, body.logged-in.page-403 header.l-header .l-navigation,
+body.logged-in.page-403 header.l-header .l-section-illustration, body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-navigation,
+body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-section-illustration {
+  display: none;
+}
+body.logged-in.page-node-add-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-add-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-node-edit.node-type-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-edit.node-type-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-user header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-user header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-user-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-user-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-otsing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-otsing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-kasutajad header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-kasutajad header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-node-760 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-760 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-node-764 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-764 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-banner-listing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-banner-listing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.node-type-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.node-type-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-node-add-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-add-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-node-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-node-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-admin header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-admin header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.node-type-landing-page header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.node-type-landing-page header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-link-click-count-stats header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-link-click-count-stats header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.node-type-webform header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.node-type-webform header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-403 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-403 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-otsing-kasutaja-uritused header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date,
+body.logged-in.page-otsing-kasutaja-uritused header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
+  display: none;
+}
+body.logged-in.page-node-add-event .l-content, body.logged-in.page-node-edit.node-type-event .l-content, body.logged-in.page-loodud .l-content, body.logged-in.page-user .l-content, body.logged-in.page-user-edit .l-content, body.logged-in.page-otsing .l-content, body.logged-in.page-kasutajad .l-content, body.logged-in.page-node-760 .l-content, body.logged-in.page-node-764 .l-content, body.logged-in.page-banner-listing .l-content, body.logged-in.node-type-advertisement .l-content, body.logged-in.page-node-add-advertisement .l-content, body.logged-in.page-node-edit .l-content, body.logged-in.page-admin .l-content, body.logged-in.node-type-landing-page .l-content, body.logged-in.page-link-click-count-stats .l-content, body.logged-in.node-type-webform .l-content, body.logged-in.page-403 .l-content, body.logged-in.page-otsing-kasutaja-uritused .l-content {
+  background: none;
+}
+body.logged-in.page-node-add-event .l-content .l-region--highlighted, body.logged-in.page-node-edit.node-type-event .l-content .l-region--highlighted, body.logged-in.page-loodud .l-content .l-region--highlighted, body.logged-in.page-user .l-content .l-region--highlighted, body.logged-in.page-user-edit .l-content .l-region--highlighted, body.logged-in.page-otsing .l-content .l-region--highlighted, body.logged-in.page-kasutajad .l-content .l-region--highlighted, body.logged-in.page-node-760 .l-content .l-region--highlighted, body.logged-in.page-node-764 .l-content .l-region--highlighted, body.logged-in.page-banner-listing .l-content .l-region--highlighted, body.logged-in.node-type-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-add-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-edit .l-content .l-region--highlighted, body.logged-in.page-admin .l-content .l-region--highlighted, body.logged-in.node-type-landing-page .l-content .l-region--highlighted, body.logged-in.page-link-click-count-stats .l-content .l-region--highlighted, body.logged-in.node-type-webform .l-content .l-region--highlighted, body.logged-in.page-403 .l-content .l-region--highlighted, body.logged-in.page-otsing-kasutaja-uritused .l-content .l-region--highlighted {
+  display: block;
+}
+body.logged-in.page-node-add-event .footer-logo, body.logged-in.page-node-edit.node-type-event .footer-logo, body.logged-in.page-loodud .footer-logo, body.logged-in.page-user .footer-logo, body.logged-in.page-user-edit .footer-logo, body.logged-in.page-otsing .footer-logo, body.logged-in.page-kasutajad .footer-logo, body.logged-in.page-node-760 .footer-logo, body.logged-in.page-node-764 .footer-logo, body.logged-in.page-banner-listing .footer-logo, body.logged-in.node-type-advertisement .footer-logo, body.logged-in.page-node-add-advertisement .footer-logo, body.logged-in.page-node-edit .footer-logo, body.logged-in.page-admin .footer-logo, body.logged-in.node-type-landing-page .footer-logo, body.logged-in.page-link-click-count-stats .footer-logo, body.logged-in.node-type-webform .footer-logo, body.logged-in.page-403 .footer-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-logo {
+  background: url("../images/logo_tallinn_blue.png") center center no-repeat;
+}
+body.logged-in.page-node-add-event .copyright p, body.logged-in.page-node-edit.node-type-event .copyright p, body.logged-in.page-loodud .copyright p, body.logged-in.page-user .copyright p, body.logged-in.page-user-edit .copyright p, body.logged-in.page-otsing .copyright p, body.logged-in.page-kasutajad .copyright p, body.logged-in.page-node-760 .copyright p, body.logged-in.page-node-764 .copyright p, body.logged-in.page-banner-listing .copyright p, body.logged-in.node-type-advertisement .copyright p, body.logged-in.page-node-add-advertisement .copyright p, body.logged-in.page-node-edit .copyright p, body.logged-in.page-admin .copyright p, body.logged-in.node-type-landing-page .copyright p, body.logged-in.page-link-click-count-stats .copyright p, body.logged-in.node-type-webform .copyright p, body.logged-in.page-403 .copyright p, body.logged-in.page-otsing-kasutaja-uritused .copyright p {
+  color: #3c7cbf;
+}
+body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-node-edit.node-type-event .l-footer--main-wrapper, body.logged-in.page-loodud .l-footer--main-wrapper, body.logged-in.page-user .l-footer--main-wrapper, body.logged-in.page-user-edit .l-footer--main-wrapper, body.logged-in.page-otsing .l-footer--main-wrapper, body.logged-in.page-kasutajad .l-footer--main-wrapper, body.logged-in.page-node-760 .l-footer--main-wrapper, body.logged-in.page-node-764 .l-footer--main-wrapper, body.logged-in.page-banner-listing .l-footer--main-wrapper, body.logged-in.node-type-advertisement .l-footer--main-wrapper, body.logged-in.page-node-add-advertisement .l-footer--main-wrapper, body.logged-in.page-node-edit .l-footer--main-wrapper, body.logged-in.page-admin .l-footer--main-wrapper, body.logged-in.node-type-landing-page .l-footer--main-wrapper, body.logged-in.page-link-click-count-stats .l-footer--main-wrapper, body.logged-in.node-type-webform .l-footer--main-wrapper, body.logged-in.page-403 .l-footer--main-wrapper, body.logged-in.page-otsing-kasutaja-uritused .l-footer--main-wrapper {
+  display: none;
+}
+body.logged-in.page-node-add-event .form-item, body.logged-in.page-node-edit.node-type-event .form-item, body.logged-in.page-loodud .form-item, body.logged-in.page-user .form-item, body.logged-in.page-user-edit .form-item, body.logged-in.page-otsing .form-item, body.logged-in.page-kasutajad .form-item, body.logged-in.page-node-760 .form-item, body.logged-in.page-node-764 .form-item, body.logged-in.page-banner-listing .form-item, body.logged-in.node-type-advertisement .form-item, body.logged-in.page-node-add-advertisement .form-item, body.logged-in.page-node-edit .form-item, body.logged-in.page-admin .form-item, body.logged-in.node-type-landing-page .form-item, body.logged-in.page-link-click-count-stats .form-item, body.logged-in.node-type-webform .form-item, body.logged-in.page-403 .form-item, body.logged-in.page-otsing-kasutaja-uritused .form-item {
+  text-align: left;
+}
+body.logged-in.page-user .user-profile-form, body.logged-in.page-user-edit .user-profile-form {
+  background: white;
+  padding: 15px 40px;
+  box-shadow: 0 0 5px #A8A8A8;
+}
+body.logged-in.page-user .user-profile-form .form-item, body.logged-in.page-user-edit .user-profile-form .form-item {
+  text-align: left;
+}
+body.logged-in.page-user .user-profile-form #edit-locale, body.logged-in.page-user-edit .user-profile-form #edit-locale {
+  display: none;
+}
+
+body.logged-in.page-403 h1 {
+  background: none;
+  box-shadow: none;
+  color: #007FA9;
+  margin-left: -12px;
+}
+
+body.html {
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #bd5501;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFBD5501');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjZTQ2MDAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYmQ1NTAxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(60%, #e46000), color-stop(100%, #bd5501));
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #e46000 60%, #bd5501 100%);
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e46000 60%, #bd5501 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e46000 60%, #bd5501 100%);
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+#edit-keyword {
+  border: 1px solid #a2a2a2;
+  border-radius: 10px;
+}
+
+.l-content {
+  background: #eaeaea;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 10px;
+}
+@media (min-width: 44em) {
+  .l-content {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 44em) {
+  .sidebar-second-wrapper .background-pattern {
+    background: url("../images/huvi-landing-bg.png") no-repeat top left;
+    width: 222px;
+    height: 483px;
+    position: absolute;
+    top: 25%;
+    right: 0;
+  }
+
+  .sidebar-first-wrapper .background-pattern {
+    background: url("../images/uritused-landing-bg.png") no-repeat top left;
+    width: 222px;
+    height: 505px;
+    position: absolute;
+    top: 25%;
+  }
+
+  .choose {
+    background: url("../images/vali.png") no-repeat center top;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 625px;
+  }
+}
+.page-landing header.l-header .l-branding a.site-logo {
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  background: url("../images/landing-mobile-logo.png") no-repeat top left;
+  width: 140px;
+  height: 61px;
+}
+@media (min-width: 44em) {
+  .page-landing header.l-header .l-branding a.site-logo {
+    width: 187px;
+    height: 80px;
+    background: url("../images/uritused-huvi-logo.png") no-repeat top left;
+  }
+}
+.page-landing .l-branding {
+  padding: 2px;
+}
+.page-landing .landing-user-login {
+  display: none;
+}
+@media (min-width: 44em) {
+  .page-landing .landing-user-login {
+    /*
+    position: absolute;
+    display: block;
+    bottom: 19px;
+    right: 160px;
+    color: white;
+    text-decoration: none;
+    */
+    width: 260px;
+    height: 60px;
+    background: url("../images/ribbon-orange-btn-landing.png") no-repeat top right;
+    position: absolute;
+    display: block;
+    color: white;
+    text-decoration: none;
+    top: 40px;
+    z-index: 1;
+    right: 0px;
+    font-weight: bold;
+    line-height: 55px;
+    padding-left: 95px;
+  }
+  .page-landing .landing-user-login:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 44em) {
+  .l-header .logo-branding {
+    background: url("../images/landing-branding.png") no-repeat top left;
+    width: 259px;
+    height: 123px;
+    position: absolute;
+    top: 60px;
+    left: 240px;
+  }
+  .l-header .intro-logo {
+    background: url("../images/landing-arrow.png") no-repeat top left;
+    width: 50px;
+    height: 50px;
+    top: -28px;
+    position: absolute;
+  }
+}
+
+.l-content {
+  background-color: #eaeaea;
+}
+
+.button-top {
+  background: linear-gradient(to bottom, #edeeef 0%, #e9eaeb 100%);
+  background: #edeeef \9;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0 8px;
+  height: 21px;
+  line-height: 24px;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: top;
+  color: #202020;
+  font-size: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  float: left;
+}
+
+.open-accessibility {
+  margin-right: 20px;
+}
+
+.textsize {
+  text-transform: uppercase;
+  padding: 0;
+  line-height: auto;
+}
+.textsize .small {
+  font-size: 11px;
+  padding: 9px 4px 0 0;
+}
+.textsize .normal {
+  font-size: 13px;
+  padding: 8px 4px 0 0;
+}
+.textsize .large {
+  font-size: 18px;
+  padding: 7px 4px 0 0;
+}
+.textsize a {
+  color: black;
+  text-decoration: none;
+  border-right: 5px;
+}
+.textsize .active {
+  text-decoration: underline;
+  background: #e5e5e5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.top {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.top {
+  overflow: hidden;
+}
+.top .top-right {
+  width: 49.15254%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0;
+  clear: none;
+  text-align: left;
+}
+.top .top-left {
+  width: 49.15254%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  text-align: right;
+}
+
+#map_wrapper img {
+  max-width: none;
+}
+
+@media (min-width: 44em) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .l-page {
+    min-height: 100%;
+    position: relative;
+  }
+
+  .l-main {
+    padding: 0;
+  }
+
+  .front .l-main {
+    padding: 0 !important;
+  }
+
+  /*  .l-footer{
+      width:100%;
+      height: 303px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }*/
+}
+.messages.error.messages-inline {
+  border: 1px solid #B70000;
+  color: #B70000;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+body.page-node-2212 {
+  background: #E5F3FC;
+  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+body.page-node-2212 header.l-header {
+  height: auto;
+  background: none;
+}
+body.page-node-2212 header.l-header .l-branding a.site-logo {
+  background: url("../images/logo-blue.png") center center no-repeat;
+}
+body.page-node-2212 header.l-header .top-bar-right,
+body.page-node-2212 header.l-header .l-navigation,
+body.page-node-2212 header.l-header .l-section-illustration {
+  display: none;
+}
+body.page-node-2212 .l-content {
+  background: none;
+}
+body.page-node-2212 .l-content .l-region--highlighted {
+  display: block;
+}
+body.page-node-2212 article {
+  background: white;
+  box-shadow: 0 0 5px #A8A8A8;
+  position: relative;
+  padding: 40px;
+}
+body.page-node-2212 .footer-logo {
+  background: url("../images/logo_tallinn_blue.png") center center no-repeat;
+}
+body.page-node-2212 .copyright p {
+  color: #3c7cbf;
+}
+
+body.page-node-add-event .l-content,
+body.page-node-edit.node-type-event .l-content {
+  padding: 0;
+  background: none;
+}
+body.page-node-add-event form.node-event-form,
+body.page-node-edit.node-type-event form.node-event-form {
+  background: white;
+  box-shadow: 0 0 5px #A8A8A8;
+  position: relative;
+}
+body.page-node-add-event form.node-event-form .form-type-textfield input,
+body.page-node-edit.node-type-event form.node-event-form .form-type-textfield input {
+  max-width: 325px;
+  height: 22px;
+}
+body.page-node-add-event form.node-event-form .form-item,
+body.page-node-edit.node-type-event form.node-event-form .form-item {
+  text-align: left;
+  padding: 3px 0;
+  margin: 0;
+}
+body.page-node-add-event form.node-event-form .form-item input:checked + label,
+body.page-node-edit.node-type-event form.node-event-form .form-item input:checked + label {
+  background: none;
+}
+body.page-node-add-event form.node-event-form .fieldset-wrapper,
+body.page-node-edit.node-type-event form.node-event-form .fieldset-wrapper {
+  padding: 0;
+}
+body.page-node-add-event form.node-event-form fieldset .fieldset-legend,
+body.page-node-edit.node-type-event form.node-event-form fieldset .fieldset-legend {
+  position: relative;
+}
+body.page-node-add-event form.node-event-form .form-item-title,
+body.page-node-edit.node-type-event form.node-event-form .form-item-title {
+  padding: 15px 30px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-description .filter-wrapper.form-wrapper,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .filter-wrapper.form-wrapper {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-description .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .infobubble {
+  margin-top: -52px;
+  display: none !important;
+}
+body.page-node-add-event form.node-event-form .field-name-field-description .description,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .description {
+  margin-top: -54px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-gallery .messages.messages--status,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-gallery .messages.messages--status {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .form-item > .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .form-item > .infobubble {
+  position: absolute;
+  margin-top: 19px;
+  margin-left: 105px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .infobubble {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float {
+  float: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date {
+  clear: none;
+  float: left;
+  width: 48%;
+  max-width: 330px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding {
+  padding: 5px 0;
+}
+@media screen and (max-width: 850px) {
+  body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper,
+  body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper {
+    margin-top: -20px;
+  }
+  body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label,
+  body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
+    margin-left: 0px;
+  }
+}
+@media screen and (min-width: 851px) {
+  body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item,
+  body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item {
+    clear: none;
+    margin-right: 5px;
+  }
+  body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label,
+  body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
+    float: left;
+    margin-top: 29px;
+    margin-right: 20px;
+  }
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div {
+  position: absolute;
+  left: -10000px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address {
+  position: relative;
+  left: 0;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address .form-type-textfield,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address .form-type-textfield {
+  margin-top: -3px;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lat-item,
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lng-item,
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-remove,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lat-item,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lng-item,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-remove {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .map-location-not-found,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .map-location-not-found {
+  clear: both;
+  color: #D20000;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule input.form-submit,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule input.form-submit {
+  margin-top: 15px;
+}
+body.page-node-add-event form.node-event-form > div > div,
+body.page-node-edit.node-type-event form.node-event-form > div > div {
+  padding: 15px 30px;
+}
+body.page-node-add-event form.node-event-form > div > div.vertical-tabs-panes,
+body.page-node-edit.node-type-event form.node-event-form > div > div.vertical-tabs-panes {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .tabledrag-handle .handle,
+body.page-node-edit.node-type-event form.node-event-form .tabledrag-handle .handle {
+  height: 26px;
+  width: 26px;
+}
+body.page-node-add-event form.node-event-form tr.draggable > td,
+body.page-node-edit.node-type-event form.node-event-form tr.draggable > td {
+  padding-right: 23px;
+}
+body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag,
+body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag {
+  padding: 5px;
+}
+body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag a,
+body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag .tabledrag-changed,
+body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag a,
+body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag .tabledrag-changed {
+  display: none;
+}
+body.page-node-add-event form.node-event-form .field-name-field-videos .infobubble,
+body.page-node-add-event form.node-event-form .field-name-field-users-ref .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-videos .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-users-ref .infobubble {
+  position: absolute;
+  margin-top: -43px;
+  margin-left: 375px;
+}
+body.page-node-add-event form.node-event-form .field-type-image .image-widget,
+body.page-node-edit.node-type-event form.node-event-form .field-type-image .image-widget {
+  float: left;
+}
+body.page-node-add-event form.node-event-form .field-type-image .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .field-type-image .infobubble {
+  margin-bottom: -8px;
+}
+body.page-node-add-event form.node-event-form .infobubble,
+body.page-node-edit.node-type-event form.node-event-form .infobubble {
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/Infobubble.png");
+  z-index: 1;
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+  margin-bottom: -5px;
+  margin-left: 10px;
+}
+body.page-node-add-event form.node-event-form .description,
+body.page-node-edit.node-type-event form.node-event-form .description {
+  display: none;
+  z-index: 0;
+  background: #E5F3FC;
+  border: 1px solid #A9CEE6;
+  color: #333;
+  position: absolute;
+  line-height: 1.5;
+  width: 350px;
+  padding: 6px 12px;
+  margin-left: 25px;
+  margin-top: -4px;
+}
+body.page-node-add-event table th,
+body.page-node-edit.node-type-event table th {
+  background: #EFEFEF;
+}
+body.page-node-add-event table.sticky-header,
+body.page-node-edit.node-type-event table.sticky-header {
+  z-index: 1;
+}
+body.page-node-add-event .tabledrag-toggle-weight-wrapper,
+body.page-node-edit.node-type-event .tabledrag-toggle-weight-wrapper {
+  display: none;
+}
+body.page-node-add-event .vertical-tabs,
+body.page-node-edit.node-type-event .vertical-tabs {
+  display: none;
+}
+
+.l-region--highlighted {
+  position: relative;
+}
+
+fieldset .fieldset-legend {
+  position: relative;
+}
+
+.logged-in.page-node-add-advertisement .node-advertisement-form, .page-node-edit.node-type-advertisement .node-advertisement-form {
+  background: white;
+  padding: 15px 40px;
+  box-shadow: 0 0 5px #A8A8A8;
+}
+.logged-in.page-node-add-advertisement .form-item, .page-node-edit.node-type-advertisement .form-item {
+  text-align: left;
+  margin: 20px 0;
+}
+.logged-in.page-node-add-advertisement .form-item .image-widget, .page-node-edit.node-type-advertisement .form-item .image-widget {
+  margin: 10px 0;
+}
+.logged-in.page-node-add-advertisement .form-item .image-widget input, .page-node-edit.node-type-advertisement .form-item .image-widget input {
+  margin: 5px 0;
+}
+.logged-in.page-node-add-advertisement .form-item label, .page-node-edit.node-type-advertisement .form-item label {
+  margin-bottom: 10px;
+}
+
+.view-empty {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+body.logged-in.page-node-add-event #block-system-user-menu {
+  margin-top: 5px;
+}
+
+body.logged-in.page-user-edit #block-system-user-menu {
+  margin-top: 23px;
+}
+
+body.page-node-add-advertisement #block-system-user-menu {
+  margin-top: 13px;
+}
+
+body.logged-in.page-node-edit #block-system-user-menu {
+  margin-top: -42px;
+}
+
+body.logged-in.page-loodud #block-system-user-menu {
+  margin-top: 13px;
+}
+
+#block-system-user-menu {
+  position: relative;
+  margin-top: 0px;
+}
+@media (min-width: 44em) {
+  #block-system-user-menu {
+    position: absolute;
+    right: 0;
+    margin-top: -34px;
+  }
+}
+#block-system-user-menu > ul > li {
+  padding: 3px 7px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  margin: 3px;
+  max-width: 250px;
+  text-align: center;
+}
+@media (min-width: 44em) {
+  #block-system-user-menu > ul > li {
+    max-width: auto;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+    border-radius: 10px 10px 0 0;
+  }
+}
+#block-system-user-menu > ul > li a {
+  text-decoration: none;
+  color: #333;
+  font: normal 12px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+.views-form-users-listing-page .form-item {
+  text-align: left;
+}
+.views-form-users-listing-page #edit-submit {
+  margin-right: 20px;
+}
+
+.view-own-event-listing #edit-uid-wrapper .description,
+.view-otsing #edit-uid-wrapper .description,
+.view-users-listing #edit-uid-wrapper .description,
+.view-banner-listing #edit-uid-wrapper .description,
+.view-link-click-count-stats #edit-uid-wrapper .description {
+  display: none;
+}
+.view-own-event-listing .view-filters,
+.view-otsing .view-filters,
+.view-users-listing .view-filters,
+.view-banner-listing .view-filters,
+.view-link-click-count-stats .view-filters {
+  float: left;
+  margin-top: -7px;
+  margin-bottom: 20px;
+}
+.view-own-event-listing table,
+.view-otsing table,
+.view-users-listing table,
+.view-banner-listing table,
+.view-link-click-count-stats table {
+  width: 100%;
+  box-shadow: 0 0 5px #A8A8A8;
+}
+.view-own-event-listing table thead th,
+.view-otsing table thead th,
+.view-users-listing table thead th,
+.view-banner-listing table thead th,
+.view-link-click-count-stats table thead th {
+  background-color: #F3F3F3;
+  box-shadow: 0 0 5px #A8A8A8;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.view-own-event-listing table tr.status-Jah,
+.view-otsing table tr.status-Jah,
+.view-users-listing table tr.status-Jah,
+.view-banner-listing table tr.status-Jah,
+.view-link-click-count-stats table tr.status-Jah {
+  background: rgba(213, 247, 211, 0.8);
+}
+.view-own-event-listing table tr.status-Jah .active,
+.view-otsing table tr.status-Jah .active,
+.view-users-listing table tr.status-Jah .active,
+.view-banner-listing table tr.status-Jah .active,
+.view-link-click-count-stats table tr.status-Jah .active {
+  background: #d5f7d3;
+}
+.view-own-event-listing table tr.status-Jah.odd,
+.view-otsing table tr.status-Jah.odd,
+.view-users-listing table tr.status-Jah.odd,
+.view-banner-listing table tr.status-Jah.odd,
+.view-link-click-count-stats table tr.status-Jah.odd {
+  background: rgba(195, 230, 191, 0.8);
+}
+.view-own-event-listing table tr.status-Jah.odd .active,
+.view-otsing table tr.status-Jah.odd .active,
+.view-users-listing table tr.status-Jah.odd .active,
+.view-banner-listing table tr.status-Jah.odd .active,
+.view-link-click-count-stats table tr.status-Jah.odd .active {
+  background: #c3e6bf;
+}
+.view-own-event-listing table tr.status-Ei,
+.view-otsing table tr.status-Ei,
+.view-users-listing table tr.status-Ei,
+.view-banner-listing table tr.status-Ei,
+.view-link-click-count-stats table tr.status-Ei {
+  background: rgba(255, 192, 192, 0.8);
+}
+.view-own-event-listing table tr.status-Ei .active,
+.view-otsing table tr.status-Ei .active,
+.view-users-listing table tr.status-Ei .active,
+.view-banner-listing table tr.status-Ei .active,
+.view-link-click-count-stats table tr.status-Ei .active {
+  background: #ffc0c0;
+}
+.view-own-event-listing table tr.status-Ei.odd,
+.view-otsing table tr.status-Ei.odd,
+.view-users-listing table tr.status-Ei.odd,
+.view-banner-listing table tr.status-Ei.odd,
+.view-link-click-count-stats table tr.status-Ei.odd {
+  background: rgba(241, 166, 166, 0.8);
+}
+.view-own-event-listing table tr.status-Ei.odd .active,
+.view-otsing table tr.status-Ei.odd .active,
+.view-users-listing table tr.status-Ei.odd .active,
+.view-banner-listing table tr.status-Ei.odd .active,
+.view-link-click-count-stats table tr.status-Ei.odd .active {
+  background: #f1a6a6;
+}
+.view-own-event-listing table tr td,
+.view-otsing table tr td,
+.view-users-listing table tr td,
+.view-banner-listing table tr td,
+.view-link-click-count-stats table tr td {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.view-own-event-listing table tr td a,
+.view-otsing table tr td a,
+.view-users-listing table tr td a,
+.view-banner-listing table tr td a,
+.view-link-click-count-stats table tr td a {
+  text-decoration: none;
+  color: #0074BD;
+}
+.view-own-event-listing .views-exposed-widgets .form-item-title input.form-text,
+.view-otsing .views-exposed-widgets .form-item-title input.form-text,
+.view-users-listing .views-exposed-widgets .form-item-title input.form-text,
+.view-banner-listing .views-exposed-widgets .form-item-title input.form-text,
+.view-link-click-count-stats .views-exposed-widgets .form-item-title input.form-text {
+  width: 185px;
+}
+.view-own-event-listing .views-exposed-widgets .form-item-uid input.form-text,
+.view-otsing .views-exposed-widgets .form-item-uid input.form-text,
+.view-users-listing .views-exposed-widgets .form-item-uid input.form-text,
+.view-banner-listing .views-exposed-widgets .form-item-uid input.form-text,
+.view-link-click-count-stats .views-exposed-widgets .form-item-uid input.form-text {
+  width: 160px;
+}
+
+.view-banner-listing .view-header a {
+  text-decoration: none;
+  color: #0074BD;
+}
+.view-banner-listing .view-filters {
+  margin-bottom: 0px;
+}
+.view-banner-listing table tr td {
+  padding: 2px;
+}
+.view-banner-listing table tr td.views-field-views-bulk-operations, .view-banner-listing table tr td.views-field-status, .view-banner-listing table tr td.views-field-field-adv-size {
+  padding: 2px 10px;
+}
+.view-banner-listing .views-field-field-adv-image-1 {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.view-otsing .views-exposed-form .views-exposed-widget {
+  padding: .5em .5em 0 0;
+}
+.view-otsing .views-exposed-form .views-exposed-widget #edit-field-users-ref-uid {
+  max-width: 115px;
+}
+.view-otsing table tr td {
+  font-size: 12px;
+}
+.view-otsing table tr td.views-field-changed {
+  width: 145px;
+}
+
+.image-widget-data input.form-submit {
+  display: none;
+}
+
+.field-name-field-adv-image input.form-submit,
+.field-name-field-frontpage-image input.form-submit {
+  display: block;
+}
+
+#modal-content {
+  width: 100% !important;
+  text-align: center;
+  padding: 25px;
+}
+#modal-content .messages.messages--error a {
+  display: none;
+}
+#modal-content .form-item-openid-identifier {
+  display: none;
+}
+
+form.user-login {
+  text-align: center;
+}
+form.user-login ul.openid-links {
+  display: none;
+}
+
+div.modal-forms-modal-content .form-item label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+div.ctools-modal-content .form-item .description {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+div.modal-forms-modal-content .popups-container {
+  background: #f9f9f9;
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -webkit-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -o-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: -ms-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
+  background: linear-gradient(to bottom, #f8f8f8 0%, #f9f9f9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow: 0 1px 0 #fff inset;
+  -ms-box-shadow: 0 1px 0 #fff inset;
+  -o-box-shadow: 0 1px 0 #fff inset;
+  box-shadow: 0 1px 0 #fff inset;
+  border: 1px solid #c4c6ca;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  width: 400px;
+}
+
+#modal-title {
+  color: #7E7E7E;
+  font: bold 25px Helvetica, Arial, sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 20px;
+  margin: 10px 0 30px;
+  margin-bottom: 40px;
+}
+#modal-title:before {
+  background: #7e7e7e;
+  background: -moz-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -webkit-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -o-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: -ms-linear-gradient(right, #7e7e7e 0%, white 100%);
+  background: linear-gradient(to left, #7e7e7e 0%, #ffffff 100%);
+  left: 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 40px;
+  width: 27%;
+}
+#modal-title:after {
+  background: #7e7e7e;
+  background: -moz-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -webkit-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -o-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: -ms-linear-gradient(left, #7e7e7e 0%, white 100%);
+  background: linear-gradient(to right, #7e7e7e 0%, #ffffff 100%);
+  right: 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 40px;
+  width: 27%;
+}
+
+div.modal-forms-modal-content .popups-close {
+  margin-top: -28px;
+}
+
+#modal-content .messages--error {
+  margin-bottom: 20px;
+}
+#modal-content .ctools-use-modal-processed .form-item.form-type-textfield input, #modal-content .ctools-use-modal-processed .form-item.form-type-password input {
+  border: 1px solid #a2a2a2;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 11px 15px 9px;
+  box-shadow: inset 0 3px 7px 0 #cdcdcd;
+  margin: 0 0 10px;
+  padding: 15px 10px 15px 40px;
+  width: 80%;
+  background: url("../images/login-sprite.png") no-repeat top left;
+  background-position: 10px 12px !important;
+}
+#modal-content .ctools-use-modal-processed .form-item.form-type-textfield .description, #modal-content .ctools-use-modal-processed .form-item.form-type-textfield label, #modal-content .ctools-use-modal-processed .form-item.form-type-password .description, #modal-content .ctools-use-modal-processed .form-item.form-type-password label {
+  display: none;
+}
+#modal-content .ctools-use-modal-processed .form-item.form-type-password input {
+  background-position: 10px -50px !important;
+}
+#modal-content .ctools-use-modal-processed .form-submit {
+  width: 40%;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  background: #33cc33;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  height: 40px;
+  line-height: 37px;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 40px;
+}
+
+.field-name-field-schedule-date .sticky-header {
+  display: none !important;
+}
+.field-name-field-schedule-date .fieldset-legend {
+  display: none;
+}
+.field-name-field-schedule-date .fieldset-wrapper > .date-clear {
+  margin-top: 36px;
+}
+.field-name-field-schedule-date .fieldset-wrapper > .form-item.form-type-item {
+  display: none;
+}
+.field-name-field-schedule-date .date-clear {
+  clear: none;
+  float: left;
+  margin: 10px;
+}
+.field-name-field-schedule-date .date-clear.daily .container-inline.interval .date-clear {
+  float: none;
+}
+.field-name-field-schedule-date .weekly .form-type-checkboxes .form-type-checkbox {
+  float: left;
+  clear: none;
+  margin-right: 5px !important;
+}
+.field-name-field-schedule-date .clearfix > .field-add-more-submit.form-submit {
+  display: none;
+}
+
+.meta-right .node-edit-link {
+  float: right !important;
+  margin-top: 2px;
+  padding-right: 3px;
+}
+.meta-right .node-edit-link a {
+  width: auto;
+  padding: 0 30px;
+  height: 30px;
+  display: block;
+  line-height: 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  background: #ff6600 url("../images/edit-btn.png") no-repeat 15px 5px;
+  padding-left: 30px;
+  text-indent: 10px;
+  text-align: center;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
+}
+
+.blue-scheme .meta-right .node-edit-link a {
+  background: #0099cc url("../images/edit-btn.png") no-repeat 15px 5px;
+}
+
+#openid_ee_custom_login > div {
+  display: inline-block;
+}
+
+.id-button {
+  padding: 8px 8px 8px 38px;
+  font-size: 13px;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #027ac6;
+  background: #fff url("../../../modules/contrib/openid_ee/openid_ee.png") no-repeat 10px 50%;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 1px 1px 1px black;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+body.page-loodud .messages.messages--error {
+  display: none;
+}
+
+/*
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+*/
+#huvi-loader {
+  width: 31px;
+  height: 31px;
+  display: inline-block;
+  background: url("../images/huvi-loader.gif");
+  background-repeat: no-repeat;
+  float: right;
+  position: absolute;
+  margin-left: -90px;
+  margin-top: 25px;
+}
+@media (min-width: 44em) {
+  #huvi-loader {
+    margin-top: 8px;
+  }
+}
+
+body.blue-scheme #huvi-loader {
+  background: url("../images/huvi-loader-blue.gif");
+}
+
+@media (min-width: 70em) {
+  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
+    display: inline-block;
+    width: auto;
+    margin-left: 255px;
+  }
+  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget {
+    width: auto;
+  }
+  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
+    width: 390px;
+  }
+  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
+    display: none;
+  }
+  .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
+    display: inline-block;
+    width: auto;
+    margin-left: -520px;
+    margin-top: 12px;
+  }
+  .quicktabs-wrapper .views-exposed-form .views-reset-button {
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  .section-huvitegevused .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
+    margin-left: 275px;
+  }
+  .section-huvitegevused #events_search_form .views-submit-button, .section-huvitegevused .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
+    margin-left: 600px;
+  }
+  .section-huvitegevused .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
+    margin-left: -565px;
+  }
+}
+.event-schedule, .pre-description, .event-description {
+  word-break: normal !important;
+}
+
+.view-content {
+  clear: both;
+}
+
+.view-banner-listing .view-content,
+.view-users-listing .view-content {
+  clear: none;
+}
+.view-banner-listing .container-inline.form-wrapper,
+.view-users-listing .container-inline.form-wrapper {
+  padding-top: 6px;
+}
+.view-banner-listing .container-inline.form-wrapper legend,
+.view-users-listing .container-inline.form-wrapper legend {
+  float: left;
+  margin-right: 5px;
+}
+
+.view-users-listing .container-inline.form-wrapper {
+  padding-top: 20px;
+}
+
+ul.quicktabs-tabs {
+  margin-top: 20px;
+}
+
+body.logged-in.page-user-edit #edit-metatags {
+  display: none;
+}
+body.logged-in.page-user-edit .tabs.tabs--primary.links--inline {
+  display: none;
+}
+
+.user-custom-menu {
+  margin: 0 !important;
+  padding: 0;
+}
+.user-custom-menu li {
+  padding: 3px 10px;
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  text-decoration: none;
+  margin: 3px;
+  max-width: 250px;
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+.user-custom-menu li:first-of-type {
+  margin-left: 0px;
+}
+.user-custom-menu li.active-trail {
+  background: #333;
+}
+.user-custom-menu li.active-trail a {
+  color: white;
+}
+.user-custom-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+body.page-node-3059 .tabs.tabs--primary.links--inline {
+  display: none;
+}
+
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+  color: black;
+}

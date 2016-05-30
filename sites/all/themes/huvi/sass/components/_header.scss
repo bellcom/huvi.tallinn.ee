@@ -1,0 +1,206 @@
+@import "susyone";
+
+header.l-header{
+  height: 175px;
+  background: $uritusedBG;
+  @include at-breakpoint($tab){
+    background: transparent;
+    background: radial-gradient( 9em circle at bottom right, #c85501, transparent);
+    height: auto;
+  }
+  .l-branding {
+    margin-top: 20px;
+    @include at-breakpoint($tab){
+      margin-top: 0px;
+    }
+    // Logo
+    a.site-logo {
+      display: block;
+      background: url('../images/mobile-logo.png') top left no-repeat;
+      width: 187px;
+      height: 80px;
+      text-indent: -9999px;
+      @include at-breakpoint($tab){
+        background: url('../images/logo_orange.png') center center no-repeat;
+      }
+    }
+  }
+
+
+  .ribbon{
+    display: block;
+    padding: 14px 25px 17px 20px;
+    float: right;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 12px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
+    float: right;
+    margin-right:-10px;
+
+    @include at-breakpoint($tab) {
+      margin:0;
+      //margin-top: 55px;
+      margin-top: 5px;
+      text-indent: -9999px;
+      padding: 0;
+      text-indent: 55px;
+      line-height: 58px;
+      font-size: 16px;
+    }
+
+
+    &.events-link {
+      background: url('../images/ribbon-orange-mobile-btn.png') no-repeat 0 0;
+      width: 140px;
+      height: 50px;
+      line-height: 12px;
+
+      @include at-breakpoint($tab) {
+        background: url('../images/ribbon-orange-btn.png') no-repeat 0 0;
+        width: 275px;
+        height: 63px;
+        margin-right: -41px;
+        line-height: 55px;
+        &:hover {
+          text-indent: 53px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &.activities-link {
+      background: url('../images/ribbon-blue-mobile-btn.png') no-repeat 0 0;
+      width: 138px;
+      height: 49px;
+
+      @include at-breakpoint($tab) {
+        background: url('../images/ribbon-blue-btn.png') no-repeat 0 0;
+        width: 295px;
+        height: 63px;
+        margin-right: -34px;
+        &:hover {
+          text-indent: 53px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  // Section illustration
+  .section-illustration {
+    &.event-section-illustration {
+      background: url(../images/uritused-mobile-logo.png) no-repeat center bottom;
+      height: 100px;
+      width: 100%;
+      margin-top: -10px;
+      @include at-breakpoint($tab) {
+        height: 82px;
+        margin-top: 0px;
+        background: url(../images/uritused-logo.png) no-repeat center bottom;
+      }
+    }
+
+  }
+
+  // Top bar
+  .top-bar {
+
+    //margin-top: 5px;
+    margin-bottom: 15px;
+
+    .top-bar-right {
+
+      .l-region--top-bar-right {
+        margin-top: 5px;
+      }
+
+      .block {
+        float: right;
+        color: #666666;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      #block-kuhuminna-utils-kuhuminna-utils-date {
+        margin-right: 20px;
+        padding-top: 5px;
+      }
+
+      #block-kuhuminna-utils-kuhuminna-utils-weather {
+        font-weight: bold;
+        margin-top: 3px;
+        margin-right: 10px;
+
+        .weather {
+          overflow: hidden;
+          line-height: 20px;
+
+          .weather-icon {
+            display: block;
+            float: left;
+            margin-right: 3px;
+
+            img {
+              display: block;
+            }
+          }
+        }
+      }
+
+      #block-block-6 {
+        p {
+          padding-top: 5px;
+          margin: 0;
+          padding-right: 5px;
+        }
+        .username {
+          a {
+            color: #666666;
+            text-decoration: none;
+          }
+        }
+        .logout-link {
+          margin-left: 10px;
+          a {
+            color: #2C89AF;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.blue-scheme{
+  header.l-header{
+    background: $huvitegevusedBG;
+    @include at-breakpoint($tab){
+      background: transparent;
+      background: radial-gradient(9em circle at bottom right, $huvitegevusedBG, rgba(0, 0, 0, 0));
+    }
+    .ribbon.events-link{
+      background: url(../images/ribbon-orange-mobile-btn.png) top left no-repeat;
+      @include at-breakpoint($tab){
+        background: url(../images/ribbon-orange-btn.png) top left no-repeat;
+      }
+    }
+    .l-branding a.site-logo{
+      @include at-breakpoint($tab){
+        background: url('../images/logo-blue.png') center center no-repeat;
+      }
+    }
+    .section-illustration{
+      background: url('../images/huvitegevused-mobile-logo.png') bottom center no-repeat;
+      @include at-breakpoint($tab){
+        background: url('../images/huvitegevused-logo.png') bottom center no-repeat;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+From 2fca9adb47874455517d11b4d1a73222bc0ee409 Mon Sep 17 00:00:00 2001
+From: KaarelElissaar <kaarel@exove.com>
+Date: Mon, 29 Jun 2015 16:25:09 +0300
+Subject: [PATCH] openid.ee patch
+
+---
+ modules/openid/openid.module | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/modules/openid/openid.module b/modules/openid/openid.module
+index a28f452..8a60986 100644
+--- a/modules/openid/openid.module
++++ b/modules/openid/openid.module
+@@ -375,6 +375,8 @@ function openid_complete($response = array()) {
+                   }
+                 }
+               }
++              // Patch to make openid.ee responses work
++              $uris[] = 'https://openid.ee/server';
+               if (!in_array($service['uri'], $uris)) {
+                 return $response;
+               }
+--
+2.3.2 (Apple Git-55)

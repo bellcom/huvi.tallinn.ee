@@ -1,0 +1,412 @@
+/*******************************************************************************
+ * simple.layout.scss
+ *
+ * Styling of the "simple" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+/* No files to import found in variables/**\/* */
+body.wait {
+  cursor: wait !important;
+}
+body.wait * {
+  cursor: wait !important;
+  pointer-events: none !important;
+}
+
+.l-header,
+.l-main {
+  *zoom: 1;
+  max-width: 960px;
+  max-width: 60rem;
+  _width: 960px;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.l-header:after,
+.l-main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-region--highlighted {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 70em) {
+  .l-region--help,
+  .l-region--sidebar-first,
+  .l-region--sidebar-second {
+    margin-bottom: 20px;
+  }
+}
+
+.top-bar {
+  overflow: hidden;
+  display: none;
+}
+
+.l-branding {
+  width: 47.36842%;
+  float: left;
+  margin-right: 5.26316%;
+  display: inline;
+}
+
+.l-navigation {
+  width: 47.36842%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+
+.l-section-illustration {
+  width: 100%;
+  float: left;
+  margin-right: 5.26316%;
+  display: inline;
+}
+
+.l-region--highlighted {
+  display: none;
+}
+
+.l-main {
+  padding: 0;
+}
+
+@media (min-width: 40em) {
+  .l-header,
+  .l-main {
+    max-width: 960px;
+    max-width: 60rem;
+  }
+
+  .l-branding {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .top-bar {
+    display: block;
+  }
+
+  .top-bar-left {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .top-bar-right {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .l-section-illustration {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .l-navigation {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    float: right;
+  }
+
+  .l-region--highlighted {
+    display: block;
+  }
+}
+@media (min-width: 70em) {
+  .l-header,
+  .l-main {
+    max-width: 960px;
+    max-width: 60rem;
+  }
+
+  .l-branding {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .l-section-illustration {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+
+  .l-navigation {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    float: right;
+  }
+
+  .top-bar-left {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+
+  .top-bar-right {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+  }
+}
+.pager {
+  margin: 0;
+}
+
+.events {
+  padding-bottom: 60px;
+}
+
+.page-404 .l-content, .page-403 .l-content {
+  padding: 40px;
+  font-family: 'Roboto',sans-serif;
+}
+.page-404 .l-content h1, .page-403 .l-content h1 {
+  font-family: 'Roboto',sans-serif;
+  margin: 0;
+  margin-bottom: 20px;
+  background: #ff6600;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  padding: 0 10px;
+  color: white;
+  width: 400px;
+  line-height: 45px;
+}
+
+.page-node-edit .form-item {
+  text-align: left;
+}
+
+.view-banner-management .views-row {
+  position: relative;
+}
+.view-banner-management .views-field-status .field-content {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-indent: -9999px;
+  background-size: 100%;
+}
+.view-banner-management .status-Aktiivne .views-field-status .field-content {
+  background-image: url("../../../images/enabled.png");
+}
+.view-banner-management .status-Peidetud .views-field-status .field-content {
+  background-image: url("../../../images/disabled.png");
+}
+
+.page-otsing .pager {
+  margin-top: 20px;
+}
+.page-otsing .pager__item.pager__item--current {
+  background: #c3e6bf;
+}
+.page-otsing .pager__item a {
+  background: rgba(195, 230, 191, 0.8);
+}
+.page-otsing .pager__item.pager__item--next a, .page-otsing .pager__item.pager__item--next a:hover, .page-otsing .pager__item.pager__item--previous a, .page-otsing .pager__item.pager__item--previous a:hover {
+  color: white;
+  text-decoration: none;
+  display: inline;
+  line-height: 30px;
+  padding: 8px 9px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
+  background: rgba(195, 230, 191, 0.8);
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
+}
+
+#block-system-user-menu ul li.active-trail {
+  background: #333333;
+}
+#block-system-user-menu ul li.active-trail a {
+  color: white;
+}
+
+.page-banner-listing .views-widget-filter-combine input {
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  background: white;
+  width: 100%;
+}
+.page-banner-listing #edit-full-text .views-widget, .page-banner-listing .views-widget-filter-combine .views-widget {
+  width: 75%;
+}
+.page-banner-listing .views-widget-filter-combine label {
+  color: #333333;
+  text-transform: none;
+}
+.page-banner-listing .views-exposed-form .views-exposed-widget {
+  margin-top: 2px;
+}
+
+/*
+@include at-breakpoint($tab) {
+
+
+  .event-group{
+    .event-item{
+
+    }
+  }
+
+
+  #edit-full-text{
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 20px;
+    #edit-keyword{
+        width: auto;
+    }
+    label{
+      color: $textOrange;
+      margin-right: 20px;
+      display: inline-block;
+    }
+    .form-item-keyword{
+      width: auto;
+      text-align: center;
+    }
+    .form-item{
+        text-align: inline-block;
+    }
+    #edit-submit{
+      float: none;
+      background: $uritusedBG url('../../../images/searchIcon.png') no-repeat 13px;
+      padding: 11px 10px 11px 35px;
+      text-indent: 0;
+      margin-left: 20px;
+    }
+  }
+
+  #events_search_form{
+    .form-item-region, .form-item-category, .form-type-radios.form-item-time {
+      background: white;
+      height: 38px;
+      border-radius: 10px;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+      &.active{
+        background: #434343;
+        box-shadow: 0px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset, 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+        border-bottom: 1px solid white;
+      }
+      label:first-child{
+        width: 15%;
+        float: left;
+        background: $uritusedBG;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        color: white;
+        height: 38px;
+        &:after{
+          content: '';
+          display: block;
+          background: url('../../../images/down-arrow-png') no-repeat top left;
+          width: 42px;
+          height: 26px;
+        }
+      }
+      &.open{
+        #edit-time, #edit-category, #edit-region{
+            display: table;
+        }
+      }
+      label {
+        height: 37px;
+        line-height: 37px;
+        text-align: center;
+        border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        font-size: 15px;
+        font-weight: normal;
+        width: 100%;
+        display: block;
+      }
+      #edit-time, #edit-category, #edit-region{
+        width: 85%;
+        overflow: hidden;
+        display:table;
+        justify-content:space-between;
+      }
+      .form-radios, .form-checkboxes{
+        .form-item{
+          display: table-cell;
+          width: auto;
+          white-space:nowrap;
+          border: none;
+          border-right: 1px solid #bebebe;
+          background: white;
+          @include span-columns(6, 12);
+          &:last-of-type{
+            border: none;
+            //border-top-right-radius: 10px;
+            //border-bottom-right-radius: 10px;
+            //border-bottom-left-radius: 0;
+          }
+          &.active{
+            background: #434343;
+            box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
+            color: white;
+            border-bottom: 1px solid white;
+          }
+        }
+        input{
+          display: none;
+        }
+      }
+    }
+    input[type="submit"]{
+      background: $uritusedBG;
+      border: none;
+      text-align: center;
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      color: white;
+      height: 25px;
+      padding: 0 8px;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      font-size: 15px;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+    }
+  }
+
+  .event-group{
+    .event-item{
+
+    }
+  }
+
+}
+*/

@@ -1,0 +1,590 @@
+<?php
+
+/**
+ * @file
+ * Code for the Kuhuminna Utils module.
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function kuhuminna_utils_menu() {
+  $items = array();
+
+  $items["landing"] = array(
+    'page callback' => 'kuhuminna_utils_landing',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_block_info().
+ */
+function kuhuminna_utils_block_info() {
+  $blocks['kuhuminna_utils_switcher_bottom'] = array(
+    'info' => t('Section switcher bottom'),
+  );
+  $blocks['kuhuminna_utils_switcher_top'] = array(
+    'info' => t('Section switcher top'),
+  );
+
+  $blocks['kuhuminna_utils_weather'] = array(
+    'info' => t('Weather'),
+  );
+
+  $blocks['kuhuminna_utils_date'] = array(
+    'info' => t('Date'),
+  );
+
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function kuhuminna_utils_block_view($delta = '') {
+  $block = array();
+
+  // The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'kuhuminna_utils_switcher_bottom':
+      $block['subject'] = t('Section switcher bottom');
+      $block['content'] = kuhuminna_utils_switcher_bottom_content();
+      break;
+    case 'kuhuminna_utils_weather':
+      $block['subject'] = t('Weather');
+      $block['content'] = kuhuminna_utils_weather_content();
+      break;
+    case 'kuhuminna_utils_date':
+      $block['subject'] = t('Date');
+      $block['content'] = kuhuminna_utils_date_content();
+      break;
+  }
+  return $block;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function kuhuminna_utils_theme() {
+  return array(
+    'advertivement_large' => array(
+      'arguments' => array('node' => NULL),
+      'template' => 'templates/kultuurikava_event_detail',
+    ),
+  );
+}
+
+
+/**
+ * Landing page content.
+ */
+function kuhuminna_utils_landing() {
+  $output = 'Landing page';
+  return $output;
+}
+
+
+/**
+ * Implements hook_init().
+ */
+function kuhuminna_utils_init() {
+
+  /*
+  $js_settings = array(
+    'landing_redirect' => FALSE,
+  );
+
+  if (user_is_anonymous()) {
+    drupal_add_library('system', 'jquery.cookie');
+    if (drupal_is_front_page()) {
+      $js_settings['landing_redirect'] = TRUE;
+    }
+  }
+
+  drupal_add_js(array('kuhuminna_utils' => $js_settings), 'setting');
+  */
+}
+
+
+/**
+ * Disable manual user registering
+ * (only allow registering and logging with ID card via OpenID)
+ *
+ * Implements hook_form_alter().
+ */
+function kuhuminna_utils_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if(!in_array('administrator', $user->roles)
+    && !in_array('manager', $user->roles)) {
+    switch($form_id) {
+      //case 'user_login':
+      case 'user_register_form':
+      //case 'user_profile_form':
+      case 'openid_user_add';
+      //case 'openid_ee_login_form';
+        $form['#access'] = FALSE;
+      break;
+    }
+  }
+  if($form_id == 'views_exposed_form') {
+    if($_SERVER['REQUEST_URI'] == 'uritused') {
+      $form['#action'] = url('uritused');
+      $form['#action'] = '/uritused';
+      $form['action'] = '/uritused';
+    }
+    else if($_SERVER['REQUEST_URI'] == 'huvitegevused') {
+      $form['#action'] = url('huvitegevused');
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
+  //dpm($form);
+  //$form['openid_ee'] = drupal_get_form('openid_ee_login_form');
+  $form['openid_idcard'] = array(
+    '#type' => 'markup',
+    '#markup' => '<a id="id-card-button" class="id-button" href="/mobileid?action=eid-login">'
+        . t('ID-Card') .
+      '</a>',
+  );
+  if(module_exists('kuhuminna_mobile_id')) {
+    $form['openid_mobile'] = array(
+      '#type' => 'markup',
+      '#markup' => '<a id="mobile-id-button" class="id-button" href="/mobileid?action=mid-login">'
+          . t('MobileID') .
+        '</a>',
+    );
+  }
+
+}
+
+
+/**
+ * Detect current section. Event or activity.
+ *
+ * @return string
+ *   section name
+ */
+function kuhuminna_utils_get_section() {
+
+  //$arguments = arg();
+  // arg() replaced with request_uri to work with node url aliases
+  $arguments = explode('/', request_uri());
+  if (isset($arguments[1]) && $arguments[1] == 'huvitegevused') {
+    return 'activities';
+  }
+
+  if (isset($arguments[1]) && $arguments[1] == 'huvitegevus') {
+    return 'activities';
+  }
+
+  return 'events';
+}
+
+
+/**
+ * Section switcher bottom block content.
+ *
+ * @return string
+ *   html content
+ */
+function kuhuminna_utils_switcher_bottom_content() {
+
+  $classes = array();
+
+  // Get current section. Events or activities.
+  $current_section = kuhuminna_utils_get_section();
+
+  // Switch text depending on section.
+  if ($current_section == 'activities') {
+    $text = 'Vaata kindlasti ka üritusi!';
+    $url = 'uritused';
+    $class = 'goto-events';
+  }
+  else {
+    $text = 'Vaata kindlasti ka huvitegevusi!';
+    $url = 'huvitegevused';
+    $class = 'goto-activities';
+  }
+
+  $content = '<div class="section-switcher-bottom">';
+  $options = array(
+    'attributes' => array(
+      'class' => array($class),
+    ),
+    'html' => TRUE,
+  );
+  $link = l('<span>' . $text . '</span>', $url, $options);
+  $content .= $link;
+  $content .= '</div>';
+
+  return $content;
+}
+
+
+/**
+ * Alter metatags before being cached.
+ *
+ * This hook is invoked prior to the meta tags for a given page are cached.
+ *
+ * @param array $output
+ *   All of the meta tags to be output for this page in their raw format. This
+ *   is a heavily nested array.
+ * @param string $instance
+ *   An identifier for the current page's page type, typically a combination
+ *   of the entity name and bundle name, e.g. "node:story".
+ * @param array $options
+ *   All of the options used to generate the meta tags.
+ */
+function kuhuminna_utils_metatag_metatags_view_alter(&$output, $instance, $options) {
+
+  $path = current_path();
+  if(drupal_match_path($path, 'uritus/*') || drupal_match_path($path, 'huvitegevus/*')) {
+    if (isset($output['description']['#attached']['drupal_add_html_head'][0][0]['#value'])) {
+
+      $event_data = kultuurikava_get_event_data(arg(1));
+      if(isset($event_data) && !empty($event_data)) {
+
+        if(isset($event_data['excerpt']) && !empty($event_data['excerpt'])) {
+          $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'] = trim(preg_replace('/\s+/', ' ', $event_data['excerpt']));
+        }
+      }
+
+    }
+
+  }
+}
+
+function kuhuminna_utils_get_tallinn_weather() {
+
+	$url = 'http://ilm.ee/~data/tallinn_online_json.php3';
+	$results = drupal_http_request($url, array('method' => 'GET'));
+
+	if ($results->code == 200) {
+		$json_decode = drupal_json_decode($results->data);
+
+		if(isset($json_decode['tallinn']) && !empty($json_decode['tallinn'])) {
+			$tallinn_info = $json_decode['tallinn'];
+			return $tallinn_info;
+		}
+	}
+
+	return;
+}
+
+function kuhuminna_utils_date_content() {
+	$dayOfWeek = format_date(time(), 'custom', 'l');
+	$date = format_date(time(), 'custom', 'd.m.Y');
+	$content = '<strong>' . $dayOfWeek . ' </strong>' . $date;
+	return $content;
+}
+
+
+function kuhuminna_utils_weather_content() {
+
+	$content = '<div class="weather">';
+
+	$weather_info = kuhuminna_utils_get_tallinn_weather();
+
+	$temp = '';
+
+	if($weather_info) {
+
+		// Get weather icon
+		if(isset($weather_info['pilv']) && !empty($weather_info['pilv'])) {
+			$icon = kuhuminna_utils_weather_icon($weather_info['pilv']);
+			//$icon = kuhuminna_utils_weather_icon('4cloud_lighthail');
+
+
+			$icon_path = drupal_get_path('theme', 'huvi') . '/images/weather/' . $icon;
+			$icon_class = str_replace('.png', '', $icon);
+
+			//$content .= '<span class="weather-icon ' . $icon_class . '"></span>';
+			$content .= '<span class="weather-icon"><img src="/' . $icon_path . '" /></span>';
+		}
+
+
+		if($weather_info['temp'] > 0) {
+			$temp .= '+';
+		}
+		$temp .= $weather_info['temp'] . ' °C';
+		$content .= $temp;
+	}
+
+	$content .= '</div>';
+	return $content;
+}
+
+
+function kuhuminna_utils_weather_icon($status) {
+
+$icons = array(
+
+	'cloud.png' => array(
+	'4cloud_heavyfreeze','4cloud_lightfreeze','4cloud_modfreeze','4cloud_norain',),
+
+	'hail.png' => array(
+	'4cloud_lighthail','4cloud_lighthail_thunder','4cloud_modhail','4cloud_modhail_thunder',),
+
+	'hail2.png' => array(
+	'4cloud_heavyhail','4cloud_heavyhail_thunder',),
+
+	'lightning.png' => array(
+	'4cloud_heavyfreeze_thunder','4cloud_lightfreeze_thunder','4cloud_modfreeze_thunder','4cloud_norain_thunder',),
+
+	'rain.png' => array(
+	'4cloud_lightrain','4cloud_lightrain_thunder','4cloud_modrain','4cloud_modrain_thunder',),
+
+	'rain2.png' => array(
+	'4cloud_heavyrain','4cloud_heavyrain_thunder',),
+
+	'snow.png' => array(
+	'4cloud_lightsnow','4cloud_lightsnow_thunder','4cloud_modsnow','4cloud_modsnow_thunder',
+	'4cloud_lightrainsnow','4cloud_lightrainsnow_thunder','4cloud_modrainsnow','4cloud_modrainsnow_thunder',),
+
+	'snow2.png' => array(
+	'4cloud_heavyrainsnow','4cloud_heavyrainsnow_thunder','4cloud_heavysnow','4cloud_heavysnow_thunder',),
+
+
+	'sun.png' => array(
+	'0cloud'),
+
+	'cloud_sun.png' => array(
+	'1cloud_heavyfreeze','2cloud_heavyfreeze','3cloud_heavyfreeze',
+	'1cloud_lightfreeze','2cloud_lightfreeze','3cloud_lightfreeze',
+	'1cloud_modfreeze','2cloud_modfreeze','3cloud_modfreeze',
+	'1cloud_norain','2cloud_norain','3cloud_norain',),
+
+	'hail_sun.png' => array(
+	'1cloud_lighthail','2cloud_lighthail','3cloud_lighthail',
+	'1cloud_lighthail_thunder','2cloud_lighthail_thunder','3cloud_lighthail_thunder',
+	'1cloud_modhail','2cloud_modhail','3cloud_modhail',
+	'1cloud_modhail_thunder','2cloud_modhail_thunder','3cloud_modhail_thunder',),
+
+	'hail2_sun.png' => array(
+	'1cloud_heavyhail','2cloud_heavyhail','3cloud_heavyhail',
+	'1cloud_heavyhail_thunder','2cloud_heavyhail_thunder','3cloud_heavyhail_thunder',),
+
+	'lightning_sun.png' => array(
+	'1cloud_heavyfreeze_thunder','2cloud_heavyfreeze_thunder','3cloud_heavyfreeze_thunder',
+	'1cloud_lightfreeze_thunder','2cloud_lightfreeze_thunder','3cloud_lightfreeze_thunder',
+	'1cloud_modfreeze_thunder','2cloud_modfreeze_thunder','3cloud_modfreeze_thunder',
+	'1cloud_norain_thunder','2cloud_norain_thunder','3cloud_norain_thunder',),
+
+	'rain_sun.png' => array(
+	'1cloud_lightrain','2cloud_lightrain','3cloud_lightrain',
+	'1cloud_lightrain_thunder','2cloud_lightrain_thunder','3cloud_lightrain_thunder',
+	'1cloud_modrain','2cloud_modrain','3cloud_modrain',
+	'1cloud_modrain_thunder','2cloud_modrain_thunder','3cloud_modrain_thunder',),
+
+	'rain2_sun.png' => array(
+	'1cloud_heavyrain','2cloud_heavyrain','3cloud_heavyrain',
+	'1cloud_heavyrain_thunder','2cloud_heavyrain_thunder','3cloud_heavyrain_thunder',),
+
+	'snow_sun.png' => array(
+	'1cloud_lightsnow','2cloud_lightsnow','3cloud_lightsnow',
+	'1cloud_lightsnow_thunder','2cloud_lightsnow_thunder','3cloud_lightsnow_thunder',
+	'1cloud_modsnow','2cloud_modsnow','3cloud_modsnow',
+	'1cloud_modsnow_thunder','2cloud_modsnow_thunder','3cloud_modsnow_thunder',
+	'1cloud_lightrainsnow','2cloud_lightrainsnow','3cloud_lightrainsnow',
+	'1cloud_lightrainsnow_thunder','2cloud_lightrainsnow_thunder','3cloud_lightrainsnow_thunder',
+	'1cloud_modrainsnow','2cloud_modrainsnow','3cloud_modrainsnow',
+	'1cloud_modrainsnow_thunder','2cloud_modrainsnow_thunder','3cloud_modrainsnow_thunder',),
+
+	'snow2_sun.png' => array(
+	'1cloud_heavyrainsnow','2cloud_heavyrainsnow','3cloud_heavyrainsnow',
+	'1cloud_heavyrainsnow_thunder','2cloud_heavyrainsnow_thunder','3cloud_heavyrainsnow_thunder',
+	'1cloud_heavysnow','2cloud_heavysnow','3cloud_heavysnow',
+	'1cloud_heavysnow_thunder','2cloud_heavysnow_thunder','3cloud_heavysnow_thunder',),
+
+
+
+	'moon.png' => array(
+	'0cloud'),
+
+	'cloud_moon.png' => array(
+	'1cloud_heavyfreeze','2cloud_heavyfreeze','3cloud_heavyfreeze',
+	'1cloud_lightfreeze','2cloud_lightfreeze','3cloud_lightfreeze',
+	'1cloud_modfreeze','2cloud_modfreeze','3cloud_modfreeze',
+	'1cloud_norain','2cloud_norain','3cloud_norain',),
+
+	'hail_moon.png' => array(
+	'1cloud_lighthail','2cloud_lighthail','3cloud_lighthail',
+	'1cloud_lighthail_thunder','2cloud_lighthail_thunder','3cloud_lighthail_thunder',
+	'1cloud_modhail','2cloud_modhail','3cloud_modhail',
+	'1cloud_modhail_thunder','2cloud_modhail_thunder','3cloud_modhail_thunder',),
+
+	'hail2_moon.png' => array(
+	'1cloud_heavyhail','2cloud_heavyhail','3cloud_heavyhail',
+	'1cloud_heavyhail_thunder','2cloud_heavyhail_thunder','3cloud_heavyhail_thunder',),
+
+	'lightning_moon.png' => array(
+	'1cloud_heavyfreeze_thunder','2cloud_heavyfreeze_thunder','3cloud_heavyfreeze_thunder',
+	'1cloud_lightfreeze_thunder','2cloud_lightfreeze_thunder','3cloud_lightfreeze_thunder',
+	'1cloud_modfreeze_thunder','2cloud_modfreeze_thunder','3cloud_modfreeze_thunder',
+	'1cloud_norain_thunder','2cloud_norain_thunder','3cloud_norain_thunder',),
+
+	'rain_moon.png' => array(
+	'1cloud_lightrain','2cloud_lightrain','3cloud_lightrain',
+	'1cloud_lightrain_thunder','2cloud_lightrain_thunder','3cloud_lightrain_thunder',
+	'1cloud_modrain','2cloud_modrain','3cloud_modrain',
+	'1cloud_modrain_thunder','2cloud_modrain_thunder','3cloud_modrain_thunder',),
+
+	'rain2_moon.png' => array(
+	'1cloud_heavyrain','2cloud_heavyrain','3cloud_heavyrain',
+	'1cloud_heavyrain_thunder','2cloud_heavyrain_thunder','3cloud_heavyrain_thunder',),
+
+	'snow_moon.png' => array(
+	'1cloud_lightsnow','2cloud_lightsnow','3cloud_lightsnow',
+	'1cloud_lightsnow_thunder','2cloud_lightsnow_thunder','3cloud_lightsnow_thunder',
+	'1cloud_modsnow','2cloud_modsnow','3cloud_modsnow',
+	'1cloud_modsnow_thunder','2cloud_modsnow_thunder','3cloud_modsnow_thunder',
+	'1cloud_lightrainsnow','2cloud_lightrainsnow','3cloud_lightrainsnow',
+	'1cloud_lightrainsnow_thunder','2cloud_lightrainsnow_thunder','3cloud_lightrainsnow_thunder',
+	'1cloud_modrainsnow','2cloud_modrainsnow','3cloud_modrainsnow',
+	'1cloud_modrainsnow_thunder','2cloud_modrainsnow_thunder','3cloud_modrainsnow_thunder',),
+
+	'snow2_moon.png' => array(
+	'1cloud_heavyrainsnow','2cloud_heavyrainsnow','3cloud_heavyrainsnow',
+	'1cloud_heavyrainsnow_thunder','2cloud_heavyrainsnow_thunder','3cloud_heavyrainsnow_thunder',
+	'1cloud_heavysnow','2cloud_heavysnow','3cloud_heavysnow',
+	'1cloud_heavysnow_thunder','2cloud_heavysnow_thunder','3cloud_heavysnow_thunder',),
+);
+
+	foreach($icons as $key => $statuses) {
+
+		if(array_search($status, $statuses) === false){
+			continue;
+		}
+		else {
+			return $key;
+		}
+	}
+
+	return 'cloud_sun.png';
+}
+
+
+/**
+ * Implements hook_node_presave
+ * Since the Geolocation module doesn't save the textual address,
+ * we have to get it and save it as a separate field.
+ */
+function kuhuminna_utils_node_presave($node) {
+  if($node->type == 'event') {
+    if(isset($node->field_schedule)) {
+      foreach($node->field_schedule['und'] as $key => $value) {
+        if(isset($node->field_schedule['und'][$key]['field_schedule_location']['und'][0]['address']['field'])) {
+          $node->field_schedule['und'][$key]['field_schedule_place']['und'][0]['value'] = $node->field_schedule['und'][$key]['field_schedule_location']['und'][0]['address']['field'];
+          $node->field_schedule['und'][$key]['entity']->field_schedule_place['und'][0]['value'] = $node->field_schedule['und'][$key]['field_schedule_location']['und'][0]['address']['field'];
+        }
+      }
+    }
+    $node->status = '1';
+    if(isset($node->field_unpublish['und'][0]['value'])) {
+      if($node->field_unpublish['und'][0]['value'] == 1) {
+        $node->status = '0';
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_utils_preprocess_page
+ * Adds drupal admin theme style for event adding and editing page
+ */
+function kuhuminna_utils_preprocess_page(&$vars, $hook) {
+  if ((arg(0) == 'node')
+    && (arg(1) == 'add' && arg(2) == 'event')
+    || arg(2) == 'edit') {
+    drupal_add_css('themes/seven/style.css');
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_html
+ */
+function kuhuminna_utils_preprocess_html(&$variables) {
+  $headers = drupal_get_http_header();
+  if (isset($headers['status']) && $headers['status'] == '404 Not Found') {
+    $variables['classes_array'][] = 'page-404';
+  }
+  if (isset($headers['status']) && $headers['status'] == '403 Forbidden') {
+    $variables['classes_array'][] = 'page-403';
+  }
+}
+
+
+/**
+ * Makes URL in texsts active html links
+ */
+function kuhuminna_utils_linkify($value, $protocols = array('http', 'mail'), array $attributes = array()) {
+    // Link attributes
+    $attr = '';
+    foreach ($attributes as $key => $val) {
+        $attr = ' ' . $key . '="' . htmlentities($val) . '"';
+    }
+
+    $links = array();
+
+    // Extract existing links and tags
+    $value = preg_replace_callback('~(<a .*?>.*?</a>|<.*?>)~i', function ($match) use (&$links) { return '<' . array_push($links, $match[1]) . '>'; }, $value);
+
+    // Extract text links for each protocol
+    foreach ((array)$protocols as $protocol) {
+        switch ($protocol) {
+            case 'http':
+            case 'https':   $value = preg_replace_callback('~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i', function ($match) use ($protocol, &$links, $attr) { if ($match[1]) $protocol = $match[1]; $link = $match[2] ?: $match[3]; return '<' . array_push($links, "<a $attr href=\"$protocol://$link\">$link</a>") . '>'; }, $value); break;
+            case 'mail':    $value = preg_replace_callback('~([^\s<]+?@[^\s<]+?\.[^\s<]+)(?<![\.,:])~', function ($match) use (&$links, $attr) { return '<' . array_push($links, "<a $attr href=\"mailto:{$match[1]}\">{$match[1]}</a>") . '>'; }, $value); break;
+            case 'twitter': $value = preg_replace_callback('~(?<!\w)[@#](\w++)~', function ($match) use (&$links, $attr) { return '<' . array_push($links, "<a $attr href=\"https://twitter.com/" . ($match[0][0] == '@' ? '' : 'search/%23') . $match[1]  . "\">{$match[0]}</a>") . '>'; }, $value); break;
+            default:        $value = preg_replace_callback('~' . preg_quote($protocol, '~') . '://([^\s<]+?)(?<![\.,:])~i', function ($match) use ($protocol, &$links, $attr) { return '<' . array_push($links, "<a $attr href=\"$protocol://{$match[1]}\">{$match[1]}</a>") . '>'; }, $value); break;
+        }
+    }
+
+    // Insert all link
+    return preg_replace_callback('/<(\d+)>/', function ($match) use (&$links) { return $links[$match[1] - 1]; }, $value);
+}
+
+
+/*
+ * Implements hook user_logout
+ * Logs out of openid.ee page by sending a curl request
+ */
+function kuhuminna_utils_user_logout($account) {
+  /*
+  print('<div id="openid-logout-iframe" style="display:none;">
+      <iframe src="https://openid.ee/auth/logout"></iframe>
+    </div>
+  ');
+  */
+
+  $content = file_get_contents('https://openid.ee/auth/logout');
+  if( $content !== FALSE ) {
+    // add your JS into $content
+    echo('<div id="openid-logout-content" style="display:none;">' . $content . '</div>');
+  }
+
+  /*
+  // Use CORS or CURL?
+  header("Access-Control-Allow-Origin: *");
+  // https://openid.ee/auth/logout
+  $curl = curl_init('http://testcURL.com');
+  $result = curl_exec($curl);
+  watchdog('kuhuminna_logout', (string)$result, array(), WATCHDOG_INFO);
+  */
+}

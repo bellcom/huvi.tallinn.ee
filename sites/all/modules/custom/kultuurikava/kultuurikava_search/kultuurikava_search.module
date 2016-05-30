@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Code for the Kultuutikava search module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function kultuurikava_search_menu() {
+  $items = array();
+
+  /*
+  $items["uritused"] = array(
+    'page callback' => 'kultuurikava_search_events',
+    'file' => 'kultuurikava_search.pages.inc',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items["huvitegevused"] = array(
+    'page callback' => 'kultuurikava_search_activities',
+    'file' => 'kultuurikava_search.pages.inc',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  */
+
+  $items["uritused"] = array(
+    'page callback' => 'kultuurikava_empty_page',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items["huvitegevused"] = array(
+    'page callback' => 'kultuurikava_empty_page',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+
+}
+
+
+function kultuurikava_empty_page() {
+  return '';
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function kultuurikava_search_theme() {
+  return array(
+    'kultuurikava_search_events' => array(
+      'arguments' => array('data' => NULL),
+      'template' => 'templates/kultuurikava_search_events',
+    ),
+    'kultuurikava_search_activities' => array(
+      'arguments' => array('data' => NULL),
+      'template' => 'templates/kultuurikava_search_activities',
+    ),
+  );
+}

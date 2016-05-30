@@ -1,0 +1,4 @@
+name = Kuhuminna MobileID
+description = Kuhuminna custom MobileID script from an example php script
+package = Kuhuminna
+core = 7.x

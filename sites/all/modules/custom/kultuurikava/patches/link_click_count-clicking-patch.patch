@@ -1,0 +1,67 @@
+--- link_click_count.module	2014-10-14 13:22:43.000000000 +0300
++++ link_click_count.module	2015-08-27 18:07:23.000000000 +0300
+@@ -46,6 +46,7 @@
+   else {
+     $page_redirect = $_GET["url"];
+   }
++  $page_redirect = str_replace('http://http://', 'http://', $page_redirect);
+   drupal_goto($page_redirect);
+ }
+
+@@ -81,11 +82,13 @@
+   $field_exist = array_key_exists("field", $form_state);
+   if ($field_exist) {
+     foreach ($form_state["field"] as $key => $field) {
+-      $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
+-      if ($key_exist) {
+-        $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
+-        $class = "#edit-" . str_replace("_", "-", $parent_field) . " { display: none; }";
+-        drupal_add_css($class, 'inline');
++      if(isset($field["und"]["field"]["settings"])) {
++        $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
++        if ($key_exist) {
++          $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
++          $class = "#edit-" . str_replace("_", "-", $parent_field) . " { display: none; }";
++          drupal_add_css($class, 'inline');
++        }
+       }
+     }
+   }
+@@ -169,18 +172,20 @@
+  */
+ function link_click_count_form_node_form_alter_submit($form, $form_state) {
+   foreach ($form_state["field"] as $key => $field) {
+-    $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
+-    if ($key_exist) {
+-      $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
+-      $child_field = $key;
+-      $node = node_load($form_state["node"]->nid);
+-      $child_field_value = $form_state["node"]->$child_field;
+-      $url = $child_field_value["und"][0]["url"];
+-      $parent_field_value = $child_field_value;
+-      $parent_field_value["und"][0]["url"] = "link_click_count?url=" . urlencode($url) . "&nid=" . $node->nid;
+-      $node->$parent_field = $parent_field_value;
+-      $node->$child_field = $child_field_value;
+-      node_save($node);
++    if(isset($field["und"]["field"]["settings"])) {
++      $key_exist = array_key_exists("parent_link_field", $field["und"]["field"]["settings"]);
++      if ($key_exist) {
++        $parent_field = $field["und"]["field"]["settings"]["parent_link_field"];
++        $child_field = $key;
++        $node = node_load($form_state["node"]->nid);
++        $child_field_value = $form_state["node"]->$child_field;
++        $url = $child_field_value["und"][0]["url"];
++        $parent_field_value = $child_field_value;
++        $parent_field_value["und"][0]["url"] = "link_click_count?url=" . urlencode($url) . "&nid=" . $node->nid;
++        $node->$parent_field = $parent_field_value;
++        $node->$child_field = $child_field_value;
++        node_save($node);
++      }
+     }
+   }
+ }
+@@ -216,4 +221,3 @@
+     node_save($node);
+   }
+ }
+-

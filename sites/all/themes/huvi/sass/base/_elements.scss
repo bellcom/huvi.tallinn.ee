@@ -1,0 +1,57 @@
+.buymain {
+  
+  margin-bottom: 10px;
+  position: relative;
+  
+  .buy {
+    a.buy-link {
+      background: #56a900;
+      color: #fff;
+      padding: 5px 10px;
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  
+  .buymenu {
+    background-color: #fff;
+    border: 3px solid #56a900;
+    border-radius: 5px;
+    clear: left;
+    float: left;
+    position: absolute;
+    top: 35px;
+    z-index: 100;
+    display: none;
+    
+    ul {
+      list-style: none;
+      margin: 3px 3px 0 3px;
+      padding: 0;
+      
+      li {
+        a {
+          display: block;
+        }
+      }
+    }
+    
+  }
+
+}
+
+
+.share-buttons {
+  ul {
+    
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      display: inline;
+    }
+    
+  }
+}
