@@ -1,0 +1,26 @@
+diff --git a/git/drupal/modules/custom/kuhuminna_mobile_id/openid_php/openid.ee-authentication.php b/git/drupal/modules/custom/kuhuminna_mobile_id/openid_php/openid.ee-authentication.php
+index 36172d0..c88e7be 100644
+--- a/git/drupal/modules/custom/kuhuminna_mobile_id/openid_php/openid.ee-authentication.php
++++ b/git/drupal/modules/custom/kuhuminna_mobile_id/openid_php/openid.ee-authentication.php
+@@ -25,7 +25,7 @@ function escape($thing) { return htmlentities($thing); }
+ function getConsumer() { $store = getStore(); $consumer = new Auth_OpenID_Consumer($store); return $consumer; }
+ 
+ function &getStore() {
+-    $store_path = "/tmp/_php_consumer_test";
++    $store_path = "../tmp/_php_consumer_test";
+     if (!file_exists($store_path) && !mkdir($store_path)) {
+         print "Could not create the FileStore directory '$store_path'. Please check the effective permissions.";
+         exit(0);
+diff --git a/modules/openid/openid.module b/modules/openid/openid.module
+index 498e935..0adc54b 100644
+--- a/modules/openid/openid.module
++++ b/modules/openid/openid.module
+@@ -103,7 +103,7 @@ function openid_user_insert(&$edit, $account, $category) {
+ function openid_user_login(&$edit, $account) {
+   if (isset($_SESSION['openid'])) {
+     // The user has logged in via OpenID.
+-    if(is_array($_SESSION['openid']['user_login_values'])) {
++    if(isset($_SESSION['openid']['user_login_values']) && is_array($_SESSION['openid']['user_login_values'])) {
+       user_cookie_save(array_intersect_key($_SESSION['openid']['user_login_values'], array_flip(array('openid_identifier'))));
+     }
+     unset($_SESSION['openid']);
