@@ -14,8 +14,9 @@
  */
 function huvi_omega_layout_alter(&$layout) {
 
-  if ((arg(0) == 'uritus' || arg(0) == 'huvitegevus') && is_numeric(arg(1))) {
+  if ((arg(0) == 'uritused' || arg(0) == 'huvitegevused') && is_numeric(arg(1))) {
     $layout = 'single';
+	
   }
 
   if (arg(0) == 'node' && is_numeric(arg(1))) {
@@ -25,9 +26,9 @@ function huvi_omega_layout_alter(&$layout) {
       $layout = 'single';
     }
   }
-
   // Landing layout.
   if (arg(0) == 'landing') {
     $layout = 'landing';
   }
+
 }
