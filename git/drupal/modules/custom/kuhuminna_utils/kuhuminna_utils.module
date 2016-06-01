@@ -182,16 +182,21 @@ function kuhuminna_utils_get_section() {
 
   //$arguments = arg();
   // arg() replaced with request_uri to work with node url aliases
+  
   $arguments = explode('/', request_uri());
-  if (isset($arguments[1]) && $arguments[1] == 'huvitegevused') {
+  
+  $result = count($arguments)-1;
+  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevused') {
+	   
     return 'activities';
   }
 
-  if (isset($arguments[1]) && $arguments[1] == 'huvitegevus') {
+  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevus') {
     return 'activities';
   }
 
   return 'events';
+ 
 }
 
 
@@ -308,12 +313,12 @@ function kuhuminna_utils_weather_content() {
 			$icon = kuhuminna_utils_weather_icon($weather_info['pilv']);
 			//$icon = kuhuminna_utils_weather_icon('4cloud_lighthail');
 
-
-			$icon_path = drupal_get_path('theme', 'huvi') . '/images/weather/' . $icon;
+			$base_path=$GLOBALS['base_path'];
+			$icon_path = $base_path.drupal_get_path('theme', 'huvi') . '/images/weather/' . $icon;
 			$icon_class = str_replace('.png', '', $icon);
 
 			//$content .= '<span class="weather-icon ' . $icon_class . '"></span>';
-			$content .= '<span class="weather-icon"><img src="/' . $icon_path . '" /></span>';
+			$content .= '<span class="weather-icon"><img src="'. $icon_path . '" /></span>';
 		}
 
 
