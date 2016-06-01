@@ -1,7 +1,8 @@
 <?php
 $button_link = '/user/login';
 if(!in_array('anonymous user', $user->roles)) {
-  $button_link = '/lisa';
+	$base_path = $GLOBALS['base_path'];
+	$button_link = $base_path.'lisa';
 }
 ?>
 
