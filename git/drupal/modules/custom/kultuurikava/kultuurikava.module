@@ -498,7 +498,7 @@ function kultuurikava_ticket_link($ticket) {
 	$link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank')));
  
   if ($ticket['provider']['logo']) {
-    $logo_url = $base_path . drupal_get_path('theme', 'huvi') . '/images/ticketproviders/' . $ticket['provider']['logo'];
+    $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/' . $ticket['provider']['logo'];
 	
     if(file_exists($logo_url)) {
       $link_content = '<img src="/' . $base_path . $logo_url . '" />';
@@ -1053,7 +1053,7 @@ function kultuurikava_node_to_event($node) {
 			  $base_path = $GLOBALS['base_path'];
               $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/img/' . $logo_filename;
               if(file_exists($logo_url)) {
-                $link_content = '<img src="'. $base_path . $logo_url . '" alt="' . $url_host . '" />';
+                $link_content = '<img src="/' . $base_path . $logo_url . '" alt="' . $url_host . '" />';
               }
             }
             $t_link = l($link_content, $url['value'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
