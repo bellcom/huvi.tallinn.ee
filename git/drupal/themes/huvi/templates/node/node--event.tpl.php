@@ -11,6 +11,7 @@ if(isset($event) && !empty($event)):
 
   $path = isset($_GET['q']) ? $_GET['q'] : '<front>';
   $url = url($path, array('absolute' => TRUE));
+  $base_path = $GLOBALS['base_path'];
 
   $back_button_url = 'uritused';
   if ($event['type'] == 'huvitegevus') {
@@ -28,7 +29,7 @@ if(isset($event) && !empty($event)):
   }
   if(in_array($user->uid, $allowed_users)) {
     $show_node_edit_link = true;
-    $node_edit_link = '<a href="/node/' . $node->nid . '/edit">' . t('Edit event') . '</a>';
+    $node_edit_link =  '<a href="' . $base_path . 'node/' . $node->nid . '/edit">' . t('Edit event') . '</a>';
   }
 
   ?>
