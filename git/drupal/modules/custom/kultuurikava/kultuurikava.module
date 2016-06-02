@@ -501,7 +501,7 @@ function kultuurikava_ticket_link($ticket) {
     $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/' . $ticket['provider']['logo'];
 	
     if(file_exists($logo_url)) {
-      $link_content = '<img src="/' . $base_path . $logo_url . '" />';
+      $link_content = '<img src="' . $base_path . $logo_url . '" />';
       $link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
     }
   }
