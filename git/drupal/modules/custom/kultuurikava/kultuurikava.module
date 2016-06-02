@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Code for the Kultuutikava module.
@@ -492,14 +491,17 @@ function kultuurikava_get_kk_categories_by_slug($category_slug, $section) {
  *
  * @return string
  *   rendered link
- */
+ */ 
 function kultuurikava_ticket_link($ticket) {
-  $link_content = $ticket['provider']['name'];
-  $link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank')));
+	$base_path = $GLOBALS['base_path'];
+	$link_content = $ticket['provider']['name'];
+	$link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank')));
+ 
   if ($ticket['provider']['logo']) {
-    $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders' . $ticket['provider']['logo'];
+    $logo_url = $base_path . drupal_get_path('theme', 'huvi') . '/images/ticketproviders/' . $ticket['provider']['logo'];
+	
     if(file_exists($logo_url)) {
-      $link_content = '<img src="/' . $logo_url . '" />';
+      $link_content = '<img src="/' . $base_path . $logo_url . '" />';
       $link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
     }
   }
@@ -1037,6 +1039,7 @@ function kultuurikava_node_to_event($node) {
               $url_parse = explode('/', $url_parse['path']);
               $url_host = $url_parse[0];
               $url['value'] = 'http://' . $url['value'];
+			  
             }
             else {
               $url_host = $url_parse['host'];
@@ -1047,9 +1050,10 @@ function kultuurikava_node_to_event($node) {
             $link_content = $url_host;
             $logo_filename = kultuurikava_get_ticket_seller_image($url_host);
             if(!empty($logo_filename)) {
+			  $base_path = $GLOBALS['base_path'];
               $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/img/' . $logo_filename;
               if(file_exists($logo_url)) {
-                $link_content = '<img src="/' . $logo_url . '" alt="' . $url_host . '" />';
+                $link_content = '<img src="'. $base_path . $logo_url . '" alt="' . $url_host . '" />';
               }
             }
             $t_link = l($link_content, $url['value'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
