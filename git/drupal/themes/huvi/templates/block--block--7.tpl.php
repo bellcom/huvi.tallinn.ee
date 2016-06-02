@@ -1,4 +1,5 @@
 <?php
+$base_path = $GLOBALS['base_path'];
 $c_uid = $c_email = '';
 $c_page = explode('/', $_SERVER[REQUEST_URI])[1];
 $c_page = explode('?', $c_page)[0];
@@ -20,13 +21,13 @@ if($c_user) {
     <div class="block__content">
       <ul class="user-custom-menu">
         <li <?php if($c_page == 'user'){ print 'class="active-trail"'; } ?>>
-          <a href="/user/<?php print $c_user->uid; ?>/edit">Andmed</a>
+          <a href="<?php print $base_path . 'user/' . $c_user->uid; ?>/edit">Andmed</a>
         </li>
         <li <?php //if($c_page == 'otsing-kasutaja-uritused'){ print 'class="active-trail"'; } ?>>
-          <a href="/otsing-kasutaja-uritused?uid=<?php print $c_user->name; ?>">Loodud üritused</a>
+          <a href="<?php print $base_path . 'otsing-kasutaja-uritused?uid=' . $c_user->name; ?>">Loodud üritused</a>
         </li>
         <li <?php if($c_page == 'saada-e-mail'){ print 'class="active-trail"'; } ?>>
-          <a href="/saada-e-mail?email=<?php print $c_user->mail; ?>">Saada e-mail</a>
+          <a href="<?php print $base_path . 'saada-e-mail?email=' . $c_user->mail; ?>">Saada e-mail</a>
         </li>
       </ul>
   	</div>

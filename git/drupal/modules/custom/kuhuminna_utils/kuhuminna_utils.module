@@ -154,16 +154,17 @@ function kuhuminna_utils_form_alter(&$form, &$form_state, $form_id) {
 function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   //dpm($form);
   //$form['openid_ee'] = drupal_get_form('openid_ee_login_form');
+  $base_path = $GLOBALS['base_path'];
   $form['openid_idcard'] = array(
     '#type' => 'markup',
-    '#markup' => '<a id="id-card-button" class="id-button" href="/mobileid?action=eid-login">'
+    '#markup' => '<a id="id-card-button" class="id-button" href="' . $base_path . 'mobileid?action=eid-login">'
         . t('ID-Card') .
       '</a>',
   );
   if(module_exists('kuhuminna_mobile_id')) {
     $form['openid_mobile'] = array(
       '#type' => 'markup',
-      '#markup' => '<a id="mobile-id-button" class="id-button" href="/mobileid?action=mid-login">'
+      '#markup' => '<a id="mobile-id-button" class="id-button" href="' . $base_path . 'mobileid?action=mid-login">'
           . t('MobileID') .
         '</a>',
     );
@@ -183,15 +184,18 @@ function kuhuminna_utils_get_section() {
   //$arguments = arg();
   // arg() replaced with request_uri to work with node url aliases
   $arguments = explode('/', request_uri());
-  if (isset($arguments[1]) && $arguments[1] == 'huvitegevused') {
-    return 'activities';
+  
+  $result = count($arguments)-1;
+  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevused') {
+	 return 'activities';
   }
 
-  if (isset($arguments[1]) && $arguments[1] == 'huvitegevus') {
+  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevus') {
     return 'activities';
   }
 
   return 'events';
+ 
 }
 
 
@@ -300,20 +304,19 @@ function kuhuminna_utils_weather_content() {
 	$weather_info = kuhuminna_utils_get_tallinn_weather();
 
 	$temp = '';
-
+	
+	$base_path = $GLOBALS['base_path'];
+	
 	if($weather_info) {
 
 		// Get weather icon
 		if(isset($weather_info['pilv']) && !empty($weather_info['pilv'])) {
 			$icon = kuhuminna_utils_weather_icon($weather_info['pilv']);
 			//$icon = kuhuminna_utils_weather_icon('4cloud_lighthail');
-
-
-			$icon_path = drupal_get_path('theme', 'huvi') . '/images/weather/' . $icon;
+			$icon_path = $base_path . drupal_get_path('theme', 'huvi') . '/images/weather/' . $icon;
 			$icon_class = str_replace('.png', '', $icon);
-
 			//$content .= '<span class="weather-icon ' . $icon_class . '"></span>';
-			$content .= '<span class="weather-icon"><img src="/' . $icon_path . '" /></span>';
+			$content .= '<span class="weather-icon"><img src="' . $icon_path . '" /></span>';
 		}
 
 
