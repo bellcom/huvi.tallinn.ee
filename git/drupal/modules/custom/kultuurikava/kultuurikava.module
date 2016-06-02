@@ -1053,7 +1053,7 @@ function kultuurikava_node_to_event($node) {
 			  $base_path = $GLOBALS['base_path'];
               $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/img/' . $logo_filename;
               if(file_exists($logo_url)) {
-                $link_content = '<img src="/' . $base_path . $logo_url . '" alt="' . $url_host . '" />';
+                $link_content = '<img src="' . $base_path . $logo_url . '" alt="' . $url_host . '" />';
               }
             }
             $t_link = l($link_content, $url['value'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
