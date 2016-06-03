@@ -1,9 +1,11 @@
 name = Event listing view (showing multiple events fixed)
 core = 7.x
 package = HUVI
+version = 7.x-1.1
 dependencies[] = better_exposed_filters
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = event_listing_fixed
 features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/custom
