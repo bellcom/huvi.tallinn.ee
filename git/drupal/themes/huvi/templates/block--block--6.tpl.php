@@ -1,5 +1,6 @@
 <?php
 if($user->uid) {
+  $base_path = $GLOBALS['base_path'];
   ?>
 
   <div id="block-block-<?php print $block->delta; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
