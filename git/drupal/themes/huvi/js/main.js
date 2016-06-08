@@ -440,6 +440,7 @@
         });
 
         setTimeout(function(){
+        	$('.quicktabs-tabpage input#edit-combine').val($('.quicktabs-tabpage.last-active input#edit-combine').val());
           $('.quicktabs-tabpage input#edit-combine').attr('value', $('.quicktabs-tabpage.last-active input#edit-combine').val());
         }, 500);
 
@@ -450,7 +451,7 @@
 
     checkFilters();
 // Bugfix for QuickTabs and view filters to get along
-	$('.quicktabs-tabpage input#edit-combine').val($('.quicktabs-tabpage.last-active input#edit-combine').val());	
+		
     $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function() {
       //if($(this).closest('.block--views').hasClass('first-click-done')) {
         if($(this).prev().is(':checked')) {
