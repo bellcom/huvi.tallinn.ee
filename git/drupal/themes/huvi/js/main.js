@@ -1,9 +1,84 @@
 (function ($) {
+	
 
-
-
+	
+	
   $(document).ready(function() {
 
+	var last_tab = getCookie("last_tab");
+    if (last_tab != "" && ((document . title=='Üritused | Huvi Tallinn' )||(document . title=='Huvitegevused | Huvi Tallinn' ))  ){
+		$(last_tab) . click();
+	}
+
+//quictabs-remembered
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-0") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-0");
+	});
+	
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-1") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-1");
+	});
+	
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-2") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-2");
+	});
+		
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-3") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-3");
+	});
+	
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-4") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-4");
+	});
+	
+	$("#quicktabs-tab-event_quicktabs_for_date_range_s-5") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
+	});
+
+	$("#quicktabs-tab-aeg_huvitegevus-0") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-0");
+	});
+	
+	$("#quicktabs-tab-aeg_huvitegevus-1") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-1");
+	});
+	
+	$("#quicktabs-tab-aeg_huvitegevus-2") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-2");
+	});
+	
+	$("#quicktabs-tab-aeg_huvitegevus-3") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-3");
+	});
+	
+	$("#quicktabs-tab-aeg_huvitegevus-4") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-4");
+	});
+	
+	$("#quicktabs-tab-aeg_huvitegevus-5") . click(function(){
+		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-5");
+	});
+	
+	 function setCookie(cname, cvalue) {
+		document . cookie = cname + "=" + cvalue;
+	}
+	
+	function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie . split(';');
+    for(var i = 0; i <ca . length; i++) {
+        var c = ca[i];
+        while (c . charAt(0)==' ') {
+            c = c . substring(1);
+        }
+        if (c . indexOf(name) == 0) {
+            return c . substring(name . length, c . length);
+        }
+    }
+    return "";
+}
+
+	
     //datepicker
     /*
     $( "#edit-date-min" ).datepicker({
@@ -102,6 +177,8 @@
 
       event.preventDefault();
     });
+	
+	
 
     // Change free event checkbox text
     if($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
@@ -310,6 +387,7 @@
         el.parent().addClass('open');
       }
     }
+	
 
     $('ul.quicktabs-tabs').unbind('click').click(function() {
       mobileClick($(this).find('li'));
@@ -323,6 +401,8 @@
     $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function() {
       mobileClick($(this).find('.views-widget'));
     });
+	
+	
 
 
     // Change free event checkbox text
@@ -360,7 +440,6 @@
         });
 
         setTimeout(function(){
-          $('.quicktabs-tabpage input#edit-combine').val($('.quicktabs-tabpage.last-active input#edit-combine').val());
           $('.quicktabs-tabpage input#edit-combine').attr('value', $('.quicktabs-tabpage.last-active input#edit-combine').val());
         }, 500);
 
@@ -402,6 +481,8 @@
 
 
 })(jQuery);
+
+
 
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
@@ -511,5 +592,7 @@ function initialize() {
 
       google.maps.event.removeListener(boundsListener);
     });
+	
+	
 
 }
