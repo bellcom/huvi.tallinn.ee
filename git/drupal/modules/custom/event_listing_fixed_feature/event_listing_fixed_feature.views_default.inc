@@ -492,6 +492,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -499,7 +500,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -511,6 +511,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -529,6 +530,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -554,6 +556,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -629,6 +632,7 @@ return true;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -636,7 +640,6 @@ return true;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -648,6 +651,7 @@ return true;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -691,6 +695,7 @@ return true;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -849,6 +854,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -856,7 +862,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -868,6 +873,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -886,6 +892,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1099,6 +1106,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1106,7 +1114,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -1118,6 +1125,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1136,6 +1144,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1161,6 +1170,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1227,6 +1237,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1234,7 +1245,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -1264,6 +1274,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1289,6 +1300,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1471,6 +1483,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp?';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1478,7 +1491,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -1490,6 +1502,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1508,6 +1521,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1533,6 +1547,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1777,6 +1792,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1784,7 +1800,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -1796,6 +1811,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -1814,6 +1830,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -1839,6 +1856,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2092,6 +2110,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2099,7 +2118,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -2111,6 +2129,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2129,6 +2148,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -2154,6 +2174,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2398,6 +2419,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2405,7 +2427,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -2417,6 +2438,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2435,6 +2457,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -2460,6 +2483,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2734,6 +2758,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2741,7 +2766,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -2753,6 +2777,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -2771,6 +2796,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -2796,6 +2822,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3041,6 +3068,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3048,7 +3076,6 @@ echo $date;
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -3060,6 +3087,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3078,6 +3106,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -3103,6 +3132,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3366,6 +3396,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Huvitegevuse tüüp?';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3373,7 +3404,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     3 => 0,
     4 => 0,
   );
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -3385,6 +3415,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3403,6 +3434,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -3428,6 +3460,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
