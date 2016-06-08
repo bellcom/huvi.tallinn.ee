@@ -450,6 +450,7 @@
         });
 
         setTimeout(function(){
+        $('.quicktabs-tabpage input#edit-combine').val($('.quicktabs-tabpage.last-active input#edit-combine').val());	
           $('.quicktabs-tabpage input#edit-combine').attr('value', $('.quicktabs-tabpage.last-active input#edit-combine').val());
         }, 500);
 
