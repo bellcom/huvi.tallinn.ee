@@ -4,59 +4,68 @@
 	
 	
   $(document).ready(function() {
-
-	var last_tab = getCookie("last_tab");
-    if (last_tab != "" && ((document . title=='Üritused | Huvi Tallinn' )||(document . title=='Huvitegevused | Huvi Tallinn' ))  ){
-		$(last_tab) . click();
+  	
+	var last_tab_uri = getCookie("last_tab_uri");
+	var last_tab_huvi = getCookie("last_tab_huvi");
+	var path = location . href;
+	var title = path . substr(path . lastIndexOf("/")+1);//title
+	
+    if (last_tab_uri != "" && title == "uritused"  ){
+		
+		$(last_tab_uri) . click();
+	}
+	if (last_tab_huvi != "" && title == "huvitegevused"  ){
+		
+		$(last_tab_huvi) . click();
 	}
 
-//quictabs-remembered
+	//quictabs-remembered
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-0") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-0");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-0");
 	});
 	
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-1") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-1");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-1");
 	});
 	
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-2") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-2");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-2");
 	});
 		
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-3") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-3");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-3");
 	});
 	
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-4") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-4");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-4");
 	});
 	
 	$("#quicktabs-tab-event_quicktabs_for_date_range_s-5") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
 	});
 
 	$("#quicktabs-tab-aeg_huvitegevus-0") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-0");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-0");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-1") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-1");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-1");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-2") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-2");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-2");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-3") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-3");
+		setCookie("last_tab_hivi", "#quicktabs-tab-aeg_huvitegevus-3");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-4") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-4");
+		setCookie("last_tab_hivi", "#quicktabs-tab-aeg_huvitegevus-4");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-5") . click(function(){
-		setCookie("last_tab", "#quicktabs-tab-aeg_huvitegevus-5");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
 	});
 	
 	 function setCookie(cname, cvalue) {
