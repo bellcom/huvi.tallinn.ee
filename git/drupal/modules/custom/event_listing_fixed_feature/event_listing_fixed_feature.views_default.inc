@@ -157,7 +157,7 @@ function event_listing_fixed_feature_views_default_views() {
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -382,7 +382,7 @@ echo $date;
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -733,7 +733,7 @@ return true;
 $dateraw = strtotime( "tomorrow" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -1009,7 +1009,7 @@ echo $date;
 $dateraw = strtotime( "this friday" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -1395,7 +1395,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "first day of next month" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -1678,7 +1678,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -1996,7 +1996,7 @@ echo $date;
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2306,7 +2306,7 @@ echo $date;
 $dateraw = strtotime( "tomorrow" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2667,7 +2667,7 @@ echo $date;
 $dateraw = strtotime( "this friday" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -2957,7 +2957,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -3318,7 +3318,7 @@ echo $date;
 $dateraw = strtotime( "first day of next month" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
