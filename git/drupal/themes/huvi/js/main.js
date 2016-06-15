@@ -57,11 +57,11 @@
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-3") . click(function(){
-		setCookie("last_tab_hivi", "#quicktabs-tab-aeg_huvitegevus-3");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-3");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-4") . click(function(){
-		setCookie("last_tab_hivi", "#quicktabs-tab-aeg_huvitegevus-4");
+		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-4");
 	});
 	
 	$("#quicktabs-tab-aeg_huvitegevus-5") . click(function(){
