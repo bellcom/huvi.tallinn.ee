@@ -183,14 +183,12 @@ function kuhuminna_utils_get_section() {
 
   //$arguments = arg();
   // arg() replaced with request_uri to work with node url aliases
-  $arguments = explode('/', request_uri());
-  
-  $result = count($arguments)-1;
-  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevused') {
+  $arguments=explode('/',request_path());
+  if (isset($arguments[0]) && $arguments[0] == 'huvitegevused') {
 	 return 'activities';
   }
 
-  if (isset($arguments[$result]) && $arguments[$result] == 'huvitegevus') {
+  if (isset($arguments[0]) && $arguments[0] == 'huvitegevus') {
     return 'activities';
   }
 
