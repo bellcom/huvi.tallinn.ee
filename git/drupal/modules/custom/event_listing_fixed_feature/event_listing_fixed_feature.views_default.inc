@@ -382,7 +382,7 @@ echo $date;
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -398,7 +398,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -590,6 +590,99 @@ return true;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$dateraw = strtotime( "today" );
+
+$day = t(date(\'l\', $dateraw));
+$date = date(\'d.m.y | \', $dateraw) . $day;
+echo $date;
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date_1']['id'] = 'field_schedule_date_1';
+  $handler->display->display_options['fields']['field_schedule_date_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
+  $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
+  $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
+    'format_type' => 'only_date_with_year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date_1']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['delta_offset'] = '0';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_class'] = 'time fixwidth';
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'only_time',
+    'fromto' => 'value',
+    'multiple_number' => '1',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
+  /* Field: Content: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['label'] = '';
+  $handler->display->display_options['fields']['field_categories_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_class'] = 'category fixwidth';
+  $handler->display->display_options['fields']['field_categories_event']['type'] = 'i18n_list_default';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Field: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
+  /* Field: Content: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -733,7 +826,7 @@ return true;
 $dateraw = strtotime( "tomorrow" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -749,7 +842,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'tomorrow',
@@ -970,7 +1063,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -1009,7 +1102,7 @@ echo $date;
 $dateraw = strtotime( "this friday" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -1199,6 +1292,99 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$dateraw = strtotime( "today" );
+
+$day = t(date(\'l\', $dateraw));
+$date = date(\'d.m.y | \', $dateraw) . $day;
+echo $date;
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date_1']['id'] = 'field_schedule_date_1';
+  $handler->display->display_options['fields']['field_schedule_date_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
+  $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
+  $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
+    'format_type' => 'only_date_with_year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date_1']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['delta_offset'] = '0';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_class'] = 'time fixwidth';
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'only_time',
+    'fromto' => 'value',
+    'multiple_number' => '1',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
+  /* Field: Content: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['label'] = '';
+  $handler->display->display_options['fields']['field_categories_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_class'] = 'category fixwidth';
+  $handler->display->display_options['fields']['field_categories_event']['type'] = 'i18n_list_default';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Field: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
+  /* Field: Content: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -1356,7 +1542,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -1395,7 +1581,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "first day of next month" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -1678,7 +1864,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -1694,7 +1880,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -1996,7 +2182,7 @@ echo $date;
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2012,7 +2198,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -2306,7 +2492,7 @@ echo $date;
 $dateraw = strtotime( "tomorrow" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2322,7 +2508,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -2629,7 +2815,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -2667,7 +2853,7 @@ echo $date;
 $dateraw = strtotime( "this friday" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
@@ -2957,7 +3143,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
 $dateraw = strtotime( "today" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 echo $date;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2973,7 +3159,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -3280,7 +3466,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
   $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
-    'format_type' => 'only_date',
+    'format_type' => 'only_date_with_year',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => 'now',
@@ -3318,7 +3504,7 @@ echo $date;
 $dateraw = strtotime( "first day of next month" );
 
 $day = t(date(\'l\', $dateraw));
-$date = date(\'d.m | \', $dateraw) . $day;
+$date = date(\'d.m.y | \', $dateraw) . $day;
 $value = $data->field_field_schedule_date_1[0][\'rendered\'][\'#markup\'];
 $raw = $data->field_field_schedule_date_1[0][\'raw\'][\'value\'];
 if($raw >= $dateraw) {
