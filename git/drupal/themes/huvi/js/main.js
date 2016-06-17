@@ -198,10 +198,10 @@
     }
 
     // refresh the page when resetting filters
-    $('.views-exposed-widget.views-reset-button').click(function(event) {
+  /*  $('.views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
       location.reload();
-    });
+    });*/
 
 
     function checkFilters() {
@@ -423,10 +423,10 @@
     }
 
     // refresh the page when resetting filters
-    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
+   /* $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
       location.reload();
-    });
+    });*/
 
 
     function checkFilters() {
