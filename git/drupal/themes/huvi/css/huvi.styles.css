@@ -3,6 +3,63 @@ body.cke_editable {
 }
 
 /* No files to import found in abstractions/**\/* */
+
+
+.field-name-field-korraldaja .field-name-field-korraldaja {
+    
+    font-weight: normal;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bebfb9;
+    padding: 3px 10px
+    margin: 5px;
+ }
+.field-name-field-korraldaja .fieldset-wrapper div{
+  
+padding-left: 20px;
+  width:200px;
+  display:inline-block;
+ 
+  box-sizing: border-box;
+      
+  }
+  .field-name-field-korraldaja .form-wrapper{
+   margin: 5px;
+   
+        box-sizing: border-box;
+  }
+ 
+
+.field-name-field-korraldaja .fieldset-legend{
+   text-transform: uppercase;
+    background: #e1e2dc;
+    font-weight: normal;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bebfb9;
+    padding: 3px 10px;
+    color: #000;
+        box-sizing: border-box;
+    
+  }
+  
+  .field-name-field-korraldaja .fieldset-wrapper{
+   border-width: 1px;
+   border-style: solid;
+   font-weight: normal;
+   border-color: #bebfb9;
+   padding: 3px 10px;
+   color: #000;
+   box-sizing: border-box;
+    
+  }
+  
+  .field-name-field-korraldaja-nimi{
+   padding-left: 20px;
+   margin: 5px;
+    
+  }
+
 .buymain {
   margin-bottom: 10px;
   position: relative;
