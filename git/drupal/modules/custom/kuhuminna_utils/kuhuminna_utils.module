@@ -17,10 +17,23 @@ function kuhuminna_utils_menu() {
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
   );
+  $items['ajax/events_filters_reset'] = array(
+    'page callback' => 'kuhuminna_utils_exposed_form_filters_reset',
+    'page arguments' => array(),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'delivery callback' => 'ajax_deliver',
+  );
+
 
   return $items;
 }
 
+function kuhuminna_utils_exposed_form_filters_reset(){
+  if (isset($_SESSION['views']['event_listing_fixed'])) {
+      unset($_SESSION['views']['event_listing_fixed']);
+    }
+}
 
 /**
  * Implements hook_block_info().
