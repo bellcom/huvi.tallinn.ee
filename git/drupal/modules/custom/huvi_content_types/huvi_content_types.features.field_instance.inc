@@ -11,6 +11,114 @@ function huvi_content_types_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'field_collection_item-field_korraldaja-field_korraldaja_e_post'.
+  $field_instances['field_collection_item-field_korraldaja-field_korraldaja_e_post'] = array(
+    'bundle' => 'field_korraldaja',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_korraldaja_e_post',
+    'label' => 'E-post',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_korraldaja-field_korraldaja_kontakttelefon'.
+  $field_instances['field_collection_item-field_korraldaja-field_korraldaja_kontakttelefon'] = array(
+    'bundle' => 'field_korraldaja',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_korraldaja_kontakttelefon',
+    'label' => 'Kontakttelefon',
+    'required' => 0,
+    'settings' => array(
+      'ca_phone_parentheses' => 1,
+      'ca_phone_separator' => '-',
+      'phone_country_code' => 1,
+      'phone_default_country_code' => '+372',
+      'phone_int_max_length' => 15,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_korraldaja-field_korraldaja_nimi'.
+  $field_instances['field_collection_item-field_korraldaja-field_korraldaja_nimi'] = array(
+    'bundle' => 'field_korraldaja',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_korraldaja_nimi',
+    'label' => 'Organisatsiooni nimi',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_schedule-field_schedule_city_id'.
   $field_instances['field_collection_item-field_schedule-field_schedule_city_id'] = array(
     'bundle' => 'field_schedule',
@@ -364,7 +472,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -400,7 +508,7 @@ function huvi_content_types_field_default_field_instances() {
           'colorbox_node_style_first' => '',
         ),
         'type' => 'colorbox',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -487,7 +595,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -597,7 +705,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -656,6 +764,61 @@ function huvi_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_korraldaja'.
+  $field_instances['node-event-field_korraldaja'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_korraldaja',
+    'label' => 'Korraldaja',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_main_event_ref'.
   $field_instances['node-event-field_main_event_ref'] = array(
     'bundle' => 'event',
@@ -680,7 +843,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 19,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -705,7 +868,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -757,7 +920,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -809,7 +972,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -841,7 +1004,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -864,7 +1027,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -916,7 +1079,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -971,7 +1134,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -999,7 +1162,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1104,7 +1267,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1127,7 +1290,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1155,7 +1318,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1214,7 +1377,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1266,7 +1429,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1299,7 +1462,7 @@ function huvi_content_types_field_default_field_instances() {
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_thumbnail_colorbox',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1336,6 +1499,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Alguse ning olemasolul ka lõpuaeg');
   t('Alusta inimese nime kirjutamist ning vali loetelust kasutaja, kes peale sinu saab selle ürituse kõiki detaile muuta.');
   t('Asukoht');
+  t('E-post');
   t('Esimene pilt kuvatakse ürituse põhipildina vasakul pool. Kõik pildid kuvatakse galeriis kui on laetud mitu pilti.');
   t('Excerpt');
   t('Filled automatically with the address from the Location map field.');
@@ -1347,12 +1511,15 @@ function huvi_content_types_field_default_field_instances() {
   t('Kasutajad, kes veel tohivad seda üritust muuta');
   t('Katusüritus');
   t('Kirjeldus');
+  t('Kontakttelefon');
   t('Kopeeri video aadress Youtube või Vimeo lehelt.');
+  t('Korraldaja');
   t('Kui praegu loodav üritus on alamüritus, mis kuulub suurema katusürituse alla, siis alusta peaürituse kirjutamist ning selekteeri see.');
   t('Linnaosa');
   t('Map latlng');
   t('Map markers');
   t('Märgi, kui üritus on tasuta');
+  t('Organisatsiooni nimi');
   t('Peida üritus lehelt');
   t('Pikem kirjeldus ürituse kohta.');
   t('Pildid');
