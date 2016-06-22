@@ -3,6 +3,63 @@ body.cke_editable {
 }
 
 /* No files to import found in abstractions/**\/* */
+
+
+.field-name-field-korraldaja .field-name-field-korraldaja {
+    
+    font-weight: normal;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bebfb9;
+    padding: 3px 10px
+    margin: 5px;
+ }
+.field-name-field-korraldaja .fieldset-wrapper div{
+  
+padding-left: 20px;
+  width:200px;
+  display:inline-block;
+ 
+  box-sizing: border-box;
+      
+  }
+  .field-name-field-korraldaja .form-wrapper{
+   margin: 5px;
+   
+        box-sizing: border-box;
+  }
+ 
+
+.field-name-field-korraldaja .fieldset-legend{
+   text-transform: uppercase;
+    background: #e1e2dc;
+    font-weight: normal;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #bebfb9;
+    padding: 3px 10px;
+    color: #000;
+        box-sizing: border-box;
+    
+  }
+  
+  .field-name-field-korraldaja .fieldset-wrapper{
+   border-width: 1px;
+   border-style: solid;
+   font-weight: normal;
+   border-color: #bebfb9;
+   padding: 3px 10px;
+   color: #000;
+   box-sizing: border-box;
+    
+  }
+  
+  .field-name-field-korraldaja-nimi{
+   padding-left: 20px;
+   margin: 5px;
+    
+  }
+
 .buymain {
   margin-bottom: 10px;
   position: relative;
@@ -807,7 +864,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 @media (min-width: 70em) {
   .event-group-title,
   .event-group > h3 {
-    width: 160px;
+    width: 150px;
   }
 }
 
@@ -2128,7 +2185,7 @@ ul.quicktabs-tabs li:last-of-type {
   line-height: 28px;
   background: #ff6600;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
-  padding: 0px 5px 0px 10px;
+  padding: 0 10px;
   font-size: 14px;
   margin-top: 20px;
 }
