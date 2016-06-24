@@ -4,15 +4,14 @@
  * Single event template
  */
 
-$event = kultuurikava_node_to_event($node);
+$event = kultuurikava_node_to_event($node);	
+//var_dump($event);//
 if(isset($event) && !empty($event)):
-
   drupal_set_title($event['name']);
 
   $path = isset($_GET['q']) ? $_GET['q'] : '<front>';
   $url = url($path, array('absolute' => TRUE));
   $base_path = $GLOBALS['base_path'];
-
   $back_button_url = 'uritused';
   if ($event['type'] == 'huvitegevus') {
     $back_button_url = 'huvitegevused';
@@ -102,7 +101,7 @@ if(isset($event) && !empty($event)):
 
       <div class="page-content-right">
 
-        <h1><?php print $event['name']; ?></h1>
+        <h1><?php print $event['name'];?></h1>
 
         <?php if(isset($event['ticketurl']) && !empty($event['ticketurl'])): ?>
         <div class="buymain">
@@ -127,7 +126,7 @@ if(isset($event) && !empty($event)):
             asort($event['schedule']);
             $rows = 0;
             $shown_rows = 10; // Rows to show before hiding the rest at first load
-          ?>
+          ?>		  
           <?php foreach($event['schedule'] as $schedule_item): ?>
             <?php if(isset($schedule_item['time'])): ?>
             <?php $rows++; ?>
@@ -165,9 +164,25 @@ if(isset($event) && !empty($event)):
         <?php if(isset($event['description']) && !empty($event['description'])): ?>
           <?php //print_r($content['field_description']); ?>
           <div class="event-description">
-            <?php print(kuhuminna_utils_linkify($event['description'])); ?>
+		  
+		  <?php print(kuhuminna_utils_linkify($event['description'])); ?>
           </div>
         <?php endif; ?>
+		
+		<div class="event-korraldaja">
+		 <?php //Korraldaja 
+		  if(isset($event['korraldaja']) && !empty($event['korraldaja'])): ?>
+		  
+			<?php foreach($event['korraldaja'] as $korraldaja_item): ?>
+			<?php print("<b>Korraldaja</b><p>"); ?>
+		  	<?php print_r($korraldaja_item['name']); ?>
+			<?php print(", ");?>
+		  	<?php print_r($korraldaja_item['email']);?>
+			<?php print("<p>kontakttelefon: "); ?>
+			<?php print_r($korraldaja_item['phone']); ?>
+			</div>
+		  <?php endforeach; ?>
+		    <?php endif; ?>
 
         <?php if(isset($node->field_videos)): ?>
           <?php print render($content['field_videos']); ?>
