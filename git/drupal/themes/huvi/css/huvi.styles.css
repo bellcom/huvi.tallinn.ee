@@ -6,85 +6,55 @@ body.cke_editable {
 
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
-    
-    font-weight: bold;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #bebfb9;
-    padding: 3px 10px
-    margin: 5px;
+  font-weight: bold;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bebfb9;
+  padding: 3px 10px;
+  margin: 5px;
  }
-.field-name-field-korraldaja .fieldset-wrapper div{
-  
-  width:200px;
-  display:inline-block;
- 
-  box-sizing: border-box;
-      
-  }
-  .field-name-field-korraldaja .form-wrapper{
-   
-   
-        box-sizing: border-box;
-  }
- 
+
+.field-name-field-korraldaja .fieldset-wrapper .form-wrapper {
+  width: 33%;
+  min-width: 200px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
+  padding: 5px 5px 5px 20px;
+}
+
+.field-name-field-korraldaja .fieldset-wrapper .form-wrapper .form-item.form-type-textfield input {
+  width: 100%;
+}
 
 .field-name-field-korraldaja .fieldset-legend{
- 
-	text-transform: uppercase;
-    background: #efefef;
-    font-weight: bold;
-    border-width: 1px 1px 0px;
-    border-style: solid;
-    border-color: #bebfb9;
-    padding: 3px 10px;
-    color: #000;
-    box-sizing: border-box;
-	
-  }
+  text-transform: uppercase;
+  background: #efefef;
+  font-weight: bold;
+  border-width: 1px 1px 0px;
+  border-style: solid;
+  border-color: #bebfb9;
+  padding: 3px 10px;
+  color: #000;
+}
   
-  .field-name-field-korraldaja .fieldset-wrapper{
-   border-width: 1px;
-   border-style: solid;
-   font-weight: normal;
-   border-color: #bebfb9;
-   padding: 3px 10px;
-   color: #000;
-   box-sizing: border-box;
-    
-  }
-  
-  .field-name-field-korraldaja-nimi{
-   padding-left: 20px;
-    
-  }
-  
-  #edit-field-korraldaja-und-0-field-korraldaja-nimi-und-0-value{
-	  width: 140%;
-  }
-  
-  #field-korraldaja-und-0-field-korraldaja-kontakttelefon-add-more-wrapper > div > label{
-	  margin-left: 60%;
-  }  
-  #edit-field-korraldaja-und-0-field-korraldaja-kontakttelefon-und-0-value{
-	  width: 120%;
-	  margin-left: 60%;
-  }
-  
-  #field-korraldaja-und-0-field-korraldaja-e-post-add-more-wrapper > div > div > label{
-		margin-left: 90%;
-		width: 50px;
-  }
-  #edit-field-korraldaja-und-0-field-korraldaja-e-post-und-0-email{
-	  padding: 10px;
-	  width: 140%;
-	  margin-left: 90%;
-  }
-  #edit-field-korraldaja-und-0 > legend > span{
-	  display:block;
-  }
-#edit-field-korraldaja-und-0 > legend{
-	width:100%;
+.field-name-field-korraldaja .fieldset-wrapper{
+  border-width: 1px;
+  border-style: solid;
+  font-weight: normal;
+  border-color: #bebfb9;
+  padding: 3px 10px;
+  color: #000;
+}
+
+.field-name-field-korraldaja .fieldset-legend{
+  display:block;
+}
+.field-name-field-korraldaja legend{
+  width:100%;
 }
 
 
