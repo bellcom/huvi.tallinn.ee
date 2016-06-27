@@ -71,6 +71,7 @@
 
 .back-button a {
   width: 190px;
+  -webkit-border-radius: 3px;
   height: 40px;
   display: block;
   line-height: 40px;
@@ -157,7 +158,7 @@
   background: #33cc33;
   border-radius: 5px;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  -webkit-border-radius: 3px;
   height: 40px;
   line-height: 35px;
   margin-bottom: 20px;

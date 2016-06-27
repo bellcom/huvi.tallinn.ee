@@ -4,7 +4,6 @@ body.cke_editable {
 
 /* No files to import found in abstractions/**\/* */
 
-
 .field-name-field-korraldaja .field-name-field-korraldaja {
   font-weight: bold;
   border-width: 1px;
@@ -327,9 +326,11 @@ img, media {
   display: block;
   padding: 75px 24px 19px 12px;
   color: white;
+   
 }
 
 .l-footer--main-container {
+	    -webkit-border-radius: 3px;
   background-image: url("../images/uritused-footer.png");
   background-repeat: no-repeat;
   background-position-x: 99.5%;
@@ -571,7 +572,7 @@ footer .l-footer--main-wrapper .l-footer--main-container {
     background: #33cc33;
     border-radius: 5px;
     -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    -webkit-border-radius: 3px;
     height: 40px;
     line-height: 40px;
     margin-top: 20px;
@@ -862,6 +863,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 @media (min-width: 70em) {
   .event-group-title,
   .event-group > h3 {
+	    -webkit-border-radius: 3px;s  
     width: 160px;
   }
 }
@@ -1043,7 +1045,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   position: relative;
   cursor: pointer;
   background: white;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
   margin: 0;
   width: 100%;
 }
@@ -1094,7 +1096,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
     border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 3px;
     margin-bottom: 8px;
     overflow: hidden;
     width: 100%;
@@ -1198,7 +1200,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     padding: 0;
     border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 3px;
     width: 15%;
     float: left;
     box-shadow: none;
@@ -1987,6 +1989,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .views-submit-button .form-submit,
   .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
     padding: 4px 10px 28px 10px;
+	-webkit-border-radius: 3px;
   }
 }
 #events_search_form .views-submit-button .throbber,
@@ -2006,9 +2009,9 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   padding: 0 8px;
   border-radius: 5px;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  -webkit-border-radius: 3px;
   font-size: 15px;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
   text-align: left;
   margin-left: 10px;
   margin-top: 5px;
@@ -2017,6 +2020,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 body.blue-scheme #events_search_form .views-submit-button .form-submit,
 body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   background: #0099cc;
+  -webkit-border-radius: 3px; 
+}
 }
 
 .empty-filters-overlay {
@@ -2040,7 +2045,8 @@ ul.quicktabs-tabs {
   overflow: hidden;
   width: 100%;
   background: white;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
+  -webkit-border-radius: 3px; 
   margin: 0;
 }
 ul.quicktabs-tabs::before {
@@ -2068,7 +2074,7 @@ ul.quicktabs-tabs::before {
     padding: 0;
     border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 3px;
     width: 15%;
     float: left;
     box-shadow: none;
@@ -2111,7 +2117,7 @@ ul.quicktabs-tabs.open label:first-child {
   ul.quicktabs-tabs {
     border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 3px;
     margin-bottom: 7px;
     overflow: hidden;
   }
@@ -2178,14 +2184,16 @@ ul.quicktabs-tabs li:last-of-type {
 
 .event-group-title,
 .event-group > h3 {
+	width: 170px;
   border-top: #fedcc3;
   height: 26px;
   line-height: 28px;
   background: #ff6600;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
   padding: 0px 5px 0px 10px;
   font-size: 14px;
   margin-top: 20px;
+  -webkit-border-radius: 3px;
 }
 
 .event-group > ul {
@@ -2365,6 +2373,7 @@ fieldset {
 .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label,
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
   background-color: #0099cc;
+  -webkit-border-radius: 3px;
 }
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-widget-filter-combine > label {
   color: #0099cc;
@@ -2377,6 +2386,7 @@ fieldset {
 }
 .blue-scheme .event-group-title,
 .blue-scheme .event-group > h3 {
+	    -webkit-border-radius: 3px;
   background: #0099cc;
 }
 .blue-scheme #edit-full-text #edit-submit {
@@ -3535,7 +3545,7 @@ div.modal-forms-modal-content .popups-close {
   border: 1px solid #ccc;
   border-radius: 7px;
   -moz-border-radius: 7px;
-  -webkit-border-radius: 5px;
+  -webkit-border-radius: 3px;
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 1px 1px 1px black;
   margin: 0 10px;
@@ -3589,6 +3599,7 @@ body.blue-scheme #huvi-loader {
     width: auto;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
+	  -webkit-border-radius: 3px;
     width: 390px;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
