@@ -330,7 +330,9 @@ img, media {
 }
 
 .l-footer--main-container {
-	    -webkit-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
   background-image: url("../images/uritused-footer.png");
   background-repeat: no-repeat;
   background-position-x: 99.5%;
@@ -570,8 +572,8 @@ footer .l-footer--main-wrapper .l-footer--main-container {
     color: white;
     text-decoration: none;
     background: #33cc33;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     height: 40px;
     line-height: 40px;
@@ -863,7 +865,9 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 @media (min-width: 70em) {
   .event-group-title,
   .event-group > h3 {
-	    -webkit-border-radius: 3px;s  
+	border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
     width: 160px;
   }
 }
@@ -1094,8 +1098,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     margin-bottom: 8px;
     overflow: hidden;
@@ -1198,8 +1202,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     line-height: 28px;
     font-size: 14px;
     padding: 0;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     width: 15%;
     float: left;
@@ -1989,6 +1993,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .views-submit-button .form-submit,
   .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
     padding: 4px 10px 28px 10px;
+	border-radius: 3px;
+    -moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
   }
 }
@@ -2007,8 +2013,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   color: white;
   height: 25px;
   padding: 0 8px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   font-size: 15px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
@@ -2020,9 +2026,11 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 body.blue-scheme #events_search_form .views-submit-button .form-submit,
 body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   background: #0099cc;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-border-radius: 3px; 
 }
-}
+
 
 .empty-filters-overlay {
   position: absolute;
@@ -2046,7 +2054,9 @@ ul.quicktabs-tabs {
   width: 100%;
   background: white;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
-  -webkit-border-radius: 3px; 
+  border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
   margin: 0;
 }
 ul.quicktabs-tabs::before {
@@ -2072,8 +2082,8 @@ ul.quicktabs-tabs::before {
     line-height: 28px;
     font-size: 14px;
     padding: 0;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     width: 15%;
     float: left;
@@ -2115,8 +2125,8 @@ ul.quicktabs-tabs.open label:first-child {
 }
 @media (min-width: 44em) {
   ul.quicktabs-tabs {
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     margin-bottom: 7px;
     overflow: hidden;
@@ -2184,7 +2194,6 @@ ul.quicktabs-tabs li:last-of-type {
 
 .event-group-title,
 .event-group > h3 {
-	width: 170px;
   border-top: #fedcc3;
   height: 26px;
   line-height: 28px;
@@ -2193,6 +2202,8 @@ ul.quicktabs-tabs li:last-of-type {
   padding: 0px 5px 0px 10px;
   font-size: 14px;
   margin-top: 20px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
 
@@ -2373,7 +2384,9 @@ fieldset {
 .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label,
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
   background-color: #0099cc;
-  -webkit-border-radius: 3px;
+  border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-widget-filter-combine > label {
   color: #0099cc;
@@ -2386,8 +2399,10 @@ fieldset {
 }
 .blue-scheme .event-group-title,
 .blue-scheme .event-group > h3 {
-	    -webkit-border-radius: 3px;
-  background: #0099cc;
+	border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #0099cc;
 }
 .blue-scheme #edit-full-text #edit-submit {
   background-color: #0099cc;
@@ -3543,8 +3558,8 @@ div.modal-forms-modal-content .popups-close {
   color: #027ac6;
   background: #fff url("../../../modules/contrib/openid_ee/openid_ee.png") no-repeat 10px 50%;
   border: 1px solid #ccc;
-  border-radius: 7px;
-  -moz-border-radius: 7px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 1px 1px 1px black;
@@ -3599,7 +3614,9 @@ body.blue-scheme #huvi-loader {
     width: auto;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
-	  -webkit-border-radius: 3px;
+	border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
     width: 390px;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
