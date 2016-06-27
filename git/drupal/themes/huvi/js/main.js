@@ -198,10 +198,10 @@
     }
 
     // refresh the page when resetting filters
-    $('.views-exposed-widget.views-reset-button').click(function(event) {
+  /*  $('.views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
       location.reload();
-    });
+    });*/
 
 
     function checkFilters() {
@@ -421,12 +421,22 @@
     if($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
       $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
-
-    // refresh the page when resetting filters
     $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
+     event.preventDefault();
+         $.ajax({
+            type: 'POST',
+            url: Drupal.settings.basePath + 'ajax/events_filters_reset',
+            success: function() {                   
+              location.reload();
+            }
+            });
+
+        });
+    // refresh the page when resetting filters
+   /* $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
       location.reload();
-    });
+    });*/
 
 
     function checkFilters() {
