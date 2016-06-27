@@ -425,7 +425,7 @@
      event.preventDefault();
          $.ajax({
             type: 'POST',
-            url: '/ajax/events_filters_reset',
+            url: Drupal.settings.basePath + 'ajax/events_filters_reset',
             success: function() {                   
               location.reload();
             }
