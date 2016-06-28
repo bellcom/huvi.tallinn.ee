@@ -68,26 +68,6 @@
 		setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
 	});
 	
-	 function setCookie(cname, cvalue) {
-		document . cookie = cname + "=" + cvalue;
-	}
-	
-	function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie . split(';');
-    for(var i = 0; i <ca . length; i++) {
-        var c = ca[i];
-        while (c . charAt(0)==' ') {
-            c = c . substring(1);
-        }
-        if (c . indexOf(name) == 0) {
-            return c . substring(name . length, c . length);
-        }
-    }
-    return "";
-}
-
-	
     //datepicker
     /*
     $( "#edit-date-min" ).datepicker({
@@ -422,7 +402,9 @@
       $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
     $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
-     event.preventDefault();
+        event.preventDefault();
+        setCookie("last_tab_huvi", "");
+        setCookie("last_tab_uri", "");
          $.ajax({
             type: 'POST',
             url: Drupal.settings.basePath + 'ajax/events_filters_reset',
@@ -612,7 +594,23 @@ function initialize() {
 
       google.maps.event.removeListener(boundsListener);
     });
-	
-	
+}
 
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie . split(';');
+    for(var i = 0; i <ca . length; i++) {
+        var c = ca[i];
+        while (c . charAt(0)==' ') {
+            c = c . substring(1);
+        }
+        if (c . indexOf(name) == 0) {
+            return c . substring(name . length, c . length);
+        }
+    }
+    return "";
 }
