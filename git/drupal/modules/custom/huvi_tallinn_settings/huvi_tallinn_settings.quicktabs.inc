@@ -17,7 +17,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
-  $quicktabs->title = 'Aeg';
+  $quicktabs->title = 'Aeg:';
   $quicktabs->tabs = array(
     0 => array(
       'bid' => 'views_delta_event_listing_fixed-block_6',
@@ -68,7 +68,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Aeg');
+  t('Aeg:');
   t('Homme');
   t('Järgmisel kuul');
   t('Kõik');
@@ -85,7 +85,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
-  $quicktabs->title = 'Aeg';
+  $quicktabs->title = 'Aeg:';
   $quicktabs->tabs = array(
     0 => array(
       'bid' => 'views_delta_event_listing_fixed-block',
@@ -136,7 +136,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Aeg');
+  t('Aeg:');
   t('Homme');
   t('Järgmisel kuul');
   t('Kõik');
