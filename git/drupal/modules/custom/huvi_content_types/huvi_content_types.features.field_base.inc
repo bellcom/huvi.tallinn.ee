@@ -357,10 +357,7 @@ function huvi_content_types_field_default_field_bases() {
         'advertisement' => 0,
         'article' => 0,
         'event' => 'event',
-        'landing_page' => 0,
-        'new_uritus' => 0,
         'page' => 0,
-        'webform' => 0,
       ),
       'view' => array(
         'args' => array(),
