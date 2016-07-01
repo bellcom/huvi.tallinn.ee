@@ -279,6 +279,9 @@ function huvi_content_types_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_korraldaja_e_post',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'email',
@@ -295,7 +298,7 @@ function huvi_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_korraldaja_kontakttelefon',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'indexes' => array(
       'format' => array(
@@ -319,7 +322,7 @@ function huvi_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_korraldaja_nimi',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'indexes' => array(
       'format' => array(
