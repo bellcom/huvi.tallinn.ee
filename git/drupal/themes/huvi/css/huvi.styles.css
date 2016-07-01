@@ -2066,7 +2066,7 @@ ul.quicktabs-tabs {
   margin: 0;
 }
 ul.quicktabs-tabs::before {
-  content: "Aeg";
+  content: "Aeg:";
   text-align: center;
   background: #f36722;
   color: white;
