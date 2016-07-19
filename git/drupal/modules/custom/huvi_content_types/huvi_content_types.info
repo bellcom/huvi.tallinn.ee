@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = geolocation
 dependencies[] = geolocation_googlemaps
+dependencies[] = i18n_taxonomy
 dependencies[] = image
 dependencies[] = list
 dependencies[] = multiupload_imagefield_widget
