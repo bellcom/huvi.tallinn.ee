@@ -5,8 +5,26 @@
  */
 
 include_once 'huvi_content_types.features.inc';
+var_dump("Hello World");
+function huvi_form_alter( &$form, &$form_state, $form_id){
+	print_r($form_id);
+}
 
-function huvi_content_types_node_validate($node,$form, &$form_state) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function huvi_content_types_node_validate($node, $form, &$form_state) {
 	
 	$phone = trim($form_state['values']['field_korraldaja']['und'][0]["field_korraldaja_kontakttelefon"]['und'][0]['value']);
 	$e_post = trim($form_state['values']['field_korraldaja']['und'][0]['field_korraldaja_e_post']['und'][0]['email']);
