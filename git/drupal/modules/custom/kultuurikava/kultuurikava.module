@@ -514,6 +514,7 @@ function kultuurikava_ticket_link($ticket) {
  * Make API requests to Kultuurikava and save the events as nodes
  */
 function kultuurikava_import_events($limit = 50) {
+	
   // Is the first import done or not
   $first_import_done = variable_get('kultuurikava_import_first_done', FALSE);
   // this increments after each function run for decreasing load on cron and API calls

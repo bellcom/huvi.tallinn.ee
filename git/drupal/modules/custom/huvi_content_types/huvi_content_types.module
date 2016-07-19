@@ -1,10 +1,101 @@
 <?php
+
 /**
  * @file
  * Code for the Huvi Content Types feature.
  */
 
 include_once 'huvi_content_types.features.inc';
+
+
+function huvi_form_alter( &$form, &$form_state, $form_id){
+	
+	switch($form_id){
+		case 'event_node_form':
+		
+		$form['field_schedule']['und'][0]['field_schedule_city_id']['#size']=40;
+		
+		//add toimumiskoht field
+		$form['field_schedule']['und'][0]['field_add_toimumiskoht']= array(
+			'#type' => 'textfield',
+			'#weight' => 23,
+			'#title' => t(''),
+			'#value' => t(''),);
+			
+		$form['field_schedule']['und'][0]['text_field_error']= array(
+		
+			'#markup' => '<div id="edit-field-schedule-und-0-text-field-error">Error</div>',
+			'#weight' => 26,
+			);
+	  
+	  //button toimumiskoht add
+		$form['field_schedule']['und'][0]['submit_add_toimumiskoht']= array(
+			'#type' => 'submit',
+			'#value' => t('Lisa'),
+			'#description' => t("If the amount of boxes above isn't enough, click here to add more choices."),
+			'#weight' => 25,
+			'#submit' => array('poll_more_choices_submit'), // If no javascript action.
+			
+			'#ajax' => array(
+				'callback' => 'submit_add_callback',
+				'wrapper' => 'edit-field-schedule-und-0-text-field-error',
+				'method' => 'replace',
+				'effect' => 'fade',
+			),
+			'#limit_validation_errors' => array(),
+			'#submit' => array(),
+		);
+		//button toimumiskoht clear	
+		$form['field_schedule']['und'][0]['submit_clear_toimumiskoht']= array(
+			'#type' => 'submit',
+			'#value' => t('Tuhista'),
+			'#description' => t(""),
+			'#weight' => 24,
+			'#submit' => array('poll_more_choices_submit'), // If no javascript action.
+			
+			'#ajax' => array(
+				'callback' => 'submit_clear_callback',
+				'wrapper' => 'edit-field-schedule-und-0-field-add-toimumiskoht',
+				'method' => 'replace',
+				'effect' => 'fade',
+			),
+			
+		);	
+
+
+		//krumo($form_id);
+		krumo($form);
+		krumo($form_state);
+		
+		break;
+		
+	}
+	return $form;
+}
+
+
+function submit_clear_callback($form, &$form_state) {
+  $form['field_schedule']['und'][0]['field_add_toimumiskoht']['#value'] = '';
+			
+			
+ return  $form['field_schedule']['und'][0]['field_add_toimumiskoht'];
+}
+
+function submit_add_callback($form, $form_state) {
+	
+	$form['field_schedule']['und'][0]['text_field_error']= array(
+		
+			'#markup' => '<div id="edit-field-schedule-und-0-text-field-error">Error or Add</div>',
+			'#weight' => 26,
+			);
+  return $form['field_schedule']['und'][0]['text_field_error'];
+
+}
+
+
+
+
+
 
 function huvi_content_types_node_validate($node,$form, &$form_state) {
 	
@@ -48,3 +139,4 @@ function huvi_content_types_node_validate($node,$form, &$form_state) {
 
   
 }
+
