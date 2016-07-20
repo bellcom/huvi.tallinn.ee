@@ -360,7 +360,10 @@ function huvi_content_types_field_default_field_bases() {
         'advertisement' => 0,
         'article' => 0,
         'event' => 'event',
+        'landing_page' => 0,
+        'new_uritus' => 0,
         'page' => 0,
+        'webform' => 0,
       ),
       'view' => array(
         'args' => array(),
@@ -607,6 +610,36 @@ function huvi_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_schedule_toimumis'.
+  $field_bases['field_schedule_toimumis'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_schedule_toimumis',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'toimumiskoht',
+          'parent' => 0,
+        ),
+      ),
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_tickets'.

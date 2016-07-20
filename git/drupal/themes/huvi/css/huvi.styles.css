@@ -3,8 +3,96 @@ body.cke_editable {
 }
 
 /* No files to import found in abstractions/**\/* */
-.event-korraldaja {
-    line-height: 0.3em;
+
+#edit-field-schedule-und-0-field-schedule-city-id{
+	
+	float: left;
+    display: inline-block;
+}
+#field-schedule-und-0-field-schedule-place-add-more-wrapper{
+	visibility: hidden;
+}
+#edit-field-schedule-und-0-weight{
+	visibility: hidden;
+}
+#edit-field-schedule-und-0-field-schedule-city-id-und{
+	padding: 0px 10px 2px 10px;
+}
+#edit-field-schedule-und-0-field-schedule-toimumis{
+	
+	display: inline-block;
+    width: 40%;
+    padding: 0px 10px 2px 10px;
+	
+}
+
+div.autocomplete-deluxe-container input.autocomplete-deluxe-form-single {
+height: 22px;
+}
+div.autocomplete-deluxe-throbber {
+    width: 20px;
+    height: 22px;
+
+}
+
+tr .form-item {
+    white-space: normal;
+}
+.autocomplete-deluxe-input{
+	height: 22px;
+	background: white;
+	white-space: normal;
+}
+#edit-field-schedule-und-0-field-schedule-place{
+width: 0px;
+height: 0px;
+}
+#edit-field-schedule-und-0-field-schedule-location{
+	width: 100%;
+	
+}
+#edit-field-schedule-und-0-text-field-error{
+	width: 40%;
+    height: 15;
+    float: right;
+	color: ac0008;
+}
+
+
+.form-item-field-schedule-und-0-field-add-toimumiskoht{
+	
+	
+	display: inline-block;
+    width: 25%;
+    padding: 0px 10px 2px 10px;
+}
+#edit-field-schedule-und-0-field-add-toimumiskoht{
+	
+	    width: 100%;
+		
+}
+
+#edit-field-schedule-und-0-submit-clear-toimumiskoht{
+	
+	background-color: white;
+    color: black;
+    padding: 2px 10px 3px 10px;
+    cursor: pointer;
+    margin: 2px 0 0 4px;
+    border: 0px;
+    text-decoration: underline;
+	background: no-repeat;
+}
+
+#edit-field-schedule-und-0-submit-add-toimumiskoht{
+	
+	background: #96BC44;
+    color: #FFF;
+    padding: 2px 10px 3px 10px;
+    cursor: pointer;
+    margin: 2px 0 0 4px;
+    border: 0px;
+	border-radius: 0px;
 }
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
@@ -24,7 +112,7 @@ body.cke_editable {
   padding-right: 10px;
 }
 
-body.page-node .l-main form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
   padding: 5px 5px 5px 20px;
 }
 
@@ -308,9 +396,6 @@ img, media {
   background-position-x: 99.5%;
   background-position-y: 98%;
   font-size: 14px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
 }
 .blue-scheme footer .l-footer--main-wrapper .l-footer--main-container .goto-events {
   width: 162px;
@@ -332,13 +417,9 @@ img, media {
   display: block;
   padding: 75px 24px 19px 12px;
   color: white;
-   
 }
 
 .l-footer--main-container {
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
   background-image: url("../images/uritused-footer.png");
   background-repeat: no-repeat;
   background-position-x: 99.5%;
@@ -477,9 +558,6 @@ footer .l-footer--main-wrapper .l-footer--main-container {
   background-color: #ac4800;
   border-radius: 5px;
   margin-top: 20px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
 }
 @media (min-width: 44em) {
   footer .l-footer--main-wrapper .l-footer--main-container .l-region--footer-main-second,
@@ -581,9 +659,9 @@ footer .l-footer--main-wrapper .l-footer--main-container {
     color: white;
     text-decoration: none;
     background: #33cc33;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     height: 40px;
     line-height: 40px;
     margin-top: 20px;
@@ -796,16 +874,11 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .form-item.form-item-keyword {
   display: inline-block;
 }
-
-.form-item {
-  /*
-  &.active{
-    input:checked + label{
-      background: none;
-    }
-  }
-  */
+tr.form-item {
+    white-space: normal;
 }
+
+
 .form-item input:checked + label {
   background: #ccc;
 }
@@ -874,9 +947,6 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 @media (min-width: 70em) {
   .event-group-title,
   .event-group > h3 {
-	border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
     width: 160px;
   }
 }
@@ -1058,7 +1128,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   position: relative;
   cursor: pointer;
   background: white;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
   margin: 0;
   width: 100%;
 }
@@ -1107,9 +1177,9 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper,
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper,
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper {
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     margin-bottom: 8px;
     overflow: hidden;
     width: 100%;
@@ -1211,9 +1281,9 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     line-height: 28px;
     font-size: 14px;
     padding: 0;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     width: 15%;
     float: left;
     box-shadow: none;
@@ -1516,7 +1586,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
     display: table;
     width: 85%;
-    margin-left: 15%;
+    margin-left: 14.3%;
   }
   #events_search_form .form-item-region #edit-time .form-checkboxes, #events_search_form .form-item-region #edit-category .form-checkboxes, #events_search_form .form-item-region #edit-region .form-checkboxes,
   #events_search_form .form-item-region .views-widget .form-checkboxes, #events_search_form .form-item-category #edit-time .form-checkboxes, #events_search_form .form-item-category #edit-category .form-checkboxes, #events_search_form .form-item-category #edit-region .form-checkboxes,
@@ -2002,9 +2072,6 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .views-submit-button .form-submit,
   .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
     padding: 4px 10px 28px 10px;
-	border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
   }
 }
 #events_search_form .views-submit-button .throbber,
@@ -2022,11 +2089,11 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   color: white;
   height: 25px;
   padding: 0 8px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   font-size: 15px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
   text-align: left;
   margin-left: 10px;
   margin-top: 5px;
@@ -2035,11 +2102,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 body.blue-scheme #events_search_form .views-submit-button .form-submit,
 body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   background: #0099cc;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px; 
 }
-
 
 .empty-filters-overlay {
   position: absolute;
@@ -2062,14 +2125,11 @@ ul.quicktabs-tabs {
   overflow: hidden;
   width: 100%;
   background: white;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
-  border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
   margin: 0;
 }
 ul.quicktabs-tabs::before {
-  content: "Aeg:";
+  content: "Aeg";
   text-align: center;
   background: #f36722;
   color: white;
@@ -2091,9 +2151,9 @@ ul.quicktabs-tabs::before {
     line-height: 28px;
     font-size: 14px;
     padding: 0;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     width: 15%;
     float: left;
     box-shadow: none;
@@ -2134,9 +2194,9 @@ ul.quicktabs-tabs.open label:first-child {
 }
 @media (min-width: 44em) {
   ul.quicktabs-tabs {
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     margin-bottom: 7px;
     overflow: hidden;
   }
@@ -2207,13 +2267,10 @@ ul.quicktabs-tabs li:last-of-type {
   height: 26px;
   line-height: 28px;
   background: #ff6600;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.43);
   padding: 0px 5px 0px 10px;
   font-size: 14px;
   margin-top: 20px;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
 }
 
 .event-group > ul {
@@ -2255,9 +2312,9 @@ ul.quicktabs-tabs li:last-of-type {
   text-align: center;
   font-size: 14px;
   background: #ff6600;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
   color: white;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
 }
@@ -2306,9 +2363,9 @@ ul.quicktabs-tabs li:last-of-type {
   text-align: center;
   font-size: 14px;
   background: #cd6502;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
   color: white;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
   background: #b34800;
@@ -2393,9 +2450,6 @@ fieldset {
 .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label,
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
   background-color: #0099cc;
-  border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 }
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-widget-filter-combine > label {
   color: #0099cc;
@@ -2408,10 +2462,7 @@ fieldset {
 }
 .blue-scheme .event-group-title,
 .blue-scheme .event-group > h3 {
-	border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	background: #0099cc;
+  background: #0099cc;
 }
 .blue-scheme #edit-full-text #edit-submit {
   background-color: #0099cc;
@@ -2722,9 +2773,6 @@ body.html {
 
 .l-content {
   background-color: #eaeaea;
-  border-radius: 0px 0px 3px 3px;
-  -moz-border-radius: 0px 0px 3px 3px;
-  -webkit-border-radius: 0px 0px 3px 3px;
 }
 
 .button-top {
@@ -3570,9 +3618,9 @@ div.modal-forms-modal-content .popups-close {
   color: #027ac6;
   background: #fff url("../../../modules/contrib/openid_ee/openid_ee.png") no-repeat 10px 50%;
   border: 1px solid #ccc;
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 5px;
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   -webkit-box-shadow: 1px 1px 1px black;
   margin: 0 10px;
@@ -3626,9 +3674,6 @@ body.blue-scheme #huvi-loader {
     width: auto;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
-	border-radius: 3px;
-    -moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
     width: 390px;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
@@ -3682,7 +3727,7 @@ body.blue-scheme #huvi-loader {
 }
 
 ul.quicktabs-tabs {
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 body.logged-in.page-user-edit #edit-metatags {
