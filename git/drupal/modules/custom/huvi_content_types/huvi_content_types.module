@@ -7,44 +7,27 @@
 include_once 'huvi_content_types.features.inc';
 
 function huvi_content_types_node_validate($node,$form, &$form_state) {
-	
-	$phone = trim($form_state['values']['field_korraldaja']['und'][0]["field_korraldaja_kontakttelefon"]['und'][0]['value']);
-	$e_post = trim($form_state['values']['field_korraldaja']['und'][0]['field_korraldaja_e_post']['und'][0]['email']);
-	$nimi = trim($form_state['values']['field_korraldaja']['und'][0]["field_korraldaja_nimi"]['und'][0]['value']);//Organisatsiooni nimi field is required
-    $count_number_max = 15;
-	
-	
-	
-	if (!empty($phone)){// valid phone number.
-		
-		if(preg_match("#^[-+0-9()\s]+$#",$phone)){ 
-	
-		}else{
-		
-			form_set_error('field_korraldaja_kontakttelefon', t('Kontakttelefon format error.'));
-		
-		}
+    if ($node->type == 'event') {
+      $phone = trim($form_state['values']['field_korraldaja']['und'][0]["field_korraldaja_kontakttelefon"]['und'][0]['value']);
+      $e_post = trim($form_state['values']['field_korraldaja']['und'][0]['field_korraldaja_e_post']['und'][0]['email']);
+      $nimi = trim($form_state['values']['field_korraldaja']['und'][0]["field_korraldaja_nimi"]['und'][0]['value']);//Organisatsiooni nimi field is required
+      $count_number_max = 15;
 
-  if ((strlen($phone)) > $count_number_max){//validate  phone number counts
-			
-			   form_set_error('field_korraldaja_kontakttelefon', t('Phone number must be less than '.$count_number_max));
-			   
-		   }
-	}
-	
-	
-	 
-		   
-  if (	($phone == "") && ($e_post == "")	){//validate  'korraldaja' fields 
-	   
-		  form_set_error('field_korraldaja_e_post', t('Korraldaja fields e-mail or phone number is required.'));
-		  
-		if( $nimi == ""){
-			  
-			form_set_error('field_korraldaja', t('Organisatsiooni nimi field is required.'));
-		}
-	 
-	}
+      if (!empty($phone)){// valid phone number.
+          if(!preg_match("#^[-+0-9()\s]+$#",$phone)){
+              form_set_error('field_korraldaja_kontakttelefon', t('Kontakttelefon format error.'));
+          }
 
-  
+      if ((strlen($phone)) > $count_number_max){//validate  phone number counts
+                 form_set_error('field_korraldaja_kontakttelefon', t('Phone number must be less than '.$count_number_max));
+          }
+      }
+
+      if (($phone == "") && ($e_post == "")){//validate  'korraldaja' fields
+          form_set_error('field_korraldaja_e_post', t('Korraldaja fields e-mail or phone number is required.'));
+          if ($nimi == "") {
+              form_set_error('field_korraldaja', t('Organisatsiooni nimi field is required.'));
+          }
+      }
+    }
 }
