@@ -229,6 +229,7 @@ th {
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  white-space: normal;
 }
 
 img, video {

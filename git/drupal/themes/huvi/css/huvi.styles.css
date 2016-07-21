@@ -5,6 +5,78 @@ body.cke_editable {
 /* No files to import found in abstractions/**\/* */
 .event-korraldaja {
     line-height: 0.3em;
+#edit-field-schedule-und-0-field-schedule-city-id{
+  float: left;
+  display: inline-block;
+}
+#field-schedule-und-0-field-schedule-place-add-more-wrapper{
+  visibility: hidden;
+}
+#edit-field-schedule-und-0-weight{
+  visibility: hidden;
+}
+#edit-field-schedule-und-0-field-schedule-city-id-und{
+  padding: 0px 10px 2px 10px;
+}
+#edit-field-schedule-und-0-field-schedule-toimumis{
+  display: inline-block;
+  width: 40%;
+  padding: 0px 10px 2px 10px;
+}
+div .autocomplete-deluxe-container input.autocomplete-deluxe-form-single {
+  height: 22px;
+}
+div .autocomplete-deluxe-throbber {
+  width: 20px;
+  height: 22px;
+}
+tr .form-item {
+  white-space: normal;
+}
+.autocomplete-deluxe-input{
+  height: 22px;
+  background: white;
+  white-space: normal;
+}
+#edit-field-schedule-und-0-field-schedule-place{
+  width: 0px;
+  height: 0px;
+}
+#edit-field-schedule-und-0-field-schedule-location{
+  width: 100%;	
+}
+#edit-field-schedule-und-0-text-field-error{
+  width: 40%;
+  height: 15;
+  float: right;
+  color: ac0008;
+}
+.form-item-field-schedule-und-0-field-add-toimumiskoht{
+  display: inline-block;
+  width: 25%;
+  padding: 0px 10px 2px 10px;
+}
+#edit-field-schedule-und-0-field-add-toimumiskoht{
+  width: 100%;
+}
+#edit-field-schedule-und-0-submit-clear-toimumiskoht{
+  background-color: white;
+  color: black;
+  padding: 2px 10px 3px 10px;
+  cursor: pointer;
+  margin: 2px 0 0 4px;
+  border: 0px;
+  text-decoration: underline;
+  background: no-repeat;
+}
+#edit-field-schedule-und-0-submit-add-toimumiskoht{
+  background: #96BC44;
+  color: #FFF;
+  padding: 2px 10px 3px 10px;
+  cursor: pointer;
+  margin: 2px 0 0 4px;
+  border: 0px;
+  border-radius: 0px;
 }
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
@@ -24,7 +96,7 @@ body.cke_editable {
   padding-right: 10px;
 }
 
-body.page-node .l-main form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
+body .page-node-edit.node-type-event form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
   padding: 5px 5px 5px 20px;
 }
 
@@ -796,15 +868,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .form-item.form-item-keyword {
   display: inline-block;
 }
-
-.form-item {
-  /*
-  &.active{
-    input:checked + label{
-      background: none;
-    }
-  }
-  */
+tr.form-item {
+    white-space: normal;
 }
 .form-item input:checked + label {
   background: #ccc;
@@ -1516,7 +1581,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
     display: table;
     width: 85%;
-    margin-left: 15%;
+    margin-left: 14.3%;
   }
   #events_search_form .form-item-region #edit-time .form-checkboxes, #events_search_form .form-item-region #edit-category .form-checkboxes, #events_search_form .form-item-region #edit-region .form-checkboxes,
   #events_search_form .form-item-region .views-widget .form-checkboxes, #events_search_form .form-item-category #edit-time .form-checkboxes, #events_search_form .form-item-category #edit-category .form-checkboxes, #events_search_form .form-item-category #edit-region .form-checkboxes,

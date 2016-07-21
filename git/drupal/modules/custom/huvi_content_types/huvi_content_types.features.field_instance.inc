@@ -150,7 +150,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 20,
     ),
   );
 
@@ -235,7 +235,7 @@ function huvi_content_types_field_default_field_instances() {
         'scrollwheel' => 0,
       ),
       'type' => 'geolocation_googlemap',
-      'weight' => 3,
+      'weight' => 30,
     ),
   );
 
@@ -270,7 +270,42 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_schedule-field_schedule_toimumis'.
+  $field_instances['field_collection_item-field_schedule-field_schedule_toimumis'] = array(
+    'bundle' => 'field_schedule',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_schedule_toimumis',
+    'label' => 'Toimumiskoht',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 21,
     ),
   );
 
@@ -472,7 +507,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 23,
     ),
   );
 
@@ -508,7 +543,7 @@ function huvi_content_types_field_default_field_instances() {
           'colorbox_node_style_first' => '',
         ),
         'type' => 'colorbox',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -595,7 +630,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 17,
     ),
   );
 
@@ -705,7 +740,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 18,
     ),
   );
 
@@ -843,7 +878,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'node_reference',
         'settings' => array(),
         'type' => 'node_reference_default',
-        'weight' => 20,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -868,7 +903,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
@@ -920,7 +955,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 20,
     ),
   );
 
@@ -972,7 +1007,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 21,
     ),
   );
 
@@ -1004,7 +1039,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1027,7 +1062,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -1079,7 +1114,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -1134,7 +1169,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -1162,7 +1197,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1267,7 +1302,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 18,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1290,7 +1325,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -1318,7 +1353,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'user_reference',
         'settings' => array(),
         'type' => 'user_reference_default',
-        'weight' => 19,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1377,7 +1412,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 14,
+      'weight' => 13,
     ),
   );
 
@@ -1429,7 +1464,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -1462,7 +1497,7 @@ function huvi_content_types_field_default_field_instances() {
           'video_style' => 'normal',
         ),
         'type' => 'video_embed_field_thumbnail_colorbox',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1527,6 +1562,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Pre description');
   t('Selekteeri kui tegemist on suurema üritusega, mille alla oleks vaja lehel luua alamüritusi.');
   t('Toimumise aeg ja koht');
+  t('Toimumiskoht');
   t('Tüüp');
   t('Vali, kui soovid üritust alles hiljem avalikustada. Hea kasutada sisu eelvaateks enne avalikustamist.');
   t('Video URL');
