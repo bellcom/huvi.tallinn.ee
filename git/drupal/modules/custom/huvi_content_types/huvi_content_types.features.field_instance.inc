@@ -135,7 +135,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -150,7 +150,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 20,
     ),
   );
 
@@ -217,7 +217,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'geolocation',
         'settings' => array(),
         'type' => 'geolocation_text',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -235,7 +235,7 @@ function huvi_content_types_field_default_field_instances() {
         'scrollwheel' => 0,
       ),
       'type' => 'geolocation_googlemap',
-      'weight' => 3,
+      'weight' => 30,
     ),
   );
 
@@ -252,7 +252,7 @@ function huvi_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
@@ -270,7 +270,43 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_schedule-field_schedule_toimumis'.
+  $field_instances['field_collection_item-field_schedule-field_schedule_toimumis'] = array(
+    'bundle' => 'field_schedule',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_schedule_toimumis',
+    'label' => 'Toimumiskoht',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 21,
     ),
   );
 
@@ -1527,6 +1563,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Pre description');
   t('Selekteeri kui tegemist on suurema üritusega, mille alla oleks vaja lehel luua alamüritusi.');
   t('Toimumise aeg ja koht');
+  t('Toimumiskoht');
   t('Tüüp');
   t('Vali, kui soovid üritust alles hiljem avalikustada. Hea kasutada sisu eelvaateks enne avalikustamist.');
   t('Video URL');
