@@ -97,7 +97,7 @@ tr .form-item {
   padding-right: 10px;
 }
 
-body .page-node-edit.node-type-event form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
+body.page-node .l-main form.node-event-form .field-name-field-korraldaja .fieldset-wrapper {
   padding: 5px 5px 5px 20px;
 }
 
