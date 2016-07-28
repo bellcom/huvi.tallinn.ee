@@ -183,6 +183,7 @@
       location.reload();
     });*/
 
+
     $('ul.quicktabs-tabs li a').click(function() {        
       $('ul.quicktabs-tabs').addClass('checking');
       checkFilters();
@@ -373,6 +374,25 @@
       event.preventDefault();
       location.reload();
     });*/  
+// Bugfix for QuickTabs and view filters to get along
+		
+    $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function() {
+      //if($(this).closest('.block--views').hasClass('first-click-done')) {
+        if($(this).prev().is(':checked')) {
+          $(this).prev().removeAttr('checked');
+        }
+        else {
+          $(this).prev().attr('checked', 'checked');
+        }
+        $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+      /*
+      }
+      else {
+        $(this).closest('.block--views').addClass('first-click-done');
+      }
+      */
+    });
+
     $('.openid-ee-button.form-submit').parent().wrap('<form id="openid_ee_custom_login" action="user/login" method="POST"></form>');
     $('#openid_ee_custom_login').appendTo('#modal-content');
     $('#id-card-button').appendTo('#modal-content');
