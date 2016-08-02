@@ -298,11 +298,14 @@ function huvi_content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'autocomplete_deluxe',
       'settings' => array(
         'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'not_found_message' => 'The term \'@term\' will be added.',
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
