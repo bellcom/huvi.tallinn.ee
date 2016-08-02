@@ -23,16 +23,14 @@ function huvi_views_pre_render( &$view ) { // Change Toimumiskoht - Asukoht fiel
 			$koht = ( explode ( " ", $place, -1 ) ) ; // The explode() function breaks a string into an array.
 			$placeTemp = "" ;
 			$coun = count ( $koht ) ;
-			for ( $j = 1; $j < $coun; $j++){
-			  if( !empty ( $placeTemp ) ){
-			    $placeTemp = $placeTemp . " " . $koht [ $j - 1 ] ;
-			  }
-			  else{
-				$placeTemp = $placeTemp . $koht [ $j - 1 ] ;
-			  }
+			for ( $j = 0; $j < $coun; $j++){
 			  if ( preg_match ( "/^[0-9]{5,5}$/", $koht[ $j ] ) ){ // check index
-				$j = $coun ;
+			  $j = $coun;
 			  }
+			$placeTemp=$placeTemp . " " . $koht [ $j ];
+			}
+			if( substr ( $placeTemp, -1 ) == " " ){
+			  $placeTemp = substr ( $placeTemp, 0, -1 ) ;
 			}
 			if( substr ( $placeTemp, -1 ) == ',' ){// delete ','
 			  $place = substr ( $placeTemp, 0, -1 ) ;
