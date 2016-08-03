@@ -1,0 +1,14 @@
+name = Huvi Event Resource
+description = Event resource implementation
+package = HUVI
+core = 7.x
+
+features[ctools][] = services:services:3
+features[features_api][] = api:2
+features[services_endpoint][] = event
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][rest_server] = rest_server
+features_exclude[dependencies][services] = services
+features_exclude[dependencies][services_basic_auth] = services_basic_auth
+
+dependencies[] = services
