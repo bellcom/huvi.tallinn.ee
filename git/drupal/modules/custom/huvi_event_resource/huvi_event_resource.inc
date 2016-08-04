@@ -44,10 +44,11 @@ function _eventresource_create($data) {
                 $timezone = $val['timezone'];   
               $start_time = new DateTime($val['start_time'], new DateTimeZone($timezone)); 
               if(isset($val['end_time'])) {
-                $end_time = new DateTime($val['end_time'], new DateTimeZone($timezone));
+                $end_time = new DateTime($val['end_time'], new DateTimeZone($timezone));              
                 $schedule_wrapper->field_schedule_date[0]->set(array(
                   'value' => $start_time->format('U'),
                   'value2' => $end_time->format('U'),
+                  'rrule' => isset($val['rrule'])? $val['rrule'] : ""
                 ));
               }
               else {
