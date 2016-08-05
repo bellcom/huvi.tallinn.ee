@@ -64,11 +64,13 @@ function _eventresource_create($data) {
                 ));
               }
             }
-            if (isset($val['city']) && $city_id = huvi_event_resource_get_city_id($val['city']) )
+            $city = isset($val['city']) ? $val['city'] : $data['city'];
+            $place = isset($val['place']) ? $val['place'] : $data['place'];
+            $toimumiskoht = isset($val['place']) ? $val['toimumiskoht'] : $data['toimumiskoht'];
+            if (isset($city) && $city_id = huvi_event_resource_get_city_id($city) )
               $schedule_wrapper->field_schedule_city_id->set($city_id);      
-            if (isset($val['place']))
-              $schedule_wrapper->field_schedule_place->set($val['place']);
-            if (isset($val['toimumiskoht']) && $toimumiskoht = taxonomy_get_term_by_name($val['toimumiskoht'], 'toimumiskoht'))
+            $schedule_wrapper->field_schedule_place->set($place);
+            if (isset($toimumiskoht) && $toimumiskoht = taxonomy_get_term_by_name($toimumiskoht, 'toimumiskoht'))
              $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht));   
           }
           break;
@@ -107,7 +109,11 @@ function _eventresource_create($data) {
             return services_error('Invalid event type value', 406);
          }
          break;
-         default:
+        case 'city':
+        case 'place':
+        case 'toimumiskoht':
+          break;
+        default:
           $w->{$field}->set($data[$event_item]);
           break;
       } 
