@@ -8,7 +8,8 @@
 
 function _eventresource_create($data) {
   global $user;
-  
+ $requered_fields = array ('name', 'description', 'type');
+ 
   $values = array(
       'type' => 'event',
       'uid' => $user->uid,
@@ -21,6 +22,12 @@ function _eventresource_create($data) {
   $entity = entity_create('node', $values);
   $w = entity_metadata_wrapper('node', $entity);  
   $fields = huvi_event_resource_event_to_node_fields();
+    
+  // Requered fields checking   
+  foreach ($requered_fields as $field_name)
+    if (!isset($data[$field_name]) || empty($data[$field_name]))  
+        return services_error('Requered field ' . $field_name . ' is missing', 406);
+  
   foreach($fields as $event_item => $field) {
     if(isset($data[$event_item])) {
       switch($event_item) {
