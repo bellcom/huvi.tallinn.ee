@@ -9,7 +9,23 @@
 function _eventresource_create($data) {
   global $user;
  $requered_fields = array ('name', 'description', 'type');
- 
+ // Check if the node exists already
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'event')
+    ->fieldCondition('field_id', 'value', $data['id'], '=')
+    ->execute();
+  // Node exists, load the entity
+  if($result) {
+    foreach($result['node'] as $key => $val) {
+      $entity_load = entity_load('node', array($key));
+      foreach($entity_load as $ekey => $eval) {
+        $entity = $eval;
+      }
+    }
+  }
+  // Node doesn't exist yet, create a new entity
+  else {
   $values = array(
       'type' => 'event',
       'uid' => $user->uid,
@@ -17,9 +33,10 @@ function _eventresource_create($data) {
       'comment' => 0,
       'promote' => 0,
       'language' => 'et',
-    );
-  
+    );  
   $entity = entity_create('node', $values);
+  }
+  
   $w = entity_metadata_wrapper('node', $entity);  
   $fields = huvi_event_resource_event_to_node_fields();
     
@@ -40,7 +57,17 @@ function _eventresource_create($data) {
          }         
          $w->{$field}->set($files);          
          break;
-        case 'schedule':         
+        case 'schedule':  
+          if(!empty($entity->field_schedule['und'])) {
+            $s_values = array();
+            foreach($entity->field_schedule['und'] as $s_key => $s_val) {
+              $s_values[] = $s_val['value'];
+              unset($entity->field_schedule['und'][$s_key]);
+            }
+            if(!empty($s_values)) {
+              entity_delete_multiple('field_collection_item', $s_values);
+            }
+          }
           foreach($data[$event_item] as $key => $val) {
             $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
             $schedule_item->setHostEntity('entity', $entity);
