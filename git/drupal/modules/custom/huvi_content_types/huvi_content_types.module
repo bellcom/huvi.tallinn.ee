@@ -24,7 +24,7 @@ function huvi_content_types_node_validate($node,$form, &$form_state) {
       }
 
       if (($phone == "") && ($e_post == "")){//validate  'korraldaja' fields
-          form_set_error('field_korraldaja_e_post', t('Korraldaja fields e-mail or phone number is required.'));
+          form_set_error('field_korraldaja_e_post', t('Lisada tuleb ürituse korraldaja kontakttelefon või e-posti aadress.'));
           if ($nimi == "") {
               form_set_error('field_korraldaja', t('Organisatsiooni nimi field is required.'));
           }
