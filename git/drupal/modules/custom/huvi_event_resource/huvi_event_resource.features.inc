@@ -12,5 +12,3 @@ function huvi_event_resource_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "3");
   }
 }
-
-

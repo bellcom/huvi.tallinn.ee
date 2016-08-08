@@ -50,4 +50,3 @@ function huvi_event_resource_default_services_endpoint() {
 
   return $export;
 }
-
