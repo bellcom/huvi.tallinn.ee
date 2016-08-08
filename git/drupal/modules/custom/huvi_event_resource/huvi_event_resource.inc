@@ -91,10 +91,10 @@ function _eventresource_create($data) {
                 ));
               }
             }
-            $city = isset($val['city']) ? $val['city'] : $data['city'];
+            $city_area = isset($val['city_area']) ? $val['city_area'] : $data['city_area'];
             $place = isset($val['place']) ? $val['place'] : $data['place'];
             $toimumiskoht = isset($val['place']) ? $val['toimumiskoht'] : $data['toimumiskoht'];
-            if (isset($city) && $city_id = huvi_event_resource_get_city_id($city) )
+            if (isset($city_area) && $city_id = huvi_event_resource_get_city_id($city_area) )
               $schedule_wrapper->field_schedule_city_id->set($city_id);      
             $schedule_wrapper->field_schedule_place->set($place);
             if (isset($toimumiskoht) && $toimumiskoht = taxonomy_get_term_by_name($toimumiskoht, 'toimumiskoht'))
