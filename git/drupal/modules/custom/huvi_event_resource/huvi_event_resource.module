@@ -23,7 +23,7 @@ function huvi_event_resource_services_resources() {
         'help' => 'Creates a event',
         'file' => array('file' => 'inc', 'module' => 'huvi_event_resource'),
         'callback' => '_eventresource_create',
-        //'access arguments' => array('note resource create'),
+        'access arguments' => array('create event content'),
         //'access arguments append' => FALSE,
         'args' => array(
           array(
