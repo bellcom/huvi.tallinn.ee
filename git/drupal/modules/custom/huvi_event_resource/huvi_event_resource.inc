@@ -101,7 +101,17 @@ function _eventresource_create($data) {
              $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht));   
           }
           break;
-        case 'korraldaja':         
+        case 'korraldaja':
+          if(!empty($entity->field_korraldaja['und'])) {
+            $s_values = array();
+            foreach($entity->field_korraldaja['und'] as $s_key => $s_val) {
+              $s_values[] = $s_val['value'];
+              unset($entity->field_korraldaja['und'][$s_key]);
+            }
+            if(!empty($s_values)) {
+              entity_delete_multiple('field_collection_item', $s_values);
+            }
+          }
           foreach($data[$event_item] as $key => $val) {
             $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
             $korraldaja_item->setHostEntity('entity', $entity);
