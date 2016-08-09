@@ -172,14 +172,12 @@ if(isset($event) && !empty($event)):
 		<div class="event-korraldaja">
 		 <?php //Korraldaja 
 		  if(isset($event['korraldaja']) && !empty($event['korraldaja'])): ?>
-		  
 			<?php foreach($event['korraldaja'] as $korraldaja_item): ?>
 			<?php print("<b>Korraldaja</b><p>"); ?>
-		  	<?php print_r($korraldaja_item['name']); ?>
-			<?php print(", ");?>
-		  	<?php print_r($korraldaja_item['email']);?>
+		  	<?php print($korraldaja_item['name'] . ", "); ?>
+		  	<?php print($korraldaja_item['email']); ?>
 			<?php print("<p>kontakttelefon: "); ?>
-			<?php print_r($korraldaja_item['phone']); ?>
+			<?php print($korraldaja_item['phone']); ?>
 			</div>
 		  <?php endforeach; ?>
 		    <?php endif; ?>
