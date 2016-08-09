@@ -3,8 +3,12 @@ body.cke_editable {
 }
 
 /* No files to import found in abstractions/**\/* */
+.field-name-field-korraldaja-kontakttelefon .form-type-textfield label:after{
+  content: "*";
+  color: #f00;
+}
 .event-korraldaja {
-    line-height: 0.3em;
+  line-height: 0.3em;
 }
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
