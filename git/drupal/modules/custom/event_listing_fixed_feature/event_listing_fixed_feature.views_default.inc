@@ -309,18 +309,19 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
   $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
+    1 => '1',
+    3 => '3',
+    4 => '4',
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
@@ -523,7 +524,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -702,18 +703,6 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
-  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
-  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
-  $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
-  $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
-  $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
   /* Filter criterion: Content: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
@@ -722,17 +711,17 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator_id'] = 'field_categories_event_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Tüüp:';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Ürituse tüüp:';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
+    1 => 0,
+    3 => 0,
+    4 => 0,
   );
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -744,19 +733,18 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_label'] = 'Linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
+    1 => 0,
+    3 => 0,
+    4 => 0,
   );
   /* Filter criterion: Global: Combine fields filter */
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -789,13 +777,12 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'field_isfree_value';
-  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
-    3 => '3',
-    4 => '4',
+    3 => 0,
+    4 => 0,
   );
   $handler->display->display_options['filters']['field_isfree_value']['expose']['reduce'] = TRUE;
   /* Filter criterion: Global: PHP */
@@ -980,7 +967,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -1234,7 +1221,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -1459,7 +1446,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -1707,7 +1694,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -2017,7 +2004,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -2336,7 +2323,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -2646,7 +2633,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -2956,7 +2943,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -3266,7 +3253,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
@@ -3576,7 +3563,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
   $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
