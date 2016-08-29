@@ -77,19 +77,15 @@ function _eventresource_create($data) {
               if (isset($val['timezone']))                
                 $timezone = $val['timezone'];   
               $start_time = new DateTime($val['start_time'], new DateTimeZone($timezone)); 
-              if(isset($val['end_time'])) {
+              if(isset($val['end_time'])) 
                 $end_time = new DateTime($val['end_time'], new DateTimeZone($timezone));              
-                $schedule_wrapper->field_schedule_date[0]->set(array(
-                  'value' => $start_time->format('U'),
-                  'value2' => $end_time->format('U'),
+              
+              $schedule_wrapper->field_schedule_date[0]->set(array(
+                  'value' =>  $start_time->format('U'),
+                  'value2' => isset($end_time) ? $end_time->format('U'): null,
                   'rrule' => isset($val['rrule'])? $val['rrule'] : ""
                 ));
-              }
-              else {
-                $schedule_wrapper->field_schedule_date[0]->set(array(
-                  'value' => $start_time->format('U'),
-                ));
-              }
+              
             }
             $city_area = isset($val['city_area']) ? $val['city_area'] : $data['city_area'];
             $place = isset($val['place']) ? $val['place'] : $data['place'];
