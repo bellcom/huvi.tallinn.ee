@@ -7,8 +7,9 @@ body.cke_editable {
   content: "*";
   color: #f00;
 }
-.event-korraldaja {
-  line-height: 0.3em;
+
+.event-korraldaja p {
+    margin: 5px 0;
 }
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
