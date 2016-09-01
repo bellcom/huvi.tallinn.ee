@@ -356,15 +356,18 @@
     if($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
       $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
-    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
-        event.preventDefault();
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {         
+        event.preventDefault(event);
         setCookie("last_tab_huvi", "");
         setCookie("last_tab_uri", "");
          $.ajax({
             type: 'POST',
             url: Drupal.settings.basePath + 'ajax/events_filters_reset',
-            success: function() {                   
-              location.reload();
+            success: function() {
+               $('.form-item input:checked').each(function(){
+               $(this).prop( "checked", false );
+            });
+                location.reload();
             }
             });
 
