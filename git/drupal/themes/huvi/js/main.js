@@ -1,5 +1,4 @@
 (function ($) {
-
     $(document).ready(function () {
 
         var last_tab_uri = getCookie("last_tab_uri");
@@ -190,20 +189,13 @@
 
         // Bugfix for QuickTabs and view filters to get along
         $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
-            //if($(this).closest('.block--views').hasClass('first-click-done')) {
             if ($(this).prev().is(':checked')) {
-                $(this).prev().removeAttr('checked');
+                $(this).prev().prop('checked', false)
             }
             else {
-                $(this).prev().attr('checked', 'checked');
+                $(this).prev().prop('checked', true);
             }
-            $(this).closest('.block--views').find('input#edit-submit-event-listing-fixed').trigger('click');
-            /*
-             }
-             else {
-             $(this).closest('.block--views').addClass('first-click-done');
-             }
-             */
+            $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
         });
 
 
@@ -356,28 +348,16 @@
 
         $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
         $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
-        // refresh the page when resetting filters
-        /* $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
-         event.preventDefault();
-         location.reload();
-         });*/
-// Bugfix for QuickTabs and view filters to get along
 
+        // Bugfix for QuickTabs and view filters to get along
         $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
-            //if($(this).closest('.block--views').hasClass('first-click-done')) {
             if ($(this).prev().is(':checked')) {
-                $(this).prev().removeAttr('checked');
+                $(this).prev().prop('checked', false);
             }
             else {
-                $(this).prev().attr('checked', 'checked');
+                $(this).prev().prop('checked', true);
             }
             $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
-            /*
-             }
-             else {
-             $(this).closest('.block--views').addClass('first-click-done');
-             }
-             */
         });
 
         $('.openid-ee-button.form-submit').parent().wrap('<form id="openid_ee_custom_login" action="user/login" method="POST"></form>');
@@ -386,9 +366,6 @@
         $('#mobile-id-button').appendTo('#modal-content');
 
         $('#huvi-loader').remove();
-
-        //$('#modalContent').css('top', '50px');
-
     });
 
     function checkFilters() {
@@ -403,10 +380,10 @@
                 var toChange = $('.quicktabs-tabpage.now-active .bef-select-as-checkboxes .form-item label:contains("' + text + '")');
                 if (toChange.length > 0) {
                     if ($(this).find('input').is(':checked')) {
-                        toChange.prev().attr('checked', 'checked');
+                        toChange.prev().prop('checked', true);
                     }
                     else {
-                        toChange.prev().removeAttr('checked');
+                        toChange.prev().prop('checked', false);
                     }
                 }
             });
@@ -418,17 +395,16 @@
     }
 
     function clearSelectedFilters(event) {
-        console.log('cliked: .view-event-listing-fixed .views-exposed-widget.views-reset-button');
         event.preventDefault(event);
         setCookie("last_tab_huvi", "");
         setCookie("last_tab_uri", "");
+        $('.form-item input:checked').each(function () {
+            $(this).prop('checked', false);
+        });
         $.ajax({
             type: 'POST',
             url: Drupal.settings.basePath + 'ajax/events_filters_reset',
             success: function () {
-                $('.form-item input:checked').each(function () {
-                    $(this).prop("checked", false);
-                });
                 location.reload();
             }
         });
@@ -563,4 +539,3 @@ function getCookie(cname) {
     }
     return "";
 }
- 
