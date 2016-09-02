@@ -228,6 +228,9 @@
       $(this).hide();
     });
 
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
+
   });
 
   var categoriesOpen;
@@ -345,8 +348,8 @@
     $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function() {
       mobileClick($(this).find('.views-widget'));
     });
-	
-	
+
+
 
 
     // Change free event checkbox text
@@ -356,22 +359,9 @@
     if($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
       $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
     }
-    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {         
-        event.preventDefault(event);
-        setCookie("last_tab_huvi", "");
-        setCookie("last_tab_uri", "");
-         $.ajax({
-            type: 'POST',
-            url: Drupal.settings.basePath + 'ajax/events_filters_reset',
-            success: function() {
-               $('.form-item input:checked').each(function(){
-               $(this).prop( "checked", false );
-            });
-                location.reload();
-            }
-            });
 
-        });
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
+    $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
     // refresh the page when resetting filters
    /* $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(function(event) {
       event.preventDefault();
@@ -431,6 +421,23 @@
             $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
 
         }
+    }
+
+    function clearSelectedFilters(event) {
+        console.log('cliked: .view-event-listing-fixed .views-exposed-widget.views-reset-button');
+        event.preventDefault(event);
+        setCookie("last_tab_huvi", "");
+        setCookie("last_tab_uri", "");
+        $.ajax({
+            type: 'POST',
+            url: Drupal.settings.basePath + 'ajax/events_filters_reset',
+            success: function() {
+                $('.form-item input:checked').each(function(){
+                    $(this).prop( "checked", false );
+                });
+                location.reload();
+            }
+        });
     }
 })(jQuery);
 
