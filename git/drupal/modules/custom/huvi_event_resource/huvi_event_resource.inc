@@ -7,9 +7,21 @@
  */
 
 function _eventresource_create($data) {
-  global $user;
- $requered_fields = array ('name', 'description', 'type');
- // Check if the node exists already
+  $response_text = array();
+ foreach ($data['events'] as $key => $event) {
+  $nid = huvi_event_resource_add_event($event);
+  $response_text[] = 'Event ' . $event['id'] . ' was saved into node ' . $nid; 
+
+ }
+  return (object)array(
+      'status' => 'OK',
+      'response' => $response_text,
+    );
+}
+function huvi_event_resource_add_event($data) {
+  global $user; 
+  $requered_fields = array ('name', 'description', 'type');
+   // Check if the node exists already
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'event')
@@ -139,7 +151,7 @@ function _eventresource_create($data) {
           if(isset($data['type']) && in_array($data['type'], array('huvitegevus','uritus')))
             $w->{$field}->set($data[$event_item]);
          else {           
-            return services_error('Invalid event type value', 406);
+            return services_error('Invalid event type value. Event_id: ' . $data['id'], 406);
          }
          break;
         case 'city':
@@ -167,13 +179,8 @@ function _eventresource_create($data) {
   }          
   
   $w->save();
-
-  return (object)array(
-      'status' => 'OK',
-      'text' => 'Event was created successfully',
-    );
+  return $w->getIdentifier();
 }
-
 function huvi_event_resource_event_to_node_fields() {
   $return = array(
     'id' => 'field_id',
