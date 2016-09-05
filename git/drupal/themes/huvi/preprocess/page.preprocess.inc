@@ -60,5 +60,11 @@ function huvi_preprocess_page(&$variables) {
   }
 
   drupal_add_js(drupal_get_path('theme', 'huvi') . '/js/footer.js', array('scope' => 'footer'));
-
+  
+  if ((arg(0) == 'uritused' || arg(0) == 'huvitegevused')){
+     drupal_add_css(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/dist/daterangepicker.min.css');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/moment.min.js');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/dist/jquery.daterangepicker.min.js');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/js/daterangepicker.custom.languges.js');
+ }
 }

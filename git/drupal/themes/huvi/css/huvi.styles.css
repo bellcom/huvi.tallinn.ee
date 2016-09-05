@@ -7,9 +7,8 @@ body.cke_editable {
   content: "*";
   color: #f00;
 }
-
-.event-korraldaja p {
-    margin: 5px 0;
+.event-korraldaja {
+  line-height: 0.3em;
 }
 
 .field-name-field-korraldaja .field-name-field-korraldaja {
@@ -3734,3 +3733,18 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
   color: black;
 }
+
+/** DateRangePicker  overrides ***/
+.month-wrapper table th{
+   background-color: #fff;
+}
+
+.date-picker-wrapper {
+    display: none;
+    z-index: 999;
+}
+
+.views-widget-filter-field_schedule_date_value {
+    display: none;
+}
+

@@ -1,19 +1,60 @@
 (function ($) {
+    var dateRangePickerConfig ={
+                utoClose: false,
+                format: 'DD.MM.YYYY',
+                separator: ' - ',
+                language: 'et',
+                autoClose: false,
+                startOfWeek: 'monday',
+                alwaysOpen: false,
+                showShortcuts: true,
+                shortcuts : null,
+                getValue: function()
+                {
+                    return $(this).val();
+                },
+                setValue: function(s, s1, s2) {
+                    if ((s1 == "" && s2 == "") || (typeof s1 === 'undefined' && typeof s2 == 'undefined'))
+                      this.innerHTML = 'Vali ajavahemik' ;
+                    if (s2 == s1 ){
+                      var parts = s1.split(".");
+                      date= new  Date(parts[2], parts[1] - 1, parts[0]);
+                      this.innerHTML = s1 + ' | ' + getWeekday(date.getDay());
+                    }
+                  else
+                    this.innerHTML = s;
+               },
+           }
     $(document).ready(function () {
 
         var last_tab_uri = getCookie("last_tab_uri");
         var last_tab_huvi = getCookie("last_tab_huvi");
         var path = location.href;
         var title = path.substr(path.lastIndexOf("/") + 1);//title
-
-        if (last_tab_uri != "" && title == "uritused") {
-
-            $(last_tab_uri).click();
+        if(title == "uritused" ) {
+            var last_aeg_tab = '#quicktabs-tab-event_quicktabs_for_date_range_s-6';
+            if (last_tab_uri == "")
+              addDateRangePicker(last_aeg_tab);
         }
-        if (last_tab_huvi != "" && title == "huvitegevused") {
+        else if (title == "huvitegevused"){
+             var last_aeg_tab = '#quicktabs-tab-aeg_huvitegevus-6';
+            if (last_tab_huvi == "")
+              addDateRangePicker(last_aeg_tab);
+         }
 
-            $(last_tab_huvi).click();
+        if (last_tab_uri != "" && title == "uritused"  ){
+            $(last_tab_uri) . click();
+            addDateRangePicker(last_aeg_tab);
         }
+        if (last_tab_huvi != "" && title == "huvitegevused"  ){
+            $(last_tab_huvi) . click();
+            addDateRangePicker(last_aeg_tab);
+        }
+        
+        if ($('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
+        && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
+          $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
+       }
 
         //quictabs-remembered
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-0").click(function () {
@@ -39,6 +80,10 @@
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-5").click(function () {
             setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
         });
+        
+        $("#quicktabs-tab-event_quicktabs_for_date_range_s-6") . click(function(){
+		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-6");
+        });
 
         $("#quicktabs-tab-aeg_huvitegevus-0").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-0");
@@ -63,6 +108,10 @@
         $("#quicktabs-tab-aeg_huvitegevus-5").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
         });
+        
+        $("#quicktabs-tab-aeg_huvitegevus-6") . click(function(){
+	    setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-6");
+	});
 
         //datepicker
         /*
@@ -409,6 +458,26 @@
             }
         });
     }
+    function addDateRangePicker(el){
+    $(el).dateRangePicker(dateRangePickerConfig)
+        .bind('datepicker-apply',function(event,obj){
+          if (obj.date2 == 'Invalid Date') {
+            obj.date2 = obj.date1;
+            obj.value = (obj.date1.getDate() < 10 ? '0' +obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth()+1) < 10 ? '0'
+                       + (obj.date1.getMonth()+1) : (obj.date1.getMonth()+1)) + '.' + obj.date1.getFullYear()
+                       + ' | ' + getWeekday(obj.date1.getDay());
+          }
+          $('#edit-field-schedule-date-value-max-datepicker-popup-0').val(obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() );
+          $('#edit-field-schedule-date-value-min-datepicker-popup-0').val(obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() );
+          this.innerHTML = obj.value;
+          $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
+       })
+    }
+
+   function getWeekday(day){
+      var weekdays = ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'];
+      return weekdays[day];
+   }
 })(jQuery);
 
 
