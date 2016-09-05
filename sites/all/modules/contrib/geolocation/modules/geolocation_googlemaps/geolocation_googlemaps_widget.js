@@ -67,6 +67,7 @@
     }
 
     geocoder.geocode( { 'address': address }, function(results, status) {
+     if (address != "") {
       if (status == google.maps.GeocoderStatus.OK) {
         Drupal.geolocation.maps[i].setCenter(results[0].geometry.location);
         Drupal.geolocation.setMapMarker(results[0].geometry.location, i);
@@ -79,6 +80,7 @@
         $('.field-name-field-schedule-city-id:visible').parent().find('.geolocation-address').append('<div class="map-location-not-found">Asukohta ei leitud järgneval põhjusel: ' + status + '</div>');
         //alert(Drupal.t('Geocode was not successful for the following reason: ') + status);
       }
+     }
     });
   }
 
