@@ -3423,6 +3423,7 @@ div.ctools-modal-content .form-item .description {
 
 .logi-sisse{
   border-bottom: 2px solid;
+  cursor: pointer;
 }
 
 .modal-forms-modal-content{
