@@ -167,7 +167,19 @@ function kuhuminna_utils_form_alter(&$form, &$form_state, $form_id) {
 function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   //dpm($form);
   //$form['openid_ee'] = drupal_get_form('openid_ee_login_form');
+  $form['logi_sisse'] = array(
+    '#weight' =>1,
+    '#prefix' => '<div id = "logi" class = "logi"><span id = "logi_sisse" class = "logi-sisse">Logi sisse kasutamine ja salasõnaga</span>
+                  </div>  <div id = "div_logi_sisse" class = "div-logi-sisse">',
+  );
+  $form['name'] += array(
+    '#weight' =>2,
+  );
+  $form['pass'] += array(
+    '#weight' =>3,
+  );
   $base_path = $GLOBALS['base_path'];
+  $path = drupal_get_path('module', 'kuhuminna_utils');
   $form['openid_idcard'] = array(
     '#type' => 'markup',
     '#markup' => '<a id="id-card-button" class="id-button" href="' . $base_path . 'mobileid?action=eid-login">'
@@ -180,11 +192,14 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
       '#markup' => '<a id="mobile-id-button" class="id-button" href="' . $base_path . 'mobileid?action=mid-login">'
           . t('MobileID') .
         '</a>',
-    );
+      '#prefix' => '</div>',
+      );
   }
-
+    $form['#attached']['js'] = array(
+    drupal_get_path('module', 'ajax_example') . $base_path . $path . '/kuhuminna_login.js',
+  );
+ //drupal_set_message('<pre>' . print_r($form,1) . '</pre>');
 }
-
 
 /**
  * Detect current section. Event or activity.
@@ -479,8 +494,7 @@ $icons = array(
 );
 
 	foreach($icons as $key => $statuses) {
-
-		if(array_search($status, $statuses) === false){
+    if(array_search($status, $statuses) === false){
 			continue;
 		}
 		else {
