@@ -3430,6 +3430,10 @@ div.ctools-modal-content .form-item .description {
   height: 250px;
 }
 
+#modalContent{
+   overflow: hidden;
+}
+
 div.modal-forms-modal-content .popups-container {
   background: #f9f9f9;
   background: -moz-linear-gradient(top, #f8f8f8 0%, #f9f9f9 100%);
