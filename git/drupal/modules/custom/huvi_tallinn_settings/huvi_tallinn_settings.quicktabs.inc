@@ -14,6 +14,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'aeg_huvitegevus';
+  $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Aeg:';
@@ -60,6 +61,13 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
       'weight' => '-95',
       'type' => 'block',
     ),
+    6 => array(
+      'bid' => 'views_delta_event_listing_fixed-block_13',
+      'hide_title' => 1,
+      'title' => 'Vali ajavahemik',
+      'weight' => '-94',
+      'type' => 'block',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'nostyle';
@@ -74,6 +82,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   t('R-P');
   t('Sel kuul');
   t('Täna');
+  t('Vali ajavahemik');
 
   $export['aeg_huvitegevus'] = $quicktabs;
 
@@ -81,6 +90,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'event_quicktabs_for_date_range_s';
+  $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Aeg:';
@@ -127,6 +137,13 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
       'weight' => '-95',
       'type' => 'block',
     ),
+    6 => array(
+      'bid' => 'views_delta_event_listing_fixed-block_12',
+      'hide_title' => 1,
+      'title' => 'Vali ajavahemik',
+      'weight' => '-94',
+      'type' => 'block',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'nostyle';
@@ -141,6 +158,7 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   t('R-P');
   t('Sel kuul');
   t('Täna');
+  t('Vali ajavahemik');
 
   $export['event_quicktabs_for_date_range_s'] = $quicktabs;
 
