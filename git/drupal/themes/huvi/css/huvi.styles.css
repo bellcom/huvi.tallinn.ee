@@ -2,21 +2,12 @@ body.cke_editable {
   background: none !important;
 }
 
-/* No files to import found in abstractions/**\/* */
-.event-korraldaja {
-    line-height: 0.3em;
-}
-
+/* toimumiskoht start */
 #edit-field-schedule-und-0-field-schedule-city-id{
   float: left;
   display: inline-block;
 }
-#field-schedule-und-0-field-schedule-place-add-more-wrapper{
-  visibility: hidden;
-}
-#edit-field-schedule-und-0-weight{
-  visibility: hidden;
-}
+
 #edit-field-schedule-und-0-field-schedule-city-id-und{
   padding: 0px 10px 2px 10px;
 }
@@ -40,45 +31,11 @@ tr .form-item {
   background: white;
   white-space: normal;
 }
-#edit-field-schedule-und-0-field-schedule-place{
-  width: 0px;
-  height: 0px;
-}
-#edit-field-schedule-und-0-field-schedule-location{
-  width: 100%;	
-}
-#edit-field-schedule-und-0-text-field-error{
-  width: 40%;
-  height: 15;
-  float: right;
-  color: ac0008;
-}
-.form-item-field-schedule-und-0-field-add-toimumiskoht{
-  display: inline-block;
-  width: 25%;
-  padding: 0px 10px 2px 10px;
-}
-#edit-field-schedule-und-0-field-add-toimumiskoht{
-  width: 100%;
-}
-#edit-field-schedule-und-0-submit-clear-toimumiskoht{
-  background-color: white;
-  color: black;
-  padding: 2px 10px 3px 10px;
-  cursor: pointer;
-  margin: 2px 0 0 4px;
-  border: 0px;
-  text-decoration: underline;
-  background: no-repeat;
-}
-#edit-field-schedule-und-0-submit-add-toimumiskoht{
-  background: #96BC44;
-  color: #FFF;
-  padding: 2px 10px 3px 10px;
-  cursor: pointer;
-  margin: 2px 0 0 4px;
-  border: 0px;
-  border-radius: 0px;
+/* toimumiskoht end */
+
+/* korraldaja start */
+.event-korraldaja {
+    line-height: 0.3em;
 }
 .field-name-field-korraldaja .field-name-field-korraldaja {
   font-weight: bold;
@@ -131,7 +88,7 @@ body.page-node .l-main form.node-event-form .field-name-field-korraldaja .fields
 .field-name-field-korraldaja legend{
   width:100%;
 }
-
+/* korraldaja end */
 
 .buymain {
   margin-bottom: 10px;
