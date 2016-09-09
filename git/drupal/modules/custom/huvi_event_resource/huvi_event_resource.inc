@@ -21,6 +21,14 @@ function _eventresource_create($data) {
 function huvi_event_resource_add_event($data) {
   global $user; 
   $requered_fields = array ('name', 'description', 'type');
+  
+  // Requered fields checking   
+  foreach ($requered_fields as $field_name)
+    if (!isset($data[$field_name]) || empty($data[$field_name]))  
+        return services_error('Requered field ' . $field_name . ' is missing', 406);
+    
+   if (!isset($data['active']) || !in_array($data['active'], array(0, 1))) 
+        return services_error('Requered field active is missing', 406);
    // Check if the node exists already
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'node')
@@ -41,7 +49,6 @@ function huvi_event_resource_add_event($data) {
   $values = array(
       'type' => 'event',
       'uid' => $user->uid,
-      'status' => 1,
       'comment' => 0,
       'promote' => 0,
       'language' => 'et',
@@ -52,10 +59,7 @@ function huvi_event_resource_add_event($data) {
   $w = entity_metadata_wrapper('node', $entity);  
   $fields = huvi_event_resource_event_to_node_fields();
     
-  // Requered fields checking   
-  foreach ($requered_fields as $field_name)
-    if (!isset($data[$field_name]) || empty($data[$field_name]))  
-        return services_error('Requered field ' . $field_name . ' is missing', 406);
+  
   
   foreach($fields as $event_item => $field) {
     if(isset($data[$event_item])) {
@@ -154,9 +158,12 @@ function huvi_event_resource_add_event($data) {
             return services_error('Invalid event type value. Event_id: ' . $data['id'], 406);
          }
          break;
+         case 'active':
+           $w->{$field}->set(!(bool)$data['active']);
+          break;
         case 'city':
         case 'place':
-        case 'toimumiskoht':
+        case 'toimumiskoht':          
           break;
         default:
           $w->{$field}->set($data[$event_item]);
@@ -187,7 +194,8 @@ function huvi_event_resource_event_to_node_fields() {
     'name' => 'title', 
     'excerpt' => 'field_excerpt',
     'description' => 'field_description',
-	'korraldaja' => 'field_korraldaja',
+    'active' =>	'field_unpublish',
+    'korraldaja' => 'field_korraldaja',
     'images' => 'field_gallery',
     'hasimage' => 'field_hasimage',
     'image_url' => 'field_image_url',
