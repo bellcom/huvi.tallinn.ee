@@ -66,3 +66,9 @@ function kultuurikava_search_theme() {
     ),
   );
 }
+
+function kultuurikava_search_update_7100() {
+  db_query('ALTER TABLE `field_data_field_schedule` CONVERT TO CHARACTER SET utf8 COLLATE utf8_bin;');
+  db_query('ALTER TABLE `field_data_field_description` CONVERT TO CHARACTER SET utf8 COLLATE utf8_bin;');
+  db_query('ALTER TABLE `node` CONVERT TO CHARACTER SET utf8 COLLATE utf8_bin;');
+}
