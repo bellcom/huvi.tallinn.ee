@@ -414,6 +414,11 @@
         $('#id-card-button').appendTo('#modal-content');
         $('#mobile-id-button').appendTo('#modal-content');
 
+        if ($("#modalContent .messages--error").length){
+           $("#div_logi_sisse").show();
+        }
+        if ($("#div_logi_sisse").is(':hidden'))
+            $('#modalContent').height($('#modalContent').height() - $("#div_logi_sisse").height());
         $('#huvi-loader').remove();
     });
 
