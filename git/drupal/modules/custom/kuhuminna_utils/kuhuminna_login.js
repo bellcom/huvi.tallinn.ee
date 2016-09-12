@@ -7,7 +7,7 @@
       }
 
       $('#modalContent').height($('#modalContent').height() + $("#div_logi_sisse").height());
-      $("#div_logi_sisse").toggle('slow');
+      $("#div_logi_sisse").toggle();
     });
   });
 })(jQuery);
