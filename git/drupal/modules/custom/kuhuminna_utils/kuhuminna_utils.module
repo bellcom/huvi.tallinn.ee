@@ -195,10 +195,10 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
       '#prefix' => '</div>',
       );
   }
-    $form['#attached']['js'] = array(
-    drupal_get_path('module', 'ajax_example') . $base_path . $path . '/kuhuminna_login.js',
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'kuhuminna_utils') . '/kuhuminna_login.js',
   );
- //drupal_set_message('<pre>' . print_r($form,1) . '</pre>');
 }
 
 /**
