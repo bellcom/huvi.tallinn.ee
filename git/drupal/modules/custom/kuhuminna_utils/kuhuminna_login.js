@@ -1,5 +1,5 @@
 (function ($) {
-  $(document).ready(function() {
+  $(document).ajaxComplete(function() {
     $("#modalContent").on("click", "#logi_sisse", function(){
       //forbid second click
       if($("#div_logi_sisse").is(':visible')) {
