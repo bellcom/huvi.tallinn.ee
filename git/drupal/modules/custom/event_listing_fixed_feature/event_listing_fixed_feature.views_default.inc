@@ -237,6 +237,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
@@ -462,6 +470,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -683,6 +699,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -906,6 +930,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -1151,6 +1183,14 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -1385,6 +1425,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -1630,6 +1678,14 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
@@ -2188,6 +2244,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -2506,6 +2570,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -2816,6 +2888,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -3126,6 +3206,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -3436,6 +3524,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */
@@ -3746,6 +3842,14 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Tüüp (field_type) */

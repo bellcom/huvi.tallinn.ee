@@ -5,3 +5,48 @@
  */
 
 include_once 'event_listing_fixed_feature.features.inc';
+
+function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields.
+  // Scramble the order of the rows shown on this result page.
+  // Note that this could be done earlier, but not later in the view execution
+  // process.
+  if ($view->name == 'event_listing_fixed') {
+    $count = count($view->result);
+    for ($i = 0; $i < $count; $i++) {
+      $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
+      $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
+
+      $place_to_print = '';
+
+      if (isset($toimumiskoht)) {
+        $place_to_print = $toimumiskoht;
+        if (!empty($place)) {
+          $explode = (explode(",", $place)); // The explode() function breaks a string into an array.
+          $place_to_print .= ', ' . $explode[0];
+        }
+      } else {
+        $place_to_print = $place;
+//        $koht = (explode(" ", $place, -1)); // The explode() function breaks a string into an array.
+//        $placeTemp = "";
+//        $coun = count($koht);
+//        for ($j = 0; $j < $coun; $j++) {
+//          if (preg_match("/^[0-9]{5,5}$/", $koht[$j])) { // check index
+//            $j = $coun;
+//          }
+//          $placeTemp = $placeTemp . " " . $koht [$j];
+//        }
+//        if (substr($placeTemp, -1) == " ") {
+//          $placeTemp = substr($placeTemp, 0, -1);
+//        }
+//        if (substr($placeTemp, -1) == ',') { // delete ','
+//          $place = substr($placeTemp, 0, -1);
+//        } else {
+//          $place = $placeTemp;
+//        }
+      }
+      $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'] = $place_to_print;
+      $view->result[$i]->field_field_schedule_toimumiskoht[0]['rendered']['#markup'] = "";
+    }
+  }
+  return $view;
+}

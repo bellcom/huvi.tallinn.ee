@@ -939,7 +939,6 @@ function kultuurikava_node_to_event($node) {
   $e = array();
   $addedMarkers = array();
   $fields = kultuurikava_event_to_node_fields();
-
 	
   // If the event has sub-events set
   $sub_event_ids = kultuurikava_get_sub_event_ids($n->nid);
@@ -1027,7 +1026,6 @@ function kultuurikava_node_to_event($node) {
             foreach($collections as $c) {
 
               if(isset($c->field_schedule_date['und'])) {
-				  //var_dump($c->field_schedule_date);
                 foreach($c->field_schedule_date['und'] as $time_key => $time) {
 					
                   if(isset($time['value'])) {
@@ -1056,7 +1054,16 @@ function kultuurikava_node_to_event($node) {
                         else
                           $e[$event][$event_key]['time'] = format_date($start_date, 'custom', $date_format);
                     }
-                    $e[$event][$event_key]['place'] = $c->field_schedule_place['und'][0]['value'];
+					$toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
+					$place = $c->field_schedule_place['und'][0]['value'];
+					if(!empty($toimumiskoht)){
+					  $e[$event][$event_key]['place'] = $toimumiskoht;	
+					  if(!empty($place))
+						$e[$event][$event_key]['place'] = $toimumiskoht . ", " . $place;
+					}
+					else{
+					  $e[$event][$event_key]['place'] = $place;
+					}
                     $event_key++;
                   }
                 }

@@ -2,15 +2,46 @@ body.cke_editable {
   background: none !important;
 }
 
-/* No files to import found in abstractions/**\/* */
+/* toimumiskoht start */
+#edit-field-schedule-und-0-field-schedule-city-id{
+  float: left;
+  display: inline-block;
+}
+
+#edit-field-schedule-und-0-field-schedule-city-id-und{
+  padding: 0px 10px 2px 10px;
+}
+#edit-field-schedule-und-0-field-schedule-toimumis{
+  display: inline-block;
+  width: 40%;
+  padding: 0px 10px 2px 10px;
+}
+div .autocomplete-deluxe-container input.autocomplete-deluxe-form-single {
+  height: 22px;
+}
+div .autocomplete-deluxe-throbber {
+  width: 20px;
+  height: 22px;
+}
+tr .form-item {
+  white-space: normal;
+}
+.autocomplete-deluxe-input{
+  height: 22px;
+  background: white;
+  white-space: normal;
+}
+/* toimumiskoht end */
+
+/* korraldaja start */
 .field-name-field-korraldaja-kontakttelefon .form-type-textfield label:after{
   content: "*";
   color: #f00;
 }
+
 .event-korraldaja {
   line-height: 0.3em;
 }
-
 .field-name-field-korraldaja .field-name-field-korraldaja {
   font-weight: bold;
   border-width: 1px;
@@ -62,7 +93,7 @@ body.page-node .l-main form.node-event-form .field-name-field-korraldaja .fields
 .field-name-field-korraldaja legend{
   width:100%;
 }
-
+/* korraldaja end */
 
 .buymain {
   margin-bottom: 10px;
