@@ -51,7 +51,7 @@
             addDateRangePicker(last_aeg_tab);
         }
         
-        if ($('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
+        if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
        }
