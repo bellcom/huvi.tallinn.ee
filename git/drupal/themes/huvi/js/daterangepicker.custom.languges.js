@@ -8,15 +8,15 @@
 	{
 		'selected': 'Valitud:',
 		'days': 'Päevad',
-		'apply': 'Vali',
-		'week-1' : 'Es',
-		'week-2' : 'Te',
-		'week-3' : 'Ko',
-		'week-4' : 'Ne',
-		'week-5' : 'Re',
-		'week-6' : 'La',
-		'week-7' : 'Pü',
-		'month-name': ['Jaanuar','Veebruar','Märts','Aprill','Mai','Juuni','Juuli','August','September','Octoober','November','Detsember'],
+		'apply': 'Vali ajavahemik',
+		'week-1' : 'E',
+		'week-2' : 'T',
+		'week-3' : 'K',
+		'week-4' : 'N',
+		'week-5' : 'R',
+		'week-6' : 'L',
+		'week-7' : 'P',
+		'month-name': ['Jaanuar','Veebruar','Märts','Aprill','Mai','Juuni','Juuli','August','September','Oktoober','November','Detsember'],
 		'shortcuts' : ' ',
 		'past': 'Past',
 		'7days' : '7days',
@@ -32,7 +32,7 @@
 		'default-more' : 'Please select a date range longer than %d days',
 		'default-less' : 'Please select a date range less than %d days',
 		'default-range' : 'Please select a date range between %d and %d days',
-		'default-default': 'Please select a date range'
+		'default-default': 'Vali soovitud ajaperiood'
 	};
         
 })(jQuery);

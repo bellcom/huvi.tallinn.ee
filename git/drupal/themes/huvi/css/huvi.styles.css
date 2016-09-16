@@ -2222,6 +2222,7 @@ ul.quicktabs-tabs li.active {
 ul.quicktabs-tabs li a {
   display: block;
   text-decoration: none;
+  white-space:nowrap;
 }
 ul.quicktabs-tabs li:last-of-type {
   border-right: none;
@@ -3817,4 +3818,51 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .views-widget-filter-field_schedule_date_value {
     display: none;
 }
+.date-picker-wrapper .drp_top-bar .apply-btn.disabled {
+    pointer-events: none;
+}
+.blue-scheme .date-picker-wrapper .drp_top-bar .apply-btn.disabled.enabled,
+.date-picker-wrapper .drp_top-bar .apply-btn{
+    pointer-events: auto;
+    border: 1px solid #0076a3;
+    background: #0095cd;
+    color: #fff;
+}
 
+.blue-scheme .date-picker-wrapper .first-date-selected, .blue-scheme .date-picker-wrapper .last-date-selected{
+    background-color: #0099cc !important;
+}
+.blue-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
+   background-color: #e0ffff;
+}
+.orange-scheme .date-picker-wrapper .first-date-selected, .orange-scheme .date-picker-wrapper .last-date-selected{
+    background-color: #f36722 !important;
+}
+.orange-scheme .date-picker-wrapper .month-wrapper table .day.checked, 
+.orange-scheme .date-picker-wrapper .month-wrapper table .day.toMonth.hovering{
+     background-color: #ffe684;
+}
+.orange-scheme .date-picker-wrapper .drp_top-bar .apply-btn.disabled.enabled,
+.orange-scheme .date-picker-wrapper .drp_top-bar .apply-btn{
+    pointer-events: auto;
+    border: 1px solid #bd5501;
+    background: #f36722;
+    color: #fff;
+}
+#quicktabs-tab-event_quicktabs_for_date_range_s-6 {
+    position: relative;
+}
+#quicktabs-tab-event_quicktabs_for_date_range_s-6:after,
+#quicktabs-tab-aeg_huvitegevus-6:after{
+  position: relative;
+  content: "";
+  border:       solid currentColor;
+  border-width: 0 .1em .1em 0;
+  display:      inline-block;
+  padding:      .20em;
+  transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  color: #000;
+  top : -3px;
+  left: 4px;
+}

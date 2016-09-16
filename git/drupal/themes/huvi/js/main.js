@@ -1,4 +1,5 @@
 (function ($) {
+    var currentDate = new Date();
     var dateRangePickerConfig ={
                 utoClose: false,
                 format: 'DD.MM.YYYY',
@@ -7,8 +8,7 @@
                 autoClose: false,
                 startOfWeek: 'monday',
                 alwaysOpen: false,
-                showShortcuts: true,
-                shortcuts : null,
+                startDate : currentDate.getDate() + '.' + (currentDate.getMonth() + 1) + '.' + currentDate.getFullYear(),
                 getValue: function()
                 {
                     return $(this).val();
@@ -24,7 +24,7 @@
                   else
                     this.innerHTML = s;
                },
-           }
+             }
     $(document).ready(function () {
 
         var last_tab_uri = getCookie("last_tab_uri");
@@ -466,7 +466,7 @@
     function addDateRangePicker(el){
     $(el).dateRangePicker(dateRangePickerConfig)
         .bind('datepicker-apply',function(event,obj){
-          if (obj.date2 == 'Invalid Date') {
+          if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
             obj.date2 = obj.date1;
             obj.value = (obj.date1.getDate() < 10 ? '0' +obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth()+1) < 10 ? '0'
                        + (obj.date1.getMonth()+1) : (obj.date1.getMonth()+1)) + '.' + obj.date1.getFullYear()
@@ -477,6 +477,10 @@
           this.innerHTML = obj.value;
           $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
        })
+      .bind('datepicker-first-date-selected',function(event,obj){
+          var  obj =  $('.apply-btn');
+          obj.addClass('enabled');
+      })
     }
 
    function getWeekday(day){

@@ -4108,7 +4108,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator_id'] = 'field_categories_event_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Tüüp:';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_event_value_i18n';
+  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
