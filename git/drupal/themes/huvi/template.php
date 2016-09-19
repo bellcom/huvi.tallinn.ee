@@ -33,3 +33,10 @@ function huvi_omega_layout_alter(&$layout) {
     $layout = 'landing';
   }
 }
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function huvi_theme_registry_alter(&$theme_registry) {
+  if (module_exists('disable_messages'))
+    $theme_registry['status_messages']['function'] = '_theme_disable_messages_status_messages';  
+}
