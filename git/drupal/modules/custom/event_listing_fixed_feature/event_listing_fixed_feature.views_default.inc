@@ -40,7 +40,7 @@ function event_listing_fixed_feature_views_default_views() {
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
     ),
-    'field_categories_event_value_i18n' => array(
+    'field_categories_activity_value' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
@@ -4051,17 +4051,17 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Field: Content: Ürituse kategooriad */
-  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_categories_event']['label'] = '';
-  $handler->display->display_options['fields']['field_categories_event']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_class'] = 'category fixwidth';
-  $handler->display->display_options['fields']['field_categories_event']['type'] = 'i18n_list_default';
-  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Field: Content: Huvitegevuse kategooriad */
+  $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
+  $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
+  $handler->display->display_options['fields']['field_categories_activity']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_activity']['label'] = '';
+  $handler->display->display_options['fields']['field_categories_activity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_categories_activity']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_categories_activity']['element_wrapper_class'] = 'category fixwidth';
+  $handler->display->display_options['fields']['field_categories_activity']['type'] = 'i18n_lits_default';
+  $handler->display->display_options['fields']['field_categories_activity']['delta_offset'] = '0';
   /* Field: Field collection item: Asukoht */
   $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
   $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
@@ -4090,6 +4090,25 @@ echo $date;
     'huvitegevus' => 'huvitegevus',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) */
+  $handler->display->display_options['filters']['field_categories_activity_value']['id'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value']['field'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator_id'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['label'] = 'Tüüp';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filter criterion: Field collection item: Field name */
   $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
   $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
@@ -4098,25 +4117,6 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filter criterion: Content: Ürituse kategooriad (field_categories_event) (translated) */
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['group'] = 1;
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator_id'] = 'field_categories_event_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['label'] = 'Tüüp:';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['operator'] = 'field_categories_event_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_event_value_i18n']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -4196,6 +4196,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
@@ -4205,6 +4206,7 @@ return true;
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator_id'] = 'field_schedule_date_value_op';
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
