@@ -85,6 +85,7 @@ features[field_instance][] = node-event-field_unpublish
 features[field_instance][] = node-event-field_users_ref
 features[field_instance][] = node-event-field_video_url
 features[field_instance][] = node-event-field_videos
+features[image][] = 900x200
 features[node][] = event
 features[user_permission][] = create field_schedule_place
 features[user_permission][] = edit field_schedule_place

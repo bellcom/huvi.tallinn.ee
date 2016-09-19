@@ -21,6 +21,30 @@ function huvi_content_types_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function huvi_content_types_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: 900x200.
+  $styles['900x200'] = array(
+    'label' => '900x200',
+    'effects' => array(
+      9 => array(
+        'name' => 'image_resize',
+        'data' => array(
+          'width' => 900,
+          'height' => 200,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function huvi_content_types_node_info() {
