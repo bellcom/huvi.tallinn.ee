@@ -178,6 +178,10 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   $form['pass'] += array(
     '#weight' =>3,
   );
+   
+  //if (empty($messages)) {
+   // unset($_SESSION['messages']['error']);
+  //}
   $base_path = $GLOBALS['base_path'];
   $path = drupal_get_path('module', 'kuhuminna_utils');
   $form['openid_idcard'] = array(
