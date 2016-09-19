@@ -1,5 +1,21 @@
 (function ($) {
     $(document).ready(function () {
+        if ($("#block-system-user-menu").length) {
+             $('#block-views-slide-show-block').hide();
+        }
+        else{
+            if ($("#views_slideshow_controls_text_slide_show-block").length) {
+                $(".page-meta").css({
+                    "position": "absolute",
+                    "margin-top": "-220px",
+                    "z-index": "999",
+                    "width": "900px"
+                });
+            }
+            else{
+                $('#views_slideshow_pager_field_item_bottom_slide_show-block_0').hide();
+            }
+        }
 
         var last_tab_uri = getCookie("last_tab_uri");
         var last_tab_huvi = getCookie("last_tab_huvi");
@@ -336,7 +352,6 @@
         $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function () {
             mobileClick($(this).find('.views-widget'));
         });
-
 
         // Change free event checkbox text
         if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
