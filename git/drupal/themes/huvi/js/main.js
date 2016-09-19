@@ -268,6 +268,11 @@
         $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
         $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
 
+        if ($(".messages--error").length){
+           $(".messages--error").insertBefore( $( "#user-login .form-actions" ));
+           $("#user-login #div_logi_sisse").show();
+        }
+
     });
 
     var categoriesOpen;
@@ -295,7 +300,6 @@
             categoriesOpen = false;
             activityCatOpen = false;
         }
-
         $('#huvi-loader').remove();
         $('#quicktabs-event_quicktabs_for_date_range_s #edit-combine, #quicktabs-aeg_huvitegevus #edit-combine').after('<div id="huvi-loader"></div>');
     });
@@ -414,11 +418,12 @@
         $('#id-card-button').appendTo('#modal-content');
         $('#mobile-id-button').appendTo('#modal-content');
 
-        if ($("#modalContent .messages--error").length){
-           $("#div_logi_sisse").show();
+        if ($(".messages--error").length){
+            $(".messages--error").insertBefore( $( "#modalContent #div_logi_sisse .form-actions" ));
+           $("#modalContent #div_logi_sisse").show();
         }
-        if ($("#div_logi_sisse").is(':hidden'))
-            $('#modalContent').height($('#modalContent').height() - $("#div_logi_sisse").height());
+        if ($("#modalContent #div_logi_sisse").is(':hidden'))
+            $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height());
         $('#huvi-loader').remove();
     });
 

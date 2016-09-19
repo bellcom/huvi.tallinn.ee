@@ -2710,14 +2710,29 @@ body.html {
   display: none;
 }
 
-#mobile-id-button{
+#modalContent #mobile-id-button{
   top: 30px;
   left: 18%;
 }
 
-#id-card-button{
+#modalContent #id-card-button{
   top: 30px;
   right: 18%;
+}
+
+#mobile-id-button{
+  top: -50px;
+  left: 35%;
+}
+
+ #id-card-button{
+  top: -50px;
+  right: 35%;
+}
+
+form.user-login {
+    padding-bottom: 30px;
+    position: relative;
 }
 
 .edit-name{
@@ -3530,7 +3545,7 @@ div.modal-forms-modal-content .popups-close {
 
 #modal-content .messages--error {
   margin-bottom: 20px;
-  top: 50px;
+ // top: 50px;
   position: relative;
 }
 #modal-content .ctools-use-modal-processed .form-item.form-type-textfield input, #modal-content .ctools-use-modal-processed .form-item.form-type-password input {
