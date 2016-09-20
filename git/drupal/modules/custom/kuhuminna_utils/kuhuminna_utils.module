@@ -169,7 +169,7 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   //$form['openid_ee'] = drupal_get_form('openid_ee_login_form');
   $form['logi_sisse'] = array(
     '#weight' =>1,
-    '#prefix' => '<div id = "logi" class = "logi"><span id = "logi_sisse" class = "logi-sisse">Logi sisse kasutamine ja salasõnaga</span>
+    '#prefix' => '<div id = "logi" class = "logi"><span id = "logi_sisse" class = "logi-sisse">Logi sisse kasutajanime ja salasõnaga</span>
                   </div>  <div id = "div_logi_sisse" class = "div-logi-sisse">',
   );
   $form['name'] += array(
