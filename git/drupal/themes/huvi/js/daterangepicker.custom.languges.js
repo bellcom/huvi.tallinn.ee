@@ -7,7 +7,7 @@
     $.dateRangePickerLanguages['et'] = 
 	{
 		'selected': 'Valitud:',
-		'days': 'Päevad',
+		'days': 'Päevi',
 		'apply': 'Vali ajavahemik',
 		'week-1' : 'E',
 		'week-2' : 'T',

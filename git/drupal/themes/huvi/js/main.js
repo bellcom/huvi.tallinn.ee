@@ -483,8 +483,12 @@
           $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
        })
       .bind('datepicker-first-date-selected',function(event,obj){
-          var  obj =  $('.apply-btn');
-          obj.addClass('enabled');
+          var  button =  $('.apply-btn');
+          button.addClass('enabled');
+          obj.value = (obj.date1.getDate() < 10 ? '0' +obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth()+1) < 10 ? '0'
+                       + (obj.date1.getMonth()+1) : (obj.date1.getMonth()+1)) + '.' + obj.date1.getFullYear()
+                       + ' | ' + getWeekday(obj.date1.getDay());
+         this.innerHTML = obj.value;
       })
     }
 
