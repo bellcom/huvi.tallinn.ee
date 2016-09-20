@@ -1,0 +1,13 @@
+diff --git a/sites/all/modules/contrib/disable_messages/disable_messages.module b/sites/all/modules/contrib/disable_messages/disable_messages.module
+index 8d97181..d1eb8b7 100644
+--- a/sites/all/modules/contrib/disable_messages/disable_messages.module
++++ b/sites/all/modules/contrib/disable_messages/disable_messages.module
+@@ -91,7 +91,7 @@ function theme_disable_messages_status_messages($vars) {
+     'warning' => t('Warning message'),
+   );
+   foreach ($messages as $type => $arr_messages) {
+-    $output .= "<div class=\"messages $type\">\n";
++    $output .= "<div class=\"messages messages--$type\">\n";
+     if (!empty($status_heading[$type])) {
+       $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>\n";
+     }
