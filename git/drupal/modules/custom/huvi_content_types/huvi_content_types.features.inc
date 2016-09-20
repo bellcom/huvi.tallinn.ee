@@ -28,12 +28,12 @@ function huvi_content_types_image_default_styles() {
 
   // Exported image style: 900x200.
   $styles['900x200'] = array(
-    'label' => '900x200',
+    'label' => '920x200',
     'effects' => array(
       9 => array(
         'name' => 'image_resize',
         'data' => array(
-          'width' => 900,
+          'width' => 920,
           'height' => 200,
         ),
         'weight' => 1,

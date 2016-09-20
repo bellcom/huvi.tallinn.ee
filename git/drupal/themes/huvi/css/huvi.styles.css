@@ -3599,7 +3599,7 @@ body.page-loodud .messages.messages--error {
   float: right;
 }
 .views-slideshow-controls-text-previous {
-  background-image: url('../images/slide-control-previous.png');
+  background-image: url('../images/left-arrow-button.png');
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -3610,8 +3610,13 @@ body.page-loodud .messages.messages--error {
 .views-content-counter{
   display: none;
 }
-.views-slideshow-pager-field-item.views_slideshow_pager_field_item{
+
+.views-slideshow-pager-field-processed{
   float: right;
+}
+
+.views-slideshow-pager-field-item.views_slideshow_pager_field_item{
+  float: left;
   padding: 10px;
   background-image: url('../images/slide-navi-oval.png');
   background-repeat: no-repeat;
@@ -3624,7 +3629,7 @@ body.page-loodud .messages.messages--error {
 }
 
 .views-slideshow-controls-text-next {
-  background-image: url('../images/slide-control-next.png');
+  background-image: url('../images/right-arrow-button.png');
   display: inline-block;
   width: 20px;
   height: 20px;
