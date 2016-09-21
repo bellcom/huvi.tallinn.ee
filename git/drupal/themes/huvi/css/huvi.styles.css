@@ -3588,7 +3588,12 @@ body.page-loodud .messages.messages--error {
   display: none;
 }
 
-.view-slideshow { position: relative;
+/* SLIDESHOW START */
+.view-slide-show {
+  position: relative;
+  top: -60px;
+  margin-bottom: -60px;
+  z-index: 1;
 }
 
 .views_slideshow_controls_text{
@@ -3613,6 +3618,10 @@ body.page-loodud .messages.messages--error {
 
 .views-slideshow-pager-field-processed{
   float: right;
+}
+
+.views-slideshow-pager-field-item:only-child {
+  display: none;
 }
 
 .views-slideshow-pager-field-item.views_slideshow_pager_field_item{
@@ -3648,23 +3657,13 @@ body.page-loodud .messages.messages--error {
 .views-slideshow-controls-text-status-pause a {
   display: none;
 }
-/*
-.views_slideshow_slide_counter{
-  display: none;
+
+.page-meta {
+  z-index: 2;
+  position: relative;
 }
-*/
-/*
-#overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 3000;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-}
-*/
+/* SLIDESHOW END */
+
 #huvi-loader {
   width: 31px;
   height: 31px;

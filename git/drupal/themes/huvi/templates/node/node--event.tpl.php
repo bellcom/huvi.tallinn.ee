@@ -31,16 +31,9 @@ if(isset($event) && !empty($event)):
     $node_edit_link =  '<a href="' . $base_path . 'node/' . $node->nid . '/edit">' . t('Edit event') . '</a>';
   }
 
-  if(empty($node->field_pildid_slideshow)){
-    print views_embed_view('slide_show','block', $node->field_main_event_ref['und'][0]['nid']);
-  }else{
-    print views_embed_view('slide_show','block');
-  }
-
   ?>
 
   <article class="event">
-
     <div class="page-meta">
       <div class="meta-left">
         <div class="back-button">
@@ -66,6 +59,13 @@ if(isset($event) && !empty($event)):
       </div>
     </div>
 
+    <?php
+    if (empty($node->field_pildid_slideshow)) {
+      print views_embed_view('slide_show','block', $node->field_main_event_ref['und'][0]['nid']);
+    } else {
+      print views_embed_view('slide_show','block');
+    }
+    ?>
 
     <div class="page-content">
       <?php

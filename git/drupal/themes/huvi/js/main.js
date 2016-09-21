@@ -1,30 +1,5 @@
 (function ($) {
     $(document).ready(function () {
-        if ($("#block-system-user-menu").length) {
-             $('#block-views-slide-show-block').hide();
-        }
-        else{
-            if ($("#views_slideshow_controls_text_slide_show-block").length) {
-                $(".page-meta").css({
-                    "position": "absolute",
-                    "margin-top": "-220px",
-                    "z-index": "999",
-                    "width": "900px"
-                });
-            }
-            else{
-                $('#views_slideshow_pager_field_item_bottom_slide_show-block_0').hide();
-                if($('.field-content a').length){
-                    $(".page-meta").css({
-                        "position": "absolute",
-                        "margin-top": "-200px",
-                        "z-index": "999",
-                        "width": "900px"
-                    });
-                }
-            }
-        }
-
         var last_tab_uri = getCookie("last_tab_uri");
         var last_tab_huvi = getCookie("last_tab_huvi");
         var path = location.href;
