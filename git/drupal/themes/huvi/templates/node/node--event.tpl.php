@@ -31,7 +31,12 @@ if(isset($event) && !empty($event)):
     $node_edit_link =  '<a href="' . $base_path . 'node/' . $node->nid . '/edit">' . t('Edit event') . '</a>';
   }
 
-  print views_embed_view('slide_show','block');
+  if(empty($node->field_pildid_slideshow)){
+    print views_embed_view('slide_show','block', $node->field_main_event_ref['und'][0]['nid']);
+  }else{
+    print views_embed_view('slide_show','block');
+  }
+
   ?>
 
   <article class="event">

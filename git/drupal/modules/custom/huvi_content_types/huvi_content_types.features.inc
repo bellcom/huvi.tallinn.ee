@@ -30,13 +30,13 @@ function huvi_content_types_image_default_styles() {
   $styles['900x200'] = array(
     'label' => '920x200',
     'effects' => array(
-      9 => array(
-        'name' => 'image_resize',
+      10 => array(
+        'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 920,
           'height' => 200,
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );
