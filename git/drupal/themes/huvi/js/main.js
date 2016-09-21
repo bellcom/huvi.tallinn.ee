@@ -14,6 +14,14 @@
             }
             else{
                 $('#views_slideshow_pager_field_item_bottom_slide_show-block_0').hide();
+                if($('.field-content a').length){
+                    $(".page-meta").css({
+                        "position": "absolute",
+                        "margin-top": "-200px",
+                        "z-index": "999",
+                        "width": "900px"
+                    });
+                }
             }
         }
 
