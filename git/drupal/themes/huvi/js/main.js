@@ -26,7 +26,6 @@
                },
              }
     $(document).ready(function () {
-
         var last_tab_uri = getCookie("last_tab_uri");
         var last_tab_huvi = getCookie("last_tab_huvi");
         var path = location.href;
@@ -389,7 +388,6 @@
         $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function () {
             mobileClick($(this).find('.views-widget'));
         });
-
 
         // Change free event checkbox text
         if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {

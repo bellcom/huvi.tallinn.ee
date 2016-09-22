@@ -511,7 +511,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -634,7 +634,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -744,7 +744,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -854,7 +854,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -907,7 +907,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -959,7 +959,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1011,7 +1011,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -1066,7 +1066,69 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 15,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_pildid_slideshow'.
+  $field_instances['node-event-field_pildid_slideshow'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pildid_slideshow',
+    'label' => 'Pildid Slideshow',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'multiupload_imagefield_widget',
+      'settings' => array(
+        'preview_image_style' => '900x200',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_miw',
+      'weight' => 11,
     ),
   );
 
@@ -1118,7 +1180,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -1173,7 +1235,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1225,7 +1287,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1329,7 +1391,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -1416,7 +1478,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1468,7 +1530,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -1562,6 +1624,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Peida üritus lehelt');
   t('Pikem kirjeldus ürituse kohta.');
   t('Pildid');
+  t('Pildid Slideshow');
   t('Piletite edasimüüja veebiaadress sündmusele');
   t('Pre description');
   t('Selekteeri kui tegemist on suurema üritusega, mille alla oleks vaja lehel luua alamüritusi.');

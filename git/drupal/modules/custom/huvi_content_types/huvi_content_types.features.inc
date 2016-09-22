@@ -14,6 +14,37 @@ function huvi_content_types_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function huvi_content_types_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function huvi_content_types_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: 900x200.
+  $styles['900x200'] = array(
+    'label' => '920x200',
+    'effects' => array(
+      10 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 920,
+          'height' => 200,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function huvi_content_types_node_info() {
