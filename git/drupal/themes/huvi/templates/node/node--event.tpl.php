@@ -61,7 +61,13 @@ if(isset($event) && !empty($event)):
 
     <?php
     if (empty($node->field_pildid_slideshow)) {
-      print views_embed_view('slide_show','block', $node->field_main_event_ref['und'][0]['nid']);
+      if (!empty($node->field_main_event_ref['und'])) {
+        //check if the parent has slidershow field
+        $parent = node_load($node->field_main_event_ref['und'][0]['nid']);
+        if (empty($parent->field_pildid_slideshow)) {
+          print views_embed_view('slide_show','block', $node->field_main_event_ref['und'][0]['nid']);
+        }
+      }
     } else {
       print views_embed_view('slide_show','block');
     }
