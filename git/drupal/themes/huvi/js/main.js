@@ -629,7 +629,7 @@ function remapBackButton(url) {
     if (window.history && window.history.pushState) {
         window.history.pushState('forward', null, '#');
         window.addEventListener('popstate', function() {
-            window.location.href = Drupal.settings.basePath + url;
+            window.location.href = url;
         });
     }
 }
