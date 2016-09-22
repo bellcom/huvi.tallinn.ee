@@ -24,7 +24,6 @@ function huvi_omega_layout_alter(&$layout) {
     if (isset($node) && $node->type == 'event') {
       $layout = 'single';
       $url = $_SERVER['HTTP_REFERER'];
-      //$url = ($node->field_type['und'][0]['value'] == 'uritus')? 'uritused' : 'huvitegevused';
       drupal_add_js("remapBackButton('$url');", array('type' => 'inline', 'scope' => 'footer'));
     }
   }

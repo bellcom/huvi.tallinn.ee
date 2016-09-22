@@ -25,12 +25,13 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
           $place_to_print .= ', ' . $explode[0];
         }
       } else {
-        $explode = (explode(",", $place)); // The explode() function breaks a string into an array.
-        if (!empty($place) && count($explode) > 1) {
+         $explode = (explode(",", $place)); // The explode() function breaks a string into an array.
+      /*  if (!empty($place) && count($explode) > 1) {
           $place_to_print = $explode[0] . ', ' . $explode[1];
         } else {
           $place_to_print = $place;
-        }
+        }*/
+         $place_to_print .=  $explode[0];
       }
       $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'] = $place_to_print;
       $view->result[$i]->field_field_schedule_toimumiskoht[0]['rendered']['#markup'] = "";
