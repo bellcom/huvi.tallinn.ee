@@ -31,12 +31,12 @@
         var path = location.href;
         var title = path.substr(path.lastIndexOf("/") + 1);//title
         if(title == "uritused" ) {
-            var last_aeg_tab = '#quicktabs-tab-event_quicktabs_for_date_range_s-6';
+            var last_aeg_tab = '#quicktabs-tab-event_quicktabs_for_date_range_s-5';
             if (last_tab_uri == "")
               addDateRangePicker(last_aeg_tab);
         }
         else if (title == "huvitegevused"){
-             var last_aeg_tab = '#quicktabs-tab-aeg_huvitegevus-6';
+             var last_aeg_tab = '#quicktabs-tab-aeg_huvitegevus-5';
             if (last_tab_huvi == "")
               addDateRangePicker(last_aeg_tab);
          }
@@ -210,9 +210,6 @@
 
             event.preventDefault();
         });
-
-        $("#quicktabs-tab-aeg_huvitegevus-4").parent().hide();
-        $("#quicktabs-tab-event_quicktabs_for_date_range_s-4").parent().hide();
 
         if ($(window).width() < 700) {
         $( '.normal-top' ).hide();
