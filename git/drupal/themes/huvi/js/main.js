@@ -211,7 +211,12 @@
             event.preventDefault();
         });
 
+        $("#quicktabs-tab-aeg_huvitegevus-4").parent().hide();
+        $("#quicktabs-tab-event_quicktabs_for_date_range_s-4").parent().hide();
 
+        if ($(window).width() < 700) {
+        $( '.normal-top' ).hide();
+        }
         // Change free event checkbox text
         if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
             $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
