@@ -3918,6 +3918,9 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .blue-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
    background-color: grey;
 }
+.orange-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
+  background-color: grey;
+}
 .orange-scheme .date-picker-wrapper .first-date-selected, .orange-scheme .date-picker-wrapper .last-date-selected{
     background-color: #f36722 !important;
 }
@@ -3952,11 +3955,11 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 
 .selected-days-num{
   color: #666;
-  font-size: small !important;
+  font-size: 12px !important;
 }
 
-div.normal-top span{
-  font-size: medium;
+div.normal-top{
+  font-size: 18px;
 }
 
 .drp_top-bar.normal{
