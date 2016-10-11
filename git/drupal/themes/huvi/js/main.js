@@ -79,10 +79,6 @@
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-5").click(function () {
             setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
         });
-        
-        $("#quicktabs-tab-event_quicktabs_for_date_range_s-6") . click(function(){
-		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-6");
-        });
 
         $("#quicktabs-tab-aeg_huvitegevus-0").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-0");
@@ -106,11 +102,8 @@
 
         $("#quicktabs-tab-aeg_huvitegevus-5").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
-        });
-        
-        $("#quicktabs-tab-aeg_huvitegevus-6") . click(function(){
-	    setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-6");
-	});
+            });
+
 
         //datepicker
         /*
@@ -496,6 +489,30 @@
       var weekdays = ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'];
       return weekdays[day];
    }
+
+   //date_picker show/hide
+   $(document).ready(function () {
+       $("#quicktabs-tab-aeg_huvitegevus-5").click(function () {
+            if($(this).hasClass("date_picker")){
+                $(this).removeClass("date_picker");//hide
+                $('.two-months').hide();
+            }else{
+                $(this).addClass("date_picker");//shown already
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#quicktabs-tab-event_quicktabs_for_date_range_s-5").click(function () {
+            if($(this).hasClass("date_picker")){
+                $(this).removeClass("date_picker");//hide
+                $('.two-months').hide();
+            }else{
+                $(this).addClass("date_picker");//shown already
+            }
+        });
+    });
+
 })(jQuery);
 
 
