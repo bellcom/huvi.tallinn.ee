@@ -31,12 +31,12 @@
         var path = location.href;
         var title = path.substr(path.lastIndexOf("/") + 1);//title
         if(title == "uritused" ) {
-            var last_aeg_tab = '#quicktabs-tab-event_quicktabs_for_date_range_s-6';
+            var last_aeg_tab = '#quicktabs-tab-event_quicktabs_for_date_range_s-5';
             if (last_tab_uri == "")
               addDateRangePicker(last_aeg_tab);
         }
         else if (title == "huvitegevused"){
-             var last_aeg_tab = '#quicktabs-tab-aeg_huvitegevus-6';
+             var last_aeg_tab = '#quicktabs-tab-aeg_huvitegevus-5';
             if (last_tab_huvi == "")
               addDateRangePicker(last_aeg_tab);
          }
@@ -79,10 +79,6 @@
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-5").click(function () {
             setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
         });
-        
-        $("#quicktabs-tab-event_quicktabs_for_date_range_s-6") . click(function(){
-		setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-6");
-        });
 
         $("#quicktabs-tab-aeg_huvitegevus-0").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-0");
@@ -106,11 +102,8 @@
 
         $("#quicktabs-tab-aeg_huvitegevus-5").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
-        });
-        
-        $("#quicktabs-tab-aeg_huvitegevus-6") . click(function(){
-	    setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-6");
-	});
+            });
+
 
         //datepicker
         /*
@@ -211,7 +204,9 @@
             event.preventDefault();
         });
 
-
+        if ($(window).width() < 700) {
+        $( '.normal-top' ).hide();
+        }
         // Change free event checkbox text
         if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
             $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());

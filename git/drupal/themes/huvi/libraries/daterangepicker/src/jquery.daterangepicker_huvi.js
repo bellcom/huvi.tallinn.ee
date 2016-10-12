@@ -720,6 +720,7 @@
 		{
 			var isOpen = box.is(':visible');
 			if(!isOpen) open(opt.duration);
+			else closeDatePicker();
 		}).bind('change.datepicker', function(evt)
 		{
 			checkAndSetDefaultValue();

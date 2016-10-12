@@ -3893,6 +3893,10 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
     display: none;
     z-index: 999;
 }
+.date-picker-wrapper b {
+  color: black;
+  font-weight: bold;
+}
 
 .views-widget-filter-field_schedule_date_value {
     display: none;
@@ -3912,7 +3916,10 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
     background-color: #0099cc !important;
 }
 .blue-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
-   background-color: #e0ffff;
+   background-color: grey;
+}
+.orange-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
+  background-color: grey;
 }
 .orange-scheme .date-picker-wrapper .first-date-selected, .orange-scheme .date-picker-wrapper .last-date-selected{
     background-color: #f36722 !important;
@@ -3928,11 +3935,11 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
     background: #f36722;
     color: #fff;
 }
-#quicktabs-tab-event_quicktabs_for_date_range_s-6 {
+#quicktabs-tab-event_quicktabs_for_date_range_s-5 {
     position: relative;
 }
-#quicktabs-tab-event_quicktabs_for_date_range_s-6:after,
-#quicktabs-tab-aeg_huvitegevus-6:after{
+#quicktabs-tab-event_quicktabs_for_date_range_s-5:after,
+#quicktabs-tab-aeg_huvitegevus-5:after{
   position: relative;
   content: "";
   border:       solid currentColor;
@@ -3944,4 +3951,22 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   color: #000;
   top : -3px;
   left: 5px;
+}
+
+.selected-days-num{
+  color: #666;
+  font-size: 12px !important;
+}
+
+div.normal-top{
+  font-size: 18px;
+}
+
+.drp_top-bar.normal{
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  div. normal-top . span{
+    display: none;}
 }

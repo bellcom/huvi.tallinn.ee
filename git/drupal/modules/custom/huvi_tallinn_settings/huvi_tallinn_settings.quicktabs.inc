@@ -20,52 +20,45 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Aeg:';
   $quicktabs->tabs = array(
     0 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_7',
+      'bid' => 'views_delta_event_listing_fixed-block_6',
       'hide_title' => 1,
-      'title' => 'Täna',
+      'title' => 'Kõik',
       'weight' => '-100',
       'type' => 'block',
     ),
     1 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_8',
+      'bid' => 'views_delta_event_listing_fixed-block_7',
       'hide_title' => 1,
-      'title' => 'Homme',
+      'title' => 'Täna',
       'weight' => '-99',
       'type' => 'block',
     ),
     2 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_9',
+      'bid' => 'views_delta_event_listing_fixed-block_8',
       'hide_title' => 1,
-      'title' => 'R-P',
+      'title' => 'Homme',
       'weight' => '-98',
       'type' => 'block',
     ),
     3 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_10',
+      'bid' => 'views_delta_event_listing_fixed-block_9',
       'hide_title' => 1,
-      'title' => 'Sel kuul',
+      'title' => 'R-P',
       'weight' => '-97',
       'type' => 'block',
     ),
     4 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_11',
+      'bid' => 'views_delta_event_listing_fixed-block_10',
       'hide_title' => 1,
-      'title' => 'Järgmisel kuul',
+      'title' => 'Sel kuul',
       'weight' => '-96',
       'type' => 'block',
     ),
     5 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_6',
-      'hide_title' => 1,
-      'title' => 'Kõik',
-      'weight' => '-95',
-      'type' => 'block',
-    ),
-    6 => array(
       'bid' => 'views_delta_event_listing_fixed-block_13',
       'hide_title' => 1,
       'title' => 'Vali ajavahemik',
-      'weight' => '-94',
+      'weight' => '-95',
       'type' => 'block',
     ),
   );
@@ -77,7 +70,6 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   // Included for use with string extractors like potx.
   t('Aeg:');
   t('Homme');
-  t('Järgmisel kuul');
   t('Kõik');
   t('R-P');
   t('Sel kuul');
@@ -96,52 +88,45 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Aeg:';
   $quicktabs->tabs = array(
     0 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_1',
+      'bid' => 'views_delta_event_listing_fixed-block',
       'hide_title' => 1,
-      'title' => 'Täna',
+      'title' => 'Kõik',
       'weight' => '-100',
       'type' => 'block',
     ),
     1 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_2',
+      'bid' => 'views_delta_event_listing_fixed-block_1',
       'hide_title' => 1,
-      'title' => 'Homme',
+      'title' => 'Täna',
       'weight' => '-99',
       'type' => 'block',
     ),
     2 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_3',
+      'bid' => 'views_delta_event_listing_fixed-block_2',
       'hide_title' => 1,
-      'title' => 'R-P',
+      'title' => 'Homme',
       'weight' => '-98',
       'type' => 'block',
     ),
     3 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_4',
+      'bid' => 'views_delta_event_listing_fixed-block_3',
       'hide_title' => 1,
-      'title' => 'Sel kuul',
+      'title' => 'R-P',
       'weight' => '-97',
       'type' => 'block',
     ),
     4 => array(
-      'bid' => 'views_delta_event_listing_fixed-block_5',
+      'bid' => 'views_delta_event_listing_fixed-block_4',
       'hide_title' => 1,
-      'title' => 'Järgmisel kuul',
+      'title' => 'Sel kuul',
       'weight' => '-96',
       'type' => 'block',
     ),
     5 => array(
-      'bid' => 'views_delta_event_listing_fixed-block',
-      'hide_title' => 1,
-      'title' => 'Kõik',
-      'weight' => '-95',
-      'type' => 'block',
-    ),
-    6 => array(
       'bid' => 'views_delta_event_listing_fixed-block_12',
       'hide_title' => 1,
       'title' => 'Vali ajavahemik',
-      'weight' => '-94',
+      'weight' => '-95',
       'type' => 'block',
     ),
   );
@@ -153,7 +138,6 @@ function huvi_tallinn_settings_quicktabs_default_quicktabs() {
   // Included for use with string extractors like potx.
   t('Aeg:');
   t('Homme');
-  t('Järgmisel kuul');
   t('Kõik');
   t('R-P');
   t('Sel kuul');
