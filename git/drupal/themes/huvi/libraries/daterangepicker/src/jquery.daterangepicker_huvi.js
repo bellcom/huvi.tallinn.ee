@@ -1343,28 +1343,11 @@
 				opt.start = moment(parseInt(time)).startOf('month').valueOf();
 				opt.end = moment(parseInt(time)).endOf('month').valueOf();
 			}
-			else if ( (!opt.start && !opt.end) ){			
+			else if ((opt.start && opt.end) || (!opt.start && !opt.end) )
+			{
 				opt.start = handleStart(time);
 				opt.end = false;
 			}
-                        else if( opt.start && opt.end){
-                            if (opt.start > handleStart(time))
-                                opt.start = handleStart(time);
-                            else if (opt.end < handleStart(time))
-                                opt.end = handleStart(time);
-                            else if (handleStart(time) < opt.end && handleStart(time) > opt.start ){
-                                opt.start = handleStart(time);
-				opt.end = false;
-                            }
-                            else if (opt.start == handleEnd(time) || opt.end == handleEnd(time)){ 
-                                opt.start = handleEnd(time);
-                                 opt.end = false;
-                            }
-                            /*if (opt.end == handleEnd(time)){
-                                 opt.start = handleEnd(time);
-                                 opt.end = false;
-                            }*/
-                        }
 			else if (opt.start)
 			{
 				opt.end = handleEnd(time);
