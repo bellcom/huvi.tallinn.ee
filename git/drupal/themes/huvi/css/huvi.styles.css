@@ -3975,3 +3975,7 @@ div.normal-top{
   div. normal-top . span{
     display: none;}
 }
+
+.event-place-toimumiskoht{
+  font-weight: bold;
+}

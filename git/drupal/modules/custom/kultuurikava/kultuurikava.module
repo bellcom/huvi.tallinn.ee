@@ -1059,7 +1059,7 @@ function kultuurikava_node_to_event($node) {
 					if(!empty($toimumiskoht)){
 					  $e[$event][$event_key]['place'] = $toimumiskoht;	
 					  if(!empty($place))
-						$e[$event][$event_key]['place'] = $toimumiskoht . ", " . $place;
+						$e[$event][$event_key]['place'] = ' <span class="event-place-toimumiskoht">'.$toimumiskoht .'</span><br>'. $place;
 					}
 					else{
 					  $e[$event][$event_key]['place'] = $place;
