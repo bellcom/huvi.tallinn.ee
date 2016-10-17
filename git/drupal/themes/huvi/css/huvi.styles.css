@@ -3901,6 +3901,9 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .views-widget-filter-field_schedule_date_value {
     display: none;
 }
+.date-picker-wrapper .drp_top-bar{
+  line-height: 1;
+}
 .date-picker-wrapper .drp_top-bar .apply-btn.disabled {
     pointer-events: none;
 }
@@ -3916,10 +3919,10 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
     background-color: #0099cc !important;
 }
 .blue-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
-   background-color: grey;
+   background-color: #e2e2e2;
 }
 .orange-scheme  .date-picker-wrapper .month-wrapper table .day.real-today {
-  background-color: grey;
+  background-color: #e2e2e2;
 }
 .orange-scheme .date-picker-wrapper .first-date-selected, .orange-scheme .date-picker-wrapper .last-date-selected{
     background-color: #f36722 !important;
@@ -3959,7 +3962,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 }
 
 div.normal-top{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .drp_top-bar.normal{
