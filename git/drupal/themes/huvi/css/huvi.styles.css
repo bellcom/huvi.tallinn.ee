@@ -3,17 +3,18 @@ body.cke_editable {
 }
 
 /* toimumiskoht start */
-#edit-field-schedule-und-0-field-schedule-city-id{
+
+.field-type-list-integer.field-name-field-schedule-city-id.field-widget-options-select.form-wrapper{
   float: left;
   display: inline-block;
   width: 20%;
 }
 
-#edit-field-schedule-und-0-field-schedule-city-id-und{
+.form-select.required{
   padding: 0px 10px 2px 10px;
   width: 100%;
 }
-#edit-field-schedule-und-0-field-schedule-toimumis{
+.field-type-taxonomy-term-reference.field-name-field-schedule-toimumis.field-widget-autocomplete-deluxe-taxonomy.form-wrapper{
   display: inline-block;
   width: 80%;
   padding: 0px 0px 2px 10px;
