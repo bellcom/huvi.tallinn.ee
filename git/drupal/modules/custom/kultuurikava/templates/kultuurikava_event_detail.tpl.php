@@ -86,11 +86,9 @@
         <?php foreach($event['schedule'] as $schedule_item): ?>
           <?php if(isset($schedule_item['time'])): ?>
           <div class="schedule-item">
-
             <div class="row">
               <span class="event-time"><?php print $schedule_item['time']; ?></span>
             </div>
-
             <?php if(isset($schedule_item['place']) && !empty($schedule_item['place'])): ?>
             <div class="row">
               <span class="event-place"><?php print $schedule_item['place']; ?></span>
