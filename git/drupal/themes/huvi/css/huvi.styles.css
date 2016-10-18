@@ -7,16 +7,11 @@ body.cke_editable {
 .field-type-list-integer.field-name-field-schedule-city-id.field-widget-options-select.form-wrapper{
   float: left;
   display: inline-block;
-  width: 20%;
-}
-
-.form-select.required{
-  padding: 0px 10px 2px 10px;
-  width: 100%;
+  width: 15%;
 }
 .field-type-taxonomy-term-reference.field-name-field-schedule-toimumis.field-widget-autocomplete-deluxe-taxonomy.form-wrapper{
   display: inline-block;
-  width: 80%;
+  width: 85%;
   padding: 0px 0px 2px 10px;
 }
 .autocomplete-deluxe-container{
