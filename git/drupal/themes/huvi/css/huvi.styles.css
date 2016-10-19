@@ -3,18 +3,19 @@ body.cke_editable {
 }
 
 /* toimumiskoht start */
-#edit-field-schedule-und-0-field-schedule-city-id{
+
+.field-type-list-integer.field-name-field-schedule-city-id.field-widget-options-select.form-wrapper{
   float: left;
   display: inline-block;
+  width: 15%;
 }
-
-#edit-field-schedule-und-0-field-schedule-city-id-und{
-  padding: 0px 10px 2px 10px;
-}
-#edit-field-schedule-und-0-field-schedule-toimumis{
+.field-type-taxonomy-term-reference.field-name-field-schedule-toimumis.field-widget-autocomplete-deluxe-taxonomy.form-wrapper{
   display: inline-block;
-  width: 40%;
-  padding: 0px 10px 2px 10px;
+  width: 85%;
+  padding: 0px 0px 2px 10px;
+}
+.autocomplete-deluxe-container{
+  width: 100%;
 }
 div .autocomplete-deluxe-container input.autocomplete-deluxe-form-single {
   height: 22px;
@@ -3972,4 +3973,8 @@ div.normal-top{
 @media only screen and (max-width: 500px) {
   div. normal-top . span{
     display: none;}
+}
+
+.event-place-toimumiskoht{
+  font-weight: bold;
 }
