@@ -1,0 +1,16 @@
+diff --git a/sites/all/modules/custom b/sites/all/modules/custom
+deleted file mode 120000
+index f2d5f50..0000000
+--- a/sites/all/modules/custom
++++ /dev/null
+@@ -1 +0,0 @@
+-../../../git/drupal/modules/custom
+\ No newline at end of file
+diff --git a/sites/all/themes/huvi b/sites/all/themes/huvi
+deleted file mode 120000
+index 8f4ea88..0000000
+--- a/sites/all/themes/huvi
++++ /dev/null
+@@ -1 +0,0 @@
+-../../../git/drupal/themes/huvi
+\ No newline at end of file
