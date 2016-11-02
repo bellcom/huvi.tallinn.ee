@@ -3972,10 +3972,51 @@ div.normal-top{
 .drp_top-bar.normal{
   margin-bottom: 10px;
 }
+@media only screen and (max-width: 850px) {
+  #mobile-id-button{
+    left: 32%;
+  }
+  #id-card-button{
+    right: 32%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #mobile-id-button{
+    left: 25%;
+  }
+  #id-card-button{
+    right: 25%;
+  }
+}
 
 @media only screen and (max-width: 500px) {
   div. normal-top . span{
-    display: none;}
+    display: none;
+  }
+  #mobile-id-button{
+    left: 15%;
+  }
+  #id-card-button{
+    right: 15%;
+  }
+}
+  @media only screen and (max-width: 375px) {
+    #mobile-id-button{
+      left: 8%;
+    }
+    #id-card-button{
+      right: 8%;
+    }
+  }
+
+@media only screen and (max-width: 320px) {
+  #mobile-id-button{
+    left: 1%;
+  }
+  #id-card-button{
+    right: 1%;
+  }
 }
 
 .event-place-toimumiskoht{
