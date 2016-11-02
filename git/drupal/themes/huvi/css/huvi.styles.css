@@ -3969,8 +3969,16 @@ div.normal-top{
 .drp_top-bar.normal{
   margin-bottom: 10px;
 }
+@media only screen and (max-width: 850px) {
+  #mobile-id-button{
+    left: 32%;
+  }
+  #id-card-button{
+    right: 32%;
+  }
+}
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
   #mobile-id-button{
     left: 25%;
   }
@@ -3990,7 +3998,7 @@ div.normal-top{
     right: 15%;
   }
 }
-  @media only screen and (max-width: 372px) {
+  @media only screen and (max-width: 375px) {
     #mobile-id-button{
       left: 8%;
     }
@@ -3998,6 +4006,15 @@ div.normal-top{
       right: 8%;
     }
   }
+
+@media only screen and (max-width: 320px) {
+  #mobile-id-button{
+    left: 1%;
+  }
+  #id-card-button{
+    right: 1%;
+  }
+}
 
 .event-place-toimumiskoht{
   font-weight: bold;
