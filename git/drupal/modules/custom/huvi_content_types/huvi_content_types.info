@@ -5,6 +5,7 @@ dependencies[] = autocomplete_deluxe
 dependencies[] = colorbox
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = elysia_cron
 dependencies[] = email
 dependencies[] = features
 dependencies[] = field_collection
