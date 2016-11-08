@@ -1,0 +1,42 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+include_once 'huvi_event_resource.features.inc';
+
+/** Writes a event to the database
+ *
+ * @param object $note
+ * @return void
+ */
+/**
+ * Implementation of hook_services_resources().
+ */
+function huvi_event_resource_services_resources() {
+  return array(  
+    'event' => array(
+      'create' => array(
+        'help' => 'Creates a event',
+        'file' => array('file' => 'inc', 'module' => 'huvi_event_resource'),
+        'callback' => '_eventresource_create',
+        'access arguments' => array('create event content'),
+        //'access arguments append' => FALSE,
+        'args' => array(
+          array(
+            'name' => 'data',
+            'type' => 'struct',
+            'description' => 'The event object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),      
+      )
+  );
+    
+}
+?>
