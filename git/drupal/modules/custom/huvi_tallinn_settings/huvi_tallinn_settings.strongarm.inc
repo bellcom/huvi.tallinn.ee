@@ -73,5 +73,14 @@ function huvi_tallinn_settings_strongarm() {
   $strongarm->value = '12';
   $export['hide_submit_spinner_lines'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'monolog_channel_profiles';
+  $strongarm->value = array(
+    'watchdog' => 'development',
+  );
+  $export['monolog_channel_profiles'] = $strongarm;
+
   return $export;
 }
