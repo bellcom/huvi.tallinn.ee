@@ -84,8 +84,8 @@ if(isset($event) && !empty($event)):
 
         <?php if(isset($node->field_gallery['und'][0]['filename'])): ?>
           <div>
-            <a class="colorbox" href="<?php print image_style_url('big_popup', $node->field_gallery['und'][0]['filename']); ?>">
-              <img src="<?php print image_style_url('event_main_image', $node->field_gallery['und'][0]['filename']); ?>" />
+            <a class="colorbox" href="<?php print image_style_url('big_popup', $node->field_gallery['und'][0]['uri']); ?>">
+              <img src="<?php print image_style_url('event_main_image', $node->field_gallery['und'][0]['uri']); ?>" />
             </a>
           </div>
         <?php else: ?>
