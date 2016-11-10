@@ -16,22 +16,22 @@ function huvi_tallinn_settings_default_monolog_profiles() {
   $profile->name = 'rotating_log';
   $profile->options = array(
     'handlers' => array(
-      'rotating_file_handler_notice' => array(
-        'weight' => '1',
-        'label' => 'Rotating File Handler Notice',
-        'level' => '250',
-        'bubble' => '1',
-        'filepath' => 'public://monolog/drupal.log',
-        'max_files' => '0',
-        'handler' => 'rotating_file',
-      ),
       'rotating_file_handler_warning' => array(
         'weight' => '1',
         'label' => 'Rotating File Handler Warning',
         'level' => '300',
         'bubble' => '1',
-        'filepath' => 'public://monolog/drupal.log',
-        'max_files' => '0',
+        'filepath' => 'public://monolog/warning_log.log',
+        'max_files' => '60',
+        'handler' => 'rotating_file',
+      ),
+      'rotating_file_handler_notice' => array(
+        'weight' => '1',
+        'label' => 'Rotating File Handler Notice',
+        'level' => '250',
+        'bubble' => '1',
+        'filepath' => 'public://monolog/notice_log.log',
+        'max_files' => '60',
         'handler' => 'rotating_file',
       ),
     ),
