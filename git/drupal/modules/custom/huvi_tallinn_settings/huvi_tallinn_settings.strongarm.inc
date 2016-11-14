@@ -78,7 +78,7 @@ function huvi_tallinn_settings_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'monolog_channel_profiles';
   $strongarm->value = array(
-    'watchdog' => 'development',
+    'watchdog' => 'rotating_log',
   );
   $export['monolog_channel_profiles'] = $strongarm;
 
