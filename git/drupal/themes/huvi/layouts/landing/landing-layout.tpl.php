@@ -15,10 +15,7 @@ if(!in_array('anonymous user', $user->roles)) {
       <?php endif; ?>
 			<div class="landing-description"><?php print t('Leia kõik mis Tallinnas toimub!'); ?></div>
       <div class="logo-branding"></div>
-      <div class="intro-text">
-        <div class="intro-logo"></div>
-        <?php print t('Tere tulemast uude sündmusteportaali huvi.tallinn.ee! Meeldivat kasutamist!'); ?>
-      </div>
+      <div class="intro-text"></div>
     </div>
   </header>
 
