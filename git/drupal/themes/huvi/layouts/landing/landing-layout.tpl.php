@@ -15,7 +15,6 @@ if(!in_array('anonymous user', $user->roles)) {
       <?php endif; ?>
 			<div class="landing-description"><?php print t('Leia kõik mis Tallinnas toimub!'); ?></div>
       <div class="logo-branding"></div>
-      <div class="intro-text"></div>
     </div>
   </header>
 
