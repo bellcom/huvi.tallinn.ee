@@ -30,9 +30,9 @@ function huvi_content_types_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => 'Muusika',
-        1 => 'Kunst, käsitöö',
+        1 => 'Kunst',
         2 => 'Tantsimine',
-        3 => 'Sport, liikumine',
+        3 => 'Sport',
         4 => 'Tehnika',
         5 => 'Keeleõpe',
         6 => 'Koolitused',
@@ -66,11 +66,11 @@ function huvi_content_types_field_default_field_bases() {
       'allowed_values' => array(
         0 => 'Muusika',
         1 => 'Etendused',
-        2 => 'Näitus, muuseum',
+        2 => 'Näitus',
         3 => 'Mess, laat',
         4 => 'Sport',
         5 => 'Kino',
-        6 => 'Ööklubi, pidu',
+        6 => 'Ööklubi',
         7 => 'Lapsele',
         8 => 'Varia',
       ),
