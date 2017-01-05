@@ -4021,3 +4021,11 @@ div.normal-top{
 .event-place-toimumiskoht{
   font-weight: bold;
 }
+
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper label{
+  white-space: nowrap;
+}
+
+.view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper label{
+  white-space: nowrap;
+}
