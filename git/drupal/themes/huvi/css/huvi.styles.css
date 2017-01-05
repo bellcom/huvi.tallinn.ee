@@ -4022,3 +4022,7 @@ div.normal-top{
 .event-place-toimumiskoht{
   font-weight: bold;
 }
+
+.option{
+  white-space: nowrap;
+}
