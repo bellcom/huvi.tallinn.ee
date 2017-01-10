@@ -2876,6 +2876,31 @@ form.user-login {
   max-width: none;
 }
 
+/* Map Overlay (BEGIN) */
+.map_overlay {
+  background: rgba(0, 0, 0, .5);
+  color:#000;
+  display: table;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  text-decoration: none;
+  width: 100%;
+  z-index: 200;
+}
+
+.map_overlay:hover {
+  color:#a00;
+}
+
+.map_overlay_button {
+  background: #fff;
+  padding: 5px 20px;
+  position: relative;
+  top: 100px;
+}
+/* Map Overlay (END) */
+
 @media (min-width: 44em) {
   html,
   body {

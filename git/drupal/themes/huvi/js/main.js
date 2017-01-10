@@ -628,3 +628,57 @@ function remapBackButton(url) {
         });
     }
 }
+
+
+/*
+ * Functionality for opening bigger map on pop-up window.
+ */
+;(function($) {
+	$(document).ready(function() {
+		var coords = ($('#map_canvas').data('latlng')).split(',');
+		var gmaps_url = (
+			'https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=' +
+			coords[0] + ',' + coords[1] +
+			'&amp;aq=0&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=' +
+			coords[0] + ',' + coords[1] +
+			'&amp;zoom=17&amp;output=embed&width=900&height=600&iframe=true'
+		);
+
+		$('#map_wrapper').prepend(
+			'<a class="map_overlay" href="' + gmaps_url +
+			'"><div class="map_overlay_button">Asukoht kaardil</div></a>'
+		);
+
+		if (typeof $.fn.colorbox !== 'undefined') {
+			$('.map_overlay')
+				.addClass('colorbox')
+				.addClass('init-colorbox-processed')
+				.addClass('cboxElement');
+
+			$('.map_overlay').colorbox({
+				iframe: true,
+				width: '900px',
+				height: '600px',
+				maxWidth: '95%',
+				maxHeight: '95%',
+				oncomplete: function() {
+					$(this).colorbox.resize();
+
+				}
+			});
+		}
+
+
+		$(window).bind('load resize', function() {
+			if (typeof $.fn.colorbox !== 'undefined' &&
+				($(window).width() < 900 || $(window).height() < 600)) {
+
+				$.colorbox.resize({
+					height: '95%',
+					width: '95%'
+				});
+			}
+		});
+	});
+})(jQuery);
+

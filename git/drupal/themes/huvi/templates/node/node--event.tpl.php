@@ -103,7 +103,7 @@ if(isset($event) && !empty($event)):
 
         <?php if(isset($event['map_latlng']) && !empty($event['map_latlng'])): ?>
         <?php if(isset($event['map_markers']) && !empty($event['map_markers'])): ?>
-        <div id="map_wrapper" style="height: 300px">
+        <div id="map_wrapper" style="height: 300px; position: relative;">
             <div id="map_canvas" class="mapping" style="height: 100%; width: 100%" data-markers="<?php print $event['map_markers']; ?>" data-latlng="<?php print $event['map_latlng']; ?>"></div>
         </div>
         <?php endif; ?>
