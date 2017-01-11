@@ -536,7 +536,7 @@ function loadMap() {
     // Asynchronously Load the map API
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
     document.body.appendChild(script);
 }
 
@@ -645,17 +645,17 @@ function remapBackButton(url) {
 		);
 
 		$('#map_wrapper').prepend(
-			'<a class="map_overlay" href="' + gmaps_url +
-			'"><div class="map_overlay_button">Asukoht kaardil</div></a>'
+			'<a class="map_overlay_button" href="' + gmaps_url +
+			'">Asukoht kaardil</a>'
 		);
 
 		if (typeof $.fn.colorbox !== 'undefined') {
-			$('.map_overlay')
+			$('.map_overlay_button')
 				.addClass('colorbox')
 				.addClass('init-colorbox-processed')
 				.addClass('cboxElement');
 
-			$('.map_overlay').colorbox({
+			$('.map_overlay_button').colorbox({
 				iframe: true,
 				width: '900px',
 				height: '600px',
