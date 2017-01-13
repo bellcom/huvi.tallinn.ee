@@ -2878,22 +2878,19 @@ form.user-login {
 
 /* Map Overlay (BEGIN) */
 .map_overlay_button {
-  background: #0099cc;
+  background: #dbdbdb;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  color: #fff;
+  color: #000;
   display: table;
-  margin: 0 auto;
-  padding: 5px 20px;
+  margin: 10px 10px 0px 40px;
+  padding: 8px 2px;
   position: relative;
   text-decoration: none;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
-  -moz-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
-  -webkit-text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.43);
   top: 290px;
   vertical-align: middle;
-  width: 70%;
+  width: 60%;
   z-index: 200;
 }
 
