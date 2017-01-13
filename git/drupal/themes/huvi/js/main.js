@@ -646,7 +646,7 @@ function remapBackButton(url) {
 
 		$('#map_wrapper').prepend(
 			'<a class="map_overlay_button" href="' + gmaps_url +
-			'">Asukoht kaardil</a>'
+			'">Näita kaardil</a>'
 		);
 
 		if (typeof $.fn.colorbox !== 'undefined') {
