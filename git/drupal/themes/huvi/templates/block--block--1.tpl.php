@@ -5,7 +5,12 @@ $req_path = request_path();
 if(!in_array('anonymous user', $user->roles)) {
 	$button_link = $base_path . 'lisa';
 }
-if($req_path == "huvitegevused"){//check path, add change button name
+//check path, add change button name
+$str=stripos($req_path, "/");
+if(!empty($str)){
+    $req_path=substr($req_path, 0, $str);
+}
+if($req_path == "huvitegevused" || $req_path == "huvitegevus"){
     $btn_lisa_text = 'Lisa oma huvitegevus';
 }else{
     $btn_lisa_text = 'Lisa oma üritus';
