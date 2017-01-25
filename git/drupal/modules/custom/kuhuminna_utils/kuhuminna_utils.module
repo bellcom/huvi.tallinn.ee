@@ -620,20 +620,3 @@ function kuhuminna_utils_user_logout($account) {
   watchdog('kuhuminna_logout', (string)$result, array(), WATCHDOG_INFO);
   */
 }
-
-
-/*
- * Check path, add change button name
- */
-function kuhuminna_utils_btn_lisa_text($req_path,$text_uritus,$text_huvitegevus){
-  $str=stripos($req_path, "/");
-  if(!empty($str)){
-    $req_path=substr($req_path, 0, $str);
-  }
-  if($req_path == "huvitegevused" || $req_path == "huvitegevus"){
-    $btn_text = $text_huvitegevus;
-  }else{
-    $btn_text = $text_uritus;
-  }
-  return $btn_text ;
-}
