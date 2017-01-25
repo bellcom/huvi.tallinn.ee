@@ -50,7 +50,7 @@ function huvi_content_types_image_default_styles() {
 function huvi_content_types_node_info() {
   $items = array(
     'event' => array(
-      'name' => t('üritus'),
+      'name' => t('üritus/huvitegevus'),
       'base' => 'node_content',
       'description' => t('Üritused ja huvitegevused sisestatud käsitsi või automaatselt imporditud Kultuurikava.ee lehelt.'),
       'has_title' => '1',
