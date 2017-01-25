@@ -517,7 +517,7 @@ $icons = array(
  */
 function kuhuminna_utils_node_presave($node) {
   if($node->type == 'event') {
-    if(isset($node->field_schedule)) {
+    if(isset($node->field_schedule['und']) && is_array($node->field_schedule['und'])) {
       foreach($node->field_schedule['und'] as $key => $value) {
         if(isset($node->field_schedule['und'][$key]['field_schedule_location']['und'][0]['address']['field'])) {
           $node->field_schedule['und'][$key]['field_schedule_place']['und'][0]['value'] = $node->field_schedule['und'][$key]['field_schedule_location']['und'][0]['address']['field'];
