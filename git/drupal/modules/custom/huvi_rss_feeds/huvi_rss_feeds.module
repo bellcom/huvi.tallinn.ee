@@ -117,12 +117,11 @@ function huvi_rss_feeds_form($form, &$form_state) {
 function huvi_rss_feeds_form_submit($form, &$form_state) {
   global $base_path; 
   global $base_url;
-  var_dump($form_state['values']);
   $query_arr = array();
   if (isset($form_state['values']['type'])) {
     foreach($form_state['values']['type'] as $key => $val)
-      if ($key == $val)
-        $query_arr[]= 'type[]=' . $val;
+      if(!empty($val))
+        $query_arr[]= 'type[]=' . $val;  
   }
   if (isset($form_state['values']['event_category'])) {
     foreach($form_state['values']['event_category'] as $key => $val)
@@ -136,7 +135,7 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
   }
   if (isset($form_state['values']['linnaosa'])) {
     foreach($form_state['values']['linnaosa'] as $key => $val)
-      if ($key == $val)
+      if (!empty($val))
         $query_arr[]= 'linnaosa[]=' . $val;
   }
   if (isset($form_state['values']['is_free'])) {
