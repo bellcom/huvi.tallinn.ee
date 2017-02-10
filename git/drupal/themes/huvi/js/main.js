@@ -49,7 +49,7 @@
             $(last_tab_huvi) . click();
             addDateRangePicker(last_aeg_tab);
         }
-        
+
         if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
@@ -635,20 +635,21 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
-		var coords = ($('#map_canvas').data('latlng')).split(',');
-		var gmaps_url = (
-			'https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=' +
-			coords[0] + ',' + coords[1] +
-			'&amp;aq=0&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=' +
-			coords[0] + ',' + coords[1] +
-			'&amp;zoom=17&amp;output=embed&width=900&height=600&iframe=true'
-		);
+    if ($('#map_canvas').length){
+      var coords = ($('#map_canvas').data('latlng')).split(',');
+      var gmaps_url = (
+        'https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=' +
+        coords[0] + ',' + coords[1] +
+        '&amp;aq=0&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=' +
+        coords[0] + ',' + coords[1] +
+        '&amp;zoom=17&amp;output=embed&width=900&height=600&iframe=true'
+      );
 
-		$('#map_wrapper').prepend(
-			'<a class="map_overlay_button" href="' + gmaps_url +
-			'">Näita kaardil</a>'
-		);
-
+      $('#map_wrapper').prepend(
+        '<a class="map_overlay_button" href="' + gmaps_url +
+        '">Näita kaardil</a>'
+      );
+    }
 		if (typeof $.fn.colorbox !== 'undefined') {
 			$('.map_overlay_button')
 				.addClass('colorbox')
@@ -665,6 +666,7 @@ function remapBackButton(url) {
 					$(this).colorbox.resize();
 
 				}
+
 			});
 		}
 

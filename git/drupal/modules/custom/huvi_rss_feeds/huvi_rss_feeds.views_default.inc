@@ -266,7 +266,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa (field_schedule_city_id)';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'linnaosa';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
     2 => '2',
