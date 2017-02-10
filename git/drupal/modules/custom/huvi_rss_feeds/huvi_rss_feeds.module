@@ -29,25 +29,27 @@ function huvi_rss_feeds_menu() {
  */
 function huvi_rss_feeds_form($form, &$form_state) {    
   
-  $event_categories = array (0  => t('Muusika'),
-    1 => t('Etendused'),
-    2 => t('Näitus, muuseum'),
-    3 => t('Mess, laat'),
-    4 => t('Sport'),
-    5=> t('Kino'),
-    6 => t('Pidu, klubid'),
-    7 => t('Lapsele'), 
-    8 => t('Varia')
+  $event_categories = array (
+    '0'  => t('Muusika'),
+    '1' => t('Etendused'),
+    '2' => t('Näitus, muuseum'),
+    '3' => t('Mess, laat'),
+    '4' => t('Sport'),
+    '5' => t('Kino'),
+    '6' => t('Pidu, klubid'),
+    '7' => t('Lapsele'), 
+    '8' => t('Varia')
   );
-  $activity_categories = array (0  => t('Muusika'),
-    1 => t('Kunst, käsitöö'),
-    2 => t('Tantsimine'),
-    3 => t('Sport, liikumine'),
-    4 => t('Tehnika'),
-    5=> t('Keeleõpe'),
-    6 => t('Koolitused, kursused'),
-    7 => t('Lapsele'), 
-    8 => t('Varia')
+  $activity_categories = array (
+    '0'  => t('Muusika'),
+    '1' => t('Kunst, käsitöö'),
+    '2' => t('Tantsimine'),
+    '3' => t('Sport, liikumine'),
+    '4' => t('Tehnika'),
+    '5' => t('Keeleõpe'),
+    '6' => t('Koolitused, kursused'),
+    '7' => t('Lapsele'), 
+    '8' => t('Varia')
   );
   $linnaosa = array(
     2944195 => 'Põhja-Tallinn',
@@ -115,7 +117,7 @@ function huvi_rss_feeds_form($form, &$form_state) {
 function huvi_rss_feeds_form_submit($form, &$form_state) {
   global $base_path; 
   global $base_url;
-  
+  var_dump($form_state['values']);
   $query_arr = array();
   if (isset($form_state['values']['type'])) {
     foreach($form_state['values']['type'] as $key => $val)
@@ -124,12 +126,12 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
   }
   if (isset($form_state['values']['event_category'])) {
     foreach($form_state['values']['event_category'] as $key => $val)
-      if ($key == $val)
+      if ((string) $key === $val)
         $query_arr[]= 'event_category[]=' . $val;
   }
   if (isset($form_state['values']['activity_category'])) {
     foreach($form_state['values']['activity_category'] as $key => $val)
-      if ($key == $val)
+      if ((string)$key === $val)
         $query_arr[]= 'activity_category[]=' . $val;
   }
   if (isset($form_state['values']['linnaosa'])) {
