@@ -816,7 +816,7 @@ function kultuurikava_event_data_node_save($event) {
     return;
   }
   $e = $event;
-  if (isset($e['id']) && !empty($e['id'])) {
+  
   // Check if the node exists already
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'node')
@@ -844,19 +844,7 @@ function kultuurikava_event_data_node_save($event) {
     );
     $entity = entity_create('node', $values);
   }
-  }
-  else {
-    $values = array(
-      'type' => 'event',
-      'uid' => 1,
-      'status' => 1,
-      'comment' => 0,
-      'promote' => 0,
-      'language' => 'et',
-    );
-    $entity = entity_create('node', $values);
-  }
-	 
+  	 
   $w = entity_metadata_wrapper('node', $entity);
   $fields = kultuurikava_event_to_node_fields();
   foreach($fields as $event_item => $field) {
@@ -927,10 +915,6 @@ function kultuurikava_event_data_node_save($event) {
           break;
         case 'type':
           $w->{$field}->set($e[$event_item]);
-          break;
-        case 'id':
-          if (!empty($data[$event_item]))
-            $w->{$field}->set($data[$event_item]);
           break;
         default:
           $w->{$field}->set($e[$event_item]);
