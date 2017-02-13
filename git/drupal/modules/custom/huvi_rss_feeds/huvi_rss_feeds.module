@@ -16,51 +16,21 @@ function huvi_rss_feeds_menu() {
     'page arguments' => array('huvi_rss_feeds_form'),
     'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
-  );  
+  );
 
   return $items;
 }
 
 /**
- * Disable manual user registering
- * (only allow registering and logging with ID card via OpenID)
  *
  * Implements hook_form_alter().
  */
-function huvi_rss_feeds_form($form, &$form_state) {    
-  
-  $event_categories = array (
-    '0'  => t('Muusika'),
-    '1' => t('Etendused'),
-    '2' => t('Näitus, muuseum'),
-    '3' => t('Mess, laat'),
-    '4' => t('Sport'),
-    '5' => t('Kino'),
-    '6' => t('Pidu, klubid'),
-    '7' => t('Lapsele'), 
-    '8' => t('Varia')
-  );
-  $activity_categories = array (
-    '0'  => t('Muusika'),
-    '1' => t('Kunst, käsitöö'),
-    '2' => t('Tantsimine'),
-    '3' => t('Sport, liikumine'),
-    '4' => t('Tehnika'),
-    '5' => t('Keeleõpe'),
-    '6' => t('Koolitused, kursused'),
-    '7' => t('Lapsele'), 
-    '8' => t('Varia')
-  );
-  $linnaosa = array(
-    2944195 => 'Põhja-Tallinn',
-    2944191 => 'Kesklinn',    
-    2944187 => 'Haabersti',
-    2944189 => 'Kristiine',
-    2944190 => 'Lasnamäe',
-    2944193 => 'Mustamäe',
-    2920234 => 'Pirita',
-    2944194 => 'Nõmme',
-  );
+function huvi_rss_feeds_form($form, &$form_state) {
+
+  $event_categories = _huvi_rss_feeds_event_categories();
+  $activity_categories = _huvi_rss_feeds_activity_categories();
+  $linnaosa = _huvi_rss_feeds_linnaosa();
+
   $form['#attached']['js'] = array(
       drupal_get_path('module', 'huvi_rss_feeds') . '/js/huvi_rss_feeds.js',
   );
@@ -72,27 +42,27 @@ function huvi_rss_feeds_form($form, &$form_state) {
   $form['rss_link'] = array(
   '#markup' => '<div class="rss-url" ><p> <a class="feed-link" href="' . $form_state['rss_link'] . '">' . $form_state['rss_link'] . '</a></p>'
     . '<button id="feed_url">' . t('Copy link') . '</button></div>'
-); 
+);
   $form['type'] = array(
   '#type' => 'checkboxes',
   '#options' => array('uritus' => t('üritus'), 'huvitegevus' => t('huvitegevus')),
   '#title' => t('Tüüp')
-  );  
+  );
   $form['event_category'] = array(
   '#type' => 'checkboxes',
   '#options' =>$event_categories,
   '#title' => t('Ürituse kategooriad')
-  );  
+  );
   $form['activity_category'] = array(
   '#type' => 'checkboxes',
   '#options' =>$activity_categories,
   '#title' => t('Huvitegevuse kategooriad')
-  );  
+  );
   $form['linnaosa'] = array(
   '#type' => 'checkboxes',
   '#options' =>$linnaosa,
   '#title' => t('Linnaosa')
-  );  
+  );
   $form['is_free'] = array(
     '#type' =>'checkbox',
   '#title' => t('Tasuta üritus/huvitegevus'),
@@ -102,26 +72,30 @@ function huvi_rss_feeds_form($form, &$form_state) {
   '#title' => t('Tasuta üritus/huvitegevus'),
     );
   $form['text'] = array(
-    '#type' => 'textfield', 
+    '#type' => 'textfield',
     '#title' => t('Keywords'),
     );
-  
+
   $form['submit_button'] = array(
     '#type' => 'submit',
     '#value' => t('Get URL'),
   );
- 
+
   return $form;
 }
 
+/*
+ * Implements hook_views_form_submit().
+ * return RSS feeds URL
+ */
 function huvi_rss_feeds_form_submit($form, &$form_state) {
-  global $base_path; 
+  global $base_path;
   global $base_url;
   $query_arr = array();
   if (isset($form_state['values']['type'])) {
     foreach($form_state['values']['type'] as $key => $val)
       if(!empty($val))
-        $query_arr[]= 'type[]=' . $val;  
+        $query_arr[]= 'type[]=' . $val;
   }
   if (isset($form_state['values']['event_category'])) {
     foreach($form_state['values']['event_category'] as $key => $val)
@@ -141,12 +115,103 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
   if (isset($form_state['values']['is_free'])) {
     $query_arr[]= 'is_free[]=' . $form_state['values']['is_free'];
   }
-  else 
+  else
     $query_arr[]= 'is_free[]=1';
   if (isset($form_state['values']['text']) & !empty($form_state['values']['text'])) {
     $query_arr[]= 'text[]=' . $form_state['values']['text'];
   }
-  
+
    $form_state['rss_link'] = $base_url . $base_path . 'event-rss-feed?' . implode('&', $query_arr);
-   $form_state['rebuild'] = TRUE; 
+   $form_state['rebuild'] = TRUE;
+}
+
+/*
+ * Implements hook_views_pre_render().
+ */
+function huvi_rss_feeds_views_pre_render(&$view) {
+  if($view->name == 'events_rss_feeds' && $view->current_display == 'feeds') {
+    $view->build_info['title'] = _huvi_rss_feeds_get_view_title($_GET);
+  }
+}
+
+/*
+ * return view title in format
+ * uvi.tallinn.ee RSS: üritus (muusika, etendused,...), huvitegevus (muusika, tansimine,...); kesklinn, kristiine; (tasuta;) otsing: [võtmesõnad]
+ */
+
+function _huvi_rss_feeds_get_view_title($filters) {
+  $title = "huvi.tallinn.ee RSS:";
+  if (isset($filters['type'])){
+    foreach ($filters['type'] as $value){
+      if ($value == 'uritus' && isset($filters['event_category'])) {
+        $event_categories = array();
+        foreach ($filters['event_category'] as $cat){
+          $event_categories[] = _huvi_rss_feeds_event_categories()[$cat];
+        }
+          $title .= 'Üritus(' . implode(', ', $event_categories) .'); ';
+      }
+      if ($value == 'huvitegevus' && isset($filters['activity_category'])) {
+        $activity_categories = array();
+        foreach ($filters['activity_category'] as $cat){
+          $activity_categories[] = _huvi_rss_feeds_activity_categories()[$cat];
+        }
+        $title .= $value . '(' .implode(', ',$activity_categories) .'); ';
+      }
+    }
+  }
+  if (isset($filters['linnaosa'])){
+    $linnaosa = array();
+    foreach ($filters['linnaosa'] as $value)
+      $linnaosa[] = _huvi_rss_feeds_linnaosa()[$value];
+     $title .= 'linnaosa: ' . implode(', ',$linnaosa) . '; ';
+  }
+  if (isset($filters['is_free']) && array_pop($filters['is_free']) == 1)
+    $title .= '(tasuta); ';
+
+  if (isset($filters['text']) && !empty($filters['text']))
+    $title .= 'otsing: ' . array_pop($filters['text']);
+
+  return $title;
+
+}
+
+function _huvi_rss_feeds_event_categories() {
+  return array (
+    '0'  => t('Muusika'),
+    '1' => t('Etendused'),
+    '2' => t('Näitus, muuseum'),
+    '3' => t('Mess, laat'),
+    '4' => t('Sport'),
+    '5' => t('Kino'),
+    '6' => t('Pidu, klubid'),
+    '7' => t('Lapsele'),
+    '8' => t('Varia')
+  );
+}
+
+function _huvi_rss_feeds_activity_categories() {
+  return array (
+    '0'  => t('Muusika'),
+    '1' => t('Kunst, käsitöö'),
+    '2' => t('Tantsimine'),
+    '3' => t('Sport, liikumine'),
+    '4' => t('Tehnika'),
+    '5' => t('Keeleõpe'),
+    '6' => t('Koolitused, kursused'),
+    '7' => t('Lapsele'),
+    '8' => t('Varia')
+  );
+}
+
+function _huvi_rss_feeds_linnaosa() {
+ return array(
+    2944195 => 'Põhja-Tallinn',
+    2944191 => 'Kesklinn',
+    2944187 => 'Haabersti',
+    2944189 => 'Kristiine',
+    2944190 => 'Lasnamäe',
+    2944193 => 'Mustamäe',
+    2920234 => 'Pirita',
+    2944194 => 'Nõmme',
+  );
 }
