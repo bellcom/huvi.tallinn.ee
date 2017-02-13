@@ -344,7 +344,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
 
   /* Display: Feed */
-  $handler = $view->new_display('feed', 'Feed', 'feed_1');
+  $handler = $view->new_display('feed', 'Feed', 'feeds');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['pager']['options']['offset'] = '0';
