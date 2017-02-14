@@ -150,24 +150,25 @@ function _huvi_rss_feeds_get_view_title($filters) {
         foreach ($filters['event_category'] as $cat){
           $event_categories[] = _huvi_rss_feeds_event_categories()[$cat];
         }
-        $title .= ' (' . implode(', ', $event_categories) .'), ';
+        $title .= ' (' . implode(', ', $event_categories) .')';
        }
-       else 
-         $title .= ", ";
+       
+         if (in_array('huvitegevus', $filters['type']))
+           $title .= ", ";
+         else
+           $title .= "; ";
       }      
         
       if ($value == 'huvitegevus') {
         $activity_categories = array();
         $title .= $value;
         if (isset($filters['activity_category'])) {
-        foreach ($filters['activity_category'] as $cat){
-          $activity_categories[] = _huvi_rss_feeds_activity_categories()[$cat];
-        }
-        $title .=' (' .implode(', ',$activity_categories) .'); ';
-        }
-        else {
+          foreach ($filters['activity_category'] as $cat){
+            $activity_categories[] = _huvi_rss_feeds_activity_categories()[$cat];
+          }
+          $title .=' (' .implode(', ',$activity_categories) .')';
+          }
           $title .= '; ';
-        }
       }
     }
   }
