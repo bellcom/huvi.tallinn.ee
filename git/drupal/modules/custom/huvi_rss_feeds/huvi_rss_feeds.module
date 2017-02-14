@@ -140,22 +140,34 @@ function huvi_rss_feeds_views_pre_render(&$view) {
  */
 
 function _huvi_rss_feeds_get_view_title($filters) {
-  $title = "huvi.tallinn.ee RSS:";
+  $title = "huvi.tallinn.ee RSS: ";
   if (isset($filters['type'])){
     foreach ($filters['type'] as $value){
-      if ($value == 'uritus' && isset($filters['event_category'])) {
+      if ($value == 'uritus') {
         $event_categories = array();
+        $title .= 'Üritus';
+       if (isset($filters['event_category'])) {
         foreach ($filters['event_category'] as $cat){
           $event_categories[] = _huvi_rss_feeds_event_categories()[$cat];
         }
-          $title .= 'Üritus(' . implode(', ', $event_categories) .'); ';
-      }
-      if ($value == 'huvitegevus' && isset($filters['activity_category'])) {
+        $title .= ' (' . implode(', ', $event_categories) .'), ';
+       }
+       else 
+         $title .= ", ";
+      }      
+        
+      if ($value == 'huvitegevus') {
         $activity_categories = array();
+        $title .= $value;
+        if (isset($filters['activity_category'])) {
         foreach ($filters['activity_category'] as $cat){
           $activity_categories[] = _huvi_rss_feeds_activity_categories()[$cat];
         }
-        $title .= $value . '(' .implode(', ',$activity_categories) .'); ';
+        $title .=' (' .implode(', ',$activity_categories) .'); ';
+        }
+        else {
+          $title .= '; ';
+        }
       }
     }
   }
@@ -166,7 +178,7 @@ function _huvi_rss_feeds_get_view_title($filters) {
      $title .= 'linnaosa: ' . implode(', ',$linnaosa) . '; ';
   }
   if (isset($filters['is_free']) && array_pop($filters['is_free']) == 1)
-    $title .= '(tasuta); ';
+    $title .= 'tasuta; ';
 
   if (isset($filters['text']) && !empty($filters['text']))
     $title .= 'otsing: ' . array_pop($filters['text']);
