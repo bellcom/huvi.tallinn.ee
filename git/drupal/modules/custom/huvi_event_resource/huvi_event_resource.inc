@@ -332,8 +332,8 @@ function huvi_event_resource_get_events($parameters) {
   if (isset($parameters['type'])) {
     $query->innerJoin('field_data_field_type', 't', 'n.nid = t.entity_id');
     $query->condition('t.field_type_value', $parameters['type'], 'IN');
-  }
-  if (isset($parameters['is_free']) && $parameters['is_free'] == 1) {
+  } 
+  if (isset($parameters['is_free']) && array_pop($parameters['is_free']) == 1) {   
     $query->innerJoin('field_data_field_isfree', 'f', 'n.nid = f.entity_id');
     $query->condition('f.field_isfree_value', 1);
   }
@@ -353,15 +353,16 @@ function huvi_event_resource_get_events($parameters) {
   }
   if (isset($parameters['keywords'])) {
     $query->innerJoin('field_data_field_description', 'd', 'n.nid = d.entity_id');
-    $query->where("LOWER(CONCAT_WS(d.field_description_value, ' ', n.title)) LIKE :q", array(':q' => '%' . strtolower($parameters['keywords']) . '%'));
+    $query->where("LOWER(CONCAT_WS(d.field_description_value, ' ', n.title)) LIKE :q", array(':q' => '%' . strtolower(array_pop($parameters['keywords'])) . '%'));
   }
 
   $field_schedule_keys = array();
   $entity_query = new EntityFieldQuery();
   $entity_query->entityCondition('entity_type', 'field_collection_item')
     ->fieldCondition('field_schedule_date', 'value', time(), '>=');
-  if (isset($parameters['linnaosa']))
+  if (isset($parameters['linnaosa'])){
     $entity_query->fieldCondition('field_schedule_city_id', 'value', $parameters['linnaosa'], 'IN');
+  }  
   $entity_query_result = $entity_query->execute();
   if (!empty($entity_query_result['field_collection_item'])) {
     $field_schedule_keys = array_keys($entity_query_result['field_collection_item']);
