@@ -40,9 +40,9 @@ tr .form-item {
   color: #f00;
 }
 
-.event-korraldaja {
+/*.event-korraldaja {
   line-height: 0.3em;
-}
+}*/
 .field-name-field-korraldaja .field-name-field-korraldaja {
   font-weight: bold;
   border-width: 1px;
