@@ -326,6 +326,7 @@ function _eventresource_index($parameters) {
 
 function huvi_event_resource_get_events($parameters) {
   $query = db_select('node', 'n')
+    ->distinct()
     ->fields('n', array('nid'));
   $query->innerJoin('field_data_field_schedule', 's', 'n.nid = s.entity_id');
 
@@ -526,6 +527,6 @@ function huvi_event_resource_node_to_event($node) {
     foreach ($n->field_categories_event['und'] as $val) {
       $e['categories'][] = huvi_event_resource_category_by_id($val['value'], $n->field_type['und'][0]['value']);
     }
-  $e['link'] = url('node/'. $n->nid ,  array('absolute' => TRUE));
+  $e['url'] = url('node/'. $n->nid ,  array('absolute' => TRUE));
   return $e;
 }
