@@ -526,5 +526,6 @@ function huvi_event_resource_node_to_event($node) {
     foreach ($n->field_categories_event['und'] as $val) {
       $e['categories'][] = huvi_event_resource_category_by_id($val['value'], $n->field_type['und'][0]['value']);
     }
+  $e['link'] = url('node/'. $n->nid ,  array('absolute' => TRUE));
   return $e;
 }
