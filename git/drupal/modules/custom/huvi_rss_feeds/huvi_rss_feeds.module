@@ -126,10 +126,10 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
   }
   else
     $query_arr[]= 'is_free[]=1';
-  if (isset($form_state['values']['text']) & !empty($form_state['values']['text'])) {
+  if (isset($form_state['values']['text']) && !empty($form_state['values']['text'])) {
     $query_arr[]= 'text[]=' . $form_state['values']['text'];
   }
-  if (isset($form_state['values']['format']) & !empty($form_state['values']['format'])) {
+  if (isset($form_state['values']['format'])) {
     $query_arr[]= 'format=' . $form_state['values']['format'];
   }
 
