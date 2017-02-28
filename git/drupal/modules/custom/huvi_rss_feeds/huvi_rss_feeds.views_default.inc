@@ -158,8 +158,10 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+ 
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -197,6 +199,16 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['relationship'] = 'field_schedule_node';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
   /* Contextual filter: Content: Title */
   $handler->display->display_options['arguments']['title']['id'] = 'title';
   $handler->display->display_options['arguments']['title']['table'] = 'node';
@@ -356,7 +368,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['row_options']['creator_field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['row_options']['date_field'] = 'field_schedule_date';
   $handler->display->display_options['row_options']['guid_field_options'] = array(
-    'guid_field' => 'title',
+    'guid_field' => 'path',
     'guid_field_is_permalink' => 0,
   );
   $handler->display->display_options['path'] = 'event-rss-feed';
@@ -365,10 +377,6 @@ function huvi_rss_feeds_views_default_views() {
     'default' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'test-rss-form';
   $export['events_rss_feeds'] = $view;
 
   return $export;

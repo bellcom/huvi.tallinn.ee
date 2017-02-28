@@ -42,7 +42,16 @@ function huvi_rss_feeds_form($form, &$form_state) {
   $form['rss_link'] = array(
   '#markup' => '<div class="rss-url" ><p> <a class="feed-link" href="' . $form_state['rss_link'] . '">' . $form_state['rss_link'] . '</a></p>'
     . '<button id="feed_url">' . t('Copy link') . '</button></div>'
-);
+  );
+  $form['format'] = array(
+    '#type' => 'select',
+    '#title' => t('RSS format'),
+    '#options' => array (
+      0 => t('Event name as heading (link to event) and event date'),
+      1 => t('Event name as heading (link to event), date and whole text'),
+      2 => t('Event name as heading (link to event), date, whole text and picture')
+     )
+   );
   $form['type'] = array(
   '#type' => 'checkboxes',
   '#options' => array('uritus' => t('üritus'), 'huvitegevus' => t('huvitegevus')),
@@ -74,7 +83,7 @@ function huvi_rss_feeds_form($form, &$form_state) {
   $form['text'] = array(
     '#type' => 'textfield',
     '#title' => t('Keywords'),
-    );
+  );
 
   $form['submit_button'] = array(
     '#type' => 'submit',
@@ -120,6 +129,9 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
   if (isset($form_state['values']['text']) & !empty($form_state['values']['text'])) {
     $query_arr[]= 'text[]=' . $form_state['values']['text'];
   }
+  if (isset($form_state['values']['format']) & !empty($form_state['values']['format'])) {
+    $query_arr[]= 'format=' . $form_state['values']['format'];
+  }
 
    $form_state['rss_link'] = $base_url . $base_path . 'event-rss-feed?' . implode('&', $query_arr);
    $form_state['rebuild'] = TRUE;
@@ -152,13 +164,13 @@ function _huvi_rss_feeds_get_view_title($filters) {
         }
         $title .= ' (' . implode(', ', $event_categories) .')';
        }
-       
+
          if (in_array('huvitegevus', $filters['type']))
            $title .= ", ";
          else
            $title .= "; ";
-      }      
-        
+      }
+
       if ($value == 'huvitegevus') {
         $activity_categories = array();
         $title .= $value;
