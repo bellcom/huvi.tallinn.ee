@@ -96,5 +96,5 @@ if(!in_array('anonymous user', $user->roles)) {
   </div>
   <div class="choose"></div>
   <a class="footer-logo" href="http://tallinn.ee">Tallinn</a>
-  <a class="footer-fb-logo" href="https://www.facebook.com/tallinntana">Tallinn Täna</a>
+  <a class="footer-fb-logo" href="https://www.facebook.com/tallinnalinn">Tallinna linn</a>
 </div>
