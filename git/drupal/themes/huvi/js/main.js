@@ -635,14 +635,8 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
-		var coords = ($('#map_canvas').data('latlng')).split(',');
-		var gmaps_url = (
-			'https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=' +
-			coords[0] + ',' + coords[1] +
-			'&amp;aq=0&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=' +
-			coords[0] + ',' + coords[1] +
-			'&amp;zoom=17&amp;output=embed&width=900&height=600&iframe=true'
-		);
+		var markers = ($('#map_canvas').attr('data-markers')).replace(';', '|');
+		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
 
 		$('#map_wrapper').prepend(
 			'<a class="map_overlay_button" href="' + gmaps_url +
@@ -660,11 +654,7 @@ function remapBackButton(url) {
 				width: '900px',
 				height: '600px',
 				maxWidth: '95%',
-				maxHeight: '95%',
-				oncomplete: function() {
-					$(this).colorbox.resize();
-
-				}
+				maxHeight: '95%'
 			});
 		}
 
