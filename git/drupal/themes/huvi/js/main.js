@@ -635,7 +635,7 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
-		var markers = ($('#map_canvas').attr('data-markers')).replace(';', '|');
+		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
 
 		$('#map_wrapper').prepend(
