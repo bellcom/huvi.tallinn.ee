@@ -11,8 +11,12 @@
 <?php
   $path = isset($_GET['q']) ? $_GET['q'] : '<front>';
   $url = url($path, array('absolute' => TRUE));
+  $base_path = $GLOBALS['base_path'];
+  $back_button_url = 'uritused';
+  if (arg(0) == 'huvitegevus') {
+    $back_button_url = 'huvitegevused';
+  }
 ?>
-
 
 <article class="event">
 
@@ -20,7 +24,7 @@
     <div class="meta-left">
 
       <div class="back-button">
-        <?php print l(t('Back to search'), 'events'); ?>
+        <?php print l(t('Back to search'), $back_button_url); ?>
       </div>
     </div>
 
@@ -82,24 +86,38 @@
 
       <?php if(isset($event['schedule']) && !empty($event['schedule'])): ?>
       <div class="event-schedule">
+          <?php //TODO: Better array filtering with time.
+            // Not working due to week day being first in the time field
+            asort($event['schedule']);
+            $rows = 0;
+            $shown_rows = 10; // Rows to show before hiding the rest at first load
+          ?>
+          <?php foreach($event['schedule'] as $schedule_item): ?>
+            <?php if(isset($schedule_item['start_time'])): ?>
+            <?php $rows++; ?>
+            <div class="schedule-item<?php if($rows > $shown_rows) {print ' schedule-hidden';} ?>">
 
-        <?php foreach($event['schedule'] as $schedule_item): ?>
-          <?php if(isset($schedule_item['time'])): ?>
-          <div class="schedule-item">
-            <div class="row">
-              <span class="event-time"><?php print $schedule_item['time']; ?></span>
-            </div>
-            <?php if(isset($schedule_item['place']) && !empty($schedule_item['place'])): ?>
-            <div class="row">
-              <span class="event-place"><?php print $schedule_item['place']; ?></span>
+              <div class="row">
+                <span class="event-time"><?php print kultuurikava_date_format($schedule_item['start_time'], $schedule_item['end_time']); ?></span>
+              </div>
+
+              <?php if(isset($schedule_item['place']) && !empty($schedule_item['place'])): ?>
+              <div class="row">
+                <span class="event-place"><?php print $schedule_item['place']; ?></span>
+              </div>
+              <?php endif; ?>
+
             </div>
             <?php endif; ?>
-
-          </div>
+          <?php endforeach; ?>
+          <?php if($rows > $shown_rows): ?>
+            <div class="schedule-show-all">
+              <?php print(t('Show all')); ?>
+            </div>
           <?php endif; ?>
-        <?php endforeach; ?>
-      </div>
-      <?php endif; ?>
+        </div>
+       <?php endif; ?>
+
 
       <?php if(isset($event['pre_description']) && !empty($event['pre_description'])): ?>
         <div class="pre-description">
@@ -112,7 +130,17 @@
       <?php if(isset($event['description']) && !empty($event['description'])): ?>
         <div class="event-description"><?php print $event['description']; ?></div>
       <?php endif; ?>
-
+      <div class="event-korraldaja">
+        <?php //Korraldaja
+          if(isset($event['korraldaja']) && !empty($event['korraldaja'])): ?>
+            <?php foreach($event['korraldaja'] as $korraldaja_item): ?>
+              <p><b><?php print t('Korraldaja') ?> </b><br/>
+              <?php print($korraldaja_item['name']); ?>, <?php print($korraldaja_item['email']); ?> <br/>
+              <?php print t('kontekttelefon') ?>: <?php print($korraldaja_item['phone']); ?>
+              </p>
+        <?php endforeach; ?>
+      <?php endif; ?>
+		 </div>
     </div>
   </div>
 </article>
