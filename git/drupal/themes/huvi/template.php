@@ -13,8 +13,7 @@
  *   layout
  */
 function huvi_omega_layout_alter(&$layout) {
-
-  if ((arg(0) == 'uritus' || arg(0) == 'huvitegevus') && is_numeric(arg(1))) {
+  if ((arg(0) == 'uritus' || arg(0) == 'huvitegevus')) {
     $layout = 'single';
   }
 
