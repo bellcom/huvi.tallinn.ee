@@ -70,7 +70,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var bounds = new google.maps.LatLngBounds();
 			var markers_len = markers_lat_long.length;
-			var tmp_coords;
+			var tmp_coords, listener;
 
 			for (var i = 0; i < markers_len; i++) {
 				tmp_coords = markers_lat_long[i].split(',');
@@ -78,16 +78,12 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 				map.fitBounds(bounds);
 			}
 
-			// Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-			var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-				if (this.getZoom() > 20) {
-					this.setZoom(16);
-				} else {
-					this.setZoom(13);
-				}
-
-				google.maps.event.removeListener(boundsListener);
-			});
+			if (markers_len === 1) {
+				listener = google.maps.event.addListener(map, 'idle', function() { 
+					map.setZoom(16); 
+					google.maps.event.removeListener(listener); 
+				});
+			}
 		});
 	};
 

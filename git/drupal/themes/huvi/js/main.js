@@ -49,7 +49,7 @@
             $(last_tab_huvi) . click();
             addDateRangePicker(last_aeg_tab);
         }
-        
+
         if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
@@ -563,7 +563,7 @@ function initialize() {
     map.setTilt(45);
 
     // Display multiple markers on a map
-    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    var infoWindow = new google.maps.InfoWindow(), marker, i, listener;
 
     // Loop through our array of markers & place each one on the map
     for (i = 0; i < markers.length; i++) {
@@ -575,30 +575,16 @@ function initialize() {
             //title: markers[i][0]
         });
 
-        // Allow each marker to have an info window
-//        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-//            return function() {
-//                infoWindow.setContent(infoWindowContent[i][0]);
-//                infoWindow.open(map, marker);
-//            }
-//        })(marker, i));
-
         // Automatically center the map fitting all markers on the screen
         map.fitBounds(bounds);
-
     }
-    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
 
-        if (this.getZoom() > 20) {
-            this.setZoom(15);
-        }
-        else {
-            this.setZoom(13);
-        }
-
-        google.maps.event.removeListener(boundsListener);
-    });
+    if (markers.length === 1) {
+        listener = google.maps.event.addListener(map, 'idle', function() { 
+            map.setZoom(13); 
+            google.maps.event.removeListener(listener); 
+        });
+    }
 }
 
 function setCookie(cname, cvalue) {
@@ -635,6 +621,7 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
+
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
 
