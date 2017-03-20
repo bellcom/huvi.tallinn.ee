@@ -1204,11 +1204,16 @@ function kultuurikava_get_sub_event($node_id) {
                   if(isset($time['value2'])) {
                     $end_date = $time['value2'];
                   }
-                  //$e[$event][$event_key]['asort'] = $start_date;
+
+                  $start_date_n_time = (''
+                    . format_date($start_date, 'custom', $date_format) . ' '
+                    . t('kell') . ' ' . format_date($start_date, 'custom', $date_format_time)
+                  );
+
                   if(isset($end_date)) {
-                    $date_n_time = (''
-                      . format_date($start_date, 'custom', $date_format) . ' '
-                      . t('kell') . ' ' . format_date($start_date, 'custom', $date_format_time)
+                    $end_date_n_time = (''
+                      . format_date($end_date, 'custom', $date_format) . ' '
+                      . t('kell') . ' ' . format_date($end_date, 'custom', $date_format_time)
                     );
 
                     // No need to show the ending date, when it's the same as the starting date
@@ -1216,17 +1221,17 @@ function kultuurikava_get_sub_event($node_id) {
                       if (date('H:i', $start_date) == '23:55')
                         $return['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
                       else
-                        $return['time'] = $date_n_time;
+                        $return['time'] = $start_date_n_time;
                     }
                     else {
-                      $return['time'] = $date_n_time . ' - ' . $date_n_time;
+                      $return['time'] = $start_date_n_time . ' - ' . $end_date_n_time;
                     }
                   }
                   else {
                     if (date('H:i', $start_date) == '23:55')
-                      $return['time'] = format_date($start_date, 'custom', $short_date) . ' ' . t('Kogu päev');
+                      $return['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
                     else
-                      $return['time'] = $date_n_time;
+                      $return['time'] = $start_date_n_time;
                   }
 
 
