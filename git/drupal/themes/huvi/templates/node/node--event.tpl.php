@@ -144,15 +144,19 @@ if(isset($event) && !empty($event)):
             <?php $rows++; ?>
             <div class="schedule-item<?php if($rows > $shown_rows) {print ' schedule-hidden';} ?>">
 
-              <div class="row">
-                <span class="event-time"><?php print $schedule_item['time']; ?></span>
-              </div>
+              <div class="row sub-event-row">
+                <div class="sub-event-row-left-col">
+                  <span class="event-time"><?php print $schedule_item['time']; ?></span>
+                </div>
 
-              <?php if(isset($schedule_item['place']) && !empty($schedule_item['place'])): ?>
-              <div class="row">
-                <span class="event-place"><?php print $schedule_item['place']; ?></span>
+                <div class="sub-event-row-right-col">
+                  <?php if(isset($schedule_item['place']) && !empty($schedule_item['place'])): ?>
+                  <div>
+                    <span class="event-place"><?php print $schedule_item['place']; ?></span>
+                  </div>
+                  <?php endif; ?>
+                </div>
               </div>
-              <?php endif; ?>
 
             </div>
             <?php endif; ?>
@@ -208,10 +212,15 @@ if(isset($event) && !empty($event)):
         <?php endif; ?>
 
         <?php if(isset($event['sub_events'])): ?>
+          <h2 class="sub-event-title"><?php print(t('Sub-events')); ?></h2>
           <div class="sub-events">
-            <h2 class="sub-event-title"><?php print(t('Sub-events')); ?></h2>
             <?php foreach($event['sub_events'] as $key => $sub_event) { ?>
-              <a class="sub-event" href="<?php print $sub_event['path']; ?>"><?php print $sub_event['title']; ?> »</a>
+              <a class="sub-event" href="<?php print $sub_event['path']; ?>">
+                <div class="sub-event-row">
+                  <div class="sub-event-row-left-col"><?php print $sub_event['time']; ?></div>
+                  <div class="sub-event-row-right-col"><?php print $sub_event['title']; ?> »</div>
+                </div>
+              </a>
             <?php } ?>
           </div>
         <?php endif; ?>

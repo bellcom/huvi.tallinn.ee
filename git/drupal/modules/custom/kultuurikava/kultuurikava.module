@@ -1181,6 +1181,57 @@ function kultuurikava_get_sub_event($node_id) {
   if($node->status == '1') {
     $return['title'] = $node->title;
     $return['path'] = url('node/' . $node->nid);
+    $return['time'] = '';
+
+    if(isset($node->field_schedule['und'])) {
+      $date_format = 'D, d.m.Y H:i';
+      $short_date_format = 'D, d.m.Y';
+      $event_key = 0;
+
+      foreach($node->field_schedule['und'] as $key => $val) {
+        if (isset($val['value'])) {
+	   
+          $collections = entity_load('field_collection_item', array($val['value']));
+			
+          foreach($collections as $c) {
+
+            if(isset($c->field_schedule_date['und'])) {
+              foreach($c->field_schedule_date['und'] as $time_key => $time) {
+					
+                if(isset($time['value'])) {
+                  $start_date = $time['value'];                    
+                  if(isset($time['value2'])) {
+                    $end_date = $time['value2'];
+                  }
+                  //$e[$event][$event_key]['asort'] = $start_date;
+                  if(isset($end_date)) {
+                    // No need to show the ending date, when it's the same as the starting date
+                    if($start_date == $end_date) {
+                      if (date('H:i', $start_date) == '23:55')
+                        $return['time'] = format_date($start_date, 'custom', $short_date_format) . ' ' . t('Kogu päev');
+                      else
+                        $return['time'] = format_date($start_date, 'custom', $date_format);
+                    }
+                    else {
+                      $return['time'] = format_date($start_date, 'custom', $date_format)
+                        . ' - '
+                        . format_date($end_date, 'custom', $date_format);
+                    }
+                  }
+                  else {
+                    if (date('H:i', $start_date) == '23:55')
+                      $return['time'] = format_date($start_date, 'custom', $short_date_format) . ' ' . t('Kogu päev');
+                    else
+                      $return['time'] = format_date($start_date, 'custom', $date_format);
+                  }
+                  $event_key++;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     return $return;
   }
