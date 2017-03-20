@@ -42,6 +42,9 @@ function huvi_event_resource_default_services_endpoint() {
         'create' => array(
           'enabled' => '1',
         ),
+        'index' => array(
+          'enabled' => '1',
+        ),
       ),
     ),
   );
