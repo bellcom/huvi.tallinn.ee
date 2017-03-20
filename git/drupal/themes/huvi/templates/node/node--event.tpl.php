@@ -218,7 +218,10 @@ if(isset($event) && !empty($event)):
               <a class="sub-event" href="<?php print $sub_event['path']; ?>">
                 <div class="sub-event-row">
                   <div class="sub-event-row-left-col"><?php print $sub_event['time']; ?></div>
-                  <div class="sub-event-row-right-col"><?php print $sub_event['title']; ?> »</div>
+                  <div class="sub-event-row-right-col">
+                    <span class="sub-event-row-right-col-title"><?php print $sub_event['title']; ?> - </span>
+                    <?php print $sub_event['place']; ?>
+                  </div>
                 </div>
               </a>
             <?php } ?>
