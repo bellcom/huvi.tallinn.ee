@@ -49,7 +49,7 @@
             $(last_tab_huvi) . click();
             addDateRangePicker(last_aeg_tab);
         }
-        
+
         if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
@@ -635,6 +635,7 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
+
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
 
