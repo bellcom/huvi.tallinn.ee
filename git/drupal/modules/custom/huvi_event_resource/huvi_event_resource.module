@@ -34,7 +34,25 @@ function huvi_event_resource_services_resources() {
             'optional' => FALSE,
           ),
         ),
-      ),      
+      ), 
+      'index' => array(
+        'help' => 'Retrieves a listing of notes',
+        'file' => array('file' => 'inc', 'module' => 'huvi_event_resource'),
+        'callback' => '_eventresource_index',
+        'access callback' => 'user_access',
+        'access arguments' => array('access content'),
+        'access arguments append' => FALSE,
+        'args' => array(          
+          array(
+           'name' => 'parameters',
+           'type' => 'array',
+           'description' => '',
+           'source' => 'param',
+           'optional' => TRUE,
+           'default value' => array(),
+          ),
+        ),
+      ),
       )
   );
     

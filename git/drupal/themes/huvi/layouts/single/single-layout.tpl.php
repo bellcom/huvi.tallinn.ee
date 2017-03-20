@@ -86,7 +86,7 @@
 
     <div class="l-footer--bottom-wrapper">
       <div class="l-footer--bottom-container">
-        <a class="footer-fb-logo" href="https://www.facebook.com/tallinntana">Tallinn Täna</a>
+        <a class="footer-fb-logo" href="https://www.facebook.com/tallinnalinn">Tallinna linn</a>
         <a class="footer-logo" href="http://tallinn.ee">Tallinn</a>
         <div class="copyright"><p>&copy; <?php echo date("Y"); ?> Tallinna Linnakantselei</p></div>
       </div>
