@@ -1021,10 +1021,8 @@ function kultuurikava_node_to_event($node) {
         if(isset($n->{$field}['und'])) {
           $date_format = 'D, d.m.y';
           $date_format_time = 'H:i';
-
-          //$date_format = 'D, d.m.Y H:i';
-          //$short_date_format = 'D, d.m.Y';
           $event_key = 0;
+
           foreach($n->{$field}['und'] as $key => $val) {
            if (isset($val['value'])) {
 			   
@@ -1042,44 +1040,29 @@ function kultuurikava_node_to_event($node) {
                     }
                     $e[$event][$event_key]['asort'] = $start_date;
 
-                    $start_date_n_time = (''
-                      . format_date($start_date, 'custom', $date_format) . ' '
-                      . t('kell') . ' ' . format_date($start_date, 'custom', $date_format_time)
-                    );
+                    $start_date_formatted = format_date($start_date, 'custom', $date_format);
+                    $start_time_formatted = format_date($start_date, 'custom', $date_format_time);
+                    $start_date_n_time = t('!s_date kell !s_time', array(
+                      '!s_date' => $start_date_formatted,
+                      '!s_time' => $start_time_formatted,
+                    ));
 
-                    if(isset($end_date)) {
-                      $end_date_n_time = (''
-                        . format_date($end_date, 'custom', $date_format) . ' '
-                        . t('kell') . ' ' . format_date($end_date, 'custom', $date_format_time)
-                      );
+                    if (date('H:i', $start_date) == '23:55')
+                      $e[$event][$event_key]['time'] = $start_date_formatted . ' ' . t('Kogu päev');
+                    else
+                      $e[$event][$event_key]['time'] = $start_date_n_time;
 
-                      // No need to show the ending date, when it's the same as the starting date
-                      if($start_date == $end_date) {
-                        if (date('H:i', $start_date) == '23:55')
-                          $e[$event][$event_key]['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
-                        else
-                          $e[$event][$event_key]['time'] = $start_date_n_time;
-                      }
-                      else {
-                        $e[$event][$event_key]['time'] = $start_date_n_time . ' - ' . $end_date_n_time;
-                      }
+                    $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
+                    $place = $c->field_schedule_place['und'][0]['value'];
+                    if(!empty($toimumiskoht)){
+                      $e[$event][$event_key]['place'] = $toimumiskoht;	
+                      if(!empty($place))
+                       $e[$event][$event_key]['place'] = ' <span class="event-place-toimumiskoht">'.$toimumiskoht .'</span><br>'. $place;
                     }
-                    else {
-                      if (date('H:i', $start_date) == '23:55')
-                          $e[$event][$event_key]['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
-                        else
-                          $e[$event][$event_key]['time'] = $start_date_n_time;
+                    else{
+                      $e[$event][$event_key]['place'] = $place;
                     }
-					$toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
-					$place = $c->field_schedule_place['und'][0]['value'];
-					if(!empty($toimumiskoht)){
-					  $e[$event][$event_key]['place'] = $toimumiskoht;	
-					  if(!empty($place))
-						$e[$event][$event_key]['place'] = ' <span class="event-place-toimumiskoht">'.$toimumiskoht .'</span><br>'. $place;
-					}
-					else{
-					  $e[$event][$event_key]['place'] = $place;
-					}
+
                     $event_key++;
                   }
                 }
@@ -1198,7 +1181,6 @@ function kultuurikava_get_sub_event($node_id) {
     if(isset($node->field_schedule['und'])) {
       $date_format = 'D, d.m.y';
       $date_format_time = 'H:i';
-      $event_key = 0;
 
       foreach($node->field_schedule['und'] as $key => $val) {
 
@@ -1222,35 +1204,17 @@ function kultuurikava_get_sub_event($node_id) {
                     $end_date = $time['value2'];
                   }
 
-                  $start_date_n_time = (''
-                    . format_date($start_date, 'custom', $date_format) . ' '
-                    . t('kell') . ' ' . format_date($start_date, 'custom', $date_format_time)
-                  );
+                  $start_date_formatted = format_date($start_date, 'custom', $date_format);
+                  $start_time_formatted = format_date($start_date, 'custom', $date_format_time);
+                  $start_date_n_time = t('!s_date kell !s_time', array(
+                    '!s_date' => $start_date_formatted,
+                    '!s_time' => $start_time_formatted,
+                  ));
 
-                  if(isset($end_date)) {
-                    $end_date_n_time = (''
-                      . format_date($end_date, 'custom', $date_format) . ' '
-                      . t('kell') . ' ' . format_date($end_date, 'custom', $date_format_time)
-                    );
-
-                    // No need to show the ending date, when it's the same as the starting date
-                    if($start_date == $end_date) {
-                      if (date('H:i', $start_date) == '23:55')
-                        $tmp_time = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
-                      else
-                        $tmp_time = $start_date_n_time;
-                    }
-                    else {
-                      $tmp_time = $start_date_n_time . ' - ' . $end_date_n_time;
-                    }
-                  }
-                  else {
-                    if (date('H:i', $start_date) == '23:55')
-                      $tmp_time = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
-                    else
-                      $tmp_time = $start_date_n_time;
-                  }
-
+                  if (date('H:i', $start_date) == '23:55')
+                    $tmp_time = $start_date_formatted . ' ' . t('Kogu päev');
+                  else
+                    $tmp_time = $start_date_n_time;
 
                   $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
                   $place = $c->field_schedule_place['und'][0]['value'];
@@ -1269,8 +1233,6 @@ function kultuurikava_get_sub_event($node_id) {
                     'time' => $tmp_time,
                     'place' => $tmp_place,
                   );
-
-                  $event_key++;
                 }
               }
             }
