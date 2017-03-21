@@ -948,8 +948,10 @@ function kultuurikava_node_to_event($node) {
     $sub_events = array();
     foreach($sub_event_ids as $sub_event_id) {
       $sub_event = kultuurikava_get_sub_event($sub_event_id);
-      if(isset($sub_event)) {
-        $sub_events[] = $sub_event;
+      if(isset($sub_event) && is_array($sub_event)) {
+        foreach ($sub_event as $s) {
+          $sub_events[] = $s;
+        }
       }
     }
     if(isset($sub_events)) {
@@ -1191,10 +1193,7 @@ function kultuurikava_get_sub_event($node_id) {
   $node = node_load($node_id);
   // Use only published nodes
   if($node->status == '1') {
-    $return['title'] = $node->title;
-    $return['path'] = url('node/' . $node->nid);
-    $return['time'] = '';
-    $return['place'] = '';
+    $return = array();
 
     if(isset($node->field_schedule['und'])) {
       $date_format = 'D, d.m.y';
@@ -1202,6 +1201,9 @@ function kultuurikava_get_sub_event($node_id) {
       $event_key = 0;
 
       foreach($node->field_schedule['und'] as $key => $val) {
+
+        $tmp_data = array();
+
         if (isset($val['value'])) {
 	   
           $collections = entity_load('field_collection_item', array($val['value']));
@@ -1210,7 +1212,10 @@ function kultuurikava_get_sub_event($node_id) {
 
             if(isset($c->field_schedule_date['und'])) {
               foreach($c->field_schedule_date['und'] as $time_key => $time) {
-					
+
+                $tmp_time = '';
+		$tmp_place = '';
+
                 if(isset($time['value'])) {
                   $start_date = $time['value'];                    
                   if(isset($time['value2'])) {
@@ -1231,32 +1236,39 @@ function kultuurikava_get_sub_event($node_id) {
                     // No need to show the ending date, when it's the same as the starting date
                     if($start_date == $end_date) {
                       if (date('H:i', $start_date) == '23:55')
-                        $return['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
+                        $tmp_time = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
                       else
-                        $return['time'] = $start_date_n_time;
+                        $tmp_time = $start_date_n_time;
                     }
                     else {
-                      $return['time'] = $start_date_n_time . ' - ' . $end_date_n_time;
+                      $tmp_time = $start_date_n_time . ' - ' . $end_date_n_time;
                     }
                   }
                   else {
                     if (date('H:i', $start_date) == '23:55')
-                      $return['time'] = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
+                      $tmp_time = format_date($start_date, 'custom', $date_format) . ' ' . t('Kogu päev');
                     else
-                      $return['time'] = $start_date_n_time;
+                      $tmp_time = $start_date_n_time;
                   }
 
 
                   $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
                   $place = $c->field_schedule_place['und'][0]['value'];
                   if(!empty($toimumiskoht)) {
-                    $return['place'] = $toimumiskoht;
+                    $tmp_place = $toimumiskoht;
                     if(!empty($place))
                       $return['place'] = '<span class="event-place-toimumiskoht">' . $toimumiskoht . ' ' . $place . '</span>';
                   }
                   else {
-                    $return['place'] = $place;
+                    $tmp_place = $place;
                   }
+
+                  $return[] = array(
+                    'title' => $node->title,
+                    'path' => url('node/' . $node->nid),
+                    'time' => $tmp_time,
+                    'place' => $tmp_place,
+                  );
 
                   $event_key++;
                 }
@@ -1265,6 +1277,15 @@ function kultuurikava_get_sub_event($node_id) {
           }
         }
       }
+    }
+
+    if (count($return) == 0) {
+      $return[] = array(
+        'title' => $node->title,
+        'path' => url('node/' . $node->nid),
+        'time' => '',
+        'place' => '',
+      );
     }
 
     return $return;
