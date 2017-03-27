@@ -556,6 +556,7 @@ function initialize() {
     var mapOptions = {
         mapTypeId: 'roadmap',
         streetViewControl: true,
+        maxZoom: 16
     };
 
     // Display a map on the page
@@ -577,13 +578,6 @@ function initialize() {
 
         // Automatically center the map fitting all markers on the screen
         map.fitBounds(bounds);
-    }
-
-    if (markers.length === 1) {
-        listener = google.maps.event.addListener(map, 'idle', function() { 
-            map.setZoom(13); 
-            google.maps.event.removeListener(listener); 
-        });
     }
 }
 
