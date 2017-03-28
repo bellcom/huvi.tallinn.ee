@@ -50,7 +50,8 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var map_options = {
 				center: location,
-				zoom: 16
+				zoom: 16,
+				maxZoom: 16
 			};
 
 			var map = new google.maps.Map(map_canvas, map_options);
@@ -76,13 +77,6 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 				tmp_coords = markers_lat_long[i].split(',');
 				addMarker(tmp_coords[0], tmp_coords[1], bounds);
 				map.fitBounds(bounds);
-			}
-
-			if (markers_len === 1) {
-				listener = google.maps.event.addListener(map, 'idle', function() { 
-					map.setZoom(16); 
-					google.maps.event.removeListener(listener); 
-				});
 			}
 		});
 	};
