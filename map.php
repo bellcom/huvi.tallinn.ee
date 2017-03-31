@@ -39,6 +39,19 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 	var coords = markers_lat_long[0].split(',');
 	var map_id = 'map_area';
 
+	var identicalArrayElements = function(arr) {
+		var len = arr.length, first_elem;
+
+		if (len > 1) {
+			first_elem = arr[0];
+			for (var i = 1; i < len; i++) {
+				if (arr[i] != first_elem) return false;
+			}
+		}
+
+		return true;
+	};
+
 	var loadMap = function() {
 
 		google.maps.event.addDomListener(window, 'load', function() {
@@ -50,8 +63,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var map_options = {
 				center: location,
-				zoom: 16,
-				maxZoom: 16
+				zoom: 16
 			};
 
 			var map = new google.maps.Map(map_canvas, map_options);
@@ -71,13 +83,21 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var bounds = new google.maps.LatLngBounds();
 			var markers_len = markers_lat_long.length;
-			var tmp_coords, listener;
+			var tmp_coords, bounds_listener;
 
 			for (var i = 0; i < markers_len; i++) {
 				tmp_coords = markers_lat_long[i].split(',');
 				addMarker(tmp_coords[0], tmp_coords[1], bounds);
 				map.fitBounds(bounds);
 			}
+
+			bounds_listener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
+				if (this.getZoom() > 20) {
+					this.setZoom(16);
+				}
+
+				google.maps.event.removeListener(bounds_listener);
+			});
 		});
 	};
 

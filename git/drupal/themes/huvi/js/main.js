@@ -49,7 +49,7 @@
             $(last_tab_huvi) . click();
             addDateRangePicker(last_aeg_tab);
         }
-
+        
         if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
@@ -555,8 +555,7 @@ function initialize() {
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap',
-        streetViewControl: true,
-        maxZoom: 16
+        streetViewControl: true
     };
 
     // Display a map on the page
@@ -564,7 +563,7 @@ function initialize() {
     map.setTilt(45);
 
     // Display multiple markers on a map
-    var infoWindow = new google.maps.InfoWindow(), marker, i, listener;
+    var infoWindow = new google.maps.InfoWindow(), marker, i, bounds_listener;
 
     // Loop through our array of markers & place each one on the map
     for (i = 0; i < markers.length; i++) {
@@ -572,13 +571,21 @@ function initialize() {
         bounds.extend(position);
         marker = new google.maps.Marker({
             position: position,
-            map: map,
-            //title: markers[i][0]
+            map: map
         });
 
         // Automatically center the map fitting all markers on the screen
         map.fitBounds(bounds);
     }
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    bounds_listener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
+      if (this.getZoom() > 20) {
+        this.setZoom(16);
+      }
+
+      google.maps.event.removeListener(bounds_listener);
+    });
 }
 
 function setCookie(cname, cvalue) {
@@ -615,7 +622,6 @@ function remapBackButton(url) {
  */
 ;(function($) {
 	$(document).ready(function() {
-
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
 
