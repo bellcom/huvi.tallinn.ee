@@ -39,19 +39,6 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 	var coords = markers_lat_long[0].split(',');
 	var map_id = 'map_area';
 
-	var identicalArrayElements = function(arr) {
-		var len = arr.length, first_elem;
-
-		if (len > 1) {
-			first_elem = arr[0];
-			for (var i = 1; i < len; i++) {
-				if (arr[i] != first_elem) return false;
-			}
-		}
-
-		return true;
-	};
-
 	var loadMap = function() {
 
 		google.maps.event.addDomListener(window, 'load', function() {
