@@ -955,6 +955,7 @@ function kultuurikava_node_to_event($node) {
       }
     }
     if(isset($sub_events)) {
+      $sub_events = _kultuurikava_rearrange_sub_events($sub_events);
       $e['sub_events'] = $sub_events;
     }
   }
@@ -1230,6 +1231,7 @@ function kultuurikava_get_sub_event($node_id) {
                   $return[] = array(
                     'title' => $node->title,
                     'path' => url('node/' . $node->nid),
+                    'timestamp' => $time['value'],
                     'time' => $tmp_time,
                     'place' => $tmp_place,
                   );
@@ -1245,6 +1247,7 @@ function kultuurikava_get_sub_event($node_id) {
       $return[] = array(
         'title' => $node->title,
         'path' => url('node/' . $node->nid),
+	'timestamp' => null,
         'time' => '',
         'place' => '',
       );
@@ -1310,3 +1313,27 @@ function kultuurikava_date_format ($start_date, $end_date) {
       }
   return $date;
 }
+
+
+/* Helper functions */
+
+function _kultuurikava_rearrange_sub_events(&$arr) {
+  $tmp_arr1 = array();
+  $tmp_arr2 = array();
+
+  foreach ($arr as $a) {
+    if ($a['timestamp'] == null) $tmp_arr2[] = $a;
+    else $tmp_arr1[] = $a;
+  }
+
+  usort($tmp_arr1, '_kultuurikava_sort_by_timestamp');
+  $result = array_merge($tmp_arr1, $tmp_arr2);
+
+  return $result;
+}
+
+
+function _kultuurikava_sort_by_timestamp($a, $b) {
+  return $a['timestamp'] - $b['timestamp'];
+}
+

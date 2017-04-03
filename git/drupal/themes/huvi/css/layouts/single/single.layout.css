@@ -391,10 +391,6 @@ h1 {
   }
 }
 
-.event-time {
-  font-weight: bold;
-}
-
 .schedule-item {
   background: #EAEAEA;
   padding: 5px;
@@ -437,7 +433,6 @@ h1 {
   text-decoration: none;
   display: block;
   color: black;
-  font-weight: bold;
   font-size: 14px;
   padding: 5px;
 }
@@ -476,7 +471,6 @@ h1 {
 
 .sub-event-row {
   display: table;
-  font-weight: bold;
 }
 			
 .sub-event-row-left-col {
@@ -487,9 +481,5 @@ h1 {
 .sub-event-row-right-col {
   display: table-cell;
   padding-left: 10px;
-}
-
-.sub-event-row-right-col-title {
-  font-weight: normal !important;
 }
 
