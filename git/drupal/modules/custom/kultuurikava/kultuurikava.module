@@ -1277,6 +1277,44 @@ function kultuurikava_manual_import() {
 }
 
 
+/**
+ * Function for date formating
+ */
+function kultuurikava_date_format ($start_date, $end_date) {
+  $date_format = 'D, d.m.Y H:i';
+  $short_date_format = 'D, d.m.Y';
+
+  if(isset($end_date)) {
+  // No need to show the ending date, when it's the same as the starting date
+    if($start_date == $end_date) {
+      if (date('H:i', $start_date) == '00:00')
+       $date =  format_date($start_date, 'custom', $short_date_format) . ' ' . t('Kogu päev');
+      else
+        $date = format_date($start_date, 'custom', $date_format);
+      }
+    else {
+      if (date('H:i', $start_date) == '00:00') {
+        $date = format_date($start_date, 'custom', $short_date_format)
+                . ' - '
+                . format_date($end_date, 'custom', $short_date_format);
+       }
+       else {
+         $date = format_date($start_date, 'custom', $date_format)
+                . ' - '
+                . format_date($end_date, 'custom', $date_format);
+       }
+      }
+    }
+    else {
+      if (date('H:i', $start_date) == '00:00')
+        $date =  format_date($start_date, 'custom', $short_date_format) . ' ' . t('Kogu päev');
+      else
+        $date =  format_date($start_date, 'custom', $date_format);
+      }
+  return $date;
+}
+
+
 /* Helper functions */
 
 function _kultuurikava_rearrange_sub_events(&$arr) {
