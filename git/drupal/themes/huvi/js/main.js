@@ -266,7 +266,7 @@
            $(".messages--error").insertBefore( $( "#user-login .form-actions" ));
            $("#user-login #div_logi_sisse").show();
         }
-
+        $('.view-advertisement').hover( function() {$('.view-advertisement .views-slideshow-controls-bottom').show()},  function() {$('.view-advertisement .views-slideshow-controls-bottom').hide()});
     });
 
     var categoriesOpen;
