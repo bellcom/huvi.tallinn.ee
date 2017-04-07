@@ -191,7 +191,7 @@ if(isset($event) && !empty($event)):
 			<?php foreach($event['korraldaja'] as $korraldaja_item): ?>
 			   <p><b> <?php print t('Korraldaja') ?> </b><br/>
 			   <?php print($korraldaja_item['name']); ?>, <?php print($korraldaja_item['email']); ?> <br/>
-			   <?php print t('kontekttelefon') ?>: <?php print($korraldaja_item['phone']); ?> </p>			
+			   <?php print t('kontakttelefon') ?>: <?php print($korraldaja_item['phone']); ?> </p>			
 		        <?php endforeach; ?>
 		  <?php endif; ?>
 		 </div>
