@@ -363,6 +363,7 @@ h1 {
   .page-content {
     margin: auto;
     overflow: hidden;
+    margin-left: 8px;
     margin-top: 20px;
   }
   .page-content .page-content-left {
@@ -392,11 +393,10 @@ h1 {
 }
 
 .schedule-item {
-  background: #EAEAEA;
   padding: 5px;
 }
 .schedule-item:nth-child(even) {
-  background: #dadace;
+  background: #EAEAEA;
 }
 .schedule-item.schedule-hidden {
   display: none;
@@ -416,14 +416,8 @@ h1 {
 .section-huvitegevus .schedule-item {
   border-bottom: 1px solid #0099CC;
 }
-.section-huvitegevus .schedule-item:first-child {
-  border-top: 1px solid #0099CC;
-}
 .section-uritus .schedule-item {
   border-bottom: 1px solid #FF6600;
-}
-.section-uritus .schedule-item:first-child {
-  border-top: 1px solid #FF6600;
 }
 
 .main-events .main-event,
@@ -434,32 +428,22 @@ h1 {
   display: block;
   color: black;
   font-size: 14px;
-  padding: 5px;
+  padding: 8px;
 }
 .main-events .main-event,
 .sub-events .main-event {
   font-size: 16px;
 }
-.main-events .sub-event,
-.sub-events .sub-event {
+.main-events .sub-event:nth-child(even),
+.sub-events .sub-event:nth-child(even) {
   background-color: #EAEAEA;
-}
-.main-events .sub-event:nth-child(odd),
-.sub-events .sub-event:nth-child(odd) {
-  background-color: #DADACE;
 }
 
 .section-huvitegevus .sub-event {
   border-bottom: 1px solid #0099CC;
 }
-.section-huvitegevus .sub-event:first-child {
-  border-top: 1px solid #0099CC;
-}
 .section-uritus .sub-event {
   border-bottom: 1px solid #FF6600;
-}
-.section-uritus .sub-event:first-child {
-  border-top: 1px solid #FF6600;
 }
 
 .hidden-event-notice {
@@ -475,7 +459,8 @@ h1 {
 			
 .sub-event-row-left-col {
   display: table-cell;
-  width: 160px;
+  padding-left: 5px;
+  width: 150px;
 }
 			
 .sub-event-row-right-col {
