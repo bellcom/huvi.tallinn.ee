@@ -363,6 +363,7 @@ h1 {
   .page-content {
     margin: auto;
     overflow: hidden;
+    margin-left: 8px;
     margin-top: 20px;
   }
   .page-content .page-content-left {
