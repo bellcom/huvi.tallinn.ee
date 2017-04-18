@@ -393,7 +393,7 @@ h1 {
 }
 
 .schedule-item {
-  padding: 5px;
+  padding: 8px;
 }
 .schedule-item:nth-child(even) {
   background: #EAEAEA;
