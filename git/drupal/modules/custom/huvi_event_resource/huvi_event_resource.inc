@@ -199,7 +199,7 @@ function huvi_event_resource_add_event($data) {
       $w->{$field_name}->set($categories);
     }
   }
-
+  $w->field_source->set('rest_service');
   $w->save();
   return $w->getIdentifier();
 }

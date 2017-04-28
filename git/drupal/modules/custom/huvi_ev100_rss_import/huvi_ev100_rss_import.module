@@ -1,0 +1,316 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function huvi_ev100_rss_import_menu() {
+  $items = array();
+
+  $items['admin/config/services/ev100_rss'] = array(
+    'title' => 'EV100 Integration settings',
+    'description' => 'Global settings for Ev100 Integration.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('huvi_ev100_rss_import_settings_form'),
+    'file' => 'huvi_ev100_rss_import.admin.inc',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['ev100_rss/test'] = array(
+    'title' => 'Ev100 Integration settings',
+    'description' => 'Global settings for Ev100 Integration.',
+    'page callback' => 'huvi_ev100_rss_import_add_events',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function huvi_ev100_rss_import_cron() {
+  huvi_ev100_rss_import_add_events();
+}
+
+/*
+ * Import events from rss
+ */
+
+function huvi_ev100_rss_import_add_events() {
+  $rss_url = variable_get('huvi_ev100_rss_url', '');
+  $xmlstr = @file_get_contents($rss_url);
+  if ($xmlstr === false) {
+    watchdog('RSS Import', "Error connect to RSS: %rss", array("%rss" => $rss), WATCHDOG_ERROR);
+    return;
+  }
+  $xml = new SimpleXMLElement($xmlstr);
+
+  if ($xml === false) {
+    watchdog('RSS Import', "Error parse RSS: %rss", array("%rss" => $rss), WATCHDOG_ERROR);
+    return;
+  }
+
+  foreach ($xml->xpath('//item') as $item) {
+    $geolocation = $item->children('georss', true);
+    if ($geolocation->featureTypeTag->__toString() == 'Tallinn') {
+      _huvi_ev100_rss_import_add_event($item);
+    }
+  }
+}
+
+/*
+ * Create event
+ */
+
+function _huvi_ev100_rss_import_add_event($item) {
+  $id = (int) $item->guid->__toString();
+
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'event')
+      ->fieldCondition('field_id', 'value', $id, '=')
+      ->fieldCondition('field_source', 'value', 'ev100_rss', '=')
+      ->execute();
+
+  // Node exists, load the entity
+  if ($result) {
+    foreach ($result['node'] as $key => $val) {
+      $entity_load = entity_load('node', array($key));
+      foreach ($entity_load as $ekey => $eval) {
+        $entity = $eval;
+      }
+    }
+  }
+  // Node doesn't exist yet, create a new entity
+  else {
+    $values = array(
+      'type' => 'event',
+      'uid' => $user->uid,
+      'comment' => 0,
+      'promote' => 0,
+      'language' => 'et',
+    );
+    $entity = entity_create('node', $values);
+  }
+  $w = entity_metadata_wrapper('node', $entity);
+  $w->title->set(str_replace("'", "", $item->title->__toString()));  
+  $w->field_description->value->set($item->description->__toString());
+  $w->field_id->set($id);  
+  $categories = _huvi_ev100_rss_get_event_category($item->category->__toString()); 
+  if(!empty($categories)) {
+    $w->field_categories_event->set($categories);
+  }
+  $w->field_source->set('ev100_rss');
+  $w->field_type->set('uritus');
+  $image_url = $item->children('media', true)->content->attributes()->url->__toString();
+  if ($image_url) {
+    $w->field_hasimage->set(1);
+    $w->field_image_url->set($item->children('media', true)->content->attributes()->url->__toString());
+  }
+  $dc = $item->children('dc', true);
+  //korraldaja
+  $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
+  $korraldaja_item->setHostEntity('entity', $entity);
+  $korraldaja_wrapper = entity_metadata_wrapper('field_collection_item', $korraldaja_item);
+  $korraldaja_wrapper->field_korraldaja_nimi->set($dc->creator->__toString());
+
+  $geolocation = $item->children('georss', true);
+  $latlng = str_replace(" ", ",", $geolocation->point->__toString());
+
+  //schedule
+  if (!empty($entity->field_schedule['und'])) {
+    $s_values = array();
+    foreach ($entity->field_schedule['und'] as $s_key => $s_val) {
+      $s_values[] = $s_val['value'];
+      unset($entity->field_schedule['und'][$s_key]);
+    }
+    if (!empty($s_values)) {
+      entity_delete_multiple('field_collection_item', $s_values);
+    }
+  }
+  $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
+  $schedule_item->setHostEntity('entity', $entity);
+  $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
+  $dates = explode("-", $dc->date->__toString());
+  $start_time = strtotime($dates[0]);
+  $end_time = isset($dates[1]) ? strtotime($dates[1]) : null;
+  
+  if (date('H:i', $start_time) == '00:00') {
+    $start_time = strtotime("-5 minutes", $start_time);
+  }
+  if (isset($end_time)) {
+    if (date('H:i', $end_time) == '00:00') {
+      $end_time = strtotime("-5 minutes", $end_time);
+    }
+    $rrule = 'RRULE:FREQ=DAILY;INTERVAL=1;UNTIL=' . date('Ymd\THis\Z', $end_time) . ';';
+    $repeats = date_repeat_calc($rrule, date('Y-m-d H:i:s', $start_time), date('Y-m-d H:i:s', $end_time));
+  }
+
+  if (isset($repeats)) {
+    foreach ($repeats as $key => $date) {
+      $schedule_wrapper->field_schedule_date[$key]->set(array(
+        'value' => strtotime($date)
+      ));
+    }
+  }
+  else {
+    $schedule_wrapper->field_schedule_date[0]->set(array(
+      'value' => $start_time,
+      'value2' => isset($end_time) ? $end_time : null,
+      'rrule' => isset($end_time) ? 'RRULE:FREQ=DAILY;INTERVAL=1;UNTIL=' . date('Ymd\THis\Z', $end_time) . ';' : null
+    ));
+  }
+
+  if ($latlng) {
+    $city_id = _huvi_ev100_rss_import_getcityarea($latlng);
+    $place = _huvi_ev100_rss_import_getaddress($latlng);
+ 
+    $schedule_wrapper->field_schedule_city_id->set($city_id);
+    $schedule_wrapper->field_schedule_place->set($place);
+    $w->field_map_latlng->set($latlng);
+    $w->field_map_markers->set($latlng);
+  }
+  $w->save();
+}
+/*
+ * helper function 
+ * Get event's place from lat lng
+ * @params
+ * $latlng - string format (lat,lng)
+ * 
+ * return event place in format [place], [address], [city]
+ */
+function _huvi_ev100_rss_import_getaddress($latlng) {
+  $data = _huvi_ev100_rss_getgeocode($latlng);
+  $status = $data->status;
+  if ($status == "OK") {
+    $address = "";
+    $place = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("premise", $data->results[0]->address_components, true);
+    $street_number = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("street_number", $data->results[0]->address_components, true);
+    $street = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("route", $data->results[0]->address_components, true);
+    $town = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("locality", $data->results[0]->address_components, true);
+    if ($place) {
+      $address .= $place . ', ';
+    }
+    if ($street) {
+      $address .= $street . ' ' . $street_number . ', ';
+    }
+    $address .= $town;
+
+    return $address;
+  }
+  else {
+    return false;
+  }
+}
+/*
+ * return Google Geo json
+ */
+function _huvi_ev100_rss_getgeocode($latlng) {
+  $url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' . trim($latlng) . '&sensor=false';
+  $json = @file_get_contents($url);
+  $data = json_decode($json);
+  return $data;
+}
+
+/*
+ * helper function 
+ * Get cityarea from lat lng
+ * @params
+ * $latlng - string format (lat,lng)
+ * 
+ * return cityarea id
+ */
+function _huvi_ev100_rss_import_getcityarea($latlng) {
+  $city_areas = array(
+    2944195 => 'Põhja-Tallinn',
+    2944191 => 'Kesklinn',
+    2944187 => 'Haabersti',
+    2944189 => 'Kristiine',
+    2944190 => 'Lasnamäe',
+    2944193 => 'Mustamäe',
+    2920234 => 'Pirita',
+    2944194 => 'Nõmme',
+  );
+
+  $data = _huvi_ev100_rss_getgeocode($latlng);
+  $status = $data->status;
+  if ($status == "OK") {
+    $city_area = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("sublocality_level_1", $data->results[0]->address_components, true);
+    return array_pop(array_keys($city_areas, $city_area));
+  }
+  else {
+    return false;
+  }
+}
+
+/*
+ * Searching in Google Geo json, return the long name given the type. 
+ * (If short_name is true, return short name)
+ */
+
+function _huvi_ev100_rss_import_Find_Long_Name_Given_Type($type, $array, $short_name = false) {
+  foreach ($array as $value) {
+    if (in_array($type, $value->types)) {
+      if ($short_name)
+        return $value->short_name;
+    }
+  }
+  return FALSE;
+}
+
+/*
+ * 
+ * $categories - string with "," as delimiter
+ */
+
+function _huvi_ev100_rss_get_event_category($categories){
+$ev100_categories_mapping =  array(
+  8 => array(
+    'Film ja foto',
+    'Kultuuripärand',
+    'Ajalugu',
+    'Eesti kogukonnad välismaal',
+    'Kogukond',
+    'Kodanikualgatus',
+    'Meedia',
+    'Elukeskkond',
+    'Loodus',
+    'Avalik ruum ja arhitektuur ',
+    'Disain',
+    'Haridus',
+    'Kultuuripärand',
+    'Tehnoloogia',
+    'Tervis ja eneseareng'
+    ),
+  1 => array(
+    'Etenduskunstid',
+    ),
+  2 => array(
+    'Kunst'
+    ),
+  4 => array(
+    'Sport ja liikumine'
+    ),
+  0 => array(
+    'Muusika'
+    ),
+  7 => array(
+    'Lapsed ja noored',
+  ),
+);
+$ev100_categories =  explode(',' , $categories);
+$huvi_categories =  array();
+foreach($ev100_categories as $category){
+  foreach($ev100_categories_mapping as $key => $value){ 
+    if (in_array(trim($category), $value)) {
+      $huvi_categories[] = $key;
+    }   
+  }
+}
+return array_unique($huvi_categories);
+}
