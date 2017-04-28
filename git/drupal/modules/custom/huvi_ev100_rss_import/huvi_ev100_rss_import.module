@@ -97,7 +97,7 @@ function _huvi_ev100_rss_import_add_event($item) {
     $entity = entity_create('node', $values);
   }
   $w = entity_metadata_wrapper('node', $entity);
-  $w->title->set(str_replace("'", "", $item->title->__toString()));  
+  $w->title->set($item->title->__toString());
   $w->field_description->value->set($item->description->__toString());
   $w->field_id->set($id);  
   $categories = _huvi_ev100_rss_get_event_category($item->category->__toString()); 
