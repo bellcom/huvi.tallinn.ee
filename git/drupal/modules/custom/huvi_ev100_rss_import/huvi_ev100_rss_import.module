@@ -99,8 +99,8 @@ function _huvi_ev100_rss_import_add_event($item) {
   $w = entity_metadata_wrapper('node', $entity);
   $w->title->set($item->title->__toString());
   $w->field_description->value->set($item->description->__toString());
-  $w->field_id->set($id);  
-  $categories = _huvi_ev100_rss_get_event_category($item->category->__toString()); 
+  $w->field_id->set($id);
+  $categories = _huvi_ev100_rss_get_event_category($item->category->__toString());
   if(!empty($categories)) {
     $w->field_categories_event->set($categories);
   }
@@ -138,7 +138,7 @@ function _huvi_ev100_rss_import_add_event($item) {
   $dates = explode("-", $dc->date->__toString());
   $start_time = strtotime($dates[0]);
   $end_time = isset($dates[1]) ? strtotime($dates[1]) : null;
-  
+
   if (date('H:i', $start_time) == '00:00') {
     $start_time = strtotime("-5 minutes", $start_time);
   }
@@ -168,7 +168,7 @@ function _huvi_ev100_rss_import_add_event($item) {
   if ($latlng) {
     $city_id = _huvi_ev100_rss_import_getcityarea($latlng);
     $place = _huvi_ev100_rss_import_getaddress($latlng);
- 
+
     $schedule_wrapper->field_schedule_city_id->set($city_id);
     $schedule_wrapper->field_schedule_place->set($place);
     $w->field_map_latlng->set($latlng);
@@ -177,11 +177,11 @@ function _huvi_ev100_rss_import_add_event($item) {
   $w->save();
 }
 /*
- * helper function 
+ * helper function
  * Get event's place from lat lng
  * @params
  * $latlng - string format (lat,lng)
- * 
+ *
  * return event place in format [place], [address], [city]
  */
 function _huvi_ev100_rss_import_getaddress($latlng) {
@@ -191,7 +191,7 @@ function _huvi_ev100_rss_import_getaddress($latlng) {
     $address = "";
     $place = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("premise", $data->results[0]->address_components, true);
     $street_number = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("street_number", $data->results[0]->address_components, true);
-    $street = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("route", $data->results[0]->address_components, true);
+    $street = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("route", $data->results[0]->address_components, false);
     $town = _huvi_ev100_rss_import_Find_Long_Name_Given_Type("locality", $data->results[0]->address_components, true);
     if ($place) {
       $address .= $place . ', ';
@@ -218,11 +218,11 @@ function _huvi_ev100_rss_getgeocode($latlng) {
 }
 
 /*
- * helper function 
+ * helper function
  * Get cityarea from lat lng
  * @params
  * $latlng - string format (lat,lng)
- * 
+ *
  * return cityarea id
  */
 function _huvi_ev100_rss_import_getcityarea($latlng) {
@@ -249,7 +249,7 @@ function _huvi_ev100_rss_import_getcityarea($latlng) {
 }
 
 /*
- * Searching in Google Geo json, return the long name given the type. 
+ * Searching in Google Geo json, return the long name given the type.
  * (If short_name is true, return short name)
  */
 
@@ -258,13 +258,15 @@ function _huvi_ev100_rss_import_Find_Long_Name_Given_Type($type, $array, $short_
     if (in_array($type, $value->types)) {
       if ($short_name)
         return $value->short_name;
+      else
+        return $value->long_name;
     }
   }
   return FALSE;
 }
 
 /*
- * 
+ *
  * $categories - string with "," as delimiter
  */
 
@@ -306,10 +308,10 @@ $ev100_categories_mapping =  array(
 $ev100_categories =  explode(',' , $categories);
 $huvi_categories =  array();
 foreach($ev100_categories as $category){
-  foreach($ev100_categories_mapping as $key => $value){ 
+  foreach($ev100_categories_mapping as $key => $value){
     if (in_array(trim($category), $value)) {
       $huvi_categories[] = $key;
-    }   
+    }
   }
 }
 return array_unique($huvi_categories);
