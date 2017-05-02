@@ -1242,7 +1242,11 @@ function huvi_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_source'.
   $field_instances['node-event-field_source'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1260,9 +1264,8 @@ function huvi_content_types_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 23,
       ),
       'teaser' => array(
@@ -1277,16 +1280,13 @@ function huvi_content_types_field_default_field_instances() {
     'label' => 'Source',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 26,
     ),
   );

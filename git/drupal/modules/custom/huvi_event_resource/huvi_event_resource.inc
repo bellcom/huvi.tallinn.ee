@@ -35,6 +35,7 @@ function huvi_event_resource_add_event($data) {
     $result = $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'event')
       ->fieldCondition('field_id', 'value', $data['id'], '=')
+      ->fieldCondition('field_source', 'value', 1, '=')
       ->execute();
 
     // Node exists, load the entity
@@ -199,7 +200,7 @@ function huvi_event_resource_add_event($data) {
       $w->{$field_name}->set($categories);
     }
   }
-  $w->field_source->set('rest_service');
+  $w->field_source->set(1); //1 - rest_service
   $w->save();
   return $w->getIdentifier();
 }
@@ -333,8 +334,8 @@ function huvi_event_resource_get_events($parameters) {
   if (isset($parameters['type'])) {
     $query->innerJoin('field_data_field_type', 't', 'n.nid = t.entity_id');
     $query->condition('t.field_type_value', $parameters['type'], 'IN');
-  } 
-  if (isset($parameters['is_free']) && array_pop($parameters['is_free']) == 1) {   
+  }
+  if (isset($parameters['is_free']) && array_pop($parameters['is_free']) == 1) {
     $query->innerJoin('field_data_field_isfree', 'f', 'n.nid = f.entity_id');
     $query->condition('f.field_isfree_value', 1);
   }
@@ -363,7 +364,7 @@ function huvi_event_resource_get_events($parameters) {
     ->fieldCondition('field_schedule_date', 'value', time(), '>=');
   if (isset($parameters['linnaosa'])){
     $entity_query->fieldCondition('field_schedule_city_id', 'value', $parameters['linnaosa'], 'IN');
-  }  
+  }
   $entity_query_result = $entity_query->execute();
   if (!empty($entity_query_result['field_collection_item'])) {
     $field_schedule_keys = array_keys($entity_query_result['field_collection_item']);

@@ -73,7 +73,7 @@ function _huvi_ev100_rss_import_add_event($item) {
   $result = $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'event')
       ->fieldCondition('field_id', 'value', $id, '=')
-      ->fieldCondition('field_source', 'value', 'ev100_rss', '=')
+      ->fieldCondition('field_source', 'value', '2', '=')
       ->execute();
 
   // Node exists, load the entity
@@ -104,7 +104,7 @@ function _huvi_ev100_rss_import_add_event($item) {
   if(!empty($categories)) {
     $w->field_categories_event->set($categories);
   }
-  $w->field_source->set('ev100_rss');
+  $w->field_source->set(2); //2 - ev100_rss
   $w->field_type->set('uritus');
   $image_url = $item->children('media', true)->content->attributes()->url->__toString();
   if ($image_url) {
