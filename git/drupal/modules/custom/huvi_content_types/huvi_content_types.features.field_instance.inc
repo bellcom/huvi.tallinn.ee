@@ -1239,6 +1239,58 @@ function huvi_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_source'.
+  $field_instances['node-event-field_source'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_source',
+    'label' => 'Source',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 26,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_tickets'.
   $field_instances['node-event-field_tickets'] = array(
     'bundle' => 'event',
@@ -1628,6 +1680,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Piletite edasimüüja veebiaadress sündmusele');
   t('Pre description');
   t('Selekteeri kui tegemist on suurema üritusega, mille alla oleks vaja lehel luua alamüritusi.');
+  t('Source');
   t('Toimumise aeg ja koht');
   t('Toimumiskoht');
   t('Tüüp');

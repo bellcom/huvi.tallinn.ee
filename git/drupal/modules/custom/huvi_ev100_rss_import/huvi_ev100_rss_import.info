@@ -1,0 +1,4 @@
+name = Huvi EV100 RSS import
+description = Integration https://ev100.ee/et/events-feed
+core = 7.x
+package = HUVI
