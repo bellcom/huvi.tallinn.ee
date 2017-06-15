@@ -111,8 +111,6 @@ function event_listing_fixed_feature_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '55';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -599,6 +597,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E Today */
   $handler = $view->new_display('block', 'E Today', 'block_1');
@@ -830,6 +836,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E Tomorrow */
   $handler = $view->new_display('block', 'E Tomorrow', 'block_2');
@@ -1062,6 +1076,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E F-S */
   $handler = $view->new_display('block', 'E F-S', 'block_3');
@@ -1325,6 +1347,14 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E This month */
   $handler = $view->new_display('block', 'E This month', 'block_4');
@@ -1557,6 +1587,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E Next month */
   $handler = $view->new_display('block', 'E Next month', 'block_5');
@@ -1814,6 +1852,14 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: E Period */
   $handler = $view->new_display('block', 'E Period', 'block_12');
@@ -2066,6 +2112,14 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: Activity */
   $handler = $view->new_display('block', 'Activity', 'block_6');
@@ -2157,8 +2211,6 @@ return true;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -2392,6 +2444,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A Today */
   $handler = $view->new_display('block', 'A Today', 'block_7');
@@ -2483,8 +2543,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -2710,6 +2768,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A Tomorrow */
   $handler = $view->new_display('block', 'A Tomorrow', 'block_8');
@@ -2801,8 +2867,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -3028,6 +3092,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A F-S */
   $handler = $view->new_display('block', 'A F-S', 'block_9');
@@ -3119,8 +3191,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -3346,6 +3416,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A This month */
   $handler = $view->new_display('block', 'A This month', 'block_10');
@@ -3437,8 +3515,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -3664,6 +3740,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A Next month */
   $handler = $view->new_display('block', 'A Next month', 'block_11');
@@ -3755,8 +3839,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -3982,6 +4064,14 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
 
   /* Display: A Period */
   $handler = $view->new_display('block', 'A Period', 'block_13');
@@ -4089,8 +4179,6 @@ echo $date;
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Field collection item: Entity with the Toimumise aeg ja koht (field_schedule) */
   $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
@@ -4338,6 +4426,14 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: Peida üritus lehelt (field_unpublish) */
+  $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
+  $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
+  $handler->display->display_options['filters']['field_unpublish_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
+    0 => '0',
+  );
   $export['event_listing_fixed'] = $view;
 
   return $export;
