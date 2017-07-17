@@ -110,8 +110,6 @@ function huvi_rss_feeds_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
-  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '55';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -161,7 +159,6 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
- 
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
@@ -370,7 +367,135 @@ function huvi_rss_feeds_views_default_views() {
     'guid_field' => 'path',
     'guid_field_is_permalink' => 0,
   );
-  $handler->display->display_options['path'] = 'event-rss-feed';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Content: Tüüp (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator_id'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['label'] = 'Tüüp (field_type)';
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['field_type_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Märgi, kui üritus on tasuta (field_isfree) */
+  $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
+  $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
+  $handler->display->display_options['filters']['field_isfree_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
+    'all' => 'all',
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Märgi, kui üritus on tasuta (field_isfree)';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['operator'] = 'field_isfree_value_op';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['identifier'] = 'is_free';
+  $handler->display->display_options['filters']['field_isfree_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Field collection item: Linnaosa (field_schedule_city_id) */
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa (field_schedule_city_id)';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator'] = 'field_schedule_city_id_value_op';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['identifier'] = 'linnaosa';
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Ürituse kategooriad (field_categories_event) */
+  $handler->display->display_options['filters']['field_categories_event_value']['id'] = 'field_categories_event_value';
+  $handler->display->display_options['filters']['field_categories_event_value']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['filters']['field_categories_event_value']['field'] = 'field_categories_event_value';
+  $handler->display->display_options['filters']['field_categories_event_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_event_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_event_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['operator_id'] = 'field_categories_event_value_op';
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['label'] = 'Ürituse kategooriad (field_categories_event)';
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['operator'] = 'field_categories_event_value_op';
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['identifier'] = 'event_category';
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_event_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_categories_event_value']['reduce_duplicates'] = TRUE;
+  /* Filter criterion: Content: Huvitegevuse kategooriad (field_categories_activity) */
+  $handler->display->display_options['filters']['field_categories_activity_value']['id'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value']['field'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator_id'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['label'] = 'Huvitegevuse kategooriad (field_categories_activity)';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['identifier'] = 'activity_category';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_categories_activity_value']['reduce_duplicates'] = TRUE;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Combine fields filter';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'text';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'field_description' => 'field_description',
+  );
+  $handler->display->display_options['path'] = 'event-rss-feed1';
   $handler->display->display_options['displays'] = array(
     'page_1' => 'page_1',
     'default' => 0,

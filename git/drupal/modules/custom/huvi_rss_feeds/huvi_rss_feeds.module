@@ -74,11 +74,7 @@ function huvi_rss_feeds_form($form, &$form_state) {
   );
   $form['is_free'] = array(
     '#type' =>'checkbox',
-  '#title' => t('Tasuta üritus/huvitegevus'),
-    );
-  $form['is_free'] = array(
-  '#type' =>'checkbox',
-  '#title' => t('Tasuta üritus/huvitegevus'),
+  '#title' => t('Ainult tasuta üritus/huvitegevus'),
     );
   $form['text'] = array(
     '#type' => 'textfield',
@@ -121,11 +117,9 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
       if (!empty($val))
         $query_arr[]= 'linnaosa[]=' . $val;
   }
-  if (isset($form_state['values']['is_free'])) {
+  if (isset($form_state['values']['is_free']) && $form_state['values']['is_free']) {
     $query_arr[]= 'is_free[]=' . $form_state['values']['is_free'];
   }
-  else
-    $query_arr[]= 'is_free[]=1';
   if (isset($form_state['values']['text']) && !empty($form_state['values']['text'])) {
     $query_arr[]= 'text[]=' . $form_state['values']['text'];
   }
@@ -141,7 +135,7 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
  * Implements hook_views_pre_render().
  */
 function huvi_rss_feeds_views_pre_render(&$view) {
-  if($view->name == 'events_rss_feeds' && $view->current_display == 'feeds') {
+  if($view->name == 'events_schedule_rss_feeds' && $view->current_display == 'feeds_schedule') {
     $view->build_info['title'] = _huvi_rss_feeds_get_view_title($_GET);
   }
 }
