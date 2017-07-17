@@ -8,4 +8,5 @@ dependencies[] = views_rss
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = events_rss_feeds
+features[views_view][] = events_schedule_rss_feeds
 features_exclude[dependencies][ctools] = ctools
