@@ -512,7 +512,7 @@ function huvi_rss_feeds_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
+  
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -532,7 +532,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['relationship'] = 'field_schedule_node';
-
+  
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feeds_schedule');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -553,8 +553,7 @@ function huvi_rss_feeds_views_default_views() {
       'secondary_collapse_override' => '0',
     ),
   );
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'rss_fields';
@@ -639,6 +638,11 @@ function huvi_rss_feeds_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Title */
   $handler->display->display_options['arguments']['title']['id'] = 'title';
