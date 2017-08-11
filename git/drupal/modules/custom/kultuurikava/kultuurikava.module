@@ -1302,7 +1302,7 @@ function kultuurikava_date_format_2($start_date, $end_date = '') {
 
   $end_date_n_time = '';
 
-  if ($end_date != '') {
+  if ($end_date != '' && $start_date != $end_date) {
     $end_date_formatted = format_date($end_date, 'custom', $date_format);
     $end_time_formatted = format_date($end_date, 'custom', $date_format_time);
     $end_date_n_time = ' - ' . t('!s_date kell !s_time', array(
