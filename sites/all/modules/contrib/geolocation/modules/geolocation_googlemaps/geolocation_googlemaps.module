@@ -577,7 +577,8 @@ function geolocation_googlemaps_attach_google_js(&$element) {
   $js_added_already = &drupal_static(__FUNCTION__, FALSE);
   if (!$js_added_already) {
     $element['#attached']['js'][] = array(
-      'data' => '//maps.google.com/maps/api/js?sensor=false',
+      //'data' => '//maps.google.com/maps/api/js?sensor=false',
+      'data' => '//maps.google.com/maps/api/js?key=' . variable_get('geolocation_googlemaps_api_key', ''),
       'type' => 'external',
     );
     $element['#attached']['js'][] = array(
