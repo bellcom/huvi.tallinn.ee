@@ -1,0 +1,28 @@
+diff --git a/sites/all/modules/contrib/views/includes/view.inc b/sites/all/modules/contrib/views/includes/view.inc
+index 5771ef3..3a60838 100644
+--- a/sites/all/modules/contrib/views/includes/view.inc
++++ b/sites/all/modules/contrib/views/includes/view.inc
+@@ -420,10 +420,7 @@ class view extends views_db_object {
+       // remember settings.
+       $display_id = ($this->display_handler->is_defaulted('filters')) ? 'default' : $this->current_display;
+ 
+-      // Start with remembered input via session.
+-      if (!empty($_SESSION['views'][$this->name][$display_id])) {
+-        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
+-      }
++
+ 
+       // Fetch exposed input values from $_GET. Overwrite if clashing.
+       foreach ($_GET as $key => $value) {
+@@ -431,6 +428,11 @@ class view extends views_db_object {
+           $this->exposed_input[$key] = $value;
+         }
+       }
++
++      // Start with remembered input via session.
++      if (empty($this->exposed_input) && !empty($_SESSION['views'][$this->name][$display_id])) {
++        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
++      }
+     }
+ 
+     return $this->exposed_input;
