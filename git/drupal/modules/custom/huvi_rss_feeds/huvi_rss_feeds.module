@@ -121,7 +121,7 @@ function huvi_rss_feeds_form_submit($form, &$form_state) {
     $query_arr[]= 'is_free[]=' . $form_state['values']['is_free'];
   }
   if (isset($form_state['values']['text']) && !empty($form_state['values']['text'])) {
-    $query_arr[]= 'text[]=' . $form_state['values']['text'];
+    $query_arr[]= 'text=' . $form_state['values']['text'];
   }
   if (isset($form_state['values']['format'])) {
     $query_arr[]= 'format=' . $form_state['values']['format'];
