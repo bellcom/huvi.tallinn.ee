@@ -639,6 +639,11 @@ function huvi_rss_feeds_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
+  /* Field: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
@@ -760,6 +765,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
     'field_description' => 'field_description',
+    'field_schedule_place' => 'field_schedule_place',
   );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
