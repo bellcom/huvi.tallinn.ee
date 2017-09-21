@@ -677,6 +677,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_type_value']['expose']['label'] = 'Tüüp (field_type)';
   $handler->display->display_options['filters']['field_type_value']['expose']['operator'] = 'field_type_value_op';
   $handler->display->display_options['filters']['field_type_value']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['field_type_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_type_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
