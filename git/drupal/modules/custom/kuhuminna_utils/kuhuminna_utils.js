@@ -75,14 +75,14 @@
       if($('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-lat-item-value').text() == '') {
         var location = 'Tallinn';
         $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').val(location);
-        $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address-geocode').trigger('click');
+       // $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address-geocode').trigger('click');
         // We have to re-set the address, because the map refreshes the address after getting the location
-        setTimeout(function(){
-          $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').attr('value', location);
-        }, 1000);
-        setTimeout(function(){
-          $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').attr('value', location);
-        }, 3000);
+       // setTimeout(function(){
+       //   $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').attr('value', location);
+       // }, 1000);
+       // setTimeout(function(){
+       ///   $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').attr('value', location);
+       // }, 3000);
       }
 
       // Editing info tooltip
