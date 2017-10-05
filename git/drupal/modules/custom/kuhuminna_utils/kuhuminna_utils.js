@@ -72,9 +72,9 @@
 
     if($('body.page-node-edit.node-type-event, body.page-node-add-event').length > 0) {
       // Change the map location with the marker
-      if($('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-lat-item-value').text() == '') {
-        var location = 'Tallinn';
-        $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').val(location);
+     // if($('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-lat-item-value').text() == '') {
+      //  var location = 'Tallinn';
+      //  $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').val(location);
        // $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address-geocode').trigger('click');
         // We have to re-set the address, because the map refreshes the address after getting the location
        // setTimeout(function(){
@@ -83,7 +83,7 @@
        // setTimeout(function(){
        ///   $('#edit-field-schedule-und-0-field-schedule-location.field-name-field-schedule-location .geolocation-address input').attr('value', location);
        // }, 3000);
-      }
+     // }
 
       // Editing info tooltip
       /*
