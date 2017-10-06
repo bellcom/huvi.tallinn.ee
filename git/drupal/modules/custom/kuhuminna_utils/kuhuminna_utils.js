@@ -131,9 +131,16 @@
       $('.geolocation-address input').keyup(function() {
         var th = $(this);
         delay(function(){
+          if (th.parent().find('input').val()) {
           th.parent().parent().find('.geolocation-address-geocode').trigger('click');
+        }
+        else{
+          th.parent().parents().find('.geolocation-remove').trigger('click');
+          
+        }
+        
         }, 1000 );
-      });
+     });
 
       mapLocationOpener();
       checkRepeating();
@@ -258,9 +265,17 @@
       checkRepeating();
 
       $('.geolocation-address input').keyup(function() {
-        var th = $(this);
+        var th = $(this);       
         delay(function(){
+          
+          if (th.parent().find('input').val()) {
           th.parent().parent().find('.geolocation-address-geocode').trigger('click');
+        }
+        else{
+          th.parent().parents().find('.geolocation-remove').trigger('click');
+          
+        }
+        
         }, 1000 );
       });
     }
