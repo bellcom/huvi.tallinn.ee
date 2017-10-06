@@ -1033,6 +1033,7 @@ function kultuurikava_node_to_event($node) {
                 foreach($c->field_schedule_date['und'] as $time_key => $time) {
 					
                   if(isset($time['value'])) {
+                    if ($time['value'] < time()) continue;
                     $start_date = $time['value'];
                     $end_date = (isset($time['value2'])) ? $time['value2'] : '';
                     $e[$event][$event_key]['asort'] = $start_date;
