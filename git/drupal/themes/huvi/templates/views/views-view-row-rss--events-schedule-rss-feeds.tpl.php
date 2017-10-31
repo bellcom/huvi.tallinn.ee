@@ -13,9 +13,13 @@ $format = $_GET['format'];
   <?php if ($format == 1 || $format == 2) : ?>
     <description><?php print $description; ?></description>
   <?php endif; ?>
-  <?php if ($format == 2) : ?>
+  <?php if ($format == 2) :  ?>
 
-    <?php $node = node_load($view->result[$view->row_index]->field_schedule_field_collection_item_nid); ?>
+    <?php $row_index = 0;
+    if (isset($view->row_index)) {
+      $row_index = $view->row_index;    }
+
+    $node = node_load($view->result[$row_index]->field_schedule_field_collection_item_nid); ?>
 
     <?php if (file_exists(drupal_realpath($node->field_gallery['und'][0]['uri']))): ?>
       <enclosure url="<?php print file_create_url($node->field_gallery['und'][0]['uri']); ?>" type="image/*" />
