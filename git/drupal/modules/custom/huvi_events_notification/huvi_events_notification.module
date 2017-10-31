@@ -66,26 +66,6 @@ function huvi_events_notification_settings_form($form, &$form_state) {
   return system_settings_form($form);
 }
 
-/**
- * Implements hook_cron().
- */
-function huvi_events_notification_cron() {
-  huvi_events_notification_send_notification_emails();
-}
-
-/**
- * Implements hook_cronapi
- *
- * @param $op
- * @param null $job
- * @return array
- */
-function huvi_events_notification_cronapi($op, $job = NULL) {
-  switch ($op) {
-    case 'list':
-      return array('huvi_events_notification_cron' => t('Send a reminder email to people who have added any activities'));
-  }
-}
 
 function huvi_events_notification_send_notification_emails() {
   $notifications = array();
@@ -103,12 +83,12 @@ function huvi_events_notification_send_notification_emails() {
   }
   foreach ($notifications as $uid => $events) {
     $account = user_load($uid);
-    drupal_mail(
+    /*drupal_mail(
       'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
       'nodes' => $events,
       'email' => $account->mail,
         )
-    );
+    );*/
   }
 }
 
