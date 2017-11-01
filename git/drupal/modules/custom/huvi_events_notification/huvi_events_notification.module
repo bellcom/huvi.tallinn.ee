@@ -83,12 +83,12 @@ function huvi_events_notification_send_notification_emails() {
   }
   foreach ($notifications as $uid => $events) {
     $account = user_load($uid);
-    /*drupal_mail(
+    drupal_mail(
       'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
       'nodes' => $events,
       'email' => $account->mail,
         )
-    );*/
+    );
   }
 }
 
