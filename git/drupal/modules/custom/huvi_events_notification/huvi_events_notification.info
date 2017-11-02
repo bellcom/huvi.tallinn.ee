@@ -1,0 +1,4 @@
+name = Huvi events notifications
+core = 7.x
+package = HUVI
+version = 7.x-1.0

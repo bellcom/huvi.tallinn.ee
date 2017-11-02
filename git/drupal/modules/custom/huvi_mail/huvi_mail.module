@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Huvi mail feature.
+ */
+
+include_once 'huvi_mail.features.inc';

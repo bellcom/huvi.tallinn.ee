@@ -1,0 +1,132 @@
+<?php
+
+/**
+ * @file
+ * Code for the Huvi events notifications.
+ * Every half a year we select ALL the activities that are at that moment active and remind about them
+ */
+function huvi_events_notification_menu() {
+  $items = array();
+
+  $items['admin/config/huvi_events_notification'] = array(
+    'title' => 'Huvi events notifications',
+    'position' => 'right',
+    'weight' => -15,
+    'page callback' => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/huvi_events_notification/settings'] = array(
+    'title' => 'Events notifications',
+    'type' => MENU_NORMAL_ITEM,
+    'description' => 'Change settings for notifications emails',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('huvi_events_notification_settings_form'),
+    'access arguments' => array('administer site configuration'),
+  );
+  $items['events_notification/test'] = array(
+    'page callback' => 'huvi_events_notification_send_notification_emails',
+    'type' => MENU_LOCAL_TASK,
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/**
+ *
+ * Implements hook_form_alter().
+ */
+function huvi_events_notification_settings_form($form, &$form_state) {
+  $form['huvi_events_notification_mode'] = array(
+   '#type' => 'radios',
+   '#title' => t('Mode'),
+   '#default_value' => variable_get('huvi_events_notification_mode', 'live'),
+   '#options' => array ('live' => 'LIVE', 'test' =>'TEST'),
+   '#description' => t('When mode setup in "TEST", then nottification emails will not be send'),
+  );
+  $form['huvi_events_notification_email_subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Notification email Subject'),
+    '#description' => t('Add subject. Tokens can be used'),
+    '#default_value' => variable_get('huvi_events_notification_email_subject', ''),
+  );
+  $form['huvi_events_notification_email_body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Notification email Body'),
+    '#description' => t('Add message text. Tokens can be used'),
+    '#default_value' => variable_get('huvi_events_notification_email_body', ''),
+  );
+  $form['huvi_events_notification_email_available_variables'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Available tokens'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#value' => t('Can be used both in subject and body:') . '<br/>
+    <b>!sitename</b> - ' . t('siteme') . '<br/>
+    <b>!email</b> - ' . t('email') . '<br/>
+    <b>!links</b> - ' . t('Links to events') . '</br>',
+  );
+  return system_settings_form($form);
+}
+
+
+function huvi_events_notification_send_notification_emails() {
+  $notifications = array();
+  $query = db_select('node', 'n');
+  $query->join('users', 'u', 'n.uid = u.uid'); //JOIN node with users
+  $query->join('field_data_field_type', 't', 't.entity_id = n.nid'); //JOIN with field
+  $query->fields('n', array('title', 'nid'));
+  $query->fields('u', array('uid'));
+  $query->condition('n.status', 1);
+  $query->condition('t.field_type_value', 'huvitegevus');
+  $result = $query->execute();
+
+  while ($record = $result->fetchAssoc()) {
+    $notifications[$record['uid']][$record['nid']] = $record['title'];
+  }
+  if (variable_get('huvi_events_notification_mode', 'live') == 'test') { //save into file
+    $data = '';
+    foreach ($notifications as $uid => $events) {
+      $account = user_load($uid);
+      if (variable_get('huvi_events_notification_mode', 'live') == 'test') { //save into file
+        $data .= $account->mail . ': '. implode(',', array_keys($events)). PHP_EOL;
+      }
+    }
+    file_save_data ( $data, 'public://notifications.txt');
+  }
+  else {
+  foreach ($notifications as $uid => $events) {
+    $account = user_load($uid);
+    drupal_mail(
+        'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
+        'nodes' => $events,
+        'email' => $account->mail,
+        )
+      );
+    }
+  }
+}
+
+function huvi_events_notification_mail($key, &$message, $params) {
+  $email = $params['email'];
+  $sitename = variable_get('site_name', 'Drupal');
+  $links = "";
+  foreach ($params['nodes'] as $nid => $title) {
+    $url = url('node/' . $nid, array('absolute' => TRUE));
+    $links .= ' - ' . l($title, $url) . '<br/>';
+  }
+  $subject_template = variable_get('huvi_events_notification_email_subject', '');
+  $body_template = variable_get('huvi_events_notification_email_body', '');
+  //composing search/replace
+  $search = array('!sitename', '!email', '!links', PHP_EOL);
+  $replace = array($sitename, $email, $links, '<br/>');
+  //making replacements
+  $subject = str_replace($search, $replace, $subject_template);
+  $message['subject'] = ucfirst($subject);
+  $body = str_replace($search, $replace, $body_template);
+  $message['body'] = ucfirst($body);
+}
