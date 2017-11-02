@@ -3037,6 +3037,7 @@ body.page-node-edit.node-type-event form.node-event-form .field-name-field-sched
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float,
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float {
   float: none;
+  padding-left:330px;
 }
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description,
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description {
@@ -3046,12 +3047,15 @@ body.page-node-add-event form.node-event-form .field-name-field-schedule .field-
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date {
   clear: none;
   float: left;
-  width: 48%;
-  max-width: 330px;
+  width: 330px;
+  //max-width: 330px;
 }
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding,
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding {
   padding: 5px 0;
+}
+body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
+  display:none;
 }
 @media screen and (max-width: 850px) {
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper,
@@ -3067,7 +3071,7 @@ body.page-node-edit.node-type-event form.node-event-form .field-name-field-sched
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item,
   body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item {
     clear: none;
-    margin-right: 5px;
+    margin-right: 25px;
   }
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label,
   body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
@@ -3619,15 +3623,18 @@ div.modal-forms-modal-content .popups-close {
   display: none;
 }
 .field-name-field-schedule-date .fieldset-wrapper > .date-clear {
-  margin-top: 36px;
+  //margin-top: 36px;
 }
 .field-name-field-schedule-date .fieldset-wrapper > .form-item.form-type-item {
   display: none;
 }
 .field-name-field-schedule-date .date-clear {
-  clear: none;
+  clear: both;
   float: left;
-  margin: 10px;
+  margin: 0 10px 0 0;
+}
+div:has(> .date-end) {
+  display: none;
 }
 .field-name-field-schedule-date .date-clear.daily .container-inline.interval .date-clear {
   float: none;
