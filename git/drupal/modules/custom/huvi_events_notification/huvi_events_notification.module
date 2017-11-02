@@ -96,12 +96,10 @@ function huvi_events_notification_mail($key, &$message, $params) {
   $email = $params['email'];
   $sitename = variable_get('site_name', 'Drupal');
   $links = "";
-
   foreach ($params['nodes'] as $nid => $title) {
     $url = url('node/' . $nid, array('absolute' => TRUE));
     $links .= ' - ' . l($title, $url) . '<br/>';
   }
-  $message['headers']['Content-Type'] = 'text/html; charset=UTF-8;';
   $subject_template = variable_get('huvi_events_notification_email_subject', '');
   $body_template = variable_get('huvi_events_notification_email_body', '');
   //composing search/replace
