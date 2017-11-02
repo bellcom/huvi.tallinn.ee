@@ -41,6 +41,13 @@ function huvi_events_notification_menu() {
  * Implements hook_form_alter().
  */
 function huvi_events_notification_settings_form($form, &$form_state) {
+  $form['huvi_events_notification_mode'] = array(
+   '#type' => 'radios',
+   '#title' => t('Mode'),
+   '#default_value' => variable_get('huvi_events_notification_mode', 'live'),
+   '#options' => array ('live' => 'LIVE', 'test' =>'TEST'),
+   '#description' => t('When mode setup in "TEST", then nottification emails will not be send'),
+  );
   $form['huvi_events_notification_email_subject'] = array(
     '#type' => 'textfield',
     '#title' => t('Notification email Subject'),
@@ -71,7 +78,7 @@ function huvi_events_notification_send_notification_emails() {
   $notifications = array();
   $query = db_select('node', 'n');
   $query->join('users', 'u', 'n.uid = u.uid'); //JOIN node with users
-  $query->join('field_data_field_type', 't', 't.entity_id = n.nid'); //JOIN with field 
+  $query->join('field_data_field_type', 't', 't.entity_id = n.nid'); //JOIN with field
   $query->fields('n', array('title', 'nid'));
   $query->fields('u', array('uid'));
   $query->condition('n.status', 1);
@@ -81,14 +88,26 @@ function huvi_events_notification_send_notification_emails() {
   while ($record = $result->fetchAssoc()) {
     $notifications[$record['uid']][$record['nid']] = $record['title'];
   }
+  if (variable_get('huvi_events_notification_mode', 'live') == 'test') { //save into file
+    $data = '';
+    foreach ($notifications as $uid => $events) {
+      $account = user_load($uid);
+      if (variable_get('huvi_events_notification_mode', 'live') == 'test') { //save into file
+        $data .= $account->mail . ': '. implode(',', array_keys($events)). PHP_EOL;
+      }
+    }
+    file_save_data ( $data, 'public://notifications.txt');
+  }
+  else {
   foreach ($notifications as $uid => $events) {
     $account = user_load($uid);
     drupal_mail(
-      'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
-      'nodes' => $events,
-      'email' => $account->mail,
+        'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
+        'nodes' => $events,
+        'email' => $account->mail,
         )
-    );
+      );
+    }
   }
 }
 
