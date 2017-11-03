@@ -234,3 +234,18 @@ function _huvi_rss_feeds_linnaosa() {
     2944194 => 'Nõmme',
   );
 }
+
+function _huvi_rss_feeds_clear_html($output) {
+    $output = htmlspecialchars_decode($output);
+
+    $output = str_replace("&amp;", "&", $output);
+    $output = strtr($output, array(
+      '&#039;' => "'",
+      "&quot;" => '"',
+      '&lt;' => '<',
+      '&gt;' => '>',
+      '&amp;' => '&',
+      ));
+
+    return decode_entities($output);
+}
