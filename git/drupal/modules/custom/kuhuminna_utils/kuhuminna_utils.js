@@ -9,30 +9,30 @@
     $('.field-name-field-type input').change(function() {
       change_event_type($(this).filter(':checked').val());
     });
-    
+
     format_date_field(); //format field sheduler
-    
+
     $('.date-start').change(function() {
       var fieldset;
       fieldset = $(this).parents('.fieldset-wrapper');
-      if ($(this).hasClass('hasDatepicker') ){   
+      if ($(this).hasClass('hasDatepicker') ){
         if ($(this).parents('.fieldset-wrapper').find('.show_end_date').is(":checked")) {
           fieldset.find('.hidden .date-end').val($(this).val());
        }
      }
       });
-      
+
     $('.show_end_date').change(function() {
       var fieldset;
       fieldset = $(this).parents('.fieldset-wrapper');
       if(this.checked){
-        fieldset.find('.hidden .date-end').val(fieldset.find('.date-start.hasDatepicker').val());
+        fieldset.find('.hidden .date-end').val(fieldset.find('.date-start').val());
       }
       else {
-        fieldset.find('.hidden .date-end').val();
+        fieldset.find('.hidden .date-end').val('');
       }
     });
-     
+
     function change_event_type(type) {
       if(type == 'uritus') {
         $('.field-name-field-categories-activity').hide();
@@ -130,7 +130,7 @@
       $('form.node-event-form').attr('action', fa);
 
       // Check not published checkbox and save event
-    /*  
+    /*
 	$('#edit-actions #edit-preview').click(function(event) {
         event.preventDefault();
         $('.field-name-field-unpublish input').attr('checked', 'checked');
@@ -159,9 +159,9 @@
         }
         else{
           th.parent().parents().find('.geolocation-remove').trigger('click');
-          
+
         }
-        
+
         }, 1000 );
      });
 
@@ -206,13 +206,13 @@
     $('.date-start').change(function() {
       var fieldset;
       fieldset = $(this).parents('.fieldset-wrapper');
-      if ($(this).hasClass('hasDatepicker') ){   
+      if ($(this).hasClass('hasDatepicker') ){
         if ($(this).parents('.fieldset-wrapper').find('.show_end_date').is(":checked")) {
           fieldset.find('.hidden .date-end').val($(this).val());
        }
      }
       });
-      
+
     $('.show_end_date').change(function() {
       var fieldset;
       fieldset = $(this).parents('.fieldset-wrapper');
@@ -223,7 +223,7 @@
         fieldset.find('.hidden .date-end').val();
       }
     });
-    
+
     function change_event_type(type) {
       if(type == 'uritus') {
         $('.field-name-field-categories-activity').hide();
@@ -309,23 +309,23 @@
       checkRepeating();
 
       $('.geolocation-address input').keyup(function() {
-        var th = $(this);       
+        var th = $(this);
         delay(function(){
-          
+
           if (th.parent().find('input').val()) {
           th.parent().parent().find('.geolocation-address-geocode').trigger('click');
         }
         else{
           th.parent().parents().find('.geolocation-remove').trigger('click');
-          
+
         }
-        
+
         }, 1000 );
       });
     }
 
   });
-  
+
   function format_date_field (){
     $('.date-start').each(function( ) {
       if ($(this).attr('name').indexOf('[time]') > 0){
