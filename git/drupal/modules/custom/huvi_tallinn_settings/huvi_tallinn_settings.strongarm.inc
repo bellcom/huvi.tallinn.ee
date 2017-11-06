@@ -13,6 +13,55 @@ function huvi_tallinn_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_aggregation';
+  $strongarm->value = 1;
+  $export['facebook_tracking_pixel_aggregation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_path';
+  $strongarm->value = 'public://facebook_tracking_pixel';
+  $export['facebook_tracking_pixel_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_roles_administrator';
+  $strongarm->value = 1;
+  $export['facebook_tracking_pixel_roles_administrator'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_roles_anonymous_user';
+  $strongarm->value = 0;
+  $export['facebook_tracking_pixel_roles_anonymous_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_roles_authenticated_user';
+  $strongarm->value = 0;
+  $export['facebook_tracking_pixel_roles_authenticated_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_roles_manager';
+  $strongarm->value = 1;
+  $export['facebook_tracking_pixel_roles_manager'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'facebook_tracking_pixel_visibility_roles';
+  $strongarm->value = '0';
+  $export['facebook_tracking_pixel_visibility_roles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'hide_submit_abtext';
   $strongarm->value = '';
   $export['hide_submit_abtext'] = $strongarm;
