@@ -49,14 +49,14 @@ function huvi_tallinn_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'facebook_tracking_pixel_roles_manager';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['facebook_tracking_pixel_roles_manager'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'facebook_tracking_pixel_visibility_roles';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['facebook_tracking_pixel_visibility_roles'] = $strongarm;
 
   $strongarm = new stdClass();
