@@ -178,7 +178,7 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   $form['pass'] += array(
     '#weight' =>3,
   );
-   
+
   //if (empty($messages)) {
    // unset($_SESSION['messages']['error']);
   //}
@@ -225,7 +225,7 @@ function kuhuminna_utils_get_section() {
   }
 
   return 'events';
- 
+
 }
 
 
@@ -334,9 +334,9 @@ function kuhuminna_utils_weather_content() {
 	$weather_info = kuhuminna_utils_get_tallinn_weather();
 
 	$temp = '';
-	
+
 	$base_path = $GLOBALS['base_path'];
-	
+
 	if($weather_info) {
 
 		// Get weather icon
@@ -622,21 +622,12 @@ function kuhuminna_utils_user_logout($account) {
 }
 
 function kuhuminna_utils_date_combo_process_alter(&$element, &$form_state, &$context) {
- if($element[ '#field_name'] == 'field_schedule_date') {
-   $element['value']['#attributes']['class'][] = 'date-start';
-   $element['value2']['#attributes']['class'][] = 'date-end';
-   $element['show_todate']['#attributes']['class'][] = 'show_end_date';
- }
-}
-function kuhuminna_utils_date_part_label_date(&$vars) {
- // dpm($vars);
-    if ($vars['element']['#field']['field_name'] == 'yourfield_machine_name') {
-      if ($vars['element']['#date_title'] == 'Date Start date') {
-        return t('Date (From:)');
-      } elseif ($vars['element']['#date_title'] == 'Date End date') {
-          return t('Date (To:)');
-        }
-    } else {
-        return t($vars['element']['#date_title']);
+  if($element[ '#field_name'] == 'field_schedule_date') {
+    $element['value']['#attributes']['class'][] = 'date-start';
+    $element['value2']['#attributes']['class'][] = 'date-end';
+    $element['show_todate']['#attributes']['class'][] = 'show_end_date';
+    if ($element['show_todate']['#default_value']===FALSE) {
+      $element['show_todate']['#prefix'] = '<div class="date-float top">';
     }
+  }
 }

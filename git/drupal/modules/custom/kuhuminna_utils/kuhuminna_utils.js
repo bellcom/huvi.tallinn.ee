@@ -23,12 +23,16 @@
       });
 
     $('.show_end_date').change(function() {
-      var fieldset;
+      var fieldset, data;
       fieldset = $(this).parents('.fieldset-wrapper');
+      data = $(this).parents('.date-float').addClass('top');
+
       if(this.checked){
+        data.removeClass('top');
         fieldset.find('.hidden .date-end').val(fieldset.find('.date-start').val());
       }
       else {
+        data.addClass('top');
         fieldset.find('.hidden .date-end').val('');
       }
     });
