@@ -11,7 +11,8 @@
     });
 
     format_date_field(); //format field sheduler
-
+$('#edit-field-schedule-und-0-field-schedule-date-und-0-value-timeEntry-popup-1').focus();
+$('html,body').scrollTop(0);
     $('.date-start').change(function() {
       var fieldset;
       fieldset = $(this).parents('.fieldset-wrapper');
