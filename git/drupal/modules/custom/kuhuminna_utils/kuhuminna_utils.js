@@ -25,7 +25,7 @@
     $('.show_end_date').change(function() {
       var fieldset, data;
       fieldset = $(this).parents('.fieldset-wrapper');
-      data = $(this).parents('.date-float').addClass('top');
+      data = $(this).closest('.date-float').addClass('top');
 
       if(this.checked){
         data.removeClass('top');
@@ -218,13 +218,17 @@
       });
 
     $('.show_end_date').change(function() {
-      var fieldset;
+      var fieldset, data;
       fieldset = $(this).parents('.fieldset-wrapper');
+      data = $(this).closest('.date-float').addClass('top');
+
       if(this.checked){
-        fieldset.find('.hidden .date-end').val(fieldset.find('.date-start.hasDatepicker').val());
+        data.removeClass('top');
+        fieldset.find('.hidden .date-end').val(fieldset.find('.date-start').val());
       }
       else {
-        fieldset.find('.hidden .date-end').val();
+        data.addClass('top');
+        fieldset.find('.hidden .date-end').val('');
       }
     });
 
@@ -344,6 +348,18 @@
        $(this).prev('label').text('\xA0');
      }
     });
-  }
+    $('.show_end_date').each(function( ) {
+     fieldset = $(this).parents('.fieldset-wrapper');
+      data = $(this).closest('.date-float').addClass('top');
 
+      if(this.checked){
+        data.removeClass('top');
+        fieldset.find('.hidden .date-end').val(fieldset.find('.date-start').val());
+      }
+      else {
+        data.addClass('top');
+        fieldset.find('.hidden .date-end').val('');
+      }
+  });
+  }
 })(jQuery);
