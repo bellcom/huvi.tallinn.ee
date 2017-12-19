@@ -1212,7 +1212,7 @@ function kultuurikava_get_sub_event($node_id) {
       }
     }
 
-    if (count($return) == 0) {
+    /*if (count($return) == 0) {
       $return[] = array(
         'title' => $node->title,
         'path' => url('node/' . $node->nid),
@@ -1220,7 +1220,7 @@ function kultuurikava_get_sub_event($node_id) {
         'time' => '',
         'place' => '',
       );
-    }
+    }*/
 
     return $return;
   }
