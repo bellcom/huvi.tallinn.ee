@@ -1180,9 +1180,8 @@ function kultuurikava_get_sub_event($node_id) {
               foreach($c->field_schedule_date['und'] as $time_key => $time) {
 
                 $tmp_time = '';
-		$tmp_place = '';
-
                 if(isset($time['value'])) {
+                  if ($time['value'] < time()) continue;
                   $start_date = $time['value'];
                   $end_date = (isset($time['value2'])) ? $time['value2'] : '';
                   $tmp_time = kultuurikava_date_format_2($start_date, $end_date);
