@@ -224,12 +224,6 @@ function modal_forms_admin_settings() {
     '#default_value' => variable_get('modal_forms_pages', "admin*\nimagebrowser*\nimg_assist*\nimce*\nnode/add/*\nnode/*/edit\nprint/*\nprintpdf/*\nsystem/ajax\nsystem/ajax/*"),
     '#description' => t("Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.", array('%blog' => 'blog', '%blog-wildcard' => 'blog/*', '%front' => '<front>')),
   );
-  $form['modal_forms_advanced_settings']['modal_forms_ssl'] = array(
-    '#type' => 'checkbox', 
-    '#title' => t('Disable modal forms for insecure pages.'),
-    '#description' => t('This can be handy if your login page (or any other form) requires use of HTTPS, in which case you would normally want to avoid loading it in a modal. Enabling this option would instead send the user to the original linked page and for an example allow a contrib module such as securelogin to secure the form. Once the user is on HTTPS, Modal forms would once again be allowed to activate.'),
-    '#default_value' => variable_get('modal_forms_ssl', 0),
-  );
 
   return system_settings_form($form);
 }

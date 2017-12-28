@@ -34,36 +34,36 @@ function users_export_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = 50;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'uid' => 'uid',
-    'name' => 'name',
-    'mail' => 'mail',
+    'uid'       => 'uid',
+    'name'      => 'name',
+    'mail'      => 'mail',
     'edit_node' => 'edit_node',
-    'value' => 'value',
-    'value_1' => 'value',
+    'value'     => 'value',
+    'value_1'   => 'value',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'uid' => array(
-      'sortable' => 1,
+    'uid'       => array(
+      'sortable'  => 1,
       'separator' => '',
     ),
-    'name' => array(
-      'sortable' => 1,
+    'name'      => array(
+      'sortable'  => 1,
       'separator' => '',
     ),
-    'mail' => array(
-      'sortable' => 1,
+    'mail'      => array(
+      'sortable'  => 1,
       'separator' => '',
     ),
     'edit_node' => array(
       'separator' => '',
     ),
-    'value' => array(
-      'sortable' => 0,
+    'value'     => array(
+      'sortable'  => 0,
       'separator' => '',
     ),
-    'value_1' => array(
-      'sortable' => 0,
+    'value_1'   => array(
+      'sortable'  => 0,
       'separator' => '',
     ),
   );

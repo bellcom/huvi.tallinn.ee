@@ -1,24 +1,25 @@
 [
     {
         "name": "phpoffice/phpexcel",
-        "version": "1.7.9",
-        "version_normalized": "1.7.9.0",
+        "version": "1.8.1",
+        "version_normalized": "1.8.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/PHPOffice/PHPExcel.git",
-            "reference": "7a7634fba664249a04fc771df677a9b9f755d7ec"
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/7a7634fba664249a04fc771df677a9b9f755d7ec",
-            "reference": "7a7634fba664249a04fc771df677a9b9f755d7ec",
+            "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+            "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
             "shasum": ""
         },
         "require": {
             "ext-xml": "*",
+            "ext-xmlwriter": "*",
             "php": ">=5.2.0"
         },
-        "time": "2013-05-24 11:57:42",
+        "time": "2015-05-01 07:00:55",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -58,78 +59,26 @@
         ]
     },
     {
-        "name": "symfony/yaml",
-        "version": "v2.3.26",
-        "version_normalized": "2.3.26.0",
-        "target-dir": "Symfony/Component/Yaml",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Yaml.git",
-            "reference": "aeb83d10b5ab9c9dd9993fc340a190a935646de7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/aeb83d10b5ab9c9dd9993fc340a190a935646de7",
-            "reference": "aeb83d10b5ab9c9dd9993fc340a190a935646de7",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2015-03-07 19:12:23",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Yaml\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "aklump/loft_data_grids",
-        "version": "0.4.15",
-        "version_normalized": "0.4.15.0",
+        "version": "0.4.17",
+        "version_normalized": "0.4.17.0",
         "source": {
             "type": "git",
             "url": "https://github.com/aklump/loft_data_grids.git",
-            "reference": "6bcf6ddf519e615e4a104ee6628968f87ac03fab"
+            "reference": "aa2e7636ee8b650513f70c91a0ebf43c7f362cb7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aklump/loft_data_grids/zipball/6bcf6ddf519e615e4a104ee6628968f87ac03fab",
-            "reference": "6bcf6ddf519e615e4a104ee6628968f87ac03fab",
+            "url": "https://api.github.com/repos/aklump/loft_data_grids/zipball/aa2e7636ee8b650513f70c91a0ebf43c7f362cb7",
+            "reference": "aa2e7636ee8b650513f70c91a0ebf43c7f362cb7",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0",
-            "phpoffice/phpexcel": "1.7.*",
+            "phpoffice/phpexcel": "1.8.*",
             "symfony/yaml": "2.3.*"
         },
-        "time": "2015-02-07 16:47:53",
+        "time": "2016-03-31 22:15:18",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -157,5 +106,57 @@
             "export",
             "spreadsheet"
         ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "v2.3.42",
+        "version_normalized": "2.3.42.0",
+        "target-dir": "Symfony/Component/Yaml",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "2cb5f366f9e0df014fc93de46cc416ba0a3055f8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/2cb5f366f9e0df014fc93de46cc416ba0a3055f8",
+            "reference": "2cb5f366f9e0df014fc93de46cc416ba0a3055f8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2016-05-30 08:10:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
     }
 ]
