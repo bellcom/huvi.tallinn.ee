@@ -27,6 +27,7 @@ class views_handler_filter_node_access_level extends views_handler_filter {
         'update' => t('Edit'),
         'delete' => t('Delete'),
       ),
+      '#default_value' => $this->value ? $this->value : 'view',
     );
     $form['caution'] = array(
       '#markup' => t('Note: for Edit and Delete access, <strong>only node access grants</strong> are checked. Modules can override node access grants to allow or deny actions, so this check does not necessarily reflect whether the user can actually perform the Edit or Delete action.'),

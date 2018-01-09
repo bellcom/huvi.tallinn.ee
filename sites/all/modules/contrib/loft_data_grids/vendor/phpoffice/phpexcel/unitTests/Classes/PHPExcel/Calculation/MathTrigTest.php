@@ -13,6 +13,8 @@ class MathTrigTest extends PHPUnit_Framework_TestCase
             define('PHPEXCEL_ROOT', APPLICATION_PATH . '/');
         }
         require_once(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
+
+        PHPExcel_Calculation_Functions::setCompatibilityMode(PHPExcel_Calculation_Functions::COMPATIBILITY_EXCEL);
 	}
 
     /**
@@ -479,6 +481,80 @@ class MathTrigTest extends PHPUnit_Framework_TestCase
     public function providerSQRTPI()
     {
     	return new testDataFileIterator('rawTestData/Calculation/MathTrig/SQRTPI.data');
+    }
+
+    /**
+     * @dataProvider providerSUMIF
+     */
+    public function testSUMIF()
+    {
+        $args = func_get_args();
+        $expectedResult = array_pop($args);
+        $result = call_user_func_array(array('PHPExcel_Calculation_MathTrig', 'SUMIF'), $args);
+        $this->assertEquals($expectedResult, $result, NULL, 1E-12);
+    }
+
+    public function providerSUMIF()
+    {
+        return array(
+            array(
+                array(
+                    array(1),
+                    array(5),
+                    array(10),
+                ),
+                '>=5',
+                15,
+            ),
+            array(
+                array(
+                    array('text'),
+                    array(2),
+                ),
+                '=text',
+                array(
+                    array(10),
+                    array(100),
+                ),
+                10,
+            ),
+            array(
+                array(
+                    array('"text with quotes"'),
+                    array(2),
+                ),
+                '="text with quotes"',
+                array(
+                    array(10),
+                    array(100),
+                ),
+                10,
+            ),
+            array(
+                array(
+                    array('"text with quotes"'),
+                    array(''),
+                ),
+                '>"', // Compare to the single characater " (double quote)
+                array(
+                    array(10),
+                    array(100),
+                ),
+                10
+            ),
+            array(
+                array(
+                    array(''),
+                    array('anything'),
+                ),
+                '>"', // Compare to the single characater " (double quote)
+                array(
+                    array(10),
+                    array(100),
+                ),
+                100
+            ),
+        );
 	}
 
 }

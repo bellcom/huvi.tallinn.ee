@@ -17,16 +17,11 @@ use Symfony\Component\Yaml\Exception\ParseException;
  * Yaml offers convenience methods to load and dump YAML.
  *
  * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
  */
 class Yaml
 {
     /**
-     * Parses YAML into a PHP array.
-     *
-     * The parse method, when supplied with a YAML stream (string or file),
-     * will do its best to convert YAML in a file into a PHP array.
+     * Parses YAML into a PHP value.
      *
      *  Usage:
      *  <code>
@@ -42,11 +37,9 @@ class Yaml
      * @param bool   $exceptionOnInvalidType True if an exception must be thrown on invalid types false otherwise
      * @param bool   $objectSupport          True if object support is enabled, false otherwise
      *
-     * @return array The YAML converted to a PHP array
+     * @return mixed The YAML converted to a PHP value
      *
      * @throws ParseException If the YAML is not valid
-     *
-     * @api
      */
     public static function parse($input, $exceptionOnInvalidType = false, $objectSupport = false)
     {
@@ -87,11 +80,13 @@ class Yaml
      * @param bool  $objectSupport          true if object support is enabled, false otherwise
      *
      * @return string A YAML string representing the original PHP array
-     *
-     * @api
      */
     public static function dump($array, $inline = 2, $indent = 4, $exceptionOnInvalidType = false, $objectSupport = false)
     {
+        if ($indent < 1) {
+            throw new \InvalidArgumentException('The indentation must be greater than zero.');
+        }
+
         $yaml = new Dumper();
         $yaml->setIndentation($indent);
 

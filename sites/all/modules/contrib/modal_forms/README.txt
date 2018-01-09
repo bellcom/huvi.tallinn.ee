@@ -14,46 +14,13 @@ some common forms in a modal window.
 
 Supported forms:
 ---------------
+Modal forms can automatically rewrite links to the following forms and place them in a modal.
 
 * Log in (modal_forms/nojs/login)
 * Request new password (modal_forms/nojs/password)
 * Create new account (modal_forms/nojs/register)
+* Comment (modal_forms/nojs/modal_forms/nojs/comment/reply/[nid])
 * Contact (modal_forms/nojs/contact)
-* Comment (modal_forms/nojs/comment/reply/%node)
-* Webform (modal_forms/nojs/webform/%node)
-
-Function that rewrite normal links to modal forms links (except for webforms) can be
-activated on the modules configuration page.
-
-
-Links to the modal version of the forms:
----------------------------------------
-
-JavaScript that can rewrite standard links to these forms in to a modal equivalent are
-provided, see the module configuration page to activate them.
-
-To build links in code I recommend using the ctools_modal_text_button() function.
-
-$links[] = ctools_modal_text_button(t('Modal Login'), 'modal_forms/nojs/login', t('Login via modal'));
-$links[] = ctools_modal_text_button(t('Modal Login'), 'modal_forms/nojs/login', t('Login via modal'),  'ctools-modal-modal-popup-small');
-
-It is also possible to build links manually.
-
-<a class="ctools-use-modal" href="modal_forms/nojs/login">Modal Login</a>
-<a class="ctools-use-modal ctools-modal-modal-popup-small" href="modal_forms/nojs/login">Modal Login</a>
-
-Popup styles and sizes:
-
-The include CSS file tries to mimic the default Colorbox style.
-
-The extra class "ctools-modal-modal-popup-small" in the links above tells the module what
-popup style size to use. There are three options included.
-
-* ctools-modal-modal-popup-small (defaults to 300x300)
-* ctools-modal-modal-popup-medium (defaults to 550x450)
-* ctools-modal-modal-popup-large (defaults to 80%x80%)
-
-Go to the configurations page for Modal forms to adjust the sizes.
 
 
 Webforms:
@@ -65,6 +32,12 @@ A webform link should look like this one:
 <a class="ctools-use-modal ctools-modal-modal-popup-large" href="/modal_forms/nojs/webform/[nid]">Link to click</a>
 
 Replace [nid] with the node id of your webform.
+
+Second class is optional, you can use one of this:
+
+ctools-modal-modal-popup-small (300x300);
+ctools-modal-modal-popup-medium (550x450);
+ctools-modal-modal-popup-large (80%x80%).
 
 
 Installation:

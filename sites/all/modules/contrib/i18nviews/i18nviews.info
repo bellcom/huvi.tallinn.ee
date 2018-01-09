@@ -31,8 +31,8 @@ files[] = includes/i18nviews_plugin_argument_validate_i18n_taxonomy_term.inc
 files[] = includes/i18nviews_plugin_localization_i18nstrings.inc
 
 ; Information added by Drupal.org packaging script on 2016-01-28
-version = "7.x-3.x-dev"
+version = "7.x-3.0-alpha1"
 core = "7.x"
 project = "i18nviews"
-datestamp = "1454018979"
+datestamp = "1454021946"
 

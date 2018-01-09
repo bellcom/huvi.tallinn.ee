@@ -20,16 +20,7 @@ function modal_forms_login($js = NULL) {
     'ajax' => TRUE,
   );
 
-  // Check to make sure the user has not logged in on another session.
-  // If that is the case just reload the page.
-  if (user_is_logged_in()) {
-    $output = array();
-    ctools_add_js('ajax-responder');
-    $output[] = ctools_ajax_command_reload();
-  }
-  else {
-    $output = ctools_modal_form_wrapper('user_login', $form_state);
-  }
+  $output = ctools_modal_form_wrapper('user_login', $form_state);
   if (!empty($form_state['executed'])) {
     // We'll just overwrite the form output if it was successful.
     $output = array();
@@ -38,9 +29,9 @@ function modal_forms_login($js = NULL) {
     if (isset($_GET['destination'])) {
       $output[] = ctools_ajax_command_redirect($_GET['destination']);
     }
-    elseif (module_exists('login_destination')) {
+    elseif(module_exists('login_destination')) {
       $destination = login_destination_get_destination('login');
-      $output[] = ctools_ajax_command_redirect(is_array($destination) ? $destination[0] : $destination);
+      $output[] = ctools_ajax_command_redirect($destination['path']);
     }
     else {
       $output[] = ctools_ajax_command_reload();
@@ -72,9 +63,9 @@ function modal_forms_register($js = NULL) {
     if (isset($_GET['destination'])) {
       $output[] = ctools_ajax_command_redirect($_GET['destination']);
     }
-    elseif (module_exists('login_destination')) {
+    elseif(module_exists('login_destination')) {
       $destination = login_destination_get_destination('login');
-      $output[] = ctools_ajax_command_redirect(is_array($destination) ? $destination[0] : $destination);
+      $output[] = ctools_ajax_command_redirect($destination['path']);
     }
     else {
       $output[] = ctools_ajax_command_reload();
@@ -148,51 +139,15 @@ function modal_forms_contact($js = NULL) {
 }
 
 /**
- * A modal personal contact form
- */
-function modal_forms_personal_contact($recipient, $js = NULL) {
-  module_load_include('inc', 'contact', 'contact.pages');
-
-  // Fall back if $js is not set.
-  if (!$js) {
-    return drupal_get_form('contact_personal_form', $recipient);
-  }
-
-  ctools_include('modal');
-  ctools_include('ajax');
-  $form_state = array(
-    // 'title' => t('Contact'),
-    'build_info' => array(
-      'args' => array($recipient)
-      ),
-    'ajax' => TRUE,
-  );
-  $output = ctools_modal_form_wrapper('contact_personal_form', $form_state);
-  if (!empty($form_state['executed'])) {
-    // We'll just overwrite the form output if it was successful.
-    $output = array();
-    ctools_add_js('ajax-responder');
-    if (isset($_GET['destination'])) {
-      $output[] = ctools_ajax_command_redirect($_GET['destination']);
-    }
-    else {
-      $output[] = ctools_ajax_command_reload();
-    }
-  }
-  print ajax_render($output);
-}
-
-/**
  * A modal comment callback.
  */
-function modal_forms_comment_reply($node, $js = NULL, $pid = NULL) {
+function modal_forms_comment_reply($js = NULL, $node, $pid = NULL) {
   $output = array();
   $comment = array(
     'pid' => $pid,
     'nid' => $node->nid,
   );
 
-  // Fall back if $js is not set.
   if (!$js) {
     return drupal_get_form('comment_node_' . $node->type . '_form', (object) $comment);
   }
@@ -241,6 +196,7 @@ function modal_forms_comment_reply($node, $js = NULL, $pid = NULL) {
       $output[] = ctools_ajax_command_reload();
     }
   }
+
   print ajax_render($output);
 }
 
@@ -250,15 +206,8 @@ function modal_forms_comment_reply($node, $js = NULL, $pid = NULL) {
  * @param $node
  *   A node object.
  */
-function modal_forms_view_webform($node, $js = NULL) {
+function modal_forms_view_webform($js = NULL, $node) {
   $output = array();
-
-  // If we are in a translation node, and there are no webform['components'], so
-  // we should look into the source webform node, to load our webform from there.
-  if (empty($node->webform['components']) && (isset($node->tnid) && $node->tnid != $node->nid)) {
-    $tnode = $node;
-    $node = node_load($tnode->tnid);
-  }
 
   // Fall back if $js is not set.
   if (!$js) {
@@ -275,10 +224,9 @@ function modal_forms_view_webform($node, $js = NULL) {
     exit;
   }
 
-  // Get webform title.
-  // If the node was translated, take the translated value instead of the source.
-  $title = (isset($tnode)) ? check_plain($tnode->title) : check_plain($node->title);
-
+  // Get webform defaults.
+  $title = check_plain($node->title);
+  $text = check_markup($node->webform['confirmation'], $node->webform['confirmation_format'], '', TRUE);
   $form_state = array(
     'title' => $title,
     'ajax' => TRUE,
@@ -290,34 +238,25 @@ function modal_forms_view_webform($node, $js = NULL) {
 
   // Pass required parameters.
   $form_state['build_info']['args'] = array($node, FALSE);
-
-  // Render the Webform.
   $output = ctools_modal_form_wrapper('webform_client_form_' . $node->nid, $form_state);
 
   if (!empty($form_state['executed'])) {
     if (!isset($form_state['storage'])) {
       ctools_add_js('ajax-responder');
-      // Handle confirmation message or redirect.
-      if ('<confirmation>' == $node->webform['redirect_url']) {
-        // Use confirmation message if set, default text otherwise.
-        // See webform/templates/webform-confirmation.tpl.php.
-        $message = (empty($node->webform['confirmation'])) ? t('Thank you, your submission has been received.') : check_markup($node->webform['confirmation'], $node->webform['confirmation_format'], '', TRUE);
-        $confirmation = '<div class="webform-confirmation">' . $message . '</div>';
-        $confirmation .= ctools_ajax_text_button(t('Close'), 'modal_forms/nojs/dismiss', t('Close'));
-        $output[] = ctools_modal_command_display($title, $confirmation);
-      }
-      elseif ('<none>' == $node->webform['redirect_url']) {
-        // Reload webform node itself.
-        $output[] = ctools_ajax_command_reload();
-      }
-      else {
-        // Redirect to URL.
-        // Note: Redirect code in webform_client_form_submit() is more complex.
-        $url = trim(ltrim($node->webform['redirect_url'], '/'));
-        $output[] = ctools_ajax_command_redirect($url);
-      }
+      $output[] = ctools_modal_command_display($title, $text . ctools_ajax_text_button(t('Close'), 'modal_forms/nojs/dismiss', t('Close')));
+      // @todo Add support for redirect. Require some magic.
+      // Copied from webform_client_form_submit().
+      // $redirect_url = trim($node->webform['redirect_url']);
+      // $redirect_url = _webform_filter_values($redirect_url, $node, NULL, NULL, FALSE, TRUE);
+      // $output[] = ctools_ajax_command_redirect($redirect_url);
+    }
+    else {
+      // We are on a multistep form step.
+      $form_state['executed'] = array();
+      $output = ctools_modal_form_wrapper('webform_client_form_' . $node->nid, $form_state);
     }
   }
+
   print ajax_render($output);
 }
 

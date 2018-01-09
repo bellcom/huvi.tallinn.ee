@@ -32,7 +32,7 @@ function modal_forms_menu() {
     'title' => 'Log in',
     'page callback' => 'modal_forms_login',
     'page arguments' => array(1),
-    'access callback' => 'user_is_anonymous',
+    'access callback' => TRUE,
     'file' => 'modal_forms.pages.inc',
     'type' => MENU_CALLBACK,
   );
@@ -60,18 +60,10 @@ function modal_forms_menu() {
     'file' => 'modal_forms.pages.inc',
     'type' => MENU_CALLBACK,
   );
-  $items['modal_forms/%ctools_js/user/%user/contact'] = array(
-    'title' => 'Contact',
-    'page callback' => 'modal_forms_personal_contact',
-    'page arguments' => array(3, 1),
-    'access arguments' => array('access user contact forms'),
-    'file' => 'modal_forms.pages.inc',
-    'type' => MENU_CALLBACK,
-  );
   $items['modal_forms/%ctools_js/comment/reply/%node'] = array(
     'title' => 'Comment',
     'page callback' => 'modal_forms_comment_reply',
-    'page arguments' => array(4, 1),
+    'page arguments' => array(1, 4),
     'access arguments' => array('post comments'),
     'file' => 'modal_forms.pages.inc',
     'type' => MENU_CALLBACK,
@@ -79,7 +71,7 @@ function modal_forms_menu() {
   $items['modal_forms/%ctools_js/webform/%node'] = array(
     'title' => 'Webform',
     'page callback' => 'modal_forms_view_webform',
-    'page arguments' => array(3, 1),
+    'page arguments' => array(1, 3),
     'access callback' => 'node_access',
     'access arguments' => array('view', 3),
     'file' => 'modal_forms.pages.inc',
@@ -165,13 +157,6 @@ function modal_forms_form_comment_form_alter(&$form, &$form_state, $form_id) {
  *   TRUE if modal_forms should be active for the current page.
  */
 function _modal_forms_active() {
-  global $is_https;
-
-  // Optionally disable modal activation for insecure/non-https pages.
-  if (!$is_https && variable_get('modal_forms_ssl', 0)) {
-    return FALSE;
-  }
-
   // Code from the block_list funtion in block.module.
   $path = drupal_get_path_alias($_GET['q']);
   $modal_forms_pages = variable_get('modal_forms_pages', "admin*\nimagebrowser*\nimg_assist*\nimce*\nnode/add/*\nnode/*/edit\nprint/*\nprintpdf/*\nsystem/ajax\nsystem/ajax/*");
@@ -214,7 +199,7 @@ function _modal_forms_doheader() {
       ),
       'modalOptions' => array(
         'opacity' => floatval(variable_get('modal_forms_opacity', 0.85)),
-        'background-color' => variable_get('modal_forms_background_color', '#000'),
+        'background' => variable_get('modal_forms_background_color', '#000'),
       ),
       'animation' => 'fadeIn',
       'modalTheme' => 'ModalFormsPopup',
@@ -229,7 +214,7 @@ function _modal_forms_doheader() {
       ),
       'modalOptions' => array(
         'opacity' => floatval(variable_get('modal_forms_opacity', 0.85)),
-        'background-color' => variable_get('modal_forms_background_color', '#000'),
+        'background' => variable_get('modal_forms_background_color', '#000'),
       ),
       'animation' => 'fadeIn',
       'modalTheme' => 'ModalFormsPopup',
@@ -244,7 +229,7 @@ function _modal_forms_doheader() {
       ),
       'modalOptions' => array(
         'opacity' => floatval(variable_get('modal_forms_opacity', 0.85)),
-        'background-color' => variable_get('modal_forms_background_color', '#000'),
+        'background' => variable_get('modal_forms_background_color', '#000'),
       ),
       'animation' => 'fadeIn',
       'modalTheme' => 'ModalFormsPopup',
@@ -252,9 +237,6 @@ function _modal_forms_doheader() {
       'closeText' => t('Close'),
     ),
   );
-
-  // Allow other modules to change or add modal javascript settings.
-  drupal_alter('modal_forms_js_settings', $js_settings);
 
   drupal_add_js($js_settings, 'setting');
 
