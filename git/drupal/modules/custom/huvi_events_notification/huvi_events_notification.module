@@ -101,10 +101,15 @@ function huvi_events_notification_send_notification_emails() {
   else {
   foreach ($notifications as $uid => $events) {
     $account = user_load($uid);
+    $to = $account->mail;
+    // Testing.
+    if ($test_mail = variable_get('huvi_test_mail_address', FALSE)) {
+      $to = $test_mail;
+    }
     drupal_mail(
-        'huvi_events_notification', 'events', $account->mail, language_default('language'), array(
+        'huvi_events_notification', 'events', $to, language_default('language'), array(
         'nodes' => $events,
-        'email' => $account->mail,
+        'email' => $to,
         )
       );
     }
