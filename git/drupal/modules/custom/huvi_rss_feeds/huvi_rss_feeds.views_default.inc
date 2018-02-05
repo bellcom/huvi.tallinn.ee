@@ -1104,6 +1104,452 @@ function huvi_rss_feeds_views_default_views() {
   );
   $handler->display->display_options['path'] = 'event-rss-feed';
   $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Events feed Üritused */
+  $handler = $view->new_display('feed', 'Events feed Üritused', 'events_feeds');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'huvi.tallinn.ee RSS feeds Üritused';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'path';
+  $handler->display->display_options['row_options']['description_field'] = 'field_description';
+  $handler->display->display_options['row_options']['creator_field'] = 'field_korraldaja_nimi';
+  $handler->display->display_options['row_options']['date_field'] = 'field_schedule_date';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'path',
+    'guid_field_is_permalink' => 0,
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field collection item: Entity with the Toimumise aeg ja koht (field_schedule) */
+  $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
+  $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
+  $handler->display->display_options['relationships']['field_schedule_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_adv_link']['label'] = '';
+  $handler->display->display_options['fields']['field_adv_link']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_adv_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Field: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  /* Field: Content: Excerpt */
+  $handler->display->display_options['fields']['field_excerpt']['id'] = 'field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['table'] = 'field_data_field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['field'] = 'field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['relationship'] = 'field_schedule_node';
+  /* Field: Content: Pre description */
+  $handler->display->display_options['fields']['field_pre_description']['id'] = 'field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['table'] = 'field_data_field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['field'] = 'field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_pre_description']['type'] = 'text_plain';
+  /* Field: Content: Image URL */
+  $handler->display->display_options['fields']['field_image_url']['id'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['table'] = 'field_data_field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['field'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['relationship'] = 'field_schedule_node';
+  /* Field: Content: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Field: Content: Pildid */
+  $handler->display->display_options['fields']['field_gallery']['id'] = 'field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['table'] = 'field_data_field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['field'] = 'field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_gallery']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_gallery']['settings'] = array(
+    'text' => '[file:url]',
+  );
+  $handler->display->display_options['fields']['field_gallery']['delta_offset'] = '0';
+  /* Field: Content: Piletite edasimüüja veebiaadress sündmusele */
+  $handler->display->display_options['fields']['field_tickets']['id'] = 'field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['table'] = 'field_data_field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['field'] = 'field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_tickets']['label'] = '';
+  $handler->display->display_options['fields']['field_tickets']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tickets']['settings'] = array(
+    'trim_length' => '600',
+  );
+  $handler->display->display_options['fields']['field_tickets']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_tickets']['separator'] = ' ;';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Title */
+  $handler->display->display_options['arguments']['title']['id'] = 'title';
+  $handler->display->display_options['arguments']['title']['table'] = 'node';
+  $handler->display->display_options['arguments']['title']['field'] = 'title';
+  $handler->display->display_options['arguments']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['arguments']['title']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['title']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_schedule' => 'field_schedule',
+  );
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
+  /* Filter criterion: Content: Tüüp (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'uritus' => 'uritus',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator_id'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['label'] = 'Tüüp (field_type)';
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['field_type_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['id'] = 'field_schedule_date_value_1';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now + 90 days';
+  $handler->display->display_options['path'] = 'rss-feed-events';
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: Events feed Huvitegevused */
+  $handler = $view->new_display('feed', 'Events feed Huvitegevused', 'activities_feed');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'huvi.tallinn.ee RSS feeds Huvitegevused';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'rss_fields';
+  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['link_field'] = 'path';
+  $handler->display->display_options['row_options']['description_field'] = 'field_description';
+  $handler->display->display_options['row_options']['creator_field'] = 'field_korraldaja_nimi';
+  $handler->display->display_options['row_options']['date_field'] = 'field_schedule_date';
+  $handler->display->display_options['row_options']['guid_field_options'] = array(
+    'guid_field' => 'path',
+    'guid_field_is_permalink' => 0,
+  );
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field collection item: Entity with the Toimumise aeg ja koht (field_schedule) */
+  $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
+  $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
+  $handler->display->display_options['relationships']['field_schedule_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
+  $handler->display->display_options['fields']['field_adv_link']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_adv_link']['label'] = '';
+  $handler->display->display_options['fields']['field_adv_link']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_adv_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
+  /* Field: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Field: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  /* Field: Content: Excerpt */
+  $handler->display->display_options['fields']['field_excerpt']['id'] = 'field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['table'] = 'field_data_field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['field'] = 'field_excerpt';
+  $handler->display->display_options['fields']['field_excerpt']['relationship'] = 'field_schedule_node';
+  /* Field: Content: Pre description */
+  $handler->display->display_options['fields']['field_pre_description']['id'] = 'field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['table'] = 'field_data_field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['field'] = 'field_pre_description';
+  $handler->display->display_options['fields']['field_pre_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_pre_description']['type'] = 'text_plain';
+  /* Field: Content: Image URL */
+  $handler->display->display_options['fields']['field_image_url']['id'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['table'] = 'field_data_field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['field'] = 'field_image_url';
+  $handler->display->display_options['fields']['field_image_url']['relationship'] = 'field_schedule_node';
+  /* Field: Content: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Field: Content: Pildid */
+  $handler->display->display_options['fields']['field_gallery']['id'] = 'field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['table'] = 'field_data_field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['field'] = 'field_gallery';
+  $handler->display->display_options['fields']['field_gallery']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_gallery']['type'] = 'file_download_link';
+  $handler->display->display_options['fields']['field_gallery']['settings'] = array(
+    'text' => '[file:url]',
+  );
+  $handler->display->display_options['fields']['field_gallery']['delta_offset'] = '0';
+  /* Field: Content: Piletite edasimüüja veebiaadress sündmusele */
+  $handler->display->display_options['fields']['field_tickets']['id'] = 'field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['table'] = 'field_data_field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['field'] = 'field_tickets';
+  $handler->display->display_options['fields']['field_tickets']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_tickets']['label'] = '';
+  $handler->display->display_options['fields']['field_tickets']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tickets']['settings'] = array(
+    'trim_length' => '600',
+  );
+  $handler->display->display_options['fields']['field_tickets']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_tickets']['separator'] = ' ;';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Title */
+  $handler->display->display_options['arguments']['title']['id'] = 'title';
+  $handler->display->display_options['arguments']['title']['table'] = 'node';
+  $handler->display->display_options['arguments']['title']['field'] = 'title';
+  $handler->display->display_options['arguments']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['arguments']['title']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['title']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['title']['limit'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_schedule' => 'field_schedule',
+  );
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
+  /* Filter criterion: Content: Tüüp (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'huvitegevus' => 'huvitegevus',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator_id'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['label'] = 'Tüüp (field_type)';
+  $handler->display->display_options['filters']['field_type_value']['expose']['operator'] = 'field_type_value_op';
+  $handler->display->display_options['filters']['field_type_value']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['field_type_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_schedule_date_value']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
+  $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
+  /* Filter criterion: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['id'] = 'field_schedule_date_value_1';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 2;
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now + 90 days';
+  $handler->display->display_options['path'] = 'rss-feed-activities';
+  $handler->display->display_options['sitename_title'] = 0;
   $export['events_schedule_rss_feeds'] = $view;
 
   return $export;

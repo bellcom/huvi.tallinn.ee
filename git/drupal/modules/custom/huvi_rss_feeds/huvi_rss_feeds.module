@@ -4,7 +4,6 @@
  * @file
  * Code for the Huvi RSS feeds feature.
  */
-
 include_once 'huvi_rss_feeds.features.inc';
 
 function huvi_rss_feeds_menu() {
@@ -32,50 +31,50 @@ function huvi_rss_feeds_form($form, &$form_state) {
   $linnaosa = _huvi_rss_feeds_linnaosa();
 
   $form['#attached']['js'] = array(
-      drupal_get_path('module', 'huvi_rss_feeds') . '/js/huvi_rss_feeds.js',
+    drupal_get_path('module', 'huvi_rss_feeds') . '/js/huvi_rss_feeds.js',
   );
   $form['#attached']['css'] = array(
-      drupal_get_path('module', 'huvi_rss_feeds') . '/css/huvi_rss_feeds.css',
+    drupal_get_path('module', 'huvi_rss_feeds') . '/css/huvi_rss_feeds.css',
   );
   $form['#attributes'] = array('class' => 'rss-form');
-  if ( $form_state['rss_link'])
-  $form['rss_link'] = array(
-  '#markup' => '<div class="rss-url" ><p> <a class="feed-link" href="' . $form_state['rss_link'] . '">' . $form_state['rss_link'] . '</a></p>'
-    . '<button id="feed_url">' . t('Copy link') . '</button></div>'
-  );
+  if ($form_state['rss_link'])
+    $form['rss_link'] = array(
+      '#markup' => '<div class="rss-url" ><p> <a class="feed-link" href="' . $form_state['rss_link'] . '">' . $form_state['rss_link'] . '</a></p>'
+      . '<button id="feed_url">' . t('Copy link') . '</button></div>'
+    );
   $form['format'] = array(
     '#type' => 'select',
     '#title' => t('RSS format'),
-    '#options' => array (
+    '#options' => array(
       0 => t('Event name as heading (link to event) and event date'),
       1 => t('Event name as heading (link to event), date and whole text'),
       2 => t('Event name as heading (link to event), date, whole text and picture')
-     )
-   );
+    )
+  );
   $form['type'] = array(
-  '#type' => 'checkboxes',
-  '#options' => array('uritus' => t('üritus'), 'huvitegevus' => t('huvitegevus')),
-  '#title' => t('Tüüp')
+    '#type' => 'checkboxes',
+    '#options' => array('uritus' => t('üritus'), 'huvitegevus' => t('huvitegevus')),
+    '#title' => t('Tüüp')
   );
   $form['event_category'] = array(
-  '#type' => 'checkboxes',
-  '#options' =>$event_categories,
-  '#title' => t('Ürituse kategooriad')
+    '#type' => 'checkboxes',
+    '#options' => $event_categories,
+    '#title' => t('Ürituse kategooriad')
   );
   $form['activity_category'] = array(
-  '#type' => 'checkboxes',
-  '#options' =>$activity_categories,
-  '#title' => t('Huvitegevuse kategooriad')
+    '#type' => 'checkboxes',
+    '#options' => $activity_categories,
+    '#title' => t('Huvitegevuse kategooriad')
   );
   $form['linnaosa'] = array(
-  '#type' => 'checkboxes',
-  '#options' =>$linnaosa,
-  '#title' => t('Linnaosa')
+    '#type' => 'checkboxes',
+    '#options' => $linnaosa,
+    '#title' => t('Linnaosa')
   );
   $form['is_free'] = array(
-    '#type' =>'checkbox',
-  '#title' => t('Ainult tasuta üritus/huvitegevus'),
-    );
+    '#type' => 'checkbox',
+    '#title' => t('Ainult tasuta üritus/huvitegevus'),
+  );
   $form['text'] = array(
     '#type' => 'textfield',
     '#title' => t('Keywords'),
@@ -93,49 +92,51 @@ function huvi_rss_feeds_form($form, &$form_state) {
  * Implements hook_views_form_submit().
  * return RSS feeds URL
  */
+
 function huvi_rss_feeds_form_submit($form, &$form_state) {
   global $base_path;
   global $base_url;
   $query_arr = array();
   if (isset($form_state['values']['type'])) {
-    foreach($form_state['values']['type'] as $key => $val)
-      if(!empty($val))
-        $query_arr[]= 'type[]=' . $val;
+    foreach ($form_state['values']['type'] as $key => $val)
+      if (!empty($val))
+        $query_arr[] = 'type[]=' . $val;
   }
   if (isset($form_state['values']['event_category'])) {
-    foreach($form_state['values']['event_category'] as $key => $val)
+    foreach ($form_state['values']['event_category'] as $key => $val)
       if ((string) $key === $val)
-        $query_arr[]= 'event_category[]=' . $val;
+        $query_arr[] = 'event_category[]=' . $val;
   }
   if (isset($form_state['values']['activity_category'])) {
-    foreach($form_state['values']['activity_category'] as $key => $val)
-      if ((string)$key === $val)
-        $query_arr[]= 'activity_category[]=' . $val;
+    foreach ($form_state['values']['activity_category'] as $key => $val)
+      if ((string) $key === $val)
+        $query_arr[] = 'activity_category[]=' . $val;
   }
   if (isset($form_state['values']['linnaosa'])) {
-    foreach($form_state['values']['linnaosa'] as $key => $val)
+    foreach ($form_state['values']['linnaosa'] as $key => $val)
       if (!empty($val))
-        $query_arr[]= 'linnaosa[]=' . $val;
+        $query_arr[] = 'linnaosa[]=' . $val;
   }
   if (isset($form_state['values']['is_free']) && $form_state['values']['is_free']) {
-    $query_arr[]= 'is_free[]=' . $form_state['values']['is_free'];
+    $query_arr[] = 'is_free[]=' . $form_state['values']['is_free'];
   }
   if (isset($form_state['values']['text']) && !empty($form_state['values']['text'])) {
-    $query_arr[]= 'text=' . $form_state['values']['text'];
+    $query_arr[] = 'text=' . $form_state['values']['text'];
   }
   if (isset($form_state['values']['format'])) {
-    $query_arr[]= 'format=' . $form_state['values']['format'];
+    $query_arr[] = 'format=' . $form_state['values']['format'];
   }
 
-   $form_state['rss_link'] = $base_url . $base_path . 'event-rss-feed?' . implode('&', $query_arr);
-   $form_state['rebuild'] = TRUE;
+  $form_state['rss_link'] = $base_url . $base_path . 'event-rss-feed?' . implode('&', $query_arr);
+  $form_state['rebuild'] = TRUE;
 }
 
 /*
  * Implements hook_views_pre_render().
  */
+
 function huvi_rss_feeds_views_pre_render(&$view) {
-  if($view->name == 'events_schedule_rss_feeds' && $view->current_display == 'feeds_schedule') {
+  if ($view->name == 'events_schedule_rss_feeds' && $view->current_display == 'feeds_schedule') {
     $view->build_info['title'] = _huvi_rss_feeds_get_view_title($_GET);
   }
 }
@@ -147,42 +148,42 @@ function huvi_rss_feeds_views_pre_render(&$view) {
 
 function _huvi_rss_feeds_get_view_title($filters) {
   $title = "huvi.tallinn.ee RSS: ";
-  if (isset($filters['type'])){
-    foreach ($filters['type'] as $value){
+  if (isset($filters['type'])) {
+    foreach ($filters['type'] as $value) {
       if ($value == 'uritus') {
         $event_categories = array();
         $title .= 'Üritus';
-       if (isset($filters['event_category'])) {
-        foreach ($filters['event_category'] as $cat){
-          $event_categories[] = _huvi_rss_feeds_event_categories()[$cat];
+        if (isset($filters['event_category'])) {
+          foreach ($filters['event_category'] as $cat) {
+            $event_categories[] = _huvi_rss_feeds_event_categories()[$cat];
+          }
+          $title .= ' (' . implode(', ', $event_categories) . ')';
         }
-        $title .= ' (' . implode(', ', $event_categories) .')';
-       }
 
-         if (in_array('huvitegevus', $filters['type']))
-           $title .= ", ";
-         else
-           $title .= "; ";
+        if (in_array('huvitegevus', $filters['type']))
+          $title .= ", ";
+        else
+          $title .= "; ";
       }
 
       if ($value == 'huvitegevus') {
         $activity_categories = array();
         $title .= $value;
         if (isset($filters['activity_category'])) {
-          foreach ($filters['activity_category'] as $cat){
+          foreach ($filters['activity_category'] as $cat) {
             $activity_categories[] = _huvi_rss_feeds_activity_categories()[$cat];
           }
-          $title .=' (' .implode(', ',$activity_categories) .')';
-          }
-          $title .= '; ';
+          $title .= ' (' . implode(', ', $activity_categories) . ')';
+        }
+        $title .= '; ';
       }
     }
   }
-  if (isset($filters['linnaosa'])){
+  if (isset($filters['linnaosa'])) {
     $linnaosa = array();
     foreach ($filters['linnaosa'] as $value)
       $linnaosa[] = _huvi_rss_feeds_linnaosa()[$value];
-     $title .= 'linnaosa: ' . implode(', ',$linnaosa) . '; ';
+    $title .= 'linnaosa: ' . implode(', ', $linnaosa) . '; ';
   }
   if (isset($filters['is_free']) && array_pop($filters['is_free']) == 1)
     $title .= 'tasuta; ';
@@ -191,12 +192,11 @@ function _huvi_rss_feeds_get_view_title($filters) {
     $title .= 'otsing: ' . $filters['text'];
 
   return $title;
-
 }
 
 function _huvi_rss_feeds_event_categories() {
-  return array (
-    '0'  => t('Muusika'),
+  return array(
+    '0' => t('Muusika'),
     '1' => t('Etendused'),
     '2' => t('Näitus, muuseum'),
     '3' => t('Mess, laat'),
@@ -209,8 +209,8 @@ function _huvi_rss_feeds_event_categories() {
 }
 
 function _huvi_rss_feeds_activity_categories() {
-  return array (
-    '0'  => t('Muusika'),
+  return array(
+    '0' => t('Muusika'),
     '1' => t('Kunst, käsitöö'),
     '2' => t('Tantsimine'),
     '3' => t('Sport, liikumine'),
@@ -223,7 +223,7 @@ function _huvi_rss_feeds_activity_categories() {
 }
 
 function _huvi_rss_feeds_linnaosa() {
- return array(
+  return array(
     2944195 => 'Põhja-Tallinn',
     2944191 => 'Kesklinn',
     2944187 => 'Haabersti',
@@ -236,16 +236,182 @@ function _huvi_rss_feeds_linnaosa() {
 }
 
 function _huvi_rss_feeds_clear_html($output) {
-    $output = htmlspecialchars_decode($output);
+  $output = htmlspecialchars_decode($output);
 
-    $output = str_replace("&amp;", "&", $output);
-    $output = strtr($output, array(
-      '&#039;' => "'",
-      "&quot;" => '"',
-      '&lt;' => '<',
-      '&gt;' => '>',
-      '&amp;' => '&',
-      ));
+  $output = str_replace("&amp;", "&", $output);
+  $output = strtr($output, array(
+    '&#039;' => "'",
+    "&quot;" => '"',
+    '&lt;' => '<',
+    '&gt;' => '>',
+    '&amp;' => '&',
+  ));
 
-    return decode_entities($output);
+  return decode_entities($output);
+}
+
+function huvi_rss_feeds_preprocess_views_view_row_rss(&$vars) {
+  $view = &$vars['view'];
+  if ($view->name == 'events_schedule_rss_feeds' && ($view->current_display == 'events_feeds' || $view->current_display == 'activities_feed')) {
+    $result = &$vars['view']->result;
+
+    $item = &$vars['row'];
+    $id = &$vars['id'];
+    $vars['event_date'] = _huvi_rss_feeds_date_format($result[$id - 1]->field_data_field_schedule_date_field_schedule_date_value, $result[$id - 1]->field_data_field_schedule_date_field_schedule_date_value2);
+    $node = $result[$id - 1]->_field_data["field_schedule_field_collection_item_nid"]["entity"];
+    $fc = entity_load('field_collection_item', array($node->field_korraldaja["und"][0]['value'], $result[$id - 1]->item_id));
+    _huvi_rss_feeds_node_to_rss($node, $vars);
+    _huvi_rss_feeds_field_collection_to_rss($fc, $vars);
+    //var_dump($result[$id-1]->_field_data["field_schedule_field_collection_item_nid"]["entity"]);
+  }
+}
+
+function _huvi_rss_feeds_node_to_rss_fields() {
+  $return = array(
+    'field_excerpt' => 'excerpt',
+    'field_video_url' => 'video',
+    'field_pre_description' => 'pre_description',
+    'field_map_latlng' => 'map_latlng',
+    'field_map_markers' => 'map_markers',
+    'field_tickets' => 'ticketurl',
+    'field_isfree' => 'isfree',
+  );
+  return $return;
+}
+
+function _huvi_rss_feeds_fc_to_rss_fields() {
+  $return = array(
+    'field_schedule_place' => 'place',
+    'field_korraldaja_kontakttelefon' => 'manager_phone',
+    'field_korraldaja_nimi' => 'manager_name',
+    'field_korraldaja_e_post' => 'manager_email',
+  );
+  return $return;
+}
+
+function _huvi_rss_feeds_field_collection_to_rss($fc, &$vars) {
+  $fields = _huvi_rss_feeds_fc_to_rss_fields();
+  foreach ($fc  as $item){
+    foreach ($fields as $field => $var) {
+      if (isset($item->{$field}['und'])) {
+          if (isset($item->{$field}['und'][0]['value'])) {
+            $vars[$var] = $item->{$field}['und'][0]['value'];
+          }
+      }
+    }
+  }
+}
+/**
+ * Convert node to proper event fields displayed on the event node template page
+ *
+ * @param object $node
+ *   Event node to be converted to the event array
+ *
+ * @return array $e
+ *   Event data for showing in the event template on the node page
+ */
+function _huvi_rss_feeds_node_to_rss($node, &$vars) {
+  $n = $node;
+  $fields = _huvi_rss_feeds_node_to_rss_fields();
+  foreach ($fields as $field => $var) {
+    switch ($var) {
+      case 'ticketurl':
+        if (isset($n->{$field}['und'])) {
+          foreach ($n->{$field}['und'] as $key => $url) {
+            $url_parse = parse_url($url['value']);
+            if (!isset($url_parse['host'])) {
+              $url_parse = explode('/', $url_parse['path']);
+              $url_host = $url_parse[0];
+              $url['value'] = 'http://' . $url['value'];
+            }
+            else {
+              $url_host = $url_parse['host'];
+            }
+            if (substr($url_host, 0, strlen('www.')) == 'www.') {
+              $url_host = substr($url_host, strlen('www.'));
+            }
+            $vars[$var][$key] = htmlspecialchars($url['value']);
+          }
+        }
+        break;
+      default:
+        if (isset($n->{$field}['und'])) {
+          if (isset($n->{$field}['und'][0]['value'])) {
+            $vars[$var] = $n->{$field}['und'][0]['value'];
+          }
+        }
+        break;
+    }
+  }
+  if (isset($n->field_categories_activity['und'])) {
+    foreach ($n->field_categories_activity['und'] as $val) {
+      $vars['categories'][] = _huvi_rss_feeds_category_by_id($val['value'], $n->field_type['und'][0]['value']);
+    }
+  }
+  if (isset($n->field_categories_event['und'])) {
+    foreach ($n->field_categories_event['und'] as $val) {
+      $vars['categories'][] = _huvi_rss_feeds_category_by_id($val['value'], $n->field_type['und'][0]['value']);
+    }
+  }
+  if (file_exists(drupal_realpath($n->field_gallery['und'][0]['uri']))) {
+    $vars['image'] = file_create_url($node->field_gallery['und'][0]['uri']);
+  }
+  elseif ($image = $node->field_image_url['und'][0]['value']) {
+    $vars['image'] = $image;
+  }
+}
+
+/**
+ * Get activity category by id;
+ * $event_type: uritus or huvitegevus
+ *
+ * @return string $category
+ *
+ */
+function _huvi_rss_feeds_category_by_id($id, $event_type) {
+  $categories = array(
+    'huvitegevus' => array(
+      0 => 'Muusika',
+      1 => 'Kunst, käsitöö',
+      2 => 'Tantsimine',
+      3 => 'Sport, liikumine',
+      4 => 'Tehnika',
+      5 => 'Keeleõpe',
+      6 => 'Koolitused, kursused',
+      7 => 'Lapsele',
+      8 => 'Varia'
+    ),
+    'uritus' => array(
+      0 => 'Muusika',
+      1 => 'Etendused',
+      2 => 'Näitus, muuseum',
+      3 => 'Mess, laat',
+      4 => 'Sport',
+      5 => 'Kino',
+      6 => 'Pidu, klubid',
+      7 => 'Lapsele',
+      8 => 'Varia'
+    )
+  );
+  return $categories[$event_type][$id];
+}
+
+/**
+ * Function for date formating
+ */
+function _huvi_rss_feeds_date_format($start_date, $end_date) {
+  $date_format = 'D, j M Y G:i:s P';
+
+  if(isset($end_date)) {
+    if($start_date == $end_date) {
+      $date =  date( $date_format, $start_date);
+    }
+    else {
+      $date =  date( $date_format, $start_date) . ' - ' . date( $date_format, $end_date) ;
+    }
+  }
+  else {
+    $date =  date( $date_format, $start_date);
+  }
+  return $date;
 }
