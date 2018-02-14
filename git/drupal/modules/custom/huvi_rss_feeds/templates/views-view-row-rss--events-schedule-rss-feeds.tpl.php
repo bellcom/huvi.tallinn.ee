@@ -9,7 +9,7 @@
 <item>
   <title><?php print $title; ?></title>
   <link><?php print $link; ?></link>
-  <description><?php print $description; ?></description>
+  <description><?php print check_plain(strip_tags($description)); ?></description>
   <date><?php print $event_date ?> </date>
   <excerpt><?php print _huvi_rss_feeds_clear_html($excerpt); ?></excerpt>
   <predescription><?php print _huvi_rss_feeds_clear_html($pre_description); ?></predescription>

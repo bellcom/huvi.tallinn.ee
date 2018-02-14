@@ -319,6 +319,7 @@ function _huvi_rss_feeds_node_to_rss_fields() {
     'field_map_markers' => 'map_markers',
     'field_tickets' => 'ticketurl',
     'field_isfree' => 'isfree',
+    'field_description' => 'description'
   );
   return $return;
 }
@@ -339,7 +340,7 @@ function _huvi_rss_feeds_field_collection_to_rss($fc, &$vars) {
     foreach ($fields as $field => $var) {
       if (isset($item->{$field}['und'])) {
           if (isset($item->{$field}['und'][0]['value'])) {
-            $vars[$var] = $item->{$field}['und'][0]['value'];
+            $vars[$var] = $item->{$field}['und'][0]['safe_value'];
           }
       }
     }

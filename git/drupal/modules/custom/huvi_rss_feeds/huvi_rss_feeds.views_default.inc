@@ -1158,16 +1158,6 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Kirjeldus */
-  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
-  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
-  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
-  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_description']['label'] = '';
-  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
@@ -1195,55 +1185,6 @@ function huvi_rss_feeds_views_default_views() {
   );
   $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
-  /* Field: Field collection item: Asukoht */
-  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
-  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
-  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
-  /* Field: Content: Excerpt */
-  $handler->display->display_options['fields']['field_excerpt']['id'] = 'field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['table'] = 'field_data_field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['field'] = 'field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['relationship'] = 'field_schedule_node';
-  /* Field: Content: Pre description */
-  $handler->display->display_options['fields']['field_pre_description']['id'] = 'field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['table'] = 'field_data_field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['field'] = 'field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_pre_description']['type'] = 'text_plain';
-  /* Field: Content: Image URL */
-  $handler->display->display_options['fields']['field_image_url']['id'] = 'field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['table'] = 'field_data_field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['field'] = 'field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['relationship'] = 'field_schedule_node';
-  /* Field: Content: Ürituse kategooriad */
-  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
-  /* Field: Content: Pildid */
-  $handler->display->display_options['fields']['field_gallery']['id'] = 'field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['table'] = 'field_data_field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['field'] = 'field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_gallery']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery']['type'] = 'file_download_link';
-  $handler->display->display_options['fields']['field_gallery']['settings'] = array(
-    'text' => '[file:url]',
-  );
-  $handler->display->display_options['fields']['field_gallery']['delta_offset'] = '0';
-  /* Field: Content: Piletite edasimüüja veebiaadress sündmusele */
-  $handler->display->display_options['fields']['field_tickets']['id'] = 'field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['table'] = 'field_data_field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['field'] = 'field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_tickets']['label'] = '';
-  $handler->display->display_options['fields']['field_tickets']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_tickets']['settings'] = array(
-    'trim_length' => '600',
-  );
-  $handler->display->display_options['fields']['field_tickets']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_tickets']['separator'] = ' ;';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -1381,16 +1322,6 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['title']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Kirjeldus */
-  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
-  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
-  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
-  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_description']['label'] = '';
-  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
@@ -1418,55 +1349,6 @@ function huvi_rss_feeds_views_default_views() {
   );
   $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
-  /* Field: Field collection item: Asukoht */
-  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
-  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
-  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
-  /* Field: Content: Excerpt */
-  $handler->display->display_options['fields']['field_excerpt']['id'] = 'field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['table'] = 'field_data_field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['field'] = 'field_excerpt';
-  $handler->display->display_options['fields']['field_excerpt']['relationship'] = 'field_schedule_node';
-  /* Field: Content: Pre description */
-  $handler->display->display_options['fields']['field_pre_description']['id'] = 'field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['table'] = 'field_data_field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['field'] = 'field_pre_description';
-  $handler->display->display_options['fields']['field_pre_description']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_pre_description']['type'] = 'text_plain';
-  /* Field: Content: Image URL */
-  $handler->display->display_options['fields']['field_image_url']['id'] = 'field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['table'] = 'field_data_field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['field'] = 'field_image_url';
-  $handler->display->display_options['fields']['field_image_url']['relationship'] = 'field_schedule_node';
-  /* Field: Content: Ürituse kategooriad */
-  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
-  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
-  /* Field: Content: Pildid */
-  $handler->display->display_options['fields']['field_gallery']['id'] = 'field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['table'] = 'field_data_field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['field'] = 'field_gallery';
-  $handler->display->display_options['fields']['field_gallery']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_gallery']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery']['type'] = 'file_download_link';
-  $handler->display->display_options['fields']['field_gallery']['settings'] = array(
-    'text' => '[file:url]',
-  );
-  $handler->display->display_options['fields']['field_gallery']['delta_offset'] = '0';
-  /* Field: Content: Piletite edasimüüja veebiaadress sündmusele */
-  $handler->display->display_options['fields']['field_tickets']['id'] = 'field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['table'] = 'field_data_field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['field'] = 'field_tickets';
-  $handler->display->display_options['fields']['field_tickets']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_tickets']['label'] = '';
-  $handler->display->display_options['fields']['field_tickets']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_tickets']['settings'] = array(
-    'trim_length' => '600',
-  );
-  $handler->display->display_options['fields']['field_tickets']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_tickets']['separator'] = ' ;';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
