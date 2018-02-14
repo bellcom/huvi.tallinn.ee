@@ -5,28 +5,26 @@
  *
  * @ingroup views_templates
  */
-$format = $_GET['format'];
 ?>
 <item>
   <title><?php print $title; ?></title>
   <link><?php print $link; ?></link>
-  <?php if ($format == 1 || $format == 2) : ?>
-    <description><?php print $description; ?></description>
-  <?php endif; ?>
-  <?php if ($format == 2) :  ?>
-
-    <?php $row_index = 0;
-    if (isset($view->row_index)) {
-      $row_index = $view->row_index;    }
-
-    $node = node_load($view->result[$row_index]->field_schedule_field_collection_item_nid); ?>
-
-    <?php if (file_exists(drupal_realpath($node->field_gallery['und'][0]['uri']))): ?>
-      <enclosure url="<?php print file_create_url($node->field_gallery['und'][0]['uri']); ?>" type="image/*" />
-      <?php elseif ($image = $node->field_image_url['und'][0]['value']): ?>
-      <enclosure url="<?php print $image ?>" type="image/*" />
-    <?php endif; ?>
-  <?php endif; ?>
-  <?php print $item_elements; ?>
+  <description><?php print $description; ?></description>
+  <date><?php print $event_date ?> </date>
+  <excerpt><?php print _huvi_rss_feeds_clear_html($excerpt); ?></excerpt>
+  <predescription><?php print _huvi_rss_feeds_clear_html($pre_description); ?></predescription>
+  <categories><?php print implode(', ' , $categories) ;?></categories>
+  <?php if (isset($ticketurl) && is_array($ticketurl)) :?>
+    <ticketUrl ><?php print implode(', ' , $ticketurl); ?></ticketUrl>
+  <?php endif?>
+  <video><?php print $video; ?></video>
+  <isfree><?php print $isfree; ?></isfree>
+  <place> <?php print $place; ?></place>
+  <point><?php print $map_latlng; ?></point>
+  <managerName> <?php print $manager_name; ?></managerName>
+  <managerEmail> <?php print $manager_email; ?></managerEmail>
+  <managerPhone> <?php print $manager_phone; ?></managerPhone>
+  <enclosure url="<?php print $image; ?>" type="image/*" />
+ <?php print $item_elements; ?>
 
 </item>
