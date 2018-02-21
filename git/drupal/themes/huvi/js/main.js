@@ -556,8 +556,7 @@ function initialize() {
     var mapOptions = {
         mapTypeId: 'roadmap',
         streetViewControl: true,
-	zoom: 16,
-	maxZoom: 18
+	zoom: 16
     };
 
     // Display a map on the page
@@ -565,7 +564,7 @@ function initialize() {
     map.setTilt(45);
 
     // Display multiple markers on a map
-    var infoWindow = new google.maps.InfoWindow(), marker, i, bounds_listener;
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
 
     // Loop through our array of markers & place each one on the map
     for (i = 0; i < markers.length; i++) {
@@ -576,17 +575,23 @@ function initialize() {
             map: map
         });
 
+        map.initialZoom = true;
+
         // Automatically center the map fitting all markers on the screen
         map.fitBounds(bounds);
     }
 
-    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    bounds_listener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-      if (this.getZoom() > 20) {
-        this.setZoom(16);
-      }
 
-      google.maps.event.removeListener(bounds_listener);
+    google.maps.event.addListener((map), 'zoom_changed', function() {
+        var zoomChangeBoundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+            if (this.getZoom() > 20 && this.initialZoom == true) {
+                // Change max/min zoom here
+                this.setZoom((markers.length == 1) ? 18 : 16);
+                this.initialZoom = false;
+            }
+
+            google.maps.event.removeListener(zoomChangeBoundsListener);
+        });
     });
 }
 

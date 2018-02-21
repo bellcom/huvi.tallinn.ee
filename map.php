@@ -50,8 +50,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var map_options = {
 				center: location,
-				zoom: 16,
-				maxZoom: 20
+				zoom: 16
 			};
 
 			var map = new google.maps.Map(map_canvas, map_options);
@@ -71,20 +70,25 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var bounds = new google.maps.LatLngBounds();
 			var markers_len = markers_lat_long.length;
-			var tmp_coords, bounds_listener;
+			var tmp_coords;
 
 			for (var i = 0; i < markers_len; i++) {
 				tmp_coords = markers_lat_long[i].split(',');
 				addMarker(tmp_coords[0], tmp_coords[1], bounds);
+				map.initialZoom = true;
 				map.fitBounds(bounds);
 			}
 
-			bounds_listener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-				if (this.getZoom() > 20) {
-					this.setZoom(16);
-				}
+			google.maps.event.addListener((map), 'zoom_changed', function() {
+				var zoomChangeBoundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+					if (this.getZoom() > 20 && this.initialZoom == true) {
+						// Change max/min zoom here
+						this.setZoom((markers_len == 1) ? 18 : 16);
+						this.initialZoom = false;
+					}
 
-				google.maps.event.removeListener(bounds_listener);
+					google.maps.event.removeListener(zoomChangeBoundsListener);
+				});
 			});
 		});
 	};
