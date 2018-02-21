@@ -50,7 +50,8 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var map_options = {
 				center: location,
-				zoom: 16
+				zoom: 16,
+				maxZoom: 20
 			};
 
 			var map = new google.maps.Map(map_canvas, map_options);

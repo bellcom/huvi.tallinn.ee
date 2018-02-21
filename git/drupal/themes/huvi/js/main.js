@@ -555,7 +555,9 @@ function initialize() {
     var bounds = new google.maps.LatLngBounds();
     var mapOptions = {
         mapTypeId: 'roadmap',
-        streetViewControl: true
+        streetViewControl: true,
+	zoom: 16,
+	maxZoom: 18
     };
 
     // Display a map on the page
