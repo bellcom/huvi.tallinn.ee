@@ -50,7 +50,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 
 			var map_options = {
 				center: location,
-				zoom: 16
+				zoom: 15
 			};
 
 			var map = new google.maps.Map(map_canvas, map_options);
@@ -83,7 +83,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 				var zoomChangeBoundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
 					if (this.getZoom() > 20 && this.initialZoom == true) {
 						// Change max/min zoom here
-						this.setZoom((markers_len == 1) ? 18 : 16);
+						this.setZoom((markers_len == 1) ? 17 : 15);
 						this.initialZoom = false;
 					}
 

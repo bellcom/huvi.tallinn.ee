@@ -556,7 +556,7 @@ function initialize() {
     var mapOptions = {
         mapTypeId: 'roadmap',
         streetViewControl: true,
-	zoom: 16
+	zoom: 15
     };
 
     // Display a map on the page
@@ -586,7 +586,7 @@ function initialize() {
         var zoomChangeBoundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
             if (this.getZoom() > 20 && this.initialZoom == true) {
                 // Change max/min zoom here
-                this.setZoom((markers.length == 1) ? 18 : 16);
+                this.setZoom((markers.length == 1) ? 17 : 15);
                 this.initialZoom = false;
             }
 
