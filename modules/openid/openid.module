@@ -664,7 +664,7 @@ function openid_authentication($response) {
     $response['openid.sreg.nickname'] = $response['openid.sreg.fullname'];
   }
   $response['status'] = 'success';
-  
+
   $identity = $response['openid.claimed_id'];
   $account = user_external_load($identity);
 
@@ -700,26 +700,28 @@ function openid_authentication($response) {
 
     $form_state['values'] = array();
     $form_state['values']['op'] = t('Create new account');
+
     $form_state['values']['name'] = $response['openid.sreg.nickname'];
     if(!$response['openid.sreg.email']) {
-     $response['openid.sreg.email'] = str_replace(' ', '', strtolower($response['openid.sreg.nickname'])) . '@eesti.ee';
+      $response['openid.sreg.email'] = str_replace(' ', '', strtolower($response['openid.sreg.nickname'])) . '@eesti.ee';
     }
     $form_state['values']['mail'] = $response['openid.sreg.email'];
     $rand_pass = user_password(16);
     $form_state['values']['pass']['pass1'] = $rand_pass;
     $form_state['values']['pass']['pass2'] = $rand_pass;
+
     drupal_form_submit('user_register_form', $form_state);
 
     if (!empty($form_state['user'])) {
       module_invoke_all('openid_response', $response, $form_state['user']);
-      
-      
+
       $authmap = db_insert('authmap')
         ->fields(array(
             'uid' => $form_state['values']['uid'],
             'authname' => $identity,
             'module' => 'openid',
         ))->execute();
+
       drupal_goto();
     }
 
