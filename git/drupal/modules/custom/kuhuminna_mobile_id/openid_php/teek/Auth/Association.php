@@ -523,7 +523,7 @@ function Auth_OpenID_getEncryptedNegotiator()
  * @package OpenID
  */
 class Auth_OpenID_SessionNegotiator {
-    function Auth_OpenID_SessionNegotiator($allowed_types)
+  public function __construct($allowed_types)
     {
         $this->allowed_types = array();
         $this->setAllowedTypes($allowed_types);
