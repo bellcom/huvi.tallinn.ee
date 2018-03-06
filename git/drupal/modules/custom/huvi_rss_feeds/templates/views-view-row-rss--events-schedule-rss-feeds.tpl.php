@@ -17,7 +17,7 @@
   <?php if (isset($ticketurl) && is_array($ticketurl)) :?>
     <ticketUrl ><?php print implode(', ' , $ticketurl); ?></ticketUrl>
   <?php endif?>
-  <video><?php print $video; ?></video>
+  <video><?php print  htmlspecialchars($video); ?></video>
   <isfree><?php print $isfree; ?></isfree>
   <place> <?php print $place; ?></place>
   <point><?php print $map_latlng; ?></point>
