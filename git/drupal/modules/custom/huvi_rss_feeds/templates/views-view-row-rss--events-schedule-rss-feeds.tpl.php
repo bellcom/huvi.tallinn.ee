@@ -19,11 +19,13 @@
   <?php endif?>
   <video><?php print  htmlspecialchars($video); ?></video>
   <isfree><?php print $isfree; ?></isfree>
-  <place> <?php print $place; ?></place>
+  <rootEvent><?php print $katusuritus ?></rootEvent>
+  <district><?php print $linnaosa ?></district>
+  <place><?php print $place; ?></place>
   <point><?php print $map_latlng; ?></point>
-  <managerName> <?php print $manager_name; ?></managerName>
-  <managerEmail> <?php print $manager_email; ?></managerEmail>
-  <managerPhone> <?php print $manager_phone; ?></managerPhone>
+  <managerName><?php print $manager_name; ?></managerName>
+  <managerEmail><?php print $manager_email; ?></managerEmail>
+  <managerPhone><?php print $manager_phone; ?></managerPhone>
   <enclosure url="<?php print $image; ?>" type="image/*" />
  <?php print $item_elements; ?>
 
