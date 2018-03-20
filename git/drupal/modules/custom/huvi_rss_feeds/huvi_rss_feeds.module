@@ -372,7 +372,7 @@ function _huvi_rss_feeds_field_collection_to_rss($fc, &$vars) {
  *   Event data for showing in the event template on the node page
  */
 function _huvi_rss_feeds_node_to_rss($node, &$vars) {
-  global $base_path;
+  global $base_url;
   $n = $node;
   $fields = _huvi_rss_feeds_node_to_rss_fields();
   foreach ($fields as $field => $var) {
@@ -399,7 +399,7 @@ function _huvi_rss_feeds_node_to_rss($node, &$vars) {
          case 'katusuritus':
             if (isset($n->{$field}['und'])) {
               if (isset($n->{$field}['und'][0]['nid'])) {
-                 $vars[$var] =  drupal_get_path_alias($base_path ."/node/". $n->{$field}['und'][0]['nid']);
+                 $vars[$var] =  drupal_get_path_alias($base_url ."/node/". $n->{$field}['und'][0]['nid']);
               }
             }
           break;
