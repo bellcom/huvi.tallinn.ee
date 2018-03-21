@@ -19,7 +19,7 @@
   <?php endif?>
   <video><?php print  htmlspecialchars($video); ?></video>
   <isfree><?php print $isfree; ?></isfree>
-  <rootEvent><?php print $katusuritus ?></rootEvent>
+  <roofEvent><?php print $katusuritus ?></roofEvent>
   <district><?php print $linnaosa ?></district>
   <place><?php print $place; ?></place>
   <point><?php print $map_latlng; ?></point>
