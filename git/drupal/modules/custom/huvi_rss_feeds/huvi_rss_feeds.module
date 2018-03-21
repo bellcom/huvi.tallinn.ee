@@ -47,6 +47,8 @@ function huvi_rss_feeds_get_from_file ($type) {
     $file_path = ACTIVITIES_RSS_FILE_PATH;
     $display = "activities_feed";
   }
+
+
   if(!file_exists(drupal_realpath($file_path)) || filemtime($file_path) <= strtotime('-1 hour')) {
     $view = views_get_view('events_schedule_rss_feeds'); //test_view is the view machine name
     $view->set_display($display); //block is the view display name
@@ -55,13 +57,13 @@ function huvi_rss_feeds_get_from_file ($type) {
     $content = $view->render();
     file_put_contents($file_path, $content);
     print $content;
-    
+
   }
   else {
     echo(header('content-type: text/xml'));
     $content = file_get_contents($file_path);
     echo $content;
-  } 
+  }
 }
 
 /**
@@ -319,7 +321,8 @@ function _huvi_rss_feeds_node_to_rss_fields() {
     'field_map_markers' => 'map_markers',
     'field_tickets' => 'ticketurl',
     'field_isfree' => 'isfree',
-    'field_description' => 'description'
+    'field_description' => 'description',
+    'field_main_event_ref' => 'katusuritus'
   );
   return $return;
 }
@@ -330,6 +333,7 @@ function _huvi_rss_feeds_fc_to_rss_fields() {
     'field_korraldaja_kontakttelefon' => 'manager_phone',
     'field_korraldaja_nimi' => 'manager_name',
     'field_korraldaja_e_post' => 'manager_email',
+    'field_schedule_city_id' => 'linnaosa'
   );
   return $return;
 }
@@ -338,11 +342,23 @@ function _huvi_rss_feeds_field_collection_to_rss($fc, &$vars) {
   $fields = _huvi_rss_feeds_fc_to_rss_fields();
   foreach ($fc  as $item){
     foreach ($fields as $field => $var) {
-      if (isset($item->{$field}['und'])) {
-          if (isset($item->{$field}['und'][0]['value'])) {
-            $vars[$var] = $item->{$field}['und'][0]['safe_value'];
+      switch ($field) {
+        case 'field_schedule_city_id':
+          if (isset($item->{$field}['und'])) {
+            if (isset($item->{$field}['und'][0]['value'])) {
+              $linnaosa =  _huvi_rss_feeds_linnaosa();
+              $vars[$var] = $linnaosa[$item->{$field}['und'][0]['value']];
+            }
           }
-      }
+          break;
+        default :
+          if (isset($item->{$field}['und'])) {
+            if (isset($item->{$field}['und'][0]['value'])) {
+              $vars[$var] = $item->{$field}['und'][0]['safe_value'];
+            }
+          }
+        break;
+       }
     }
   }
 }
@@ -356,6 +372,7 @@ function _huvi_rss_feeds_field_collection_to_rss($fc, &$vars) {
  *   Event data for showing in the event template on the node page
  */
 function _huvi_rss_feeds_node_to_rss($node, &$vars) {
+  global $base_url;
   $n = $node;
   $fields = _huvi_rss_feeds_node_to_rss_fields();
   foreach ($fields as $field => $var) {
@@ -379,6 +396,14 @@ function _huvi_rss_feeds_node_to_rss($node, &$vars) {
           }
         }
         break;
+         case 'katusuritus':
+            if (isset($n->{$field}['und'])) {
+              if (isset($n->{$field}['und'][0]['nid'])) {
+                 $vars[$var] =  drupal_get_path_alias($base_url ."/node/". $n->{$field}['und'][0]['nid']);
+              }
+            }
+          break;
+
       default:
         if (isset($n->{$field}['und'])) {
           if (isset($n->{$field}['und'][0]['value'])) {
