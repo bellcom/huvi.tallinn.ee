@@ -11,8 +11,8 @@
   <link><?php print $link; ?></link>
   <description><?php print check_plain(strip_tags($description)); ?></description>
   <date><?php print $event_date ?> </date>
-  <excerpt><?php print _huvi_rss_feeds_clear_html($excerpt); ?></excerpt>
-  <predescription><?php print _huvi_rss_feeds_clear_html($pre_description); ?></predescription>
+  <excerpt><?php print check_plain($excerpt); ?></excerpt>
+  <predescription><?php print check_plain($pre_description); ?></predescription>
   <categories><?php print implode(', ' , $categories) ;?></categories>
   <?php if (isset($ticketurl) && is_array($ticketurl)) :?>
     <ticketUrl ><?php print implode(', ' , $ticketurl); ?></ticketUrl>
