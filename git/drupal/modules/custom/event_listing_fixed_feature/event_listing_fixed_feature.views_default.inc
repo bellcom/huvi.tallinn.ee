@@ -4367,8 +4367,8 @@ return true;
     0 => '0',
   );
 
-  /* Display: Root events */
-  $handler = $view->new_display('attachment', 'Root events', 'attachment_1');
+  /* Display: Roof events */
+  $handler = $view->new_display('attachment', 'Roof events', 'roof_events');
   $handler->display->display_options['display_description'] = 'root events without date';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -4524,8 +4524,8 @@ return true;
   );
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
 
-  /* Display: Root activites */
-  $handler = $view->new_display('attachment', 'Root activites', 'attachment_2');
+  /* Display: Roof activites */
+  $handler = $view->new_display('attachment', 'Roof activites', 'roof_activites');
   $handler->display->display_options['display_description'] = 'Root activities without dates';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
