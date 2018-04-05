@@ -31,6 +31,47 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'] = $place_to_print;
       $view->result[$i]->field_field_schedule_toimumiskoht[0]['rendered']['#markup'] = "";
     }
+    if ($view->current_display == 'roof_events' || $view->current_display == 'roof_activites') {
+      foreach ($view->result as $key => $row) {
+        $sub_event_ids = kultuurikava_get_sub_event_ids($row->field_schedule_field_collection_item_nid);
+        $has_future_subevents =  FALSE;
+        foreach($sub_event_ids as $sub_event_id) {
+          if (event_listing_fixed_future_subevents_exists($sub_event_id) == TRUE) {
+            $has_future_subevents = TRUE;
+            break;
+          }
+        }
+        if ($has_future_subevents ===  FALSE) {
+          unset($view->result[$key]);
+        }
+      }
+    }
   }
   return $view;
+}
+
+function event_listing_fixed_future_subevents_exists($sub_event_id) {
+  $node = node_load($sub_event_id);
+    // Use only published nodes
+    if($node->status == '1') {
+      if(isset($node->field_schedule['und'])) {
+        foreach($node->field_schedule['und'] as $key => $val) {
+          if (isset($val['value'])) {
+            $collections = entity_load('field_collection_item', array($val['value']));
+            foreach($collections as $c) {
+              if(isset($c->field_schedule_date['und'])) {
+                foreach($c->field_schedule_date['und'] as $time_key => $time) {
+                  if(isset($time['value'])) {
+                    if ($time['value'] > time()) {
+                      return TRUE;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  return FALSE;
 }
