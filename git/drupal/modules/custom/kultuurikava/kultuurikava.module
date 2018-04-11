@@ -956,7 +956,8 @@ function kultuurikava_node_to_event($node) {
     }
     if(isset($sub_events)) {
       $sub_events = _kultuurikava_rearrange_sub_events($sub_events);
-      $e['sub_events'] = $sub_events;
+      //_kultuurikava_group_sub_events($sub_events);
+      $e['sub_events'] = _kultuurikava_group_sub_events($sub_events);
     }
   }
 
@@ -1337,3 +1338,10 @@ function _kultuurikava_sort_by_timestamp($a, $b) {
   return $a['timestamp'] - $b['timestamp'];
 }
 
+function _kultuurikava_group_sub_events($arr) {
+  $sub_events = array();
+  foreach ($arr as $key => $sub_event) {
+   $sub_events[date("Ymd", $sub_event["timestamp"])][] = $sub_event;
+  }
+  return $sub_events;
+}
