@@ -68,20 +68,21 @@
     $('ul.subevent-filter-tabs li').removeClass('mobileOpen');
   }
   function subeventsFilterMobileClick(el) {
+    var is_opened = el.hasClass('open');
+
     subeventsFilterMobileCloseAll();
-    el.find('li').each(function (index, value) {
-      if ($(this).hasClass('label') == false) {
-        if ($(this).hasClass('mobileOpen') ) {
-          $(this).removeClass('mobileOpen');
-        }
-        else {
-          
+    if(is_opened == false) {
+       el.addClass('open');
+      el.find('li').each(function (index, value) {
+        if ($(this).hasClass('label') == false) {
           $(this).addClass('mobileOpen');
         }
-      }
-    el.addClass('open');
-    });    
-  }     
+      });
+    }
+    else {
+      el.removeClass('open');
+    }
+  }
   Drupal.behaviors.subevents = {attach: function () {
     if ($('#period').length) {
       $('#period').dateRangePicker(dateRangePickerConfig)

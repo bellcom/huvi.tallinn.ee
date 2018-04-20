@@ -2152,6 +2152,7 @@ ul.subevent-filter-tabs li.label{
     text-align: center;
     background: #f36722;
     color: white;
+    cursor: pointer;
   }
 @media (min-width: 44em) {
   ul.quicktabs-tabs::before {
@@ -2193,6 +2194,7 @@ ul.subevent-filter-tabs li.label{
     text-align: center;
     background: #f36722;
     color: white;
+    cursor: auto;
   }
 }
 ul.quicktabs-tabs::after,
