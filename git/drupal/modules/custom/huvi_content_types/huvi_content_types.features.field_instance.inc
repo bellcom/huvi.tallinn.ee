@@ -170,6 +170,7 @@ function huvi_content_types_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -511,7 +512,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 26,
     ),
   );
 
@@ -634,7 +635,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -744,7 +745,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -907,7 +908,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -959,7 +960,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -1011,7 +1012,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -1180,7 +1181,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -1287,7 +1288,62 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_subevents_filter'.
+  $field_instances['node-event-field_subevents_filter'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subevents_filter',
+    'label' => 'Kuva alamürituse otsingufilter',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 17,
     ),
   );
 
@@ -1443,7 +1499,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1582,7 +1638,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1668,6 +1724,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Kopeeri video aadress Youtube või Vimeo lehelt.');
   t('Korraldaja');
   t('Kui praegu loodav üritus on alamüritus, mis kuulub suurema katusürituse alla, siis alusta peaürituse kirjutamist ning selekteeri see.');
+  t('Kuva alamürituse otsingufilter');
   t('Linnaosa');
   t('Map latlng');
   t('Map markers');
