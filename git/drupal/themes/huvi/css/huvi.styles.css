@@ -2092,8 +2092,11 @@ body.blue-scheme .view-event-listing-fixed .views-exposed-widgets .views-submit-
 .block--quicktabs h2.block__title {
   display: none;
 }
-
-ul.quicktabs-tabs {
+.subevents-filters {
+  position: relative;
+}
+ul.quicktabs-tabs,
+ul.subevent-filter-tabs {
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -2105,7 +2108,7 @@ ul.quicktabs-tabs {
 	-webkit-border-radius: 3px;
   margin: 0;
 }
-ul.quicktabs-tabs::before {
+ul.quicktabs-tabs::before{
   content: "Aeg:";
   text-align: center;
   background: #f36722;
@@ -2122,6 +2125,35 @@ ul.quicktabs-tabs::before {
   width: 100%;
   display: block;
 }
+.subevents-empty {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40px;
+}
+ul.subevent-filter-tabs li.label{
+    height: auto;
+    line-height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 7px 0 1px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    width: 100%;
+    float: left;
+    box-shadow: none;
+    -webkit-box-shadow: inset 1px 10px 20px -14px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    position: relative;
+    z-index: 10;
+    margin-right: -7px;
+    text-align: center;
+    background: #f36722;
+    color: white;
+    cursor: pointer;
+  }
 @media (min-width: 44em) {
   ul.quicktabs-tabs::before {
     height: 28px;
@@ -2141,8 +2173,32 @@ ul.quicktabs-tabs::before {
     z-index: 10;
     margin-right: -7px;
   }
+  ul.subevent-filter-tabs li.label{
+    height: 28px;
+    line-height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    width: 100%;
+    float: left;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    position: relative;
+    z-index: 10;
+    margin-right: -7px;
+    text-align: center;
+    background: #f36722;
+    color: white;
+    cursor: auto;
+  }
 }
-ul.quicktabs-tabs::after {
+ul.quicktabs-tabs::after,
+ul.subevent-filter-tabs::after{
   content: '';
   background: url("../images/down-arrow.png") no-repeat top left;
   display: block;
@@ -2151,14 +2207,16 @@ ul.quicktabs-tabs::after {
   height: 26px;
   top: 13px;
   right: 20px;
-  z-index: 9;
+  z-index: 19;
 }
 @media (min-width: 44em) {
-  ul.quicktabs-tabs::after {
+  ul.quicktabs-tabs::after,
+  ul.subevent-filter-tabs::after {
     display: none;
   }
 }
-ul.quicktabs-tabs.open::after {
+ul.quicktabs-tabs.open::after ,
+ul.subevent-filter-tabs.open::after {
   background: url("../images/up-arrow.png") no-repeat top left;
 }
 ul.quicktabs-tabs.open label:first-child {
@@ -2177,6 +2235,12 @@ ul.quicktabs-tabs.open label:first-child {
     margin-bottom: 7px;
     overflow: hidden;
   }
+  ul.subevent-filter-tabs {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    overflow: hidden;
+  }
 }
 ul.quicktabs-tabs li {
   height: 38px;
@@ -2191,19 +2255,44 @@ ul.quicktabs-tabs li {
   border-bottom: 1px solid #bebebe;
   display: none;
 }
+
+ul.subevent-filter-tabs li{
+  height: 38px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  display: block;
+  z-index: 9;
+  width: 50%;
+  float: left;
+  border-bottom: 1px solid #bebebe;
+  border-right: 1px solid #bebebe;
+  display: none;
+}
+ul.subevent-filter-tabs li.label {
+  display: block;
+}
+
 ul.quicktabs-tabs li:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
-ul.quicktabs-tabs li.mobileOpen {
+ul.subevent-filter-tabs li:nth-child(odd){
+  border-right: 1px solid #bebebe;
+}
+
+ul.quicktabs-tabs li.mobileOpen,
+ul.subevent-filter-tabs li.mobileOpen {
   display: block;
 }
 @media (min-width: 44em) {
-  ul.quicktabs-tabs li.mobileOpen {
+  ul.quicktabs-tabs li.mobileOpen
+  ul.subevent-filter-tabs li.mobileOpen {
     display: table-cell;
   }
 }
 @media (min-width: 44em) {
-  ul.quicktabs-tabs li {
+  ul.quicktabs-tabs li{
     height: 28px;
     line-height: 24px;
     display: block;
@@ -2217,14 +2306,34 @@ ul.quicktabs-tabs li.mobileOpen {
     -webkit-border-radius: 0px;
     border-right: 1px solid #bebebe;
   }
+  ul.subevent-filter-tabs li{
+    height: 28px;
+    line-height: 24px;
+    display: block;
+    border-bottom: none;
+    font-size: 12px;
+    width: 25%;
+    position: relative;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-right: 1px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
+  }
 }
-ul.quicktabs-tabs li.active {
+
+ul.quicktabs-tabs li.active,
+ul.subevent-filter-tabs li.active{
   background: #ccc;
 }
-ul.quicktabs-tabs li a {
+ul.quicktabs-tabs li a,
+ul.subevent-filter-tabs li a{
   display: block;
   text-decoration: none;
   white-space:nowrap;
+}
+ul.subevent-filter-tabs li a {
+  color: #000;
 }
 ul.quicktabs-tabs li:last-of-type {
   border-right: none;
@@ -2428,7 +2537,8 @@ fieldset {
 .blue-scheme #block-quicktabs-aeg-huvitegevus ul.quicktabs-tabs::before,
 .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-categories-activity-value-i18n-wrapper > label,
 .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label,
-.blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
+.blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit,
+.blue-scheme ul.subevent-filter-tabs li.label{
   background-color: #0099cc;
   border-radius: 3px;
     -moz-border-radius: 3px;
@@ -2604,8 +2714,8 @@ body.logged-in.page-node-add-event .footer-logo, body.logged-in.page-node-edit.n
 body.logged-in.page-node-add-event .copyright p, body.logged-in.page-node-edit.node-type-event .copyright p, body.logged-in.page-loodud .copyright p, body.logged-in.page-user .copyright p, body.logged-in.page-user-edit .copyright p, body.logged-in.page-otsing .copyright p, body.logged-in.page-kasutajad .copyright p, body.logged-in.page-node-760 .copyright p, body.logged-in.page-node-764 .copyright p, body.logged-in.page-banner-listing .copyright p, body.logged-in.node-type-advertisement .copyright p, body.logged-in.page-node-add-advertisement .copyright p, body.logged-in.page-node-edit .copyright p, body.logged-in.page-admin .copyright p, body.logged-in.node-type-landing-page .copyright p, body.logged-in.page-link-click-count-stats .copyright p, body.logged-in.node-type-webform .copyright p, body.logged-in.page-403 .copyright p, body.logged-in.page-otsing-kasutaja-uritused .copyright p {
   color: #3c7cbf;
 }
-body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-node-edit.node-type-event .l-footer--main-wrapper, body.logged-in.page-loodud .l-footer--main-wrapper, body.logged-in.page-user .l-footer--main-wrapper, body.logged-in.page-user-edit .l-footer--main-wrapper, body.logged-in.page-otsing .l-footer--main-wrapper, body.logged-in.page-kasutajad .l-footer--main-wrapper, body.logged-in.page-node-760 .l-footer--main-wrapper, body.logged-in.page-node-764 .l-footer--main-wrapper, body.logged-in.page-banner-listing .l-footer--main-wrapper, body.logged-in.node-type-advertisement .l-footer--main-wrapper, body.logged-in.page-node-add-advertisement .l-footer--main-wrapper, body.logged-in.page-node-edit .l-footer--main-wrapper, body.logged-in.page-admin .l-footer--main-wrapper, body.logged-in.node-type-landing-page .l-footer--main-wrapper, body.logged-in.page-link-click-count-stats .l-footer--main-wrapper, body.logged-in.node-type-webform .l-footer--main-wrapper, body.logged-in.page-403 .l-footer--main-wrapper, body.logged-in.page-otsing-kasutaja-uritused .l-footer--main-wrapper, 
-.page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled thead, 
+body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-node-edit.node-type-event .l-footer--main-wrapper, body.logged-in.page-loodud .l-footer--main-wrapper, body.logged-in.page-user .l-footer--main-wrapper, body.logged-in.page-user-edit .l-footer--main-wrapper, body.logged-in.page-otsing .l-footer--main-wrapper, body.logged-in.page-kasutajad .l-footer--main-wrapper, body.logged-in.page-node-760 .l-footer--main-wrapper, body.logged-in.page-node-764 .l-footer--main-wrapper, body.logged-in.page-banner-listing .l-footer--main-wrapper, body.logged-in.node-type-advertisement .l-footer--main-wrapper, body.logged-in.page-node-add-advertisement .l-footer--main-wrapper, body.logged-in.page-node-edit .l-footer--main-wrapper, body.logged-in.page-admin .l-footer--main-wrapper, body.logged-in.node-type-landing-page .l-footer--main-wrapper, body.logged-in.page-link-click-count-stats .l-footer--main-wrapper, body.logged-in.node-type-webform .l-footer--main-wrapper, body.logged-in.page-403 .l-footer--main-wrapper, body.logged-in.page-otsing-kasutaja-uritused .l-footer--main-wrapper,
+.page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled thead,
 .page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled thead {
   display: none;
 }
@@ -2660,9 +2770,9 @@ body.html {
   padding-top: 10px;
 }
 
-.page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled, 
+.page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled,
 .page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled tr,
-.page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled, 
+.page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled,
 .page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled tr {
 border: none;
 background-color: transparent;
@@ -3080,6 +3190,10 @@ body.page-node-edit.node-type-event form.node-event-form .field-name-field-sched
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding,
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding {
   padding: 5px 0;
+}
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-subevents-filter,
+body.page-node-edit.node-type-event form.node-event-form .field-name-field-on-katusuritus {
+  display: inline-block;
 }
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label,
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
@@ -3993,6 +4107,28 @@ body.page-loodud .messages.messages--error {
   margin-left: -90px;
   margin-top: 25px;
 }
+.blue-scheme #modal_loader {
+  background: url("../images/huvi-loader-blue.gif");
+  background-repeat: no-repeat;
+}
+#modal_loader {
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 100px;
+    height:100px;
+    padding:30px 15px 0px;
+    background: url("../images/huvi-loader.gif");
+    background-repeat: no-repeat;
+   /*border: 3px solid #ababab;
+    box-shadow:1px 1px 10px #ababab;
+    border-radius:20px;
+    background-color: white;*/
+    z-index: 1002;
+    text-align:center;
+    overflow: auto;
+}
 @media (min-width: 44em) {
   #huvi-loader {
     margin-top: 8px;
@@ -4175,7 +4311,8 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
     position: relative;
 }
 #quicktabs-tab-event_quicktabs_for_date_range_s-5:after,
-#quicktabs-tab-aeg_huvitegevus-5:after{
+#quicktabs-tab-aeg_huvitegevus-5:after,
+#period::after{
   position: relative;
   content: "";
   border:       solid currentColor;

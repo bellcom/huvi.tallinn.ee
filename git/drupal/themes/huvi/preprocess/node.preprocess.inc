@@ -10,6 +10,13 @@ function huvi_preprocess_node(&$vars) {
   if ($node->type == 'advertisement') {
     huvi_preprocess_node_advertisement($vars);
   }
+   if ($node->type == 'event'){
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/js/huvi.subevents.filters.js');
+     drupal_add_css(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/dist/daterangepicker.min.css');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/moment.min.js');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/dist/jquery.daterangepicker_huvi.min.js');
+     drupal_add_js(drupal_get_path('theme', 'huvi') . '/js/daterangepicker.custom.languges.js');
+ }
 
 }
 

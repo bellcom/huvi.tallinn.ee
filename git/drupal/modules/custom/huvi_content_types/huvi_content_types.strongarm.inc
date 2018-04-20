@@ -34,9 +34,6 @@ function huvi_content_types_strongarm() {
       'banner_big' => array(
         'custom_settings' => TRUE,
       ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(

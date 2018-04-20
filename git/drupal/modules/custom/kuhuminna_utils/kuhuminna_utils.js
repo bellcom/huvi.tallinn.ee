@@ -9,6 +9,17 @@
     $('.field-name-field-type input').change(function() {
       change_event_type($(this).filter(':checked').val());
     });
+    if ($('.field-name-field-on-katusuritus input').filter(':checked').val() === undefined) {
+      $('.field-name-field-subevents-filter').hide();
+    }
+    $('.field-name-field-on-katusuritus input').change(function() {
+      if ($(this).filter(':checked').val() == 1) {
+        $('.field-name-field-subevents-filter').show();
+      }
+      else {
+        $('.field-name-field-subevents-filter').hide();
+      }
+    });
 
     format_date_field(); //format field sheduler
 
@@ -205,6 +216,17 @@
     change_event_type($('.field-name-field-type input').filter(':checked').val());
     $('.field-name-field-type input').change(function() {
       change_event_type($(this).filter(':checked').val());
+    });
+     if ($('.field-name-field-on-katusuritus input').filter(':checked').val() === undefined) {
+      $('.field-name-field-subevents-filter').hide();
+    }
+    $('.field-name-field-on-katusuritus input').change(function() {
+      if ($(this).filter(':checked').val() == 1) {
+        $('.field-name-field-subevents-filter').show();
+      }
+      else {
+        $('.field-name-field-subevents-filter').hide();
+      }
     });
     format_date_field ();
     $('.date-start').change(function() {

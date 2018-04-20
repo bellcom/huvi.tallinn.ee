@@ -57,11 +57,34 @@ function kultuurikava_menu() {
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
   );
+   $items['subevents/get/ajax'] = array(
+    'page callback' => 'kultuurikava_ajax_get_subevents', // Render HTML.
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
 
   return $items;
 
 }
+/*
+ * Ajax call
+ */
+function kultuurikava_ajax_get_subevents(){
+  $active_filters = $_POST['filters'];
+  $nid=$_POST['nid'];
+  if (isset($_POST['start_date']) && isset($_POST['end_date'])) {
+    $active_filters['period'] = array('start_date' => $_POST['start_date'], 'end_date' => $_POST['end_date']);
+  }
 
+  if(isset($active_filters['type'])){
+   $active_filters['type'] = _kultuurikava_mapping_event_categories_to_filters($active_filters['type']);
+  }
+
+  $sub_events = kultuurikava_get_subevents($nid, $active_filters);
+  print theme('kultuurikava_subevents', array(
+    'subevents' => $sub_events)
+  );
+}
 
 /**
  * Implements hook_cron().
@@ -325,6 +348,14 @@ function kultuurikava_theme() {
       'arguments' => array('event' => NULL),
       'template' => 'templates/kultuurikava_event_detail',
     ),
+    'kultuurikava_subevents_block' => array(
+      'render element' => array('parent_nid' => null, 'subevents' => NULL, 'filters' => null, 'existing_filters' => null, 'active_filters' => null),
+      'template' => 'templates/kultuurikava_subevents_block',
+    ),
+    'kultuurikava_subevents' => array(
+      'render element' => array('subevents' => NULL),
+      'template' => 'templates/kultuurikava_subevents',
+    )
   );
 }
 
@@ -492,15 +523,15 @@ function kultuurikava_get_kk_categories_by_slug($category_slug, $section) {
  *
  * @return string
  *   rendered link
- */ 
+ */
 function kultuurikava_ticket_link($ticket) {
 	$base_path = $GLOBALS['base_path'];
 	$link_content = $ticket['provider']['name'];
 	$link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank')));
- 
+
   if ($ticket['provider']['logo']) {
     $logo_url = drupal_get_path('theme', 'huvi') . '/images/ticketproviders/' . $ticket['provider']['logo'];
-	
+
     if(file_exists($logo_url)) {
       $link_content = '<img src="' . $base_path . $logo_url . '" />';
       $link = l($link_content, $ticket['ticketurl'], array('attributes' => array('target' => '_blank'), 'html' => TRUE));
@@ -816,7 +847,7 @@ function kultuurikava_event_data_node_save($event) {
     return;
   }
   $e = $event;
-  
+
   // Check if the node exists already
   $query = new EntityFieldQuery();
   $result = $query->entityCondition('entity_type', 'node')
@@ -844,7 +875,7 @@ function kultuurikava_event_data_node_save($event) {
     );
     $entity = entity_create('node', $values);
   }
-  	 
+
   $w = entity_metadata_wrapper('node', $entity);
   $fields = kultuurikava_event_to_node_fields();
   foreach($fields as $event_item => $field) {
@@ -852,7 +883,7 @@ function kultuurikava_event_data_node_save($event) {
       switch($event_item) {
         case 'schedule':
           // Get and remove all the existing field collection items and save them again (because there might be changes)
-	
+
           if(!empty($entity->field_schedule['und'])) {
             $s_values = array();
             foreach($entity->field_schedule['und'] as $s_key => $s_val) {
@@ -941,9 +972,9 @@ function kultuurikava_node_to_event($node) {
   $e = array();
   $addedMarkers = array();
   $fields = kultuurikava_event_to_node_fields();
-	
+
   // If the event has sub-events set
-  $sub_event_ids = kultuurikava_get_sub_event_ids($n->nid);
+ /* $sub_event_ids = kultuurikava_get_sub_event_ids($n->nid);
   if(isset($sub_event_ids)) {
     $sub_events = array();
     foreach($sub_event_ids as $sub_event_id) {
@@ -959,7 +990,7 @@ function kultuurikava_node_to_event($node) {
       //_kultuurikava_group_sub_events($sub_events);
       $e['sub_events'] = _kultuurikava_group_sub_events($sub_events);
     }
-  }
+  }*/
 
   // If the event has a main event set
   if(isset($n->field_main_event_ref['und'][0]['node'])) {
@@ -977,19 +1008,19 @@ function kultuurikava_node_to_event($node) {
       case 'name':
         $e[$event] = $n->{$field};
         break;
-		
+
 		case 'korraldaja'://Korraldaja fields
 		if(isset($n->{$field}['und'])) {
 			foreach($n->{$field}['und'] as $key => $val) {
 					if (isset($val['value'])) {
 					$collections = entity_load('field_collection_item', array($val['value']));
-			 
+
 						foreach($collections as $c) {
 							if(isset($c->field_korraldaja_nimi['und'])) {
 								foreach($c->field_korraldaja_nimi['und'] as $korraldaja_key => $nimi) {
 									if(isset($nimi['value'])) {
 									$korraldaja_nimi= $nimi['value'];
-									$e[$event][$event_key]["name"] = $korraldaja_nimi;									
+									$e[$event][$event_key]["name"] = $korraldaja_nimi;
 									}
 								}
 							}
@@ -997,42 +1028,42 @@ function kultuurikava_node_to_event($node) {
 								foreach($c->field_korraldaja_kontakttelefon['und'] as $korraldaja_key => $kontakttelefon) {
 									if(isset($kontakttelefon['value'])) {
 									$korraldaja_kontakttelefon= $kontakttelefon['value'];
-									$e[$event][$event_key]["phone"] = $korraldaja_kontakttelefon;									
+									$e[$event][$event_key]["phone"] = $korraldaja_kontakttelefon;
 									}
 								}
 							}
-							
+
 							if(isset($c->field_korraldaja_e_post['und'])) {
 								foreach($c->field_korraldaja_e_post['und'] as $korraldaja_key => $e_post) {
 									if(isset($e_post['email'])) {
-									$korraldaja_e_post= $e_post['email'];	
-									$e[$event][$event_key]["email"] = $korraldaja_e_post;									
+									$korraldaja_e_post= $e_post['email'];
+									$e[$event][$event_key]["email"] = $korraldaja_e_post;
 									}
 								}
 							}
-		
-						} 
-		
-							
+
+						}
+
+
 					}
 			}
 		}
         break;
-		
+
       case 'schedule':
         if(isset($n->{$field}['und'])) {
           $event_key = 0;
 
           foreach($n->{$field}['und'] as $key => $val) {
            if (isset($val['value'])) {
-			   
+
             $collections = entity_load('field_collection_item', array($val['value']));
-			
+
             foreach($collections as $c) {
 
               if(isset($c->field_schedule_date['und'])) {
                 foreach($c->field_schedule_date['und'] as $time_key => $time) {
-					
+
                   if(isset($time['value'])) {
                     if ($time['value'] < time()) continue;
                     $start_date = $time['value'];
@@ -1040,10 +1071,10 @@ function kultuurikava_node_to_event($node) {
                     $e[$event][$event_key]['asort'] = $start_date;
                     $e[$event][$event_key]['time'] = kultuurikava_date_format_2($start_date, $end_date);
 
-                    $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
+                    $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
                     $place = $c->field_schedule_place['und'][0]['value'];
                     if(!empty($toimumiskoht)){
-                      $e[$event][$event_key]['place'] = $toimumiskoht;	
+                      $e[$event][$event_key]['place'] = $toimumiskoht;
                       if(!empty($place))
                        $e[$event][$event_key]['place'] = ' <span class="event-place-toimumiskoht">'.$toimumiskoht .'</span><br>'. $place;
                     }
@@ -1071,7 +1102,7 @@ function kultuurikava_node_to_event($node) {
               }
             }
           }
-         } 
+         }
         }
         break;
       case 'ticketurl':
@@ -1082,7 +1113,7 @@ function kultuurikava_node_to_event($node) {
               $url_parse = explode('/', $url_parse['path']);
               $url_host = $url_parse[0];
               $url['value'] = 'http://' . $url['value'];
-			  
+
             }
             else {
               $url_host = $url_parse['host'];
@@ -1159,22 +1190,35 @@ function kultuurikava_get_sub_event_ids($node_id) {
  * @return array $sub_events
  *   Data usable for event node view
  */
-function kultuurikava_get_sub_event($node_id) {
+function kultuurikava_get_sub_event($node_id, $active_filters=array()) {
   // Get parent term id.
   $node = node_load($node_id);
+  // Static variables for filters handler
+   $existing_event_types =  &drupal_static('kultuurikava_existing_events_types');
+   $existing_districts =  &drupal_static('kultuurikava_existing_districts');
+   $existing_dates =  &drupal_static('kultuurikava_existing_dates');
+   $current_event_types = array();
   // Use only published nodes
   if($node->status == '1') {
     $return = array();
-
     if(isset($node->field_schedule['und'])) {
+      $event_type = reset(field_get_items('node', $node, 'field_type'));
+
+      if ($event_type['value'] == 'uritus') {
+        $event_category = field_get_items('node', $node, 'field_categories_event');
+      }
+      else{
+        $event_category = field_get_items('node', $node, 'field_categories_activity');
+      }
+
       foreach($node->field_schedule['und'] as $key => $val) {
 
         $tmp_data = array();
 
         if (isset($val['value'])) {
-	   
+
           $collections = entity_load('field_collection_item', array($val['value']));
-			
+
           foreach($collections as $c) {
 
             if(isset($c->field_schedule_date['und'])) {
@@ -1183,11 +1227,39 @@ function kultuurikava_get_sub_event($node_id) {
                 $tmp_time = '';
                 if(isset($time['value'])) {
                   if ($time['value'] < time()) continue;
+                  _kultuurikava_get_relative_date_filters($time['value']);
                   $start_date = $time['value'];
+                  // Apply date filter
+                  if (isset($active_filters['date']) && !empty($active_filters['date'])){
+                    $period_start_date =  null;
+                    $period_end_date = null;
+                    if(($active_filters['date'][0]=='period') && isset($active_filters['period'])) {
+                      $period_start_date = strtotime($active_filters['period']['start_date']);
+                      $period_end_date = strtotime($active_filters['period']['end_date']);
+                    }
+                    if(_kultuurikava_check_date_filters($time['value'], $active_filters['date'][0], $period_start_date, $period_end_date) == FALSE) {
+                      continue;
+                    }
+                  }
                   $end_date = (isset($time['value2'])) ? $time['value2'] : '';
                   $tmp_time = kultuurikava_date_format_2($start_date, $end_date, TRUE);
+                  // Apply linnaosa filter
+                  $existing_districts[] = $c->field_schedule_city_id['und'][0]['value'];
+                  if (isset($active_filters['district'])
+                      && !empty($active_filters['district'])
+                      && !in_array($c->field_schedule_city_id['und'][0]['value'], $active_filters['district']) ) {
+                    continue;
+                  }
+                  //// Apply tüüp filter
+                  foreach ($event_category as $value) {
+                    $existing_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
+                    $current_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
+                  }
+                  if(isset($active_filters['type']) && !empty($active_filters['type'])) {
+                    if (array_intersect($active_filters['type'], $current_event_types) == array()) continue;
+                  }
 
-                  $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name; 
+                  $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
                   $place = $c->field_schedule_place['und'][0]['value'];
                   if(!empty($toimumiskoht)) {
                     $tmp_place = $toimumiskoht;
@@ -1356,4 +1428,251 @@ function _kultuurikava_group_sub_events($arr) {
    $sub_events[date("Ymd", $sub_event["timestamp"])][] = $sub_event;
   }
   return $sub_events;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function kultuurikava_block_info() {
+  $blocks = array();
+  $blocks['kultuurikava_sub_events_block'] = array(
+    'info' => t('Subevents'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kultuurikava_block_view($delta='', $nid=null) {
+  $block = array();
+  switch($delta) {
+    case 'kultuurikava_sub_events_block' :
+      if (isset($nid)) {
+        $filters = array();
+        $active_filters = array('date' => array('all'));
+
+        $node = node_load($nid);
+        $show_filters = field_get_items('node', $node, 'field_subevents_filter');
+         $existing_dates =  &drupal_static('kultuurikava_existing_dates');
+         $existing_dates = array('all', 'period');
+        if ($show_filters && $show_filters[0]['value'] == 1) {
+          $event_type = reset(field_get_items('node', $node, 'field_type'));
+          $filters = kultuurikava_get_filters($event_type['value']);
+        }
+        $sub_events = kultuurikava_get_subevents($nid, $active_filters);
+        $existing_districts = &drupal_static('kultuurikava_existing_districts');
+        $existing_event_types =  &drupal_static('kultuurikava_existing_events_types');
+        $existing_event_types = array_unique($existing_event_types);
+        $existing_event_types = _kultuurikava_mapping_filters_to_event_categories($existing_event_types);
+        $existing_districts = array_unique($existing_districts);
+        $existing_dates = array_unique($existing_dates);
+        if (count($existing_districts) == 1){
+          unset($filters['district']);
+        }
+        if (count($existing_event_types ) == 1){
+          unset($filters['type']);
+        }
+        $existing_filters = array ('district' => $existing_districts, 'type' => $existing_event_types , 'date' => $existing_dates);
+        $block['content'] = theme('kultuurikava_subevents_block', array('parent_nid' => $nid,
+          'subevents' => $sub_events,
+          'filters' => $filters,
+          'existing_filters' => $existing_filters,
+          'active_filters'=> $active_filters)
+        );
+      }
+
+
+      break;
+  }
+
+  return $block;
+}
+/*
+ * Helper function
+ * @return subevents for node
+ */
+function kultuurikava_get_subevents($nid, $active_filters = array()) {
+  $sub_event_ids = kultuurikava_get_sub_event_ids($nid);
+  if(isset($sub_event_ids)) {
+    $sub_events = array();
+    foreach($sub_event_ids as $sub_event_id) {
+      $sub_event = kultuurikava_get_sub_event($sub_event_id, $active_filters);
+      if(isset($sub_event) && is_array($sub_event)) {
+        foreach ($sub_event as $s) {
+          $sub_events[] = $s;
+        }
+      }
+    }
+    if(isset($sub_events)) {
+      $sub_events = _kultuurikava_rearrange_sub_events($sub_events);
+      $sub_events = _kultuurikava_group_sub_events($sub_events);
+
+     return $sub_events;
+    }
+  }
+}
+/*
+ * Helper function to recieve filters
+ */
+function kultuurikava_get_filters ($event_type) {
+  $filters = array (
+    'date' => array (
+      'label' => t('Aeg'),
+        'tabs' => array (
+        'all' => t('Kõik'),
+        'today' => t('Täna'),
+        'tomorrow' => ('Homme'),
+        'fs' => t('R-P'),
+        'month' => t('Sel kuul'),
+        'period' => t('Vali ajavahemik')
+      )
+    ),
+     'type' => array (
+      'label' => t('Tüüp'),
+      'tabs' => array(
+        'muusika' => t('Muusika'),
+        'etendus' => t('Etendused'),
+        'muuseum' => t('Näitus, muuseum'),
+        'laat' => t('Mess, laat'),
+        'sport' => t('Sport'),
+        'kino' => t('Kino'),
+        'klub' => t('Pidu, klubid'),
+        'lapsed' => t('Lapsele'),
+        'varia' => t('Varia'),
+        'kunst' => t('Kunst, käsitöö'),
+        'tants' => t('Tantsimine'),
+        'sport' => t('Sport, liikumine'),
+        'tehn' => t('Tehnika'),
+        'keel' => t('Keeleõpe'),
+        'kursused' => t('Koolitused, kursused')
+       )
+      ),
+    'district' => array (
+      'label' => t('Linnaosa'),
+      'tabs' => array(
+        2944195 => 'Põhja-Tallinn',
+        2944191 => 'Kesklinn',
+        2944187 => 'Haabersti',
+        2944189 => 'Kristiine',
+        2944190 => 'Lasnamäe',
+        2944193 => 'Mustamäe',
+        2920234 => 'Pirita',
+        2944194 => 'Nõmme',
+      )
+    ));
+
+  return $filters;
+}
+
+/*
+ * Helper function.
+ * Return filters array based on catregories array
+ *
+ */
+function _kultuurikava_mapping_event_categories_to_filters($categories){
+  $filters =  array();
+  $event_categories =array(
+    'muusika' => array('ev_0', 'act_0'),
+    'etendus' => array('ev_1'),
+    'muuseum' => array('ev_2'),
+    'laat' => array('ev_3'),
+    'sport' => array('ev_4', 'act_3'),
+    'kino' => array('ev_5'),
+    'klub' => array('ev_6'),
+    'lapsed' => array('ev_7', 'act_7'),
+    'varia' => array('ev_8', 'act_8'),
+    'kunst' => array( 'act_1'),
+    'tants' => array('act_2'),
+    'sport' => array('act_3'),
+    'tehn' => array('act_4'),
+    'keel' => array( 'act_5'),
+    'kursused' => array('act_6'),
+  );
+   foreach($categories as $category){
+     $filters = array_merge($filters, $event_categories[$category]);
+   }
+   return  $filters;
+}
+/*
+ * Helper function.
+ * Return categories array based on filters array
+ *
+ */
+function _kultuurikava_mapping_filters_to_event_categories($filters) {
+  $categories =  array();
+  $filters_array =  array(
+    'act_0' => 'muusika',
+    'act_1' => 'kunst',
+    'act_2' => 'tants',
+    'act_3' => 'sport',
+    'act_4' => 'tehn',
+    'act_5' => 'keel',
+    'act_6' => 'kursused',
+    'act_7' => 'lapsed',
+    'act_8' => 'varia',
+    'ev_0' => 'muusika',
+    'ev_1' => 'etendus',
+    'ev_2' => 'muuseum',
+    'ev_3' => 'laat',
+    'ev_4' => 'sport',
+    'ev_5' => 'kino',
+    'ev_6' => 'klub',
+    'ev_7' => 'lapsed',
+    'ev_8' => 'varia',
+  );
+  foreach ($filters as $filter) {
+    $categories[] = $filters_array[$filter];
+  }
+  return $categories;
+}
+
+/*
+ * Helper function. Return date filters.
+ */
+
+function _kultuurikava_get_relative_date_filters($timestamp){
+  $existing_dates =  &drupal_static('kultuurikava_existing_dates');
+
+  if ($timestamp < strtotime('tomorrow')) {
+     $existing_dates[] = 'today';
+  }
+  if($timestamp > strtotime('tomorrow') && $timestamp < strtotime('tomorrow + 1 day')) {
+     $existing_dates[] = 'tomorrow';
+  }
+  if($timestamp > strtotime('Friday this week') && $timestamp < strtotime('Monday next week')) {
+     $existing_dates[] = 'fs';
+  }
+  if ($timestamp < strtotime('last day of this month')) {
+     $existing_dates[] = 'month';
+  }
+}
+
+function _kultuurikava_check_date_filters($timestamp, $filter, $start_date=null, $end_date=null){
+  switch ($filter) {
+    case 'all':
+      return TRUE;
+    case 'today' :
+      $start_date = time();
+      $end_date = strtotime('tomorrow');
+      break;
+    case 'tomorrow':
+      $start_date = strtotime('tomorrow');
+      $end_date = strtotime('tomorrow + 1 day');
+      break;
+    case 'fs' :
+      $start_date = strtotime('Friday this week');
+      $end_date = strtotime('Monday next week');
+      break;
+    case 'month' :
+      $start_date = time();
+      $end_date = strtotime('last day of this month');
+      break;
+  }
+  if($timestamp > $start_date && $timestamp < $end_date) {
+    return TRUE;
+  }
+
+  return FALSE;
 }
