@@ -2311,6 +2311,7 @@ ul.subevent-filter-tabs li.mobileOpen {
     line-height: 24px;
     display: block;
     border-bottom: none;
+    font-size: 12px;
     width: 25%;
     position: relative;
     border-radius: 0px;
