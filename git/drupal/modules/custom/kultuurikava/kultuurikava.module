@@ -1519,9 +1519,9 @@ function kultuurikava_get_subevents($nid, $active_filters = array()) {
 function kultuurikava_get_filters ($event_type) {
   $filters = array (
     'date' => array (
-      'label' => t('Aeg'),
+      'label' => t('Kõik toimimusajad'),
         'tabs' => array (
-        'all' => t('Kõik'),
+        'all' => t('Kõik toimimusajad'),
         'today' => t('Täna'),
         'tomorrow' => ('Homme'),
         'fs' => t('R-P'),
@@ -1529,8 +1529,22 @@ function kultuurikava_get_filters ($event_type) {
         'period' => t('Vali ajavahemik')
       )
     ),
-     'type' => array (
-      'label' => t('Tüüp'),
+
+    'district' => array (
+      'label' => t('Kõik linnaosad'),
+      'tabs' => array(
+        2944195 => 'Põhja-Tallinn',
+        2944191 => 'Kesklinn',
+        2944187 => 'Haabersti',
+        2944189 => 'Kristiine',
+        2944190 => 'Lasnamäe',
+        2944193 => 'Mustamäe',
+        2920234 => 'Pirita',
+        2944194 => 'Nõmme',
+      )
+    ),
+    'type' => array (
+      'label' => t('Kõik ürituse tüüpid'),
       'tabs' => array(
         'muusika' => t('Muusika'),
         'etendus' => t('Etendused'),
@@ -1548,20 +1562,7 @@ function kultuurikava_get_filters ($event_type) {
         'keel' => t('Keeleõpe'),
         'kursused' => t('Koolitused, kursused')
        )
-      ),
-    'district' => array (
-      'label' => t('Linnaosa'),
-      'tabs' => array(
-        2944195 => 'Põhja-Tallinn',
-        2944191 => 'Kesklinn',
-        2944187 => 'Haabersti',
-        2944189 => 'Kristiine',
-        2944190 => 'Lasnamäe',
-        2944193 => 'Mustamäe',
-        2920234 => 'Pirita',
-        2944194 => 'Nõmme',
-      )
-    ));
+      ));
 
   return $filters;
 }

@@ -12,28 +12,19 @@
   var start_date = null;
   var end_date = null;
   var currentDate = new Date();
+  var isOnFiltersList = false;
   var dateRangePickerConfig = {
     autoClose: false,
-    format: 'DD.MM.YYYY',
+    format: 'DD/MM/YYYY',
     separator: ' - ',
     language: 'et',
     autoClose: false,
     startOfWeek: 'monday',
     alwaysOpen: false,
-    startDate: currentDate.getDate() + '.' + (currentDate.getMonth() + 1) + '.' + currentDate.getFullYear(),
+    startDate: currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear(),
     getValue: function ()
     {
       return $(this).val();
-    },
-    setValue: function (s, s1, s2) {
-      if ((s1 == "" && s2 == "") || (typeof s1 === 'undefined' && typeof s2 == 'undefined'))
-        this.innerHTML = 'Vali ajavahemik';
-      if (s2 == s1) {
-        var parts = s1.split(".");
-        date = new Date(parts[2], parts[1] - 1, parts[0]);
-        this.innerHTML = s1 + ' | ' + getWeekday(date.getDay());
-      } else
-        this.innerHTML = s;
     },
   }
   function clearArray(array) {
@@ -49,18 +40,59 @@
     clearArray(date);
     clearArray(type);
     clearArray(district);
-    $('ul.subevent-filter-tabs li.active').each(function (index, value) {
-      if (!$(this).hasClass('label')) {
-        filter_type = $(this).parents('ul.subevent-filter-tabs').attr('id');
+
+    $('input:checkbox.filter-checkbox').each(function () {
+      if (this.checked) {
+        filter_type = $(this).parents('.subevents-filter').attr('id');
         if (filter_type == 'type') {
-          type.push($(this).children('a').attr('id'));
+          type.push($(this).val());
         } else if (filter_type == 'district') {
-          district.push($(this).children('a').attr('id'));
-        } else if (filter_type == 'date') {
-          date.push($(this).children('a').attr('id'));
+          district.push($(this).val());
+
         }
       }
-      ;
+    });
+    $('input:radio.filter-radio').each(function () {
+      if (this.checked) {
+
+        date.push($(this).val());
+
+      }
+
+
+    });
+
+  }
+  /* function getActiveFiltersOLD() {
+   clearArray(date);
+   clearArray(type);
+   clearArray(district);
+   $('ul.subevent-filter-tabs li.active').each(function (index, value) {
+   if (!$(this).hasClass('label')) {
+   filter_type = $(this).parents('ul.subevent-filter-tabs').attr('id');
+   if (filter_type == 'type') {
+   type.push($(this).children('a').attr('id'));
+   } else if (filter_type == 'district') {
+   district.push($(this).children('a').attr('id'));
+   } else if (filter_type == 'date') {
+   date.push($(this).children('a').attr('id'));
+   }
+   }
+   ;
+   });
+   }*/
+  function updateSubevents(nodeID) {
+    $('#modal_loader').show();
+    $.ajax({
+      type: 'POST',
+      url: '/subevents/get/ajax',
+      data: {filters: {date, type, district}, nid: nodeID, start_date: start_date, end_date: end_date},
+      dataType: "html", // Type of the content we're expecting in the response
+      success: function (data) {
+        // alert(data.children('.event-group'));
+        $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
+        $('#modal_loader').hide();
+      }
     });
   }
   function subeventsFilterMobileCloseAll() {
@@ -71,29 +103,120 @@
     var is_opened = el.hasClass('open');
 
     subeventsFilterMobileCloseAll();
-    if(is_opened == false) {
-       el.addClass('open');
+    if (is_opened == false) {
+      el.addClass('open');
       el.find('li').each(function (index, value) {
         if ($(this).hasClass('label') == false) {
           $(this).addClass('mobileOpen');
         }
       });
-    }
-    else {
+    } else {
       el.removeClass('open');
     }
   }
   Drupal.behaviors.subevents = {attach: function () {
-    if ($('#period').length) {
-      $('#period').dateRangePicker(dateRangePickerConfig)
+      $('.subevents-filter-list').mouseenter(function () {
+        isOnFiltersList = true;
+      });
+      
+      
+      $('.subevents-filter-list').mouseleave(function () {
+        isOnFiltersList = false;
+
+      });
+
+
+      $('.subevents-filter-input input').focus(function () {
+        if($(this).attr('id') == 'start_date' || $(this).attr('id') == 'end_date') {
+          return;
+        }
+        filter_id = $(this).parents('.subevents-filter').attr('id');
+        $('.subevents-filter').each(function () {
+          if ($(this).attr('id') != filter_id) {
+            $(this).find('.subevents-filter-list').hide();
+          }
+        });
+        $(this).parent('.subevents-filter-input').find('.subevents-filter-list').show();
+      });
+      $('.subevents-filter-input').click(function () {
+        if ($(this).children('input').is(':focus')) {
+          return;
+        }
+        if($(this).find('.subevents-filter-list').css('display') == 'block' && isOnFiltersList == false) {
+          $(this).find('.subevents-filter-list').hide()
+        }
+        else {
+          $(this).find('.subevents-filter-textbox').focus();
+      }
+        
+      });
+
+      $('.check-all-filters-link').click(function (e) {
+        e.preventDefault();
+        selectList = $(this).parents('.subevents-filter-list');
+        selectList.find('.regular-checkbox').prop('checked', true);
+        getActiveFilters();
+        parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
+        updateSubevents(parent_node_array[1]);
+      });
+      $('.uncheck-all-filters-link').click(function (e) {
+        e.preventDefault();
+        selectList = $(this).parents('.subevents-filter-list');
+        selectList.find('.regular-checkbox').prop('checked', false);
+        getActiveFilters();
+        parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
+        updateSubevents(parent_node_array[1]);
+      });
+      $(window).click(function () {
+        if ($(".subevents-filter-input input").is(":focus") || isOnFiltersList) {
+
+        } else {
+          $('.subevents-filter-list').hide();
+        }
+      });
+
+      $('.filter-checkbox').change(function (e) {
+
+        getActiveFilters();
+        parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
+        updateSubevents(parent_node_array[1]);
+        return false;
+      });
+      $('#end_date').focus(function () {
+        $('#period').click();
+      });
+      $('#start_date').focus(function () {
+        $('#period').click();
+      });
+      $('.filter-radio').change(function (e) {
+       
+        if ($(this).val() == 'period')
+          return;
+        getActiveFilters();
+        parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
+        updateSubevents(parent_node_array[1]);
+        $('.subevents-filter-list').hide();
+        return false;
+      });
+      if ($('#period').length) {
+        $('#period').dateRangePicker(dateRangePickerConfig)
+                .bind('datepicker-opened', function (event, obj) {
+                  $('#period .filter-radio').prop('checked', true);
+                })
+                
                 .bind('datepicker-apply', function (event, obj) {
+                  console.log(obj);
                   if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
                     obj.date2 = obj.date1;
-                    obj.value = (obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth() + 1) < 10 ? '0'
-                            + (obj.date1.getMonth() + 1) : (obj.date1.getMonth() + 1)) + '.' + obj.date1.getFullYear()
-                            + ' | ' + getWeekday(obj.date1.getDay());
+                    $('#end_date').val('');
+                    $('#start_date').val((obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0':'') + (obj.date1.getMonth() + 1) + '/' + obj.date1.getFullYear().toString().substr(2, 2));
+                    
                   }
-                  this.innerHTML = obj.value;
+                  else {
+                    $('#start_date').val((obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0':'') + (obj.date1.getMonth() + 1) + '/' + obj.date1.getFullYear().toString().substr(2, 2));
+                    $('#end_date').val((obj.date2.getDate() < 10 ? '0' + obj.date2.getDate() : obj.date2.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0' : '') + (obj.date2.getMonth() + 1) + '/' + obj.date2.getFullYear().toString().substr(2, 2));
+                  }
+                  
                   start_date = obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() + ' 00:00:00';
                   end_date = obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() + ' 23:59:59';
 
@@ -109,12 +232,41 @@
                       // alert(data.children('.event-group'));
                       $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
                       $('#modal_loader').hide();
+                      $('.subevents-filter-list').hide();
                     }
                   });
                 })
+        /*OLD
+         * $('#period').dateRangePicker(dateRangePickerConfig)
+         .bind('datepicker-apply', function (event, obj) {
+         if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
+         obj.date2 = obj.date1;
+         obj.value = (obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth() + 1) < 10 ? '0'
+         + (obj.date1.getMonth() + 1) : (obj.date1.getMonth() + 1)) + '.' + obj.date1.getFullYear()
+         + ' | ' + getWeekday(obj.date1.getDay());
+         }
+         this.innerHTML = obj.value;
+         start_date = obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() + ' 00:00:00';
+         end_date = obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() + ' 23:59:59';
+         
+         getActiveFilters();
+         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
+         $('#modal_loader').show();
+         $.ajax({
+         type: 'POST',
+         url: '/subevents/get/ajax',
+         data: {filters: {date, type, district}, nid: parent_node_array[1], start_date: start_date, end_date: end_date},
+         dataType: "html", // Type of the content we're expecting in the response
+         success: function (data) {
+         // alert(data.children('.event-group'));
+         $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
+         $('#modal_loader').hide();
+         }
+         });
+         })*/
 
-    }
-      $('a.subevent-filter-tab').click(function (e) {
+      }
+      /*$('a.subevent-filter-tab').click(function (e) {
         e.preventDefault();
 
         filter_type = $(this).parents('ul.subevent-filter-tabs').attr('id');
@@ -135,7 +287,7 @@
 
         getActiveFilters();
         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
-         $('#modal_loader').show();
+        $('#modal_loader').show();
         $.ajax({
           type: 'POST',
           url: '/subevents/get/ajax',
@@ -144,14 +296,14 @@
           success: function (data) {
             // alert(data.children('.event-group'));
             $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
-             $('#modal_loader').hide();
+            $('#modal_loader').hide();
           }
         });
         return false;
       });
       $('ul.subevent-filter-tabs li.label').click(function () {
         subeventsFilterMobileClick($(this).parent());
-        })
+      })*/
     }
   };
 })(jQuery);
