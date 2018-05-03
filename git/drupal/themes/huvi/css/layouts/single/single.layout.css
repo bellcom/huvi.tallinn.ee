@@ -362,9 +362,16 @@ h1 {
 
   .page-content {
     margin: auto;
-    overflow: hidden;
+    //overflow: hidden;
     margin-left: 8px;
     margin-top: 20px;
+  }
+  .page-content:after{
+    content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
   }
   .page-content .page-content-left {
     float: left;
