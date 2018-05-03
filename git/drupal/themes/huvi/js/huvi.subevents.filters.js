@@ -63,24 +63,6 @@
     });
 
   }
-  /* function getActiveFiltersOLD() {
-   clearArray(date);
-   clearArray(type);
-   clearArray(district);
-   $('ul.subevent-filter-tabs li.active').each(function (index, value) {
-   if (!$(this).hasClass('label')) {
-   filter_type = $(this).parents('ul.subevent-filter-tabs').attr('id');
-   if (filter_type == 'type') {
-   type.push($(this).children('a').attr('id'));
-   } else if (filter_type == 'district') {
-   district.push($(this).children('a').attr('id'));
-   } else if (filter_type == 'date') {
-   date.push($(this).children('a').attr('id'));
-   }
-   }
-   ;
-   });
-   }*/
   function updateSubevents(nodeID) {
     $('#modal_loader').show();
     $.ajax({
@@ -89,7 +71,6 @@
       data: {filters: {date, type, district}, nid: nodeID, start_date: start_date, end_date: end_date},
       dataType: "html", // Type of the content we're expecting in the response
       success: function (data) {
-        // alert(data.children('.event-group'));
         $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
         $('#modal_loader').hide();
       }
@@ -126,10 +107,11 @@
       });
 
 
-      $('.subevents-filter-input input').focus(function () {
+      $('.subevents-filter-input input').focus(function () {console.log('here');
         if($(this).attr('id') == 'start_date' || $(this).attr('id') == 'end_date') {
           return;
         }
+
         filter_id = $(this).parents('.subevents-filter').attr('id');
         $('.subevents-filter').each(function () {
           if ($(this).attr('id') != filter_id) {
@@ -209,16 +191,17 @@
         $('#period').click();
       });
       $('.filter-radio').change(function (e) {
-
-        if ($(this).val() == 'period')
-          return;
+        if ($(this).val() == 'period') {
+           return;
+        }
          filter_input = $(this).parents('.subevents-filter').find('.subevents-filter-textbox');
         filter_input.val($(this).attr('label'));
         getActiveFilters();
         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
         updateSubevents(parent_node_array[1]);
         $('.subevents-filter-list').hide();
-        return false;
+        $(filter_input).blur();
+        return;
       });
       if ($('#period').length) {
         $('#period').dateRangePicker(dateRangePickerConfig)
@@ -227,7 +210,6 @@
                 })
 
                 .bind('datepicker-apply', function (event, obj) {
-                  console.log(obj);
                   if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
                     obj.date2 = obj.date1;
                     $('#end_date').val('');
@@ -254,81 +236,13 @@
                     data: {filters: {date, type, district}, nid: parent_node_array[1], start_date: start_date, end_date: end_date},
                     dataType: "html", // Type of the content we're expecting in the response
                     success: function (data) {
-                      // alert(data.children('.event-group'));
                       $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
                       $('#modal_loader').hide();
                       $('.subevents-filter-list').hide();
                     }
                   });
                 })
-        /*OLD
-         * $('#period').dateRangePicker(dateRangePickerConfig)
-         .bind('datepicker-apply', function (event, obj) {
-         if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
-         obj.date2 = obj.date1;
-         obj.value = (obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth() + 1) < 10 ? '0'
-         + (obj.date1.getMonth() + 1) : (obj.date1.getMonth() + 1)) + '.' + obj.date1.getFullYear()
-         + ' | ' + getWeekday(obj.date1.getDay());
-         }
-         this.innerHTML = obj.value;
-         start_date = obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() + ' 00:00:00';
-         end_date = obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() + ' 23:59:59';
-
-         getActiveFilters();
-         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
-         $('#modal_loader').show();
-         $.ajax({
-         type: 'POST',
-         url: '/subevents/get/ajax',
-         data: {filters: {date, type, district}, nid: parent_node_array[1], start_date: start_date, end_date: end_date},
-         dataType: "html", // Type of the content we're expecting in the response
-         success: function (data) {
-         // alert(data.children('.event-group'));
-         $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
-         $('#modal_loader').hide();
-         }
-         });
-         })*/
-
+       }
       }
-      /*$('a.subevent-filter-tab').click(function (e) {
-        e.preventDefault();
-
-        filter_type = $(this).parents('ul.subevent-filter-tabs').attr('id');
-        if (filter_type == 'date') {
-          $(this).parents('ul.subevent-filter-tabs').children('li').each(function () {
-            $(this).removeClass('active')
-          });
-          if ($(this).attr('id') != 'period') {
-            start_date = null;
-            end_date = null;
-          }
-        }
-
-        $(this).parent('li').toggleClass('active');
-        if ($(this).attr('id') == 'period')
-          return false;
-
-
-        getActiveFilters();
-        parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
-        $('#modal_loader').show();
-        $.ajax({
-          type: 'POST',
-          url: '/subevents/get/ajax',
-          data: {filters: {date, type, district}, nid: parent_node_array[1], start_date: start_date, end_date: end_date},
-          dataType: "html", // Type of the content we're expecting in the response
-          success: function (data) {
-            // alert(data.children('.event-group'));
-            $('#sub_events').html(data);  // Place AJAX content inside the ajax wrapper div
-            $('#modal_loader').hide();
-          }
-        });
-        return false;
-      });
-      $('ul.subevent-filter-tabs li.label').click(function () {
-        subeventsFilterMobileClick($(this).parent());
-      })*/
-    }
   };
 })(jQuery);
