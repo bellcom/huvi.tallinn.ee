@@ -4513,7 +4513,7 @@ div.normal-top{
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio {
 	-webkit-appearance: none;
 	//background-color: #fafafa;
-	border: 1px solid #0099cc;
+	border: 1px solid #ff6600;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
 	padding: 7px;
 	border-radius: 50px;
@@ -4530,7 +4530,7 @@ div.normal-top{
 	border-radius: 50px;
 	position: absolute;
 	top: 2px;
-	background: #0099cc;
+	background: #ff6600;
 //: inset 0px 0px 10px #ff6600;
 	text-shadow: 0px;
 	left: 2px;
