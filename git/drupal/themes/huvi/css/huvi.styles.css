@@ -1,4 +1,4 @@
-bbody.cke_editable {
+body.cke_editable {
   background: none !important;
 }
 
@@ -338,7 +338,7 @@ img, media {
   margin-top: 0px;
 }
 
-.blue-scheme footer .l-footer--main-wrapper .l-footer--main-container {
+b footer .l-footer--main-wrapper .l-footer--main-container {
   background: #006699;
   background-image: url("../images/huvitegevused-footer.png");
   background-repeat: no-repeat;
@@ -4430,6 +4430,7 @@ div.normal-top{
   margin-right: 0;
   margin-top: 5px;
   margin-bottom: 5px;
+
 }
 .subevents-block .subevents-filter:last-child .subevents-filter-input  {
   margin-right: 0;
@@ -4444,6 +4445,10 @@ div.normal-top{
   width: 100%;
   line-height: 22px;
    padding-left: 10px;
+   text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 30px;
 }
 .subevents-block .subevents-filter .subevents-filter-input::before{
     position: absolute;
@@ -4460,6 +4465,9 @@ div.normal-top{
     font-weight: bold;
     pointer-events: auto;
 }
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input::before{
+  background: #0099cc;
+}
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox {
   -webkit-appearance: none;
 	//background-color: #fafafa;
@@ -4471,6 +4479,9 @@ div.normal-top{
 	position: relative;
 
 }
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox {
+  border: 1px solid #0099cc;
+}
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:active,
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked:active {
   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
@@ -4480,6 +4491,9 @@ div.normal-top{
 	border: 1px solid #ff6600;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
 	color: #ff6600;
+}
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked {
+   border: 1px solid #0099cc;
 }
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:focus {
   outline-color: #fff;
@@ -4492,18 +4506,23 @@ div.normal-top{
 	left: 0px;
 	color: #ff6600;
 }
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked:after {
+  color: #0099cc;
+}
 
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio {
 	-webkit-appearance: none;
 	//background-color: #fafafa;
-	border: 1px solid #ff6600;
+	border: 1px solid #0099cc;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
 	padding: 7px;
 	border-radius: 50px;
 	display: inline-block;
 	position: relative;
 }
-
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio {
+  border: 1px solid #0099cc;
+}
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio:checked:after {
 	content: ' ';
 	width: 10px;
@@ -4511,22 +4530,23 @@ div.normal-top{
 	border-radius: 50px;
 	position: absolute;
 	top: 2px;
-	background: #ff6600;
+	background: #0099cc;
 //: inset 0px 0px 10px #ff6600;
 	text-shadow: 0px;
 	left: 2px;
 	font-size: 32px;
 }
-
+.blue-scheme  .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio:checked:after {
+  	background:  #0099cc;
+}
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio:checked {
 	//background-color: #e9ecee;
 	color: #ff6600;
 	//border: 1px solid #ff6600;
 	//box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
 }
-
-.subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio:active, .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list.regular-radio:checked:active {
-	//box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+.blue-scheme .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-radio:checked  {
+  color: #0099cc;
 }
 
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .select-links {

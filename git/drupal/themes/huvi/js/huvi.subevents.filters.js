@@ -118,8 +118,8 @@
       $('.subevents-filter-list').mouseenter(function () {
         isOnFiltersList = true;
       });
-      
-      
+
+
       $('.subevents-filter-list').mouseleave(function () {
         isOnFiltersList = false;
 
@@ -148,11 +148,13 @@
         else {
           $(this).find('.subevents-filter-textbox').focus();
       }
-        
+
       });
 
       $('.check-all-filters-link').click(function (e) {
         e.preventDefault();
+        filter_input = $(this).parents('.subevents-filter').find('.subevents-filter-textbox');
+        filter_input.val(filter_input.attr('label'));
         selectList = $(this).parents('.subevents-filter-list');
         selectList.find('.regular-checkbox').prop('checked', true);
         getActiveFilters();
@@ -161,6 +163,9 @@
       });
       $('.uncheck-all-filters-link').click(function (e) {
         e.preventDefault();
+
+        filter_input = $(this).parents('.subevents-filter').find('.subevents-filter-textbox');
+        filter_input.val(filter_input.attr('label'));
         selectList = $(this).parents('.subevents-filter-list');
         selectList.find('.regular-checkbox').prop('checked', false);
         getActiveFilters();
@@ -176,7 +181,22 @@
       });
 
       $('.filter-checkbox').change(function (e) {
+        var select_values = [];
+        select_list = $(this).parents('.subevents-filter');
+        checkboxes_count = select_list.find('.subevents-filter-list input').length;
+        checked_checkboxes = select_list.find('.subevents-filter-list input:checked').length;
+        filter_input = select_list.find('.subevents-filter-textbox');
 
+        if (checkboxes_count == checked_checkboxes ||  checked_checkboxes == 0) {
+          filter_input.val(filter_input.attr('label'));
+        }
+        else{
+          select_list.find('input:checkbox.filter-checkbox:checked').each(function () {
+            select_values.push($(this).attr('label'));
+          });
+          filter_input.val(select_values.join(', '));
+        }
+        checkboxes =  select_list.find('.subevents-filter-list');
         getActiveFilters();
         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
         updateSubevents(parent_node_array[1]);
@@ -189,9 +209,11 @@
         $('#period').click();
       });
       $('.filter-radio').change(function (e) {
-       
+
         if ($(this).val() == 'period')
           return;
+         filter_input = $(this).parents('.subevents-filter').find('.subevents-filter-textbox');
+        filter_input.val($(this).attr('label'));
         getActiveFilters();
         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
         updateSubevents(parent_node_array[1]);
@@ -203,23 +225,26 @@
                 .bind('datepicker-opened', function (event, obj) {
                   $('#period .filter-radio').prop('checked', true);
                 })
-                
+
                 .bind('datepicker-apply', function (event, obj) {
                   console.log(obj);
                   if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
                     obj.date2 = obj.date1;
                     $('#end_date').val('');
                     $('#start_date').val((obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0':'') + (obj.date1.getMonth() + 1) + '/' + obj.date1.getFullYear().toString().substr(2, 2));
-                    
-                  }
+                    obj.value = (obj.date1.getDate() < 10 ? '0' +obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth()+1) < 10 ? '0'
+                       + (obj.date1.getMonth()+1) : (obj.date1.getMonth()+1)) + '.' + obj.date1.getFullYear()
+                       + ' | ' + getWeekday(obj.date1.getDay());
+                            }
                   else {
+
                     $('#start_date').val((obj.date1.getDate() < 10 ? '0' + obj.date1.getDate() : obj.date1.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0':'') + (obj.date1.getMonth() + 1) + '/' + obj.date1.getFullYear().toString().substr(2, 2));
                     $('#end_date').val((obj.date2.getDate() < 10 ? '0' + obj.date2.getDate() : obj.date2.getDate()) + '/' + ((obj.date1.getMonth() + 1) < 10 ? '0' : '') + (obj.date2.getMonth() + 1) + '/' + obj.date2.getFullYear().toString().substr(2, 2));
                   }
-                  
+
                   start_date = obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() + ' 00:00:00';
                   end_date = obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() + ' 23:59:59';
-
+                  $('#date .subevents-filter-textbox').val(obj.value);
                   getActiveFilters();
                   parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
                   $('#modal_loader').show();
@@ -248,7 +273,7 @@
          this.innerHTML = obj.value;
          start_date = obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() + ' 00:00:00';
          end_date = obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() + ' 23:59:59';
-         
+
          getActiveFilters();
          parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
          $('#modal_loader').show();
