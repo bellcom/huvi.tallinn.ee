@@ -36,7 +36,7 @@ function kultuurikava_menu() {
     'type' => MENU_DEFAULT_LOCAL_TASK,
   );
 
-  $items["uritus/%"] = array(
+  /*$items["uritus/%"] = array(
     'page callback' => 'kultuurikava_event_detail',
     'file' => 'kultuurikava.pages.inc',
     'page arguments' => array(1),
@@ -50,7 +50,7 @@ function kultuurikava_menu() {
     'page arguments' => array(1),
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
-  );
+  );*/
 
   $items["manualimport"] = array(
     'page callback' => 'kultuurikava_manual_import',
