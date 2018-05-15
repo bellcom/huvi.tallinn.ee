@@ -16,12 +16,12 @@
           <?php if (in_array($key, $existing_filters[$type])) : ?>
           <?php if ($type == 'date') :?>
         <div id="<?php print $key?>">
-          <input class="regular-radio filter-radio" type="radio" <?php in_array($key, $active_filters[$type]) ? print 'checked' : '' ?> name="<?php print $type?>" value = "<?php print $key?>" label="<?php print $label ?>"> <?php print $label ?> </div>
+          <input class="regular-radio filter-radio" type="radio" <?php in_array($key, $active_filters[$type]) ? print 'checked' : '' ?> name="<?php print $type?>" value = "<?php print $key?>" label="<?php print $label ?>" id = "radio_<?php print $key?>"> <label for = "radio_<?php print $key?>"><?php print $label ?> </label></div>
           <?php if ($key == 'period') :?>
         <div class="period-dates"><input type="text" id="start_date" name="start_date" placeholder="pp/kk/aa" readonly="readonly"/> - <input type="text" id="end_date" name="end_date" placeholder="pp/kk/aa" /></div>
         <?php endif;?>
             <?php else: ?>
-          <div>   <input class="regular-checkbox filter-checkbox" type="checkbox" <?php (in_array($key, $active_filters[$type]) || !isset($active_filters[$type])) ? print 'checked' : ''?> name="<?php print type ?>" value = "<?php print $key?>" id="<?php print $key?>" label="<?php print $label ?>"><?php print $label ?> </div>
+          <div>   <input class="regular-checkbox filter-checkbox" type="checkbox" <?php (in_array($key, $active_filters[$type]) || !isset($active_filters[$type])) ? print 'checked' : ''?> name="<?php print type ?>" value = "<?php print $key?>" id="<?php print $key?>" label="<?php print $label ?>"><label for = "<?php print $key?>"><?php print $label ?></label> </div>
           <?php endif ?>
 <!-- <li class="<?php (in_array($key, $active_filters[$type]) ? print 'active' : '')?>"><a href="#" id="<?php print $key ?>" class="subevent-filter-tab"><?php print $label ?></a></li>-->
           <?php endif ?>
