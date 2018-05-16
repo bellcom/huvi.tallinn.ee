@@ -107,9 +107,9 @@
       });
 
 
-      $('.subevents-filter-input input').focus(function () {console.log('here');
+      $('.subevents-filter-input input').focus(function () {
         if($(this).attr('id') == 'start_date' || $(this).attr('id') == 'end_date') {
-          return;
+          return false;
         }
 
         filter_id = $(this).parents('.subevents-filter').attr('id');
@@ -183,12 +183,6 @@
         parent_node_array = $(this).parents('.subevents-block').attr('id').split("-");
         updateSubevents(parent_node_array[1]);
         return false;
-      });
-      $('#end_date').focus(function () {
-        $('#period').click();
-      });
-      $('#start_date').focus(function () {
-        $('#period').click();
       });
       $('.filter-radio').change(function (e) {
         if ($(this).val() == 'period') {
