@@ -4458,7 +4458,7 @@ div.normal-top{
 }
 .subevents-block .subevents-filter .subevents-filter-input::before{
     position: absolute;
-    content: "\2228";
+    content: "";
     top: 5px;
     right: 0;
     height: 28px;
@@ -4467,10 +4467,22 @@ div.normal-top{
     color: #fff;
     text-align: center;
     line-height: 28px;
-    font-size: 16px;
-    font-weight: bold;
     pointer-events: auto;
     border-radius: 0 3px 3px 0;
+}
+.subevents-block .subevents-filter .subevents-filter-input::after{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid #fff;
+    border-top: 2px solid #fff;
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    top: 2px;
+    position: absolute;
+    right: 12px;
 }
 .blue-scheme .subevents-block .subevents-filter .subevents-filter-input::before{
   background: #0099cc;
