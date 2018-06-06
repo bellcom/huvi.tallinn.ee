@@ -495,7 +495,7 @@
 function fbShare(url, title, descr, image, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
-    window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+    window.open('//www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
 }
 
 function shareFB(url) {
@@ -506,7 +506,7 @@ function shareFB(url) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -517,7 +517,7 @@ function shareTwitter(url, title) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title), 'twitter-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title), 'twitter-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -528,7 +528,7 @@ function shareGoogle(url) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('https://plus.google.com/share?url=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//plus.google.com/share?url=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -536,7 +536,7 @@ function loadMap() {
     // Asynchronously Load the map API
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
+    script.src = "//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
     document.body.appendChild(script);
 }
 
@@ -627,7 +627,7 @@ function remapBackButton(url) {
 /*
  * Functionality for opening bigger map on pop-up window.
  */
-;/*(function($) {
+(function($) {
 	$(document).ready(function() {
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
@@ -664,5 +664,5 @@ function remapBackButton(url) {
 			}
 		});
 	});
-})(jQuery);*/
+})(jQuery);
 
