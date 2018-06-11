@@ -25,7 +25,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 		width:100%;
 	}
 	</style>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY"></script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY"></script>
 </head>
 <body>
 <div id="map_area"></div>

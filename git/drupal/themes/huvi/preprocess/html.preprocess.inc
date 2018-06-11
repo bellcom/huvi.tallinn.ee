@@ -17,7 +17,7 @@ function huvi_preprocess_html(&$variables) {
 
   $variables['classes_array'][] = $color_scheme_class;
 	
-  drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300', array('type' => 'external'));
-  drupal_add_css('http://fonts.googleapis.com/css?family=Roboto:400,400italic,700', array('type' => 'external'));
+  drupal_add_css('//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,700,300', array('type' => 'external'));
+  drupal_add_css('//fonts.googleapis.com/css?family=Roboto:400,400italic,700', array('type' => 'external'));
 	
 }
