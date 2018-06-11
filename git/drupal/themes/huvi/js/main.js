@@ -506,7 +506,7 @@ function shareFB(url) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -517,7 +517,7 @@ function shareTwitter(url, title) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title), 'twitter-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title), 'twitter-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -528,7 +528,7 @@ function shareGoogle(url) {
     var winTop = (screen.height / 2) - (winHeight / 2);
     var winLeft = (screen.width / 2) - (winWidth / 2);
 
-    window.open('https://plus.google.com/share?url=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
+    window.open('//plus.google.com/share?url=' + encodeURIComponent(url), 'facebook-share-dialog', 'top=' + winTop + ',left=' + winLeft + ',width=' + winWidth + ',height=' + winHeight + ',toolbar=0,status=0');
 }
 
 
@@ -536,7 +536,7 @@ function loadMap() {
     // Asynchronously Load the map API
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
+    script.src = "//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
     document.body.appendChild(script);
 }
 
