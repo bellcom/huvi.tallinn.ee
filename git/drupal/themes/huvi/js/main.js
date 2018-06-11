@@ -627,7 +627,7 @@ function remapBackButton(url) {
 /*
  * Functionality for opening bigger map on pop-up window.
  */
-;/*(function($) {
+(function($) {
 	$(document).ready(function() {
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
 		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
@@ -664,5 +664,5 @@ function remapBackButton(url) {
 			}
 		});
 	});
-})(jQuery);*/
+})(jQuery);
 
