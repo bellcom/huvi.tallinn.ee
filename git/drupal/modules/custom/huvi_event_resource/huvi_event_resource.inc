@@ -25,10 +25,10 @@ function huvi_event_resource_add_event($data) {
   // Requered fields checking
   foreach ($requered_fields as $field_name)
     if (!isset($data[$field_name]) || empty($data[$field_name]))
-      return services_error('Requered field ' . $field_name . ' is missing', 406);
+      return services_error('Required field ' . $field_name . ' is missing', 406);
 
   if (!isset($data['active']) || !in_array($data['active'], array(0, 1)))
-    return services_error('Requered field active is missing', 406);
+    return services_error('Required field active is missing', 406);
   // Check if the node exists already
   if (isset($data['id']) && !empty($data['id'])) {
     $query = new EntityFieldQuery();
