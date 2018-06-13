@@ -73,7 +73,7 @@ function huvi_event_resource_add_event($data) {
   $w = entity_metadata_wrapper('node', $entity);
   $fields = huvi_event_resource_event_to_node_fields();
 
-
+  $toimumiskoht_vocab = taxonomy_vocabulary_machine_name_load('toimumiskoht');
 
   foreach ($fields as $event_item => $field) {
     if (isset($data[$event_item])) {
@@ -117,13 +117,25 @@ function huvi_event_resource_add_event($data) {
               ));
             }
             $city_area = isset($val['city_area']) ? $val['city_area'] : $data['city_area'];
-            $place = isset($val['place']) ? $val['place'] : $data['place'];
-            $toimumiskoht = isset($val['place']) ? $val['toimumiskoht'] : $data['toimumiskoht'];
+
+            $toimumiskoht = isset($val['place']) ? $val['place'] : $data['place'];
             if (isset($city_area) && $city_id = huvi_event_resource_get_city_id($city_area))
               $schedule_wrapper->field_schedule_city_id->set($city_id);
-            $schedule_wrapper->field_schedule_place->set($place);
-            if (isset($toimumiskoht) && $toimumiskoht = taxonomy_get_term_by_name($toimumiskoht, 'toimumiskoht'))
-              $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht));
+            if (isset($toimumiskoht)) {
+              if ($toimumiskoht_term = taxonomy_get_term_by_name($toimumiskoht, 'toimumiskoht')) {
+                $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht_term));
+              }
+              else {
+                $toimumiskoht_term = new stdClass();
+                var_dump($toimumiskoht);
+                $toimumiskoht_term->name = $toimumiskoht;
+                $toimumiskoht_term->vid = $toimumiskoht_vocab->vid;
+                taxonomy_term_save($toimumiskoht_term);
+
+                $schedule_wrapper->field_schedule_toimumis->set($toimumiskoht_term->tid);
+              }
+            }
+
           }
           break;
         case 'korraldaja':
