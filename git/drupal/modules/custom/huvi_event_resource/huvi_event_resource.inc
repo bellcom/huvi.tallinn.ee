@@ -127,7 +127,6 @@ function huvi_event_resource_add_event($data) {
               }
               else {
                 $toimumiskoht_term = new stdClass();
-                var_dump($toimumiskoht);
                 $toimumiskoht_term->name = $toimumiskoht;
                 $toimumiskoht_term->vid = $toimumiskoht_vocab->vid;
                 taxonomy_term_save($toimumiskoht_term);
