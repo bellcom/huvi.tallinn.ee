@@ -12,6 +12,9 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
   // process.
   if ($view->name == 'event_listing_fixed') {
     $count = count($view->result);
+    if(empty($view->result) or $count == 0){
+      return;
+    }
     for ($i = 0; $i < $count; $i++) {
       $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
       $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
