@@ -16,13 +16,18 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       return;
     }
     for ($i = 0; $i < $count; $i++) {
-      $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
-      $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
 
+      if(!empty($view->result[$i]->field_field_schedule_toimumis[0])){
+        $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
+      }
+      if(!empty($view->result[$i]->field_field_schedule_place)){
+        $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
+      }
       $place_to_print = '';
 
-      if (isset($toimumiskoht))
+      if (isset($toimumiskoht)){
         $place_to_print .= $toimumiskoht;
+      }  
       if (!empty($place)) {
         $place =  preg_replace('/, ?(Eesti|Estonia)$/', '', $place);
         $place =  preg_replace('/, ?\d* ?Tallinn$/', '', $place);
