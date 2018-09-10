@@ -16,6 +16,9 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       return;
     }
     for ($i = 0; $i < $count; $i++) {
+      $toimumiskoht = NULL;
+      $place_to_print = Null;
+      $place = Null;
 
       if(!empty($view->result[$i]->field_field_schedule_toimumis[0])){
         $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
@@ -23,8 +26,6 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       if(!empty($view->result[$i]->field_field_schedule_place)){
         $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
       }
-      $place_to_print = '';
-
       if (isset($toimumiskoht)){
         $place_to_print .= $toimumiskoht;
       }  
