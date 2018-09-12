@@ -396,17 +396,15 @@ b footer .l-footer--main-wrapper .l-footer--main-container {
 
 .footer-logo {
   display: inline-block;
-  margin-top: 5px;
   color: transparent;
-  width: 112px;
-  height: 38px;
+  width: 131px;
+  height: 32px;
   background: url("../images/logo_tallinn.png") center center no-repeat;
   text-indent: -9999px;
   margin-left: 30px;
 }
 @media (min-width: 44em) {
   .footer-logo {
-    height: 25px;
     margin-right: 30px;
   }
 }
