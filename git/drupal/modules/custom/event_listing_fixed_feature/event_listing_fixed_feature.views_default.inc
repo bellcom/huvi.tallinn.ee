@@ -2132,14 +2132,42 @@ return true;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2158,6 +2186,7 @@ return true;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2174,6 +2203,7 @@ return true;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2192,6 +2222,7 @@ return true;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2357,6 +2388,26 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Muu */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -2425,6 +2476,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
   $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value2']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
@@ -2433,6 +2485,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -2445,6 +2498,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
 
   /* Display: A Today */
   $handler = $view->new_display('block', 'A Today', 'block_7');
@@ -2464,14 +2518,42 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2490,6 +2572,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2506,6 +2589,7 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2524,6 +2608,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2690,6 +2775,25 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -2757,6 +2861,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -2769,6 +2874,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
 
   /* Display: A Tomorrow */
   $handler = $view->new_display('block', 'A Tomorrow', 'block_8');
@@ -2788,14 +2894,42 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2814,6 +2948,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2830,6 +2965,7 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2848,6 +2984,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3014,6 +3151,25 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -3081,6 +3237,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -3093,6 +3250,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
 
   /* Display: A F-S */
   $handler = $view->new_display('block', 'A F-S', 'block_9');
@@ -3112,14 +3270,42 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3138,6 +3324,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3154,6 +3341,7 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3172,6 +3360,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3338,6 +3527,25 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -3405,6 +3613,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -3417,6 +3626,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
 
   /* Display: A This month */
   $handler = $view->new_display('block', 'A This month', 'block_10');
@@ -3436,14 +3646,42 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3462,6 +3700,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3478,6 +3717,7 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3496,6 +3736,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3662,6 +3903,25 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
@@ -3729,6 +3989,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
@@ -3741,6 +4002,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
 
   /* Display: A Next month */
   $handler = $view->new_display('block', 'A Next month', 'block_11');
@@ -4084,14 +4346,42 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
+      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_categories_activity_value_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4110,6 +4400,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4126,6 +4417,7 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4144,6 +4436,7 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4160,6 +4453,7 @@ echo $date;
     'field_schedule_date_value' => array(
       'bef_format' => 'default',
       'more_options' => array(
+        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4171,6 +4465,7 @@ echo $date;
         'rewrite' => array(
           'filter_rewrite_values' => '',
         ),
+        'datepicker_options' => '',
       ),
     ),
   );
@@ -4310,6 +4605,25 @@ echo $date;
     3 => '3',
     4 => '4',
   );
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) */
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['id'] = 'field_categories_activity_value_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['field'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['operator_id'] = 'field_categories_activity_value_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['operator'] = 'field_categories_activity_value_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Field collection item: Välja nimetus */
   $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
   $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
@@ -4427,6 +4741,7 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
   $export['event_listing_fixed'] = $view;
 
   return $export;
