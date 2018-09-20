@@ -151,6 +151,15 @@
                 el.parent().addClass('open');
             }
         }
+        
+        function muuStatus(el) {
+            if (el.hasClass('mobileOpen')) {
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
+            }
+            else {
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
+            }
+        }
 
         $('ul.quicktabs-tabs').click(function () {
             mobileClick($(this).find('li'));
@@ -163,8 +172,10 @@
         });
         $('.views-widget-filter-field_categories_activity_value_i18n').click(function () {
             mobileClick($(this).find('.views-widget'));
+            muuStatus($(this).find('.views-widget'));
         });
-
+        
+      $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
 
         //Load map
         if ($("#map_canvas").length) {
@@ -359,6 +370,7 @@
         }
 
         function mobileClick(el) {
+          console.log('mobileClick');
             if (el.hasClass('mobileOpen')) {
                 el.removeClass('mobileOpen');
                 el.parent().removeClass('open');
@@ -370,6 +382,14 @@
             }
         }
 
+        function muuStatus(el) {
+            if (el.hasClass('mobileOpen')) {
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
+            }
+            else {
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
+            }
+        }
 
         $('ul.quicktabs-tabs').unbind('click').click(function () {
             mobileClick($(this).find('li'));
@@ -382,6 +402,7 @@
         });
         $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function () {
             mobileClick($(this).find('.views-widget'));
+            muuStatus($(this).find('.views-widget'));
         });
 
         // Change free event checkbox text
@@ -417,7 +438,7 @@
         }
         if ($("#modalContent #div_logi_sisse").is(':hidden'))
             $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height());
-        $('#huvi-loader').remove();
+        $('#huvi-loader').remove();    
     });
 
     function checkFilters() {
