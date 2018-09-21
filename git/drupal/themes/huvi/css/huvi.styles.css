@@ -2770,7 +2770,7 @@ h1 {
 body.logged-in .toolbar-menu {
   display: none;
 }
-
+body.logged-in.page-node-add.page-node-add-event #edit-field-categories-activity .form-checkboxes,
 body.logged-in.page-node-edit.node-type-event #edit-field-categories-activity .form-checkboxes{
   -moz-columns: 50px 3;
   -webkit-columns: 50px 3;
