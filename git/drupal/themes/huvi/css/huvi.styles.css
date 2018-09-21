@@ -2770,6 +2770,13 @@ h1 {
 body.logged-in .toolbar-menu {
   display: none;
 }
+
+body.logged-in.page-node-edit.node-type-event #edit-field-categories-activity .form-checkboxes{
+  -moz-columns: 50px 3;
+  -webkit-columns: 50px 3;
+  columns: 50px 3;
+}
+
 body.logged-in.page-admin .l-main, body.logged-in.node-type-landing-page .l-main, body.logged-in.page-link-click-count-stats .l-main {
   background-color: white;
   border: 1px solid #cdcdcd;
