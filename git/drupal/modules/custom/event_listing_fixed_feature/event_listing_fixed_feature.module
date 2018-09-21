@@ -52,7 +52,14 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
 function event_listing_fixed_feature_form_alter(&$form, &$form_state, $form_id) {
 
   if($form_id == 'views_exposed_form') {
-    if('views-exposed-form-event-listing-fixed-block-6' === $form['#id']){
+    $activites_displays = array('views-exposed-form-event-listing-fixed-block-6',
+      'views-exposed-form-event-listing-fixed-block-7',
+      'views-exposed-form-event-listing-fixed-block-8',
+      'views-exposed-form-event-listing-fixed-block-9',
+      'views-exposed-form-event-listing-fixed-block-10',
+      'views-exposed-form-event-listing-fixed-block-13',
+      );
+    if(in_array( $form['#id'], $activites_displays)){
       $options = $form['field_categories_activity_value_i18n']['#options'];
       $options = array_slice($options, 0, 6);
       $form['field_categories_activity_value_i18n']['#size'] = count($options);

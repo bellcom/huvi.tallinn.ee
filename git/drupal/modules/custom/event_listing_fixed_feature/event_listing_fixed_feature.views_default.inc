@@ -4357,30 +4357,11 @@ echo $date;
       'secondary_label' => 'Täpsemad valikud',
       'secondary_collapse_override' => '0',
     ),
-    'field_categories_activity_value' => array(
+    'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
         'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
@@ -4466,6 +4447,25 @@ echo $date;
           'filter_rewrite_values' => '',
         ),
         'datepicker_options' => '',
+      ),
+    ),
+    'field_categories_activity_value_i18n_1' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 1,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
       ),
     ),
   );
@@ -4586,39 +4586,39 @@ echo $date;
     'huvitegevus' => 'huvitegevus',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) */
-  $handler->display->display_options['filters']['field_categories_activity_value']['id'] = 'field_categories_activity_value';
-  $handler->display->display_options['filters']['field_categories_activity_value']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value']['field'] = 'field_categories_activity_value';
-  $handler->display->display_options['filters']['field_categories_activity_value']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_categories_activity_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator_id'] = 'field_categories_activity_value_op';
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['label'] = 'Tüüp';
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator'] = 'field_categories_activity_value_op';
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['identifier'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) */
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['id'] = 'field_categories_activity_value_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['field'] = 'field_categories_activity_value';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['group'] = 1;
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['operator_id'] = 'field_categories_activity_value_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['operator'] = 'field_categories_activity_value_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_1']['expose']['remember_roles'] = array(
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
     3 => '3',
