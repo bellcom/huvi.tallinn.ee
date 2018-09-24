@@ -61,12 +61,12 @@ function event_listing_fixed_feature_form_alter(&$form, &$form_state, $form_id) 
       );
     if(in_array( $form['#id'], $activites_displays)){
       $options = $form['field_categories_activity_value_i18n']['#options'];
-      $options = array_slice($options, 0, 6);
+      $options = array_slice($options, 0, 6, true);
       $form['field_categories_activity_value_i18n']['#size'] = count($options);
       $form['field_categories_activity_value_i18n']['#options'] = $options;
             
       $options_muu = $form['field_categories_activity_value_i18n_muu']['#options'];
-      $options_muu = array_slice($options_muu, 6);
+      $options_muu = array_slice($options_muu, 6, NULL, true);
       $form['field_categories_activity_value_i18n']['#size'] = count($options);
       $form['field_categories_activity_value_i18n_muu']['#options'] = $options_muu;
     }
