@@ -1273,9 +1273,10 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend span.active{
     background-color: rgb(204, 204, 204);
   }
-
+  .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend span.fieldset-legend{
+    padding-top: 4px;
+  }
   .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend a{
-    vertical-align: -webkit-baseline-middle;
     text-decoration: none;
     color: unset;
     font-size: 14px;
