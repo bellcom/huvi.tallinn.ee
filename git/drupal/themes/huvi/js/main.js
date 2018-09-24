@@ -153,7 +153,7 @@
         }
 
         function muuStatus(el) {
-            if (el.hasClass('mobileOpen')) {
+            if (el.hasClass('mobileOpen') && $(window).width() < 704) {
                 $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
                 $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset .fieldset-wrapper').removeAttr( 'style' );
             }
@@ -410,7 +410,7 @@
         }
 
         function muuStatus(el) {
-            if (el.hasClass('mobileOpen')) {
+            if (el.hasClass('mobileOpen') && $(window).width() < 704) {
                 $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
                 $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset .fieldset-wrapper').removeAttr( 'style' );
             }
