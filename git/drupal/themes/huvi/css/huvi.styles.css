@@ -1273,13 +1273,14 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend span.active{
     background-color: rgb(204, 204, 204);
   }
-  .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend span.fieldset-legend{
-    padding-top: 4px;
-  }
   .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend a{
     text-decoration: none;
     color: black;
     font-size: 14px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-top: 6px;
   }
   .views-exposed-widget.views-widget-filter-field_categories_activity_value_i18n_1{
     background-color: silver;
