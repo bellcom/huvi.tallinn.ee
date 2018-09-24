@@ -147,6 +147,7 @@
             }
             else {
                 mobileCloseAll();
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
@@ -404,6 +405,7 @@
             }
             else {
                 mobileCloseAll();
+                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
