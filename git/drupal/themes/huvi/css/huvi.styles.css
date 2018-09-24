@@ -1225,7 +1225,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     left: -165px;
     height: auto;
     max-height: 280px;
-    overflow: scroll;
+    overflow-y: scroll;
     background-color: rgb(234, 234, 234);
     padding: 8px;
     border: 1px solid rgb(204, 204, 204);
@@ -1278,7 +1278,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   }
   .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes-fieldset legend a{
     text-decoration: none;
-    color: unset;
+    color: black;
     font-size: 14px;
   }
   .views-exposed-widget.views-widget-filter-field_categories_activity_value_i18n_1{
