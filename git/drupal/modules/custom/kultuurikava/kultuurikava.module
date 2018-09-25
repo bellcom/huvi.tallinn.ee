@@ -1020,7 +1020,7 @@ function kultuurikava_node_to_event($node) {
 								foreach($c->field_korraldaja_nimi['und'] as $korraldaja_key => $nimi) {
 									if(isset($nimi['value'])) {
 									$korraldaja_nimi= $nimi['value'];
-									$e[$event][$event_key]["name"] = $korraldaja_nimi;
+									$e[$event][$korraldaja_key]["name"] = $korraldaja_nimi;
 									}
 								}
 							}
@@ -1028,7 +1028,7 @@ function kultuurikava_node_to_event($node) {
 								foreach($c->field_korraldaja_kontakttelefon['und'] as $korraldaja_key => $kontakttelefon) {
 									if(isset($kontakttelefon['value'])) {
 									$korraldaja_kontakttelefon= $kontakttelefon['value'];
-									$e[$event][$event_key]["phone"] = $korraldaja_kontakttelefon;
+									$e[$event][$korraldaja_key]["phone"] = $korraldaja_kontakttelefon;
 									}
 								}
 							}
@@ -1037,7 +1037,7 @@ function kultuurikava_node_to_event($node) {
 								foreach($c->field_korraldaja_e_post['und'] as $korraldaja_key => $e_post) {
 									if(isset($e_post['email'])) {
 									$korraldaja_e_post= $e_post['email'];
-									$e[$event][$event_key]["email"] = $korraldaja_e_post;
+									$e[$event][$korraldaja_key]["email"] = $korraldaja_e_post;
 									}
 								}
 							}
@@ -1070,16 +1070,19 @@ function kultuurikava_node_to_event($node) {
                     $end_date = (isset($time['value2'])) ? $time['value2'] : '';
                     $e[$event][$event_key]['asort'] = $start_date;
                     $e[$event][$event_key]['time'] = kultuurikava_date_format_2($start_date, $end_date);
-
-                    $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
-                    $place = $c->field_schedule_place['und'][0]['value'];
+                    if(!empty($c->field_schedule_toimumis)){
+                      $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
+                    }
+                    if(!empty($c->field_schedule_place)){
+                      $place = $c->field_schedule_place['und'][0]['value'];
+                    }
                     if(!empty($toimumiskoht)){
                       $e[$event][$event_key]['place'] = $toimumiskoht;
                       if(!empty($place))
                        $e[$event][$event_key]['place'] = ' <span class="event-place-toimumiskoht">'.$toimumiskoht .'</span><br>'. $place;
                     }
                     else{
-                      $e[$event][$event_key]['place'] = $place;
+                      $e[$event][$event_key]['place'] = isset($place) ? $place : '';
                     }
 
                     $event_key++;
@@ -1464,9 +1467,13 @@ function kultuurikava_block_view($delta='', $nid=null) {
         $sub_events = kultuurikava_get_subevents($nid, $active_filters);
         $existing_districts = &drupal_static('kultuurikava_existing_districts');
         $existing_event_types =  &drupal_static('kultuurikava_existing_events_types');
-        $existing_event_types = array_unique($existing_event_types);
+        if(is_array($existing_event_types)){
+          $existing_event_types = array_unique($existing_event_types);
+        }
         $existing_event_types = _kultuurikava_mapping_filters_to_event_categories($existing_event_types);
-        $existing_districts = array_unique($existing_districts);
+        if(is_array($existing_districts)){
+          $existing_districts = array_unique($existing_districts);
+        }
         $existing_dates = array_unique($existing_dates);
         if (count($existing_districts) == 1){
           unset($filters['district']);
@@ -1623,7 +1630,7 @@ function _kultuurikava_mapping_filters_to_event_categories($filters) {
     'ev_7' => 'lapsed',
     'ev_8' => 'varia',
   );
-  foreach ($filters as $filter) {
+  foreach ((array) $filters as $filter) {
     $categories[] = $filters_array[$filter];
   }
   return $categories;

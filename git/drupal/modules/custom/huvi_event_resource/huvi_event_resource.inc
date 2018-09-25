@@ -285,7 +285,12 @@ function huvi_event_resource_get_city_by_id($city_id) {
     2920234 => "Pirita",
     2944195 => "Põhja-Tallinn"
   );
-  return $cities[$city_id];
+  if (!empty($cities[$city_id])) {
+    return $cities[$city_id];
+  }
+  else {
+    return NULL;
+  }
 }
 
 /**
@@ -422,7 +427,7 @@ function huvi_event_resource_node_to_event($node) {
                   foreach ($c->field_korraldaja_nimi['und'] as $korraldaja_key => $nimi) {
                     if (isset($nimi['value'])) {
                       $korraldaja_nimi = $nimi['value'];
-                      $e[$event][$event_key]["name"] = $korraldaja_nimi;
+                      $e[$event][$korraldaja_key]["name"] = $korraldaja_nimi;
                     }
                   }
                 }
@@ -431,7 +436,7 @@ function huvi_event_resource_node_to_event($node) {
                   foreach ($c->field_korraldaja_kontakttelefon['und'] as $korraldaja_key => $kontakttelefon) {
                     if (isset($kontakttelefon['value'])) {
                       $korraldaja_kontakttelefon = $kontakttelefon['value'];
-                      $e[$event][$event_key]["phone"] = $korraldaja_kontakttelefon;
+                      $e[$event][$korraldaja_key]["phone"] = $korraldaja_kontakttelefon;
                     }
                   }
                 }
@@ -440,7 +445,7 @@ function huvi_event_resource_node_to_event($node) {
                   foreach ($c->field_korraldaja_e_post['und'] as $korraldaja_key => $e_post) {
                     if (isset($e_post['email'])) {
                       $korraldaja_e_post = $e_post['email'];
-                      $e[$event][$event_key]["email"] = $korraldaja_e_post;
+                      $e[$event][$korraldaja_key]["email"] = $korraldaja_e_post;
                     }
                   }
                 }
@@ -481,7 +486,9 @@ function huvi_event_resource_node_to_event($node) {
                   // var_dump($city_area);
                   if (isset($city_area))
                     $e[$event][$key]['city_area'] = $city_area;
-                  $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
+                    if (!empty($c->field_schedule_toimumis['und'][0]['taxonomy_term'])) {
+                      $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
+                  }
                   if (!empty($toimumiskoht)) {
                     $e[$event][$key]['place'] = $toimumiskoht;
                   }

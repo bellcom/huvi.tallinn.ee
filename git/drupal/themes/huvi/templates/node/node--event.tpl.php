@@ -4,7 +4,7 @@
  * Single event template
  */
 
-$event = kultuurikava_node_to_event($node);	
+$event = kultuurikava_node_to_event($node);
 //var_dump($event);//
 if(isset($event) && !empty($event)):
   drupal_set_title($event['name']);
@@ -138,7 +138,7 @@ if(isset($event) && !empty($event)):
             asort($event['schedule']);
             $rows = 0;
             $shown_rows = 10; // Rows to show before hiding the rest at first load
-          ?>		  
+          ?>
           <?php foreach($event['schedule'] as $schedule_item): ?>
             <?php if(isset($schedule_item['time'])): ?>
             <?php $rows++; ?>
@@ -180,19 +180,23 @@ if(isset($event) && !empty($event)):
         <?php if(isset($event['description']) && !empty($event['description'])): ?>
           <?php //print_r($content['field_description']); ?>
           <div class="event-description">
-		  
+
 		  <?php print(kuhuminna_utils_linkify($event['description'])); ?>
           </div>
         <?php endif; ?>
-		
+
 		<div class="event-korraldaja">
-		 <?php //Korraldaja 
+		 <?php //Korraldaja
 		  if(isset($event['korraldaja']) && !empty($event['korraldaja'])): ?>
 			<?php foreach($event['korraldaja'] as $korraldaja_item): ?>
 			   <p><b> <?php print t('Korraldaja') ?> </b><br/>
 			   <?php print($korraldaja_item['name']); ?><br/>
                <?php if (!empty($korraldaja_item['email'])) print($korraldaja_item['email'] . ','); ?>
-			   <?php print t('kontakttelefon') ?>: <?php print($korraldaja_item['phone']); ?> </p>			
+         <?php if (isset($korraldaja_item['phone']) && !empty($korraldaja_item['phone'])) {
+          print t('kontakttelefon') ?>: <?php print($korraldaja_item['phone']);
+
+         } ?>
+         </p>
 		        <?php endforeach; ?>
 		  <?php endif; ?>
 		 </div>
@@ -212,9 +216,9 @@ if(isset($event) && !empty($event)):
           </div>
         <?php endif; ?>
 
-       <?php 
+       <?php
         $block = module_invoke('kultuurikava', 'block_view', 'kultuurikava_sub_events_block', $node->nid);
- 
+
        print render($block['content']);?>
 
       </div>
