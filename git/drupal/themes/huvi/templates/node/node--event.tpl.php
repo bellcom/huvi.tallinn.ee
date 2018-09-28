@@ -114,7 +114,16 @@ if(isset($event) && !empty($event)):
       <div class="page-content-right">
 
         <h1><?php print $event['name'];?></h1>
-
+          <div class='lisainfo'>
+            <div>
+              <?php print render($content['field_age_range']); ?>
+              <?php print render($content['field_working_languages']); ?>
+            </div>
+            <div>
+              <?php print render($content['field_price']); ?>
+              <?php print render($content['field_price_information']); ?>
+            </div>
+          </div>
         <?php if(isset($event['ticketurl']) && !empty($event['ticketurl'])): ?>
         <div class="buymain">
 
