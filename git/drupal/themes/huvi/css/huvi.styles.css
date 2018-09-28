@@ -2779,6 +2779,31 @@ background-color: transparent;
 .page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled td {
   padding: 0px;
 }
+
+body.logged-in.page-node-edit.node-type-event #edit-field-price,
+body.logged-in.page-node-add.page-node-add-event #edit-field-price,
+body.logged-in.page-node-edit.node-type-event #edit-field-price-information,
+body.logged-in.page-node-add.page-node-add-event #edit-field-price-information{
+float: left;
+}
+
+body.logged-in.page-node-edit.node-type-event #edit-field-price,
+body.logged-in.page-node-add.page-node-add-event #edit-field-price,
+body.logged-in.page-node-edit.node-type-event #edit-field-price-information,
+body.logged-in.page-node-add.page-node-add-event #edit-field-price-information,
+body.logged-in.page-node-edit.node-type-event #edit-field-age-range,
+body.logged-in.page-node-add.page-node-add-event #edit-field-age-range,
+body.logged-in.page-node-edit.node-type-event #edit-field-working-languages,
+body.logged-in.page-node-add.page-node-add-event #edit-field-working-languages{
+display: none;
+}
+
+body.logged-in.page-node-edit.node-type-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox,
+body.logged-in.page-node-add.page-node-add-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox{
+  display: inline-block;
+  margin-right: 20px;
+}
+
 @media (min-width: 44em) {
   .l-content {
     margin-top: 0;
