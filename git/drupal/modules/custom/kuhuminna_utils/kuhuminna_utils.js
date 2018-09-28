@@ -63,19 +63,25 @@
     });
 
     function change_event_type(type) {
-      if(type == 'uritus') {
+      if (type == 'uritus') {
         $('.field-name-field-categories-activity').hide();
         $('.field-name-field-price').hide();
         $('.field-name-field-price-information').hide();
         $('.field-name-field-working-languages').hide();
         $('.field-name-field-categories-event').show();
+        $('.field-name-field-age-range').hide();
       }
-      if(type == 'huvitegevus') {
+      if (type == 'huvitegevus') {
         $('.field-name-field-categories-event').hide();
         $('.field-name-field-categories-activity').show();
         $('.field-name-field-price').show();
         $('.field-name-field-price-information').show();
         $('.field-name-field-working-languages').show();
+        if ($("#edit-field-categories-activity-und-7:checked").length > 0) {
+          $('.field-name-field-age-range').show();
+        } else {
+          $('.field-name-field-age-range').hide();
+        }
       }
     }
 
