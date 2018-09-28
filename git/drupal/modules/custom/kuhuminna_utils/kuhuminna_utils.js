@@ -9,6 +9,13 @@
     $('.field-name-field-type input').change(function() {
       change_event_type($(this).filter(':checked').val());
     });
+    
+    if($("#edit-field-categories-activity-und-7:checked").length > 0) {
+        $('.field-name-field-age-range').show();
+    }else{
+        $('.field-name-field-age-range').hide();
+    }
+
     $("#edit-field-categories-activity-und-7").change(function() {
     if(this.checked) {
         $('.field-name-field-age-range').show();
