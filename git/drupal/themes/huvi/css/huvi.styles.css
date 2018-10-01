@@ -293,7 +293,7 @@ img, media {
 }
 
 .field--name-field-working-languages .field__items .field__item:not(:last-child):after{
-  content: ', ';
+  content: ',\00a0';
   white-space: pre;
 }
 
