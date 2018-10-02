@@ -7,4 +7,5 @@ $baseDir = dirname(dirname($vendorDir)).'/default/files/composer';
 
 return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
+    'f54c9b5e988cab550b89236716b03511' => $vendorDir . '/graylog2/gelf-php/src/check_technical_requirements.php',
 );
