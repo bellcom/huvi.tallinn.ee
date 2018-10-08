@@ -168,8 +168,9 @@ function _huvi_ev100_rss_import_add_event($item) {
   if ($latlng) {
     $city_id = _huvi_ev100_rss_import_getcityarea($latlng);
     $place = _huvi_ev100_rss_import_getaddress($latlng);
-
-    $schedule_wrapper->field_schedule_city_id->set($city_id);
+    if ($city_id) {
+      $schedule_wrapper->field_schedule_city_id->set($city_id);
+    }
     $schedule_wrapper->field_schedule_place->set($place);
     $w->field_map_latlng->set($latlng);
     $w->field_map_markers->set($latlng);
@@ -211,7 +212,8 @@ function _huvi_ev100_rss_import_getaddress($latlng) {
  * return Google Geo json
  */
 function _huvi_ev100_rss_getgeocode($latlng) {
-  $url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' . trim($latlng) . '&sensor=false';
+  $api_key = variable_get('geolocation_googlemaps_api_key', '');
+  $url = 'https://maps.googleapis.com/maps/api/geocode/json?key=' . $api_key . '&latlng=' . trim($latlng) . '&sensor=false';
   $json = @file_get_contents($url);
   $data = json_decode($json);
   return $data;

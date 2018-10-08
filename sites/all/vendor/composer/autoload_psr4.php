@@ -7,9 +7,11 @@ $baseDir = dirname(dirname($vendorDir)).'/default/files/composer';
 
 return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    '' => array($vendorDir . '/aklump/loft_data_grids/src'),
+    'Gelf\\' => array($vendorDir . '/graylog2/gelf-php/src/Gelf'),
+    'AKlump\\LoftDataGrids\\' => array($vendorDir . '/aklump/loft_data_grids/src/AKlump/LoftDataGrids'),
 );

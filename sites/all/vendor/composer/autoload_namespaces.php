@@ -6,9 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname(dirname($vendorDir)).'/default/files/composer';
 
 return array(
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
     'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
-    'Gelf' => array($vendorDir . '/mlehner/gelf-php/src'),
     'Drupal\\Monolog' => array($baseDir . '/../../../all/modules/contrib/monolog/src'),
 );

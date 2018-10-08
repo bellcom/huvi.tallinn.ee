@@ -349,11 +349,11 @@ function kultuurikava_theme() {
       'template' => 'templates/kultuurikava_event_detail',
     ),
     'kultuurikava_subevents_block' => array(
-      'render element' => array('parent_nid' => null, 'subevents' => NULL, 'filters' => null, 'existing_filters' => null, 'active_filters' => null),
+      'variables' => array('parent_nid' => NULL, 'subevents' => NULL, 'filters' => NULL, 'existing_filters' => NULL, 'active_filters' => NULL),
       'template' => 'templates/kultuurikava_subevents_block',
     ),
     'kultuurikava_subevents' => array(
-      'render element' => array('subevents' => NULL),
+      'variables' => array('subevents' => NULL),
       'template' => 'templates/kultuurikava_subevents',
     )
   );
@@ -1205,7 +1205,8 @@ function kultuurikava_get_sub_event($node_id, $active_filters=array()) {
   if($node->status == '1') {
     $return = array();
     if(isset($node->field_schedule['und'])) {
-      $event_type = reset(field_get_items('node', $node, 'field_type'));
+      $event_type = field_get_items('node', $node, 'field_type');
+      $event_type = reset($event_type);
 
       if ($event_type['value'] == 'uritus') {
         $event_category = field_get_items('node', $node, 'field_categories_event');
@@ -1254,25 +1255,34 @@ function kultuurikava_get_sub_event($node_id, $active_filters=array()) {
                     continue;
                   }
                   //// Apply tüüp filter
-                  foreach ($event_category as $value) {
-                    $existing_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
-                    $current_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
+                  if (is_array($event_category)) {
+                    foreach ($event_category as $value) {
+                      $existing_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
+                      $current_event_types[] = ($event_type['value'] == 'uritus')? 'ev_' . $value['value'] : 'act_' . $value['value'];
+                    }
                   }
                   if(isset($active_filters['type']) && !empty($active_filters['type'])) {
                     if (array_intersect($active_filters['type'], $current_event_types) == array()) continue;
                   }
-
-                  $toimumiskoht = $c->field_schedule_toimumis['und'][0]['taxonomy_term']->name;
+                  $toimumiskoht = '';
+                  if (isset($c->field_schedule_toimumis['und'])) {
+                    $toimumiskoht = taxonomy_term_load($c->field_schedule_toimumis['und'][0]['tid'])->name;
+                  }
                   $place = $c->field_schedule_place['und'][0]['value'];
+                  $tmp_place = '';
                   if(!empty($toimumiskoht)) {
                     $tmp_place = $toimumiskoht;
-                    if(!empty($place))
-                      $return['place'] = '<span class="event-place-toimumiskoht">' . $toimumiskoht . ' ' . $place . '</span>';
                   }
-                  else {
-                    $tmp_place = $place;
+                  if(!empty($place)) {
+                    $place =  preg_replace('/, ?(Eesti|Estonia)$/', '', $place);
+                    $place =  preg_replace('/, ?\d* ?Tallinn$/', '', $place);
+                    if (!empty($tmp_place) && !empty($place)){
+                      $tmp_place .=  ', ' . $place;
+                    }
+                    else {
+                      $tmp_place = $place;
+                    }
                   }
-
                   $return[] = array(
                     'title' => $node->title,
                     'path' => url('node/' . $node->nid),
@@ -1461,7 +1471,8 @@ function kultuurikava_block_view($delta='', $nid=null) {
          $existing_dates =  &drupal_static('kultuurikava_existing_dates');
          $existing_dates = array('all', 'period');
         if ($show_filters && $show_filters[0]['value'] == 1) {
-          $event_type = reset(field_get_items('node', $node, 'field_type'));
+          $event_type = field_get_items('node', $node, 'field_type');
+          $event_type = reset($event_type);
           $filters = kultuurikava_get_filters($event_type['value']);
         }
         $sub_events = kultuurikava_get_subevents($nid, $active_filters);

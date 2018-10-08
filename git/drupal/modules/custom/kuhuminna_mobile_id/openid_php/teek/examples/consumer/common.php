@@ -64,7 +64,7 @@ function &getStore() {
         else {
             $store_path = @$_ENV['TMPDIR'];
             if (!isset($store_path)) {
-                $store_path = '/tmp';
+                $store_path = '../tmp';
             }
         }
     }

@@ -1,66 +1,5 @@
 [
     {
-        "name": "symfony/polyfill-mbstring",
-        "version": "v1.2.0",
-        "version_normalized": "1.2.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/polyfill-mbstring.git",
-            "reference": "dff51f72b0706335131b00a7f49606168c582594"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
-            "reference": "dff51f72b0706335131b00a7f49606168c582594",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "suggest": {
-            "ext-mbstring": "For best performance"
-        },
-        "time": "2016-05-18 14:26:46",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Polyfill\\Mbstring\\": ""
-            },
-            "files": [
-                "bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Nicolas Grekas",
-                "email": "p@tchwork.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony polyfill for the Mbstring extension",
-        "homepage": "https://symfony.com",
-        "keywords": [
-            "compatibility",
-            "mbstring",
-            "polyfill",
-            "portable",
-            "shim"
-        ]
-    },
-    {
         "name": "psr/log",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
@@ -169,168 +108,6 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "symfony/console",
-        "version": "v2.8.13",
-        "version_normalized": "2.8.13.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/console.git",
-            "reference": "7350016c8abcab897046f1aead2b766b84d3eff8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/console/zipball/7350016c8abcab897046f1aead2b766b84d3eff8",
-            "reference": "7350016c8abcab897046f1aead2b766b84d3eff8",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9",
-            "symfony/debug": "~2.7,>=2.7.2|~3.0.0",
-            "symfony/polyfill-mbstring": "~1.0"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.1|~3.0.0",
-            "symfony/process": "~2.1|~3.0.0"
-        },
-        "suggest": {
-            "psr/log": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/process": ""
-        },
-        "time": "2016-10-06 01:43:09",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Console\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
-    },
-    {
-        "name": "sensiolabs/security-checker",
-        "version": "v2.0.5",
-        "version_normalized": "2.0.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sensiolabs/security-checker.git",
-            "reference": "2c2a71f1c77d9765c12638c4724d9ca23658a810"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/2c2a71f1c77d9765c12638c4724d9ca23658a810",
-            "reference": "2c2a71f1c77d9765c12638c4724d9ca23658a810",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "symfony/console": "~2.0"
-        },
-        "time": "2015-05-28 14:22:40",
-        "bin": [
-            "security-checker"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "SensioLabs\\Security": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien.potencier@gmail.com"
-            }
-        ],
-        "description": "A security checker for your composer.lock"
-    },
-    {
-        "name": "symfony/yaml",
-        "version": "v2.3.42",
-        "version_normalized": "2.3.42.0",
-        "target-dir": "Symfony/Component/Yaml",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/yaml.git",
-            "reference": "2cb5f366f9e0df014fc93de46cc416ba0a3055f8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/2cb5f366f9e0df014fc93de46cc416ba0a3055f8",
-            "reference": "2cb5f366f9e0df014fc93de46cc416ba0a3055f8",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2016-05-30 08:10:17",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Yaml\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "phpoffice/phpexcel",
         "version": "1.8.1",
         "version_normalized": "1.8.1.0",
@@ -390,31 +167,88 @@
         ]
     },
     {
-        "name": "aklump/loft_data_grids",
-        "version": "0.4.17",
-        "version_normalized": "0.4.17.0",
+        "name": "symfony/yaml",
+        "version": "v3.3.18",
+        "version_normalized": "3.3.18.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/aklump/loft_data_grids.git",
-            "reference": "aa2e7636ee8b650513f70c91a0ebf43c7f362cb7"
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "af615970e265543a26ee712c958404eb9b7ac93d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aklump/loft_data_grids/zipball/aa2e7636ee8b650513f70c91a0ebf43c7f362cb7",
-            "reference": "aa2e7636ee8b650513f70c91a0ebf43c7f362cb7",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/af615970e265543a26ee712c958404eb9b7ac93d",
+            "reference": "af615970e265543a26ee712c958404eb9b7ac93d",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.0",
-            "phpoffice/phpexcel": "1.8.*",
-            "symfony/yaml": "2.3.*"
+            "php": "^5.5.9|>=7.0.8"
         },
-        "time": "2016-03-31 22:15:18",
+        "require-dev": {
+            "symfony/console": "~2.8|~3.0"
+        },
+        "suggest": {
+            "symfony/console": "For validating YAML files using the lint command"
+        },
+        "time": "2018-01-20 15:04:53",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "aklump/loft_data_grids",
+        "version": "0.4.31",
+        "version_normalized": "0.4.31.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aklump/loft_data_grids.git",
+            "reference": "52578d025514729f6c2d0d223ad6be88ce12abb3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/aklump/loft_data_grids/zipball/52578d025514729f6c2d0d223ad6be88ce12abb3",
+            "reference": "52578d025514729f6c2d0d223ad6be88ce12abb3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.5",
+            "phpoffice/phpexcel": "~1.8",
+            "symfony/yaml": ">=2.0"
+        },
+        "time": "2018-01-30 22:26:41",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "": "src/"
+                "AKlump\\LoftDataGrids\\": "src/AKlump/LoftDataGrids"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -440,17 +274,17 @@
     },
     {
         "name": "monolog/monolog",
-        "version": "1.21.0",
-        "version_normalized": "1.21.0.0",
+        "version": "1.23.0",
+        "version_normalized": "1.23.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Seldaek/monolog.git",
-            "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952"
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f42fbdfd53e306bda545845e4dbfd3e72edb4952",
-            "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+            "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
             "shasum": ""
         },
         "require": {
@@ -461,7 +295,7 @@
             "psr/log-implementation": "1.0.0"
         },
         "require-dev": {
-            "aws/aws-sdk-php": "^2.4.9",
+            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
             "doctrine/couchdb": "~1.0@dev",
             "graylog2/gelf-php": "~1.0",
             "jakub-onderka/php-parallel-lint": "0.9",
@@ -471,7 +305,7 @@
             "phpunit/phpunit-mock-objects": "2.3.0",
             "ruflin/elastica": ">=0.90 <3.0",
             "sentry/sentry": "^0.13",
-            "swiftmailer/swiftmailer": "~5.3"
+            "swiftmailer/swiftmailer": "^5.3|^6.0"
         },
         "suggest": {
             "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -486,7 +320,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2016-07-29 03:23:52",
+        "time": "2017-06-19 01:22:40",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -519,29 +353,162 @@
         ]
     },
     {
-        "name": "mlehner/gelf-php",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.9.0",
+        "version_normalized": "1.9.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/mlehner/gelf-php.git",
-            "reference": "53e4217578ea8babb31dfdbfd87ccf9ac57b42c9"
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mlehner/gelf-php/zipball/53e4217578ea8babb31dfdbfd87ccf9ac57b42c9",
-            "reference": "53e4217578ea8babb31dfdbfd87ccf9ac57b42c9",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d0cd638f4634c16d8df4508e847f14e9e43168b8",
+            "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8",
             "shasum": ""
         },
-        "require-dev": {
-            "phpunit/phpunit": "~3.7"
+        "require": {
+            "php": ">=5.3.3"
         },
-        "time": "2014-02-20 17:57:44",
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2018-08-06 14:22:27",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.9-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ]
+    },
+    {
+        "name": "symfony/console",
+        "version": "v2.8.46",
+        "version_normalized": "2.8.46.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/console.git",
+            "reference": "aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/console/zipball/aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789",
+            "reference": "aca0dcc0c75496e17e2aa0303bb9c8e6d79ed789",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "symfony/debug": "^2.7.2|~3.0.0",
+            "symfony/polyfill-mbstring": "~1.0"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1|~3.0.0",
+            "symfony/process": "~2.1|~3.0.0"
+        },
+        "suggest": {
+            "psr/log-implementation": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/process": ""
+        },
+        "time": "2018-09-30 03:33:07",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Console\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "sensiolabs/security-checker",
+        "version": "v2.0.6",
+        "version_normalized": "2.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sensiolabs/security-checker.git",
+            "reference": "7aa36d5986590e45badf052a96ee5d216043f06d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/7aa36d5986590e45badf052a96ee5d216043f06d",
+            "reference": "7aa36d5986590e45badf052a96ee5d216043f06d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "symfony/console": "~2.0"
+        },
+        "time": "2017-03-09 17:39:16",
+        "bin": [
+            "security-checker"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "Gelf": "src/"
+                "SensioLabs\\Security": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -550,20 +517,68 @@
         ],
         "authors": [
             {
-                "name": "Matt Lehner",
-                "email": "matt.lehner@tellecore.com"
-            },
-            {
-                "name": "Lennart Koopmann",
-                "email": "lennart@socketfeed.com",
-                "homepage": "http://www.lennartkoopmann.net/"
-            },
-            {
-                "name": "Julius Beckmann",
-                "email": "github@h4cc.de"
+                "name": "Fabien Potencier",
+                "email": "fabien.potencier@gmail.com"
             }
         ],
-        "description": "Fork of gelf-php with PHP namespace support",
-        "abandoned": "graylog2/gelf-php"
+        "description": "A security checker for your composer.lock"
+    },
+    {
+        "name": "graylog2/gelf-php",
+        "version": "1.5.5",
+        "version_normalized": "1.5.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bzikarsky/gelf-php.git",
+            "reference": "c4e0743ba323459b6e62222107a0898e77d2fd6e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bzikarsky/gelf-php/zipball/c4e0743ba323459b6e62222107a0898e77d2fd6e",
+            "reference": "c4e0743ba323459b6e62222107a0898e77d2fd6e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.3",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "time": "2017-06-24 10:38:25",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gelf\\": "src/Gelf"
+            },
+            "files": [
+                "src/check_technical_requirements.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Benjamin Zikarsky",
+                "email": "benjamin@zikarsky.de"
+            },
+            {
+                "name": "gelf-php contributors",
+                "homepage": "https://github.com/bzikarsky/gelf-php/contributors"
+            }
+        ],
+        "description": "A php implementation to send log-messages to a GELF compatible backend like Graylog2."
     }
 ]
