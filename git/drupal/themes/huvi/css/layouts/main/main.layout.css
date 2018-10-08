@@ -34,7 +34,7 @@ body.wait * {
 }
 
 .l-region--highlighted {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 70em) {
