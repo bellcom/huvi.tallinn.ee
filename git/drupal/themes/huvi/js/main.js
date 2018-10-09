@@ -593,6 +593,10 @@
           $('#quicktabs-aeg_huvitegevus ul.quicktabs-tabs').removeClass('open');
           $('#quicktabs-aeg_huvitegevus ul.quicktabs-tabs li').removeClass('mobileOpen');
         }
+        if ($('#quicktabs-event_quicktabs_for_date_range_s ul.quicktabs-tabs').hasClass('open')) {
+          $('#quicktabs-event_quicktabs_for_date_range_s ul.quicktabs-tabs').removeClass('open');
+          $('#quicktabs-event_quicktabs_for_date_range_s ul.quicktabs-tabs li').removeClass('mobileOpen');
+        }
       }
     }
   }());
