@@ -2,6 +2,53 @@ body.cke_editable {
   background: none !important;
 }
 
+#edit-field-categories-activity-value-i18n-muu-wrapper {
+  legend, input {
+    display: none;
+  }
+  width: 100%;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.43);
+}
+
+/*#edit-field-categories-activity-value-i18n-muu-wrapper .bef-checkboxes .form-item:nth-child(odd){
+      border-right: 1px solid #bebebe;
+}*/
+
+.form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .fieldset-wrapper {
+  .form-item:nth-child(odd) label {
+    border-right: 1px solid rgb(204, 204, 204);
+  }
+  label {
+    height: 38px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 0 15px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    cursor: pointer;
+  }
+}
+
+#edit-field-categories-activity-value-i18n-muu-wrapper {
+  .form-item.form-type-bef-checkbox {
+    float: left;
+    clear: none;
+    width: 50%;
+  }
+  fieldset.collapsed {
+    height: 0;
+  }
+}
+
+.form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .fieldset-wrapper {
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+
 /* toimumiskoht start */
 
 .field-type-list-integer.field-name-field-schedule-city-id.field-widget-options-select.form-wrapper {
@@ -259,6 +306,54 @@ img, media {
   .banner .field--name-field-adv-main-text {
     font-size: 22px;
   }
+}
+
+.lisainfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
+
+.field--name-field-age-range, .field--name-field-price {
+  margin-right: 4px;
+}
+
+.field--name-field-working-languages .field__items .field__item, .field--name-field-price-information .field__items, .field--name-field-price {
+  float: left;
+}
+
+.field--name-field-working-languages {
+  .field__label {
+    font-weight: unset;
+  }
+  text-transform: lowercase;
+  &:before {
+    content: '(';
+    white-space: pre;
+    float: left;
+  }
+}
+
+.field--name-field-price-information:before {
+  content: '(';
+  white-space: pre;
+  float: left;
+}
+
+.field--name-field-working-languages:after, .field--name-field-price-information:after {
+  content: ')';
+  white-space: pre;
+  display: inline;
+}
+
+.field--name-field-age-range {
+  float: left;
+}
+
+.field--name-field-working-languages .field__items .field__item:not(:last-child):after {
+  content: ',\00a0';
+  white-space: pre;
 }
 
 .l-region--highlighted {
@@ -1024,6 +1119,10 @@ header.l-header {
   clear: both;
 }
 
+.edit-field-categories-activity-value-i18n-muu-wrapper {
+  float: right;
+}
+
 @media (min-width: 70em) {
   #edit-full-text, .views-widget-filter-combine {
     padding-top: 0;
@@ -1256,6 +1355,89 @@ header.l-header {
       overflow: hidden;
       width: 100%;
     }
+    #edit-field-categories-activity-value-i18n-wrapper {
+      padding-right: 75px;
+      margin-right: -76px;
+      box-shadow: none;
+    }
+  }
+  #edit-field-categories-activity-value-i18n-muu-wrapper {
+    width: auto;
+  }
+  .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .fieldset-wrapper {
+    width: 100%;
+    background-color: rgb(234, 234, 234);
+    border: 1px solid rgb(204, 204, 204);
+  }
+  #edit-field-categories-activity-value-i18n-muu-wrapper .form-item.form-type-bef-checkbox {
+    float: none;
+    clear: both;
+    width: auto;
+  }
+  .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu {
+    .fieldset-wrapper {
+      position: absolute;
+      z-index: 10;
+      background-color: white;
+      width: 250px;
+      left: -165px;
+      height: auto;
+      max-height: 280px;
+      overflow-y: scroll;
+      background-color: rgb(234, 234, 234);
+      padding: 8px;
+      border: 1px solid rgb(204, 204, 204);
+      .bef-checkboxes {
+        background-color: white;
+      }
+      .form-item.form-type-bef-checkbox {
+        text-align: left;
+      }
+      label {
+        height: 38px;
+        line-height: 40px;
+        font-size: 14px;
+        font-weight: normal;
+        width: 100%;
+        display: block;
+        position: relative;
+        padding: 0 15px;
+        border: 1px solid rgb(204, 204, 204);
+        cursor: pointer;
+      }
+      .form-item input:checked + label {
+        border: 1px solid rgb(234, 234, 234);
+      }
+      input {
+        display: none;
+      }
+    }
+    .bef-select-as-checkboxes-fieldset legend {
+      height: 28px;
+      border-left: 1px solid rgb(190, 190, 190);
+      span {
+        background-image: none;
+        padding-left: 0px;
+        text-align: center;
+        width: 75px;
+        height: 28px;
+        &.active {
+          background-color: rgb(204, 204, 204);
+        }
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding-top: 6px;
+      }
+    }
+  }
+  .views-exposed-widget.views-widget-filter-field_categories_activity_value_i18n_1 {
+    background-color: silver;
   }
 }
 
@@ -2677,6 +2859,9 @@ header.l-header {
       }
     }
   }
+  #edit-field-categories-activity-value-i18n-muu-wrapper legend {
+    display: block;
+  }
 }
 
 #events_search_form {
@@ -3372,6 +3557,9 @@ header.l-header {
     right: auto;
     margin-left: 580px;
   }
+  #edit-field-categories-activity-value-i18n-muu-wrapper legend {
+    display: block;
+  }
 }
 
 #events_search_form .views-submit-button .form-submit, .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
@@ -4056,6 +4244,11 @@ body.logged-in {
   .toolbar-menu {
     display: none;
   }
+  &.page-node-add.page-node-add-event #edit-field-categories-activity .form-checkboxes, &.page-node-edit.node-type-event #edit-field-categories-activity .form-checkboxes {
+    -moz-columns: 50px 3;
+    -webkit-columns: 50px 3;
+    columns: 50px 3;
+  }
   &.page-admin .l-main, &.node-type-landing-page .l-main, &.page-link-click-count-stats .l-main {
     background-color: white;
     border: 1px solid #cdcdcd;
@@ -4363,6 +4556,19 @@ body {
 
 .page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled td, .page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled td {
   padding: 0px;
+}
+
+body.logged-in {
+  &.page-node-edit.node-type-event #edit-field-price, &.page-node-add.page-node-add-event #edit-field-price, &.page-node-edit.node-type-event #edit-field-price-information, &.page-node-add.page-node-add-event #edit-field-price-information {
+    float: left;
+  }
+  &.page-node-edit.node-type-event #edit-field-price, &.page-node-add.page-node-add-event #edit-field-price, &.page-node-edit.node-type-event #edit-field-price-information, &.page-node-add.page-node-add-event #edit-field-price-information, &.page-node-edit.node-type-event #edit-field-age-range, &.page-node-add.page-node-add-event #edit-field-age-range, &.page-node-edit.node-type-event #edit-field-working-languages, &.page-node-add.page-node-add-event #edit-field-working-languages {
+    display: none;
+  }
+  &.page-node-edit.node-type-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox, &.page-node-add.page-node-add-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox {
+    display: inline-block;
+    margin-right: 20px;
+  }
 }
 
 @media (min-width: 44em) {
@@ -5952,9 +6158,6 @@ div.normal-top {
 }
 
 @media only screen and (max-width: 500px) {
-  div.normal-top .span {
-    display: none;
-  }
   #mobile-id-button {
     left: 15%;
   }
