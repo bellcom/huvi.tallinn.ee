@@ -164,7 +164,10 @@ function kuhuminna_utils_form_alter(&$form, &$form_state, $form_id) {
     $lapsele_key = array_search('Lapsele', $form['field_categories_activity']['und']['#options']);
     if(!empty($lapsele_key)){
       unset($form['field_categories_activity']['und']['#options'][$lapsele_key]);
-      $form['field_categories_activity']['und']['#options'][$lapsele_key] = 'Lapsele';
+      $lapsele_position = 4;
+        $form['field_categories_activity']['und']['#options'] = array_slice($form['field_categories_activity']['und']['#options'], 0, $lapsele_position, true) + 
+            array($lapsele_key => 'Lapsele') + 
+            array_slice($form['field_categories_activity']['und']['#options'], $lapsele_position, NULL, true);       
     }
   }
 }

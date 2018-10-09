@@ -311,7 +311,12 @@ function huvi_event_resource_category_by_id($id, $event_type) {
       5 => 'Keeleõpe',
       6 => 'Koolitused, kursused',
       7 => 'Lapsele',
-      8 => 'Varia'
+      8 => 'Varia',
+      9 => 'Näitlemine',
+      10 => 'Filmikunst',
+      11 => 'Loodus',
+      12 => 'Robootika',
+      13 => 'Kokandus'
     ),
     'uritus' => array(
       0 => 'Muusika',
