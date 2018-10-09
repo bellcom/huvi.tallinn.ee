@@ -141,6 +141,7 @@
         }
 
         function mobileClick(el) {
+          if($(window).width() < 704){
             if (el.hasClass('mobileOpen')) {
                 el.removeClass('mobileOpen');
                 el.parent().removeClass('open');
@@ -151,6 +152,7 @@
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
+          }
         }
 
         function muuStatus(el) {
@@ -398,6 +400,7 @@
         }
 
         function mobileClick(el) {
+          if($(window).width() < 704){
           console.log('mobileClick');
             if (el.hasClass('mobileOpen')) {
                 el.removeClass('mobileOpen');
@@ -409,6 +412,7 @@
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
+          }
         }
 
         function muuStatus(el) {
@@ -573,8 +577,23 @@
       var weekdays = ['Pühapäev', 'Esmaspäev', 'Teisipäev', 'Kolmapäev', 'Neljapäev', 'Reede', 'Laupäev'];
       return weekdays[day];
    }
-})(jQuery);
 
+  (function () {
+    window.addEventListener("resize", actualResizeHandler, false);
+    function actualResizeHandler() {
+      if ($(window).width() < 704) {
+
+        if ($('.quicktabs-tabpage.now-active #edit-field-categories-activity-value-i18n-muu-wrapper fieldset').hasClass('collapsed')) {
+          $('.quicktabs-tabpage.now-active #edit-field-categories-activity-value-i18n-wrapper .views-widget').removeClass('mobileOpen');
+          $('.quicktabs-tabpage.now-active #edit-field-categories-activity-value-i18n-wrapper').removeClass('open');
+        } else {
+          $('.quicktabs-tabpage.now-active #edit-field-categories-activity-value-i18n-wrapper .views-widget').addClass('mobileOpen');
+        }
+      }
+    }
+  }());
+
+})(jQuery);
 
 function fbShare(url, title, descr, image, winWidth, winHeight) {
     var winTop = (screen.height / 2) - (winHeight / 2);
