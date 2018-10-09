@@ -314,6 +314,58 @@ function huvi_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_age_range'.
+  $field_instances['node-event-field_age_range'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_age_range',
+    'label' => 'Lapse vanus või vanuse vahemik',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_categories_activity'.
   $field_instances['node-event-field_categories_activity'] = array(
     'bundle' => 'event',
@@ -460,7 +512,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 20,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 11,
     ),
   );
 
@@ -512,7 +564,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 26,
+      'weight' => 30,
     ),
   );
 
@@ -580,7 +632,7 @@ function huvi_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_miw',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -635,7 +687,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 20,
+      'weight' => 24,
     ),
   );
 
@@ -745,7 +797,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 25,
     ),
   );
 
@@ -800,7 +852,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -855,7 +907,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 17,
     ),
   );
 
@@ -908,7 +960,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 18,
+      'weight' => 22,
     ),
   );
 
@@ -960,7 +1012,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 27,
     ),
   );
 
@@ -1012,7 +1064,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 28,
     ),
   );
 
@@ -1067,7 +1119,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 16,
+      'weight' => 20,
     ),
   );
 
@@ -1129,7 +1181,7 @@ function huvi_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_miw',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -1181,7 +1233,111 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 29,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_price'.
+  $field_instances['node-event-field_price'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '(nt 45 €/kuu)',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 27,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_price',
+    'label' => 'Hind',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 20,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_price_information'.
+  $field_instances['node-event-field_price_information'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '(kuvatakse hinna järel)',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_price_information',
+    'label' => 'Täiendav hinnainfo',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
     ),
   );
 
@@ -1236,7 +1392,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 14,
+      'weight' => 18,
     ),
   );
 
@@ -1288,7 +1444,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 27,
+      'weight' => 31,
     ),
   );
 
@@ -1343,7 +1499,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 21,
     ),
   );
 
@@ -1395,7 +1551,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 16,
     ),
   );
 
@@ -1499,7 +1655,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 19,
+      'weight' => 23,
     ),
   );
 
@@ -1586,7 +1742,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -1638,7 +1794,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 22,
+      'weight' => 26,
     ),
   );
 
@@ -1698,12 +1854,63 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 9,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_working_languages'.
+  $field_instances['node-event-field_working_languages'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 26,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_working_languages',
+    'label' => 'Töökeel',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('(kuvatakse hinna järel)');
+  t('(nt 45 €/kuu)');
   t('Aadress');
   t('Alguse ning olemasolul ka lõpuaeg');
   t('Alusta inimese nime kirjutamist ning vali loetelust kasutaja, kes peale sinu saab selle ürituse kõiki detaile muuta.');
@@ -1713,6 +1920,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Excerpt');
   t('Filled automatically with the address from the Location map field.');
   t('Hasimage');
+  t('Hind');
   t('Huvitegevuse kategooriad');
   t('ID');
   t('Iga toimumisaja kohta saab lisada eraldi väljad. Toimumiskoht kopeeritakse automaatselt. Veendu, et kõik väljad oleksid korrektselt täidetud, et üritust ka otsingufiltrite järgi üles leiaks.');
@@ -1725,6 +1933,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Korraldaja');
   t('Kui praegu loodav üritus on alamüritus, mis kuulub suurema katusürituse alla, siis alusta peaürituse kirjutamist ning selekteeri see.');
   t('Kuva alamürituse otsingufilter');
+  t('Lapse vanus või vanuse vahemik');
   t('Linnaosa');
   t('Map latlng');
   t('Map markers');
@@ -1740,6 +1949,8 @@ function huvi_content_types_field_default_field_instances() {
   t('Source');
   t('Toimumise aeg ja koht');
   t('Toimumiskoht');
+  t('Täiendav hinnainfo');
+  t('Töökeel');
   t('Tüüp');
   t('Vali, kui soovid üritust alles hiljem avalikustada. Hea kasutada sisu eelvaateks enne avalikustamist.');
   t('Video URL');
