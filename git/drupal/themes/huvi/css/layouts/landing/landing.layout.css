@@ -141,6 +141,7 @@ body {
     margin: 0 auto;
     background: url("../../../images/logo_tallinn.png") no-repeat top left;
   }
+
   .footer-fb-logo {
     display: inline-block;
     position: absolute;
@@ -152,7 +153,6 @@ body {
     background: url("../../../images/fb-footer.png") center center no-repeat;
   }
 }
-
 .landing-description {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
