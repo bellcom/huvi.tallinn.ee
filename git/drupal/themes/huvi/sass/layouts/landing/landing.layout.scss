@@ -1,14 +1,14 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * simple.layout.scss
  *
  * Styling of the "simple" layout demonstrating the Compass grid extension Susy
  * and building mobile first layouts.
  ******************************************************************************/
 @import "susyone";
+
 $textOrange: #ff6600;
 $uritusedBG: #f36722;
 $huvitegevusedBG: #0099cc;
-
 
 // Susy Variables
 
@@ -20,7 +20,7 @@ $horz-spacing-unit: 0em;
 $total-columns: 4;
 $column-width: 4em;
 $gutter-width: $horz-spacing-unit;
-$grid-padding: 0px;
+$grid-padding: 0;
 
 $container-style: magic;
 $container-width: 100%;
@@ -36,7 +36,6 @@ $desk: 70em 12; // At 70em use 16 columns.
   @include container; // Define these elements as the grid containers.
   margin-bottom: $vert-spacing-unit;
 }
-
 .l-region--highlighted,
 .l-region--help,
 .l-region--sidebar-first,
