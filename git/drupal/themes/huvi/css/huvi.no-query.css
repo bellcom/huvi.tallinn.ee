@@ -3659,6 +3659,7 @@ body.html {
 
 body.logged-in.page-node-edit.node-type-event #edit-field-price, body.logged-in.page-node-add.page-node-add-event #edit-field-price, body.logged-in.page-node-edit.node-type-event #edit-field-price-information, body.logged-in.page-node-add.page-node-add-event #edit-field-price-information {
   float: left;
+  margin-top: -25px;
 }
 body.logged-in.page-node-edit.node-type-event #edit-field-price, body.logged-in.page-node-add.page-node-add-event #edit-field-price, body.logged-in.page-node-edit.node-type-event #edit-field-price-information, body.logged-in.page-node-add.page-node-add-event #edit-field-price-information, body.logged-in.page-node-edit.node-type-event #edit-field-age-range, body.logged-in.page-node-add.page-node-add-event #edit-field-age-range, body.logged-in.page-node-edit.node-type-event #edit-field-working-languages, body.logged-in.page-node-add.page-node-add-event #edit-field-working-languages {
   display: none;
