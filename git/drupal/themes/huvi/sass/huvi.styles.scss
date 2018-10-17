@@ -4561,7 +4561,7 @@ body {
 body.logged-in {
   &.page-node-edit.node-type-event #edit-field-price, &.page-node-add.page-node-add-event #edit-field-price, &.page-node-edit.node-type-event #edit-field-price-information, &.page-node-add.page-node-add-event #edit-field-price-information {
     float: left;
-    margin-top: -25px;
+    margin-bottom: -14px;
   }
   &.page-node-edit.node-type-event #edit-field-price, &.page-node-add.page-node-add-event #edit-field-price, &.page-node-edit.node-type-event #edit-field-price-information, &.page-node-add.page-node-add-event #edit-field-price-information, &.page-node-edit.node-type-event #edit-field-age-range, &.page-node-add.page-node-add-event #edit-field-age-range, &.page-node-edit.node-type-event #edit-field-working-languages, &.page-node-add.page-node-add-event #edit-field-working-languages {
     display: none;
@@ -4570,8 +4570,12 @@ body.logged-in {
     display: inline-block;
     margin-right: 20px;
   }
-}
 
+  &.page-node-edit.node-type-event #edit-field-description,
+  &.page-node-add.page-node-add-event #edit-field-description{
+    margin-top: -10px;
+  }
+}
 @media (min-width: 44em) {
   .l-content {
     margin-top: 0;
