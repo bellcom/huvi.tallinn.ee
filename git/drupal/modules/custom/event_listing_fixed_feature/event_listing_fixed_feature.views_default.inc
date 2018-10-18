@@ -261,11 +261,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Lühike kriteerium: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
@@ -770,11 +772,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1036,11 +1040,13 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1291,11 +1297,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1814,6 +1822,7 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi_1']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi_1']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi_1']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['exclude'] = TRUE;
   /* Väli: Toimumiskoht */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1821,6 +1830,7 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2199,11 +2209,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2604,11 +2616,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2999,11 +3013,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3395,11 +3411,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3791,11 +3809,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -4546,11 +4566,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Organisatsiooni nimi */
   $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
+  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
