@@ -268,6 +268,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   /* Lühike kriteerium: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
@@ -779,6 +786,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1047,6 +1061,13 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1304,6 +1325,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1831,6 +1859,13 @@ echo $date;
   $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2216,6 +2251,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2623,6 +2665,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3020,6 +3069,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3418,6 +3474,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3816,6 +3879,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -4573,6 +4643,13 @@ echo $date;
   $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
   $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',

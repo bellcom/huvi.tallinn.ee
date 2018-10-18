@@ -22,7 +22,7 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       $place = Null;
 
       if(!empty($view->result[$i]->field_field_schedule_toimumis[0])){
-        $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#markup'];
+        $toimumiskoht = $view->result[$i]->field_field_schedule_toimumis[0]['rendered']['#title'];
       }
       if(!empty($view->result[$i]->field_field_schedule_place)){
         $place = $view->result[$i]->field_field_schedule_place[0]['rendered']['#markup'];
