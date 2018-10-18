@@ -483,11 +483,20 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -567,7 +576,7 @@ echo $date;
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -726,11 +735,20 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -822,7 +840,7 @@ echo $date;
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -971,11 +989,20 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1068,7 +1095,7 @@ echo $date;
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -1238,11 +1265,20 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1344,7 +1380,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -1494,11 +1530,20 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -1591,7 +1636,7 @@ echo $date;
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -2008,11 +2053,20 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2092,7 +2146,7 @@ echo $date;
     'title' => 'title',
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -2392,11 +2446,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2514,7 +2577,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -2798,11 +2861,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2920,7 +2992,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3194,11 +3266,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3317,7 +3398,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3591,11 +3672,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3714,7 +3804,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3988,11 +4078,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -4111,7 +4210,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -4732,11 +4831,20 @@ echo $date;
   $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
   $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
+  /* Väli: Sisu: Korraldaja */
+  $handler->display->display_options['fields']['field_korraldaja']['id'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['table'] = 'field_data_field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['field'] = 'field_korraldaja';
+  $handler->display->display_options['fields']['field_korraldaja']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_korraldaja']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_korraldaja']['settings'] = array(
+    'add' => 'Lisa',
+    'edit' => 'Muuda',
+    'translate' => '',
+    'delete' => 'Kustuta',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -4842,7 +4950,7 @@ echo $date;
     'field_description' => 'field_description',
     'field_schedule_toimumis' => 'field_schedule_toimumis',
     'field_age_range' => 'field_age_range',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
+    'field_korraldaja' => 'field_korraldaja',
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
