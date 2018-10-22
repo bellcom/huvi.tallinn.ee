@@ -1271,8 +1271,8 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     position: absolute;
     z-index: 10;
     background-color: white;
-    width: 250px;
-    left: -165px;
+    width: 210px;
+    left: -115px;
     height: auto;
     max-height: 280px;
     overflow-y: scroll;
