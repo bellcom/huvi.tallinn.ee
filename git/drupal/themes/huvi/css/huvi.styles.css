@@ -295,6 +295,7 @@ img, media {
   flex-direction: column;
   margin-top: -15px;
   margin-bottom: 30px;
+  line-height: 1.5em;
 }
 
 
@@ -1272,7 +1273,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     z-index: 10;
     background-color: white;
     width: 210px;
-    left: -115px;
+    left: -125px;
     height: auto;
     max-height: 280px;
     overflow-y: scroll;
