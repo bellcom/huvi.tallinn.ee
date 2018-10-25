@@ -313,6 +313,7 @@ img, media {
   flex-direction: column;
   margin-top: -15px;
   margin-bottom: 30px;
+  line-height: 1.5em;
 }
 
 .field--name-field-age-range, .field--name-field-price {
@@ -1379,8 +1380,8 @@ header.l-header {
       position: absolute;
       z-index: 10;
       background-color: white;
-      width: 250px;
-      left: -165px;
+      width: 210px;
+      left: -125px;
       height: auto;
       max-height: 280px;
       overflow-y: scroll;
