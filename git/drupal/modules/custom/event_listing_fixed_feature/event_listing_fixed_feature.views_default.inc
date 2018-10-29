@@ -149,19 +149,6 @@ function event_listing_fixed_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
   $handler->display->display_options['relationships']['field_schedule_node']['required'] = TRUE;
-  /* Seos: Field collection item: Toimumiskoht (field_schedule_toimumis) */
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['id'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['table'] = 'field_data_field_schedule_toimumis';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['field'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['label'] = 'Toimumiskoht';
-  /* Seos: Korraldaja */
-  $handler->display->display_options['relationships']['field_korraldaja_value']['id'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['table'] = 'field_data_field_korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['field'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['ui_name'] = 'Korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['label'] = 'Korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['delta'] = '-1';
   /* Väli: Globaalne: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -226,7 +213,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -245,7 +232,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -254,20 +241,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -275,6 +248,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   /* Lühike kriteerium: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
   $handler->display->display_options['sorts']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['sorts']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
@@ -290,7 +264,7 @@ echo $date;
   $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['title']['limit'] = '0';
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -307,7 +281,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -366,7 +340,7 @@ echo $date;
     'field_schedule_place' => 'field_schedule_place',
     'field_description' => 'field_description',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -403,9 +377,115 @@ echo $date;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Seos: Field collection item: Entity with the Toimumise aeg ja koht (field_schedule) */
+  $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
+  $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Väli: Globaalne: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$dateraw = strtotime( "today" );
+
+$day = t(date(\'l\', $dateraw));
+$date = date(\'d.m.y | \', $dateraw) . $day;
+echo $date;
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Väli: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date_1']['id'] = 'field_schedule_date_1';
+  $handler->display->display_options['fields']['field_schedule_date_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
+  $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
+  $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
+    'format_type' => 'only_date_with_year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date_1']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['delta_offset'] = '0';
+  /* Väli: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_class'] = 'time fixwidth';
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'only_time',
+    'fromto' => 'value',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Väli: Sisu: Pealkiri */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
+  /* Väli: Node: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['label'] = '';
+  $handler->display->display_options['fields']['field_categories_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_class'] = 'category fixwidth';
+  $handler->display->display_options['fields']['field_categories_event']['type'] = 'i18n_list_default';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Väli: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
+  /* Väli: Node: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -422,7 +502,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -480,11 +560,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -525,7 +602,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -540,9 +617,110 @@ return true;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Väli: Globaalne: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$dateraw = strtotime( "today" );
+
+$day = t(date(\'l\', $dateraw));
+$date = date(\'d.m.y | \', $dateraw) . $day;
+echo $date;
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Väli: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date_1']['id'] = 'field_schedule_date_1';
+  $handler->display->display_options['fields']['field_schedule_date_1']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date_1']['element_wrapper_class'] = 'event-group-title';
+  $handler->display->display_options['fields']['field_schedule_date_1']['empty'] = '<span class="date-display-single">[php]</span>';
+  $handler->display->display_options['fields']['field_schedule_date_1']['settings'] = array(
+    'format_type' => 'only_date_with_year',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date_1']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date_1']['delta_offset'] = '0';
+  /* Väli: Field collection item: Alguse ning olemasolul ka lõpuaeg */
+  $handler->display->display_options['fields']['field_schedule_date']['id'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['field'] = 'field_schedule_date';
+  $handler->display->display_options['fields']['field_schedule_date']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_date']['element_wrapper_class'] = 'time fixwidth';
+  $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
+    'format_type' => 'only_time',
+    'fromto' => 'value',
+    'multiple_number' => '1',
+    'multiple_from' => 'now',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
+  /* Väli: Sisu: Pealkiri */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
+  /* Väli: Node: Ürituse kategooriad */
+  $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
+  $handler->display->display_options['fields']['field_categories_event']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_categories_event']['label'] = '';
+  $handler->display->display_options['fields']['field_categories_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_categories_event']['element_wrapper_class'] = 'category fixwidth';
+  $handler->display->display_options['fields']['field_categories_event']['type'] = 'i18n_list_default';
+  $handler->display->display_options['fields']['field_categories_event']['delta_offset'] = '0';
+  /* Väli: Field collection item: Asukoht */
+  $handler->display->display_options['fields']['field_schedule_place']['id'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['table'] = 'field_data_field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['field'] = 'field_schedule_place';
+  $handler->display->display_options['fields']['field_schedule_place']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
+  /* Väli: Node: Kirjeldus */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  /* Väli: Field collection item: Toimumiskoht */
+  $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['field'] = 'field_schedule_toimumis';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
+  $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -571,7 +749,7 @@ return true;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -629,11 +807,8 @@ return true;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -664,7 +839,7 @@ return true;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -744,7 +919,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -763,7 +938,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -772,20 +947,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -793,9 +954,10 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -824,7 +986,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -883,11 +1045,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -918,7 +1077,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1019,7 +1178,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1038,7 +1197,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1047,20 +1206,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -1068,9 +1213,10 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1108,7 +1254,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'second';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now - 5 minute';
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1167,11 +1313,8 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1203,7 +1346,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1283,7 +1426,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1302,7 +1445,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1311,20 +1454,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -1332,9 +1461,10 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1363,7 +1493,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of this month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1422,11 +1552,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1457,7 +1584,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1558,7 +1685,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1577,7 +1704,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1601,7 +1728,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1628,7 +1755,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = '12AM first day of next month ';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1688,7 +1815,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1720,7 +1847,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1740,18 +1867,6 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
   $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
-  /* Seos: Field collection item: Toimumiskoht (field_schedule_toimumis) */
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['id'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['table'] = 'field_data_field_schedule_toimumis';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['field'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['label'] = 'Toimumiskoht';
-  /* Seos: Sisu: Korraldaja (field_korraldaja) */
-  $handler->display->display_options['relationships']['field_korraldaja_value']['id'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['table'] = 'field_data_field_korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['field'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['label'] = 'Korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Väli: Globaalne: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -1817,7 +1932,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Ürituse kategooriad */
+  /* Väli: Node: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1836,7 +1951,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1845,20 +1960,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['id'] = 'field_korraldaja_nimi_1';
-  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi_1']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -1866,9 +1967,10 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1885,7 +1987,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1943,11 +2045,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
-    'field_korraldaja_nimi_1' => 'field_korraldaja_nimi_1',
-    'name' => 'name',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2006,7 +2105,7 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -2203,7 +2302,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -2222,7 +2321,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -2231,26 +2330,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -2258,6 +2337,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2265,7 +2351,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -2293,7 +2379,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -2372,12 +2458,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2419,7 +2502,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -2617,7 +2700,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -2636,7 +2719,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -2645,26 +2728,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -2672,6 +2735,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -2679,7 +2749,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -2708,7 +2778,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -2786,12 +2856,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2823,7 +2890,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -3021,7 +3088,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3040,7 +3107,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3049,26 +3116,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -3076,6 +3123,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3083,7 +3137,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3112,7 +3166,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -3191,12 +3245,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -3228,7 +3279,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -3426,7 +3477,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3445,7 +3496,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3454,26 +3505,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -3481,6 +3512,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3488,7 +3526,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3517,7 +3555,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Monday next week';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -3596,12 +3634,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -3633,7 +3668,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -3831,7 +3866,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3850,7 +3885,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3859,26 +3894,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -3886,6 +3901,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -3893,7 +3915,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3922,7 +3944,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of this month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -4001,12 +4023,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4038,7 +4057,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -4205,7 +4224,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -4224,7 +4243,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -4243,7 +4262,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -4272,7 +4291,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -4332,7 +4351,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4363,7 +4382,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -4518,18 +4537,6 @@ echo $date;
   $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
   $handler->display->display_options['relationships']['field_schedule_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_schedule_node']['field'] = 'field_schedule_node';
-  /* Seos: Field collection item: Toimumiskoht (field_schedule_toimumis) */
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['id'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['table'] = 'field_data_field_schedule_toimumis';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['field'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['relationships']['field_schedule_toimumis_tid']['label'] = 'Toimumiskoht';
-  /* Seos: Sisu: Korraldaja (field_korraldaja) */
-  $handler->display->display_options['relationships']['field_korraldaja_value']['id'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['table'] = 'field_data_field_korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['field'] = 'field_korraldaja_value';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['label'] = 'Korraldaja';
-  $handler->display->display_options['relationships']['field_korraldaja_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Väli: Globaalne: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -4595,7 +4602,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Sisu: Huvitegevuse kategooriad */
+  /* Väli: Node: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -4614,7 +4621,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Sisu: Kirjeldus */
+  /* Väli: Node: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -4623,26 +4630,6 @@ echo $date;
   $handler->display->display_options['fields']['field_description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
-  /* Väli: Toimumiskoht */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_schedule_toimumis_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['label'] = 'Toimumiskoht';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Väli: Field collection item: Organisatsiooni nimi */
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['id'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['table'] = 'field_data_field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['field'] = 'field_korraldaja_nimi';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['relationship'] = 'field_korraldaja_value';
-  $handler->display->display_options['fields']['field_korraldaja_nimi']['exclude'] = TRUE;
   /* Väli: Field collection item: Toimumiskoht */
   $handler->display->display_options['fields']['field_schedule_toimumis']['id'] = 'field_schedule_toimumis';
   $handler->display->display_options['fields']['field_schedule_toimumis']['table'] = 'field_data_field_schedule_toimumis';
@@ -4650,6 +4637,13 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
+  /* Väli: Node: Lapse vanus või vanuse vahemik */
+  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
+  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -4657,7 +4651,7 @@ echo $date;
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -4666,6 +4660,7 @@ echo $date;
     'huvitegevus' => 'huvitegevus',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+
   /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
@@ -4700,6 +4695,7 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
+
     2 => '2',
     1 => '1',
     3 => '3',
@@ -4752,12 +4748,9 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
-    'name' => 'name',
-    'field_korraldaja_nimi' => 'field_korraldaja_nimi',
   );
-  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4818,7 +4811,7 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
-  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
