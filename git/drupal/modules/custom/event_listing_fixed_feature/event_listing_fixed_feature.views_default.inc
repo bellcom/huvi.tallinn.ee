@@ -403,7 +403,6 @@ echo $date;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
-<<<<<<< HEAD
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Seos: Field collection item: Entity with the Toimumise aeg ja koht (field_schedule) */
   $handler->display->display_options['relationships']['field_schedule_node']['id'] = 'field_schedule_node';
@@ -510,8 +509,6 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -649,7 +646,6 @@ return true;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
-<<<<<<< HEAD
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Väli: Globaalne: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -751,8 +747,6 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2440,10 +2434,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2533,13 +2524,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -2802,10 +2790,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -2896,13 +2881,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3156,10 +3138,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -3250,13 +3229,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3510,10 +3486,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -3604,13 +3577,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -3864,10 +3834,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -3958,13 +3925,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
@@ -4575,10 +4539,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['label'] = '';
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-=======
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
@@ -4590,7 +4551,6 @@ echo $date;
     'huvitegevus' => 'huvitegevus',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-<<<<<<< HEAD
   /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) */
   $handler->display->display_options['filters']['field_categories_activity_value']['id'] = 'field_categories_activity_value';
   $handler->display->display_options['filters']['field_categories_activity_value']['table'] = 'field_data_field_categories_activity';
@@ -4605,7 +4565,6 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
-=======
   /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
@@ -4640,7 +4599,6 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
     2 => '2',
     1 => '1',
     3 => '3',
@@ -4693,13 +4651,10 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-<<<<<<< HEAD
-=======
     'field_description' => 'field_description',
     'field_age_range' => 'field_age_range',
     'name' => 'name',
     'field_korraldaja_nimi' => 'field_korraldaja_nimi',
->>>>>>> parent of 052ca6f2... Revert "Merge pull request #171 from bellcom/f/HUVI-20"
   );
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
