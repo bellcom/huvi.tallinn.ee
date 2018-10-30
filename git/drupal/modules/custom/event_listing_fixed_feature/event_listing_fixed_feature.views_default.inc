@@ -4565,6 +4565,11 @@ echo $date;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => '3',
+    4 => '4',
+  );
   /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
