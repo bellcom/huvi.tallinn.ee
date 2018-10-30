@@ -91,7 +91,8 @@ $desk: 70em 12; // At 70em use 16 columns.
 }
 
 
-@include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
+@include at-breakpoint($tab) { 
+  // At a given Susy Media Layout, use a given amount of columns.
   .l-header,
   .l-main {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
@@ -152,9 +153,9 @@ $desk: 70em 12; // At 70em use 16 columns.
   color: white;
   text-decoration: none;
   background: #33cc33;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   height: 40px;
   line-height: 35px;
   margin-bottom: 20px;
@@ -268,8 +269,8 @@ h1{
 .meta-right{
   margin: 10px;
   @include at-breakpoint($tab){
-      float: right;
-      margin: 0;
+    float: right;
+    margin: 0;
   }
   .node-edit-link {
     float: left;
@@ -351,41 +352,54 @@ h1{
   }
 
   #map_wrapper{
-    margin-top: 20px;
+    bottom: 20px;
     display: block;
+    position: relative;
   }
+
   .page-content {
-    width: 85%;
     margin: auto;
-    overflow: hidden;
+    //overflow: hidden;
+    margin-left: 8px;
     margin-top: 20px;
+
+    &:after{
+      content: "";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both;
+    }
     .page-content-left {
       @include span-columns(4, 12);
-      //@include grid-span(4, 2);
       text-align: center;
+      width: 28%;
+      margin-left: 0.5%;
     }
-
     .page-content-right {
       @include span-columns(7, 12);
-      //@include grid-span(6, 6);
       float: right;
+      color: #2f2f2f;
+      margin-right: 0.5%;
+      width: 68%;
+    }
+
+    .page-content-right h1 {
+      border: none;
+      padding-bottom: 0;
     }
   }
 }
-
-h1{
+h1 {
   @include at-breakpoint($desk){
     margin-top: 0;
   }
 }
 
-.event-time{
-  font-weight: bold;
-}
 .schedule-item{
-  padding: 5px;
+  padding: 8px;
   &:nth-child(even){
-    background: #dadace;
+    background: #EAEAEA;
   }
   &.schedule-hidden {
     display: none;
@@ -401,7 +415,12 @@ h1{
   font-size: 16px;
   border: 1px solid #DEDEDE;
 }
-
+.section-huvitegevus .schedule-item {
+  border-bottom: 1px solid #0099CC;
+}
+.section-uritus .schedule-item {
+  border-bottom: 1px solid #FF6600;
+}
 .main-events,
 .sub-events {
   .main-event,
@@ -409,16 +428,22 @@ h1{
     text-decoration: none;
     display: block;
     color: black;
-    font-weight: bold;
     font-size: 14px;
-    padding: 5px;
+    padding: 8px;
   }
   .main-event {
     font-size: 16px;
   }
-  .sub-event:nth-child(odd) {
-    background-color: #DADACE;
+  .sub-event:nth-child(even) {
+    background-color: #EAEAEA;
   }
+}
+
+.section-huvitegevus .sub-event {
+  border-bottom: 1px solid #0099CC;
+}
+.section-uritus .sub-event {
+  border-bottom: 1px solid #FF6600;
 }
 
 .hidden-event-notice {
@@ -426,4 +451,18 @@ h1{
   border: 1px solid #ECDE6B;
   padding: 7px;
   margin-bottom: 15px;
+}
+.sub-event-row {
+  display: table;
+}
+
+.sub-event-row-left-col {
+  display: table-cell;
+  padding-left: 5px;
+  width: 150px;
+}
+
+.sub-event-row-right-col {
+  display: table-cell;
+  padding-left: 10px;
 }

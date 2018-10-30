@@ -10,30 +10,6 @@
 function huvi_content_types_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_age_range'.
-  $field_bases['field_age_range'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_age_range',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_categories_activity'.
   $field_bases['field_categories_activity'] = array(
     'active' => 1,
@@ -65,8 +41,8 @@ function huvi_content_types_field_default_field_bases() {
         11 => 'Loodus',
         12 => 'Robootika',
         13 => 'Kokandus',
-        8 => 'Varia',
         7 => 'Lapsele',
+        8 => 'Varia',
       ),
       'allowed_values_function' => '',
     ),
@@ -529,54 +505,6 @@ function huvi_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_price'.
-  $field_bases['field_price'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_price',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_price_information'.
-  $field_bases['field_price_information'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_price_information',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_schedule'.
   $field_bases['field_schedule'] = array(
     'active' => 1,
@@ -964,36 +892,6 @@ function huvi_content_types_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'video_embed_field',
-  );
-
-  // Exported field_base: 'field_working_languages'.
-  $field_bases['field_working_languages'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_working_languages',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'et' => 'Eesti',
-        'ru' => 'Vene',
-        'en' => 'Inglise',
-        'fi' => 'Soome',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
   );
 
   return $field_bases;

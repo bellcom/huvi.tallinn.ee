@@ -213,7 +213,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -232,7 +232,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -264,7 +264,7 @@ echo $date;
   $handler->display->display_options['arguments']['title']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['title']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['title']['limit'] = '0';
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -281,7 +281,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -340,7 +340,7 @@ echo $date;
     'field_schedule_place' => 'field_schedule_place',
     'field_description' => 'field_description',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -447,7 +447,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -466,7 +466,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -485,7 +485,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -502,7 +502,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -561,7 +561,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -602,7 +602,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -682,7 +682,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -701,7 +701,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -720,7 +720,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -749,7 +749,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -808,7 +808,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -839,7 +839,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -919,7 +919,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -938,7 +938,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -957,7 +957,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -986,7 +986,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+0';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1046,7 +1046,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1077,7 +1077,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1178,7 +1178,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1197,7 +1197,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1216,7 +1216,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1254,7 +1254,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'second';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now - 5 minute';
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1314,7 +1314,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1346,7 +1346,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1426,7 +1426,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1445,7 +1445,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1464,7 +1464,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1493,7 +1493,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of this month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1553,7 +1553,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1584,7 +1584,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1685,7 +1685,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1704,7 +1704,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1728,7 +1728,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['sorts']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1755,7 +1755,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = '12AM first day of next month ';
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -1815,7 +1815,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -1847,7 +1847,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -1932,7 +1932,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Ürituse kategooriad */
+  /* Väli: Sisu: Ürituse kategooriad */
   $handler->display->display_options['fields']['field_categories_event']['id'] = 'field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['fields']['field_categories_event']['field'] = 'field_categories_event';
@@ -1951,7 +1951,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -1970,7 +1970,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -1987,7 +1987,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Node: Ürituse kategooriad (field_categories_event) (translated) */
+  /* Filtri kriteeriumid: Sisu: Ürituse kategooriad (field_categories_event) (translated) */
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['id'] = 'field_categories_event_value_i18n';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['table'] = 'field_data_field_categories_event';
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['field'] = 'field_categories_event_value_i18n';
@@ -2046,7 +2046,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2105,7 +2105,7 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -2132,42 +2132,14 @@ return true;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2186,7 +2158,6 @@ return true;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2203,7 +2174,6 @@ return true;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2222,7 +2192,6 @@ return true;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2302,7 +2271,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -2321,7 +2290,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -2338,20 +2307,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'i18n_taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -2379,12 +2337,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_date'] = 'now - 5 minute';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp:';
@@ -2399,31 +2357,11 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Muu */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -2443,7 +2381,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -2458,9 +2396,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2468,7 +2405,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
@@ -2488,7 +2425,6 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value2']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value2']['field'] = 'field_schedule_date_value2';
   $handler->display->display_options['filters']['field_schedule_date_value2']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value2']['group'] = 3;
   $handler->display->display_options['filters']['field_schedule_date_value2']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value2']['default_date'] = 'now';
   $handler->display->display_options['filters']['field_schedule_date_value2']['year_range'] = '-5:+5';
@@ -2497,12 +2433,11 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -2510,7 +2445,6 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
 
   /* Display: A Today */
   $handler = $view->new_display('block', 'A Today', 'block_7');
@@ -2530,42 +2464,14 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2584,7 +2490,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2601,7 +2506,6 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2620,7 +2524,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2700,7 +2603,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -2719,7 +2622,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -2736,20 +2639,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -2778,12 +2670,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp:';
@@ -2798,30 +2690,11 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -2841,7 +2714,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -2856,9 +2729,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -2866,7 +2738,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
@@ -2885,12 +2757,11 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -2898,7 +2769,6 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
 
   /* Display: A Tomorrow */
   $handler = $view->new_display('block', 'A Tomorrow', 'block_8');
@@ -2918,42 +2788,14 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2972,7 +2814,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -2989,7 +2830,6 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3008,7 +2848,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3088,7 +2927,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3107,7 +2946,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3124,20 +2963,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3166,12 +2994,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'tomorrow + 1 day';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp:';
@@ -3186,31 +3014,11 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Muu */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -3230,7 +3038,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -3245,9 +3053,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -3255,7 +3062,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
@@ -3274,12 +3081,11 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -3287,7 +3093,6 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
 
   /* Display: A F-S */
   $handler = $view->new_display('block', 'A F-S', 'block_9');
@@ -3307,42 +3112,14 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3361,7 +3138,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3378,7 +3154,6 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3397,7 +3172,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3477,7 +3251,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3496,7 +3270,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3513,20 +3287,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3555,12 +3318,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'Monday next week';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp:';
@@ -3575,31 +3338,11 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Muu */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -3619,7 +3362,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -3634,9 +3377,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -3644,7 +3386,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
@@ -3663,12 +3405,11 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -3676,7 +3417,6 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
 
   /* Display: A This month */
   $handler = $view->new_display('block', 'A This month', 'block_10');
@@ -3696,42 +3436,14 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
     'field_categories_activity_value_i18n' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3750,7 +3462,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3767,7 +3478,6 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3786,7 +3496,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -3866,7 +3575,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -3885,7 +3594,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -3902,20 +3611,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -3944,12 +3642,12 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of this month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
+  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 1;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp:';
@@ -3964,31 +3662,11 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Muu */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -4008,7 +3686,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -4023,9 +3701,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4033,7 +3710,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta huvitegevused';
@@ -4052,12 +3729,11 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -4065,7 +3741,6 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
 
   /* Display: A Next month */
   $handler = $view->new_display('block', 'A Next month', 'block_11');
@@ -4224,7 +3899,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -4243,7 +3918,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -4262,7 +3937,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -4291,7 +3966,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value']['default_to_date'] = 'last day of next month';
   $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-5:+5';
   $handler->display->display_options['filters']['field_schedule_date_value']['add_delta'] = 'yes';
-  /* Filtri kriteeriumid: Node: Huvitegevuse kategooriad (field_categories_activity) (translated) */
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
@@ -4351,7 +4026,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4382,7 +4057,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
   return true;
 }';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -4409,23 +4084,14 @@ echo $date;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
-      'input_required' => 0,
-      'text_input_required' => array(
-        'text_input_required' => array(
-          'value' => 'Select any filter and click on Apply to see results',
-          'format' => 'full_html',
-        ),
-      ),
       'allow_secondary' => 0,
       'secondary_label' => 'Täpsemad valikud',
-      'secondary_collapse_override' => '0',
     ),
-    'field_categories_activity_value_i18n' => array(
+    'field_categories_activity_value' => array(
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4444,7 +4110,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4461,7 +4126,6 @@ echo $date;
     'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4480,7 +4144,6 @@ echo $date;
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4497,27 +4160,6 @@ echo $date;
     'field_schedule_date_value' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-        'datepicker_options' => '',
-      ),
-    ),
-    'field_categories_activity_value_i18n_1' => array(
-      'bef_format' => 'bef',
-      'more_options' => array(
-        'bef_select_all_none' => 0,
-        'bef_collapsible' => 1,
-        'autosubmit' => 0,
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '',
@@ -4602,7 +4244,7 @@ echo $date;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'name fixwidth';
-  /* Väli: Node: Huvitegevuse kategooriad */
+  /* Väli: Sisu: Huvitegevuse kategooriad */
   $handler->display->display_options['fields']['field_categories_activity']['id'] = 'field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['table'] = 'field_data_field_categories_activity';
   $handler->display->display_options['fields']['field_categories_activity']['field'] = 'field_categories_activity';
@@ -4621,7 +4263,7 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_place']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_schedule_place']['element_wrapper_class'] = 'place fixwidth';
-  /* Väli: Node: Kirjeldus */
+  /* Väli: Sisu: Kirjeldus */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
@@ -4638,20 +4280,9 @@ echo $date;
   $handler->display->display_options['fields']['field_schedule_toimumis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_toimumis']['type'] = 'taxonomy_term_reference_plain';
-  /* Väli: Node: Lapse vanus või vanuse vahemik */
-  $handler->display->display_options['fields']['field_age_range']['id'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['table'] = 'field_data_field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['field'] = 'field_age_range';
-  $handler->display->display_options['fields']['field_age_range']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['fields']['field_age_range']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
-  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Node: Tüüp (field_type) */
+  /* Filtri kriteeriumid: Sisu: Tüüp (field_type) */
   $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
   $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
@@ -4660,42 +4291,20 @@ echo $date;
     'huvitegevus' => 'huvitegevus',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-
-  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) (translated) */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['id'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator_id'] = 'field_categories_activity_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['label'] = 'Tüüp';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['operator'] = 'field_categories_activity_value_i18n_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['identifier'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => '3',
-    4 => '4',
-  );
-  /* Filtri kriteeriumid: Muu */
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['id'] = 'field_categories_activity_value_i18n_1';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['table'] = 'field_data_field_categories_activity';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['field'] = 'field_categories_activity_value_i18n';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['relationship'] = 'field_schedule_node';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['ui_name'] = 'Muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['group'] = 2;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator_id'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['label'] = 'Muu...';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['operator'] = 'field_categories_activity_value_i18n_1_op';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['identifier'] = 'field_categories_activity_value_i18n_muu';
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_categories_activity_value_i18n_1']['expose']['remember_roles'] = array(
-
+  /* Filtri kriteeriumid: Sisu: Huvitegevuse kategooriad (field_categories_activity) */
+  $handler->display->display_options['filters']['field_categories_activity_value']['id'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['table'] = 'field_data_field_categories_activity';
+  $handler->display->display_options['filters']['field_categories_activity_value']['field'] = 'field_categories_activity_value';
+  $handler->display->display_options['filters']['field_categories_activity_value']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['field_categories_activity_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_categories_activity_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator_id'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['label'] = 'Tüüp';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['operator'] = 'field_categories_activity_value_op';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['identifier'] = 'field_categories_activity_value_i18n';
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_categories_activity_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
     3 => '3',
@@ -4708,12 +4317,12 @@ echo $date;
   $handler->display->display_options['filters']['field_name']['value'] = array(
     'field_schedule' => 'field_schedule',
   );
-  $handler->display->display_options['filters']['field_name']['group'] = 3;
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
   /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
-  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_city_id_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['operator_id'] = 'field_schedule_city_id_value_op';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['expose']['label'] = 'Linnaosa:';
@@ -4733,7 +4342,7 @@ echo $date;
   $handler->display->display_options['filters']['combine']['table'] = 'views';
   $handler->display->display_options['filters']['combine']['field'] = 'combine';
   $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['combine']['group'] = 3;
+  $handler->display->display_options['filters']['combine']['group'] = 1;
   $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
   $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
   $handler->display->display_options['filters']['combine']['expose']['label'] = 'Otsi';
@@ -4748,9 +4357,8 @@ echo $date;
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
-    'field_age_range' => 'field_age_range',
   );
-  /* Filtri kriteeriumid: Node: Märgi, kui üritus on tasuta (field_isfree) */
+  /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
   $handler->display->display_options['filters']['field_isfree_value']['field'] = 'field_isfree_value';
@@ -4758,7 +4366,7 @@ echo $date;
   $handler->display->display_options['filters']['field_isfree_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['filters']['field_isfree_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_isfree_value']['group'] = 1;
   $handler->display->display_options['filters']['field_isfree_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_isfree_value']['expose']['operator_id'] = 'field_isfree_value_op';
   $handler->display->display_options['filters']['field_isfree_value']['expose']['label'] = 'Tasuta üritus';
@@ -4778,7 +4386,7 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value_1']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now - 5 minute';
@@ -4787,7 +4395,7 @@ echo $date;
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['group'] = 3;
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
@@ -4797,7 +4405,7 @@ return true;
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 3;
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_schedule_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator_id'] = 'field_schedule_date_value_op';
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
@@ -4811,7 +4419,7 @@ return true;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
-  /* Filtri kriteeriumid: Node: Peida üritus lehelt (field_unpublish) */
+  /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
   $handler->display->display_options['filters']['field_unpublish_value']['field'] = 'field_unpublish_value';
@@ -4819,7 +4427,6 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
   $export['event_listing_fixed'] = $view;
 
   return $export;

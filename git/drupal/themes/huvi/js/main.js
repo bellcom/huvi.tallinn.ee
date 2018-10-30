@@ -49,7 +49,7 @@
             $(last_tab_huvi) . click();
             addDateRangePicker(last_aeg_tab);
         }
-
+        
         if ($(last_aeg_tab).data('dateRangePicker') && $('#edit-field-schedule-date-value-min-datepicker-popup-0').val() != ""
         && $('#edit-field-schedule-date-value-max-datepicker-popup-0').val() != "") {
           $(last_aeg_tab).data('dateRangePicker').setDateRange($('#edit-field-schedule-date-value-max-datepicker-popup-0').val(), $('#edit-field-schedule-date-value-min-datepicker-popup-0').val());
@@ -148,21 +148,10 @@
             }
             else {
                 mobileCloseAll();
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
           }
-        }
-
-        function muuStatus(el) {
-            if (el.hasClass('mobileOpen') && $(window).width() < 704) {
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset .fieldset-wrapper').removeAttr( 'style' );
-            }
-            else {
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
-            }
         }
 
         $('ul.quicktabs-tabs').click(function () {
@@ -176,26 +165,8 @@
         });
         $('.views-widget-filter-field_categories_activity_value_i18n').click(function () {
             mobileClick($(this).find('.views-widget'));
-            muuStatus($(this).find('.views-widget'));
         });
 
-        // Set 'Muu' button active if there are checked inputs.
-        $('.fieldset-wrapper').click(function () {
-            var nr = $('.quicktabs-tabpage.now-active input[name="field_categories_activity_value_i18n_muu[]"]:checked').length;
-            if(  nr > 0  ){
-            $('edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').addClass('active');
-            //console.log(nr + 'y "on muu click"');
-            }else{
-              //console.log(nr + 'n "on muu click"');
-              $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').removeClass('active');
-            }
-        });
-        // Prevent double running of $('.fieldset-wrapper').click.
-        $('.fieldset-wrapper label').on('click', function(event) {
-            event.preventDefault();
-        });
-      // Muu is collapsed by default.
-      $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
 
         //Load map
         if ($("#map_canvas").length) {
@@ -298,16 +269,6 @@
            $("#user-login #div_logi_sisse").show();
         }
         $('.view-advertisement').hover( function() {$('.view-advertisement .views-slideshow-controls-bottom').show()},  function() {$('.view-advertisement .views-slideshow-controls-bottom').hide()});
-        
-        // Set 'Muu' button active if there are checked inputs.
-        var nr = $('.quicktabs-tabpage.now-active input[name="field_categories_activity_value_i18n_muu[]"]:checked').length;
-            if(  nr > 0  ){
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').addClass('active');
-                //console.log(nr + 'y "on page ready"');
-            }else{
-                //console.log(nr + 'n "on page ready"');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').removeClass('active');
-            }
     });
 
     var categoriesOpen;
@@ -408,22 +369,12 @@
             }
             else {
                 mobileCloseAll();
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
                 el.addClass('mobileOpen');
                 el.parent().addClass('open');
             }
           }
         }
 
-        function muuStatus(el) {
-            if (el.hasClass('mobileOpen') && $(window).width() < 704) {
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset .fieldset-wrapper').removeAttr( 'style' );
-            }
-            else {
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
-            }
-        }
 
         $('ul.quicktabs-tabs').unbind('click').click(function () {
             mobileClick($(this).find('li'));
@@ -436,12 +387,6 @@
         });
         $('.views-widget-filter-field_categories_activity_value_i18n').unbind('click').click(function () {
             mobileClick($(this).find('.views-widget'));
-            muuStatus($(this).find('.views-widget'));
-        });
-
-        // Prevent double running of $('.views-widget-filter-field_categories_activity_value_i18n').click
-        $('.fieldset-wrapper label').on('click', function(event) {
-            event.preventDefault();
         });
 
         // Change free event checkbox text
@@ -478,24 +423,6 @@
         if ($("#modalContent #div_logi_sisse").is(':hidden'))
             $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height());
         $('#huvi-loader').remove();
-        
-        // Set 'Muu' button active if there are checked inputs.     
-        var nr = $('.quicktabs-tabpage.now-active input[name="field_categories_activity_value_i18n_muu[]"]:checked').length;
-            if(  nr > 0  ){
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').addClass('active');
-                //console.log(nr + 'y "on ajax compete"');
-            }else{
-                //console.log(nr + 'n on ajax compete');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').removeClass('active');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
-            }
-        
-        // Expand Muu tab on mobile after ajax complete.    
-        if( $('.quicktabs-tabpage.now-active #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen').length > 0 && $(window).width() < 704){
-            $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').removeClass('collapsed');
-        }else{
-            $('#edit-field-categories-activity-value-i18n-muu-wrapper fieldset').addClass('collapsed');
-          }
     });
 
     function checkFilters() {
@@ -522,16 +449,6 @@
             $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
 
         }
-        
-            // Set 'Muu' button active if there are checked inputs.
-            var nr = $('.quicktabs-tabpage.now-active input[name="field_categories_activity_value_i18n_muu[]"]:checked').length;
-            if(  nr > 0  ){
-                $('edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').addClass('active');
-                console.log(nr + 'y "on filter check"');
-            }else{
-                console.log(nr + 'n "on filter check"');
-                $('#edit-field-categories-activity-value-i18n-muu-wrapper span.fieldset-legend').removeClass('active');
-            }
     }
 
     function clearSelectedFilters(event) {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Code for the clone_of_event_listing_feature feature.
@@ -29,7 +28,7 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
       }
       if (isset($toimumiskoht)){
         $place_to_print .= $toimumiskoht;
-      }
+      }  
       if (!empty($place)) {
         $place =  preg_replace('/, ?(Eesti|Estonia)$/', '', $place);
         $place =  preg_replace('/, ?\d* ?Tallinn$/', '', $place);
@@ -43,32 +42,4 @@ function huvi_views_pre_render(&$view) { // Change Toimumiskoht - Asukoht fields
     }
   }
   return $view;
-}
-
-/**
- *
- * Implements hook_form_alter().
- */
-function event_listing_fixed_feature_form_alter(&$form, &$form_state, $form_id) {
-
-  if($form_id == 'views_exposed_form') {
-    $activites_displays = array('views-exposed-form-event-listing-fixed-block-6',
-      'views-exposed-form-event-listing-fixed-block-7',
-      'views-exposed-form-event-listing-fixed-block-8',
-      'views-exposed-form-event-listing-fixed-block-9',
-      'views-exposed-form-event-listing-fixed-block-10',
-      'views-exposed-form-event-listing-fixed-block-13',
-      );
-    if(in_array( $form['#id'], $activites_displays)){
-      $options = $form['field_categories_activity_value_i18n']['#options'];
-      $options = array_slice($options, 0, 6, true);
-      $form['field_categories_activity_value_i18n']['#size'] = count($options);
-      $form['field_categories_activity_value_i18n']['#options'] = $options;
-            
-      $options_muu = $form['field_categories_activity_value_i18n_muu']['#options'];
-      $options_muu = array_slice($options_muu, 6, NULL, true);
-      $form['field_categories_activity_value_i18n']['#size'] = count($options);
-      $form['field_categories_activity_value_i18n_muu']['#options'] = $options_muu;
-    }
-  }
 }

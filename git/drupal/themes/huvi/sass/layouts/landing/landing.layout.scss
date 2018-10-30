@@ -1,14 +1,14 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * simple.layout.scss
  *
  * Styling of the "simple" layout demonstrating the Compass grid extension Susy
  * and building mobile first layouts.
  ******************************************************************************/
 @import "susyone";
+
 $textOrange: #ff6600;
 $uritusedBG: #f36722;
 $huvitegevusedBG: #0099cc;
-
 
 // Susy Variables
 
@@ -20,7 +20,7 @@ $horz-spacing-unit: 0em;
 $total-columns: 4;
 $column-width: 4em;
 $gutter-width: $horz-spacing-unit;
-$grid-padding: 0px;
+$grid-padding: 0;
 
 $container-style: magic;
 $container-width: 100%;
@@ -36,7 +36,6 @@ $desk: 70em 12; // At 70em use 16 columns.
   @include container; // Define these elements as the grid containers.
   margin-bottom: $vert-spacing-unit;
 }
-
 .l-region--highlighted,
 .l-region--help,
 .l-region--sidebar-first,
@@ -45,19 +44,19 @@ $desk: 70em 12; // At 70em use 16 columns.
 }
 
 @include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
-  .l-header,
-  .l-main,
-  .l-footer {
-    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
-  }
+                               .l-header,
+                               .l-main,
+                               .l-footer {
+                                 @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+                               }
 
-  .sidebar-first-wrapper {
-    @include span-columns(6, 12);
-  }
+                               .sidebar-first-wrapper {
+                                 @include span-columns(6, 12);
+                               }
 
-  .sidebar-second-wrapper {
-    @include span-columns(6 omega, 12);
-  }
+                               .sidebar-second-wrapper {
+                                 @include span-columns(6 omega, 12);
+                               }
 }
 
 @include at-breakpoint($desk) {
@@ -127,21 +126,33 @@ body {
 .l-page{
   position: relative;
 }
-
-.footer-logo{
+.footer-logo,
+.footer-fb-logo {
   display: none;
   text-indent: -9999px;
-  @include at-breakpoint($tab){
-    display: block;
+}
+@include at-breakpoint($tab){
+  .footer-logo {
+    display: inline-block;
+    position: absolute;
+    bottom: 24px;
+    right: 157px;
+    width: 131px;
+    height: 32px;
+    margin: 0 auto;
+    background: url("../../../images/logo_tallinn.png") no-repeat top left;
+  }
+  .footer-fb-logo {
+    display: inline-block;
     position: absolute;
     bottom: 20px;
     right: 20px;
-    background: url('../../../images/logo_tallinn.png') no-repeat top left;
-    width: 112px;
-    height: 25px;
+    width: 107px;
+    height: 38px;
+    margin: 0 auto;
+    background: url("../../../images/fb-footer.png") center center no-repeat;
   }
 }
-
 .landing-description {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -241,9 +252,9 @@ body {
     font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     margin-bottom: 10px;
     -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.43);
     -moz-box-shadow:    0px 2px 7px 0px rgba(0, 0, 0, 0.43);
@@ -316,7 +327,7 @@ body {
     width: 300px;
     background-color: #f9f9f9;
     margin-bottom: 50px;
-    margin-top: 240px;
+    margin-top: 200px;
     position: relative;
     z-index: 9;
 

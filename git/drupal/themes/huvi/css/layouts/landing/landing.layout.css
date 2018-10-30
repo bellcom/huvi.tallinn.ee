@@ -11,10 +11,8 @@
   *zoom: 1;
   max-width: 100%;
   _width: 100%;
-  padding-left: 0px;
-  padding-left: 0rem;
-  padding-right: 0px;
-  padding-right: 0rem;
+  padding-left: 0;
+  padding-right: 0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -141,6 +139,7 @@ body {
     margin: 0 auto;
     background: url("../../../images/logo_tallinn.png") no-repeat top left;
   }
+
   .footer-fb-logo {
     display: inline-block;
     position: absolute;
@@ -152,7 +151,6 @@ body {
     background: url("../../../images/fb-footer.png") center center no-repeat;
   }
 }
-
 .landing-description {
   text-align: center;
   font-family: 'Open Sans', sans-serif;

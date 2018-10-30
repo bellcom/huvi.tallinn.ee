@@ -362,32 +362,33 @@ h1 {
 
   .page-content {
     margin: auto;
-    //overflow: hidden;
     margin-left: 8px;
     margin-top: 20px;
   }
-  .page-content:after{
+  .page-content:after {
     content: "";
-  visibility: hidden;
-  display: block;
-  height: 0;
-  clear: both;
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
   }
   .page-content .page-content-left {
+    width: 32.20339%;
     float: left;
-    margin-left: 0.5%;
     margin-right: 1.69492%;
     text-align: center;
     width: 28%;
+    margin-left: 0.5%;
   }
   .page-content .page-content-right {
-    color: #2f2f2f;
+    width: 57.62712%;
     float: left;
+    margin-right: 1.69492%;
     float: right;
+    color: #2f2f2f;
     margin-right: 0.5%;
     width: 68%;
   }
-
   .page-content .page-content-right h1 {
     border: none;
     padding-bottom: 0;
@@ -423,6 +424,7 @@ h1 {
 .section-huvitegevus .schedule-item {
   border-bottom: 1px solid #0099CC;
 }
+
 .section-uritus .schedule-item {
   border-bottom: 1px solid #FF6600;
 }
@@ -449,6 +451,7 @@ h1 {
 .section-huvitegevus .sub-event {
   border-bottom: 1px solid #0099CC;
 }
+
 .section-uritus .sub-event {
   border-bottom: 1px solid #FF6600;
 }
@@ -463,15 +466,14 @@ h1 {
 .sub-event-row {
   display: table;
 }
-			
+
 .sub-event-row-left-col {
   display: table-cell;
   padding-left: 5px;
   width: 150px;
 }
-			
+
 .sub-event-row-right-col {
   display: table-cell;
   padding-left: 10px;
 }
-
