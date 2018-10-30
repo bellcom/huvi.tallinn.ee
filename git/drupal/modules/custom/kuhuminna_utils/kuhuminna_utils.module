@@ -159,6 +159,17 @@ function kuhuminna_utils_form_alter(&$form, &$form_state, $form_id) {
       $form['#action'] = url('huvitegevused');
     }
   }
+  // 'Lapsele' must be the last item in 'Huvitegevus' list.
+  if($form_id == 'event_node_form'){
+    $lapsele_key = array_search('Lapsele', $form['field_categories_activity']['und']['#options']);
+    if(!empty($lapsele_key)){
+      unset($form['field_categories_activity']['und']['#options'][$lapsele_key]);
+      $lapsele_position = 4;
+        $form['field_categories_activity']['und']['#options'] = array_slice($form['field_categories_activity']['und']['#options'], 0, $lapsele_position, true) + 
+            array($lapsele_key => 'Lapsele') + 
+            array_slice($form['field_categories_activity']['und']['#options'], $lapsele_position, NULL, true);       
+    }
+  }
 }
 
 /**

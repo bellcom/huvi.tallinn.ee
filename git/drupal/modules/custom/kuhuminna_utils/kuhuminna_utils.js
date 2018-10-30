@@ -9,6 +9,20 @@
     $('.field-name-field-type input').change(function() {
       change_event_type($(this).filter(':checked').val());
     });
+    
+    if($("#edit-field-categories-activity-und-7:checked").length > 0) {
+        $('.field-name-field-age-range').show();
+    }else{
+        $('.field-name-field-age-range').hide();
+    }
+
+    $("#edit-field-categories-activity-und-7").change(function() {
+    if(this.checked) {
+        $('.field-name-field-age-range').show();
+    }else{
+        $('.field-name-field-age-range').hide();
+    }
+});
     if ($('.field-name-field-on-katusuritus input').filter(':checked').val() === undefined) {
       $('.field-name-field-subevents-filter').hide();
     }
@@ -49,13 +63,25 @@
     });
 
     function change_event_type(type) {
-      if(type == 'uritus') {
+      if (type == 'uritus') {
         $('.field-name-field-categories-activity').hide();
+        $('.field-name-field-price').hide();
+        $('.field-name-field-price-information').hide();
+        $('.field-name-field-working-languages').hide();
         $('.field-name-field-categories-event').show();
+        $('.field-name-field-age-range').hide();
       }
-      if(type == 'huvitegevus') {
+      if (type == 'huvitegevus') {
         $('.field-name-field-categories-event').hide();
         $('.field-name-field-categories-activity').show();
+        $('.field-name-field-price').show();
+        $('.field-name-field-price-information').show();
+        $('.field-name-field-working-languages').show();
+        if ($("#edit-field-categories-activity-und-7:checked").length > 0) {
+          $('.field-name-field-age-range').show();
+        } else {
+          $('.field-name-field-age-range').hide();
+        }
       }
     }
 
