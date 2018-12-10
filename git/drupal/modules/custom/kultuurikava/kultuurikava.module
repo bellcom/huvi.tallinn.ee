@@ -1562,7 +1562,7 @@ function kultuurikava_get_filters ($event_type) {
       )
     ),
     'type' => array (
-      'label' => t('Kõik ürituse tüüpid'),
+      'label' => t('Kõik ürituse tüübid'),
       'tabs' => array(
         'muusika' => t('Muusika'),
         'etendus' => t('Etendused'),
