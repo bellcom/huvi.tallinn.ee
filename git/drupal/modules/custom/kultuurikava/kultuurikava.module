@@ -953,7 +953,7 @@ function kultuurikava_event_data_node_save($event) {
       }
     }
   }
-
+  $w->field_source->set(3);
   $w->save();
 }
 

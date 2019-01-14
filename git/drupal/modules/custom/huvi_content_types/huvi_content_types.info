@@ -1,6 +1,8 @@
 name = Huvi Content Types
 core = 7.x
 package = HUVI
+version = 7.x-1.0
+project = huvi_content_types
 dependencies[] = autocomplete_deluxe
 dependencies[] = colorbox
 dependencies[] = ctools

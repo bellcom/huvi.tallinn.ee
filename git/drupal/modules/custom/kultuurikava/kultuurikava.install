@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Kultuurikava module.
+ */
+
+/**
+ * Update source field for kultuurikava.
+ */
+function kultuurikava_update_7100() {
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'node')
+->entityCondition('bundle', 'event')
+->fieldCondition('field_source', 'value', '0', '=')
+->propertyCondition('uid', 1);
+
+  $result = $query->execute();
+
+  foreach($result['node'] as $key => $value ){
+    $node = node_load($key);
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $node_wrapper->field_source->set(3);
+    $node_wrapper->save();
+  }
+  print(count($result['node']) . ' nodes updated.');
+}

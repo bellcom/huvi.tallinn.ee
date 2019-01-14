@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * huvi_content_types.features.field_base.inc
@@ -774,6 +775,7 @@ function huvi_content_types_field_default_field_bases() {
         0 => 'user_created',
         1 => 'rest_service',
         2 => 'ev100_rss',
+        3 => 'kultuurikava',
       ),
       'allowed_values_function' => '',
     ),
