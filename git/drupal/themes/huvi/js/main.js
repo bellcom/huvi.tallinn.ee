@@ -157,7 +157,7 @@
       var url_parts = getPathParts();
       url = '/' + url_parts[0];
       var date_tab = $('.quicktabs-tabs').find('li.active a').attr('id');
-      if (date_part_url == false) {
+      if (typeof date_part_url == 'undefined') {
         date_part_url =  $.map(events_date_tabs[url_parts[0]], function(item, key) {
           if ('#'+ date_tab == item) {
             if (key == 'date-period') {
