@@ -265,7 +265,7 @@
                 elem.prop('checked', true);
               }
             });
-
+          }
            if (typeof url_parts['distincts'] !== 'undefined' ) {
             $(active_pagetab_id + ' .form-item-field-schedule-city-id-value .bef-select-as-checkboxes .form-item').each(function () {
               elem = $(this).find('input');
@@ -283,7 +283,7 @@
               $(active_pagetab_id + ' .views-submit-button .form-submit').trigger('click');
           }
         }
-      }
+
         //quictabs-remembered
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-0").click(function () {
           url_path = createUrl();
