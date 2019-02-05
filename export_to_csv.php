@@ -29,7 +29,19 @@ foreach ($nodes as $node) {
   if (is_array($wrapper->field_schedule->value())) {
     foreach ($wrapper->field_schedule->value() as $schedule_item) {
       $asukoht_term = NULL;
+      //Array structure initializing.
       $node_data = array();
+      $node_data[0] = '';
+      $node_data[1] = '';
+      $node_data[2] = '';
+      $node_data[3] = '';
+      $node_data[4] = '';
+      $node_data[5] = '';
+      $node_data[6] = '';
+      $node_data[7] = '';
+      $node_data[8] = '';
+      $node_data[9] = '';
+      
       $node_data[0] = $node->nid;
       $node_data[1] = $node->title;
       $node_data[2] = $wrapper->field_description->value()['value'];
@@ -54,9 +66,10 @@ foreach ($nodes as $node) {
       }
       if (!empty($node->field_map_latlng['und'][0]['value'])) {
         $node_data[5] = $node->field_map_latlng['und'][0]['value'];
+      }else{
+        $node_data[5] = '';
       }
-      $node_data[6] = '';
-      $node_data[7] = '';
+
       $all_fields = field_info_fields();
       $field_schedule_city_id_array = list_allowed_values($all_fields["field_schedule_city_id"]);
 
