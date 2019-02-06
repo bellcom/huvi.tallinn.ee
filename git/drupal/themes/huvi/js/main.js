@@ -77,9 +77,9 @@
       "2944189" : "kristiine",
       "2944190" : "lasnamae",
       "2944193" : "mustamae",
-      "2944194" : "nymme",
+      "2944194" : "nomme",
       "2920234" : "pirita",
-      "2944195" : "pyhja-tallinn"
+      "2944195" : "pohja-tallinn"
     }
 
     /*
