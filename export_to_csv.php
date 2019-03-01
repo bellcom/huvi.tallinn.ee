@@ -19,7 +19,7 @@ if (empty($result['node'])) {
 
 $filtered_nids = array_keys($result['node']);
 $fp = fopen('events_export.csv', 'wb');
-fputcsv($fp, array('ID', 'Name', 'Description', 'Toimumiskoht', 'Organizers name', 'Location coordinates', 'Toimumiskuupäev', 'Toimumiskellaaeg', 'District', 'Type'));
+fputcsv($fp, array('ID', 'Name', 'Description', 'Toimumiskoht', 'Address', 'Organizers name', 'Location coordinates', 'Toimumiskuupäev', 'Toimumiskellaaeg', 'District', 'Type'));
 
 $nodes = node_load_multiple($filtered_nids);
 print('Processing..' . PHP_EOL);
@@ -41,33 +41,22 @@ foreach ($nodes as $node) {
       $node_data[7] = '';
       $node_data[8] = '';
       $node_data[9] = '';
-      
+      $node_data[10] = '';
+
       $node_data[0] = $node->nid;
       $node_data[1] = $node->title;
       $node_data[2] = $wrapper->field_description->value()['value'];
-      if (!empty($schedule_item->field_schedule_toimumis['und'][0]['tid'])) {
-        $asukoht_term = taxonomy_term_load($schedule_item->field_schedule_toimumis['und'][0]['tid']);
-        if (!empty($asukoht_term)) {
-          $node_data[3] = $asukoht_term->name;
-        }
-        else {
-          $node_data[3] = Null;
-        }
-      }
-      else {
-        $node_data[3] = Null;
-      }
-
       if (!empty($wrapper->field_korraldaja->value())) {
-        $node_data[4] = $wrapper->field_korraldaja->field_korraldaja_nimi->value();
+        $node_data[5] = $wrapper->field_korraldaja->field_korraldaja_nimi->value();
       }
       else {
-        $node_data[4] = '';
+        $node_data[5] = '';
       }
       if (!empty($node->field_map_latlng['und'][0]['value'])) {
-        $node_data[5] = $node->field_map_latlng['und'][0]['value'];
-      }else{
-        $node_data[5] = '';
+        $node_data[6] = $node->field_map_latlng['und'][0]['value'];
+      }
+      else {
+        $node_data[6] = '';
       }
 
       $all_fields = field_info_fields();
@@ -75,15 +64,31 @@ foreach ($nodes as $node) {
 
       $koht_array = array();
       if (!empty($field_schedule_city_id_array[$schedule_item->field_schedule_city_id['und'][0]['value']])) {
-        $node_data[8] = $field_schedule_city_id_array[$schedule_item->field_schedule_city_id['und'][0]['value']];
+        $node_data[9] = $field_schedule_city_id_array[$schedule_item->field_schedule_city_id['und'][0]['value']];
       }
-      $node_data[9] = $node->field_type['und'][0]['value'];
+      $node_data[10] = $node->field_type['und'][0]['value'];
+
       if (is_array($schedule_item->field_schedule_date['und'])) {
-        foreach ($schedule_item->field_schedule_date['und'] as $event_date) {
-          $node_data[6] = gmdate("Y-m-d", $event_date['value']);
-          $node_data[7] = gmdate("H:i", $event_date['value']);
+        foreach ($schedule_item->field_schedule_date['und'] as $key => $event_date) {
+          if (!empty($schedule_item->field_schedule_toimumis['und'][$key]['tid'])) {
+            $asukoht_term = taxonomy_term_load($schedule_item->field_schedule_toimumis['und'][$key]['tid']);
+            if (!empty($asukoht_term)) {
+              $node_data[3] = $asukoht_term->name;
+            }
+            else {
+              $node_data[3] = Null;
+            }
+          }
+          else {
+            $node_data[3] = Null;
+          }
+          if (!empty($schedule_item->field_schedule_place['und'][$key]['safe_value'])) {
+            $node_data[4] = $schedule_item->field_schedule_place['und'][$key]['safe_value'];
+          }
+          $node_data[7] = gmdate("Y-m-d", $event_date['value']);
+          $node_data[8] = gmdate("H:i", $event_date['value']);
           if ($event_date['value'] <> $event_date['value2']) {
-            $node_data[7] = $node_data[7] . '-' . gmdate("H:i", $event_date['value2']);
+            $node_data[8] = $node_data[7] . '-' . gmdate("H:i", $event_date['value2']);
           }
           fputcsv($fp, $node_data);
           print($lines++ . "\r");
