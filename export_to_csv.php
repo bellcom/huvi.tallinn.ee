@@ -1,4 +1,5 @@
 <?php
+// Run example: drush --uri=https://huvi.tallinn.ee.dd:8443 scr export_to_csv.php
 
 print('Starting..' . PHP_EOL);
 /** bootstrap Drupal * */
@@ -11,7 +12,7 @@ $query = new EntityFieldQuery;
 $result = $query->entityCondition('entity_type', 'node')
     ->propertyCondition('type', 'event')
     ->propertyCondition('created', array('1514757600', ' 1546250399'), 'between')
-    ->propertyCondition('status', 1) // Here instead of in $conditions
+    ->propertyCondition('status', 1)
     ->execute();
 if (empty($result['node'])) {
   print('No nodes found'); // No applicable nodes found, no nodes to load.
@@ -52,12 +53,6 @@ foreach ($nodes as $node) {
       else {
         $node_data[5] = '';
       }
-      if (!empty($node->field_map_latlng['und'][0]['value'])) {
-        $node_data[6] = $node->field_map_latlng['und'][0]['value'];
-      }
-      else {
-        $node_data[6] = '';
-      }
 
       $all_fields = field_info_fields();
       $field_schedule_city_id_array = list_allowed_values($all_fields["field_schedule_city_id"]);
@@ -84,6 +79,13 @@ foreach ($nodes as $node) {
           }
           if (!empty($schedule_item->field_schedule_place['und'][$key]['safe_value'])) {
             $node_data[4] = $schedule_item->field_schedule_place['und'][$key]['safe_value'];
+          }
+          if(!empty($schedule_item->field_schedule_location['und'][0]['lat'] && !empty($schedule_item->field_schedule_location['und'][0]['lng']))) {
+              $node_data[6] = $schedule_item->field_schedule_location['und'][0]['lat'] . ',' . $schedule_item->field_schedule_location['und'][0]['lng'];
+          }elseif (!empty($node->field_map_latlng['und'][0]['value'])) {
+              $node_data[6] = $node->field_map_latlng['und'][0]['value'];
+          }else{
+              $node_data[6] = '';
           }
           $node_data[7] = gmdate("Y-m-d", $event_date['value']);
           $node_data[8] = gmdate("H:i", $event_date['value']);
