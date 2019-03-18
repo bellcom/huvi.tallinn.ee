@@ -1238,7 +1238,7 @@ class view extends views_db_object {
     if (!empty($this->build_info['fail'])) {
       return;
     }
-    if (!empty($this->view->build_info['denied'])) {
+    if (!empty($this->build_info['denied'])) {
       return;
     }
 
