@@ -626,6 +626,7 @@ function huvi_content_types_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        2244888 => 'Mujal Eestis',
         2944187 => 'Haabersti',
         2944191 => 'Kesklinn',
         2944189 => 'Kristiine',

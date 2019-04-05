@@ -79,7 +79,8 @@
       "2944193" : "mustamae",
       "2944194" : "nomme",
       "2920234" : "pirita",
-      "2944195" : "pohja-tallinn"
+      "2944195" : "pohja-tallinn",
+      "2244888" : "mujal-eestis"
     }
 
     /*

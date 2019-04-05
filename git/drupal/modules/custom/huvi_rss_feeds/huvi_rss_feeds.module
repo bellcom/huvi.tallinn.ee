@@ -283,6 +283,7 @@ function _huvi_rss_feeds_linnaosa() {
     2944193 => 'Mustamäe',
     2920234 => 'Pirita',
     2944194 => 'Nõmme',
+    2244888 => t("Mujal Eestis")
   );
 }
 

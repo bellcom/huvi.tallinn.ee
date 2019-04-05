@@ -263,7 +263,8 @@ function huvi_event_resource_get_city_id($city) {
     2944193 => "Mustamäe",
     2944194 => "Nõmme",
     2920234 => "Pirita",
-    2944195 => "Põhja-Tallinn"
+    2944195 => "Põhja-Tallinn",
+    2244888 => "Mujal Eestis"
   );
   return array_search($city, $cities);
 }
@@ -283,7 +284,8 @@ function huvi_event_resource_get_city_by_id($city_id) {
     2944193 => "Mustamäe",
     2944194 => "Nõmme",
     2920234 => "Pirita",
-    2944195 => "Põhja-Tallinn"
+    2944195 => "Põhja-Tallinn",
+    2244888 => "Mujal Eestis"
   );
   if (!empty($cities[$city_id])) {
     return $cities[$city_id];
