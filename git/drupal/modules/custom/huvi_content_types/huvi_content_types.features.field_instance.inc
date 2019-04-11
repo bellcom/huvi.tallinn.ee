@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * huvi_content_types.features.field_instance.inc
@@ -512,7 +513,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 20,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
@@ -564,7 +565,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 26,
     ),
   );
 
@@ -632,7 +633,7 @@ function huvi_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_miw',
-      'weight' => 14,
+      'weight' => 10,
     ),
   );
 
@@ -687,7 +688,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 24,
+      'weight' => 20,
     ),
   );
 
@@ -797,7 +798,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 21,
     ),
   );
 
@@ -852,7 +853,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
@@ -883,6 +884,7 @@ function huvi_content_types_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'translate' => 'Tõlge',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -907,7 +909,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 17,
+      'weight' => 13,
     ),
   );
 
@@ -960,7 +962,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'node_reference_autocomplete',
-      'weight' => 22,
+      'weight' => 18,
     ),
   );
 
@@ -1012,7 +1014,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 27,
+      'weight' => 23,
     ),
   );
 
@@ -1064,7 +1066,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 28,
+      'weight' => 24,
     ),
   );
 
@@ -1119,7 +1121,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 20,
+      'weight' => 16,
     ),
   );
 
@@ -1181,7 +1183,7 @@ function huvi_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_miw',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
@@ -1368,6 +1370,7 @@ function huvi_content_types_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => TRUE,
           'edit' => 'Edit',
+          'translate' => 'Tõlge',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -1392,7 +1395,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 18,
+      'weight' => 14,
     ),
   );
 
@@ -1444,7 +1447,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 31,
+      'weight' => 27,
     ),
   );
 
@@ -1499,7 +1502,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 21,
+      'weight' => 17,
     ),
   );
 
@@ -1551,7 +1554,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 12,
     ),
   );
 
@@ -1655,7 +1658,7 @@ function huvi_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 23,
+      'weight' => 19,
     ),
   );
 
@@ -1742,7 +1745,7 @@ function huvi_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'user_reference_autocomplete',
-      'weight' => 19,
+      'weight' => 15,
     ),
   );
 
@@ -1794,7 +1797,7 @@ function huvi_content_types_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 22,
     ),
   );
 
@@ -1854,7 +1857,7 @@ function huvi_content_types_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 13,
+      'weight' => 9,
     ),
   );
 
