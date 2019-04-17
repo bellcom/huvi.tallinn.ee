@@ -1,6 +1,8 @@
 <?php
 // Run example: drush --uri=https://huvi.tallinn.ee.dd:8443 scr export_to_csv.php
-
+if($_SERVER['HTTP_USER_AGENT']){
+    die();
+}
 print('Starting..' . PHP_EOL);
 /** bootstrap Drupal * */
 chdir(__DIR__);
