@@ -13,6 +13,16 @@ body.cke_editable {
 /*#edit-field-categories-activity-value-i18n-muu-wrapper .bef-checkboxes .form-item:nth-child(odd){
       border-right: 1px solid #bebebe;
 }*/
+@media (min-width: 704px) {
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes
+  .bef-checkboxes .form-item:last-child {
+    border-left: 7px solid #eaeaea;
+  }
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes
+  .bef-checkboxes .form-item:last-child label {
+    border-left: 1px solid #bebebe;
+  }
+}
 .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .fieldset-wrapper .form-item:nth-child(odd) label {
   border-right: 1px solid #cccccc;
 }
@@ -3654,23 +3664,8 @@ body.html {
   background-color: transparent;
 }
 
-
-body.logged-in.page-node-edit.node-type-event #edit-field-price,
-body.logged-in.page-node-add.page-node-add-event #edit-field-price,
-body.logged-in.page-node-edit.node-type-event #edit-field-price-information,
-body.logged-in.page-node-add.page-node-add-event #edit-field-price-information{
-  float: left;
-  margin-bottom: -14px;
-}
-
-body.logged-in.page-node-edit.node-type-event #edit-field-description,
-body.logged-in.page-node-add.page-node-add-event #edit-field-description
-{
-      margin-top: -10px;
-}
 .page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled td, .page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled td {
   padding: 0px;
-
 }
 
 body.logged-in.page-node-edit.node-type-event #edit-field-price, body.logged-in.page-node-add.page-node-add-event #edit-field-price, body.logged-in.page-node-edit.node-type-event #edit-field-price-information, body.logged-in.page-node-add.page-node-add-event #edit-field-price-information {

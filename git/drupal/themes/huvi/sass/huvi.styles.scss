@@ -13,6 +13,17 @@ body.cke_editable {
 /*#edit-field-categories-activity-value-i18n-muu-wrapper .bef-checkboxes .form-item:nth-child(odd){
       border-right: 1px solid #bebebe;
 }*/
+@media (min-width: 704px) {
+  .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes
+  .bef-checkboxes{
+    & .form-item:last-child{
+      border-left: 7px solid #eaeaea;
+      & label{
+        border-left: 1px solid #bebebe;
+      }
+    }
+  }
+}
 
 .form-item.form-type-select.form-item-field-categories-activity-value-i18n-muu .fieldset-wrapper {
   .form-item:nth-child(odd) label {
