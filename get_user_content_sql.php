@@ -21,7 +21,7 @@ $result = $query->fetchAll();
 foreach ($result as $record) {
     $id[] = $record->nid;
 }
-$id_list = implode(',', $id);
+$id_list = implode(', ', $id);
 print_r("UPDATE node SET node.uid = ? WHERE node.nid IN ( $id_list);" . PHP_EOL);
 print_r(PHP_EOL);
 $id = array();
@@ -32,7 +32,7 @@ $result = $query->fetchAll();
 foreach ($result as $record) {
     $id[] = $record->nid;
 }
-$id_list = implode(',', $id);
+$id_list = implode(', ', $id);
 print_r("UPDATE node_revision SET node_revision.uid = ? WHERE node.nid IN ( $id_list);" . PHP_EOL);
 print_r(PHP_EOL);
 $id = array();
@@ -43,7 +43,7 @@ $result = $query->fetchAll();
 foreach ($result as $record) {
     $id[] = $record->aid;
 }
-$id_list = implode(',', $id);
+$id_list = implode(', ', $id);
 print_r("UPDATE authmap SET authmap.uid = ? WHERE authmap.aid IN ( $id_list);" . PHP_EOL);
 print_r(PHP_EOL);
 $id = array();
@@ -54,7 +54,7 @@ $result = $query->fetchAll();
 foreach ($result as $record) {
     $id[] = $record->fid;
 }
-$id_list = implode(',', $id);
+$id_list = implode(', ', $id);
 print_r("UPDATE file_managed SET file_managed.uid = ? WHERE file_managed.aid IN ( $id_list);" . PHP_EOL);
 print_r(PHP_EOL);
 
