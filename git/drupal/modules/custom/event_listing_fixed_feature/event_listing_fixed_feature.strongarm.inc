@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * event_listing_fixed_feature.strongarm.inc
