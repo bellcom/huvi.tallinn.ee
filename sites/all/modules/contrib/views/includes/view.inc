@@ -459,18 +459,16 @@ class view extends views_db_object {
       // remember settings.
       $display_id = ($this->display_handler->is_defaulted('filters')) ? 'default' : $this->current_display;
 
-
+      // Start with remembered input via session.
+      if (!empty($_SESSION['views'][$this->name][$display_id])) {
+        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
+      }
 
       // Fetch exposed input values from $_GET. Overwrite if clashing.
       foreach ($_GET as $key => $value) {
         if (!in_array($key, array('page', 'q'))) {
           $this->exposed_input[$key] = $value;
         }
-      }
-
-      // Start with remembered input via session.
-      if (empty($this->exposed_input) && !empty($_SESSION['views'][$this->name][$display_id])) {
-        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
       }
     }
 
