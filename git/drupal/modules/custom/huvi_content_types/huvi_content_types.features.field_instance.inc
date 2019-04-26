@@ -141,7 +141,7 @@ function huvi_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_schedule_city_id',
-    'label' => 'Linnaosa',
+    'label' => 'Linnaosa/koht',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1937,7 +1937,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Kui praegu loodav üritus on alamüritus, mis kuulub suurema katusürituse alla, siis alusta peaürituse kirjutamist ning selekteeri see.');
   t('Kuva alamürituse otsingufilter');
   t('Lapse vanus või vanuse vahemik');
-  t('Linnaosa');
+  t('Linnaosa/koht');
   t('Map latlng');
   t('Map markers');
   t('Märgi, kui üritus on tasuta');
