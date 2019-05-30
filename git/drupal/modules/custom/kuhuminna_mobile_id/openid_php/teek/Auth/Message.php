@@ -572,7 +572,7 @@ class Auth_OpenID_Message {
 
     function setOpenIDNamespace($openid_ns_uri, $implicit)
     {
-        if (!in_array($openid_ns_uri, $this->allowed_openid_namespaces)) {
+        if (!in_array(urldecode($openid_ns_uri), $this->allowed_openid_namespaces)) {
             Auth_OpenID::log('Invalid null namespace: "%s"', $openid_ns_uri);
             return false;
         }
