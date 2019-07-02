@@ -2,7 +2,7 @@
 
 $default_coords = '59.439092,24.7482867'; // Just a spot at the center of Tallinn
 $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
-
+$key = (isset($_GET['key'])) ? $_GET['key'] : '';
 ?>
 <!doctype html>
 <html>
@@ -25,7 +25,7 @@ $markers = (isset($_GET['markers'])) ? $_GET['markers'] : '';
 		width:100%;
 	}
 	</style>
-	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?b&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY"></script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?b&key="<?php print key ?>></script>
 </head>
 <body>
 <div id="map_area"></div>
