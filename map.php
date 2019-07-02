@@ -25,7 +25,7 @@ $key = (isset($_GET['key'])) ? $_GET['key'] : '';
 		width:100%;
 	}
 	</style>
-	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?b&key="<?php print key ?>></script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=<?php echo $key; ?>"></script>
 </head>
 <body>
 <div id="map_area"></div>
