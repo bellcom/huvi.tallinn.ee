@@ -830,9 +830,10 @@ function shareGoogle(url) {
 function loadMap() {
     // Asynchronously Load the map API
     var script = document.createElement('script');
+    var geolocation_googlemaps_api_key = Drupal.settings.geolocation_googlemaps.geolocation_googlemaps_api_key;
     script.type = 'text/javascript';
-    script.src = "//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBIsA6lIhz327eRIfBxZAS2PTnxds7IpsY&callback=initialize";
-    document.body.appendChild(script);
+    script.src = "//maps.googleapis.com/maps/api/js?sensor=false&key=" + geolocation_googlemaps_api_key + "&callback=initialize";
+  document.body.appendChild(script);
 }
 
 
@@ -931,7 +932,7 @@ function getPathParts() {
 (function($) {
 	$(document).ready(function() {
 		var markers = ($('#map_canvas').attr('data-markers')).split(';').join('|');
-		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers;
+		var gmaps_url = Drupal.settings.basePath + 'map.php?markers=' + markers + '&key=' +  Drupal.settings.geolocation_googlemaps.geolocation_googlemaps_api_key;
 
 		$('#map_wrapper').prepend(
 			'<a class="map_overlay_button" href="' + gmaps_url +

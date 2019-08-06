@@ -67,4 +67,5 @@ function huvi_preprocess_page(&$variables) {
      drupal_add_js(drupal_get_path('theme', 'huvi') . '/libraries/daterangepicker/dist/jquery.daterangepicker_huvi.min.js');
      drupal_add_js(drupal_get_path('theme', 'huvi') . '/js/daterangepicker.custom.languges.js');
  }
+ drupal_add_js(array('geolocation_googlemaps' => array('geolocation_googlemaps_api_key' => variable_get('geolocation_googlemaps_api_key', ''))), array('type' => 'setting'));
 }
