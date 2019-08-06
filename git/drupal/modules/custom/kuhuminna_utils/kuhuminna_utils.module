@@ -181,6 +181,7 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   $form['logi_sisse'] = array(
     '#weight' =>1,
     '#prefix' => '<div id = "logi" class = "logi"><span id = "logi_sisse" class = "logi-sisse">Logi sisse kasutajanime ja salasõnaga</span>
+<p class="info">Kui Sul tekib <span style="color:#f36722">sisselogimisega probleeme</span>, siis palun võta ühendust tel 640 4377 või kirjuta aadressile <a href="mailto:huvi@tallinnlv.ee">huvi@tallinnlv.ee</a>.</p>
                   </div>  <div id = "div_logi_sisse" class = "div-logi-sisse">',
   );
   $form['name'] += array(

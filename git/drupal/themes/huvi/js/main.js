@@ -674,7 +674,7 @@
            $("#modalContent #div_logi_sisse").show();
         }
         if ($("#modalContent #div_logi_sisse").is(':hidden'))
-            $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height());
+            $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height() + $("p.info").height());
         $('#huvi-loader').remove();
     });
 

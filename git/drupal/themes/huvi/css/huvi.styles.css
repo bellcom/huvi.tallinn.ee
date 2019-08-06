@@ -4434,6 +4434,12 @@ div.ctools-modal-content .form-item .description {
 .logi {
   margin-top: 60px;
 }
+.logi p.info {
+  margin-top: 25px;
+}
+.logi p.info span {
+  color: #f36722;
+}
 
 .logi-sisse {
   border-bottom: 1px solid;
