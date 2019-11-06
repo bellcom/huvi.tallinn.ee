@@ -30,6 +30,8 @@ function event_listing_fixed_feature_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Otsi';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
@@ -327,7 +329,7 @@ echo $date;
     4 => 0,
   );
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -442,7 +444,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -591,7 +593,7 @@ return true;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -845,7 +847,7 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -1129,7 +1131,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -1384,7 +1386,7 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -1649,7 +1651,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_event_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -1905,7 +1907,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -2334,7 +2336,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -2748,7 +2750,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -3153,7 +3155,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -3558,7 +3560,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -3963,7 +3965,7 @@ echo $date;
     3 => '3',
     4 => '4',
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -4293,7 +4295,7 @@ echo $date;
     4 => '4',
   );
   $handler->display->display_options['filters']['field_categories_activity_value_i18n']['reduce_duplicates'] = TRUE;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -4714,7 +4716,7 @@ echo $date;
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 3;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
