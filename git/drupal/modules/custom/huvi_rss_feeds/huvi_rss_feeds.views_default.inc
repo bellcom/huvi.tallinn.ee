@@ -166,7 +166,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
-  /* Väli: Sisu: Link */
+  /* Väli: Sisu: Link to content */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -229,7 +229,7 @@ function huvi_rss_feeds_views_default_views() {
     1 => 'AND',
     2 => 'OR',
   );
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -275,7 +275,7 @@ function huvi_rss_feeds_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -382,7 +382,7 @@ function huvi_rss_feeds_views_default_views() {
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -428,7 +428,7 @@ function huvi_rss_feeds_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -549,7 +549,7 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
   $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -559,6 +559,10 @@ function huvi_rss_feeds_views_default_views() {
   $handler = $view->new_display('feed', 'Feed', 'feeds_schedule');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'huvi.tallinn.ee RSS feeds';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rakenda';
@@ -659,11 +663,13 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['fields']['field_schedule_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_date']['settings'] = array(
     'format_type' => 'short',
+    'custom_date_format' => '',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-    'show_repeat_rule' => 'show',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'hide',
   );
   $handler->display->display_options['fields']['field_schedule_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_schedule_date']['delta_offset'] = '0';
@@ -743,7 +749,7 @@ function huvi_rss_feeds_views_default_views() {
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -820,7 +826,7 @@ function huvi_rss_feeds_views_default_views() {
     'field_schedule_place' => 'field_schedule_place',
     'name' => 'name',
   );
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1032,7 +1038,7 @@ function huvi_rss_feeds_views_default_views() {
     'field_schedule' => 'field_schedule',
   );
   $handler->display->display_options['filters']['field_name']['group'] = 1;
-  /* Filtri kriteeriumid: Field collection item: Linnaosa (field_schedule_city_id) */
+  /* Filtri kriteeriumid: Field collection item: Linnaosa/koht (field_schedule_city_id) */
   $handler->display->display_options['filters']['field_schedule_city_id_value']['id'] = 'field_schedule_city_id_value';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['table'] = 'field_data_field_schedule_city_id';
   $handler->display->display_options['filters']['field_schedule_city_id_value']['field'] = 'field_schedule_city_id_value';
@@ -1108,7 +1114,7 @@ function huvi_rss_feeds_views_default_views() {
     'field_description' => 'field_description',
     'field_schedule_place' => 'field_schedule_place',
   );
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1305,7 +1311,7 @@ function huvi_rss_feeds_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1475,7 +1481,7 @@ function huvi_rss_feeds_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
