@@ -505,7 +505,7 @@ b footer .l-footer--main-wrapper .l-footer--main-container {
   color: transparent;
   width: 131px;
   height: 32px;
-  background: url("../images/logo_tallinn.png") center center no-repeat;
+  background: url("../images/logo-tallinn-white.png") center center no-repeat;
   text-indent: -9999px;
   margin-left: 30px;
 }
@@ -519,9 +519,9 @@ b footer .l-footer--main-wrapper .l-footer--main-container {
   display: inline-block;
   margin-bottom: 10px;
   margin-top: -3px;
-  width: 107px;
-  height: 38px;
-  background: url("../images/fb-footer.png") center center no-repeat;
+  width: 151px;
+  height: 32px;
+  background: url("../images/fb-footer-white.png") center center no-repeat;
   text-indent: -9999px;
 }
 
@@ -3593,7 +3593,10 @@ body.logged-in.page-node-add-event .l-content .l-region--highlighted, body.logge
   display: block;
 }
 body.logged-in.page-node-add-event .footer-logo, body.logged-in.page-node-edit.node-type-event .footer-logo, body.logged-in.page-loodud .footer-logo, body.logged-in.page-user .footer-logo, body.logged-in.page-user-edit .footer-logo, body.logged-in.page-otsing .footer-logo, body.logged-in.page-kasutajad .footer-logo, body.logged-in.page-node-760 .footer-logo, body.logged-in.page-node-764 .footer-logo, body.logged-in.page-banner-listing .footer-logo, body.logged-in.node-type-advertisement .footer-logo, body.logged-in.page-node-add-advertisement .footer-logo, body.logged-in.page-node-edit .footer-logo, body.logged-in.page-admin .footer-logo, body.logged-in.node-type-landing-page .footer-logo, body.logged-in.page-link-click-count-stats .footer-logo, body.logged-in.node-type-webform .footer-logo, body.logged-in.page-403 .footer-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-logo {
-  background: url("../images/logo_tallinn_blue.png") center center no-repeat;
+  background: url("../images/logo-tallinn-blue.png") center center no-repeat;
+}
+body.logged-in.page-node-add-event .footer-fb-logo, body.logged-in.page-node-edit.node-type-event .footer-fb-logo, body.logged-in.page-loodud .footer-fb-logo, body.logged-in.page-user .footer-fb-logo, body.logged-in.page-user-edit .footer-fb-logo, body.logged-in.page-otsing .footer-fb-logo, body.logged-in.page-kasutajad .footer-fb-logo, body.logged-in.page-node-760 .footer-fb-logo, body.logged-in.page-node-764 .footer-fb-logo, body.logged-in.page-banner-listing .footer-fb-logo, body.logged-in.node-type-advertisement .footer-fb-logo, body.logged-in.page-node-add-advertisement .footer-fb-logo, body.logged-in.page-node-edit .footer-fb-logo, body.logged-in.page-admin .footer-fb-logo, body.logged-in.node-type-landing-page .footer-fb-logo, body.logged-in.page-link-click-count-stats .footer-fb-logo, body.logged-in.node-type-webform .footer-fb-logo, body.logged-in.page-403 .footer-fb-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-fb-logo {
+  background: url("../images/fb-footer-blue.png") center center no-repeat;
 }
 body.logged-in.page-node-add-event .copyright p, body.logged-in.page-node-edit.node-type-event .copyright p, body.logged-in.page-loodud .copyright p, body.logged-in.page-user .copyright p, body.logged-in.page-user-edit .copyright p, body.logged-in.page-otsing .copyright p, body.logged-in.page-kasutajad .copyright p, body.logged-in.page-node-760 .copyright p, body.logged-in.page-node-764 .copyright p, body.logged-in.page-banner-listing .copyright p, body.logged-in.node-type-advertisement .copyright p, body.logged-in.page-node-add-advertisement .copyright p, body.logged-in.page-node-edit .copyright p, body.logged-in.page-admin .copyright p, body.logged-in.node-type-landing-page .copyright p, body.logged-in.page-link-click-count-stats .copyright p, body.logged-in.node-type-webform .copyright p, body.logged-in.page-403 .copyright p, body.logged-in.page-otsing-kasutaja-uritused .copyright p {
   color: #3c7cbf;
@@ -3980,7 +3983,7 @@ body.page-node-2212 article {
   padding: 40px;
 }
 body.page-node-2212 .footer-logo {
-  background: url("../images/logo_tallinn_blue.png") center center no-repeat;
+  background: url("../images/logo-tallinn-blue.png") center center no-repeat;
 }
 body.page-node-2212 .copyright p {
   color: #3c7cbf;

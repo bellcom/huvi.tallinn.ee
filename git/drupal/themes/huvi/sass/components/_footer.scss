@@ -56,9 +56,9 @@
   display: inline-block;
   margin-top: 5px;
   color: transparent;
-  width: 112px;
-  height: 38px;
-  background: url("../images/logo_tallinn.png") center center no-repeat;
+  width: 131px;
+  height: 32px;
+  background: url("../images/logo-tallinn-white.png") center center no-repeat;
   text-indent: -9999px;
   margin-left: 30px;
   @include at-breakpoint($tab){
@@ -70,9 +70,9 @@
   display: inline-block;
   margin-bottom: 10px;
   margin-top: -3px;
-  width: 107px;
-  height: 38px;
-  background: url("../images/fb-footer.png") center center no-repeat;
+  width: 151px;
+  height: 32px;
+  background: url("../images/fb-footer-white.png") center center no-repeat;
   text-indent: -9999px;
   @include at-breakpoint($tab){
     margin-right: 20px;
