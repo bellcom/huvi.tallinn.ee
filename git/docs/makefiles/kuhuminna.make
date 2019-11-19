@@ -196,10 +196,6 @@ projects[nodeaccess_userreference][subdir] = "contrib"
 projects[nodeaccess_userreference][version] = "3.10"
 projects[nodeaccess_userreference][type] = "module"
 
-projects[nodequeue][subdir] = "contrib"
-projects[nodequeue][version] = "2.0"
-projects[nodequeue][type] = "module"
-
 projects[openid_ee][subdir] = "contrib"
 projects[openid_ee][version] = "1.x-dev"
 projects[openid_ee][type] = "module"

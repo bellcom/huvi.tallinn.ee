@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * huvi_content_types.views_default.inc
@@ -40,16 +41,6 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'banner';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Seos: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'event_advertisement' => 'event_advertisement',
-    'activities_advertisement' => 0,
-  );
   /* Väli: Sisu: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -58,12 +49,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_type'] = '0';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
-  /* Lühike kriteerium: Nodequeue: Asukoht */
-  $handler->display->display_options['sorts']['position']['id'] = 'position';
-  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['position']['field'] = 'position';
-  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -90,7 +76,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -121,16 +107,6 @@ function huvi_content_types_views_default_views() {
   $handler = $view->new_display('block', 'Activities advertisement', 'activities_advertisement_block');
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Seos: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'activities_advertisement' => 'activities_advertisement',
-    'event_advertisement' => 0,
-  );
 
   /* Display: Event advertisement backup */
   $handler = $view->new_display('block', 'Event advertisement backup', 'block_1');
@@ -150,7 +126,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -191,7 +167,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -202,14 +178,6 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
-  );
-  /* Filtri kriteeriumid: Broken/missing handler */
-  $handler->display->display_options['filters']['field_position_value']['id'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['table'] = 'field_data_field_position';
-  $handler->display->display_options['filters']['field_position_value']['field'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_position_value']['value'] = array(
-    3 => '3',
   );
   /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
@@ -240,7 +208,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -251,14 +219,6 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
-  );
-  /* Filtri kriteeriumid: Broken/missing handler */
-  $handler->display->display_options['filters']['field_position_value']['id'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['table'] = 'field_data_field_position';
-  $handler->display->display_options['filters']['field_position_value']['field'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_position_value']['value'] = array(
-    1 => '1',
   );
   /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
@@ -289,7 +249,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -300,14 +260,6 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
-  );
-  /* Filtri kriteeriumid: Broken/missing handler */
-  $handler->display->display_options['filters']['field_position_value']['id'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['table'] = 'field_data_field_position';
-  $handler->display->display_options['filters']['field_position_value']['field'] = 'field_position_value';
-  $handler->display->display_options['filters']['field_position_value']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_position_value']['value'] = array(
-    2 => '2',
   );
   /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
@@ -338,7 +290,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -479,7 +431,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -620,7 +572,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -736,7 +688,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -814,7 +766,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -944,7 +896,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filtri kriteeriumid: Sisu: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

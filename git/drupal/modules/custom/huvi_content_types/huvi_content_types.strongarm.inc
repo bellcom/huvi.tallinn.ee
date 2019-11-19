@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * huvi_content_types.strongarm.inc
