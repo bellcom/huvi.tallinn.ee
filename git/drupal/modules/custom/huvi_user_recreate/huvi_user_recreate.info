@@ -1,0 +1,4 @@
+name = Huvi user recreate
+core = 7.x
+package = HUVI
+project path = sites/all/modules/custom

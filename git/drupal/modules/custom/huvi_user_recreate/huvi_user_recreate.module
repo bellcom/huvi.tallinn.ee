@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Implements hook_user_delete().
+ */
+function huvi_user_recreate_user_cancel($edit, $account, $method) {
+
+  if ('user_cancel_reassign' === $method) {
+    huvi_user_recreate_create_content_sql_file($account);
+  }
+  // else, the method set in admin>config>account will be applicated
+}
+
+/**
+ * Create a file with SQL commands. Later this file could be used to reassign user content to another user.
+ *
+ * @param type $account
+ */
+function huvi_user_recreate_create_content_sql_file($account) {
+
+  $user_id = $account->uid;
+  $filename = 'user-recreate/' . $user_id . '.sql';
+  $id_list = NULL;
+
+// node
+  $query = db_query('SELECT n.nid FROM {node} n WHERE n.uid = :uid', array(':uid' => $user_id));
+  $result = $query->fetchAll();
+  $id = array();
+  foreach ($result as $record) {
+    $id[] = $record->nid;
+  }
+
+  if (!empty($id)) {
+    $id_list = implode(', ', $id);
+    file_put_contents($filename, "UPDATE node SET node.uid = {?} WHERE node.nid IN ($id_list);" . PHP_EOL, FILE_APPEND);
+  }
+
+// node_revision
+  $query = db_query('SELECT n.nid
+FROM {node_revision} n WHERE n.uid = :uid', array(':uid' => $user_id));
+  $result = $query->fetchAll();
+  $id = array();
+  foreach ($result as $record) {
+    $id[] = $record->nid;
+  }
+
+  if (!empty($id)) {
+    $id_list = implode(', ', $id);
+    file_put_contents($filename, "UPDATE node_revision SET node_revision.uid = {?} WHERE node_revision.nid IN ($id_list);" . PHP_EOL, FILE_APPEND);
+  }
+
+// file_managed
+  $query = db_query('SELECT n.fid
+FROM {file_managed} n WHERE n.uid = :uid', array(':uid' => $user_id));
+  $result = $query->fetchAll();
+  $id = array();
+  foreach ($result as $record) {
+    $id[] = $record->fid;
+  }
+  if (!empty($id)) {
+    $id_list = implode(', ', $id);
+    file_put_contents($filename, "UPDATE file_managed SET file_managed.uid = {?} WHERE file_managed.fid IN ($id_list);" . PHP_EOL, FILE_APPEND);
+  }
+}
+
