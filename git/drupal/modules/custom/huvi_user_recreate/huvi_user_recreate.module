@@ -17,7 +17,7 @@ function huvi_user_recreate_user_cancel($edit, $account, $method) {
  * @param type $account
  */
 function huvi_user_recreate_create_content_sql_file($account) {
-
+  $sql = NULL;
   $user_id = $account->uid;
   $filename = 'user-recreate/' . $user_id . '.sql';
   $id_list = NULL;
@@ -32,6 +32,7 @@ function huvi_user_recreate_create_content_sql_file($account) {
 
   if (!empty($id)) {
     $id_list = implode(', ', $id);
+    $sql .= "UPDATE node SET node.uid = {?} WHERE node.nid IN ($id_list);" . PHP_EOL;
     file_put_contents($filename, "UPDATE node SET node.uid = {?} WHERE node.nid IN ($id_list);" . PHP_EOL, FILE_APPEND);
   }
 
@@ -46,6 +47,7 @@ FROM {node_revision} n WHERE n.uid = :uid', array(':uid' => $user_id));
 
   if (!empty($id)) {
     $id_list = implode(', ', $id);
+    $sql .= "UPDATE node_revision SET node_revision.uid = {?} WHERE node_revision.nid IN ($id_list);" . PHP_EOL;
     file_put_contents($filename, "UPDATE node_revision SET node_revision.uid = {?} WHERE node_revision.nid IN ($id_list);" . PHP_EOL, FILE_APPEND);
   }
 
@@ -59,7 +61,34 @@ FROM {file_managed} n WHERE n.uid = :uid', array(':uid' => $user_id));
   }
   if (!empty($id)) {
     $id_list = implode(', ', $id);
+    $sql .= "UPDATE file_managed SET file_managed.uid = {?} WHERE file_managed.fid IN ($id_list);" . PHP_EOL;
     file_put_contents($filename, "UPDATE file_managed SET file_managed.uid = {?} WHERE file_managed.fid IN ($id_list);" . PHP_EOL, FILE_APPEND);
   }
+  
+  // Email to admin.
+  $recipient = user_load(1);
+
+  drupal_mail('huvi_user_recreate',
+    'user_recreate',
+    $recipient->mail,
+    'et',
+    $params = array('username' => $account->name,
+    'userid' => $user_id,
+    'sql' => $sql),
+    $send = TRUE
+  );
 }
 
+function huvi_user_recreate_mail($key, &$message, $params) {
+  global $base_url;
+
+  switch ($key) {
+    case 'user_recreate':
+      // Set headers etc
+      $message['subject'] = t('User @username (ID:@userid) was removed on @site', array('@username' => $params['username'], '@userid' => $params['userid'], '@site' => $base_url));
+      $message['body'][] = t('User @username (ID:@userid) was removed on @site and its content belong to the Anonymous user.', array('@username' => $params['username'], '@userid' => $params['userid'], '@site' => $base_url));
+      $message['body'][] = $params['sql'];
+      $message['body'][] = t('Run "drush ruc @userid {new_id}" to reassign content.', array('@username' => $params['username'], '@userid' => $params['userid'], '@site' => $base_url));
+      break;
+  }
+}
