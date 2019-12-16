@@ -19,7 +19,7 @@ function huvi_user_recreate_user_cancel($edit, $account, $method) {
 function huvi_user_recreate_create_content_sql_file($account) {
   $sql = NULL;
   $user_id = $account->uid;
-  $filename = 'user-recreate/' . $user_id . '.sql';
+  $filename = DRUPAL_ROOT. '/user-recreate/' . $user_id . '.sql';
   $id_list = NULL;
 
 // node
