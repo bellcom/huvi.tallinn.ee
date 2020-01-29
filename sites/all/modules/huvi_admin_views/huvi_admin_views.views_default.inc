@@ -261,13 +261,6 @@ function huvi_admin_views_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = 'Muuda';
   $handler->display->display_options['fields']['edit_node']['text'] = 'muuda';
   /* Väli: Open ID */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Open ID';
-  $handler->display->display_options['fields']['nothing_1']['label'] = 'Open ID';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<a href="/user/[uid]/set_openid?destination=kasutajad">Muuda </a>';
-  /* Väli: Open ID */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';

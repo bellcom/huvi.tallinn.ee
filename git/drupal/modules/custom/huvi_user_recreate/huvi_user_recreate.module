@@ -44,7 +44,6 @@ function huvi_user_recreate_set_openid_form($form, &$form_state, $uid) {
   $form['id_code'] = array(
     '#type' => 'textfield',
     '#title' => t('Isikukood'),
-    '#description' => t('Add user isiskukood'),
     '#default_value' => _huvi_user_recreate_id_code_validate($id_code) ? $id_code : '',
   );
   $form['submit_button'] = array(
