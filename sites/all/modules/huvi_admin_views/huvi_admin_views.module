@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the HUVI admin views feature.
+ */
+
+include_once 'huvi_admin_views.features.inc';

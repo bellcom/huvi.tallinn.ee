@@ -1,6 +1,102 @@
 <?php
 
 /**
+ * Implements hook_menu.
+ */
+function huvi_user_recreate_menu() {
+  $items = array();
+  $items["user/%/set_openid"] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('huvi_user_recreate_set_openid_form', 1),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+
+/**
+ * Generates form for add user's ID code.
+ *
+ * @param mixed $form
+ *   The form.
+ * @param mixed $form_state
+ *   The state of the form.
+ * @param int $uid
+ *   User ID.
+ *
+ * @return mixed
+ *   The form.
+ */
+function huvi_user_recreate_set_openid_form($form, &$form_state, $uid) {
+  $user = user_load($uid);
+  if (!$user) {
+    drupal_set_message(t('User not found'), 'error');
+    return;
+  }
+  $id_code = strstr($user->mail, '@', true);
+
+  drupal_set_title(t('User') .': ' .$user->name);
+  if (!isset($form_state['uid'])) {
+    $form_state['uid'] = $uid;
+  }
+
+  $form['id_code'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Isikukood'),
+    '#description' => t('Add user isiskukood'),
+    '#default_value' => _huvi_user_recreate_id_code_validate($id_code) ? $id_code : '',
+  );
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add ID code'),
+  );
+
+  return $form;
+}
+
+/**
+ *  Form validation.
+ */
+
+function huvi_user_recreate_set_openid_form_validate($form, &$form_state) {
+  if (!_huvi_user_recreate_id_code_validate($form_state['values']['id_code'])) {
+    form_set_error('id_code', t('ID code not valid'));
+  }
+}
+
+function huvi_user_recreate_set_openid_form_submit($form, &$form_state){
+  $uid = $form_state['uid'];
+  $openid = $form_state['values']['id_code'];
+   // Set new authname.
+  $result = db_query('UPDATE {authmap} SET authname = :openid WHERE uid = :uid', array(':uid' => $uid, ':openid' => 'https://openid.ee/u/' . $openid));
+
+  if ($result->rowCount()) {
+    drupal_set_message(t('Authname updated'), 'status');
+  }
+  else {
+    drupal_set_message(t('Authname has not been updated'), 'warning');
+  }
+
+  // Set new email.
+  $result = db_query('UPDATE {users} SET mail = :openid WHERE uid = :uid AND mail LIKE \'%@eesti.ee\'', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
+  if ($result->rowCount()) {
+    drupal_set_message(t('Mail updated'), 'status');
+  }
+  else {
+    drupal_set_message(t('Mail has not been updated'), 'warning');
+  }
+
+  // Set new init.
+  $result = db_query('UPDATE {users} SET init = :openid WHERE uid = :uid ', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
+  if ($result->rowCount()) {
+    drupal_set_message(t('Init updated'), 'status');
+  }
+  else {
+    drupal_set_message(t('Init has not been updated'), 'warning');
+  }
+}
+/**
  * Implements hook_user_delete().
  */
 function huvi_user_recreate_user_cancel($edit, $account, $method) {
@@ -37,8 +133,7 @@ function huvi_user_recreate_create_content_sql_file($account) {
   }
 
 // node_revision
-  $query = db_query('SELECT n.nid
-FROM {node_revision} n WHERE n.uid = :uid', array(':uid' => $user_id));
+  $query = db_query('SELECT n.nid FROM {node_revision} n WHERE n.uid = :uid', array(':uid' => $user_id));
   $result = $query->fetchAll();
   $id = array();
   foreach ($result as $record) {
@@ -52,8 +147,7 @@ FROM {node_revision} n WHERE n.uid = :uid', array(':uid' => $user_id));
   }
 
 // file_managed
-  $query = db_query('SELECT n.fid
-FROM {file_managed} n WHERE n.uid = :uid', array(':uid' => $user_id));
+  $query = db_query('SELECT n.fid FROM {file_managed} n WHERE n.uid = :uid', array(':uid' => $user_id));
   $result = $query->fetchAll();
   $id = array();
   foreach ($result as $record) {
@@ -64,7 +158,7 @@ FROM {file_managed} n WHERE n.uid = :uid', array(':uid' => $user_id));
     $sql .= "UPDATE file_managed SET file_managed.uid = {?} WHERE file_managed.fid IN ($id_list);" . PHP_EOL;
     file_put_contents($filename, "UPDATE file_managed SET file_managed.uid = {?} WHERE file_managed.fid IN ($id_list);" . PHP_EOL, FILE_APPEND);
   }
-  
+
   // Email to admin.
   $recipient = user_load(1);
 
@@ -91,4 +185,73 @@ function huvi_user_recreate_mail($key, &$message, $params) {
       $message['body'][] = t('Run "drush ruc @userid {new_id}" to reassign content.', array('@username' => $params['username'], '@userid' => $params['userid'], '@site' => $base_url));
       break;
   }
+}
+
+function huvi_user_recreate_user_has_role() {
+  global $user;
+  $roles = func_get_args();
+  foreach ($roles as $role) {
+    if (in_array($role, $user->roles)) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Helper function to validate the ID code.
+ * @param  string $code
+ * @return boolean
+ */
+function _huvi_user_recreate_id_code_validate($code) {
+
+  if (!preg_match('/^(4|3|5|6)[1-9]\d{9}$/m', $code)) {
+    return FALSE;
+  }
+
+  $code_segments = _huvi_user_recreate_id_code_segments($code);
+
+  switch ((int)$code_segments['G']) {
+    case 3:
+    case 4:
+      $year = 19 . $code_segments['YY'];
+      break;
+    case 5:
+    case 6:
+      $year = 20 . $code_segments['YY'];
+      break;
+    default:
+      return FALSE;
+  }
+
+  // Check if birthday is a valid date.
+  $month = (int) $code_segments['MM'];
+  $day = (int) $code_segments['DD'];
+  $year = (int) $year;
+  if (!checkdate($month, $day, $year)) {
+    return FALSE;
+  }
+
+  return TRUE;
+}
+/**
+ * Helper function to segment the ID code value
+ * @param  string $code
+ * @return array segemented array with keys G, YY, MM, DD
+ */
+function _huvi_user_recreate_id_code_segments($code) {
+  return array(
+    'G' => substr($code, 0, 1),
+    'YY' => substr($code, 1, 2),
+    'MM' => substr($code, 3, 2),
+    'DD' => substr($code, 5, 2)
+  );
+}
+
+function huvi_user_recreate_get_set_openid_page_link($uid) {
+   if (user_access('administer site configuration')) {
+     $link = '<a href="/user/'.$uid . '/set_openid?destination=kasutajad">' . t('Edit') . '</a>';
+     return $link;
+   }
+  return FALSE;
 }
