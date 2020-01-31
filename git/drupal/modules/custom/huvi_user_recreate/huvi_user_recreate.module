@@ -1,15 +1,18 @@
 <?php
 
+include_once 'huvi_user_set_openid.drush.inc';
+
 /**
  * Implements hook_menu.
  */
 function huvi_user_recreate_menu() {
   $items = array();
   $items["user/%/set_openid"] = array(
+    'title' => t('Add ID code'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('huvi_user_recreate_set_openid_form', 1),
     'access arguments' => array('administer site configuration'),
-    'type' => MENU_CALLBACK,
+    'type' => MENU_LOCAL_TASK,
   );
   return $items;
 }
@@ -67,34 +70,9 @@ function huvi_user_recreate_set_openid_form_validate($form, &$form_state) {
 function huvi_user_recreate_set_openid_form_submit($form, &$form_state){
   $uid = $form_state['uid'];
   $openid = $form_state['values']['id_code'];
-   // Set new authname.
-  $result = db_query('UPDATE {authmap} SET authname = :openid WHERE uid = :uid', array(':uid' => $uid, ':openid' => 'https://openid.ee/u/' . $openid));
-
-  if ($result->rowCount()) {
-    drupal_set_message(t('Authname updated'), 'status');
-  }
-  else {
-    drupal_set_message(t('Authname has not been updated'), 'warning');
-  }
-
-  // Set new email.
-  $result = db_query('UPDATE {users} SET mail = :openid WHERE uid = :uid AND mail LIKE \'%@eesti.ee\'', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
-  if ($result->rowCount()) {
-    drupal_set_message(t('Mail updated'), 'status');
-  }
-  else {
-    drupal_set_message(t('Mail has not been updated'), 'warning');
-  }
-
-  // Set new init.
-  $result = db_query('UPDATE {users} SET init = :openid WHERE uid = :uid ', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
-  if ($result->rowCount()) {
-    drupal_set_message(t('Init updated'), 'status');
-  }
-  else {
-    drupal_set_message(t('Init has not been updated'), 'warning');
-  }
+  huvi_user_set_openid_set_openid($uid, $openid);
 }
+
 /**
  * Implements hook_user_delete().
  */
@@ -245,12 +223,4 @@ function _huvi_user_recreate_id_code_segments($code) {
     'MM' => substr($code, 3, 2),
     'DD' => substr($code, 5, 2)
   );
-}
-
-function huvi_user_recreate_get_set_openid_page_link($uid) {
-   if (user_access('administer site configuration')) {
-     $link = '<a href="/user/'.$uid . '/set_openid?destination=kasutajad">' . t('Edit') . '</a>';
-     return $link;
-   }
-  return FALSE;
 }

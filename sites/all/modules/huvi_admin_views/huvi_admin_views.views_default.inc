@@ -260,20 +260,6 @@ function huvi_admin_views_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Muuda';
   $handler->display->display_options['fields']['edit_node']['text'] = 'muuda';
-  /* Väli: Open ID */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Open ID';
-  $handler->display->display_options['fields']['php']['label'] = 'Open ID';
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '  <?php
-    if (module_exists(\'huvi_user_recreate\')) {
-      print huvi_user_recreate_get_set_openid_page_link($row->uid);
-   }
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Lühike kriteerium: Kasutaja: Loomise kuupäev */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
