@@ -91,7 +91,7 @@ function huvi_user_set_openid_set_openid($uid = NULL, $openid = NULL) {
       drush_print('Init has not been updated');
     }
      else {
-      drupal_set_message(t('Init has not been updated'), 'status');
+      drupal_set_message(t('Init has not been updated'), 'warning');
     }
   }
 }
