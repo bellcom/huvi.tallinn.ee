@@ -4268,10 +4268,10 @@ body.logged-in {
     background-color: white;
     border: 1px solid #cdcdcd;
   }
-  &.page-user-edit footer .footer-fb-logo, &.page-loodud footer .footer-fb-logo, &.page-kasutajad footer .footer-fb-logo, &.page-otsing footer .footer-fb-logo, &.page-banner-listing footer .footer-fb-logo {
+  &.page-user-edit footer .footer-fb-logo, &.page-node-retrieve footer .footer-fb-logo, &.page-loodud footer .footer-fb-logo, &.page-kasutajad footer .footer-fb-logo, &.page-otsing footer .footer-fb-logo, &.page-banner-listing footer .footer-fb-logo, &.page-archive footer .footer-fb-logo, {
     margin-right: 10px;
   }
-  &.page-user-edit footer .l-region--footer-bottom p, &.page-loodud footer .l-region--footer-bottom p, &.page-kasutajad footer .l-region--footer-bottom p, &.page-otsing footer .l-region--footer-bottom p, &.page-banner-listing footer .l-region--footer-bottom p {
+  &.page-user-edit footer .l-region--footer-bottom p, &.page-node-retrieve footer .l-region--footer-bottom p, &.page-loodud footer .l-region--footer-bottom p, &.page-kasutajad footer .l-region--footer-bottom p, &.page-otsing footer .l-region--footer-bottom p, &.page-banner-listing footer .l-region--footer-bottom p, &.page-archive footer .l-region--footer-bottom p {
     margin-left: 10px;
   }
 }
@@ -4282,18 +4282,18 @@ body.logged-in {
 }
 
 body.logged-in {
-  &.page-node-add-event, &.page-node-edit.node-type-event, &.page-loodud, &.page-user, &.page-user-edit, &.page-otsing, &.page-kasutajad, &.page-node-760, &.page-node-764, &.page-banner-listing, &.node-type-advertisement, &.page-node-add-advertisement, &.page-node-edit, &.page-admin, &.node-type-landing-page, &.page-link-click-count-stats, &.node-type-webform, &.page-403, &.page-otsing-kasutaja-uritused {
+  &.page-node-add-event, &.page-node-edit.node-type-event, &.page-loodud, &.page-user, &.page-node-retrieve, &.page-user-edit, &.page-otsing, &.page-kasutajad, &.page-node-760, &.page-node-764, &.page-banner-listing, &.node-type-advertisement, &.page-node-add-advertisement, &.page-node-edit, &.page-admin, &.node-type-landing-page, &.page-link-click-count-stats, &.node-type-webform, &.page-403, &.page-otsing-kasutaja-uritused, &.page-archive {
     background: #E5F3FC;
     font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   }
-  &.page-node-add-event h1, &.page-node-edit.node-type-event h1, &.page-loodud h1, &.page-user h1, &.page-user-edit h1, &.page-otsing h1, &.page-kasutajad h1, &.page-node-760 h1, &.page-node-764 h1, &.page-banner-listing h1, &.node-type-advertisement h1, &.page-node-add-advertisement h1, &.page-node-edit h1, &.page-admin h1, &.node-type-landing-page h1, &.page-link-click-count-stats h1, &.node-type-webform h1, &.page-403 h1, &.page-otsing-kasutaja-uritused h1 {
+  &.page-node-add-event h1, &.page-node-edit.node-type-event h1, &.page-loodud h1, &.page-user h1, &.page-node-retrieve h1, &.page-user-edit h1, &.page-otsing h1, &.page-kasutajad h1, &.page-node-760 h1, &.page-node-764 h1, &.page-banner-listing h1, &.node-type-advertisement h1, &.page-node-add-advertisement h1, &.page-node-edit h1, &.page-admin h1, &.node-type-landing-page h1, &.page-link-click-count-stats h1, &.node-type-webform h1, &.page-403 h1, &.page-otsing-kasutaja-uritused h1, &.page-archive h1 {
     line-height: inherit;
   }
-  &.page-node-add-event header.l-header, &.page-node-edit.node-type-event header.l-header, &.page-loodud header.l-header, &.page-user header.l-header, &.page-user-edit header.l-header, &.page-otsing header.l-header, &.page-kasutajad header.l-header, &.page-node-760 header.l-header, &.page-node-764 header.l-header, &.page-banner-listing header.l-header, &.node-type-advertisement header.l-header, &.page-node-add-advertisement header.l-header, &.page-node-edit header.l-header, &.page-admin header.l-header, &.node-type-landing-page header.l-header, &.page-link-click-count-stats header.l-header, &.node-type-webform header.l-header, &.page-403 header.l-header, &.page-otsing-kasutaja-uritused header.l-header {
+  &.page-node-add-event header.l-header, &.page-node-edit.node-type-event header.l-header, &.page-loodud header.l-header, &.page-node-retrieve header.l-header, &.page-user header.l-header, &.page-user-edit header.l-header, &.page-otsing header.l-header, &.page-kasutajad header.l-header, &.page-node-760 header.l-header, &.page-node-764 header.l-header, &.page-banner-listing header.l-header, &.node-type-advertisement header.l-header, &.page-node-add-advertisement header.l-header, &.page-node-edit header.l-header, &.page-admin header.l-header, &.node-type-landing-page header.l-header, &.page-link-click-count-stats header.l-header, &.node-type-webform header.l-header, &.page-403 header.l-header, &.page-otsing-kasutaja-uritused header.l-header, &.page-archive header.l-header {
     height: auto;
     background: none;
   }
-  &.page-node-add-event header.l-header .l-branding a.site-logo, &.page-node-edit.node-type-event header.l-header .l-branding a.site-logo, &.page-loodud header.l-header .l-branding a.site-logo, &.page-user header.l-header .l-branding a.site-logo, &.page-user-edit header.l-header .l-branding a.site-logo, &.page-otsing header.l-header .l-branding a.site-logo, &.page-kasutajad header.l-header .l-branding a.site-logo, &.page-node-760 header.l-header .l-branding a.site-logo, &.page-node-764 header.l-header .l-branding a.site-logo, &.page-banner-listing header.l-header .l-branding a.site-logo, &.node-type-advertisement header.l-header .l-branding a.site-logo, &.page-node-add-advertisement header.l-header .l-branding a.site-logo, &.page-node-edit header.l-header .l-branding a.site-logo, &.page-admin header.l-header .l-branding a.site-logo, &.node-type-landing-page header.l-header .l-branding a.site-logo, &.page-link-click-count-stats header.l-header .l-branding a.site-logo, &.node-type-webform header.l-header .l-branding a.site-logo, &.page-403 header.l-header .l-branding a.site-logo, &.page-otsing-kasutaja-uritused header.l-header .l-branding a.site-logo {
+  &.page-node-add-event header.l-header .l-branding a.site-logo, &.page-node-retrieve header.l-header .l-branding a.site-logo, &.page-node-edit.node-type-event header.l-header .l-branding a.site-logo, &.page-loodud header.l-header .l-branding a.site-logo, &.page-user header.l-header .l-branding a.site-logo, &.page-user-edit header.l-header .l-branding a.site-logo, &.page-otsing header.l-header .l-branding a.site-logo, &.page-kasutajad header.l-header .l-branding a.site-logo, &.page-node-760 header.l-header .l-branding a.site-logo, &.page-node-764 header.l-header .l-branding a.site-logo, &.page-banner-listing header.l-header .l-branding a.site-logo, &.node-type-advertisement header.l-header .l-branding a.site-logo, &.page-node-add-advertisement header.l-header .l-branding a.site-logo, &.page-node-edit header.l-header .l-branding a.site-logo, &.page-admin header.l-header .l-branding a.site-logo, &.node-type-landing-page header.l-header .l-branding a.site-logo, &.page-link-click-count-stats header.l-header .l-branding a.site-logo, &.node-type-webform header.l-header .l-branding a.site-logo, &.page-403 header.l-header .l-branding a.site-logo, &.page-otsing-kasutaja-uritused header.l-header .l-branding a.site-logo, &.page-archive header.l-header .l-branding a.site-logo, {
     background: url("../images/logo-blue.png") center center no-repeat;
   }
   &.page-node-add-event header.l-header {
@@ -4306,12 +4306,17 @@ body.logged-in {
       display: none;
     }
   }
-  &.page-loodud header.l-header {
+  &.page-loodud header.l-header, &.page-archive header.l-header {
     .l-navigation, .l-section-illustration {
       display: none;
     }
   }
   &.page-user header.l-header {
+    .l-navigation, .l-section-illustration {
+      display: none;
+    }
+  }
+  &.page-node-retrieve header.l-header {
     .l-navigation, .l-section-illustration {
       display: none;
     }
@@ -4401,12 +4406,17 @@ body.logged-in {
       display: none;
     }
   }
-  &.page-loodud header.l-header .top-bar-right {
+  &.page-loodud header.l-header .top-bar-right, &.page-archive header.l-header .top-bar-right {
     #block-kuhuminna-utils-kuhuminna-utils-date, #block-kuhuminna-utils-kuhuminna-utils-weather {
       display: none;
     }
   }
   &.page-user header.l-header .top-bar-right {
+    #block-kuhuminna-utils-kuhuminna-utils-date, #block-kuhuminna-utils-kuhuminna-utils-weather {
+      display: none;
+    }
+  }
+  &.page-node-retrieve header.l-header .top-bar-right {
     #block-kuhuminna-utils-kuhuminna-utils-date, #block-kuhuminna-utils-kuhuminna-utils-weather {
       display: none;
     }
@@ -4486,22 +4496,22 @@ body.logged-in {
       display: none;
     }
   }
-  &.page-node-add-event .l-content, &.page-node-edit.node-type-event .l-content, &.page-loodud .l-content, &.page-user .l-content, &.page-user-edit .l-content, &.page-otsing .l-content, &.page-kasutajad .l-content, &.page-node-760 .l-content, &.page-node-764 .l-content, &.page-banner-listing .l-content, &.node-type-advertisement .l-content, &.page-node-add-advertisement .l-content, &.page-node-edit .l-content, &.page-admin .l-content, &.node-type-landing-page .l-content, &.page-link-click-count-stats .l-content, &.node-type-webform .l-content, &.page-403 .l-content, &.page-otsing-kasutaja-uritused .l-content {
+  &.page-node-add-event .l-content, &.page-node-edit.node-type-event .l-content, &.page-loodud .l-content, &.page-node-retrieve .l-content,  &.page-user .l-content, &.page-user-edit .l-content, &.page-otsing .l-content, &.page-kasutajad .l-content, &.page-node-760 .l-content, &.page-node-764 .l-content, &.page-banner-listing .l-content, &.node-type-advertisement .l-content, &.page-node-add-advertisement .l-content, &.page-node-edit .l-content, &.page-admin .l-content, &.node-type-landing-page .l-content, &.page-link-click-count-stats .l-content, &.node-type-webform .l-content, &.page-403 .l-content, &.page-otsing-kasutaja-uritused .l-content, &.page-archive .l-content {
     background: none;
   }
-  &.page-node-add-event .l-content .l-region--highlighted, &.page-node-edit.node-type-event .l-content .l-region--highlighted, &.page-loodud .l-content .l-region--highlighted, &.page-user .l-content .l-region--highlighted, &.page-user-edit .l-content .l-region--highlighted, &.page-otsing .l-content .l-region--highlighted, &.page-kasutajad .l-content .l-region--highlighted, &.page-node-760 .l-content .l-region--highlighted, &.page-node-764 .l-content .l-region--highlighted, &.page-banner-listing .l-content .l-region--highlighted, &.node-type-advertisement .l-content .l-region--highlighted, &.page-node-add-advertisement .l-content .l-region--highlighted, &.page-node-edit .l-content .l-region--highlighted, &.page-admin .l-content .l-region--highlighted, &.node-type-landing-page .l-content .l-region--highlighted, &.page-link-click-count-stats .l-content .l-region--highlighted, &.node-type-webform .l-content .l-region--highlighted, &.page-403 .l-content .l-region--highlighted, &.page-otsing-kasutaja-uritused .l-content .l-region--highlighted {
+  &.page-node-add-event .l-content .l-region--highlighted, &.page-node-edit.node-type-event .l-content .l-region--highlighted, &.page-loodud .l-content .l-region--highlighted, &.page-user .l-content .l-region--highlighted, &.page-user-edit .l-content .l-region--highlighted, &.page-otsing .l-content .l-region--highlighted, &.page-kasutajad .l-content .l-region--highlighted, &.page-node-760 .l-content .l-region--highlighted, &.page-node-764 .l-content .l-region--highlighted, &.page-banner-listing .l-content .l-region--highlighted, &.node-type-advertisement .l-content .l-region--highlighted, &.page-node-add-advertisement .l-content .l-region--highlighted, &.page-node-edit .l-content .l-region--highlighted, &.page-admin .l-content .l-region--highlighted, &.node-type-landing-page .l-content .l-region--highlighted, &.page-link-click-count-stats .l-content .l-region--highlighted, &.node-type-webform .l-content .l-region--highlighted, &.page-403 .l-content .l-region--highlighted, &.page-otsing-kasutaja-uritused .l-content .l-region--highlighted, &.page-archive .l-content .l-region--highlighted, {
     display: block;
   }
-  &.page-node-add-event .footer-logo, &.page-node-edit.node-type-event .footer-logo, &.page-loodud .footer-logo, &.page-user .footer-logo, &.page-user-edit .footer-logo, &.page-otsing .footer-logo, &.page-kasutajad .footer-logo, &.page-node-760 .footer-logo, &.page-node-764 .footer-logo, &.page-banner-listing .footer-logo, &.node-type-advertisement .footer-logo, &.page-node-add-advertisement .footer-logo, &.page-node-edit .footer-logo, &.page-admin .footer-logo, &.node-type-landing-page .footer-logo, &.page-link-click-count-stats .footer-logo, &.node-type-webform .footer-logo, &.page-403 .footer-logo, &.page-otsing-kasutaja-uritused .footer-logo {
+  &.page-node-add-event .footer-logo, &.page-node-retrieve .footer-logo, &.page-node-edit.node-type-event .footer-logo, &.page-loodud .footer-logo, &.page-node-retrieve.footer-logo, &.page-user .footer-logo, &.page-user-edit .footer-logo, &.page-otsing .footer-logo, &.page-kasutajad .footer-logo, &.page-node-760 .footer-logo, &.page-node-764 .footer-logo, &.page-banner-listing .footer-logo, &.node-type-advertisement .footer-logo, &.page-node-add-advertisement .footer-logo, &.page-node-edit .footer-logo, &.page-admin .footer-logo, &.node-type-landing-page .footer-logo, &.page-link-click-count-stats .footer-logo, &.node-type-webform .footer-logo, &.page-403 .footer-logo, &.page-otsing-kasutaja-uritused .footer-logo, &.page-archive .footer-logo {
     background: url("../images/logo-tallinn-blue.png") center center no-repeat;
   }
-  &.page-node-add-event .footer-fb-logo, &.page-node-edit.node-type-event .footer-fb-logo, &.page-loodud .footer-fb-logo, &.page-user .footer-fb-logo, &.page-user-edit .footer-fb-logo, &.page-otsing .footer-fb-logo, &.page-kasutajad .footer-fb-logo, &.page-node-760 .footer-fb-logo, &.page-node-764 .footer-fb-logo, &.page-banner-listing .footer-fb-logo, &.node-type-advertisement .footer-fb-logo, &.page-node-add-advertisement .footer-fb-logo, &.page-node-edit .footer-fb-logo, &.page-admin .footer-fb-logo, &.node-type-landing-page .footer-fb-logo, &.page-link-click-count-stats .footer-fb-logo, &.node-type-webform .footer-fb-logo, &.page-403 .footer-fb-logo, &.page-otsing-kasutaja-uritused .footer-fb-logo {
+  &.page-node-add-event .footer-fb-logo, &.page-node-edit.node-type-event .footer-fb-logo, &.page-loodud .footer-fb-logo, &.page-user .footer-fb-logo, &.page-node-retrieve .footer-fb-logo, &.page-user-edit .footer-fb-logo, &.page-otsing .footer-fb-logo, &.page-kasutajad .footer-fb-logo, &.page-node-760 .footer-fb-logo, &.page-node-764 .footer-fb-logo, &.page-banner-listing .footer-fb-logo, &.node-type-advertisement .footer-fb-logo, &.page-node-add-advertisement .footer-fb-logo, &.page-node-edit .footer-fb-logo, &.page-admin .footer-fb-logo, &.node-type-landing-page .footer-fb-logo, &.page-link-click-count-stats .footer-fb-logo, &.node-type-webform .footer-fb-logo, &.page-403 .footer-fb-logo, &.page-otsing-kasutaja-uritused .footer-fb-logo, &.page-archive .footer-fb-logo {
     background: url("../images/fb-footer-blue.png") center center no-repeat;
   }
-  &.page-node-add-event .copyright p, &.page-node-edit.node-type-event .copyright p, &.page-loodud .copyright p, &.page-user .copyright p, &.page-user-edit .copyright p, &.page-otsing .copyright p, &.page-kasutajad .copyright p, &.page-node-760 .copyright p, &.page-node-764 .copyright p, &.page-banner-listing .copyright p, &.node-type-advertisement .copyright p, &.page-node-add-advertisement .copyright p, &.page-node-edit .copyright p, &.page-admin .copyright p, &.node-type-landing-page .copyright p, &.page-link-click-count-stats .copyright p, &.node-type-webform .copyright p, &.page-403 .copyright p, &.page-otsing-kasutaja-uritused .copyright p {
+  &.page-node-add-event .copyright p, &.page-node-edit.node-type-event .copyright p, &.page-loodud .copyright p, &.page-user .copyright p, &.page-node-retrieve .copyright p, &.page-user-edit .copyright p, &.page-otsing .copyright p, &.page-kasutajad .copyright p, &.page-node-760 .copyright p, &.page-node-764 .copyright p, &.page-banner-listing .copyright p, &.node-type-advertisement .copyright p, &.page-node-add-advertisement .copyright p, &.page-node-edit .copyright p, &.page-admin .copyright p, &.node-type-landing-page .copyright p, &.page-link-click-count-stats .copyright p, &.node-type-webform .copyright p, &.page-403 .copyright p, &.page-otsing-kasutaja-uritused .copyright p, &.page-archive .copyright p {
     color: #3c7cbf;
   }
-  &.page-node-add-event .l-footer--main-wrapper, &.page-node-edit.node-type-event .l-footer--main-wrapper, &.page-loodud .l-footer--main-wrapper, &.page-user .l-footer--main-wrapper, &.page-user-edit .l-footer--main-wrapper, &.page-otsing .l-footer--main-wrapper, &.page-kasutajad .l-footer--main-wrapper, &.page-node-760 .l-footer--main-wrapper, &.page-node-764 .l-footer--main-wrapper, &.page-banner-listing .l-footer--main-wrapper, &.node-type-advertisement .l-footer--main-wrapper, &.page-node-add-advertisement .l-footer--main-wrapper, &.page-node-edit .l-footer--main-wrapper, &.page-admin .l-footer--main-wrapper, &.node-type-landing-page .l-footer--main-wrapper, &.page-link-click-count-stats .l-footer--main-wrapper, &.node-type-webform .l-footer--main-wrapper, &.page-403 .l-footer--main-wrapper, &.page-otsing-kasutaja-uritused .l-footer--main-wrapper {
+  &.page-node-add-event .l-footer--main-wrapper, &.page-node-edit.node-type-event .l-footer--main-wrapper, &.page-loodud .l-footer--main-wrapper, &.page-user .l-footer--main-wrapper, &.page-node-retrieve .l-footer--main-wrapper, &.page-user-edit .l-footer--main-wrapper, &.page-otsing .l-footer--main-wrapper, &.page-kasutajad .l-footer--main-wrapper, &.page-node-760 .l-footer--main-wrapper, &.page-node-764 .l-footer--main-wrapper, &.page-banner-listing .l-footer--main-wrapper, &.node-type-advertisement .l-footer--main-wrapper, &.page-node-add-advertisement .l-footer--main-wrapper, &.page-node-edit .l-footer--main-wrapper, &.page-admin .l-footer--main-wrapper, &.node-type-landing-page .l-footer--main-wrapper, &.page-link-click-count-stats .l-footer--main-wrapper, &.node-type-webform .l-footer--main-wrapper, &.page-403 .l-footer--main-wrapper, &.page-otsing-kasutaja-uritused .l-footer--main-wrapper, &.page-archive .l-footer--main-wrapper {
     display: none;
   }
 }
@@ -4512,7 +4522,7 @@ body.logged-in {
 
 body {
   &.logged-in {
-    &.page-node-add-event .form-item, &.page-node-edit.node-type-event .form-item, &.page-loodud .form-item, &.page-user .form-item, &.page-user-edit .form-item, &.page-otsing .form-item, &.page-kasutajad .form-item, &.page-node-760 .form-item, &.page-node-764 .form-item, &.page-banner-listing .form-item, &.node-type-advertisement .form-item, &.page-node-add-advertisement .form-item, &.page-node-edit .form-item, &.page-admin .form-item, &.node-type-landing-page .form-item, &.page-link-click-count-stats .form-item, &.node-type-webform .form-item, &.page-403 .form-item, &.page-otsing-kasutaja-uritused .form-item {
+    &.page-node-add-event .form-item, &.page-node-edit.node-type-event .form-item, &.page-loodud .form-item, &.page-user .form-item, &.page-node-retrieve .form-item, &.page-user-edit .form-item, &.page-otsing .form-item, &.page-kasutajad .form-item, &.page-node-760 .form-item, &.page-node-764 .form-item, &.page-banner-listing .form-item, &.node-type-advertisement .form-item, &.page-node-add-advertisement .form-item, &.page-node-edit .form-item, &.page-admin .form-item, &.node-type-landing-page .form-item, &.page-link-click-count-stats .form-item, &.node-type-webform .form-item, &.page-403 .form-item, &.page-otsing-kasutaja-uritused .form-item, &.page-archive .form-item {
       text-align: left;
     }
     &.page-user .user-profile-form, &.page-user-edit .user-profile-form {
@@ -4520,7 +4530,7 @@ body {
       padding: 15px 40px;
       box-shadow: 0 0 5px #A8A8A8;
     }
-    &.page-user .user-profile-form .form-item, &.page-user-edit .user-profile-form .form-item {
+    &.page-user .user-profile-form .form-item, &.page-user-edit .user-profile-form .form-item, &.page-node-retrieve .huvi-events-archive-retrieve-event-form .form-item {
       text-align: left;
     }
     &.page-user .user-profile-form #edit-locale, &.page-user-edit .user-profile-form #edit-locale {
@@ -5182,6 +5192,9 @@ body {
     &.page-user-edit #block-system-user-menu {
       margin-top: 23px;
     }
+    &.page-node-retrieve #block-system-user-menu {
+      margin-top: 23px;
+    }
   }
   &.page-node-add-advertisement #block-system-user-menu {
     margin-top: 13px;
@@ -5190,7 +5203,7 @@ body {
     &.page-node-edit #block-system-user-menu {
       margin-top: -42px;
     }
-    &.page-loodud #block-system-user-menu {
+    &.page-loodud #block-system-user-menu, &.page-archive #block-system-user-menu {
       margin-top: 13px;
     }
   }
@@ -5259,26 +5272,26 @@ body {
   box-shadow: 0 0 5px #A8A8A8;
 }
 
-.view-own-event-listing table thead th, .view-otsing table thead th, .view-users-listing table thead th, .view-banner-listing table thead th, .view-link-click-count-stats table thead th {
+.view-own-event-listing table thead th, .view-huvi-archive-events table thead th, .view-otsing table thead th, .view-users-listing table thead th, .view-banner-listing table thead th, .view-link-click-count-stats table thead th {
   background-color: #F3F3F3;
   box-shadow: 0 0 5px #A8A8A8;
   padding: 5px 10px;
   font-size: 13px;
 }
 
-.view-own-event-listing table tr.status-Jah, .view-otsing table tr.status-Jah, .view-users-listing table tr.status-Jah, .view-banner-listing table tr.status-Jah, .view-link-click-count-stats table tr.status-Jah {
+.view-own-event-listing table tr.status-Jah, .view-huvi-archive-events table tr, .view-otsing table tr.status-Jah, .view-users-listing table tr.status-Jah, .view-banner-listing table tr.status-Jah, .view-link-click-count-stats table tr.status-Jah {
   background: rgba(213, 247, 211, 0.8);
 }
 
-.view-own-event-listing table tr.status-Jah .active, .view-otsing table tr.status-Jah .active, .view-users-listing table tr.status-Jah .active, .view-banner-listing table tr.status-Jah .active, .view-link-click-count-stats table tr.status-Jah .active {
+.view-own-event-listing table tr.status-Jah .active, .view-huvi-archive-events table tr .active, .view-otsing table tr.status-Jah .active, .view-users-listing table tr.status-Jah .active, .view-banner-listing table tr.status-Jah .active, .view-link-click-count-stats table tr.status-Jah .active {
   background: #d5f7d3;
 }
 
-.view-own-event-listing table tr.status-Jah.odd, .view-otsing table tr.status-Jah.odd, .view-users-listing table tr.status-Jah.odd, .view-banner-listing table tr.status-Jah.odd, .view-link-click-count-stats table tr.status-Jah.odd {
+.view-own-event-listing table tr.status-Jah.odd, .view-huvi-archive-events table tr.odd, .view-otsing table tr.status-Jah.odd, .view-users-listing table tr.status-Jah.odd, .view-banner-listing table tr.status-Jah.odd, .view-link-click-count-stats table tr.status-Jah.odd {
   background: rgba(195, 230, 191, 0.8);
 }
 
-.view-own-event-listing table tr.status-Jah.odd .active, .view-otsing table tr.status-Jah.odd .active, .view-users-listing table tr.status-Jah.odd .active, .view-banner-listing table tr.status-Jah.odd .active, .view-link-click-count-stats table tr.status-Jah.odd .active {
+.view-own-event-listing table tr.status-Jah.odd .active, .view-huvi-archive-events table tr.odd .active,  .view-otsing table tr.status-Jah.odd .active, .view-users-listing table tr.status-Jah.odd .active, .view-banner-listing table tr.status-Jah.odd .active, .view-link-click-count-stats table tr.status-Jah.odd .active {
   background: #c3e6bf;
 }
 
@@ -5298,12 +5311,12 @@ body {
   background: #f1a6a6;
 }
 
-.view-own-event-listing table tr td, .view-otsing table tr td, .view-users-listing table tr td, .view-banner-listing table tr td, .view-link-click-count-stats table tr td {
+.view-own-event-listing table tr td, .view-huvi-archive-events table tr td, .view-otsing table tr td, .view-users-listing table tr td, .view-banner-listing table tr td, .view-link-click-count-stats table tr td {
   padding: 5px 10px;
   font-size: 12px;
 }
 
-.view-own-event-listing table tr td a, .view-otsing table tr td a, .view-users-listing table tr td a, .view-banner-listing table tr td a, .view-link-click-count-stats table tr td a {
+.view-own-event-listing table tr td a, .view-huvi-archive-events table tr td a, .view-otsing table tr td a, .view-users-listing table tr td a, .view-banner-listing table tr td a, .view-link-click-count-stats table tr td a {
   text-decoration: none;
   color: #0074BD;
 }
@@ -5315,7 +5328,9 @@ body {
 .view-own-event-listing .views-exposed-widgets .form-item-uid input.form-text, .view-otsing .views-exposed-widgets .form-item-uid input.form-text, .view-users-listing .views-exposed-widgets .form-item-uid input.form-text, .view-banner-listing .views-exposed-widgets .form-item-uid input.form-text, .view-link-click-count-stats .views-exposed-widgets .form-item-uid input.form-text {
   width: 160px;
 }
-
+.view-huvi-archive-events table {
+  width: 100%;
+}
 .view-banner-listing {
   .view-header a {
     text-decoration: none;
@@ -5625,7 +5640,7 @@ div:has(> .date-end) {
   text-decoration: none;
 }
 
-body.page-loodud .messages.messages--error {
+body.page-loodud .messages.messages--error, body.page-archive .messages.messages--error {
   display: none;
 }
 
@@ -5988,12 +6003,10 @@ body.blue-scheme #huvi-loader {
 .view-banner-listing .container-inline.form-wrapper, .view-users-listing .container-inline.form-wrapper {
   padding-top: 6px;
 }
-
 .view-banner-listing .container-inline.form-wrapper legend {
   float: left;
   margin-right: 5px;
 }
-
 .view-users-listing .container-inline.form-wrapper {
   legend {
     float: left;
@@ -6005,13 +6018,11 @@ body.blue-scheme #huvi-loader {
 ul.quicktabs-tabs {
   margin-top: 0px;
 }
-
 body.logged-in.page-user-edit {
   #edit-metatags, .tabs.tabs--primary.links--inline {
     display: none;
-  }
+  }  
 }
-
 .user-custom-menu {
   margin: 0 !important;
   padding: 0;

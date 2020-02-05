@@ -1,0 +1,16 @@
+name = HUVI Events Archive
+core = 7.x
+package = HUVI
+dependencies[] = better_exposed_filters
+dependencies[] = custom_pub
+dependencies[] = features
+dependencies[] = huvi_events_archive
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[custom_pub][] = archive
+features[features_api][] = api:2
+features[user_permission][] = access archived events
+features[user_permission][] = edit_custom_pub_archive
+features[views_view][] = huvi_archive_events
+features_exclude[dependencies][ctools] = ctools
+project path = sites/all/modules/custom

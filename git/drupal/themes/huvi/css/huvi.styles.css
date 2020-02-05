@@ -927,7 +927,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
       background: none;
     }
   }
-  */
+ */;
 }
 .form-item.form-item-keyword {
   display: inline-block;
@@ -1727,26 +1727,31 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   overflow: hidden;
   background: white;
 }
+
 #events_search_form .form-item-category #edit-time, #events_search_form .form-item-category #edit-category, #events_search_form .form-item-category #edit-region, #events_search_form .form-item-category .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 #events_search_form .form-type-radios.form-item-time #edit-time, #events_search_form .form-type-radios.form-item-time #edit-category, #events_search_form .form-type-radios.form-item-time #edit-region, #events_search_form .form-type-radios.form-item-time .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget {
   display: none;
   overflow: hidden;
@@ -1758,26 +1763,31 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   overflow: hidden;
   background: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget {
   display: none;
   overflow: hidden;
   background: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
   display: none;
   overflow: hidden;
@@ -1787,18 +1797,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form .form-item-region #edit-time.mobileOpen, #events_search_form .form-item-region #edit-category.mobileOpen, #events_search_form .form-item-region #edit-region.mobileOpen, #events_search_form .form-item-region .views-widget.mobileOpen {
   display: block;
 }
+
 #events_search_form .form-item-category #edit-time.mobileOpen, #events_search_form .form-item-category #edit-category.mobileOpen, #events_search_form .form-item-category #edit-region.mobileOpen, #events_search_form .form-item-category .views-widget.mobileOpen {
   display: block;
 }
+
 #events_search_form .form-type-radios.form-item-time #edit-time.mobileOpen, #events_search_form .form-type-radios.form-item-time #edit-category.mobileOpen, #events_search_form .form-type-radios.form-item-time #edit-region.mobileOpen, #events_search_form .form-type-radios.form-item-time .views-widget.mobileOpen {
   display: block;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen {
   display: block;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen {
   display: block;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen {
   display: block;
 }
@@ -1806,18 +1821,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget.mobileOpen {
   display: block;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget.mobileOpen {
   display: block;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget.mobileOpen {
   display: block;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget.mobileOpen {
   display: block;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget.mobileOpen {
   display: block;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region.mobileOpen, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget.mobileOpen {
   display: block;
 }
@@ -1828,26 +1848,31 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     width: 85%;
     margin-left: 15%;
   }
+
   #events_search_form .form-item-category #edit-time, #events_search_form .form-item-category #edit-category, #events_search_form .form-item-category #edit-region, #events_search_form .form-item-category .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   #events_search_form .form-type-radios.form-item-time #edit-time, #events_search_form .form-type-radios.form-item-time #edit-category, #events_search_form .form-type-radios.form-item-time #edit-region, #events_search_form .form-type-radios.form-item-time .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget {
     display: table;
     width: 85%;
@@ -1859,26 +1884,31 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     width: 85%;
     margin-left: 15%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget {
     display: table;
     width: 85%;
     margin-left: 15%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget {
     display: table;
     width: 85%;
@@ -1888,18 +1918,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .form-item-region #edit-time .form-checkboxes, #events_search_form .form-item-region #edit-category .form-checkboxes, #events_search_form .form-item-region #edit-region .form-checkboxes, #events_search_form .form-item-region .views-widget .form-checkboxes {
     width: 100%;
   }
+
   #events_search_form .form-item-category #edit-time .form-checkboxes, #events_search_form .form-item-category #edit-category .form-checkboxes, #events_search_form .form-item-category #edit-region .form-checkboxes, #events_search_form .form-item-category .views-widget .form-checkboxes {
     width: 100%;
   }
+
   #events_search_form .form-type-radios.form-item-time #edit-time .form-checkboxes, #events_search_form .form-type-radios.form-item-time #edit-category .form-checkboxes, #events_search_form .form-type-radios.form-item-time #edit-region .form-checkboxes, #events_search_form .form-type-radios.form-item-time .views-widget .form-checkboxes {
     width: 100%;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
@@ -1907,37 +1942,48 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget .form-checkboxes {
     width: 100%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget .form-checkboxes {
     width: 100%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget .form-checkboxes {
     width: 100%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region .form-checkboxes, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget .form-checkboxes {
     width: 100%;
   }
 }
+
 #events_search_form .form-item-region #edit-time label:hover, #events_search_form .form-item-region #edit-category label:hover, #events_search_form .form-item-region #edit-region label:hover, #events_search_form .form-item-region .views-widget label:hover {
   cursor: pointer;
 }
+
 #events_search_form .form-item-category #edit-time label:hover, #events_search_form .form-item-category #edit-category label:hover, #events_search_form .form-item-category #edit-region label:hover, #events_search_form .form-item-category .views-widget label:hover {
   cursor: pointer;
 }
+
 #events_search_form .form-type-radios.form-item-time #edit-time label:hover, #events_search_form .form-type-radios.form-item-time #edit-category label:hover, #events_search_form .form-type-radios.form-item-time #edit-region label:hover, #events_search_form .form-type-radios.form-item-time .views-widget label:hover {
   cursor: pointer;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover {
   cursor: pointer;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover {
   cursor: pointer;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-time label:hover, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category label:hover, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-region label:hover, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget label:hover {
   cursor: pointer;
 }
@@ -1945,18 +1991,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-region #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget label:hover {
   cursor: pointer;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-category #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget label:hover {
   cursor: pointer;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget label:hover {
   cursor: pointer;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget label:hover {
   cursor: pointer;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget label:hover {
   cursor: pointer;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-time label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-category label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper #edit-region label:hover, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget label:hover {
   cursor: pointer;
 }
@@ -1970,6 +2021,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     display: table;
   }
 }
+
 @media (min-width: 44em) and (min-width: 44em) {
   #events_search_form .form-item-region #edit-category .form-item, #events_search_form .form-item-category #edit-category .form-item, #events_search_form .form-type-radios.form-item-time #edit-category .form-item, #events_search_form #edit-field-categories-event-value-i18n-wrapper #edit-category .form-item, #events_search_form #edit-field-categories-activity-value-i18n-wrapper #edit-category .form-item, #events_search_form #edit-field-schedule-city-id-value-wrapper #edit-category .form-item {
     width: auto;
@@ -1979,6 +2031,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     width: auto;
   }
 }
+
 #events_search_form .form-item-region .form-radios .form-item, #events_search_form .form-item-region .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -1988,6 +2041,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 #events_search_form .form-item-category .form-radios .form-item, #events_search_form .form-item-category .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -1997,6 +2051,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 #events_search_form .form-type-radios.form-item-time .form-radios .form-item, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2006,6 +2061,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2015,6 +2071,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2024,6 +2081,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2043,6 +2101,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2052,6 +2111,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2061,6 +2121,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2070,6 +2131,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2079,6 +2141,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   margin: 0;
   position: relative;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
   width: 50%;
   float: left;
@@ -2099,6 +2162,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 #events_search_form .form-item-category .form-radios .form-item.active::after, #events_search_form .form-item-category .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2109,6 +2173,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 #events_search_form .form-type-radios.form-item-time .form-radios .form-item.active::after, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2119,6 +2184,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2129,6 +2195,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2139,6 +2206,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2160,6 +2228,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active::after, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2170,6 +2239,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active::after, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2180,6 +2250,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active::after, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2190,6 +2261,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active::after, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2200,6 +2272,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   top: 3px;
   right: 0px;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active::after, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active::after {
   content: '';
   background: url("../images/close.png") no-repeat top left;
@@ -2224,6 +2297,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   #events_search_form .form-item-category .form-radios .form-item, #events_search_form .form-item-category .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2236,6 +2310,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   #events_search_form .form-type-radios.form-item-time .form-radios .form-item, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2248,6 +2323,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2260,6 +2336,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2272,6 +2349,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2297,6 +2375,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2309,6 +2388,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2321,6 +2401,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2333,6 +2414,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2345,6 +2427,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     background: white;
     height: 28px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item {
     width: auto;
     float: none;
@@ -2362,21 +2445,27 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     display: block;
   }
 }
+
 #events_search_form .form-item-region .form-radios .form-item:nth-child(odd), #events_search_form .form-item-region .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form .form-item-category .form-radios .form-item:nth-child(odd), #events_search_form .form-item-category .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd), #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd), #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd), #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd), #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
@@ -2384,18 +2473,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
@@ -2404,18 +2498,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .form-item-region .form-radios .form-item:last-of-type, #events_search_form .form-item-region .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   #events_search_form .form-item-category .form-radios .form-item:last-of-type, #events_search_form .form-item-category .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   #events_search_form .form-type-radios.form-item-time .form-radios .form-item:last-of-type, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
@@ -2423,47 +2522,58 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item:last-of-type, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item:last-of-type {
     border-right: none;
   }
 }
+
 #events_search_form .form-item-region .form-radios .form-item.active, #events_search_form .form-item-region .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 #events_search_form .form-item-category .form-radios .form-item.active, #events_search_form .form-item-category .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 #events_search_form .form-type-radios.form-item-time .form-radios .form-item.active, #events_search_form .form-type-radios.form-item-time .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
@@ -2475,26 +2585,31 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios .form-item.active, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios .form-item.active, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios .form-item.active, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios .form-item.active, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
   color: white;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios .form-item.active, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes .form-item.active {
   background: #434343;
   box-shadow: -2px 3px 5px 0.09px rgba(0, 0, 0, 0.5) inset;
@@ -2504,18 +2619,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form .form-item-region .form-radios input, #events_search_form .form-item-region .form-checkboxes input {
   display: none;
 }
+
 #events_search_form .form-item-category .form-radios input, #events_search_form .form-item-category .form-checkboxes input {
   display: none;
 }
+
 #events_search_form .form-type-radios.form-item-time .form-radios input, #events_search_form .form-type-radios.form-item-time .form-checkboxes input {
   display: none;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-radios input, #events_search_form #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input {
   display: none;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-radios input, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input {
   display: none;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .form-radios input, #events_search_form #edit-field-schedule-city-id-value-wrapper .form-checkboxes input {
   display: none;
 }
@@ -2523,18 +2643,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-radios input, .view-event-listing-fixed .views-exposed-widgets .form-item-region .form-checkboxes input {
   display: none;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-radios input, .view-event-listing-fixed .views-exposed-widgets .form-item-category .form-checkboxes input {
   display: none;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-radios input, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .form-checkboxes input {
   display: none;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-radios input, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .form-checkboxes input {
   display: none;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-radios input, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .form-checkboxes input {
   display: none;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-radios input, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .form-checkboxes input {
   display: none;
 }
@@ -2560,26 +2685,32 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     float: none;
   }
 }
+
 #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
@@ -2589,22 +2720,27 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   width: 50%;
   float: left;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
   width: 50%;
   float: left;
@@ -2613,18 +2749,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
@@ -2632,18 +2773,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-child(odd), .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
@@ -2653,22 +2799,27 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     width: 9%;
     float: none;
   }
+
   #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
@@ -2678,22 +2829,27 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     width: 9%;
     float: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item {
     width: 9%;
     float: none;
@@ -2702,18 +2858,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
@@ -2721,18 +2882,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:nth-last-child(1), .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:nth-last-child(1) {
     border-right: none;
   }
@@ -2740,18 +2906,23 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   #events_search_form .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   #events_search_form .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, #events_search_form #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
@@ -2759,22 +2930,28 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
   .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets .form-item-region .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets .form-item-category .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets .form-type-radios.form-item-time .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-event-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets #edit-field-categories-activity-value-i18n-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
+
   .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-schedule-city-id-value .form-item:first-child label, .view-event-listing-fixed .views-exposed-widgets #edit-field-schedule-city-id-value-wrapper .views-widget > .form-item-field-categories-activity-value-i18n .form-item:first-child label {
     padding-left: 7px;
   }
 }
+
 #events_search_form .views-submit-button, .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
   margin-top: -50px;
   right: 0;
@@ -2793,6 +2970,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     position: absolute;
   }
 }
+
 @media (min-width: 70em) {
   #events_search_form .views-submit-button, .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     right: auto;
@@ -2803,6 +2981,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     display: block;
   }
 }
+
 #events_search_form .views-submit-button .form-submit, .view-event-listing-fixed .views-exposed-widgets .views-submit-button .form-submit {
   padding: 8px 10px 30px 10px;
   border: 1px solid #a2a2a2;
@@ -2824,6 +3003,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
     -webkit-border-radius: 3px;
   }
 }
+
 #events_search_form .views-submit-button .throbber, .view-event-listing-fixed .views-exposed-widgets .views-submit-button .throbber {
   display: none !important;
 }
@@ -2866,6 +3046,7 @@ body.blue-scheme #events_search_form .views-submit-button .form-submit, body.blu
 .block--quicktabs {
   padding-bottom: 30px;
 }
+
 .block--quicktabs h2.block__title {
   display: none;
 }
@@ -2886,6 +3067,7 @@ ul.quicktabs-tabs, ul.subevent-filter-tabs {
   -webkit-border-radius: 3px;
   margin: 0;
 }
+
 ul.quicktabs-tabs::before {
   content: "Aeg:";
   text-align: center;
@@ -2934,6 +3116,7 @@ ul.subevent-filter-tabs li.label {
   color: white;
   cursor: pointer;
 }
+
 ul.quicktabs-tabs::after, ul.subevent-filter-tabs::after {
   content: '';
   background: url("../images/down-arrow.png") no-repeat top left;
@@ -2945,12 +3128,15 @@ ul.quicktabs-tabs::after, ul.subevent-filter-tabs::after {
   right: 20px;
   z-index: 19;
 }
+
 ul.quicktabs-tabs.open::after, ul.subevent-filter-tabs.open::after {
   background: url("../images/up-arrow.png") no-repeat top left;
 }
+
 ul.quicktabs-tabs.open label:first-child {
   background: #a74d0c;
 }
+
 ul.quicktabs-tabs li {
   height: 38px;
   line-height: 34px;
@@ -2964,6 +3150,7 @@ ul.quicktabs-tabs li {
   border-bottom: 1px solid #bebebe;
   display: none;
 }
+
 ul.subevent-filter-tabs li {
   height: 38px;
   line-height: 34px;
@@ -2978,29 +3165,36 @@ ul.subevent-filter-tabs li {
   border-right: 1px solid #bebebe;
   display: none;
 }
+
 ul.subevent-filter-tabs li.label {
   display: block;
 }
+
 ul.quicktabs-tabs li:nth-child(odd), ul.subevent-filter-tabs li:nth-child(odd) {
   border-right: 1px solid #bebebe;
 }
+
 ul.quicktabs-tabs li.mobileOpen, ul.subevent-filter-tabs li.mobileOpen {
   display: block;
 }
+
 ul.quicktabs-tabs li.active, ul.subevent-filter-tabs li.active {
   background: #ccc;
 }
+
 ul.quicktabs-tabs li a {
   display: block;
   text-decoration: none;
   white-space: nowrap;
 }
+
 ul.subevent-filter-tabs li a {
   display: block;
   text-decoration: none;
   white-space: nowrap;
   color: #000;
 }
+
 ul.quicktabs-tabs li:last-of-type {
   border-right: none;
 }
@@ -3024,6 +3218,7 @@ ul.quicktabs-tabs li:last-of-type {
     z-index: 10;
     margin-right: -7px;
   }
+
   ul.subevent-filter-tabs li.label {
     height: 28px;
     line-height: 28px;
@@ -3048,16 +3243,19 @@ ul.quicktabs-tabs li:last-of-type {
     cursor: auto;
   }
 }
+
 @media (min-width: 44em) {
   ul.quicktabs-tabs::after, ul.subevent-filter-tabs::after {
     display: none;
   }
 }
+
 @media (min-width: 44em) {
   ul.quicktabs-tabs.open label:first-child {
     background: #f36722;
   }
 }
+
 @media (min-width: 44em) {
   ul.quicktabs-tabs {
     border-radius: 3px;
@@ -3066,6 +3264,7 @@ ul.quicktabs-tabs li:last-of-type {
     margin-bottom: 7px;
     overflow: hidden;
   }
+
   ul.subevent-filter-tabs {
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -3073,11 +3272,13 @@ ul.quicktabs-tabs li:last-of-type {
     overflow: hidden;
   }
 }
+
 @media (min-width: 44em) {
   ul.quicktabs-tabs li.mobileOpen ul.subevent-filter-tabs li.mobileOpen {
     display: table-cell;
   }
 }
+
 @media (min-width: 44em) {
   ul.quicktabs-tabs li {
     height: 28px;
@@ -3093,6 +3294,7 @@ ul.quicktabs-tabs li:last-of-type {
     -webkit-border-radius: 0px;
     border-right: 1px solid #bebebe;
   }
+
   ul.subevent-filter-tabs li {
     height: 28px;
     line-height: 24px;
@@ -3108,9 +3310,11 @@ ul.quicktabs-tabs li:last-of-type {
     border-bottom: 1px solid #bebebe;
   }
 }
+
 .events {
   margin-top: 20px;
 }
+
 .events .noresults {
   text-align: center;
   font-weight: bold;
@@ -3144,26 +3348,32 @@ ul.quicktabs-tabs li:last-of-type {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+
 .event-group > ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .event-group > ul li {
   list-style: none;
 }
+
 .event-group .event-item {
   overflow: hidden;
   border-bottom: 1px solid #f5a776;
   font-size: 14px;
 }
+
 .event-group .event-item:nth-child(even) {
   background: #dadace;
 }
+
 .event-group .event-item a {
   color: black;
   text-decoration: none;
 }
+
 .event-group .event-item .time, .event-group .event-item .name, .event-group .event-item .category {
   font-size: 14px;
   padding: 4px 3px;
@@ -3174,6 +3384,7 @@ ul.quicktabs-tabs li:last-of-type {
   margin: 5px 0;
   display: inline-block;
 }
+
 .pager__item a {
   color: white;
   text-decoration: none;
@@ -3189,12 +3400,15 @@ ul.quicktabs-tabs li:last-of-type {
   color: white;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
 }
+
 .pager__item a:hover {
   opacity: 0.6;
 }
+
 .pager__item.pager__item--first, .pager__item.pager__item--last {
   display: none;
 }
+
 .pager__item.pager__item--previous a {
   text-indent: 6px;
   background: url("../images/prev-btn.png") no-repeat 0 4px;
@@ -3208,6 +3422,7 @@ ul.quicktabs-tabs li:last-of-type {
   width: 90px;
   display: block;
 }
+
 .pager__item.pager__item--previous a:hover {
   text-indent: 6px;
   background: url("../images/prev-btn.png") no-repeat 0 4px;
@@ -3221,6 +3436,7 @@ ul.quicktabs-tabs li:last-of-type {
   width: 90px;
   display: block;
 }
+
 .pager__item.pager__item--next a {
   background: url("../images/next-btn.png") no-repeat 0 4px;
   box-shadow: none;
@@ -3233,6 +3449,7 @@ ul.quicktabs-tabs li:last-of-type {
   display: block;
   width: auto;
 }
+
 .pager__item.pager__item--next a:hover {
   background: url("../images/next-btn.png") no-repeat 0 4px;
   box-shadow: none;
@@ -3245,9 +3462,11 @@ ul.quicktabs-tabs li:last-of-type {
   display: block;
   width: auto;
 }
+
 .pager__item:hover a {
   text-decoration: underline;
 }
+
 .pager__item.pager__item--current {
   line-height: 30px;
   padding: 0px 9px;
@@ -3262,6 +3481,7 @@ ul.quicktabs-tabs li:last-of-type {
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
   background: #b34800;
 }
+
 .pager__item.pager__item--current a {
   text-decoration: underline;
   background: #b34800;
@@ -3280,37 +3500,47 @@ fieldset {
 .event-group {
   margin-top: 5px;
 }
+
 .event-group .event-item {
   overflow: hidden;
   border-bottom: 1px solid #f5a776;
   font-size: 14px;
 }
+
 .event-group .event-item:nth-child(even) {
   background: #dadace;
 }
+
 .event-group .event-item:hover {
   background: #fff;
 }
+
 .event-group .event-item a {
   color: black;
   text-decoration: none;
 }
+
 .event-group .event-item a:hover {
   color: #ff6600;
 }
+
 .event-group .event-item .category, .event-group .event-item .place {
   display: none;
 }
+
 .event-group .event-item .time {
   width: 25%;
 }
+
 .event-group .event-item .name {
   width: 75%;
 }
+
 .event-group .event-item .time, .event-group .event-item .name, .event-group .event-item .category {
   font-size: 14px;
   padding: 4px 3px;
 }
+
 .event-group .event-item .time {
   width: 85px;
 }
@@ -3321,13 +3551,16 @@ fieldset {
     font-size: 14px;
     padding: 4px 3px;
   }
+
   .event-group .event-item .name {
     width: 300px;
   }
+
   .event-group .event-item .category, .event-group .event-item .time {
     width: 150px;
   }
 }
+
 #block-quicktabs-aeg-huvitegevus #quicktabs-aeg_huvitegevus {
   padding-top: 35px;
 }
@@ -3337,63 +3570,80 @@ fieldset {
     padding: 0;
   }
 }
+
 .blue-scheme #block-quicktabs-aeg-huvitegevus ul.quicktabs-tabs::before, .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-categories-activity-value-i18n-wrapper > label, .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label, .blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
   background-color: #0099cc;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+
 .blue-scheme ul.subevent-filter-tabs li.label {
   background-color: #0099cc;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+
 .blue-scheme #block-quicktabs-aeg-huvitegevus .views-widget-filter-combine > label {
   color: #0099cc;
 }
+
 .blue-scheme .event-group .event-item {
   border-bottom: 1px solid #0099cc;
 }
+
 .blue-scheme .event-group .event-item a:hover {
   color: #0099cc;
 }
+
 .blue-scheme .event-group-title, .blue-scheme .event-group > h3 {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   background: #0099cc;
 }
+
 .blue-scheme #edit-full-text #edit-submit {
   background-color: #0099cc;
 }
+
 .blue-scheme #edit-full-text label {
   color: #0099cc;
 }
+
 .blue-scheme #events_search_form .form-type-radios.form-item-time label:first-child, .blue-scheme #events_search_form .form-item-category label:first-child, .blue-scheme #events_search_form .form-item-region label:first-child {
   background: #0099cc;
 }
+
 .blue-scheme #events_search_form .form-type-radios.form-item-time.open label:first-child, .blue-scheme #events_search_form .form-item-category.open label:first-child, .blue-scheme #events_search_form .form-item-region.open label:first-child {
   background: #0b76a4;
 }
+
 .blue-scheme #events_search_form input[type="submit"] {
   background: #0099cc;
 }
+
 .blue-scheme .pager__item a {
   background: #0099cc;
 }
+
 .blue-scheme .pager__item.pager__item--next a {
   background: url("../images/next-btn-blue.png") no-repeat 0 4px;
 }
+
 .blue-scheme .pager__item.pager__item--next a:hover {
   background: url("../images/next-btn-blue.png") no-repeat 0 4px;
 }
+
 .blue-scheme .pager__item.pager__item--previous a {
   background: url("../images/prev-btn-blue.png") no-repeat 0 4px;
 }
+
 .blue-scheme .pager__item.pager__item--previous a:hover {
   background: url("../images/prev-btn-blue.png") no-repeat 0 4px;
 }
+
 .blue-scheme .pager__item.pager__item--current {
   background: #015a77;
 }
@@ -3403,6 +3653,7 @@ fieldset {
     background: #0099cc;
   }
 }
+
 #events_search_form .form-type-radios.form-item-time label:first-child {
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -3412,6 +3663,7 @@ fieldset {
 body.blue-scheme header.l-header .section-illustration.event-section-illustration {
   background: url(../images/huvitegevused-mobile-logo.png) no-repeat center bottom;
 }
+
 body.html.blue-scheme {
   background: linear-gradient(to bottom, #ffffff 0%, #0099cc 60%, #0099cc 60%, #0099cc 100%);
   background: -webkit-linear-gradient(to bottom, #ffffff 0%, #0099cc 60%, #0099cc 60%, #0099cc 100%);
@@ -3425,6 +3677,7 @@ body.html.blue-scheme {
     background: url(../images/huvitegevused-logo.png) no-repeat center bottom;
   }
 }
+
 p, h1, a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3437,19 +3690,23 @@ h1 {
 body.logged-in .toolbar-menu {
   display: none;
 }
+
 body.logged-in.page-node-add.page-node-add-event #edit-field-categories-activity .form-checkboxes, body.logged-in.page-node-edit.node-type-event #edit-field-categories-activity .form-checkboxes {
   -moz-columns: 50px 3;
   -webkit-columns: 50px 3;
   columns: 50px 3;
 }
+
 body.logged-in.page-admin .l-main, body.logged-in.node-type-landing-page .l-main, body.logged-in.page-link-click-count-stats .l-main {
   background-color: white;
   border: 1px solid #cdcdcd;
 }
-body.logged-in.page-user-edit footer .footer-fb-logo, body.logged-in.page-loodud footer .footer-fb-logo, body.logged-in.page-kasutajad footer .footer-fb-logo, body.logged-in.page-otsing footer .footer-fb-logo, body.logged-in.page-banner-listing footer .footer-fb-logo {
+
+body.logged-in.page-user-edit footer .footer-fb-logo, body.logged-in.page-node-retrieve footer .footer-fb-logo, body.logged-in.page-loodud footer .footer-fb-logo, body.logged-in.page-kasutajad footer .footer-fb-logo, body.logged-in.page-otsing footer .footer-fb-logo, body.logged-in.page-banner-listing footer .footer-fb-logo, body.logged-in.page-archive footer .footer-fb-logo {
   margin-right: 10px;
 }
-body.logged-in.page-user-edit footer .l-region--footer-bottom p, body.logged-in.page-loodud footer .l-region--footer-bottom p, body.logged-in.page-kasutajad footer .l-region--footer-bottom p, body.logged-in.page-otsing footer .l-region--footer-bottom p, body.logged-in.page-banner-listing footer .l-region--footer-bottom p {
+
+body.logged-in.page-user-edit footer .l-region--footer-bottom p, body.logged-in.page-node-retrieve footer .l-region--footer-bottom p, body.logged-in.page-loodud footer .l-region--footer-bottom p, body.logged-in.page-kasutajad footer .l-region--footer-bottom p, body.logged-in.page-otsing footer .l-region--footer-bottom p, body.logged-in.page-banner-listing footer .l-region--footer-bottom p, body.logged-in.page-archive footer .l-region--footer-bottom p {
   margin-left: 10px;
 }
 
@@ -3458,150 +3715,205 @@ body.logged-in.page-user-edit footer .l-region--footer-bottom p, body.logged-in.
   padding: 20px;
 }
 
-body.logged-in.page-node-add-event, body.logged-in.page-node-edit.node-type-event, body.logged-in.page-loodud, body.logged-in.page-user, body.logged-in.page-user-edit, body.logged-in.page-otsing, body.logged-in.page-kasutajad, body.logged-in.page-node-760, body.logged-in.page-node-764, body.logged-in.page-banner-listing, body.logged-in.node-type-advertisement, body.logged-in.page-node-add-advertisement, body.logged-in.page-node-edit, body.logged-in.page-admin, body.logged-in.node-type-landing-page, body.logged-in.page-link-click-count-stats, body.logged-in.node-type-webform, body.logged-in.page-403, body.logged-in.page-otsing-kasutaja-uritused {
+body.logged-in.page-node-add-event, body.logged-in.page-node-edit.node-type-event, body.logged-in.page-loodud, body.logged-in.page-user, body.logged-in.page-node-retrieve, body.logged-in.page-user-edit, body.logged-in.page-otsing, body.logged-in.page-kasutajad, body.logged-in.page-node-760, body.logged-in.page-node-764, body.logged-in.page-banner-listing, body.logged-in.node-type-advertisement, body.logged-in.page-node-add-advertisement, body.logged-in.page-node-edit, body.logged-in.page-admin, body.logged-in.node-type-landing-page, body.logged-in.page-link-click-count-stats, body.logged-in.node-type-webform, body.logged-in.page-403, body.logged-in.page-otsing-kasutaja-uritused, body.logged-in.page-archive {
   background: #E5F3FC;
   font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 }
-body.logged-in.page-node-add-event h1, body.logged-in.page-node-edit.node-type-event h1, body.logged-in.page-loodud h1, body.logged-in.page-user h1, body.logged-in.page-user-edit h1, body.logged-in.page-otsing h1, body.logged-in.page-kasutajad h1, body.logged-in.page-node-760 h1, body.logged-in.page-node-764 h1, body.logged-in.page-banner-listing h1, body.logged-in.node-type-advertisement h1, body.logged-in.page-node-add-advertisement h1, body.logged-in.page-node-edit h1, body.logged-in.page-admin h1, body.logged-in.node-type-landing-page h1, body.logged-in.page-link-click-count-stats h1, body.logged-in.node-type-webform h1, body.logged-in.page-403 h1, body.logged-in.page-otsing-kasutaja-uritused h1 {
+
+body.logged-in.page-node-add-event h1, body.logged-in.page-node-edit.node-type-event h1, body.logged-in.page-loodud h1, body.logged-in.page-user h1, body.logged-in.page-node-retrieve h1, body.logged-in.page-user-edit h1, body.logged-in.page-otsing h1, body.logged-in.page-kasutajad h1, body.logged-in.page-node-760 h1, body.logged-in.page-node-764 h1, body.logged-in.page-banner-listing h1, body.logged-in.node-type-advertisement h1, body.logged-in.page-node-add-advertisement h1, body.logged-in.page-node-edit h1, body.logged-in.page-admin h1, body.logged-in.node-type-landing-page h1, body.logged-in.page-link-click-count-stats h1, body.logged-in.node-type-webform h1, body.logged-in.page-403 h1, body.logged-in.page-otsing-kasutaja-uritused h1, body.logged-in.page-archive h1 {
   line-height: inherit;
 }
-body.logged-in.page-node-add-event header.l-header, body.logged-in.page-node-edit.node-type-event header.l-header, body.logged-in.page-loodud header.l-header, body.logged-in.page-user header.l-header, body.logged-in.page-user-edit header.l-header, body.logged-in.page-otsing header.l-header, body.logged-in.page-kasutajad header.l-header, body.logged-in.page-node-760 header.l-header, body.logged-in.page-node-764 header.l-header, body.logged-in.page-banner-listing header.l-header, body.logged-in.node-type-advertisement header.l-header, body.logged-in.page-node-add-advertisement header.l-header, body.logged-in.page-node-edit header.l-header, body.logged-in.page-admin header.l-header, body.logged-in.node-type-landing-page header.l-header, body.logged-in.page-link-click-count-stats header.l-header, body.logged-in.node-type-webform header.l-header, body.logged-in.page-403 header.l-header, body.logged-in.page-otsing-kasutaja-uritused header.l-header {
+
+body.logged-in.page-node-add-event header.l-header, body.logged-in.page-node-edit.node-type-event header.l-header, body.logged-in.page-loodud header.l-header, body.logged-in.page-node-retrieve header.l-header, body.logged-in.page-user header.l-header, body.logged-in.page-user-edit header.l-header, body.logged-in.page-otsing header.l-header, body.logged-in.page-kasutajad header.l-header, body.logged-in.page-node-760 header.l-header, body.logged-in.page-node-764 header.l-header, body.logged-in.page-banner-listing header.l-header, body.logged-in.node-type-advertisement header.l-header, body.logged-in.page-node-add-advertisement header.l-header, body.logged-in.page-node-edit header.l-header, body.logged-in.page-admin header.l-header, body.logged-in.node-type-landing-page header.l-header, body.logged-in.page-link-click-count-stats header.l-header, body.logged-in.node-type-webform header.l-header, body.logged-in.page-403 header.l-header, body.logged-in.page-otsing-kasutaja-uritused header.l-header, body.logged-in.page-archive header.l-header {
   height: auto;
   background: none;
 }
-body.logged-in.page-node-add-event header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit.node-type-event header.l-header .l-branding a.site-logo, body.logged-in.page-loodud header.l-header .l-branding a.site-logo, body.logged-in.page-user header.l-header .l-branding a.site-logo, body.logged-in.page-user-edit header.l-header .l-branding a.site-logo, body.logged-in.page-otsing header.l-header .l-branding a.site-logo, body.logged-in.page-kasutajad header.l-header .l-branding a.site-logo, body.logged-in.page-node-760 header.l-header .l-branding a.site-logo, body.logged-in.page-node-764 header.l-header .l-branding a.site-logo, body.logged-in.page-banner-listing header.l-header .l-branding a.site-logo, body.logged-in.node-type-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-add-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit header.l-header .l-branding a.site-logo, body.logged-in.page-admin header.l-header .l-branding a.site-logo, body.logged-in.node-type-landing-page header.l-header .l-branding a.site-logo, body.logged-in.page-link-click-count-stats header.l-header .l-branding a.site-logo, body.logged-in.node-type-webform header.l-header .l-branding a.site-logo, body.logged-in.page-403 header.l-header .l-branding a.site-logo, body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-branding a.site-logo {
+
+body.logged-in.page-node-add-event header.l-header .l-branding a.site-logo, body.logged-in.page-node-retrieve header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit.node-type-event header.l-header .l-branding a.site-logo, body.logged-in.page-loodud header.l-header .l-branding a.site-logo, body.logged-in.page-user header.l-header .l-branding a.site-logo, body.logged-in.page-user-edit header.l-header .l-branding a.site-logo, body.logged-in.page-otsing header.l-header .l-branding a.site-logo, body.logged-in.page-kasutajad header.l-header .l-branding a.site-logo, body.logged-in.page-node-760 header.l-header .l-branding a.site-logo, body.logged-in.page-node-764 header.l-header .l-branding a.site-logo, body.logged-in.page-banner-listing header.l-header .l-branding a.site-logo, body.logged-in.node-type-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-add-advertisement header.l-header .l-branding a.site-logo, body.logged-in.page-node-edit header.l-header .l-branding a.site-logo, body.logged-in.page-admin header.l-header .l-branding a.site-logo, body.logged-in.node-type-landing-page header.l-header .l-branding a.site-logo, body.logged-in.page-link-click-count-stats header.l-header .l-branding a.site-logo, body.logged-in.node-type-webform header.l-header .l-branding a.site-logo, body.logged-in.page-403 header.l-header .l-branding a.site-logo, body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-branding a.site-logo, body.logged-in.page-archive header.l-header .l-branding a.site-logo {
   background: url("../images/logo-blue.png") center center no-repeat;
 }
+
 body.logged-in.page-node-add-event header.l-header .l-navigation, body.logged-in.page-node-add-event header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-edit.node-type-event header.l-header .l-navigation, body.logged-in.page-node-edit.node-type-event header.l-header .l-section-illustration {
   display: none;
 }
-body.logged-in.page-loodud header.l-header .l-navigation, body.logged-in.page-loodud header.l-header .l-section-illustration {
+
+body.logged-in.page-loodud header.l-header .l-navigation, body.logged-in.page-loodud header.l-header .l-section-illustration, body.logged-in.page-archive header.l-header .l-navigation, body.logged-in.page-archive header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-user header.l-header .l-navigation, body.logged-in.page-user header.l-header .l-section-illustration {
   display: none;
 }
+
+body.logged-in.page-node-retrieve header.l-header .l-navigation, body.logged-in.page-node-retrieve header.l-header .l-section-illustration {
+  display: none;
+}
+
 body.logged-in.page-user-edit header.l-header .l-navigation, body.logged-in.page-user-edit header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-otsing header.l-header .l-navigation, body.logged-in.page-otsing header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-kasutajad header.l-header .l-navigation, body.logged-in.page-kasutajad header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-760 header.l-header .l-navigation, body.logged-in.page-node-760 header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-764 header.l-header .l-navigation, body.logged-in.page-node-764 header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-banner-listing header.l-header .l-navigation, body.logged-in.page-banner-listing header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.node-type-advertisement header.l-header .l-navigation, body.logged-in.node-type-advertisement header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-add-advertisement header.l-header .l-navigation, body.logged-in.page-node-add-advertisement header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-edit header.l-header .l-navigation, body.logged-in.page-node-edit header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-admin header.l-header .l-navigation, body.logged-in.page-admin header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.node-type-landing-page header.l-header .l-navigation, body.logged-in.node-type-landing-page header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-link-click-count-stats header.l-header .l-navigation, body.logged-in.page-link-click-count-stats header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.node-type-webform header.l-header .l-navigation, body.logged-in.node-type-webform header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-403 header.l-header .l-navigation, body.logged-in.page-403 header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-navigation, body.logged-in.page-otsing-kasutaja-uritused header.l-header .l-section-illustration {
   display: none;
 }
+
 body.logged-in.page-node-add-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-add-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-node-edit.node-type-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-edit.node-type-event header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
-body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
+
+body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-loodud header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather, body.logged-in.page-archive header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-archive header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-user header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-user header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
+body.logged-in.page-node-retrieve header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-retrieve header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
+  display: none;
+}
+
 body.logged-in.page-user-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-user-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-otsing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-otsing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-kasutajad header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-kasutajad header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-node-760 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-760 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-node-764 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-764 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-banner-listing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-banner-listing header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.node-type-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.node-type-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-node-add-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-add-advertisement header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-node-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-node-edit header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-admin header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-admin header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.node-type-landing-page header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.node-type-landing-page header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-link-click-count-stats header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-link-click-count-stats header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.node-type-webform header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.node-type-webform header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-403 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-403 header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
+
 body.logged-in.page-otsing-kasutaja-uritused header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-date, body.logged-in.page-otsing-kasutaja-uritused header.l-header .top-bar-right #block-kuhuminna-utils-kuhuminna-utils-weather {
   display: none;
 }
-body.logged-in.page-node-add-event .l-content, body.logged-in.page-node-edit.node-type-event .l-content, body.logged-in.page-loodud .l-content, body.logged-in.page-user .l-content, body.logged-in.page-user-edit .l-content, body.logged-in.page-otsing .l-content, body.logged-in.page-kasutajad .l-content, body.logged-in.page-node-760 .l-content, body.logged-in.page-node-764 .l-content, body.logged-in.page-banner-listing .l-content, body.logged-in.node-type-advertisement .l-content, body.logged-in.page-node-add-advertisement .l-content, body.logged-in.page-node-edit .l-content, body.logged-in.page-admin .l-content, body.logged-in.node-type-landing-page .l-content, body.logged-in.page-link-click-count-stats .l-content, body.logged-in.node-type-webform .l-content, body.logged-in.page-403 .l-content, body.logged-in.page-otsing-kasutaja-uritused .l-content {
+
+body.logged-in.page-node-add-event .l-content, body.logged-in.page-node-edit.node-type-event .l-content, body.logged-in.page-loodud .l-content, body.logged-in.page-node-retrieve .l-content, body.logged-in.page-user .l-content, body.logged-in.page-user-edit .l-content, body.logged-in.page-otsing .l-content, body.logged-in.page-kasutajad .l-content, body.logged-in.page-node-760 .l-content, body.logged-in.page-node-764 .l-content, body.logged-in.page-banner-listing .l-content, body.logged-in.node-type-advertisement .l-content, body.logged-in.page-node-add-advertisement .l-content, body.logged-in.page-node-edit .l-content, body.logged-in.page-admin .l-content, body.logged-in.node-type-landing-page .l-content, body.logged-in.page-link-click-count-stats .l-content, body.logged-in.node-type-webform .l-content, body.logged-in.page-403 .l-content, body.logged-in.page-otsing-kasutaja-uritused .l-content, body.logged-in.page-archive .l-content {
   background: none;
 }
-body.logged-in.page-node-add-event .l-content .l-region--highlighted, body.logged-in.page-node-edit.node-type-event .l-content .l-region--highlighted, body.logged-in.page-loodud .l-content .l-region--highlighted, body.logged-in.page-user .l-content .l-region--highlighted, body.logged-in.page-user-edit .l-content .l-region--highlighted, body.logged-in.page-otsing .l-content .l-region--highlighted, body.logged-in.page-kasutajad .l-content .l-region--highlighted, body.logged-in.page-node-760 .l-content .l-region--highlighted, body.logged-in.page-node-764 .l-content .l-region--highlighted, body.logged-in.page-banner-listing .l-content .l-region--highlighted, body.logged-in.node-type-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-add-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-edit .l-content .l-region--highlighted, body.logged-in.page-admin .l-content .l-region--highlighted, body.logged-in.node-type-landing-page .l-content .l-region--highlighted, body.logged-in.page-link-click-count-stats .l-content .l-region--highlighted, body.logged-in.node-type-webform .l-content .l-region--highlighted, body.logged-in.page-403 .l-content .l-region--highlighted, body.logged-in.page-otsing-kasutaja-uritused .l-content .l-region--highlighted {
+
+body.logged-in.page-node-add-event .l-content .l-region--highlighted, body.logged-in.page-node-edit.node-type-event .l-content .l-region--highlighted, body.logged-in.page-loodud .l-content .l-region--highlighted, body.logged-in.page-user .l-content .l-region--highlighted, body.logged-in.page-user-edit .l-content .l-region--highlighted, body.logged-in.page-otsing .l-content .l-region--highlighted, body.logged-in.page-kasutajad .l-content .l-region--highlighted, body.logged-in.page-node-760 .l-content .l-region--highlighted, body.logged-in.page-node-764 .l-content .l-region--highlighted, body.logged-in.page-banner-listing .l-content .l-region--highlighted, body.logged-in.node-type-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-add-advertisement .l-content .l-region--highlighted, body.logged-in.page-node-edit .l-content .l-region--highlighted, body.logged-in.page-admin .l-content .l-region--highlighted, body.logged-in.node-type-landing-page .l-content .l-region--highlighted, body.logged-in.page-link-click-count-stats .l-content .l-region--highlighted, body.logged-in.node-type-webform .l-content .l-region--highlighted, body.logged-in.page-403 .l-content .l-region--highlighted, body.logged-in.page-otsing-kasutaja-uritused .l-content .l-region--highlighted, body.logged-in.page-archive .l-content .l-region--highlighted {
   display: block;
 }
-body.logged-in.page-node-add-event .footer-logo, body.logged-in.page-node-edit.node-type-event .footer-logo, body.logged-in.page-loodud .footer-logo, body.logged-in.page-user .footer-logo, body.logged-in.page-user-edit .footer-logo, body.logged-in.page-otsing .footer-logo, body.logged-in.page-kasutajad .footer-logo, body.logged-in.page-node-760 .footer-logo, body.logged-in.page-node-764 .footer-logo, body.logged-in.page-banner-listing .footer-logo, body.logged-in.node-type-advertisement .footer-logo, body.logged-in.page-node-add-advertisement .footer-logo, body.logged-in.page-node-edit .footer-logo, body.logged-in.page-admin .footer-logo, body.logged-in.node-type-landing-page .footer-logo, body.logged-in.page-link-click-count-stats .footer-logo, body.logged-in.node-type-webform .footer-logo, body.logged-in.page-403 .footer-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-logo {
+
+body.logged-in.page-node-add-event .footer-logo, body.logged-in.page-node-retrieve .footer-logo, body.logged-in.page-node-edit.node-type-event .footer-logo, body.logged-in.page-loodud .footer-logo, body.logged-in.page-node-retrieve.footer-logo, body.logged-in.page-user .footer-logo, body.logged-in.page-user-edit .footer-logo, body.logged-in.page-otsing .footer-logo, body.logged-in.page-kasutajad .footer-logo, body.logged-in.page-node-760 .footer-logo, body.logged-in.page-node-764 .footer-logo, body.logged-in.page-banner-listing .footer-logo, body.logged-in.node-type-advertisement .footer-logo, body.logged-in.page-node-add-advertisement .footer-logo, body.logged-in.page-node-edit .footer-logo, body.logged-in.page-admin .footer-logo, body.logged-in.node-type-landing-page .footer-logo, body.logged-in.page-link-click-count-stats .footer-logo, body.logged-in.node-type-webform .footer-logo, body.logged-in.page-403 .footer-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-logo, body.logged-in.page-archive .footer-logo {
   background: url("../images/logo-tallinn-blue.png") center center no-repeat;
 }
-body.logged-in.page-node-add-event .footer-fb-logo, body.logged-in.page-node-edit.node-type-event .footer-fb-logo, body.logged-in.page-loodud .footer-fb-logo, body.logged-in.page-user .footer-fb-logo, body.logged-in.page-user-edit .footer-fb-logo, body.logged-in.page-otsing .footer-fb-logo, body.logged-in.page-kasutajad .footer-fb-logo, body.logged-in.page-node-760 .footer-fb-logo, body.logged-in.page-node-764 .footer-fb-logo, body.logged-in.page-banner-listing .footer-fb-logo, body.logged-in.node-type-advertisement .footer-fb-logo, body.logged-in.page-node-add-advertisement .footer-fb-logo, body.logged-in.page-node-edit .footer-fb-logo, body.logged-in.page-admin .footer-fb-logo, body.logged-in.node-type-landing-page .footer-fb-logo, body.logged-in.page-link-click-count-stats .footer-fb-logo, body.logged-in.node-type-webform .footer-fb-logo, body.logged-in.page-403 .footer-fb-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-fb-logo {
+
+body.logged-in.page-node-add-event .footer-fb-logo, body.logged-in.page-node-edit.node-type-event .footer-fb-logo, body.logged-in.page-loodud .footer-fb-logo, body.logged-in.page-user .footer-fb-logo, body.logged-in.page-node-retrieve .footer-fb-logo, body.logged-in.page-user-edit .footer-fb-logo, body.logged-in.page-otsing .footer-fb-logo, body.logged-in.page-kasutajad .footer-fb-logo, body.logged-in.page-node-760 .footer-fb-logo, body.logged-in.page-node-764 .footer-fb-logo, body.logged-in.page-banner-listing .footer-fb-logo, body.logged-in.node-type-advertisement .footer-fb-logo, body.logged-in.page-node-add-advertisement .footer-fb-logo, body.logged-in.page-node-edit .footer-fb-logo, body.logged-in.page-admin .footer-fb-logo, body.logged-in.node-type-landing-page .footer-fb-logo, body.logged-in.page-link-click-count-stats .footer-fb-logo, body.logged-in.node-type-webform .footer-fb-logo, body.logged-in.page-403 .footer-fb-logo, body.logged-in.page-otsing-kasutaja-uritused .footer-fb-logo, body.logged-in.page-archive .footer-fb-logo {
   background: url("../images/fb-footer-blue.png") center center no-repeat;
 }
-body.logged-in.page-node-add-event .copyright p, body.logged-in.page-node-edit.node-type-event .copyright p, body.logged-in.page-loodud .copyright p, body.logged-in.page-user .copyright p, body.logged-in.page-user-edit .copyright p, body.logged-in.page-otsing .copyright p, body.logged-in.page-kasutajad .copyright p, body.logged-in.page-node-760 .copyright p, body.logged-in.page-node-764 .copyright p, body.logged-in.page-banner-listing .copyright p, body.logged-in.node-type-advertisement .copyright p, body.logged-in.page-node-add-advertisement .copyright p, body.logged-in.page-node-edit .copyright p, body.logged-in.page-admin .copyright p, body.logged-in.node-type-landing-page .copyright p, body.logged-in.page-link-click-count-stats .copyright p, body.logged-in.node-type-webform .copyright p, body.logged-in.page-403 .copyright p, body.logged-in.page-otsing-kasutaja-uritused .copyright p {
+
+body.logged-in.page-node-add-event .copyright p, body.logged-in.page-node-edit.node-type-event .copyright p, body.logged-in.page-loodud .copyright p, body.logged-in.page-user .copyright p, body.logged-in.page-node-retrieve .copyright p, body.logged-in.page-user-edit .copyright p, body.logged-in.page-otsing .copyright p, body.logged-in.page-kasutajad .copyright p, body.logged-in.page-node-760 .copyright p, body.logged-in.page-node-764 .copyright p, body.logged-in.page-banner-listing .copyright p, body.logged-in.node-type-advertisement .copyright p, body.logged-in.page-node-add-advertisement .copyright p, body.logged-in.page-node-edit .copyright p, body.logged-in.page-admin .copyright p, body.logged-in.node-type-landing-page .copyright p, body.logged-in.page-link-click-count-stats .copyright p, body.logged-in.node-type-webform .copyright p, body.logged-in.page-403 .copyright p, body.logged-in.page-otsing-kasutaja-uritused .copyright p, body.logged-in.page-archive .copyright p {
   color: #3c7cbf;
 }
-body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-node-edit.node-type-event .l-footer--main-wrapper, body.logged-in.page-loodud .l-footer--main-wrapper, body.logged-in.page-user .l-footer--main-wrapper, body.logged-in.page-user-edit .l-footer--main-wrapper, body.logged-in.page-otsing .l-footer--main-wrapper, body.logged-in.page-kasutajad .l-footer--main-wrapper, body.logged-in.page-node-760 .l-footer--main-wrapper, body.logged-in.page-node-764 .l-footer--main-wrapper, body.logged-in.page-banner-listing .l-footer--main-wrapper, body.logged-in.node-type-advertisement .l-footer--main-wrapper, body.logged-in.page-node-add-advertisement .l-footer--main-wrapper, body.logged-in.page-node-edit .l-footer--main-wrapper, body.logged-in.page-admin .l-footer--main-wrapper, body.logged-in.node-type-landing-page .l-footer--main-wrapper, body.logged-in.page-link-click-count-stats .l-footer--main-wrapper, body.logged-in.node-type-webform .l-footer--main-wrapper, body.logged-in.page-403 .l-footer--main-wrapper, body.logged-in.page-otsing-kasutaja-uritused .l-footer--main-wrapper {
+
+body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-node-edit.node-type-event .l-footer--main-wrapper, body.logged-in.page-loodud .l-footer--main-wrapper, body.logged-in.page-user .l-footer--main-wrapper, body.logged-in.page-node-retrieve .l-footer--main-wrapper, body.logged-in.page-user-edit .l-footer--main-wrapper, body.logged-in.page-otsing .l-footer--main-wrapper, body.logged-in.page-kasutajad .l-footer--main-wrapper, body.logged-in.page-node-760 .l-footer--main-wrapper, body.logged-in.page-node-764 .l-footer--main-wrapper, body.logged-in.page-banner-listing .l-footer--main-wrapper, body.logged-in.node-type-advertisement .l-footer--main-wrapper, body.logged-in.page-node-add-advertisement .l-footer--main-wrapper, body.logged-in.page-node-edit .l-footer--main-wrapper, body.logged-in.page-admin .l-footer--main-wrapper, body.logged-in.node-type-landing-page .l-footer--main-wrapper, body.logged-in.page-link-click-count-stats .l-footer--main-wrapper, body.logged-in.node-type-webform .l-footer--main-wrapper, body.logged-in.page-403 .l-footer--main-wrapper, body.logged-in.page-otsing-kasutaja-uritused .l-footer--main-wrapper, body.logged-in.page-archive .l-footer--main-wrapper {
   display: none;
 }
 
@@ -3609,26 +3921,31 @@ body.logged-in.page-node-add-event .l-footer--main-wrapper, body.logged-in.page-
   display: none;
 }
 
-body.logged-in.page-node-add-event .form-item, body.logged-in.page-node-edit.node-type-event .form-item, body.logged-in.page-loodud .form-item, body.logged-in.page-user .form-item, body.logged-in.page-user-edit .form-item, body.logged-in.page-otsing .form-item, body.logged-in.page-kasutajad .form-item, body.logged-in.page-node-760 .form-item, body.logged-in.page-node-764 .form-item, body.logged-in.page-banner-listing .form-item, body.logged-in.node-type-advertisement .form-item, body.logged-in.page-node-add-advertisement .form-item, body.logged-in.page-node-edit .form-item, body.logged-in.page-admin .form-item, body.logged-in.node-type-landing-page .form-item, body.logged-in.page-link-click-count-stats .form-item, body.logged-in.node-type-webform .form-item, body.logged-in.page-403 .form-item, body.logged-in.page-otsing-kasutaja-uritused .form-item {
+body.logged-in.page-node-add-event .form-item, body.logged-in.page-node-edit.node-type-event .form-item, body.logged-in.page-loodud .form-item, body.logged-in.page-user .form-item, body.logged-in.page-node-retrieve .form-item, body.logged-in.page-user-edit .form-item, body.logged-in.page-otsing .form-item, body.logged-in.page-kasutajad .form-item, body.logged-in.page-node-760 .form-item, body.logged-in.page-node-764 .form-item, body.logged-in.page-banner-listing .form-item, body.logged-in.node-type-advertisement .form-item, body.logged-in.page-node-add-advertisement .form-item, body.logged-in.page-node-edit .form-item, body.logged-in.page-admin .form-item, body.logged-in.node-type-landing-page .form-item, body.logged-in.page-link-click-count-stats .form-item, body.logged-in.node-type-webform .form-item, body.logged-in.page-403 .form-item, body.logged-in.page-otsing-kasutaja-uritused .form-item, body.logged-in.page-archive .form-item {
   text-align: left;
 }
+
 body.logged-in.page-user .user-profile-form, body.logged-in.page-user-edit .user-profile-form {
   background: white;
   padding: 15px 40px;
   box-shadow: 0 0 5px #A8A8A8;
 }
-body.logged-in.page-user .user-profile-form .form-item, body.logged-in.page-user-edit .user-profile-form .form-item {
+
+body.logged-in.page-user .user-profile-form .form-item, body.logged-in.page-user-edit .user-profile-form .form-item, body.logged-in.page-node-retrieve .huvi-events-archive-retrieve-event-form .form-item {
   text-align: left;
 }
+
 body.logged-in.page-user .user-profile-form #edit-locale, body.logged-in.page-user-edit .user-profile-form #edit-locale {
   display: none;
 }
+
 body.logged-in.page-403 h1 {
   background: none;
   box-shadow: none;
   color: #007FA9;
   margin-left: -12px;
 }
+
 body.html {
   height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -3662,6 +3979,7 @@ body.html {
   border: none;
   background-color: transparent;
 }
+
 .page-node-add.page-node-add-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled tr, .page-node-edit.node-type-event .field-type-field-collection.field-name-field-schedule.field-widget-field-collection-embed .field-multiple-table.sticky-enabled.sticky-table .field-multiple-table.sticky-enabled tr {
   border: none;
   background-color: transparent;
@@ -3675,14 +3993,18 @@ body.logged-in.page-node-edit.node-type-event #edit-field-price, body.logged-in.
   float: left;
   margin-bottom: -14px;
 }
+
 body.logged-in.page-node-edit.node-type-event #edit-field-price, body.logged-in.page-node-add.page-node-add-event #edit-field-price, body.logged-in.page-node-edit.node-type-event #edit-field-price-information, body.logged-in.page-node-add.page-node-add-event #edit-field-price-information, body.logged-in.page-node-edit.node-type-event #edit-field-age-range, body.logged-in.page-node-add.page-node-add-event #edit-field-age-range, body.logged-in.page-node-edit.node-type-event #edit-field-working-languages, body.logged-in.page-node-add.page-node-add-event #edit-field-working-languages {
   display: none;
 }
+
 body.logged-in.page-node-edit.node-type-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox, body.logged-in.page-node-add.page-node-add-event #edit-field-working-languages .form-checkboxes .form-item.form-type-checkbox {
   display: inline-block;
   margin-right: 20px;
 }
-body.logged-in.page-node-edit.node-type-event #edit-field-description, body.logged-in.page-node-add.page-node-add-event #edit-field-description {
+
+body.logged-in.page-node-edit.node-type-event #edit-field-description,
+body.logged-in.page-node-add.page-node-add-event #edit-field-description {
   margin-top: -10px;
 }
 
@@ -3691,6 +4013,7 @@ body.logged-in.page-node-edit.node-type-event #edit-field-description, body.logg
     margin-top: 0;
   }
 }
+
 @media (min-width: 44em) {
   .sidebar-second-wrapper .background-pattern {
     background: url("../images/huvi-landing-bg.png") no-repeat top left;
@@ -3717,6 +4040,7 @@ body.logged-in.page-node-edit.node-type-event #edit-field-description, body.logg
     top: 590px;
   }
 }
+
 .page-landing header.l-header .l-branding a.site-logo {
   margin: auto;
   margin-top: 10px;
@@ -3725,9 +4049,11 @@ body.logged-in.page-node-edit.node-type-event #edit-field-description, body.logg
   width: 140px;
   height: 61px;
 }
+
 .page-landing .l-branding {
   padding: 2px;
 }
+
 .page-landing .landing-user-login {
   display: none;
 }
@@ -3739,10 +4065,12 @@ body.logged-in.page-node-edit.node-type-event #edit-field-description, body.logg
     background: url("../images/uritused-huvi-logo.png") no-repeat top left;
   }
 }
+
 #modalContent #mobile-id-button {
   top: 30px;
   left: 18%;
 }
+
 #modalContent #id-card-button {
   top: 30px;
   right: 18%;
@@ -3791,10 +4119,12 @@ form.user-login {
     line-height: 55px;
     padding-left: 95px;
   }
+
   .page-landing .landing-user-login:hover {
     text-decoration: underline;
   }
 }
+
 @media (min-width: 44em) {
   .l-header .logo-branding {
     background: url("../images/landing-branding.png") no-repeat top left;
@@ -3804,6 +4134,7 @@ form.user-login {
     top: 50px;
     left: 240px;
   }
+
   .l-header .intro-logo {
     background: url("../images/landing-arrow.png") no-repeat top left;
     width: 50px;
@@ -3812,6 +4143,7 @@ form.user-login {
     position: absolute;
   }
 }
+
 .l-content {
   background-color: #eaeaea;
   border-radius: 0px 0px 3px 3px;
@@ -3849,23 +4181,28 @@ form.user-login {
   padding: 0;
   line-height: auto;
 }
+
 .textsize .small {
   font-size: 11px;
   padding: 9px 4px 0 0;
 }
+
 .textsize .normal {
   font-size: 13px;
   padding: 8px 4px 0 0;
 }
+
 .textsize .large {
   font-size: 18px;
   padding: 7px 4px 0 0;
 }
+
 .textsize a {
   color: black;
   text-decoration: none;
   border-right: 5px;
 }
+
 .textsize .active {
   text-decoration: underline;
   background: #e5e5e5;
@@ -3879,6 +4216,7 @@ form.user-login {
   margin-bottom: 15px;
   overflow: hidden;
 }
+
 .top .top-right {
   width: 49.15254%;
   float: left;
@@ -3887,6 +4225,7 @@ form.user-login {
   clear: none;
   text-align: left;
 }
+
 .top .top-left {
   width: 49.15254%;
   float: right;
@@ -3917,6 +4256,7 @@ form.user-login {
   width: 60%;
   z-index: 200;
 }
+
 .map_overlay_button:hover {
   font-weight: bold;
 }
@@ -3940,15 +4280,15 @@ form.user-login {
   .front .l-main {
     padding: 0 !important;
   }
-
   /*  .l-footer{
       width:100%;
       height: 303px;
       position: absolute;
       bottom: 0;
       left: 0;
-    }*/
+    }*/;
 }
+
 .messages.error.messages-inline {
   border: 1px solid #B70000;
   color: #B70000;
@@ -3960,38 +4300,48 @@ body.page-node-2212 {
   background: #E5F3FC;
   font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 }
+
 body.page-node-2212 header.l-header {
   height: auto;
   background: none;
 }
+
 body.page-node-2212 header.l-header .l-branding a.site-logo {
   background: url("../images/logo-blue.png") center center no-repeat;
 }
+
 body.page-node-2212 header.l-header .top-bar-right, body.page-node-2212 header.l-header .l-navigation, body.page-node-2212 header.l-header .l-section-illustration {
   display: none;
 }
+
 body.page-node-2212 .l-content {
   background: none;
 }
+
 body.page-node-2212 .l-content .l-region--highlighted {
   display: block;
 }
+
 body.page-node-2212 article {
   background: white;
   box-shadow: 0 0 5px #A8A8A8;
   position: relative;
   padding: 40px;
 }
+
 body.page-node-2212 .footer-logo {
   background: url("../images/logo-tallinn-blue.png") center center no-repeat;
 }
+
 body.page-node-2212 .copyright p {
   color: #3c7cbf;
 }
+
 body.page-node-add-event .l-content, body.page-node-edit.node-type-event .l-content {
   padding: 0;
   background: none;
 }
+
 body.page-node-add-event form.node-event-form, body.page-node-edit.node-type-event form.node-event-form {
   background: white;
   box-shadow: 0 0 5px #A8A8A8;
@@ -4007,6 +4357,7 @@ body.page-node-add-event form.node-event-form, body.page-node-edit.node-type-eve
   visibility: hidden;
   position: absolute;
 }
+
 .page-node-edit.node-type-event form.node-event-form .date-float {
   position: absolute;
 }
@@ -4019,44 +4370,56 @@ body.page-node-add-event form.node-event-form .form-type-textfield input, body.p
   max-width: 325px;
   height: 22px;
 }
+
 body.page-node-add-event form.node-event-form .form-item, body.page-node-edit.node-type-event form.node-event-form .form-item {
   text-align: left;
   padding: 3px 0;
   margin: 0;
 }
+
 body.page-node-add-event form.node-event-form .form-item input:checked + label, body.page-node-edit.node-type-event form.node-event-form .form-item input:checked + label {
   background: none;
 }
+
 body.page-node-add-event form.node-event-form .fieldset-wrapper, body.page-node-edit.node-type-event form.node-event-form .fieldset-wrapper {
   padding: 0;
 }
+
 body.page-node-add-event form.node-event-form fieldset .fieldset-legend, body.page-node-edit.node-type-event form.node-event-form fieldset .fieldset-legend {
   position: relative;
 }
+
 body.page-node-add-event form.node-event-form .form-item-title, body.page-node-edit.node-type-event form.node-event-form .form-item-title {
   padding: 15px 30px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-description .filter-wrapper.form-wrapper, body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .filter-wrapper.form-wrapper {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-description .infobubble, body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .infobubble {
   margin-top: -52px;
   display: none !important;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-description .description, body.page-node-edit.node-type-event form.node-event-form .field-name-field-description .description {
   margin-top: -54px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-gallery .messages.messages--status, body.page-node-edit.node-type-event form.node-event-form .field-name-field-gallery .messages.messages--status {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .form-item > .infobubble, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .form-item > .infobubble {
   position: absolute;
   margin-top: 19px;
   margin-left: 105px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .infobubble, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .infobubble {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .date-float {
   float: none;
   left: 330px;
@@ -4064,88 +4427,113 @@ body.page-node-add-event form.node-event-form .field-name-field-schedule .field-
   width: 100%;
   top: 5px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .description {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date {
   clear: none;
   float: left;
   width: 330px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding {
   padding: 5px 0;
 }
+
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding {
   padding: 5px 0;
 }
+
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-subevents-filter, body.page-node-edit.node-type-event form.node-event-form .field-name-field-on-katusuritus {
   display: inline-block;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div {
   position: absolute;
   left: -10000px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address {
   position: relative;
   left: 0;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address .form-type-textfield, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location > div > div.geolocation-address .form-type-textfield {
   margin-top: -3px;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lat-item, body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lng-item, body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-remove {
   display: none;
 }
+
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lat-item, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-lng-item, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .geolocation-remove {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .map-location-not-found, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-location .map-location-not-found {
   clear: both;
   color: #D20000;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-schedule input.form-submit, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule input.form-submit {
   margin-top: 15px;
 }
+
 body.page-node-add-event form.node-event-form > div > div, body.page-node-edit.node-type-event form.node-event-form > div > div {
   padding: 15px 30px;
 }
+
 body.page-node-add-event form.node-event-form > div > div.vertical-tabs-panes, body.page-node-edit.node-type-event form.node-event-form > div > div.vertical-tabs-panes {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .tabledrag-handle .handle, body.page-node-edit.node-type-event form.node-event-form .tabledrag-handle .handle {
   height: 26px;
   width: 26px;
 }
+
 body.page-node-add-event form.node-event-form tr.draggable > td, body.page-node-edit.node-type-event form.node-event-form tr.draggable > td {
   padding-right: 23px;
 }
+
 body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag, body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag {
   padding: 5px;
 }
+
 body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag a, body.page-node-add-event form.node-event-form tr.draggable > td.field-multiple-drag .tabledrag-changed {
   display: none;
 }
+
 body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag a, body.page-node-edit.node-type-event form.node-event-form tr.draggable > td.field-multiple-drag .tabledrag-changed {
   display: none;
 }
+
 body.page-node-add-event form.node-event-form .field-name-field-videos .infobubble, body.page-node-add-event form.node-event-form .field-name-field-users-ref .infobubble {
   position: absolute;
   margin-top: -43px;
   margin-left: 375px;
 }
+
 body.page-node-edit.node-type-event form.node-event-form .field-name-field-videos .infobubble, body.page-node-edit.node-type-event form.node-event-form .field-name-field-users-ref .infobubble {
   position: absolute;
   margin-top: -43px;
   margin-left: 375px;
 }
+
 body.page-node-add-event form.node-event-form .field-type-image .image-widget, body.page-node-edit.node-type-event form.node-event-form .field-type-image .image-widget {
   float: left;
 }
+
 body.page-node-add-event form.node-event-form .field-type-image .infobubble, body.page-node-edit.node-type-event form.node-event-form .field-type-image .infobubble {
   margin-bottom: -8px;
 }
+
 body.page-node-add-event form.node-event-form .infobubble, body.page-node-edit.node-type-event form.node-event-form .infobubble {
   width: 20px;
   height: 20px;
@@ -4157,6 +4545,7 @@ body.page-node-add-event form.node-event-form .infobubble, body.page-node-edit.n
   margin-bottom: -5px;
   margin-left: 10px;
 }
+
 body.page-node-add-event form.node-event-form .description, body.page-node-edit.node-type-event form.node-event-form .description {
   display: none;
   z-index: 0;
@@ -4170,12 +4559,15 @@ body.page-node-add-event form.node-event-form .description, body.page-node-edit.
   margin-left: 25px;
   margin-top: -4px;
 }
+
 body.page-node-add-event table th, body.page-node-edit.node-type-event table th {
   background: #EFEFEF;
 }
+
 body.page-node-add-event table.sticky-header, body.page-node-edit.node-type-event table.sticky-header {
   z-index: 1;
 }
+
 body.page-node-add-event .tabledrag-toggle-weight-wrapper, body.page-node-edit.node-type-event .tabledrag-toggle-weight-wrapper, body.page-node-add-event .vertical-tabs, body.page-node-edit.node-type-event .vertical-tabs {
   display: none;
 }
@@ -4184,21 +4576,25 @@ body.page-node-add-event .tabledrag-toggle-weight-wrapper, body.page-node-edit.n
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper {
     margin-top: -20px;
   }
+
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
     margin-left: 0px;
   }
 }
+
 @media screen and (min-width: 851px) {
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date .date-padding .form-item {
     clear: none;
     margin-right: 25px;
   }
+
   body.page-node-add-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label, body.page-node-edit.node-type-event form.node-event-form .field-name-field-schedule .field-name-field-schedule-date .container-inline-date.end-date-wrapper .form-type-date-popup > label {
     float: left;
     margin-top: 29px;
     margin-right: 20px;
   }
 }
+
 .l-region--highlighted, fieldset .fieldset-legend {
   position: relative;
 }
@@ -4235,16 +4631,24 @@ body.page-node-add-event .tabledrag-toggle-weight-wrapper, body.page-node-edit.n
 body.logged-in.page-node-add-event #block-system-user-menu {
   margin-top: 5px;
 }
+
 body.logged-in.page-user-edit #block-system-user-menu {
   margin-top: 23px;
 }
+
+body.logged-in.page-node-retrieve #block-system-user-menu {
+  margin-top: 23px;
+}
+
 body.page-node-add-advertisement #block-system-user-menu {
   margin-top: 13px;
 }
+
 body.logged-in.page-node-edit #block-system-user-menu {
   margin-top: -42px;
 }
-body.logged-in.page-loodud #block-system-user-menu {
+
+body.logged-in.page-loodud #block-system-user-menu, body.logged-in.page-archive #block-system-user-menu {
   margin-top: 13px;
 }
 
@@ -4252,6 +4656,7 @@ body.logged-in.page-loodud #block-system-user-menu {
   position: relative;
   margin-top: 0px;
 }
+
 #block-system-user-menu > ul > li {
   padding: 3px 7px;
   background-color: white;
@@ -4263,6 +4668,7 @@ body.logged-in.page-loodud #block-system-user-menu {
   max-width: 250px;
   text-align: center;
 }
+
 #block-system-user-menu > ul > li a {
   text-decoration: none;
   color: #333;
@@ -4276,6 +4682,7 @@ body.logged-in.page-loodud #block-system-user-menu {
     margin-top: -34px;
   }
 }
+
 @media (min-width: 44em) {
   #block-system-user-menu > ul > li {
     max-width: auto;
@@ -4285,9 +4692,11 @@ body.logged-in.page-loodud #block-system-user-menu {
     border-radius: 10px 10px 0 0;
   }
 }
+
 .views-form-users-listing-page .form-item {
   text-align: left;
 }
+
 .views-form-users-listing-page #edit-submit {
   margin-right: 20px;
 }
@@ -4307,26 +4716,26 @@ body.logged-in.page-loodud #block-system-user-menu {
   box-shadow: 0 0 5px #A8A8A8;
 }
 
-.view-own-event-listing table thead th, .view-otsing table thead th, .view-users-listing table thead th, .view-banner-listing table thead th, .view-link-click-count-stats table thead th {
+.view-own-event-listing table thead th, .view-huvi-archive-events table thead th, .view-otsing table thead th, .view-users-listing table thead th, .view-banner-listing table thead th, .view-link-click-count-stats table thead th {
   background-color: #F3F3F3;
   box-shadow: 0 0 5px #A8A8A8;
   padding: 5px 10px;
   font-size: 13px;
 }
 
-.view-own-event-listing table tr.status-Jah, .view-otsing table tr.status-Jah, .view-users-listing table tr.status-Jah, .view-banner-listing table tr.status-Jah, .view-link-click-count-stats table tr.status-Jah {
+.view-own-event-listing table tr.status-Jah, .view-huvi-archive-events table tr, .view-otsing table tr.status-Jah, .view-users-listing table tr.status-Jah, .view-banner-listing table tr.status-Jah, .view-link-click-count-stats table tr.status-Jah {
   background: rgba(213, 247, 211, 0.8);
 }
 
-.view-own-event-listing table tr.status-Jah .active, .view-otsing table tr.status-Jah .active, .view-users-listing table tr.status-Jah .active, .view-banner-listing table tr.status-Jah .active, .view-link-click-count-stats table tr.status-Jah .active {
+.view-own-event-listing table tr.status-Jah .active, .view-huvi-archive-events table tr .active, .view-otsing table tr.status-Jah .active, .view-users-listing table tr.status-Jah .active, .view-banner-listing table tr.status-Jah .active, .view-link-click-count-stats table tr.status-Jah .active {
   background: #d5f7d3;
 }
 
-.view-own-event-listing table tr.status-Jah.odd, .view-otsing table tr.status-Jah.odd, .view-users-listing table tr.status-Jah.odd, .view-banner-listing table tr.status-Jah.odd, .view-link-click-count-stats table tr.status-Jah.odd {
+.view-own-event-listing table tr.status-Jah.odd, .view-huvi-archive-events table tr.odd, .view-otsing table tr.status-Jah.odd, .view-users-listing table tr.status-Jah.odd, .view-banner-listing table tr.status-Jah.odd, .view-link-click-count-stats table tr.status-Jah.odd {
   background: rgba(195, 230, 191, 0.8);
 }
 
-.view-own-event-listing table tr.status-Jah.odd .active, .view-otsing table tr.status-Jah.odd .active, .view-users-listing table tr.status-Jah.odd .active, .view-banner-listing table tr.status-Jah.odd .active, .view-link-click-count-stats table tr.status-Jah.odd .active {
+.view-own-event-listing table tr.status-Jah.odd .active, .view-huvi-archive-events table tr.odd .active, .view-otsing table tr.status-Jah.odd .active, .view-users-listing table tr.status-Jah.odd .active, .view-banner-listing table tr.status-Jah.odd .active, .view-link-click-count-stats table tr.status-Jah.odd .active {
   background: #c3e6bf;
 }
 
@@ -4346,12 +4755,12 @@ body.logged-in.page-loodud #block-system-user-menu {
   background: #f1a6a6;
 }
 
-.view-own-event-listing table tr td, .view-otsing table tr td, .view-users-listing table tr td, .view-banner-listing table tr td, .view-link-click-count-stats table tr td {
+.view-own-event-listing table tr td, .view-huvi-archive-events table tr td, .view-otsing table tr td, .view-users-listing table tr td, .view-banner-listing table tr td, .view-link-click-count-stats table tr td {
   padding: 5px 10px;
   font-size: 12px;
 }
 
-.view-own-event-listing table tr td a, .view-otsing table tr td a, .view-users-listing table tr td a, .view-banner-listing table tr td a, .view-link-click-count-stats table tr td a {
+.view-own-event-listing table tr td a, .view-huvi-archive-events table tr td a, .view-otsing table tr td a, .view-users-listing table tr td a, .view-banner-listing table tr td a, .view-link-click-count-stats table tr td a {
   text-decoration: none;
   color: #0074BD;
 }
@@ -4364,19 +4773,27 @@ body.logged-in.page-loodud #block-system-user-menu {
   width: 160px;
 }
 
+.view-huvi-archive-events table {
+  width: 100%;
+}
+
 .view-banner-listing .view-header a {
   text-decoration: none;
   color: #0074BD;
 }
+
 .view-banner-listing .view-filters {
   margin-bottom: 0px;
 }
+
 .view-banner-listing table tr td {
   padding: 2px;
 }
+
 .view-banner-listing table tr td.views-field-views-bulk-operations, .view-banner-listing table tr td.views-field-status, .view-banner-listing table tr td.views-field-field-adv-size {
   padding: 2px 10px;
 }
+
 .view-banner-listing .views-field-field-adv-image-1 {
   display: none;
   position: absolute;
@@ -4386,12 +4803,15 @@ body.logged-in.page-loodud #block-system-user-menu {
 .view-otsing .views-exposed-form .views-exposed-widget {
   padding: .5em .5em 0 0;
 }
+
 .view-otsing .views-exposed-form .views-exposed-widget #edit-field-users-ref-uid {
   max-width: 115px;
 }
+
 .view-otsing table tr td {
   font-size: 12px;
 }
+
 .view-otsing table tr td.views-field-changed {
   width: 145px;
 }
@@ -4409,6 +4829,7 @@ body.logged-in.page-loodud #block-system-user-menu {
   text-align: center;
   padding: 25px;
 }
+
 #modal-content .messages.messages--error a, #modal-content .form-item-openid-identifier {
   display: none;
 }
@@ -4416,6 +4837,7 @@ body.logged-in.page-loodud #block-system-user-menu {
 form.user-login {
   text-align: center;
 }
+
 form.user-login ul.openid-links {
   display: none;
 }
@@ -4424,6 +4846,7 @@ div.modal-forms-modal-content .form-item label {
   margin-bottom: 10px;
   font-size: 16px;
 }
+
 div.ctools-modal-content .form-item .description {
   margin-top: 10px;
   font-size: 12px;
@@ -4437,9 +4860,11 @@ div.ctools-modal-content .form-item .description {
 .logi {
   margin-top: 60px;
 }
+
 .logi p.info {
   margin-top: 25px;
 }
+
 .logi p.info span {
   color: #f36722;
 }
@@ -4487,6 +4912,7 @@ div.modal-forms-modal-content .popups-container {
   margin: 10px 0 30px;
   margin-bottom: 40px;
 }
+
 #modal-title:before {
   background: #7e7e7e;
   background: -moz-linear-gradient(right, #7e7e7e 0%, white 100%);
@@ -4501,6 +4927,7 @@ div.modal-forms-modal-content .popups-container {
   top: 40px;
   width: 27%;
 }
+
 #modal-title:after {
   background: #7e7e7e;
   background: -moz-linear-gradient(left, #7e7e7e 0%, white 100%);
@@ -4524,6 +4951,7 @@ div.modal-forms-modal-content .popups-close {
   margin-bottom: 20px;
   position: relative;
 }
+
 #modal-content .ctools-use-modal-processed .form-item.form-type-textfield input, #modal-content .ctools-use-modal-processed .form-item.form-type-password input {
   border: 1px solid #a2a2a2;
   border-radius: 10px;
@@ -4537,15 +4965,19 @@ div.modal-forms-modal-content .popups-close {
   background: url("../images/login-sprite.png") no-repeat top left;
   background-position: 10px 12px !important;
 }
+
 #modal-content .ctools-use-modal-processed .form-item.form-type-textfield .description, #modal-content .ctools-use-modal-processed .form-item.form-type-textfield label {
   display: none;
 }
+
 #modal-content .ctools-use-modal-processed .form-item.form-type-password .description, #modal-content .ctools-use-modal-processed .form-item.form-type-password label {
   display: none;
 }
+
 #modal-content .ctools-use-modal-processed .form-item.form-type-password input {
   background-position: 10px -50px !important;
 }
+
 #modal-content .ctools-use-modal-processed .form-submit {
   width: 40%;
   display: inline-block;
@@ -4571,30 +5003,35 @@ div.modal-forms-modal-content .popups-close {
 .field-name-field-schedule-date .sticky-header {
   display: none !important;
 }
+
 .field-name-field-schedule-date .fieldset-legend {
   display: none;
 }
+
 .field-name-field-schedule-date .fieldset-wrapper > .form-item.form-type-item {
   display: none;
 }
+
 .field-name-field-schedule-date .date-clear {
   clear: both;
   float: left;
   margin: 0 10px 0 0;
 }
 
-div:has(> .date-end) {
+div:has( > .date-end) {
   display: none;
 }
 
 .field-name-field-schedule-date .date-clear.daily .container-inline.interval .date-clear {
   float: none;
 }
+
 .field-name-field-schedule-date .weekly .form-type-checkboxes .form-type-checkbox {
   float: left;
   clear: none;
   margin-right: 5px !important;
 }
+
 .field-name-field-schedule-date .clearfix > .field-add-more-submit.form-submit {
   display: none;
 }
@@ -4604,6 +5041,7 @@ div:has(> .date-end) {
   margin-top: 2px;
   padding-right: 3px;
 }
+
 .meta-right .node-edit-link a {
   width: auto;
   padding: 0 30px;
@@ -4650,7 +5088,7 @@ div:has(> .date-end) {
   text-decoration: none;
 }
 
-body.page-loodud .messages.messages--error {
+body.page-loodud .messages.messages--error, body.page-archive .messages.messages--error {
   display: none;
 }
 
@@ -4661,12 +5099,15 @@ body.page-loodud .messages.messages--error {
   margin-bottom: -30px;
   z-index: 1;
 }
+
 .view-slide-show .views_slideshow_controls_text {
   display: inline;
 }
+
 .view-slide-show .views_slideshow_slide_counter {
   float: right;
 }
+
 .view-slide-show .views-slideshow-controls-text-previous {
   background-image: url("../images/left-arrow-button.png");
   display: inline-block;
@@ -4675,15 +5116,19 @@ body.page-loodud .messages.messages--error {
   background-repeat: no-repeat;
   background-size: 20px;
 }
+
 .view-slide-show .views-content-counter {
   display: none;
 }
+
 .view-slide-show .views-slideshow-pager-field-processed {
   float: right;
 }
+
 .view-slide-show .views-slideshow-pager-field-item:only-child {
   display: none;
 }
+
 .view-slide-show .views-slideshow-pager-field-item.views_slideshow_pager_field_item {
   float: left;
   padding: 10px;
@@ -4692,9 +5137,11 @@ body.page-loodud .messages.messages--error {
   background-size: 15px;
   background-position: top right;
 }
+
 .view-slide-show .views-slideshow-pager-field-item.views_slideshow_pager_field_item.active {
   background-image: url("../images/slide-navi-circle.png");
 }
+
 .view-slide-show .views-slideshow-controls-text-next {
   background-image: url("../images/right-arrow-button.png");
   display: inline-block;
@@ -4703,6 +5150,7 @@ body.page-loodud .messages.messages--error {
   background-repeat: no-repeat;
   background-size: 20px;
 }
+
 .view-slide-show .views-slideshow-controls-text-previous a, .view-slide-show .views-slideshow-controls-text-next a, .view-slide-show .views-slideshow-controls-text-status-play a, .view-slide-show .views-slideshow-controls-text-status-pause a {
   display: none;
 }
@@ -4717,10 +5165,12 @@ body.page-loodud .messages.messages--error {
 .view-advertisement .views-slideshow-controls-bottom {
   display: none;
 }
+
 .view-advertisement .views-slideshow-pager-field-processed {
   float: none;
   display: inline-block;
 }
+
 .view-advertisement .views-slideshow-controls-bottom {
   text-align: center;
   position: absolute;
@@ -4731,12 +5181,15 @@ body.page-loodud .messages.messages--error {
   width: 100%;
   height: 30px;
 }
+
 .view-advertisement .views-slideshow-controls-bottom .views-slideshow-pager-field-item {
   display: inline-block;
 }
+
 .view-advertisement .views-slideshow-controls-bottom .views_slideshow_pager_field a {
   text-decoration: none;
 }
+
 .view-advertisement .views-slideshow-controls-bottom .views_slideshow_pager_field a span.pager-item {
   border-radius: 50%;
   border: 1px solid;
@@ -4749,6 +5202,7 @@ body.page-loodud .messages.messages--error {
 .orange-scheme .view-advertisement .views-slideshow-controls-bottom .views_slideshow_pager_field a span.pager-item {
   border-color: #f36722;
 }
+
 .orange-scheme .view-advertisement .views-slideshow-controls-bottom .views-slideshow-pager-field-item.active a span.pager-item {
   background-color: #f36722;
 }
@@ -4756,6 +5210,7 @@ body.page-loodud .messages.messages--error {
 .blue-scheme .view-advertisement .views-slideshow-controls-bottom .views_slideshow_pager_field a span.pager-item {
   border-color: #0099cc;
 }
+
 .blue-scheme .view-advertisement .views-slideshow-controls-bottom .views-slideshow-pager-field-item.active a span.pager-item {
   background-color: #0099cc;
 }
@@ -4765,10 +5220,12 @@ body.page-loodud .messages.messages--error {
   right: 15px;
   top: 5px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_previous, .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_next {
   background: none;
   margin-left: 10px;
 }
+
 .view-advertisement .views-slideshow-controls-text a {
   display: inline-block;
   width: 22px;
@@ -4776,6 +5233,7 @@ body.page-loodud .messages.messages--error {
   border-radius: 50%;
   margin-right: 6px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-play {
   box-sizing: border-box;
   width: 10px;
@@ -4783,6 +5241,7 @@ body.page-loodud .messages.messages--error {
   position: relative;
   display: inline-block !important;
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-play a:after, .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-play a:before {
   display: block;
   width: 4px;
@@ -4804,10 +5263,12 @@ body.page-loodud .messages.messages--error {
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-play a:before {
   top: 2px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-play a:after {
   top: 2px;
   right: 0;
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-pause a:before {
   display: block;
   content: "";
@@ -4820,6 +5281,7 @@ body.page-loodud .messages.messages--error {
 .orange-scheme .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-pause a:before {
   border-left: 15px solid #f36722;
 }
+
 .orange-scheme .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_next a, .orange-scheme .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_previous a {
   border: 2px solid #f36722;
   background-color: #f36722;
@@ -4828,6 +5290,7 @@ body.page-loodud .messages.messages--error {
 .blue-scheme .views-slideshow-controls-text .views-slideshow-controls-text-pause.views-slideshow-controls-text-status-pause a:before {
   border-left: 15px solid #0099cc;
 }
+
 .blue-scheme .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_next a, .blue-scheme .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_previous a {
   border: 2px solid #0099cc;
   background-color: #0099cc;
@@ -4837,10 +5300,12 @@ body.page-loodud .messages.messages--error {
   opacity: 0.83;
   font-size: 0px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_previous a {
   opacity: 0.83;
   font-size: 0px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_previous a:after {
   content: '';
   display: inline-block;
@@ -4854,6 +5319,7 @@ body.page-loodud .messages.messages--error {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+
 .view-advertisement .views-slideshow-controls-text .views_slideshow_controls_text_next a:after {
   content: '';
   display: inline-block;
@@ -4867,11 +5333,13 @@ body.page-loodud .messages.messages--error {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause {
   float: right;
   margin-left: 10px;
   width: 10px;
 }
+
 .view-advertisement .views-slideshow-controls-text .views-slideshow-controls-text-pause a {
   font-size: 0;
 }
@@ -4918,6 +5386,7 @@ body.page-loodud .messages.messages--error {
     margin-top: 8px;
   }
 }
+
 body.blue-scheme #huvi-loader {
   background: url("../images/huvi-loader-blue.gif");
 }
@@ -4928,24 +5397,29 @@ body.blue-scheme #huvi-loader {
     width: auto;
     margin-left: 255px;
   }
+
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget {
     width: auto;
   }
+
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     width: 390px;
   }
+
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
     display: none;
   }
+
   .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
     display: inline-block;
     width: auto;
     margin-left: -520px;
     margin-top: 12px;
   }
+
   .quicktabs-wrapper .views-exposed-form .views-reset-button {
     display: inline-block;
     margin-top: 6px;
@@ -4954,13 +5428,16 @@ body.blue-scheme #huvi-loader {
   .section-huvitegevused .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
     margin-left: 275px;
   }
+
   .section-huvitegevused #events_search_form .views-submit-button, .section-huvitegevused .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     margin-left: 600px;
   }
+
   .section-huvitegevused .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
     margin-left: -565px;
   }
 }
+
 .event-schedule, .pre-description, .event-description {
   word-break: normal !important;
 }
@@ -4985,6 +5462,7 @@ body.blue-scheme #huvi-loader {
 .view-users-listing .container-inline.form-wrapper {
   padding-top: 20px;
 }
+
 .view-users-listing .container-inline.form-wrapper legend {
   float: left;
   margin-right: 5px;
@@ -5002,6 +5480,7 @@ body.logged-in.page-user-edit #edit-metatags, body.logged-in.page-user-edit .tab
   margin: 0 !important;
   padding: 0;
 }
+
 .user-custom-menu li {
   padding: 3px 10px;
   background-color: white;
@@ -5014,15 +5493,19 @@ body.logged-in.page-user-edit #edit-metatags, body.logged-in.page-user-edit .tab
   display: inline-block;
   border-radius: 8px;
 }
+
 .user-custom-menu li:first-of-type {
   margin-left: 0px;
 }
+
 .user-custom-menu li.active-trail {
   background: #333;
 }
+
 .user-custom-menu li.active-trail a {
   color: white;
 }
+
 .user-custom-menu li a {
   text-decoration: none;
   color: #333;
@@ -5045,6 +5528,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   display: none;
   z-index: 999;
 }
+
 .date-picker-wrapper b {
   color: black;
   font-weight: bold;
@@ -5057,6 +5541,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .date-picker-wrapper .drp_top-bar {
   line-height: 1;
 }
+
 .date-picker-wrapper .drp_top-bar .apply-btn.disabled {
   pointer-events: none;
 }
@@ -5071,6 +5556,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .blue-scheme .date-picker-wrapper .first-date-selected, .blue-scheme .date-picker-wrapper .last-date-selected {
   background-color: #0099cc !important;
 }
+
 .blue-scheme .date-picker-wrapper .month-wrapper table .day.real-today {
   background-color: #e2e2e2;
 }
@@ -5078,18 +5564,22 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 .orange-scheme .date-picker-wrapper .month-wrapper table .day.real-today {
   background-color: #e2e2e2;
 }
+
 .orange-scheme .date-picker-wrapper .first-date-selected, .orange-scheme .date-picker-wrapper .last-date-selected {
   background-color: #f36722 !important;
 }
+
 .orange-scheme .date-picker-wrapper .month-wrapper table .day.checked, .orange-scheme .date-picker-wrapper .month-wrapper table .day.toMonth.hovering {
   background-color: #ffe684;
 }
+
 .orange-scheme .date-picker-wrapper .drp_top-bar .apply-btn {
   pointer-events: auto;
   border: 1px solid #bd5501;
   background: #f36722;
   color: #fff;
 }
+
 .orange-scheme .date-picker-wrapper .drp_top-bar .apply-btn.disabled.enabled {
   pointer-events: auto;
   border: 1px solid #bd5501;
@@ -5100,6 +5590,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
 #quicktabs-tab-event_quicktabs_for_date_range_s-5 {
   position: relative;
 }
+
 #quicktabs-tab-event_quicktabs_for_date_range_s-5:after {
   position: relative;
   content: "";
@@ -5154,6 +5645,7 @@ div.normal-top {
     right: 32%;
   }
 }
+
 @media only screen and (max-width: 768px) {
   #mobile-id-button {
     left: 25%;
@@ -5163,6 +5655,7 @@ div.normal-top {
     right: 25%;
   }
 }
+
 @media only screen and (max-width: 500px) {
   #mobile-id-button {
     left: 15%;
@@ -5172,6 +5665,7 @@ div.normal-top {
     right: 15%;
   }
 }
+
 @media only screen and (max-width: 375px) {
   #mobile-id-button {
     left: 8%;
@@ -5181,6 +5675,7 @@ div.normal-top {
     right: 8%;
   }
 }
+
 @media only screen and (max-width: 320px) {
   #mobile-id-button {
     left: 1%;
@@ -5190,6 +5685,7 @@ div.normal-top {
     right: 1%;
   }
 }
+
 .event-place-toimumiskoht {
   font-weight: bold;
 }
@@ -5211,32 +5707,40 @@ div.normal-top {
   right: 0;
   border-radius: 0 3px;
 }
+
 .subevents-block .subevents-filters .subevents-filter-list div {
   line-height: 28px;
 }
+
 .subevents-block .subevents-filters .subevents-filter-list div input {
   margin-right: 0;
 }
+
 .subevents-block .subevents-filter {
   display: inline-block;
   width: 100%;
   position: relative;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input {
   margin-left: 0;
   margin-right: 0;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .subevents-block .subevents-filter:last-child .subevents-filter-input {
   margin-right: 0;
 }
+
 .subevents-block .subevents-filter:first-child .subevents-filter-input {
   margin-left: 0;
 }
+
 .subevents-block .subevents-filter:first-child .subevents-filter-list {
   left: 0;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input input.subevents-filter-textbox[type=text] {
   width: 100%;
   line-height: 24.5px;
@@ -5250,6 +5754,7 @@ div.normal-top {
   border-radius: 3px;
   border: #bbb 1px solid;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input::before {
   position: absolute;
   content: "";
@@ -5264,6 +5769,7 @@ div.normal-top {
   pointer-events: auto;
   border-radius: 0 3px 3px 0;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input::after {
   content: '';
   display: inline-block;
@@ -5300,11 +5806,13 @@ div.normal-top {
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked {
   border: 1px solid #ff6600;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
   color: #ff6600;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -5316,6 +5824,7 @@ div.normal-top {
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:focus {
   outline-color: #fff;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .regular-checkbox:checked:after {
   content: '\2714';
   font-size: 18px;
@@ -5372,12 +5881,15 @@ div.normal-top {
   padding-top: 10px;
   float: right;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .select-links a:active, .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .select-links a:hover, .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .select-links a:visited {
   color: #2f2f2f;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .period-dates {
   margin-left: 25px;
 }
+
 .subevents-block .subevents-filter .subevents-filter-input .subevents-filter-list .period-dates input {
   width: 40%;
   line-height: 12px;
@@ -5388,19 +5900,23 @@ div.normal-top {
   .subevents-block .subevents-filter {
     width: 32.9%;
   }
+
   .subevents-block .subevents-filters .subevents-filter-list div input {
     margin-right: 5px;
   }
+
   .subevents-block .subevents-filter .subevents-filter-input {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 0;
     margin-bottom: 0;
   }
+
   .subevents-block .subevents-filter .subevents-filter-input::before {
     right: 5px;
     top: 0px;
   }
+
   .subevents-block .subevents-filters .subevents-filter-list {
     left: 5px;
     right: 5px;

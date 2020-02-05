@@ -1,0 +1,118 @@
+<?php
+
+/**
+ * @file
+ * Code for the HUVI Events Archive feature.
+ */
+
+include_once 'huvi_events_archive.features.inc';
+
+define('HUVI_EVENTS_ARCHIVE_PERIOD', '-18 months');
+define('HUVI_EVENTS_ARCHIVE_LIMIT', 500);
+
+/**
+ * Implements hook_menu. 
+ */
+function huvi_events_archive_menu() {
+  $items = array();
+  $items['node/%/retrieve'] = array(
+    'title' => t("Retrieve event"),
+    'page callback' => 'drupal_get_form',
+    'access arguments' => array('access archived events'),
+    'page arguments' => array('huvi_events_archive_retrieve_event_form', 1),   
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['test_archive'] = array(
+    
+    'page callback' => 'huvi_events_archive_cron',
+    'access arguments' => array('administer site configuration'),
+   
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}  
+
+function huvi_events_archive_permission() {
+  return array(
+    'access archived events' => array(
+      'title' => t('Access and retrive archivied events'),
+    )
+  );
+}
+
+/**
+ * Implements hook_cron. 
+ */
+function huvi_events_archive_cron() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'event')
+    ->propertyCondition('archive', 0)
+    ->propertyCondition('changed', strtotime(HUVI_EVENTS_ARCHIVE_PERIOD), '<=')
+    ->range(0, HUVI_EVENTS_ARCHIVE_LIMIT);
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    $items_nids = array_keys($result['node']);
+    $nodes =  node_load_multiple($items_nids);
+    foreach ($nodes as $node) {
+      $node->archive = 1;
+      node_save($node);
+    }
+  }
+}
+
+function huvi_events_archive_node_access($node, $op, $account) {
+
+      if (is_object($node) && $node->type === 'event' && $node->archive) {
+        if (user_access('access archived events')) {
+          return NODE_ACCESS_ALLOW;
+        }
+        else {
+          return NODE_ACCESS_DENY;
+        }
+  }
+}
+
+function huvi_events_archive_retrieve_event_form($form, &$form_state, $nid) {
+  $node = node_load($nid);
+  if (!($node)) {
+    drupal_set_message(t('Event not found'), 'error');
+    return;
+  }
+  if ($node->archive == 0) {
+    drupal_set_message(t('Event is not in archive and can\'t be retrieved'), 'warning');
+    return;
+  }
+  $owner = user_load($node->uid);
+  $form['title'] = array(
+    '#markup' => '<h2>' . t('Retrieve event') . ': ' . $node->title . '</h2>'
+  );
+  if (!isset($form_state['nid'])) {
+    $form_state['nid'] = $nid;
+  }
+  $form['owner_username'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Event editor'),
+    '#autocomplete_path' => 'user/autocomplete',
+    '#default_value' => $owner->name
+  );
+  $form['submt_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Retrieve event')
+  );
+  return $form;
+}
+
+function huvi_events_archive_retrieve_event_form_submit($form, &$form_state) {
+  $nid = $form_state['nid'];
+  $node = node_load($nid);
+  $owner = user_load_by_name($form_state['values']['owner_username']);
+  $node->archive = 0;
+  $node->uid = $owner->uid;
+  node_save($node);
+  drupal_set_message(t('Event %event retrieved', array('%event' => $node->title)), 'status');
+  drupal_goto('/node/' . $node->nid);
+}
+
+
