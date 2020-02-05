@@ -536,6 +536,12 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E Today */
   $handler = $view->new_display('block', 'E Today', 'block_1');
@@ -675,6 +681,12 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E Tomorrow */
   $handler = $view->new_display('block', 'E Tomorrow', 'block_2');
@@ -929,6 +941,12 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E F-S */
   $handler = $view->new_display('block', 'E F-S', 'block_3');
@@ -1214,6 +1232,12 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E This month */
   $handler = $view->new_display('block', 'E This month', 'block_4');
@@ -1468,6 +1492,12 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E Next month */
   $handler = $view->new_display('block', 'E Next month', 'block_5');
@@ -1731,6 +1761,12 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: E Period */
   $handler = $view->new_display('block', 'E Period', 'block_12');
@@ -2017,6 +2053,12 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: Activity */
   $handler = $view->new_display('block', 'Activity', 'block_6');
@@ -2431,6 +2473,12 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A Today */
   $handler = $view->new_display('block', 'A Today', 'block_7');
@@ -2835,6 +2883,12 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A Tomorrow */
   $handler = $view->new_display('block', 'A Tomorrow', 'block_8');
@@ -3240,6 +3294,12 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A F-S */
   $handler = $view->new_display('block', 'A F-S', 'block_9');
@@ -3645,6 +3705,12 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A This month */
   $handler = $view->new_display('block', 'A This month', 'block_10');
@@ -4050,6 +4116,12 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A Next month */
   $handler = $view->new_display('block', 'A Next month', 'block_11');
@@ -4374,6 +4446,12 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
 
   /* Display: A Period */
   $handler = $view->new_display('block', 'A Period', 'block_13');

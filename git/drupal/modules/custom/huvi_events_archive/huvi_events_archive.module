@@ -11,7 +11,7 @@ define('HUVI_EVENTS_ARCHIVE_PERIOD', '-18 months');
 define('HUVI_EVENTS_ARCHIVE_LIMIT', 500);
 
 /**
- * Implements hook_menu. 
+ * Implements hook_menu.
  */
 function huvi_events_archive_menu() {
   $items = array();
@@ -19,20 +19,23 @@ function huvi_events_archive_menu() {
     'title' => t("Retrieve event"),
     'page callback' => 'drupal_get_form',
     'access arguments' => array('access archived events'),
-    'page arguments' => array('huvi_events_archive_retrieve_event_form', 1),   
+    'page arguments' => array('huvi_events_archive_retrieve_event_form', 1),
     'type' => MENU_LOCAL_TASK,
   );
   $items['test_archive'] = array(
-    
+
     'page callback' => 'huvi_events_archive_cron',
     'access arguments' => array('administer site configuration'),
-   
+
     'type' => MENU_NORMAL_ITEM,
   );
-  
-  return $items;
-}  
 
+  return $items;
+}
+
+/**
+ * Implements hook_permissions.
+ */
 function huvi_events_archive_permission() {
   return array(
     'access archived events' => array(
@@ -42,10 +45,11 @@ function huvi_events_archive_permission() {
 }
 
 /**
- * Implements hook_cron. 
+ * Implements hook_cron.
  */
 function huvi_events_archive_cron() {
   $query = new EntityFieldQuery();
+  //Select nodes for archive
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'event')
     ->propertyCondition('archive', 0)
@@ -62,18 +66,25 @@ function huvi_events_archive_cron() {
   }
 }
 
+/**
+ * Implements hook_node_access.
+ *
+ */
 function huvi_events_archive_node_access($node, $op, $account) {
-
-      if (is_object($node) && $node->type === 'event' && $node->archive) {
-        if (user_access('access archived events')) {
-          return NODE_ACCESS_ALLOW;
-        }
-        else {
-          return NODE_ACCESS_DENY;
-        }
+  if (is_object($node) && $node->type === 'event' && $node->archive) {
+    if (user_access('access archived events')) {
+      return NODE_ACCESS_ALLOW;
+    }
+    else {
+      return NODE_ACCESS_DENY;
+    }
   }
 }
 
+/**
+ *
+ * Implements hook_form_alter().
+ */
 function huvi_events_archive_retrieve_event_form($form, &$form_state, $nid) {
   $node = node_load($nid);
   if (!($node)) {
@@ -104,11 +115,17 @@ function huvi_events_archive_retrieve_event_form($form, &$form_state, $nid) {
   return $form;
 }
 
+/**
+ *
+ * Implements hook_form_submit().
+ */
 function huvi_events_archive_retrieve_event_form_submit($form, &$form_state) {
   $nid = $form_state['nid'];
   $node = node_load($nid);
   $owner = user_load_by_name($form_state['values']['owner_username']);
+  //Change status
   $node->archive = 0;
+  //change owner
   $node->uid = $owner->uid;
   node_save($node);
   drupal_set_message(t('Event %event retrieved', array('%event' => $node->title)), 'status');
