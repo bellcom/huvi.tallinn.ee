@@ -190,8 +190,8 @@ function huvi_events_archive_views_default_views() {
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = 'Retrive';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/node/[nid]/retrieve">Retrive</a>';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Unarchive';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/node/[nid]/retrieve">Unarchive</a>';
   /* Lühike kriteerium: Sisu: Published status */
   $handler->display->display_options['sorts']['status']['id'] = 'status';
   $handler->display->display_options['sorts']['status']['table'] = 'node';
