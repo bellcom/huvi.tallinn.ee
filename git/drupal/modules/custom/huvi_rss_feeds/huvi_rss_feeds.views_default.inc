@@ -871,6 +871,12 @@ function huvi_rss_feeds_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_categories_activity_value']['reduce_duplicates'] = TRUE;
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
   $handler->display->display_options['path'] = 'event-rss-feed';
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -1167,6 +1173,12 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
   $handler->display->display_options['path'] = 'event-rss-feed';
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -1337,6 +1349,12 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now + 90 days';
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
   $handler->display->display_options['path'] = 'rss-feed-events';
   $handler->display->display_options['sitename_title'] = 0;
 
@@ -1507,6 +1525,12 @@ function huvi_rss_feeds_views_default_views() {
   $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now + 90 days';
+  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['archive']['id'] = 'archive';
+  $handler->display->display_options['filters']['archive']['table'] = 'node';
+  $handler->display->display_options['filters']['archive']['field'] = 'archive';
+  $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
+  $handler->display->display_options['filters']['archive']['value'] = '0';
   $handler->display->display_options['path'] = 'rss-feed-activities';
   $handler->display->display_options['sitename_title'] = 0;
   $export['events_schedule_rss_feeds'] = $view;

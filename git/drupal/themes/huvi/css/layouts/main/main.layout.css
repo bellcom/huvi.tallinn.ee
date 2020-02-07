@@ -211,31 +211,30 @@ body.wait * {
 .view-banner-management .status-Peidetud .views-field-status .field-content {
   background-image: url("../../../images/disabled.png");
 }
-
-.page-otsing .pager {
-  margin-top: 20px;
+.page-otsing .pager, .page-archive .pager {
+	margin-top: 20px;
 }
-.page-otsing .pager__item.pager__item--current {
-  background: #c3e6bf;
+.page-otsing .pager__item.pager__item--current, .page-archive .pager__item.pager__item--current {
+	background: #c3e6bf;
 }
-.page-otsing .pager__item a {
-  background: rgba(195, 230, 191, 0.8);
+.page-otsing .pager__item a, .page-archive .pager__item a {
+	background: rgba(195, 230, 191, 0.8);
 }
-.page-otsing .pager__item.pager__item--next a, .page-otsing .pager__item.pager__item--next a:hover, .page-otsing .pager__item.pager__item--previous a, .page-otsing .pager__item.pager__item--previous a:hover {
-  color: white;
-  text-decoration: none;
-  display: inline;
-  line-height: 30px;
-  padding: 8px 9px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 14px;
-  background: rgba(195, 230, 191, 0.8);
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  color: white;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
+.page-otsing .pager__item.pager__item--next a, .page-otsing .pager__item.pager__item--next a:hover, .page-otsing .pager__item.pager__item--previous a, .page-otsing .pager__item.pager__item--previous a:hover, .page-archive .pager__item.pager__item--next a, .page-archive .pager__item.pager__item--next a:hover, .page-archive .pager__item.pager__item--previous a, .page-archive .pager__item.pager__item--previous a:hover {
+	color: white;
+	text-decoration: none;
+	display: inline;
+	line-height: 30px;
+	padding: 8px 9px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	background: rgba(195, 230, 191, 0.8);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color: white;
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.43);
 }
 
 #block-system-user-menu ul li.active-trail {
