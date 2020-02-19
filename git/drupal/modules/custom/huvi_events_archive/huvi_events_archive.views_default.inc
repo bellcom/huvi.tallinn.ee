@@ -23,7 +23,7 @@ function huvi_events_archive_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Archived events';
+  $handler->display->display_options['title'] = 'Arhiivitud üritus/huvitegevus';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'veel';
   $handler->display->display_options['access']['type'] = 'role';
@@ -190,8 +190,8 @@ function huvi_events_archive_views_default_views() {
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = 'Unarchive';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/node/[nid]/retrieve">Unarchive</a>';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Taastama';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="/node/[nid]/retrieve">Taastama</a>';
   /* Lühike kriteerium: Sisu: Published status */
   $handler->display->display_options['sorts']['status']['id'] = 'status';
   $handler->display->display_options['sorts']['status']['table'] = 'node';
