@@ -58,6 +58,7 @@ function event_listing_fixed_feature_form_alter(&$form, &$form_state, $form_id) 
       'views-exposed-form-event-listing-fixed-block-9',
       'views-exposed-form-event-listing-fixed-block-10',
       'views-exposed-form-event-listing-fixed-block-13',
+      'views-exposed-form-event-listing-fixed-activities'
       );
     if(in_array( $form['#id'], $activites_displays)){
       $options = $form['field_categories_activity_value_i18n']['#options'];
@@ -71,4 +72,161 @@ function event_listing_fixed_feature_form_alter(&$form, &$form_state, $form_id) 
       $form['field_categories_activity_value_i18n_muu']['#options'] = $options_muu;
     }
   }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function event_listing_fixed_feature_block_info() {
+  $blocks = array();
+  $blocks['huvi_events_aeg_tabs'] = array(
+    'info' => t('Huvi aeg tabs block'),
+  );
+  
+  return $blocks;
+}
+
+function event_listing_fixed_feature_block_view($delta = '') {
+    switch($delta) {
+        case 'huvi_events_aeg_tabs':
+            $block['content'] = array(
+                '#theme' => 'huvi_events_aeg_tabs_theme',
+            );
+            break;
+    }
+    return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function event_listing_fixed_feature_theme($existing, $type, $theme, $path) {
+
+  // Custom template for that overrides the default block.tpl.php.
+  $themes['huvi_events_aeg_tabs_theme'] = [
+    'template'      => 'block--huvi_events_aeg_tabs',
+    'original hook' => 'block',
+    'path'          => drupal_get_path('module', 'event_listing_fixed_feature') . '/templates',
+  ];
+
+  return $themes;
+}
+function event_listing_fixed_feature_views_pre_view(&$view, &$display_id, &$args) {
+  if (request_path() != 'views/ajax' && $view->name == 'event_listing_fixed' && ($display_id == 'events' || $display_id == 'activities')) {
+    $exposed_filters = $view->display_handler->get_option('filters');  
+    $filters = parse_path( current_path());
+    foreach ($filters as $name => $value) {
+      if ($name == 'field_schedule_date_value_1' ) {
+        $exposed_filters[$name]['value']['value'] = $value;
+      }
+      else if ($name == 'field_schedule_date_value' ) {
+        $exposed_filters[$name]['value']['value'] = $value;
+      }
+      else {
+        $exposed_filters[$name]['value'] = $value;        
+      }      
+    }
+    $view->display_handler->override_option('filters', $exposed_filters);
+  }
+ 
+  
+}
+
+function parse_path($path) {
+  $path_parts = explode('/', $path);
+  $type=array_shift($path_parts);
+  $aeg =  array("tana", "homme", "reede-kuni-puhapaev", "sel-kuul");
+  $events_categoria_tabs = array(
+   "uritused" => array (
+        "0" => "muusika",
+        "1" => "etendused",
+        "2" => "naitus-muuseum",
+        "3" => "mess-laat",
+        "4" => "sport",
+        "5" => "kino",
+        "6" => "ooklubi-pidu",
+        "7" => "lapsele",
+        "8" => "varia"
+      ),
+    
+      "huvitegevused" => array (
+        "0" => "muusika",
+        "1" => "kunst-kasitoo",
+        "2" => "tantsimine",
+        "3" => "sport-liikumine",
+        "4" => "tehnika",
+        "5" => "keeleope",
+        "6" => "koolitused",
+        "8" => "varia",
+        "7" => "lapsele",
+        "9" => "naitlemine",
+        "10" => "filmikunst",
+        "11" => "loodus",
+        "12" => "robootika",
+        "13" => "kokandus",
+      )
+   );     
+    
+  $events_district_tabs = array (
+      "2944187" => "haabersti",
+      "2944191" => "kesklinn",
+      "2944189" => "kristiine",
+      "2944190" => "lasnamae",
+      "2944193" => "mustamae",
+      "2944194" => "nomme",
+      "2920234" => "pirita",
+      "2944195" => "pohja-tallinn",
+      "2244888" => "mujal-eestis"
+    );
+
+  if ($type = "uritused") {
+    $event_type_filter = 'field_categories_event_value_i18n';    
+  }
+  else {
+    $event_type_filter = 'field_categories_activity_value_i18n';    
+  }
+  $filters = array();
+  foreach($path_parts as $item) {
+   if (in_array($item, $aeg)) {
+     switch ($item) {
+       case "tana":
+         $filters['field_schedule_date_value'] = date('Y-m-d');
+         $filters['field_schedule_date_value_1'] = date('Y-m-d');
+         break;
+       case 'homme':
+         $filters['field_schedule_date_value'] = date('Y-m-d', strtotime( 'tomorrow' ));
+         $filters['field_schedule_date_value_1'] = date('Y-m-d', strtotime( 'tomorrow' ));
+         break;
+       case "reede-kuni-puhapaev": 
+         $filters['field_schedule_date_value'] = date('Y-m-d', strtotime( 'sunday this week' ));
+         $filters['field_schedule_date_value_1'] = date('Y-m-d', strtotime( 'friday this week' ));
+         break;
+       case "sel-kuul": 
+          $filters['field_schedule_date_value_1'] = date('Y-m-d', strtotime( 'first day of this month' ));
+         $filters['field_schedule_date_value'] = date('Y-m-d', strtotime( 'last day of this month' ));
+         break;
+   }
+  }
+   else if (preg_match('/\d{2}.\d{2}.\d{4}-\d{2}.\d{2}.\d{4}/', $item, $matches)){
+    $dates = explode('-', $matches[0]);
+    $filters['field_schedule_date_value'] = date('Y-m-d', strtotime($dates[1]));
+    $filters['field_schedule_date_value_1'] = date('Y-m-d', strtotime($dates[0]));
+  }
+  else if (preg_match('/\d{2}.\d{2}.\d{4}/', $item, $matches)) {
+    $filters['field_schedule_date_value'] = date('Y-m-d', strtotime($matches[0]));
+    $filters['field_schedule_date_value_1'] = date('Y-m-d', strtotime($matches[0]));
+  }
+  else {
+    $items_array = explode('_', $item);
+    foreach ($items_array as $value) {
+      if ($key = array_search($value ,$events_categoria_tabs[$type])) {
+        $filters[$event_type_filter][] = $key;
+      }
+      else if ($key = array_search($value ,$events_district_tabs)) {
+        $filters['field_schedule_city_id_value'][] = $key;
+      }
+    }    
+  }
+  }
+  return $filters;
 }

@@ -2847,6 +2847,9 @@ ul.subevent-filter-tabs li a {
 ul.quicktabs-tabs li:last-of-type {
   border-right: none;
 }
+.quicktabs-tabpage.quicktabs-hide.temp-active{
+  display: block;
+}
 @media (min-width: 44em) {
   ul.quicktabs-tabs::before {
     height: 28px;
@@ -3171,7 +3174,7 @@ fieldset {
     padding: 0;
   }
 }
-.blue-scheme #block-quicktabs-aeg-huvitegevus ul.quicktabs-tabs::before, .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-categories-activity-value-i18n-wrapper > label, .blue-scheme #block-quicktabs-aeg-huvitegevus #edit-field-schedule-city-id-value-wrapper > label, .blue-scheme #block-quicktabs-aeg-huvitegevus .views-exposed-widget.views-reset-button .form-submit {
+.blue-scheme #block-event-listing-fixed-feature-huvi-events-aeg-tabs ul.quicktabs-tabs::before, .blue-scheme #block-views-event-listing-fixed-activities #edit-field-categories-activity-value-i18n-wrapper > label, .blue-scheme #block-views-event-listing-fixed-activities #edit-field-schedule-city-id-value-wrapper > label, .blue-scheme #block-views-event-listing-fixed-activities .views-exposed-widget.views-reset-button .form-submit {
   background-color: #0099cc;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -4663,40 +4666,40 @@ body.blue-scheme #huvi-loader {
   background: url("../images/huvi-loader-blue.gif");
 }
 @media (min-width: 70em) {
-  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
+  .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine {
     display: inline-block;
     width: auto;
     margin-left: 255px;
   }
-  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget {
+  .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine .views-widget {
     width: auto;
   }
-  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget input {
+  .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine .views-widget input {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     width: 390px;
   }
-  .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine label {
+  .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine label {
     display: none;
   }
-  .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
+  .view-event-listing-fixed .views-exposed-form #edit-field-isfree-value-wrapper {
     display: inline-block;
     width: auto;
     margin-left: -520px;
     margin-top: 12px;
   }
-  .quicktabs-wrapper .views-exposed-form .views-reset-button {
+  .view-event-listing-fixed .views-exposed-form .views-reset-button {
     display: inline-block;
     margin-top: 6px;
   }
-  .section-huvitegevused .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
+  .section-huvitegevused .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine {
     margin-left: 275px;
   }
   .section-huvitegevused #events_search_form .views-submit-button, .section-huvitegevused .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     margin-left: 600px;
   }
-  .section-huvitegevused .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
+  .section-huvitegevused .view-event-listing-fixed .views-exposed-form #edit-field-isfree-value-wrapper {
     margin-left: -565px;
   }
 }
@@ -4776,7 +4779,9 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   color: black;
   font-weight: bold;
 }
-.views-widget-filter-field_schedule_date_value {
+.views-widget-filter-field_schedule_date_value,
+.views-widget-filter-field_schedule_date_value_1,
+.views-widget-filter-field_schedule_date_value_2 {
   display: none;
 }
 .date-picker-wrapper .drp_top-bar {
@@ -4818,10 +4823,10 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   background: #f36722;
   color: #fff;
 }
-#quicktabs-tab-event_quicktabs_for_date_range_s-5 {
+#block-event-listing-fixed-feature-huvi-events-aeg-tabs #date-period {
   position: relative;
 }
-#quicktabs-tab-event_quicktabs_for_date_range_s-5:after {
+#block-event-listing-fixed-feature-huvi-events-aeg-tabs #date-period:after {
   position: relative;
   content: "";
   border: solid currentColor;

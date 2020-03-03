@@ -1,46 +1,68 @@
 (function ($) {
-    var currentDate = new Date();
-    var dateRangePickerConfig ={
-                utoClose: false,
-                format: 'DD.MM.YYYY',
-                separator: ' - ',
-                language: 'et',
-                autoClose: false,
-                startOfWeek: 'monday',
-                alwaysOpen: false,
-                startDate : currentDate.getDate() + '.' + (currentDate.getMonth() + 1) + '.' + currentDate.getFullYear(),
-                getValue: function()
-                {
-                    return $(this).val();
-                },
-                setValue: function(s, s1, s2) {
-                    if ((s1 == "" && s2 == "") || (typeof s1 === 'undefined' && typeof s2 == 'undefined'))
-                      this.innerHTML = 'Vali ajavahemik' ;
-                    if (s2 == s1 ){
-                      var parts = s1.split(".");
-                      date= new  Date(parts[2], parts[1] - 1, parts[0]);
-                      this.innerHTML = s1 + ' | ' + getWeekday(date.getDay());
-                    }
-                  else
-                    this.innerHTML = s;
-               },
-             }
-    var events_date_tabs = {
-      "uritused" : {
-        "tana" : "#quicktabs-tab-event_quicktabs_for_date_range_s-1",
-        "homme" : "#quicktabs-tab-event_quicktabs_for_date_range_s-2",
-        "reede-kuni-puhapaev" : "#quicktabs-tab-event_quicktabs_for_date_range_s-3",
-        "sel-kuul" : "#quicktabs-tab-event_quicktabs_for_date_range_s-4",
-        "date-period" : '#quicktabs-tab-event_quicktabs_for_date_range_s-5',
-
-      },
-      "huvitegevused" : {
-        "tana" : "#quicktabs-tab-aeg_huvitegevus-1",
-        "homme" : "#quicktabs-tab-aeg_huvitegevus-2",
-        "reede-kuni-puhapaev" : "#quicktabs-tab-aeg_huvitegevus-3",
-        "sel-kuul" : "#quicktabs-tab-aeg_huvitegevus-4",
-        "date-period" : '#quicktabs-tab-aeg_huvitegevus-5',
+  Drupal.behaviors.huviEvents = {
+    attach: function (context, settings) {
+      $('ul.quicktabs-tabs li a', context).once('huviEvents').click(function (event) {
+          event.preventDefault();
+          var current_tab = $(this).attr('id');
+          $('ul.quicktabs-tabs li.active').removeClass('active'); 
+          $(this).parent('li').addClass('active');
+          checkDateFilters(current_tab);
+          url_path = createUrl();
+          window.history.pushState({urlPath: url_path}, "", url_path);
+      });
+      $('.view-event-listing-fixed .form-type-bef-checkbox label').once('huviEvents').click(function () {
+        if ($(this).prev().is(':checked')) {
+          $(this).prev().prop('checked', false)
+        }
+        else {
+          $(this).prev().prop('checked', true);
+        }
+        $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+        url_path = createUrl();
+        window.history.pushState({urlPath: url_path}, "", url_path);
+      });
+      $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
+      $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
+      // Change free event checkbox text
+      if ($('#block-views-event-listing-fixed-events #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+          $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-events #edit-field-isfree-value-wrapper > label').text());
       }
+       if ($('#block-views-event-listing-fixed-activities #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-activities #edit-field-isfree-value-wrapper > label').text());
+      }
+    }   
+  }
+  var currentDate = new Date();
+  var dateRangePickerConfig ={
+        utoClose: false,
+        format: 'DD.MM.YYYY',
+        separator: ' - ',
+        language: 'et',
+        autoClose: false,
+        startOfWeek: 'monday',
+        alwaysOpen: false,
+        startDate : currentDate.getDate() + '.' + (currentDate.getMonth() + 1) + '.' + currentDate.getFullYear(),
+        getValue: function()
+          {
+            return $(this).val();
+          },
+          setValue: function(s, s1, s2) {
+            if ((s1 == "" && s2 == "") || (typeof s1 === 'undefined' && typeof s2 == 'undefined'))
+              this.innerHTML = 'Vali ajavahemik' ;
+            if (s2 == s1 ){
+              var parts = s1.split(".");
+              date= new  Date(parts[2], parts[1] - 1, parts[0]);
+              this.innerHTML = s1 + ' | ' + getWeekday(date.getDay());
+            }
+            else
+              this.innerHTML = s;
+            },
+    }
+    var events_date_tabs = {
+        "tana" : "tana",
+        "homme" :  "homme",
+        "reede-kuni-puhapaev": "reede-kuni-puhapaev",
+        "sel-kuul" : "sel-kuul",        
     }
     var events_categoria_tabs = {
       "uritused" : {
@@ -82,7 +104,64 @@
       "2944195" : "pohja-tallinn",
       "2244888" : "mujal-eestis"
     }
-
+/*
+ * 
+ * Check date filters.
+ */
+    function checkDateFilters(date_tab) {
+      switch (date_tab) {
+        case "all": 
+          $('#edit-field-schedule-date-value-min-value-date').val('');
+          $('#edit-field-schedule-date-value-max-value-date').val('');
+          $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+ 
+          break;
+        case "tana":
+          var date = new Date();
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(date));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(date));
+          $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+        break;
+        case "homme":
+          var tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(tomorrow));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(tomorrow));
+          $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+        break;
+        case "reede-kuni-puhapaev":
+          var date_min = new Date();
+          var firstday = date_min.getDate() - (date_min.getDay() - 1) + 4;
+          friday = new Date(date_min.setDate(firstday));
+            
+          var date_max = new Date();
+          var lastday = date_max.getDate() - (date_max.getDay() - 1) + 6;
+          var sunday = new Date(date_max.setDate(lastday));
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(friday));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(sunday));
+          $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+        break;
+        case "sel-kuul":
+          var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+          var firstDay = new Date(y, m, 1);
+          var lastDay = new Date(y, m + 1, 0);
+            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(firstDay));
+            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(lastDay));
+             $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+ 
+           break;
+           default:
+             break;        
+      }   
+    }
+    
+    function formatDate(date) {
+      var month =  date.getMonth()+1; 
+      var day = date.getDate();
+      return (day<10 ? '0' : '') + day + '.' + 
+             (month<10 ? '0' : '') + month + '.' 
+             + date.getFullYear();
+    }
     /*
      * Function parse URL and return array with filters tabs
      * @returns {Array}
@@ -97,8 +176,8 @@
             'type' : item
           };
         }
-        else if (item in events_date_tabs[url_parts[0]]) {
-          selected_tabs['date_tab'] = events_date_tabs[url_parts[0]][item];
+        else if (item in events_date_tabs) {
+          selected_tabs['date_tab'] = events_date_tabs[item];
         }
         else if (item.match(/\d{2}.\d{2}.\d{4}-\d{2}.\d{2}.\d{4}/g)) {
           dates = item.split('-');
@@ -106,14 +185,14 @@
             'date1' : dates[0],
             'date2' : dates[1],
           };
-          selected_tabs['date_tab'] = events_date_tabs[url_parts[0]]["date-period"];
+          
         }
         else if (item.match(/\d{2}.\d{2}.\d{4}/g)) {
           selected_tabs['period'] = {
             'date1' : item,
             'date2' : item,
           };
-          selected_tabs['date_tab'] = events_date_tabs[url_parts[0]]["date-period"];
+         
         }
         else {
           arr = item.split('_');
@@ -156,9 +235,26 @@
     function createUrl(date_part_url) {
       var url;
       var url_parts = getPathParts();
+      console.log(url_parts);
       url = '/' + url_parts[0];
-      var date_tab = $('.quicktabs-tabs').find('li.active a').attr('id');
       if (typeof date_part_url == 'undefined') {
+        date_part_url = $('.quicktabs-tabs').find('li.active a').attr('id');
+        if (date_part_url == 'date-period') {
+          date1 = $('#edit-field-schedule-date-value-min-value-date').val();
+          date2 = $('#edit-field-schedule-date-value-min-value-date').val()
+          if (date1 == date2) {
+            date_part_url = date1;         
+          }
+          else {
+            date_part_url = date1 + '-' + date2;
+          }
+        }
+        if (date_part_url == 'all'){
+          date_part_url = "";
+        }
+      }
+      console.log(date_part_url);
+      /*if (typeof date_part_url == 'undefined') {
         date_part_url =  $.map(events_date_tabs[url_parts[0]], function(item, key) {
           if ('#'+ date_tab == item) {
             if (key == 'date-period') {
@@ -176,12 +272,19 @@
             }
           }
         });
-      }
+      }*/
       if (date_part_url.length > 0) {
         url = url + '/' + date_part_url;
       }
       var districts = []; ;
-      $('.quicktabs-tabpage.now-active .form-item-field-schedule-city-id-value .bef-select-as-checkboxes .form-item').each(function () {
+      categoria_field = 'form-item-field-categories-event-value-i18n';
+      exposed_form_id = 'views-exposed-form-event-listing-fixed-events';
+      
+      if (url_parts[0] == 'huvitegevused') {
+        categoria_field = 'form-item-field-categories-activity-value-i18n';
+        exposed_form_id = 'views-exposed-form-event-listing-fixed-activities';
+      }
+      $('#' + exposed_form_id +' .form-item-field-schedule-city-id-value .bef-select-as-checkboxes .form-item').each(function () {
         if ($(this).find('input').is(':checked')){
           value = $(this).find('input').val();
           districts.push(events_district_tabs[value]);
@@ -190,19 +293,18 @@
       if (districts.length > 0) {
         url = url + '/' + districts.join('_');
       }
-      categoria_field = 'form-item-field-categories-event-value-i18n'
-      if (url_parts[0] == 'huvitegevused') {
-        categoria_field = 'form-item-field-categories-activity-value-i18n';
-      }
+      
       var categories = []; ;
-      $('.quicktabs-tabpage.now-active .' + categoria_field +' .bef-select-as-checkboxes .form-item').each(function () {
+      
+      $('#' + exposed_form_id +' .' + categoria_field +' .bef-select-as-checkboxes .form-item').each(function () {
         if ($(this).find('input').is(':checked')){
           value = $(this).find('input').val();
+          console.log('trt');
           categories.push(events_categoria_tabs[url_parts[0]][value]);
         }
       });
       if (url_parts[0] == 'huvitegevused') {
-        $('.quicktabs-tabpage.now-active .form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes .form-item').each(function () {
+        $('#' + exposed_form_id +' .form-item-field-categories-activity-value-i18n-muu .bef-select-as-checkboxes .form-item').each(function () {
           if ($(this).find('input').is(':checked')){
             value = $(this).find('input').val();
             categories.push(events_categoria_tabs[url_parts[0]][value]);
@@ -216,13 +318,62 @@
     }
 
     $(document).ready(function () {
-        var last_tab_uri = getCookie("last_tab_uri");
-        var last_tab_huvi = getCookie("last_tab_huvi");
-         categoria_field = 'form-item-field-categories-event-value-i18n';
+      addDateRangePicker("#date-period");
+      var url_parts = parsePath();
+      if (url_parts) {
+        if (typeof url_parts['date_tab'] !== 'undefined' ) {
+          $('ul.quicktabs-tabs li.active').removeClass('active'); 
+          $('#'+ url_parts['date_tab']).parent('li').addClass('active');
+          switch ( url_parts['date_tab']) {
+      
+        case "tana":
+          var date = new Date();
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(date));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(date));
+       break;
+        case "homme":
+          var tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(tomorrow));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(tomorrow));
+       break;
+        case "reede-kuni-puhapaev":
+          var date_min = new Date();
+          var firstday = date_min.getDate() - (date_min.getDay() - 1) + 4;
+          friday = new Date(date_min.setDate(firstday));
+            
+          var date_max = new Date();
+          var lastday = date_max.getDate() - (date_max.getDay() - 1) + 6;
+          var sunday = new Date(date_max.setDate(lastday));
+          $('#edit-field-schedule-date-value-min-value-date').val(formatDate(friday));
+          $('#edit-field-schedule-date-value-max-value-date').val(formatDate(sunday));
+         break;
+        case "sel-kuul":
+          var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+          var firstDay = new Date(y, m, 1);
+          var lastDay = new Date(y, m + 1, 0);
+            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(firstDay));
+            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(lastDay));
+   
+           break;
+         }
+        }
+        if (typeof url_parts['period'] !== 'undefined' ) {
+          console.log('here');
+            $('#date-period').data('dateRangePicker').setDateRange(url_parts['period']['date1'], url_parts['period']['date2']);
+            $('#edit-field-schedule-date-value-max-value-date').attr('value', url_parts['period']['date2']);
+            $('#edit-field-schedule-date-value-min-value-date').attr('value', url_parts['period']['date1']);
+            $('ul.quicktabs-tabs li.active').removeClass('active'); 
+            $('#date-period').parent('li').addClass('active');
+        }
+      }  
+        //var last_tab_uri = getCookie("last_tab_uri");
+        //var last_tab_huvi = getCookie("last_tab_huvi");
+      /*   categoria_field = 'form-item-field-categories-event-value-i18n';
         var apply_filters = false;
-        var active_tab_id;
-        var active_pagetab_id;
-        var url_parts = parsePath();
+        //var active_tab_id;
+       // var active_pagetab_id;
+        
         if (url_parts) {
           var last_aeg_tab = events_date_tabs[url_parts['type']]['date-period']
           if (url_parts['type'] == "uritused") {
@@ -236,13 +387,8 @@
            active_tab_id = url_parts['date_tab'];
           }
           active_pagetab_id = active_tab_id.replace('#quicktabs-tab', '#quicktabs-tabpage');
-          addDateRangePicker(last_aeg_tab);
-          if (typeof url_parts['period'] !== 'undefined' ) {
-            $(last_aeg_tab).data('dateRangePicker').setDateRange(url_parts['period']['date1'], url_parts['period']['date2']);
-            $('#edit-field-schedule-date-value-max-datepicker-popup-0').attr('value', url_parts['period']['date2']);
-            $('#edit-field-schedule-date-value-min-datepicker-popup-0').attr('value', url_parts['period']['date1']);
-            apply_filters = true;
-          }
+          addDateRangePicker("#date-period");
+          
           if (typeof url_parts['categories'] !== 'undefined' ) {
             if (url_parts['type'] == 'huvitegevused') {
               categoria_field = 'form-item-field-categories-activity-value-i18n';
@@ -283,10 +429,21 @@
           if (apply_filters) {
               $(active_pagetab_id + ' .views-submit-button .form-submit').trigger('click');
           }
-        }
-
+        }*/
+// Bugfix for QuickTabs and view filters to get along
+       /* $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
+            if ($(this).prev().is(':checked')) {
+                $(this).prev().prop('checked', false);
+            }
+            else {
+                $(this).prev().prop('checked', true);
+            }
+            $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+            url_path = createUrl();
+            window.history.pushState({urlPath: url_path}, "", url_path);
+        });*/
         //quictabs-remembered
-        $("#quicktabs-tab-event_quicktabs_for_date_range_s-0").click(function () {
+       /* $("#quicktabs-tab-event_quicktabs_for_date_range_s-0").click(function () {
           url_path = createUrl();
           window.history.pushState({urlPath: url_path}, "", url_path);
         });
@@ -318,8 +475,8 @@
         $("#quicktabs-tab-event_quicktabs_for_date_range_s-5").click(function () {
           setCookie("last_tab_uri", "#quicktabs-tab-event_quicktabs_for_date_range_s-5");
         });
-
-        $("#quicktabs-tab-aeg_huvitegevus-0").click(function () {
+*/
+    /*    $("#quicktabs-tab-aeg_huvitegevus-0").click(function () {
           url_path = createUrl();
           window.history.pushState({urlPath: url_path}, "", url_path);
           setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-0");
@@ -352,7 +509,7 @@
         $("#quicktabs-tab-aeg_huvitegevus-5").click(function () {
             setCookie("last_tab_huvi", "#quicktabs-tab-aeg_huvitegevus-5");
             });
-
+*/
 
         //datepicker
         /*
@@ -458,13 +615,7 @@
         if ($(window).width() < 700) {
         $( '.normal-top' ).hide();
         }
-        // Change free event checkbox text
-        if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
-        }
-        if ($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
-        }
+        
 
         // refresh the page when resetting filters
         /*  $('.views-exposed-widget.views-reset-button').click(function(event) {
@@ -473,26 +624,12 @@
          });*/
 
 
-        $('ul.quicktabs-tabs li a').click(function () {
-            $('ul.quicktabs-tabs').addClass('checking');
-            checkFilters();
-        });
+       
 
         $('.quicktabs-tabpage').not('.quicktabs-hide').addClass('now-active')
 
 
-        // Bugfix for QuickTabs and view filters to get along
-        $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
-            if ($(this).prev().is(':checked')) {
-                $(this).prev().prop('checked', false)
-            }
-            else {
-                $(this).prev().prop('checked', true);
-            }
-            $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
-            url_path = createUrl();
-            window.history.pushState({urlPath: url_path}, "", url_path);
-        });
+       
 
 
         // Disable clicking on filters when automatically submitting searchbox text
@@ -512,9 +649,9 @@
             $(this).hide();
         });
 
-        $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
+        /*$('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
         $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
-
+*/
         if ($(".messages--error").length){
            $(".messages--error").insertBefore( $( "#user-login .form-actions" ));
            $("#user-login #div_logi_sisse").show();
@@ -525,7 +662,8 @@
     var categoriesOpen;
     var citiesOpen;
     var activityCatOpen;
-    $(document).ajaxStart(function () {
+ 
+    $(document).ajaxStart(function () {      
         if ($('#edit-field-categories-event-value-i18n-wrapper .views-widget').hasClass('mobileOpen')) {
             categoriesOpen = true;
         } else {
@@ -548,11 +686,35 @@
             activityCatOpen = false;
         }
         $('#huvi-loader').remove();
-        $('#quicktabs-event_quicktabs_for_date_range_s #edit-combine, #quicktabs-aeg_huvitegevus #edit-combine').after('<div id="huvi-loader"></div>');
+        $('.view-event-listing-fixed .views-exposed-form input[name="combine"], .view-event-listing-fixed .views-exposed-form input[name="combine"]').after('<div id="huvi-loader"></div>');
     });
+    $(document).ajaxComplete(function( event, xhr, settings) {
+          if (settings.url.startsWith('/quicktabs/ajax')) {
+            $('.quicktabs-tabpage').not('.quicktabs-hide').addClass('now-active');
+            $('.quicktabs-tabpage.temp-active').removeClass('temp-active');
+          }
+          // Change free event checkbox text
+        if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
+        }
+        if ($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
+            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
+        }
+        // Bugfix for QuickTabs and view filters to get along
+        /*$('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
+            if ($(this).prev().is(':checked')) {
+                $(this).prev().prop('checked', false);
+            }
+            else {
+                $(this).prev().prop('checked', true);
+            }
+            $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+            url_path = createUrl();
+            window.history.pushState({urlPath: url_path}, "", url_path);
+        });*/
+        });
 
-
-    $(document).ajaxComplete(function () {
+    /*$(document).ajaxComplete(function () {
         $('.page-uritused .view-event-listing-fixed form').attr('action', '/uritused');
         $('.page-huvitegevused .view-event-listing-fixed form').attr('action', '/huvitegevused');
         // Disable clicking on filters when automatically submitting searchbox text
@@ -573,7 +735,7 @@
          */
 
         //Mobile filtering
-        var mTime = $('ul.quicktabs-tabs li');
+/*        var mTime = $('ul.quicktabs-tabs li');
         var mCat = $('.views-widget-filter-field_categories_event_value_i18n .views-widget');
         var mCity = $('.views-widget-filter-field_schedule_city_id_value .views-widget');
         var mAct = $('.views-widget-filter-field_categories_activity_value_i18n .views-widget');
@@ -640,29 +802,11 @@
             mobileClick($(this).find('.views-widget'));
         });
 
-        // Change free event checkbox text
-        if ($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block #edit-field-isfree-value-wrapper > label').text());
-        }
-        if ($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').length > 0 && $('.form-item-field-isfree-value label').length > 0) {
-            $('.form-item-field-isfree-value label').text($('#block-views-event-listing-fixed-block-6 #edit-field-isfree-value-wrapper > label').text());
-        }
+        
 
-        $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').unbind('click');
-        $('.view-event-listing-fixed .views-exposed-widget.views-reset-button').click(clearSelectedFilters);
+        
 
-        // Bugfix for QuickTabs and view filters to get along
-        $('.view-event-listing-fixed .form-type-bef-checkbox label').click(function () {
-            if ($(this).prev().is(':checked')) {
-                $(this).prev().prop('checked', false);
-            }
-            else {
-                $(this).prev().prop('checked', true);
-            }
-            $(this).closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
-            url_path = createUrl();
-            window.history.pushState({urlPath: url_path}, "", url_path);
-        });
+        
 
         $('.openid-ee-button.form-submit').parent().wrap('<form id="openid_ee_custom_login" action="user/login" method="POST"></form>');
         $('#openid_ee_custom_login').appendTo('#modal-content');
@@ -677,11 +821,11 @@
             $('#modalContent').height($('#modalContent').height() - $("#modalContent #div_logi_sisse").height() + $("p.info").height());
         $('#huvi-loader').remove();
     });
-
+*/
 //form-item-field-categories-event-value-i18n
     function checkFilters() {
         if ($('ul.quicktabs-tabs').hasClass('checking')) {
-            // Automatically checking and triggering selected filters for other quicktab views
+            // Automatically checking and triggering selected filters for other quicktab views           
             $('.quicktabs-tabpage.last-active').removeClass('last-active');
             $('.quicktabs-tabpage.now-active').addClass('last-active').removeClass('now-active');
             $('.quicktabs-tabpage').not('.quicktabs-hide').addClass('now-active');
@@ -712,11 +856,19 @@
         $('.form-item input:checked').each(function () {
             $(this).prop('checked', false);
         });
+        
+        $('#edit-field-schedule-date-value-min-value-date').val("");
+        $('#edit-field-schedule-date-value-max-value-date').val("");
+        $('ul.quicktabs-tabs li.active').removeClass('active'); 
+        $("#all").parent('li').addClass('active');
+        url_path = createUrl();
+          console.log(url_path);
+        window.history.pushState({urlPath: url_path}, "" , url_path);
         $.ajax({
             type: 'POST',
             url: Drupal.settings.basePath + 'ajax/events_filters_reset',
             success: function () {
-                location.reload();
+              location.reload();
             }
         });
     }
@@ -724,7 +876,6 @@
     $(el).dateRangePicker(dateRangePickerConfig)
         .bind('datepicker-apply',function(event,obj){
         var url_parts = getPathParts();
-//console.log(obj.date1);
         if (obj.date2 == 'Invalid Date' || obj.date2 == obj.date1) {
             obj.date2 = obj.date1;
             url_date_part = (obj.date1.getDate() < 10 ? '0' +obj.date1.getDate() : obj.date1.getDate()) + '.' + ((obj.date1.getMonth()+1) < 10 ? '0'
@@ -740,11 +891,13 @@
                        + '-' + (obj.date2.getDate() < 10 ? '0' +obj.date2.getDate() : obj.date2.getDate()) + '.' + ((obj.date2.getMonth()+1) < 10 ? '0'
                        +  (obj.date2.getMonth()+1) : (obj.date2.getMonth()+1)) + '.' + obj.date2.getFullYear()
           }
-         $('#edit-field-schedule-date-value-max-datepicker-popup-0').val(obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() );
-         $('#edit-field-schedule-date-value-min-datepicker-popup-0').val(obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() );
+          
+         $('#edit-field-schedule-date-value-max-value-date').val(obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear() );
+         $('#edit-field-schedule-date-value-min-value-date').val(obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear() );
           this.innerHTML = obj.value;
-          $('.quicktabs-tabpage.now-active').find('.views-submit-button input.form-submit').trigger('click');
+          $('#block-views-event-listing-fixed-events').find('.views-submit-button input.form-submit').trigger('click');
           url_path =createUrl(url_date_part);
+          console.log(url_path);
           window.history.pushState({urlPath: url_path}, "" , url_path);
        })
       .bind('datepicker-first-date-selected',function(event,obj){
