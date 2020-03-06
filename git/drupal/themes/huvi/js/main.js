@@ -243,7 +243,7 @@
         var date = new Date();
         $('#edit-field-schedule-date-value-min-value-date').val(formatDate(date));
         $('#edit-field-schedule-date-value-max-value-date').val(formatDate(date));
-        //$('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
+        $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
         break;
       case "homme":
         var tomorrow = new Date();
