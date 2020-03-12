@@ -3787,6 +3787,9 @@ ul {
     border-right: none;
   }
 }
+.quicktabs-tabpage.quicktabs-hide.temp-active{
+  display: block;
+}
 
 @media (min-width: 44em) {
   ul {
@@ -5946,7 +5949,7 @@ body.blue-scheme #huvi-loader {
 }
 
 @media (min-width: 70em) {
-  .quicktabs-wrapper .views-exposed-form {
+  .view-event-listing-fixed .views-exposed-form {
     .views-widget-filter-combine {
       display: inline-block;
       width: auto;
@@ -5976,13 +5979,13 @@ body.blue-scheme #huvi-loader {
     }
   }
   .section-huvitegevused {
-    .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
+    .view-event-listing-fixed .views-exposed-form .views-widget-filter-combine {
       margin-left: 275px;
     }
     #events_search_form .views-submit-button, .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
       margin-left: 600px;
     }
-    .quicktabs-wrapper .views-exposed-form #edit-field-isfree-value-wrapper {
+    .view-event-listing-fixed .views-exposed-form #edit-field-isfree-value-wrapper {
       margin-left: -565px;
     }
   }
@@ -6078,7 +6081,9 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   }
 }
 
-.views-widget-filter-field_schedule_date_value {
+.views-widget-filter-field_schedule_date_value,
+.views-widget-filter-field_schedule_date_value_1,
+.views-widget-filter-field_schedule_date_value_2 {
   display: none;
 }
 
@@ -6131,7 +6136,7 @@ body.page-node-3059 .tabs.tabs--primary.links--inline {
   }
 }
 
-#quicktabs-tab-event_quicktabs_for_date_range_s-5 {
+#block-event-listing-fixed-feature-huvi-events-aeg-tabs #date-period {
   position: relative;
   &:after {
     position: relative;

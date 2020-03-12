@@ -536,7 +536,7 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -681,7 +681,7 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -941,7 +941,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -1232,7 +1232,7 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -1492,7 +1492,7 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -1761,15 +1761,15 @@ echo \'<span class="date-display-single">\'.$date.\'</span>\';
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
   $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['filters']['archive']['value'] = '0';
 
-  /* Display: E Period */
-  $handler = $view->new_display('block', 'E Period', 'block_12');
+  /* Display: Events */
+  $handler = $view->new_display('block', 'Events', 'events');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -1986,6 +1986,15 @@ echo $date;
     'field_korraldaja_nimi_1' => 'field_korraldaja_nimi_1',
     'name' => 'name',
   );
+  /* Filtri kriteeriumid: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['id'] = 'field_schedule_date_value_2';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['default_date'] = 'now - 5 minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['year_range'] = '-0:+3';
   /* Filtri kriteeriumid: Sisu: Märgi, kui üritus on tasuta (field_isfree) */
   $handler->display->display_options['filters']['field_isfree_value']['id'] = 'field_isfree_value';
   $handler->display->display_options['filters']['field_isfree_value']['table'] = 'field_data_field_isfree';
@@ -2015,36 +2024,25 @@ echo $date;
   $handler->display->display_options['filters']['field_schedule_date_value_1']['field'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['operator'] = '>=';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['group'] = 1;
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['expose']['operator_id'] = 'field_schedule_date_value_1_op';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['expose']['operator'] = 'field_schedule_date_value_1_op';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['expose']['identifier'] = 'field_schedule_date_value_min';
+  $handler->display->display_options['filters']['field_schedule_date_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['filters']['field_schedule_date_value_1']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_schedule_date_value_1']['default_date'] = 'now - 5 minute';
   $handler->display->display_options['filters']['field_schedule_date_value_1']['year_range'] = '-0:+0';
   /* Filtri kriteeriumid: Globaalne: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
   $handler->display->display_options['filters']['php']['php_filter'] = 'if((intval($data->field_data_field_schedule_date_field_schedule_date_value2) - intval($data->field_data_field_schedule_date_field_schedule_date_value)) > 2592000) {
 return true;
 }';
-  /* Filtri kriteeriumid: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
-  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
-  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_schedule_date_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator_id'] = 'field_schedule_date_value_op';
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator'] = 'field_schedule_date_value_op';
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['identifier'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
   /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
@@ -2053,12 +2051,30 @@ return true;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  $handler->display->display_options['filters']['field_unpublish_value']['group'] = 1;
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
   $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['filters']['archive']['value'] = '0';
+  $handler->display->display_options['filters']['archive']['group'] = 1;
+  /* Filtri kriteeriumid: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_schedule_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator_id'] = 'field_schedule_date_value_op';
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator'] = 'field_schedule_date_value_op';
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['identifier'] = 'field_schedule_date_value_max';
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value']['year_range'] = '-0:+3';
 
   /* Display: Activity */
   $handler = $view->new_display('block', 'Activity', 'block_6');
@@ -2473,7 +2489,7 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -2883,7 +2899,7 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -3294,7 +3310,7 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -3705,7 +3721,7 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -4116,7 +4132,7 @@ echo $date;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
@@ -4446,15 +4462,15 @@ echo $date;
   $handler->display->display_options['filters']['field_unpublish_value']['value'] = array(
     0 => '0',
   );
-  /* Filtri kriteeriumid: Sisu: Archive */
+  /* Filtri kriteeriumid: Broken/missing handler */
   $handler->display->display_options['filters']['archive']['id'] = 'archive';
   $handler->display->display_options['filters']['archive']['table'] = 'node';
   $handler->display->display_options['filters']['archive']['field'] = 'archive';
   $handler->display->display_options['filters']['archive']['relationship'] = 'field_schedule_node';
   $handler->display->display_options['filters']['archive']['value'] = '0';
 
-  /* Display: A Period */
-  $handler = $view->new_display('block', 'A Period', 'block_13');
+  /* Display: Activities */
+  $handler = $view->new_display('block', 'Activities', 'activities');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Üritused';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
@@ -4884,21 +4900,19 @@ return true;
   $handler->display->display_options['filters']['field_schedule_date_value']['id'] = 'field_schedule_date_value';
   $handler->display->display_options['filters']['field_schedule_date_value']['table'] = 'field_data_field_schedule_date';
   $handler->display->display_options['filters']['field_schedule_date_value']['field'] = 'field_schedule_date_value';
-  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_schedule_date_value']['operator'] = '<=';
   $handler->display->display_options['filters']['field_schedule_date_value']['group'] = 3;
   $handler->display->display_options['filters']['field_schedule_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator_id'] = 'field_schedule_date_value_op';
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['operator'] = 'field_schedule_date_value_op';
-  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['identifier'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value']['expose']['identifier'] = 'field_schedule_date_value_max';
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_schedule_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
-    3 => 0,
-    4 => 0,
   );
-  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_schedule_date_value']['form_type'] = 'date_text';
   /* Filtri kriteeriumid: Sisu: Peida üritus lehelt (field_unpublish) */
   $handler->display->display_options['filters']['field_unpublish_value']['id'] = 'field_unpublish_value';
   $handler->display->display_options['filters']['field_unpublish_value']['table'] = 'field_data_field_unpublish';
@@ -4908,6 +4922,21 @@ return true;
     0 => '0',
   );
   $handler->display->display_options['filters']['field_unpublish_value']['group'] = 3;
+  /* Filtri kriteeriumid: Field collection item: Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date) */
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['id'] = 'field_schedule_date_value_2';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['table'] = 'field_data_field_schedule_date';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['field'] = 'field_schedule_date_value';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['expose']['operator_id'] = 'field_schedule_date_value_2_op';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['expose']['label'] = 'Alguse ning olemasolul ka lõpuaeg -  start date (field_schedule_date)';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['expose']['operator'] = 'field_schedule_date_value_2_op';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['expose']['identifier'] = 'field_schedule_date_value_min';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['expose']['remember_roles'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_schedule_date_value_2']['year_range'] = '-0:+3';
   $export['event_listing_fixed'] = $view;
 
   return $export;
