@@ -21,7 +21,7 @@
 
 
       // Event filters tabs.
-      $('.view-event-listing-fixed .views-widget .form-type-bef-checkbox label', context).once('huviEvents').click(function () {
+      $('.view-event-listing-fixed .views-widget .form-type-bef-checkbox label').once('huviEvents').click(function (event) {
         if ($(this).prev().is(':checked')) {
           $(this).prev().prop('checked', false)
         } else {
