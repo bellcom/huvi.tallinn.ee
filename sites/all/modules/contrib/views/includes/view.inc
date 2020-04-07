@@ -460,19 +460,15 @@ class view extends views_db_object {
       $display_id = ($this->display_handler->is_defaulted('filters')) ? 'default' : $this->current_display;
 
       // Start with remembered input via session.
-      //if (!empty($_SESSION['views'][$this->name][$display_id])) {
-      // $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
-      //}
+      if (!empty($_SESSION['views'][$this->name][$display_id])) {
+        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
+      }
 
       // Fetch exposed input values from $_GET. Overwrite if clashing.
       foreach ($_GET as $key => $value) {
         if (!in_array($key, array('page', 'q'))) {
           $this->exposed_input[$key] = $value;
         }
-      }
-      // Start with remembered input via session.
-      if (empty($this->exposed_input) && !empty($_SESSION['views'][$this->name][$display_id])) {
-        $this->exposed_input = $_SESSION['views'][$this->name][$display_id];
       }
     }
 
@@ -1004,6 +1000,7 @@ class view extends views_db_object {
     // Let the handlers interact with each other if they really want.
     $this->_pre_query();
 
+    $exposed_form = FALSE;
     if ($this->display_handler->uses_exposed()) {
       $exposed_form = $this->display_handler->get_plugin('exposed_form');
       // (1) Record the errors before rendering the exposed form widgets.
@@ -1084,7 +1081,7 @@ class view extends views_db_object {
     $this->style_plugin->query($this->display_handler->use_group_by());
 
     // Allow exposed form to affect the query.
-    if (isset($exposed_form)) {
+    if ($exposed_form) {
       $exposed_form->query();
     }
 
