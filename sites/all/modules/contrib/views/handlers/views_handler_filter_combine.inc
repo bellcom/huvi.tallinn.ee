@@ -129,7 +129,7 @@ class views_handler_filter_combine extends views_handler_filter_string {
     foreach ($matches as $match) {
       $phrase = FALSE;
       // Strip off phrase quotes.
-      if ($match[2]{0} == '"') {
+      if ($match[2][0] == '"') {
         $match[2] = substr($match[2], 1, -1);
         $phrase = TRUE;
       }
@@ -137,7 +137,7 @@ class views_handler_filter_combine extends views_handler_filter_string {
       $words = $phrase ? array($words) : preg_split('/ /', $words, -1, PREG_SPLIT_NO_EMPTY);
       $placeholder = $this->placeholder();
       foreach ($words as $word) {
-        $where->where("LOWER({$field}) LIKE LOWER({$placeholder})", array($placeholder => '%' . db_like(trim($word, " ,!?")) . '%'));
+		$where->where("LOWER({$field}) LIKE LOWER({$placeholder})", array($placeholder => '%' . db_like(trim($word, " ,!?")) . '%'));
       }
     }
 
