@@ -88,14 +88,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -138,14 +138,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -179,14 +179,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -220,14 +220,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -261,14 +261,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -302,14 +302,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -338,7 +338,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
     'class' => 'default',
-    'name' => 'Default',
+    'name' => 'Vaikimisi',
     'module' => 'views_slideshow',
     'path' => '',
     'stylesheets' => array(),
@@ -364,6 +364,7 @@ function huvi_content_types_views_default_views() {
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '10000';
@@ -389,7 +390,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['empty']['view']['view_to_insert'] = 'advertisement:block_9';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Node: Link */
+  /* Väli: Sisu: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
@@ -398,7 +399,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_adv_link']['type'] = 'link_plain';
-  /* Väli: Node: Bänneri pildifail */
+  /* Väli: Sisu: Bänneri pildifail */
   $handler->display->display_options['fields']['field_adv_image']['id'] = 'field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['table'] = 'field_data_field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['field'] = 'field_adv_image';
@@ -443,14 +444,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'large' => 'large',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -479,7 +480,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
     'class' => 'default',
-    'name' => 'Default',
+    'name' => 'Vaikimisi',
     'module' => 'views_slideshow',
     'path' => '',
     'stylesheets' => array(),
@@ -492,10 +493,11 @@ function huvi_content_types_views_default_views() {
     'counter' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'vscc_controls';
+  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
     'counter' => 'counter',
@@ -530,7 +532,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['empty']['view']['view_to_insert'] = 'advertisement:block_10';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Node: Link */
+  /* Väli: Sisu: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
@@ -539,7 +541,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_adv_link']['type'] = 'link_plain';
-  /* Väli: Node: Bänneri pildifail */
+  /* Väli: Sisu: Bänneri pildifail */
   $handler->display->display_options['fields']['field_adv_image']['id'] = 'field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['table'] = 'field_data_field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['field'] = 'field_adv_image';
@@ -584,14 +586,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'large' => 'large',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -611,7 +613,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
     'class' => 'default',
-    'name' => 'Default',
+    'name' => 'Vaikimisi',
     'module' => 'views_slideshow',
     'path' => '',
     'stylesheets' => array(),
@@ -627,6 +629,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
     'field_adv_link' => 0,
@@ -634,6 +637,7 @@ function huvi_content_types_views_default_views() {
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
@@ -650,15 +654,9 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Käitumine, kui tulemusi pole: Globaalne: View area */
-  $handler->display->display_options['empty']['view']['id'] = 'view';
-  $handler->display->display_options['empty']['view']['table'] = 'views';
-  $handler->display->display_options['empty']['view']['field'] = 'view';
-  $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'advertisement:block_7';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Node: Link */
+  /* Väli: Sisu: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
@@ -667,7 +665,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_adv_link']['type'] = 'link_plain';
-  /* Väli: Node: Bänneri pildifail */
+  /* Väli: Sisu: Bänneri pildifail */
   $handler->display->display_options['fields']['field_adv_image']['id'] = 'field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['table'] = 'field_data_field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['field'] = 'field_adv_image';
@@ -700,14 +698,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -729,15 +727,9 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Käitumine, kui tulemusi pole: Globaalne: View area */
-  $handler->display->display_options['empty']['view']['id'] = 'view';
-  $handler->display->display_options['empty']['view']['table'] = 'views';
-  $handler->display->display_options['empty']['view']['field'] = 'view';
-  $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'advertisement:block_8';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Node: Link */
+  /* Väli: Sisu: Link */
   $handler->display->display_options['fields']['field_adv_link']['id'] = 'field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['table'] = 'field_data_field_adv_link';
   $handler->display->display_options['fields']['field_adv_link']['field'] = 'field_adv_link';
@@ -746,7 +738,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['fields']['field_adv_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_adv_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_adv_link']['type'] = 'link_plain';
-  /* Väli: Node: Bänneri pildifail */
+  /* Väli: Sisu: Bänneri pildifail */
   $handler->display->display_options['fields']['field_adv_image']['id'] = 'field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['table'] = 'field_data_field_adv_image';
   $handler->display->display_options['fields']['field_adv_image']['field'] = 'field_adv_image';
@@ -778,14 +770,14 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'advertisement' => 'advertisement',
   );
-  /* Filtri kriteeriumid: Node: Suurus (field_adv_size) */
+  /* Filtri kriteeriumid: Sisu: Suurus (field_adv_size) */
   $handler->display->display_options['filters']['field_adv_size_value']['id'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['table'] = 'field_data_field_adv_size';
   $handler->display->display_options['filters']['field_adv_size_value']['field'] = 'field_adv_size_value';
   $handler->display->display_options['filters']['field_adv_size_value']['value'] = array(
     'small' => 'small',
   );
-  /* Filtri kriteeriumid: Node: Näita lehel (field_show_on_page) */
+  /* Filtri kriteeriumid: Sisu: Näita lehel (field_show_on_page) */
   $handler->display->display_options['filters']['field_show_on_page_value']['id'] = 'field_show_on_page_value';
   $handler->display->display_options['filters']['field_show_on_page_value']['table'] = 'field_data_field_show_on_page';
   $handler->display->display_options['filters']['field_show_on_page_value']['field'] = 'field_show_on_page_value';
@@ -864,7 +856,7 @@ function huvi_content_types_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Node: Pildid Slideshow */
+  /* Väli: Sisu: Pildid Slideshow */
   $handler->display->display_options['fields']['field_pildid_slideshow']['id'] = 'field_pildid_slideshow';
   $handler->display->display_options['fields']['field_pildid_slideshow']['table'] = 'field_data_field_pildid_slideshow';
   $handler->display->display_options['fields']['field_pildid_slideshow']['field'] = 'field_pildid_slideshow';
