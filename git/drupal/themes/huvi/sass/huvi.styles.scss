@@ -5713,6 +5713,9 @@ body.page-loodud .messages.messages--error, body.page-archive .messages.messages
 /* view-advertisement SLIDSHOW START */
 
 .view-advertisement {
+  .views-slideshow-controls-bottom {
+    display: none;
+  }
   .views-slideshow-pager-field-processed {
     float: none;
     display: inline-block;
