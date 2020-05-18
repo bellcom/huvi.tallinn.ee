@@ -148,6 +148,7 @@
    if ($(window).width() < 700) {
       $('.normal-top').hide();
     };
+  $('.view-advertisement').hover( function() {$('.view-advertisement .views-slideshow-controls-bottom').show()},function() {$('.view-advertisement .views-slideshow-controls-bottom').hide()});
   }
   }
 

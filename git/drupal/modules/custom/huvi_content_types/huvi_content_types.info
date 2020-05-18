@@ -17,6 +17,7 @@ dependencies[] = i18n_taxonomy
 dependencies[] = image
 dependencies[] = list
 dependencies[] = multiupload_imagefield_widget
+dependencies[] = node
 dependencies[] = node_reference
 dependencies[] = number
 dependencies[] = options
