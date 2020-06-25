@@ -1,6 +1,7 @@
 {
     "require": {
         "php": ">=5.3.0",
+        "squizlabs/php_codesniffer": ">=1.4.6,<2.0.0",
         "sensiolabs/security-checker": "~2.0",
         "aklump/loft_data_grids": ">=0.4.5",
         "monolog/monolog": ">=1.6.0,<2.0.0",
@@ -8,14 +9,25 @@
     },
     "config": {
         "autoloader-suffix": "ComposerManager",
-        "vendor-dir": "../../../all/vendor"
+        "vendor-dir": "C:\\Users\\Juulia\\Sites\\huvi.tallinn.ee/sites/all/vendor"
     },
     "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "~3.7",
+        "drupal/ctools": "1.x-dev",
+        "drupal/rest_server": "~3.0",
+        "drupal/services": "~3.0",
+        "drupal/entity": "~1.0"
+    },
     "autoload": {
+        "files": [
+            "C:\\Users\\Juulia\\Sites\\huvi.tallinn.ee\\sites\\all\\modules\\contrib\\loft_data_grids\\includes\\DrupalTableExporter.php"
+        ],
         "psr-0": {
             "Drupal\\Monolog": [
-                "../../../all/modules/contrib/monolog/src"
+                "C:\\Users\\Juulia\\Sites\\huvi.tallinn.ee\\sites\\all\\modules\\contrib\\monolog\\src"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
