@@ -1,0 +1,4 @@
+name = TARA login
+description = Riigi autentimisteenus (TARA) authentication.
+package = HUVI
+core = 7.x
