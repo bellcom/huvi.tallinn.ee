@@ -56,7 +56,7 @@ global $base_url;
       'Authorization' => 'Basic ' . base64_encode(variable_get('tara_user_id') . ':' . variable_get('tara_user_password')),
     ),
   );
-  $result = drupal_http_request(variable_get('tara_endpoint_authorize'), $options);
+  $result = drupal_http_request(variable_get('tara_endpoint_token'), $options);
 
   dpm($result);
 
