@@ -30,7 +30,7 @@ function huvi_tara_login_menu() {
 }
 
 function _taraloginrequest() {
-
+global $base_url;
   $code = $_GET['code'];
   $state = $_GET['state'];
 
@@ -46,7 +46,7 @@ function _taraloginrequest() {
   $data = array(
     'grant_type' => 'authorization_code',
     'code' => $code,
-    'redirect_uri' => variable_get('tara_redirect_url'),
+    'redirect_uri' => $base_url . variable_get('tara_redirect_url'),
   );
   $options = array(
     'method' => 'POST',
