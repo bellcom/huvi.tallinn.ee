@@ -2,3 +2,5 @@ name = TARA login
 description = Riigi autentimisteenus (TARA) authentication.
 package = HUVI
 core = 7.x
+
+configure = admin/config/system/huvi_tara_login

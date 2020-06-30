@@ -1,5 +1,9 @@
 <?php
 
+require_once 'vendor/autoload.php';
+
+use \Firebase\JWT\JWT;
+
 /**
  * @file
  * Code for the TARA login module.
@@ -14,18 +18,47 @@ function huvi_tara_login_menu() {
     'type' => MENU_LOCAL_TASK,
   );
 
+  $items['admin/config/system/huvi_tara_login'] = array(
+    'title' => 'TARA login settings',
+    'description' => 'Settings of TARA authorisation.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('tara_admin_settings'),
+    'file' => 'tara.admin.inc',
+    'access arguments' => array('administer site configuration'),
+  );
   return $items;
 }
 
 function _taraloginrequest() {
 
-  dpm(drupal_get_http_header());
+  $code = $_GET['code'];
+  $state = $_GET['state'];
 
-  dpm(drupal_get_query_parameters());
+  if (!$code) {
+    watchdog('huvi_tara_login', 'Code is null', array(), WATCHDOG_ERROR);
+    return t('Authintication failed');
+  }
+  if (!$state) {
+    watchdog('huvi_tara_login', 'State is null', array(), WATCHDOG_ERROR);
+    return t('Authintication failed');
+  }
 
-  dpm($_POST);
+  $data = array(
+    'grant_type' => 'authorization_code',
+    'code' => $code,
+    'redirect_uri' => variable_get('tara_redirect_url'),
+  );
+  $options = array(
+    'method' => 'POST',
+    'data' => drupal_http_build_query($data),
+    'timeout' => 15,
+    'headers' => array('Content-Type' => 'application/x-www-form-urlencoded',
+      'Authorization' => 'Basic ' . base64_encode(variable_get('tara_user_id') . ':' . variable_get('tara_user_password')),
+    ),
+  );
+  $result = drupal_http_request(variable_get('tara_endpoint_authorize'), $options);
 
-  dpm($_GET);
+  dpm($result);
 
   return 'test';
 }
