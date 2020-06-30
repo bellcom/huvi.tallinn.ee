@@ -5,9 +5,7 @@
  * Code for the TARA login module.
  */
 function huvi_tara_login_menu() {
-  
-  dpm('Y');
-  
+
   $items['taraloginrequest'] = array(
     'title' => 'TARA login return path',
     'description' => "TARA login return path.",
@@ -15,12 +13,19 @@ function huvi_tara_login_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
   );
-  
+
   return $items;
 }
 
-function _taraloginrequest(){
-  
-  dpm($_REQUEST);
+function _taraloginrequest() {
+
+  dpm(drupal_get_http_header());
+
+  dpm(drupal_get_query_parameters());
+
+  dpm($_POST);
+
+  dpm($_GET);
+
   return 'test';
 }
