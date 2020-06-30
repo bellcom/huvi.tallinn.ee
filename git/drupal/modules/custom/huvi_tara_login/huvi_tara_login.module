@@ -4,4 +4,23 @@
  * @file
  * Code for the TARA login module.
  */
+function huvi_tara_login_menu() {
+  
+  dpm('Y');
+  
+  $items['taraloginrequest'] = array(
+    'title' => 'TARA login return path',
+    'description' => "TARA login return path.",
+    'page callback' => '_taraloginrequest',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  return $items;
+}
 
+function _taraloginrequest(){
+  
+  dpm($_REQUEST);
+  return 'test';
+}
