@@ -2,10 +2,11 @@
 
 require_once 'vendor/autoload.php';
 
-use \Firebase\JWT\JWT;
+include_once drupal_get_path('module', 'oauth2_client') . '/oauth2_client.inc';
+include_once drupal_get_path('module', 'huvi_tara_login') . '/TaraOauthClient.php';
 
 /**
- * @file
+ * @file_entity_generate_file
  * Code for the TARA login module.
  */
 function huvi_tara_login_menu() {
@@ -17,7 +18,7 @@ function huvi_tara_login_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
   );
-  
+
   $items['admin/config/system/huvi_tara_login'] = array(
     'title' => 'TARA login settings',
     'description' => 'Settings of TARA authorisation.',
@@ -31,31 +32,9 @@ function huvi_tara_login_menu() {
 
 function _taraloginrequest() {
 
-  try {
-    $oauth2_client = oauth2_client_load('tara');
-    $access_token = $oauth2_client->getAccessToken();
-  }
-  catch (Exception $e) {
-    drupal_set_message($e->getMessage(), 'error');
-    watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
-  }
+  file_put_contents('mysuperfile.txt', print_r('1', true) . PHP_EOL, FILE_APPEND);
 
-  print_r('<pre>');
-  print_r($access_token);
-  print_r('</pre>');
-
-  return 'test';
-}
-
-/**
- * Implements hook_oauth2_clients().
- */
-function huvi_tara_login_oauth2_clients() {
-
-  global $base_url;
-
-  // server-side flow
-  $oauth2_clients['tara'] = array(
+  $oauth2_config = array(
     'token_endpoint' => variable_get('tara_endpoint_token'),
     'auth_flow' => 'server-side',
     'scope' => 'openid',
@@ -65,5 +44,19 @@ function huvi_tara_login_oauth2_clients() {
     'redirect_uri' => $base_url . '/taraloginrequest',
   );
 
-  return $oauth2_clients;
+  try {
+    $oauth2_client = new huvi_tara_login\TaraOauthClient($oauth2_config);
+    $access_token = $oauth2_client->getAccessToken();
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
+  }
+
+  print_r('<pre>1');
+  print_r($access_token);
+  print_r('</pre>1');
+
+  return 'test';
 }
+
