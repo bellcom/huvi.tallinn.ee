@@ -5,6 +5,8 @@ require_once 'vendor/autoload.php';
 include_once drupal_get_path('module', 'oauth2_client') . '/oauth2_client.inc';
 include_once drupal_get_path('module', 'huvi_tara_login') . '/TaraOauthClient.php';
 
+use \Firebase\JWT\JWT;
+
 /**
  * @file_entity_generate_file
  * Code for the TARA login module.
@@ -31,7 +33,7 @@ function huvi_tara_login_menu() {
 }
 
 function _taraloginrequest() {
-
+  global $base_url;
   file_put_contents('mysuperfile.txt', print_r('1', true) . PHP_EOL, FILE_APPEND);
 
   $oauth2_config = array(
@@ -59,4 +61,3 @@ function _taraloginrequest() {
 
   return 'test';
 }
-
