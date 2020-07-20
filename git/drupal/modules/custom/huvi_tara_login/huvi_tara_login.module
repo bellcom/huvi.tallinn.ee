@@ -41,7 +41,7 @@ function _taraloginrequest() {
     'client_id' => variable_get('tara_user_id'),
     'client_secret' => variable_get('tara_user_password'),
     'authorization_endpoint' => variable_get('tara_endpoint_authorize'),
-    'redirect_uri' => $base_url . '/taraloginrequest',
+    'redirect_uri' => $base_url . variable_get('tara_redirect_url'),
   );
 
   try {
