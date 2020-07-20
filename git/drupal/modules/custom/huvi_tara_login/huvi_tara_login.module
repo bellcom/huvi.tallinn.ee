@@ -17,7 +17,7 @@ function huvi_tara_login_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
   );
-
+  
   $items['admin/config/system/huvi_tara_login'] = array(
     'title' => 'TARA login settings',
     'description' => 'Settings of TARA authorisation.',
@@ -30,33 +30,6 @@ function huvi_tara_login_menu() {
 }
 
 function _taraloginrequest() {
-//global $base_url;
-//  $code = $_GET['code'];
-//  $state = $_GET['state'];
-//
-//  if (!$code) {
-//    watchdog('huvi_tara_login', 'Code is null', array(), WATCHDOG_ERROR);
-//    return t('Authintication failed');
-//  }
-//  if (!$state) {
-//    watchdog('huvi_tara_login', 'State is null', array(), WATCHDOG_ERROR);
-//    return t('Authintication failed');
-//  }
-//
-//  $data = array(
-//    'grant_type' => 'authorization_code',
-//    'code' => $code,
-//    'redirect_uri' => $base_url . variable_get('tara_redirect_url'),
-//  );
-//  $options = array(
-//    'method' => 'POST',
-//    'data' => drupal_http_build_query($data),
-//    'timeout' => 15,
-//    'headers' => array('Content-Type' => 'application/x-www-form-urlencoded',
-//      'Authorization' => 'Basic ' . base64_encode(variable_get('tara_user_id') . ':' . variable_get('tara_user_password')),
-//    ),
-//  );
-//  $result = drupal_http_request(variable_get('tara_endpoint_token'), $options);
 
   try {
     $oauth2_client = oauth2_client_load('tara');
@@ -64,6 +37,7 @@ function _taraloginrequest() {
   }
   catch (Exception $e) {
     drupal_set_message($e->getMessage(), 'error');
+    watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
   }
 
   print_r('<pre>');
@@ -71,28 +45,6 @@ function _taraloginrequest() {
   print_r('</pre>');
 
   return 'test';
-}
-
-function huvi_tara_login_block_info() {
-  $blocks['tara_login'] = array(
-    // info: The name of the block.
-    'info' => t('Tara login block'),
-  );
-
-  return $blocks;
-}
-
-function huvi_tara_login_block_view($delta = '') {
-  // The $delta parameter tells us which block is being requested.
-  if ('tara_login' == $delta) {
-    $block['subject'] = t('Tara login');
-    $block['content'] = 'login link';
-
-
-
-    user_cookie_save(array('test' => drupal_random_key(16)));
-  }
-  return $block;
 }
 
 /**
@@ -106,7 +58,7 @@ function huvi_tara_login_oauth2_clients() {
   $oauth2_clients['tara'] = array(
     'token_endpoint' => variable_get('tara_endpoint_token'),
     'auth_flow' => 'server-side',
-    'state' => 'openid',
+    'scope' => 'openid',
     'client_id' => variable_get('tara_user_id'),
     'client_secret' => variable_get('tara_user_password'),
     'authorization_endpoint' => variable_get('tara_endpoint_authorize'),
