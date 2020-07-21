@@ -32,6 +32,14 @@ function huvi_tara_login_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function huvi_tara_login_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'openid_connect') {
+    return 'plugins/' . $plugin;
+  }
+}
 function _taraloginrequest() {
   global $base_url;
   file_put_contents('mysuperfile.txt', print_r('1', true) . PHP_EOL, FILE_APPEND);
