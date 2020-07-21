@@ -55,8 +55,23 @@ function _taraloginrequest() {
     watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
   }
 
+  $publicKey = <<<EOD
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjWwAjT/03ypme9ZWeSe7
+c+jY26NO50Wo5I1LBnPW2JLc0dPMj8v7y4ehiRpClYNTaSWcLd4DJmlKXDXXudEU
+WwXa7TtjBFJfzlZ+1u0tDvJ+H9zv9MzO7UhUFytztUEMTrtStdhGbzkzdEZZCgFY
+eo2i33eXxzIR1nGvI05d9Y+e/LHnNE2ZKTa89BC7ZiCXq5nfAaCgQna/knh4kFAX
++KgiPRAtsiDHcAWKcBY3qUVcb+5XAX8p668MlGLukzsh5tFkQCbJVyNtmlbIHdbG
+vVHPb8C0H3oLYciv1Fjy/tS1lO7OT/cb3GVp6Ql+CG0uED/8pkpVtfsGRviub4/E
+lQIDAQAB
+-----END PUBLIC KEY-----
+EOD;
+  
+  $decoded = JWT::decode($access_token['id_token'], $publicKey, array('RS256'));
+  
   print_r('<pre>1');
   print_r($access_token);
+  print_r($decoded);
   print_r('</pre>1');
 
   return 'test';
