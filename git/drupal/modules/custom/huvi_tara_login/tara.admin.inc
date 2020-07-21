@@ -54,6 +54,15 @@ function tara_admin_settings() {
     '#maxlength' => 50,
     '#required' => TRUE,
   );
+  
+    $form['tara_endpoint_public_key'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Tara endpoint SSL public key'),
+    '#default_value' => variable_get('tara_endpoint_public_key'),
+    '#rows' => 10,
+    '#weight' => 60,
+    '#required' => TRUE,
+  );
   return system_settings_form($form);
 }
 
