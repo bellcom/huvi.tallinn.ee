@@ -98,9 +98,6 @@ class JWT
         if (empty(static::$supported_algs[$header->alg])) {
             throw new UnexpectedValueException('Algorithm not supported');
         }
-        
-        dpm($header->alg);
-        
         if (!\in_array($header->alg, $allowed_algs)) {
             throw new UnexpectedValueException('Algorithm not allowed');
         }
