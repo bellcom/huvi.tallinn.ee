@@ -8,6 +8,26 @@ include_once drupal_get_path('module', 'huvi_tara_login') . '/TaraOauthClient.ph
 use \Firebase\JWT\JWT;
 
 /**
+ * Implements hook_help().
+ */
+function huvi_tara_login_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#huvi_tara_login':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The TARA login module allows you to log in uses <a href="https://e-gov.github.io/TARA-Doku/">TARA</a> state authentication service.') . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<p>' . t('Use \'site-URL/taraloginrequest\' link to login. ');
+      $output .= '<br>' . t('Compleate authentification on TARA site. Available methods are: ID card, MobileID, SmartID, BankLink, EUeID.') . '</p>';
+      $output .= '<h3>' . t('Installation') . '</h3>';
+      $output .= '<p>' . t('Copy module folder to the site modules folder. In console navigate to the module folder and run \'composer install\'. Then enable the module.') . '</p>';
+      $output .= '<h3>' . t('Setup') . '</h3>';
+      $output .= '<p>' . t('Navigate to <a href="/admin/config/system/huvi_tara_login">Tara login settings</a> page and fill the credentials form.') . '</p>';
+      return $output;
+  }
+}
+
+/**
  * @file_entity_generate_file
  * Code for the TARA login module.
  */
@@ -56,10 +76,10 @@ function _taraloginrequest() {
   }
 
 // This is for testing purpose.
-// 
+//
 // $access_token['id_token'] = 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlNmNjNCJ9.eyJqdGkiOiI3MWNmNDczNS05YTBiLTQ5ZTEtYmRjYS1hYmM2ZmIwYTBiMGQiLCJpc3MiOiJodHRwczovL3RhcmEtdGVzdC5yaWEuZWUiLCJhdWQiOiJ0ZXN0aHV2aXRhbGxpbm4iLCJleHAiOjE1OTUzMzY0MTQsImlhdCI6MTU5NTMzNTgxNCwibmJmIjoxNTk1MzM1NTE0LCJzdWIiOiJFRTEwMTAxMDEwMDA1IiwicHJvZmlsZV9hdHRyaWJ1dGVzIjp7ImRhdGVfb2ZfYmlydGgiOiIxODAxLTAxLTAxIiwiZmFtaWx5X25hbWUiOiJTTUFSVC1JRCIsImdpdmVuX25hbWUiOiJERU1PIn0sImFtciI6WyJzbWFydGlkIl0sInN0YXRlIjoiYTc1MjM1M2Y4Mjg0NTBjNzI1MDMwYWQ2YmE1MmY0ZmQiLCJub25jZSI6IiIsImF0X2hhc2giOiJpbG1aQjB2ZWNBT2NmNXI4MU90NHlBPT0ifQ.KmXsBTKE5ge-MjXnLti4uHDBOgEv_ybSsWM4yIP4NBGcxu5iXDLPlAGtGpHibyP42zGomCdRkB6PZ99Ru8kqxFR-B1Zf9WRjYggHrTB7uTh0QsVmp_FdL3kuOU7mTThL5KJ39jK7FGjpIJXm7XYSE9uwdF-SuGOiZ0Ksxls9joy8PQB__gnKiKqq5ugBhaSeEeLyCGDB124bktQ_xxA2JyZnaCouepWD4XB0VNxky-jJ9w9FY7IHWuYsFA5YaubOueEPouizUaukl0f_9HXootg0hyvWcci3PZ5om9lYchIZ4wO7dvNErDMAmWKx5yNsmPkDH9xdKUsJT80-2e6Rzw';
 
- try {
+  try {
     $decoded = JWT::decode($access_token['id_token'], variable_get('tara_endpoint_public_key'), array('RS256'));
   }
   catch (Exception $e) {
@@ -69,7 +89,7 @@ function _taraloginrequest() {
   }
 
 // This is for testing purpose.
-// 
+//
 //  $decoded = new stdClass();
 //  $decoded->sub = 'EE15053042308';
 //  $decoded->profile_attributes = new stdClass();
