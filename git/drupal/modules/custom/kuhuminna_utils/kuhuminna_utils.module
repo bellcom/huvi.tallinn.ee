@@ -199,7 +199,7 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   $form['tara'] = array(
     '#type' => 'markup',
     '#markup' => '<a id="tara-login" class="tara-login" href="' . $base_path . 'taraloginrequest">'
-        . t('TARA') .
+        . t('Logi sisse Smart-ID / ID-kaarti / Mobiil-ID kaudu') .
       '</a>',
   );
 
