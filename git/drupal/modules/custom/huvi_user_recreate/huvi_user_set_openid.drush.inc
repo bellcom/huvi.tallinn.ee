@@ -11,10 +11,10 @@ function huvi_user_set_openid_drush_command() {
     'aliases' => array('openid'),
     'arguments' => array(
       'uid' => 'UserID',
-      'openid' => 'OpenID',
+      'id_number' => 'IdNumber',
     ),
     'examples' => array(
-      'drush openid 254 38010101122' => 'Assign openid 38010101122 to user 254.',
+      'drush openid 254 38010101122' => 'Assign id number 38010101122 to user 254.',
     ),
   );
   return $items;
@@ -24,10 +24,10 @@ function huvi_user_set_openid_drush_command() {
  * Set new openid and email to the user.
  *
  * @param string $uid
- * @param string $openid
+ * @param string $id_number
  */
-function huvi_user_set_openid_set_openid($uid = NULL, $openid = NULL) {
-  if (is_null($uid) || is_null($openid)) {
+function huvi_user_set_openid_set_openid($uid = NULL, $id_number = NULL) {
+  if (is_null($uid) || is_null($id_number)) {
   if (drupal_is_cli()) {
     drush_print('No arguments. Example: drush openid 254 38010101122');
   }
@@ -36,7 +36,7 @@ function huvi_user_set_openid_set_openid($uid = NULL, $openid = NULL) {
   }
 
   // Set new authname.
-  $result = db_query('UPDATE {authmap} SET authname = :openid WHERE uid = :uid', array(':uid' => $uid, ':openid' => 'https://openid.ee/u/' . $openid));
+  $result = db_query('UPDATE {authmap} SET authname = :openid, module = :module WHERE uid = :uid', array(':uid' => $uid, ':module' => 'tara_login', ':openid' => 'EE' . $id_number));
   // Print information output.
   if ($result->rowCount()) {
     if (drupal_is_cli()) {
@@ -56,7 +56,7 @@ function huvi_user_set_openid_set_openid($uid = NULL, $openid = NULL) {
   }
 
   // Set new email.
-  $result = db_query('UPDATE {users} SET mail = :openid WHERE uid = :uid AND mail LIKE \'%@eesti.ee\'', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
+  $result = db_query('UPDATE {users} SET mail = :openid WHERE uid = :uid AND mail LIKE \'%@eesti.ee\'', array(':uid' => $uid, ':openid' => $id_number . '@eesti.ee'));
   // Print information output.
   if ($result->rowCount()) {
     if (drupal_is_cli()) {
@@ -76,7 +76,7 @@ function huvi_user_set_openid_set_openid($uid = NULL, $openid = NULL) {
   }
 
   // Set new init.
-  $result = db_query('UPDATE {users} SET init = :openid WHERE uid = :uid ', array(':uid' => $uid, ':openid' => $openid . '@eesti.ee'));
+  $result = db_query('UPDATE {users} SET init = :openid WHERE uid = :uid ', array(':uid' => $uid, ':openid' => $id_number . '@eesti.ee'));
   // Print information output.
   if ($result->rowCount()) {
     if (drupal_is_cli()) {
