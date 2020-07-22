@@ -14,8 +14,8 @@ use \Firebase\JWT\JWT;
 function huvi_tara_login_menu() {
 
   $items['taraloginrequest'] = array(
-    'title' => 'TARA login return path',
-    'description' => "TARA login return path.",
+    'title' => 'TARA login',
+    'description' => "TARA login",
     'page callback' => '_taraloginrequest',
     'access arguments' => array('access content'),
     'type' => MENU_LOCAL_TASK,
