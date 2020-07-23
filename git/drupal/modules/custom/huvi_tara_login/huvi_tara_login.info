@@ -3,4 +3,5 @@ description = Riigi autentimisteenus (TARA) authentication.
 package = HUVI
 core = 7.x
 dependencies[] = oauth2_authentication
+dependencies[] = oauth2_client
 configure = admin/config/system/huvi_tara_login

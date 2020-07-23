@@ -46,7 +46,7 @@ function huvi_tara_login_menu() {
     'description' => 'Settings of TARA authorisation.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('tara_admin_settings'),
-    'file' => 'tara.admin.inc',
+    'file' => 'huvi_tara_login.admin.inc',
     'access arguments' => array('administer site configuration'),
   );
   return $items;
@@ -75,10 +75,6 @@ function _taraloginrequest() {
     drupal_goto('/lisa');
   }
 
-// This is for testing purpose.
-//
-// $access_token['id_token'] = 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlNmNjNCJ9.eyJqdGkiOiI3MWNmNDczNS05YTBiLTQ5ZTEtYmRjYS1hYmM2ZmIwYTBiMGQiLCJpc3MiOiJodHRwczovL3RhcmEtdGVzdC5yaWEuZWUiLCJhdWQiOiJ0ZXN0aHV2aXRhbGxpbm4iLCJleHAiOjE1OTUzMzY0MTQsImlhdCI6MTU5NTMzNTgxNCwibmJmIjoxNTk1MzM1NTE0LCJzdWIiOiJFRTEwMTAxMDEwMDA1IiwicHJvZmlsZV9hdHRyaWJ1dGVzIjp7ImRhdGVfb2ZfYmlydGgiOiIxODAxLTAxLTAxIiwiZmFtaWx5X25hbWUiOiJTTUFSVC1JRCIsImdpdmVuX25hbWUiOiJERU1PIn0sImFtciI6WyJzbWFydGlkIl0sInN0YXRlIjoiYTc1MjM1M2Y4Mjg0NTBjNzI1MDMwYWQ2YmE1MmY0ZmQiLCJub25jZSI6IiIsImF0X2hhc2giOiJpbG1aQjB2ZWNBT2NmNXI4MU90NHlBPT0ifQ.KmXsBTKE5ge-MjXnLti4uHDBOgEv_ybSsWM4yIP4NBGcxu5iXDLPlAGtGpHibyP42zGomCdRkB6PZ99Ru8kqxFR-B1Zf9WRjYggHrTB7uTh0QsVmp_FdL3kuOU7mTThL5KJ39jK7FGjpIJXm7XYSE9uwdF-SuGOiZ0Ksxls9joy8PQB__gnKiKqq5ugBhaSeEeLyCGDB124bktQ_xxA2JyZnaCouepWD4XB0VNxky-jJ9w9FY7IHWuYsFA5YaubOueEPouizUaukl0f_9HXootg0hyvWcci3PZ5om9lYchIZ4wO7dvNErDMAmWKx5yNsmPkDH9xdKUsJT80-2e6Rzw';
-
   try {
     $decoded = JWT::decode($access_token['id_token'], variable_get('tara_endpoint_public_key'), array('RS256'));
   }
@@ -87,14 +83,6 @@ function _taraloginrequest() {
     watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
     drupal_goto('/lisa');
   }
-
-// This is for testing purpose.
-//
-//  $decoded = new stdClass();
-//  $decoded->sub = 'EE15053042308';
-//  $decoded->profile_attributes = new stdClass();
-//  $decoded->profile_attributes->family_name = 'Tara';
-//  $decoded->profile_attributes->given_name = 'Demo';
 
   if (!$decoded->sub) {
     drupal_set_message(t('No user data received.'), 'error');

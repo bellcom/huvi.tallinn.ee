@@ -10,7 +10,7 @@
  *
  * @ingroup forms
  */
-function tara_admin_settings() {
+function huvi_tara_login_admin_settings() {
   $form['tara_user_id'] = array(
     '#type' => 'textfield',
     '#title' => t('User id'),
