@@ -45,7 +45,7 @@ function huvi_tara_login_menu() {
     'title' => 'TARA login settings',
     'description' => 'Settings of TARA authorisation.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('tara_admin_settings'),
+    'page arguments' => array('huvi_tara_login_admin_settings'),
     'file' => 'huvi_tara_login.admin.inc',
     'access arguments' => array('administer site configuration'),
   );
