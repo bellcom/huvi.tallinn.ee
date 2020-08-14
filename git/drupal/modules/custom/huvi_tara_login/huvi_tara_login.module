@@ -1,0 +1,228 @@
+<?php
+
+require_once 'vendor/autoload.php';
+
+include_once drupal_get_path('module', 'oauth2_client') . '/oauth2_client.inc';
+include_once drupal_get_path('module', 'huvi_tara_login') . '/TaraOauthClient.php';
+
+use \Firebase\JWT\JWT;
+
+/**
+ * Implements hook_help().
+ */
+function huvi_tara_login_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#huvi_tara_login':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The TARA login module allows you to log in uses <a href="https://e-gov.github.io/TARA-Doku/">TARA</a> state authentication service.') . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<p>' . t('Use \'site-URL/taraloginrequest\' link to login. ');
+      $output .= '<br>' . t('Compleate authentification on TARA site. Available methods are: ID card, MobileID, SmartID, BankLink, EUeID.') . '</p>';
+      $output .= '<h3>' . t('Installation') . '</h3>';
+      $output .= '<p>' . t('Copy module folder to the site modules folder. In console navigate to the module folder and run \'composer install\'. Then enable the module.') . '</p>';
+      $output .= '<h3>' . t('Setup') . '</h3>';
+      $output .= '<p>' . t('Navigate to <a href="/admin/config/system/huvi_tara_login">Tara login settings</a> page and fill the credentials form.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * @file_entity_generate_file
+ * Code for the TARA login module.
+ */
+function huvi_tara_login_menu() {
+
+  $items['taraloginrequest'] = array(
+    'title' => 'TARA login',
+    'description' => "TARA login",
+    'page callback' => '_taraloginrequest',
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['admin/config/system/huvi_tara_login'] = array(
+    'title' => 'TARA login settings',
+    'description' => 'Settings of TARA authorisation.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('tara_admin_settings'),
+    'file' => 'huvi_tara_login.admin.inc',
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+function _taraloginrequest() {
+  global $base_url;
+
+  $oauth2_config = array(
+    'token_endpoint' => variable_get('tara_endpoint_token'),
+    'auth_flow' => 'server-side',
+    'scope' => 'openid',
+    'client_id' => variable_get('tara_user_id'),
+    'client_secret' => variable_get('tara_user_password'),
+    'authorization_endpoint' => variable_get('tara_endpoint_authorize'),
+    'redirect_uri' => $base_url . variable_get('tara_redirect_url'),
+  );
+
+  try {
+    $oauth2_client = new huvi_tara_login\TaraOauthClient($oauth2_config);
+    $access_token = $oauth2_client->getAccessToken();
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
+    drupal_goto('/lisa');
+  }
+
+  try {
+    $decoded = JWT::decode($access_token['id_token'], variable_get('tara_endpoint_public_key'), array('RS256'));
+  }
+  catch (Exception $e) {
+    drupal_set_message($e->getMessage(), 'error');
+    watchdog('huvi_tara_login', $e->getMessage(), array(), WATCHDOG_ERROR);
+    drupal_goto('/lisa');
+  }
+
+  if (!$decoded->sub) {
+    drupal_set_message(t('No user data received.'), 'error');
+    watchdog('huvi_tara_login', t('No user data received.'), array(), WATCHDOG_ERROR);
+    drupal_goto('/lisa');
+  }
+
+  $user = huvi_tara_login_user_load_by_sub($decoded->sub);
+
+  if (FALSE === $user) {
+    // This is a new user.
+    // Create user.
+    $user = huvi_tara_login_create_user($decoded->sub, $decoded->profile_attributes->family_name . ' ' . $decoded->profile_attributes->given_name);
+    $user = user_load($user->uid);
+    // Create authmap record, connected to user.
+    huvi_tara_login_connect_account($user, $decoded->sub);
+  }
+  // Login user.
+  $form_state = array('uid' => $user->uid);
+  user_login_submit(array(), $form_state);
+  drupal_goto('/lisa');
+}
+
+/**
+ * Loads a user based on a sub-id and a login provider.
+ *
+ *  @param string $sub
+ *  The 'sub' property identifying the external account.
+ */
+function huvi_tara_login_user_load_by_sub($sub) {
+  $result = db_select('authmap', 'a')
+    ->fields('a', array('uid', 'module'))
+    ->condition('authname', $sub)
+    ->condition('module', 'tara_login')
+    ->execute()
+    ->fetchAssoc();
+  if ($result) {
+    $account = user_load($result['uid']);
+    if (is_object($account)) {
+      return $account;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Creates a user indicating sub-id and login provider.
+ *
+ * @param string $sub
+ *   The subject identifier.
+ * @param array $userinfo
+ *   The user claims, containing at least 'email'.
+ * @param string $user_name
+ *   The user name.
+ *
+ * @return object|FALSE
+ *   The user object or FALSE on failure.
+ */
+function huvi_tara_login_create_user($sub, $user_name) {
+  $edit = array(
+    'name' => huvi_tara_login_generate_username($user_name),
+    'pass' => user_password(),
+    'mail' => huvi_tara_login_generate_email($sub),
+    'init' => huvi_tara_login_generate_email($sub),
+    'status' => 1,
+    'signature_format' => 'filtered_html',
+    'language' => 'et',
+  );
+
+  return user_save(NULL, $edit);
+}
+
+/**
+ * Generate a username for a new account.
+ *
+ * @param string $user_name
+ *   The user name.
+ *
+ * @return string
+ *   A unique username.
+ */
+function huvi_tara_login_generate_username($user_name) {
+  $name = $user_name;
+
+  // Ensure there are no duplicates.
+  for ($original = $name, $i = 1; huvi_tara_login_username_exists($name); $i++) {
+    $name = $original . '_' . $i;
+  }
+
+  return $name;
+}
+
+/**
+ * Generate an email for a new account.
+ *
+ * @param string $sub
+ *   The 'sub' property identifying the external account.
+ *
+ * @return string
+ *   An email.
+ */
+function huvi_tara_login_generate_email($sub) {
+  $email = null;
+  preg_match('/^EE\d{11}$/', $sub, $matches);
+
+  if ($matches) {
+    // This is Estonian ID. We could generate @eesti.ee email.
+    preg_match('/\d{11}$/', $sub, $matches);
+    $email = $matches[0] . '@eesti.ee';
+  }
+  else {
+    // This is not Estonian ID. We couldn't generate email.
+  }
+  return $email;
+}
+
+/**
+ * Check if a user name already exists.
+ *
+ * @param string $name
+ *   A name to test.
+ *
+ * @return bool
+ *   TRUE if a user exists with the given name, FALSE otherwise.
+ */
+function huvi_tara_login_username_exists($name) {
+  return db_query('SELECT COUNT(*) FROM {users} WHERE name = :name', array(
+      ':name' => $name
+    ))->fetchField() > 0;
+}
+
+/**
+ * Connect an external OpenID Connect account to a Drupal user account.
+ *
+ * @param object $account
+ *   The Drupal user object.
+ * @param string $sub
+ *   The 'sub' property identifying the external account.
+ */
+function huvi_tara_login_connect_account($account, $sub) {
+  // 'authname_tara_login' in database become 'tara_login'.
+  user_set_authmaps($account, array('authname_tara_login' => $sub));
+}

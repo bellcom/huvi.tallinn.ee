@@ -196,21 +196,12 @@ function kuhuminna_utils_form_user_login_alter(&$form, &$form_state) {
   //}
   $base_path = $GLOBALS['base_path'];
   $path = drupal_get_path('module', 'kuhuminna_utils');
-  $form['openid_idcard'] = array(
+  $form['tara'] = array(
     '#type' => 'markup',
-    '#markup' => '<a id="id-card-button" class="id-button" href="' . $base_path . 'mobileid?action=eid-login">'
-        . t('ID-Card') .
+    '#markup' => '<a id="tara-login" class="tara-login" href="' . $base_path . 'taraloginrequest">'
+        . t('Logi sisse Smart-ID / ID-kaarti / Mobiil-ID kaudu') .
       '</a>',
   );
-  if(module_exists('kuhuminna_mobile_id')) {
-    $form['openid_mobile'] = array(
-      '#type' => 'markup',
-      '#markup' => '<a id="mobile-id-button" class="id-button" href="' . $base_path . 'mobileid?action=mid-login">'
-          . t('MobileID') .
-        '</a>',
-      '#prefix' => '</div>',
-      );
-  }
 
   $form['#attached']['js'] = array(
     drupal_get_path('module', 'kuhuminna_utils') . '/kuhuminna_login.js',
