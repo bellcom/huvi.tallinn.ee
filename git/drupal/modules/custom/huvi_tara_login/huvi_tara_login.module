@@ -95,7 +95,7 @@ function _taraloginrequest() {
   if (FALSE === $user) {
     // This is a new user.
     // Create user.
-    $user = huvi_tara_login_create_user($decoded->sub, $decoded->profile_attributes->family_name . ' ' . $decoded->profile_attributes->given_name);
+    $user = huvi_tara_login_create_user($decoded->sub, $decoded->profile_attributes->given_name . ' ' . $decoded->profile_attributes->family_name);
     $user = user_load($user->uid);
     // Create authmap record, connected to user.
     huvi_tara_login_connect_account($user, $decoded->sub);
@@ -172,7 +172,7 @@ function huvi_tara_login_generate_username($user_name) {
     $name = $original . '_' . $i;
   }
 
-  return $name;
+  return mb_convert_case($name, MB_CASE_TITLE, "UTF-8");
 }
 
 /**
