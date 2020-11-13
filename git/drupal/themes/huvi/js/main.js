@@ -737,7 +737,7 @@ function getCookie(cname) {
 
 function remapBackButton(url) {
   if (window.history && window.history.pushState) {
-    window.history.pushState('forward', null, '#');
+    window.history.pushState('forward', null, '');
     window.addEventListener('popstate', function () {
       window.location.href = url;
     });
