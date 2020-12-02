@@ -60,7 +60,7 @@ DirectoryIndex index.php index.html index.htm
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
-# Redirect to https
+ # Redirect to https
   RewriteCond %{HTTPS} off
   RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 

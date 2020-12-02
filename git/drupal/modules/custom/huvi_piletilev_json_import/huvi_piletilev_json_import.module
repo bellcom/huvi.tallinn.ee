@@ -1,0 +1,442 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function huvi_piletilev_json_import_menu() {
+  $items = array();
+
+  // Route admin/config/services/piletilev for setting
+  $items['admin/config/services/piletilev'] = array(
+    'title' => 'Piletilevi Integration settings',
+    'description' => 'Global settings piletilevi Integration.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('huvi_piletilev_json_import_settings_form'),
+    'file' => 'huvi_piletilev_json_import.admin.inc',
+    'access arguments' => array('Administrator configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  // Route piletilevi/test for module test
+  $items['piletilevi/test'] = array(
+    'title' => 'Piletilevi test route',
+    'description' => 'Piletilevi test route for feed check',
+    'page callback' => 'getFeed',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function huvi_piletilev_json_import_cron() {
+  getFeed();
+}
+
+/**
+ * getFedd().
+ * This function will connect to Piletilevi JSON Feed and read it to use internally
+ */
+function getFeed() {
+
+  // Get API url from setting
+  $json_url = variable_get('huvi_piletilev_json_url', '');
+
+  // Fetch data from feed
+  $data = @file_get_contents($json_url);
+  // Push data as JSON.
+  $decodedData = json_decode($data);
+
+
+  $concerts = $decodedData->responseData->concert;
+  $events = $decodedData->responseData->venue;
+  $orginizers = $decodedData->responseData->promoter;
+  $shows = $decodedData->responseData->show;
+  
+  // Store reformatted data from Piletilevi feed 
+  $response = [];
+
+  // Items counter
+  $counter = 0;
+ 
+  foreach ($concerts as $value) {
+    $response[$counter]['category'] = [];
+    // Mapping teater categories IDs from Piletilev  
+    $teater_cats = [
+      1256, 1134, 1195,
+      1055, 1261, 1021,
+      1020, 1019, 1022, 1003,
+    ];
+    // Mapping music categories IDs from Piletilev
+    $music_cats = [
+      1220, 1153, 1033, 1016,
+      1286, 1450, 1032, 1013,
+      1348, 1037, 1144, 1018,
+      1116, 1023, 1034, 1031,
+      1010, 1014, 1323, 1112,
+      1017, 1106, 1324, 1394,
+      1207, 1350, 1243, 1006, 1004,
+    ];
+    // Mapping varja categories IDs from Piletilev
+    $varja_cats = [
+      1308, 1052, 1424,
+      1437, 1462, 1461,
+      1009, 1008,
+    ];
+
+    foreach ($shows as $show) {
+      if ($value->showId == $show->id) {
+        foreach ($show->categories as $catid) {
+          if (in_array($catid, $teater_cats)) {
+            if (!in_array('Theater', $response[$counter]['category'])) {
+              $response[$counter]['category'][] = 8;
+            }
+          }
+          if (in_array($catid, $music_cats)) {
+            if (!in_array('Muusika', $response[$counter]['category'])) {
+              $response[$counter]['category'][] = 0;
+            }
+          }
+          if (in_array($catid, $varja_cats)) {
+            if (!in_array('Varja', $response[$counter]['category'])) {
+              $response[$counter]['category'][] = 8;
+            }
+          }
+        }
+      }
+    }
+
+    // Reformat and fill data
+    $response[$counter]['pui'] = $value->id;
+    $response[$counter]['title'] = $value->decoratedTitle;
+    $response[$counter]['body'] = $value->description;
+    $start = $value->startTime->year . '-' . $value->startTime->month . '-' . $value->startTime->date . 'T' . $value->startTime->time . ':00';
+    $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
+    $response[$counter]['startTime'] = $start;
+    $response[$counter]['endTime'] = $end;
+    $response[$counter]['moreInfoLink'] = $value->link;
+
+    $prices = explode("-", $value->prices);
+    $minPrice = trim($prices[0]);
+    $maxPrice = trim($prices[1]);
+    $response[$counter]['imageURL'] = $value->imageUrl;
+    $response[$counter]['priceType'] = 'range';
+    $response[$counter]['minPrice'] = $minPrice;
+    $response[$counter]['maxPrice'] = $maxPrice;
+    $response[$counter]['buyLink'] = $value->buyButtonConfig->url;
+    $response[$counter]['ticketAvailability'] = 'link';
+
+    // Find location information
+    foreach ($events as $event) {
+      if ($value->venueId == $event->id) {
+        $response[$counter]['eventAddress'] = $event->address;
+        $response[$counter]['eventLocation'] = $event->decoratedTitle;
+        $geo = $pieces = explode(",", $event->coordinates);
+        $response[$counter]['eventLat'] = $geo[0];
+        $response[$counter]['eventLng'] = $geo[1];
+      }
+    }
+
+    // Find orginizers information
+    foreach ($orginizers as $orginizer) {
+      if ($value->promoterId == $orginizer->id) {
+        $response[$counter]['organizerCompany'] = $orginizer->title;
+        $response[$counter]['organizerAddress'] = $orginizer->address;
+        $response[$counter]['organizerURL'] = $orginizer->url;
+        $response[$counter]['organizerPhone'] = $orginizer->phone;
+        $response[$counter]['organizerEmail'] = $orginizer->email;
+      }
+    }
+
+    saveEvent($response[$counter]);
+
+
+    /* Example:   
+      saveEvent([
+      'title' => 'Test title',
+      'body' => 'test body',
+      'pui' => 2,
+      'imageURL' => 'https://via.placeholder.com/150',
+      'organizerCompany' => 'Tapesh Co',
+      'organizerPhone' => '+18181222020',
+      'organizerEmail' => 'info@tapesh.tv',
+      'category' => [0, 8],
+      'eventLat' => 59.4385622,
+      'eventLng' => 24.7528946,
+      'startTime'=> '12:00',
+      'endTime'=> '15:00'
+      ]); */
+
+
+    // Next item
+    $counter++;
+  }
+}
+
+/**
+ * saveEvent().
+ * This function will create/update node.
+ * 
+ * @param $nodeData
+ *    Node data as array
+ */
+function saveEvent($nodeData) {
+
+  global $user;
+
+  if (checkIfNodeExist($nodeData['pui'])) {
+    $entity = loadNodeByPUI($nodeData['pui']);
+  }
+  else {
+// entity_create replaces the procedural steps in the first example of
+// creating a new object $node and setting its 'type' and uid property
+
+    $values = array(
+      'type' => 'event',
+      'uid' => $user->uid,
+      'status' => 1,
+      'comment' => 0,
+      'promote' => 0,
+      'language' => 'et'
+    );
+    $entity = entity_create('node', $values);
+  }
+
+
+  $ewrapper = entity_metadata_wrapper('node', $entity);
+
+
+  $ewrapper->title->set($nodeData['title']);
+
+
+  $ewrapper->field_description->value = $nodeData['body'];
+  $ewrapper->field_pui->set($nodeData['pui']);
+  $ewrapper->field_source->set(1); //1 - rest service
+
+  $ewrapper->field_type->set('uritus');
+
+  $ewrapper->field_price->set($nodeData['minPrice'].' - '.$nodeData['maxPrice']);
+  $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
+  
+  if ($nodeData['imageURL']) {
+    $ewrapper->field_hasimage->set(1);
+    $ewrapper->field_image_url->set($nodeData['imageURL']);
+  }
+
+  if (!empty($nodeData['category'])) {
+    $ewrapper->field_categories_event->set($nodeData['category']);
+  }
+
+
+  //schedule
+  if (!empty($entity->field_schedule['und'])) {
+    $s_values = array();
+    foreach ($entity->field_schedule['und'] as $s_key => $s_val) {
+      $s_values[] = $s_val['value'];
+      unset($entity->field_schedule['und'][$s_key]);
+    }
+    if (!empty($s_values)) {
+      entity_delete_multiple('field_collection_item', $s_values);
+    }
+  }
+  $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
+  $schedule_item->setHostEntity('entity', $entity);
+  $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
+
+  $start_time = strtotime($nodeData['startTime']);
+  $end_time = strtotime($nodeData['endTime']);
+
+  if (date('H:i', $start_time) == '00:00') {
+    $start_time = strtotime("-5 minutes", $start_time);
+  }
+  if (isset($end_time)) {
+    if (date('H:i', $end_time) == '00:00') {
+      $end_time = strtotime("-5 minutes", $end_time);
+    }
+  }
+
+  $schedule_wrapper->field_schedule_date[0]->set(
+    array(
+      'value' => $start_time,
+      'value2' => $end_time,
+      'rrule' => isset($end_time) ? 'RRULE:FREQ=NONE;' : null
+  ));
+
+
+  $latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
+
+  $city_id = getCityArea($latlng);
+  //$place = getAddress($latlng);
+
+  if ($city_id) {
+    $schedule_wrapper->field_schedule_city_id->set($city_id);
+  } 
+
+  $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
+  $ewrapper->field_map_latlng->set($latlng);
+  $ewrapper->field_map_markers->set($latlng);
+
+
+
+  //korraldaja
+  if (isset($nodeData['organizerCompany'])) {
+    $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
+    $korraldaja_item->setHostEntity('entity', $entity);
+    $korraldaja_wrapper = entity_metadata_wrapper('field_collection_item', $korraldaja_item);
+    $korraldaja_wrapper->field_korraldaja_nimi->set($nodeData['organizerCompany']);
+    $korraldaja_wrapper->field_korraldaja_kontakttelefon->set($nodeData['organizerPhone']);
+    $korraldaja_wrapper->field_korraldaja_e_post->set($nodeData['organizerEmail']);
+  }
+
+  $ewrapper->save();
+}
+
+/**
+ * checkIfNodeExist().
+ * This function will check if item exist node.
+ * 
+ * @param $pui
+ *    Piletilevi ID
+ */
+function checkIfNodeExist($pui) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_pui', 'value', $pui, '=');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+/**
+ * loadNodeByPUI().
+ * This function will load item.
+ * 
+ * @param $pui
+ *    Piletilevi ID
+ */
+function loadNodeByPUI($pui) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_pui', 'value', $pui, '=');
+
+  $result = $query->execute();
+  if ($result) {
+    foreach ($result['node'] as $key => $val) {
+      $entity_load = entity_load('node', array($key));
+      foreach ($entity_load as $ekey => $eval) {
+        $entity = $eval;
+      }
+      return $entity;
+    }
+  }
+  else {
+    return null;
+  }
+}
+
+/**
+ * getCityArea().
+ * Get city area code
+ * 
+ * @param $latlng
+ *    Coordination
+ */
+function getCityArea($latlng) {
+  $city_areas = array(
+    2944195 => 'Põhja-Tallinn',
+    2944191 => 'Kesklinn',
+    2944187 => 'Haabersti',
+    2944189 => 'Kristiine',
+    2944190 => 'Lasnamäe',
+    2944193 => 'Mustamäe',
+    2920234 => 'Pirita',
+    2944194 => 'Nõmme',
+  );
+
+  $data = getGeoCode($latlng);
+  $status = $data->status;
+  if ($status == "OK") {
+    $city_area = findLongNameGivenType("sublocality_level_1", $data->results[0]->address_components, true);
+    return array_pop(array_keys($city_areas, $city_area));
+  }
+  else {
+    return false;
+  }
+}
+
+/**
+ * getGeoCode().
+ * Get geo data
+ * 
+ * @param $latlng
+ *    Coordination
+ */
+function getGeoCode($latlng) {
+  $api_key = variable_get('geolocation_googlemaps_api_key', '');
+  $url = 'https://maps.googleapis.com/maps/api/geocode/json?key=' . $api_key . '&latlng=' . trim($latlng) . '&sensor=false';
+  $json = @file_get_contents($url);
+  $data = json_decode($json);
+  return $data;
+}
+
+/**
+ * findLongNameGivenType().
+ * Get additional data
+ * 
+ * @param $type
+ *    Information type
+  * @param $type
+ *    Data array
+ */
+function findLongNameGivenType($type, $array, $short_name = false) {
+  foreach ($array as $value) {
+    if (in_array($type, $value->types)) {
+      if ($short_name)
+        return $value->short_name;
+      else
+        return $value->long_name;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * getAddress().
+ * Get address data
+ * 
+ * @param $latlng
+ *    Coordination
+ */
+function getAddress($latlng) {
+  $data = getGeoCode($latlng);
+  $status = $data->status;
+  if ($status == "OK") {
+    $address = "";
+    $place = findLongNameGivenType("premise", $data->results[0]->address_components, true);
+    $street_number = findLongNameGivenType("street_number", $data->results[0]->address_components, true);
+    $street = findLongNameGivenType("route", $data->results[0]->address_components, false);
+    $town = findLongNameGivenType("locality", $data->results[0]->address_components, true);
+    if ($place) {
+      $address .= $place . ', ';
+    }
+    if ($street) {
+      $address .= $street . ' ' . $street_number . ', ';
+    }
+    $address .= $town;
+
+    return $address;
+  }
+  else {
+    return false;
+  }
+}

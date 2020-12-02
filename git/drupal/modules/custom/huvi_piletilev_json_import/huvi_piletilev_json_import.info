@@ -1,0 +1,4 @@
+name = Huvi Piletilevi JSON import
+description = Integration https://www.piletilevi.ee/
+core = 7.x
+package = HUVI
