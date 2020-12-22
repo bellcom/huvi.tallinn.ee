@@ -53,10 +53,10 @@ function getFeed() {
   $decodedData = json_decode($data);
 
 
-  $concerts = $decodedData->responseData->concert;
-  $events = $decodedData->responseData->venue;
-  $orginizers = $decodedData->responseData->promoter;
-  $shows = $decodedData->responseData->show;
+  $concerts = is_array($decodedData->responseData->concert) ? (array)$decodedData->responseData->concert : [];
+  $events = is_array($decodedData->responseData->venue) ? (array)$decodedData->responseData->venue : [];
+  $orginizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array)$decodedData->responseData->promoter: [];
+  $shows = is_array($decodedData->responseData->show) ? (array)$decodedData->responseData->show : [];
 
   // Store reformatted data from Piletilevi feed 
   $response = [];
@@ -75,7 +75,7 @@ function getFeed() {
         }
       }
     }
-    if (count($cats) != 0) {
+    if ((count($cats) != 0) && isset($value->id)) {
       // Reformat and fill data
       $response[$counter]['category'] = $cats;
       $response[$counter]['pui'] = $value->id;
@@ -88,8 +88,8 @@ function getFeed() {
       $response[$counter]['moreInfoLink'] = $value->link;
 
       $prices = explode("-", $value->prices);
-      $minPrice = trim($prices[0]);
-      $maxPrice = trim($prices[1]);
+      $minPrice = array_key_exists(0, $prices) ? trim($prices[0]) : null;
+      $maxPrice = array_key_exists(1, $prices) ? trim($prices[1]) : null;
       $response[$counter]['imageURL'] = $value->imageUrl;
       $response[$counter]['priceType'] = 'range';
       $response[$counter]['minPrice'] = $minPrice;
@@ -103,8 +103,8 @@ function getFeed() {
           $response[$counter]['eventAddress'] = $event->address;
           $response[$counter]['eventLocation'] = $event->decoratedTitle;
           $geo = $pieces = explode(",", $event->coordinates);
-          $response[$counter]['eventLat'] = $geo[0];
-          $response[$counter]['eventLng'] = $geo[1];
+          $response[$counter]['eventLat'] = array_key_exists(0, $geo) ? trim($geo[0]) : null;
+          $response[$counter]['eventLng'] = array_key_exists(1, $geo) ? trim($geo[1]) : null;
         }
       }
 
@@ -314,9 +314,9 @@ function saveEvent($nodeData) {
   $city_id = getCityArea($latlng);
   //$place = getAddress($latlng);
 
-  if ($city_id) {
+   if ($city_id) {
     $schedule_wrapper->field_schedule_city_id->set($city_id);
-  }
+   } 
 
   $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
   $ewrapper->field_map_latlng->set($latlng);
@@ -408,7 +408,8 @@ function getCityArea($latlng) {
   $status = $data->status;
   if ($status == "OK") {
     $city_area = findLongNameGivenType("sublocality_level_1", $data->results[0]->address_components, true);
-    return array_pop(array_keys($city_areas, $city_area));
+    $result = array_pop(array_keys($city_areas, $city_area));
+    return $result;
   }
   else {
     return false;
