@@ -21,9 +21,9 @@ function huvi_piletilev_json_import_menu() {
   );
 
   // Route piletilevi/test for module test
-  $items['piletilevi/test'] = array(
-    'title' => 'Piletilevi test route',
-    'description' => 'Piletilevi test route for feed check',
+  $items['piletilevi/import'] = array(
+    'title' => 'Piletilevi import route',
+    'description' => 'Piletilevi import route for feed check',
     'page callback' => 'getFeed',
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
