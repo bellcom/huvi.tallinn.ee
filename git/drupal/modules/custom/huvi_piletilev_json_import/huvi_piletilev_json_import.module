@@ -57,125 +57,166 @@ function getFeed() {
   $events = $decodedData->responseData->venue;
   $orginizers = $decodedData->responseData->promoter;
   $shows = $decodedData->responseData->show;
-  
+
   // Store reformatted data from Piletilevi feed 
   $response = [];
 
   // Items counter
   $counter = 0;
- 
+
   foreach ($concerts as $value) {
     $response[$counter]['category'] = [];
-    // Mapping teater categories IDs from Piletilev  
-    $teater_cats = [
-      1256, 1134, 1195,
-      1055, 1261, 1021,
-      1020, 1019, 1022, 1003,
-    ];
-    // Mapping music categories IDs from Piletilev
-    $music_cats = [
-      1220, 1153, 1033, 1016,
-      1286, 1450, 1032, 1013,
-      1348, 1037, 1144, 1018,
-      1116, 1023, 1034, 1031,
-      1010, 1014, 1323, 1112,
-      1017, 1106, 1324, 1394,
-      1207, 1350, 1243, 1006, 1004,
-    ];
-    // Mapping varja categories IDs from Piletilev
-    $varja_cats = [
-      1308, 1052, 1424,
-      1437, 1462, 1461,
-      1009, 1008,
-    ];
-
+    //catm
+    $cats = [];
     foreach ($shows as $show) {
       if ($value->showId == $show->id) {
         foreach ($show->categories as $catid) {
-          if (in_array($catid, $teater_cats)) {
-            if (!in_array('Theater', $response[$counter]['category'])) {
-              $response[$counter]['category'][] = 8;
-            }
-          }
-          if (in_array($catid, $music_cats)) {
-            if (!in_array('Muusika', $response[$counter]['category'])) {
-              $response[$counter]['category'][] = 0;
-            }
-          }
-          if (in_array($catid, $varja_cats)) {
-            if (!in_array('Varja', $response[$counter]['category'])) {
-              $response[$counter]['category'][] = 8;
-            }
-          }
+          $cats = catMapping($catid, $cats);
         }
       }
     }
+    if (count($cats) != 0) {
+      // Reformat and fill data
+      $response[$counter]['category'] = $cats;
+      $response[$counter]['pui'] = $value->id;
+      $response[$counter]['title'] = $value->decoratedTitle;
+      $response[$counter]['body'] = $value->description;
+      $start = $value->startTime->year . '-' . $value->startTime->month . '-' . $value->startTime->date . 'T' . $value->startTime->time . ':00';
+      $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
+      $response[$counter]['startTime'] = $start;
+      $response[$counter]['endTime'] = $end;
+      $response[$counter]['moreInfoLink'] = $value->link;
 
-    // Reformat and fill data
-    $response[$counter]['pui'] = $value->id;
-    $response[$counter]['title'] = $value->decoratedTitle;
-    $response[$counter]['body'] = $value->description;
-    $start = $value->startTime->year . '-' . $value->startTime->month . '-' . $value->startTime->date . 'T' . $value->startTime->time . ':00';
-    $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
-    $response[$counter]['startTime'] = $start;
-    $response[$counter]['endTime'] = $end;
-    $response[$counter]['moreInfoLink'] = $value->link;
+      $prices = explode("-", $value->prices);
+      $minPrice = trim($prices[0]);
+      $maxPrice = trim($prices[1]);
+      $response[$counter]['imageURL'] = $value->imageUrl;
+      $response[$counter]['priceType'] = 'range';
+      $response[$counter]['minPrice'] = $minPrice;
+      $response[$counter]['maxPrice'] = $maxPrice;
+      $response[$counter]['buyLink'] = $value->buyButtonConfig->url;
+      $response[$counter]['ticketAvailability'] = 'link';
 
-    $prices = explode("-", $value->prices);
-    $minPrice = trim($prices[0]);
-    $maxPrice = trim($prices[1]);
-    $response[$counter]['imageURL'] = $value->imageUrl;
-    $response[$counter]['priceType'] = 'range';
-    $response[$counter]['minPrice'] = $minPrice;
-    $response[$counter]['maxPrice'] = $maxPrice;
-    $response[$counter]['buyLink'] = $value->buyButtonConfig->url;
-    $response[$counter]['ticketAvailability'] = 'link';
-
-    // Find location information
-    foreach ($events as $event) {
-      if ($value->venueId == $event->id) {
-        $response[$counter]['eventAddress'] = $event->address;
-        $response[$counter]['eventLocation'] = $event->decoratedTitle;
-        $geo = $pieces = explode(",", $event->coordinates);
-        $response[$counter]['eventLat'] = $geo[0];
-        $response[$counter]['eventLng'] = $geo[1];
+      // Find location information
+      foreach ($events as $event) {
+        if ($value->venueId == $event->id) {
+          $response[$counter]['eventAddress'] = $event->address;
+          $response[$counter]['eventLocation'] = $event->decoratedTitle;
+          $geo = $pieces = explode(",", $event->coordinates);
+          $response[$counter]['eventLat'] = $geo[0];
+          $response[$counter]['eventLng'] = $geo[1];
+        }
       }
-    }
 
-    // Find orginizers information
-    foreach ($orginizers as $orginizer) {
-      if ($value->promoterId == $orginizer->id) {
-        $response[$counter]['organizerCompany'] = $orginizer->title;
-        $response[$counter]['organizerAddress'] = $orginizer->address;
-        $response[$counter]['organizerURL'] = $orginizer->url;
-        $response[$counter]['organizerPhone'] = $orginizer->phone;
-        $response[$counter]['organizerEmail'] = $orginizer->email;
+      // Find orginizers information
+      foreach ($orginizers as $orginizer) {
+        if ($value->promoterId == $orginizer->id) {
+          $response[$counter]['organizerCompany'] = $orginizer->title;
+          $response[$counter]['organizerAddress'] = $orginizer->address;
+          $response[$counter]['organizerURL'] = $orginizer->url;
+          $response[$counter]['organizerPhone'] = $orginizer->phone;
+          $response[$counter]['organizerEmail'] = $orginizer->email;
+        }
       }
+
+      saveEvent($response[$counter]);
+
+      // Next item
+      $counter++;
     }
-
-    saveEvent($response[$counter]);
-
-
-    /* Example:   
-      saveEvent([
-      'title' => 'Test title',
-      'body' => 'test body',
-      'pui' => 2,
-      'imageURL' => 'https://via.placeholder.com/150',
-      'organizerCompany' => 'Tapesh Co',
-      'organizerPhone' => '+18181222020',
-      'organizerEmail' => 'info@tapesh.tv',
-      'category' => [0, 8],
-      'eventLat' => 59.4385622,
-      'eventLng' => 24.7528946,
-      'startTime'=> '12:00',
-      'endTime'=> '15:00'
-      ]); */
-
-
-    // Next item
-    $counter++;
   }
+}
+
+/**
+ * catMapping().
+ * This function will return array of categories.
+ * 
+ */
+function catMapping($catId, $cats) {
+  // Mapping teater categories IDs from Piletilev 
+
+  /*
+    Cat list
+    0 => Muusika
+    1 => Etendused
+    2 => Näitus, muuseum
+    3 => Mess, laat
+    4 => Sport
+    5 => Kino
+    6 => Pidu, klubid
+    7 => Lapsele
+    8 => Varia
+   */
+
+  $map = array(
+    0 => [
+      1372, 1349, 1332,
+      1231, 1094, 1016,
+      1451, 1286, 1451,
+      1032, 1348, 1144,
+      1002, 1363, 1251,
+      1031, 1014, 1323,
+      1299, 1112, 1017,
+      1106, 1287, 1324,
+      1207, 1350, 1243,
+      1071, 1058, 1006,
+      1394
+    ],
+    1 => [
+      1035, 1256, 1168,
+      1289, 1290, 1013,
+      1030, 1015, 1054,
+      1037, 1261, 1021,
+      1419, 1319, 1020,
+      1029, 1062, 1129,
+      1006, 1394, 1019,
+      1022,
+      1003, 1291, 1195, // Teaters
+      1114
+    ],
+    2 => [
+      1230, 1317, 1028
+    ],
+    3 => [
+      1038
+    ],
+    4 => [
+      1333, 1055, 1005,
+      1076, 1065, 1427,
+      1024
+    ],
+    5 => [
+      1391, 1056, 1202,
+      1161, 1298, 1006,
+      1394
+    ],
+    6 => [
+      1220, 1153, 1033,
+      1010, 1071, 1006,
+      1394
+    ],
+    7 => [
+      1224, 1021, 1004,
+      1396, 1058
+    ],
+    8 => [
+      1364, 1075, 1300,
+      1383, 1341, 1284,
+      1301, 1004, 1396,
+      1071, 1058, 1322,
+      1280, 1315
+    ]
+  );
+
+  foreach ($map as $key => $value) {
+    if (in_array($catId, $value)) {
+      if (!in_array($catId, $cats)) {
+        $cats[] = $key;
+      }
+    }
+  }
+
+  return $cats;
 }
 
 /**
@@ -220,9 +261,9 @@ function saveEvent($nodeData) {
 
   $ewrapper->field_type->set('uritus');
 
-  $ewrapper->field_price->set($nodeData['minPrice'].' - '.$nodeData['maxPrice']);
+  $ewrapper->field_price->set($nodeData['minPrice'] . ' - ' . $nodeData['maxPrice']);
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
-  
+
   if ($nodeData['imageURL']) {
     $ewrapper->field_hasimage->set(1);
     $ewrapper->field_image_url->set($nodeData['imageURL']);
@@ -275,7 +316,7 @@ function saveEvent($nodeData) {
 
   if ($city_id) {
     $schedule_wrapper->field_schedule_city_id->set($city_id);
-  } 
+  }
 
   $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
   $ewrapper->field_map_latlng->set($latlng);
@@ -395,7 +436,7 @@ function getGeoCode($latlng) {
  * 
  * @param $type
  *    Information type
-  * @param $type
+ * @param $type
  *    Data array
  */
 function findLongNameGivenType($type, $array, $short_name = false) {
