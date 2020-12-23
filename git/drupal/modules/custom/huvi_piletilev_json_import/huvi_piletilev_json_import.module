@@ -39,8 +39,8 @@ function huvi_piletilev_json_import_cron() {
 }
 
 /**
- * getFedd().
- * This function will connect to Piletilevi JSON Feed and read it to use internally
+ * getFedd()
+ * This function will connect to Piletilevi JSON Feed and read it to use internally.
  */
 function getFeed() {
 
@@ -52,21 +52,19 @@ function getFeed() {
   // Push data as JSON.
   $decodedData = json_decode($data);
 
-
   $concerts = is_array($decodedData->responseData->concert) ? (array)$decodedData->responseData->concert : [];
   $events = is_array($decodedData->responseData->venue) ? (array)$decodedData->responseData->venue : [];
-  $orginizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array)$decodedData->responseData->promoter: [];
+  $organizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array)$decodedData->responseData->promoter: [];
   $shows = is_array($decodedData->responseData->show) ? (array)$decodedData->responseData->show : [];
 
-  // Store reformatted data from Piletilevi feed 
+  // Store reformatted data from Piletilevi feed. 
   $response = [];
 
-  // Items counter
+  // Items counter.
   $counter = 0;
 
   foreach ($concerts as $value) {
     $response[$counter]['category'] = [];
-    //catm
     $cats = [];
     foreach ($shows as $show) {
       if ($value->showId == $show->id) {
@@ -76,7 +74,7 @@ function getFeed() {
       }
     }
     if ((count($cats) != 0) && isset($value->id)) {
-      // Reformat and fill data
+      // Reformat and fill data.
       $response[$counter]['category'] = $cats;
       $response[$counter]['pui'] = $value->id;
       $response[$counter]['title'] = $value->decoratedTitle;
@@ -86,7 +84,7 @@ function getFeed() {
       $response[$counter]['startTime'] = $start;
       $response[$counter]['endTime'] = $end;
       $response[$counter]['moreInfoLink'] = $value->link;
-
+      // Prices
       $prices = explode("-", $value->prices);
       $minPrice = array_key_exists(0, $prices) ? trim($prices[0]) : null;
       $maxPrice = array_key_exists(1, $prices) ? trim($prices[1]) : null;
@@ -97,7 +95,7 @@ function getFeed() {
       $response[$counter]['buyLink'] = $value->buyButtonConfig->url;
       $response[$counter]['ticketAvailability'] = 'link';
 
-      // Find location information
+      // Find location information.
       foreach ($events as $event) {
         if ($value->venueId == $event->id) {
           $response[$counter]['eventAddress'] = $event->address;
@@ -108,19 +106,18 @@ function getFeed() {
         }
       }
 
-      // Find orginizers information
-      foreach ($orginizers as $orginizer) {
-        if ($value->promoterId == $orginizer->id) {
-          $response[$counter]['organizerCompany'] = $orginizer->title;
-          $response[$counter]['organizerAddress'] = $orginizer->address;
-          $response[$counter]['organizerURL'] = $orginizer->url;
-          $response[$counter]['organizerPhone'] = $orginizer->phone;
-          $response[$counter]['organizerEmail'] = $orginizer->email;
+      // Find orginizers information.
+      foreach ($organizers as $organizer) {
+        if ($value->promoterId == $organizer->id) {
+          $response[$counter]['organizerCompany'] = $organizer->title;
+          $response[$counter]['organizerAddress'] = $organizer->address;
+          $response[$counter]['organizerURL'] = $organizer->url;
+          $response[$counter]['organizerPhone'] = $organizer->phone;
+          $response[$counter]['organizerEmail'] = $organizer->email;
         }
       }
 
       saveEvent($response[$counter]);
-
       // Next item
       $counter++;
     }
@@ -128,12 +125,12 @@ function getFeed() {
 }
 
 /**
- * catMapping().
+ * catMapping()
  * This function will return array of categories.
  * 
  */
 function catMapping($catId, $cats) {
-  // Mapping teater categories IDs from Piletilev 
+  // Mapping teater categories IDs from Piletilev. 
 
   /*
     Cat list
@@ -220,11 +217,11 @@ function catMapping($catId, $cats) {
 }
 
 /**
- * saveEvent().
+ * saveEvent()
  * This function will create/update node.
  * 
  * @param $nodeData
- *    Node data as array
+ *    Node data as array.
  */
 function saveEvent($nodeData) {
 
@@ -248,19 +245,12 @@ function saveEvent($nodeData) {
     $entity = entity_create('node', $values);
   }
 
-
   $ewrapper = entity_metadata_wrapper('node', $entity);
-
-
   $ewrapper->title->set($nodeData['title']);
-
-
   $ewrapper->field_description->value = $nodeData['body'];
   $ewrapper->field_pui->set($nodeData['pui']);
   $ewrapper->field_source->set(1); //1 - rest service
-
   $ewrapper->field_type->set('uritus');
-
   $ewrapper->field_price->set($nodeData['minPrice'] . ' - ' . $nodeData['maxPrice']);
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
 
@@ -272,7 +262,6 @@ function saveEvent($nodeData) {
   if (!empty($nodeData['category'])) {
     $ewrapper->field_categories_event->set($nodeData['category']);
   }
-
 
   //schedule
   if (!empty($entity->field_schedule['und'])) {
@@ -288,7 +277,7 @@ function saveEvent($nodeData) {
   $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
   $schedule_item->setHostEntity('entity', $entity);
   $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
-
+  // Time
   $start_time = strtotime($nodeData['startTime']);
   $end_time = strtotime($nodeData['endTime']);
 
@@ -308,11 +297,9 @@ function saveEvent($nodeData) {
       'rrule' => isset($end_time) ? 'RRULE:FREQ=NONE;' : null
   ));
 
-
   $latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
-
   $city_id = getCityArea($latlng);
-  //$place = getAddress($latlng);
+  //$place = getAddress($latlng); // We can use this to get address from google maps API
 
    if ($city_id) {
     $schedule_wrapper->field_schedule_city_id->set($city_id);
@@ -321,8 +308,6 @@ function saveEvent($nodeData) {
   $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
   $ewrapper->field_map_latlng->set($latlng);
   $ewrapper->field_map_markers->set($latlng);
-
-
 
   //korraldaja
   if (isset($nodeData['organizerCompany'])) {
@@ -333,12 +318,11 @@ function saveEvent($nodeData) {
     $korraldaja_wrapper->field_korraldaja_kontakttelefon->set($nodeData['organizerPhone']);
     $korraldaja_wrapper->field_korraldaja_e_post->set($nodeData['organizerEmail']);
   }
-
   $ewrapper->save();
 }
 
 /**
- * checkIfNodeExist().
+ * checkIfNodeExist()
  * This function will check if item exist node.
  * 
  * @param $pui
@@ -348,8 +332,8 @@ function checkIfNodeExist($pui) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->fieldCondition('field_pui', 'value', $pui, '=');
+  
   $result = $query->execute();
-
   if (isset($result['node'])) {
     return true;
   }
@@ -359,11 +343,11 @@ function checkIfNodeExist($pui) {
 }
 
 /**
- * loadNodeByPUI().
+ * loadNodeByPUI()
  * This function will load item.
  * 
  * @param $pui
- *    Piletilevi ID
+ *    Piletilevi ID.
  */
 function loadNodeByPUI($pui) {
   $query = new EntityFieldQuery();
@@ -386,11 +370,11 @@ function loadNodeByPUI($pui) {
 }
 
 /**
- * getCityArea().
- * Get city area code
+ * getCityArea()
+ * Get city area code.
  * 
  * @param $latlng
- *    Coordination
+ *    Coordination.
  */
 function getCityArea($latlng) {
   $city_areas = array(
@@ -417,11 +401,11 @@ function getCityArea($latlng) {
 }
 
 /**
- * getGeoCode().
- * Get geo data
+ * getGeoCode()
+ * Get geo data.
  * 
  * @param $latlng
- *    Coordination
+ *    Coordination.
  */
 function getGeoCode($latlng) {
   $api_key = variable_get('geolocation_googlemaps_api_key', '');
@@ -432,13 +416,13 @@ function getGeoCode($latlng) {
 }
 
 /**
- * findLongNameGivenType().
- * Get additional data
+ * findLongNameGivenType()
+ * Get additional data.
  * 
  * @param $type
- *    Information type
+ *    Information type.
  * @param $type
- *    Data array
+ *    Data array.
  */
 function findLongNameGivenType($type, $array, $short_name = false) {
   foreach ($array as $value) {
@@ -453,11 +437,11 @@ function findLongNameGivenType($type, $array, $short_name = false) {
 }
 
 /**
- * getAddress().
- * Get address data
+ * getAddress()
+ * Get address data.
  * 
  * @param $latlng
- *    Coordination
+ *    Coordination.
  */
 function getAddress($latlng) {
   $data = getGeoCode($latlng);
