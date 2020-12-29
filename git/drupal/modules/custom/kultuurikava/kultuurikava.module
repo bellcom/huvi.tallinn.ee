@@ -632,24 +632,22 @@ function kultuurikava_import_events($limit = 50) {
  * @return bool $return
  *   True if provider is Piletilevi
  */
-
 function is_piletilevi_item($event) {
-   //check provider
-  if (isset($event['ticketurl']) && !empty($event['ticketurl'])) {
-    if (isset($event['ticketurl'][0]['provider']['name']) && !empty($event['ticketurl'][0]['provider']['name']))
-      {
-        $provider_name=strtolower($event['ticketurl'][0]['provider']['name']);
-        if (strpos($provider_name, 'piletilevi') !== false) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    } else {
-        return false;
-    }
+  //check provider
+  if (!isset($event['ticketurl']) || empty($event['ticketurl'])) {
+    return false;
+  }
+  if (!isset($event['ticketurl'][0]['provider']['name']) || empty($event['ticketurl'][0]['provider']['name'])) {
+    return false;
+  }
+
+  $provider_name = strtolower($event['ticketurl'][0]['provider']['name']);
+  if (strpos($provider_name, 'piletilevi') !== FALSE) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 /**
