@@ -52,10 +52,10 @@ function getFeed() {
   // Push data as JSON.
   $decodedData = json_decode($data);
 
-  $concerts = is_array($decodedData->responseData->concert) ? (array)$decodedData->responseData->concert : [];
-  $events = is_array($decodedData->responseData->venue) ? (array)$decodedData->responseData->venue : [];
-  $organizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array)$decodedData->responseData->promoter: [];
-  $shows = is_array($decodedData->responseData->show) ? (array)$decodedData->responseData->show : [];
+  $concerts = is_array($decodedData->responseData->concert) ? (array) $decodedData->responseData->concert : [];
+  $events = is_array($decodedData->responseData->venue) ? (array) $decodedData->responseData->venue : [];
+  $organizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array) $decodedData->responseData->promoter : [];
+  $shows = is_array($decodedData->responseData->show) ? (array) $decodedData->responseData->show : [];
 
   // Store reformatted data from Piletilevi feed. 
   $response = [];
@@ -80,7 +80,14 @@ function getFeed() {
       $response[$counter]['title'] = $value->decoratedTitle;
       $response[$counter]['body'] = $value->description;
       $start = $value->startTime->year . '-' . $value->startTime->month . '-' . $value->startTime->date . 'T' . $value->startTime->time . ':00';
-      $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
+
+      if (isset($value->endTime) && !empty($value->endTime) && (intval($value->startTime->year) < '2033')) {
+        $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
+      }
+      else {
+        $end = null;
+      }
+
       $response[$counter]['startTime'] = $start;
       $response[$counter]['endTime'] = $end;
       $response[$counter]['moreInfoLink'] = $value->link;
@@ -279,31 +286,43 @@ function saveEvent($nodeData) {
   $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
   // Time
   $start_time = strtotime($nodeData['startTime']);
-  $end_time = strtotime($nodeData['endTime']);
-
   if (date('H:i', $start_time) == '00:00') {
     $start_time = strtotime("-5 minutes", $start_time);
   }
-  if (isset($end_time)) {
-    if (date('H:i', $end_time) == '00:00') {
-      $end_time = strtotime("-5 minutes", $end_time);
+  $sch = [];
+  
+  if ($nodeData['endTime'] != null) {
+    $end_time = strtotime($nodeData['endTime']);
+    if ((date('H:i', $end_time) == '00:00') || (date('H:i', $end_time) == '23:59'))  { 
+      $sch = [
+        'value' => $start_time,
+        'value2' => NULL
+      ];
+    }
+    else {
+      $sch = [
+        'value' => $start_time,
+        'value2' => $end_time,
+        //'rrule' => isset($end_time) ? 'RRULE:FREQ=NONE;' : null
+      ];
     }
   }
-
-  $schedule_wrapper->field_schedule_date[0]->set(
-    array(
+  else {
+    $sch = [
       'value' => $start_time,
-      'value2' => $end_time,
-      'rrule' => isset($end_time) ? 'RRULE:FREQ=NONE;' : null
-  ));
+      'value2'=> NULL
+    ];
+  }
+
+  $schedule_wrapper->field_schedule_date[0]->set($sch);
 
   $latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
   $city_id = getCityArea($latlng);
   //$place = getAddress($latlng); // We can use this to get address from google maps API
 
-   if ($city_id) {
+  if ($city_id) {
     $schedule_wrapper->field_schedule_city_id->set($city_id);
-   } 
+  }
 
   $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
   $ewrapper->field_map_latlng->set($latlng);
@@ -332,7 +351,7 @@ function checkIfNodeExist($pui) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->fieldCondition('field_pui', 'value', $pui, '=');
-  
+
   $result = $query->execute();
   if (isset($result['node'])) {
     return true;
