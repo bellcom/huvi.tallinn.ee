@@ -402,9 +402,10 @@ h1 {
 
 .schedule-item {
   padding: 8px;
+  background: #EAEAEA;
 }
 .schedule-item:nth-child(even) {
-  background: #EAEAEA;
+  background: transparent;
 }
 .schedule-item.schedule-hidden {
   display: none;

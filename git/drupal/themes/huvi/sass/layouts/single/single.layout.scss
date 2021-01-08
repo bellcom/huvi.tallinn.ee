@@ -398,8 +398,9 @@ h1 {
 
 .schedule-item{
   padding: 8px;
+  background: #EAEAEA;
   &:nth-child(even){
-    background: #EAEAEA;
+    background: transparent;
   }
   &.schedule-hidden {
     display: none;
