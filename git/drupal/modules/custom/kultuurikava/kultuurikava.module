@@ -587,7 +587,9 @@ function kultuurikava_import_events($limit = 50) {
     // Array of event IDs from which to loop and get events by ID
     $event_ids = array();
     foreach($events['events'] as $event_key => $event) {
-      $event_ids[] = $event['id'];
+      // Bypass piletilevi items
+      if (!is_piletilevi_item($event)) 
+        $event_ids[] = $event['id'];
     }
     $i = 0;
     foreach($event_ids as $event_id_key => $event_id) {
@@ -624,6 +626,29 @@ function kultuurikava_import_events($limit = 50) {
   }
 }
 
+/**
+ * Check if provider is Piletilevi
+ *
+ * @return bool $return
+ *   True if provider is Piletilevi
+ */
+function is_piletilevi_item($event) {
+  //check provider
+  if (!isset($event['ticketurl']) || empty($event['ticketurl'])) {
+    return false;
+  }
+  if (!isset($event['ticketurl'][0]['provider']['name']) || empty($event['ticketurl'][0]['provider']['name'])) {
+    return false;
+  }
+
+  $provider_name = strtolower($event['ticketurl'][0]['provider']['name']);
+  if (strpos($provider_name, 'piletilevi') !== FALSE) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /**
  * Save event from Kultuurikava as a node
