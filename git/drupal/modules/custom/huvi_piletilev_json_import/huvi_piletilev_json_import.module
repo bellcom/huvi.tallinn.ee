@@ -256,11 +256,12 @@ function saveEvent($nodeData) {
   $ewrapper->title->set($nodeData['title']);
   $ewrapper->field_description->value = $nodeData['body'];
   $ewrapper->field_pui->set($nodeData['pui']);
-  $ewrapper->field_source->set(1); //1 - rest service
+  $ewrapper->field_source->set(4); //4 - Piletilevi
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price->set($nodeData['minPrice'] . ' - ' . $nodeData['maxPrice']);
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
-
+  $ewrapper->field_tickets->set([$nodeData['buyLink']]);
+  
   if ($nodeData['imageURL']) {
     $ewrapper->field_hasimage->set(1);
     $ewrapper->field_image_url->set($nodeData['imageURL']);
