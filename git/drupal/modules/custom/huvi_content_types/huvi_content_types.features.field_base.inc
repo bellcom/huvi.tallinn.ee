@@ -795,6 +795,7 @@ function huvi_content_types_field_default_field_bases() {
         1 => 'rest_service',
         2 => 'ev100_rss',
         3 => 'kultuurikava',
+        4 => 'piletilevi',
       ),
       'allowed_values_function' => '',
     ),
