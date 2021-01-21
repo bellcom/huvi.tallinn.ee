@@ -67,7 +67,9 @@ function getPiletimaailFeed() {
 
   $cats = [
     'KINO' => 5,
-    'TEATER' => 1
+    'TEATER' => 1,
+    'MUUSIKA'=>0,
+    'TANTS' => 8
   ];
 
   $items = [];
@@ -90,7 +92,6 @@ function getPiletimaailFeed() {
           'category' => $cat,
           'pmui' => $item->event_id
         ];
-
         array_push($items, $formatted_item);
       }
   }
@@ -108,7 +109,6 @@ function getPiletimaailFeed() {
  *    Node data as array.
  */
 function savePiletimaailEvent($nodeData) {
-
   global $user;
 
   if (checkIfPMNodeExist($nodeData['pmui'])) {
@@ -141,8 +141,6 @@ function savePiletimaailEvent($nodeData) {
   if (isset($nodeData['buyLink']) && !empty($nodeData['buyLink']))
     $ewrapper->field_tickets->set([$nodeData['buyLink']]);
   
-  
-
   if ($nodeData['imageURL']) {
     $ewrapper->field_hasimage->set(1);
     $ewrapper->field_image_url->set($nodeData['imageURL']);
@@ -151,11 +149,11 @@ function savePiletimaailEvent($nodeData) {
   if (!empty($nodeData['category'])) {
     $ewrapper->field_categories_event->set($nodeData['category']);
   }
-
-
+ 
   $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
   $schedule_item->setHostEntity('entity', $entity);
   $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
+  
   // Time
   $start_time = strtotime($nodeData['startTime']);
   if (date('H:i', $start_time) == '00:00') {
@@ -167,20 +165,9 @@ function savePiletimaailEvent($nodeData) {
     'value2' => NULL
   ];
 
-
   $schedule_wrapper->field_schedule_date[0]->set($sch);
-
-  //$latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
-  //$city_id = getCityArea($latlng);
-  //$place = getAddress($latlng); // We can use this to get address from google maps API
-
-  /* if ($city_id) {
-    $schedule_wrapper->field_schedule_city_id->set($city_id);
-    } */
-
   $schedule_wrapper->field_schedule_place->set($nodeData['address']);
-  //$ewrapper->field_map_latlng->set($latlng);
-  //$ewrapper->field_map_markers->set($latlng);
+
   //korraldaja
   if (isset($nodeData['organizerCompany'])) {
     $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
@@ -237,17 +224,4 @@ function loadNodeByPMUI($pmui) {
   else {
     return null;
   }
-}
-
-/*
- * return Google Geo json
- */
-
-function getGeoByAddress($address) {
-  $api_key = variable_get('geolocation_googlemaps_api_key', '');
-  $url = 'https://maps.googleapis.com/maps/api/geocode/json?key=' . $api_key . '&address=' . urlencode($address);
-  $json = @file_get_contents($url);
-  print_r($json);
-  $data = json_decode($json);
-  return $data->geometry->location;
 }

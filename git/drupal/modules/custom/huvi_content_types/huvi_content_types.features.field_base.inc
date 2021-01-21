@@ -508,6 +508,21 @@ function huvi_content_types_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_pmui'.
+  $field_bases['field_pmui'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pmui',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_pre_description'.
   $field_bases['field_pre_description'] = array(
     'active' => 1,
@@ -795,6 +810,8 @@ function huvi_content_types_field_default_field_bases() {
         1 => 'rest_service',
         2 => 'ev100_rss',
         3 => 'kultuurikava',
+        4 => 'piletilevi',
+        5 => 'piletimaail',
       ),
       'allowed_values_function' => '',
     ),

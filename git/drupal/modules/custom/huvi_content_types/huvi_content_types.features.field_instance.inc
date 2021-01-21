@@ -1187,6 +1187,63 @@ function huvi_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_pmui'.
+  $field_instances['node-event-field_pmui'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'banner_big' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 30,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pmui',
+    'label' => 'pmui',
+    'required' => FALSE,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_pre_description'.
   $field_instances['node-event-field_pre_description'] = array(
     'bundle' => 'event',
@@ -2017,6 +2074,7 @@ function huvi_content_types_field_default_field_instances() {
   t('Vali, kui soovid üritust alles hiljem avalikustada. Hea kasutada sisu eelvaateks enne avalikustamist.');
   t('Video URL');
   t('Videod');
+  t('pmui');
   t('Üritus on katusüritus');
   t('Ürituse kategooriad');
 
