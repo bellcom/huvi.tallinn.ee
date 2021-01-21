@@ -149,6 +149,17 @@ function savePiletimaailEvent($nodeData) {
   if (!empty($nodeData['category'])) {
     $ewrapper->field_categories_event->set($nodeData['category']);
   }
+  //schedule
+  if (!empty($entity->field_schedule['und'])) {
+    $s_values = array();
+    foreach ($entity->field_schedule['und'] as $s_key => $s_val) {
+      $s_values[] = $s_val['value'];
+      unset($entity->field_schedule['und'][$s_key]);
+    }
+    if (!empty($s_values)) {
+      entity_delete_multiple('field_collection_item', $s_values);
+    }
+  }
  
   $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
   $schedule_item->setHostEntity('entity', $entity);
@@ -163,7 +174,7 @@ function savePiletimaailEvent($nodeData) {
   $sch = [
     'value' => $start_time
   ];
-  $schedule_wrapper->field_schedule_date=[];
+  
   $schedule_wrapper->field_schedule_date[0]->set($sch);
   $schedule_wrapper->field_schedule_place->set($nodeData['address']);
 
