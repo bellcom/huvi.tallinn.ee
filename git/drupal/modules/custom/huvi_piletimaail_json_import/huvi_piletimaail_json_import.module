@@ -163,9 +163,9 @@ function savePiletimaailEvent($nodeData) {
   $sch = [
     'value' => $start_time,
     'value2' => NULL,
-    'rrule' => 'RRULE:FREQ=NONE;'
+    'rrule' => NULL
   ];
-
+  $schedule_wrapper->field_schedule_date=[];
   $schedule_wrapper->field_schedule_date[0]->set($sch);
   $schedule_wrapper->field_schedule_place->set($nodeData['address']);
 
