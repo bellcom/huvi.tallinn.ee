@@ -1,0 +1,253 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+function huvi_piletimaail_json_import_menu() {
+  $items = array();
+
+  // Route admin/config/services/piletimaail for setting
+  $items['admin/config/services/piletimaail'] = array(
+    'title' => 'Piletimaail Integration settings',
+    'description' => 'Global settings piletimaail Integration.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('huvi_piletimaail_json_import_settings_form'),
+    'file' => 'huvi_piletimaail_json_import.admin.inc',
+    'access arguments' => array('Administrator configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  // Route piletimaail/test for module test
+  $items['piletimaail/import'] = array(
+    'title' => 'Piletimaail import route',
+    'description' => 'Piletimaail import route for feed check',
+    'page callback' => 'getPiletimaailFeed',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function huvi_piletimaail_json_import_cron() {
+  getPiletimaailFeed();
+}
+
+/**
+ * getFedd()
+ * This function will connect to Piletimaail JSON Feed and read it to use internally.
+ */
+function getPiletimaailFeed() {
+
+  // Get API url from setting
+  $json_url = variable_get('huvi_piletimaail_json_url', '');
+
+  // Fetch data from feed
+  $data = @file_get_contents($json_url);
+  // Push data as JSON.
+  $decodedData = json_decode($data);
+
+  /*
+    Cat list
+    0 => Muusika
+    1 => Etendused
+    2 => Näitus, muuseum
+    3 => Mess, laat
+    4 => Sport
+    5 => Kino
+    6 => Pidu, klubid
+    7 => Lapsele
+    8 => Varia
+   */
+
+  $cats = [
+    'KINO' => 5,
+    'TEATER' => 1
+  ];
+
+  $items = [];
+  // Filter City
+  foreach ($decodedData as $item) {
+    if (isset($item->location_address_city))
+      if (strtoupper($item->location_address_city) == 'TALLINN') {
+        $cat = [$cats[strtoupper($item->category)]];
+
+        $formatted_item = [
+          'title' => $item->name,
+          'body' => $item->full_description,
+          'moreInfoLink' => $item->info_url,
+          'startTime' => $item->date,
+          'imageURL' => $item->image_url,
+          'buyLink' => $item->buy_ticket_url,
+          'organizerCompany' => $item->organizer_name,
+          'address' => $item->location_address_address,
+          'location' => $item->location_venue_name,
+          'category' => $cat,
+          'pmui' => $item->event_id
+        ];
+
+        array_push($items, $formatted_item);
+      }
+  }
+  foreach ($items as $item) {
+    savePiletimaailEvent($item);
+    //print_r(getGeoByAddress($formatted_item['address']));
+  }
+}
+
+/**
+ * saveEvent()
+ * This function will create/update node.
+ * 
+ * @param $nodeData
+ *    Node data as array.
+ */
+function savePiletimaailEvent($nodeData) {
+
+  global $user;
+
+  if (checkIfPMNodeExist($nodeData['pmui'])) {
+    $entity = loadNodeByPMUI($nodeData['pmui']);
+  }
+  else {
+// entity_create replaces the procedural steps in the first example of
+// creating a new object $node and setting its 'type' and uid property
+
+    $values = array(
+      'type' => 'event',
+      'uid' => $user->uid,
+      'status' => 1,
+      'comment' => 0,
+      'promote' => 0,
+      'language' => 'et'
+    );
+    $entity = entity_create('node', $values);
+  }
+
+  $ewrapper = entity_metadata_wrapper('node', $entity);
+  $ewrapper->title->set($nodeData['title']);
+  $ewrapper->field_description->value = $nodeData['body'];
+  $ewrapper->field_pmui->set($nodeData['pmui']);
+  $ewrapper->field_source->set(5); //5 - Piletimaail
+  $ewrapper->field_type->set('uritus');
+  $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
+
+  echo urlencode($nodeData['title']).'</br>';
+  if (isset($nodeData['buyLink']) && !empty($nodeData['buyLink']))
+    $ewrapper->field_tickets->set([$nodeData['buyLink']]);
+  
+  
+
+  if ($nodeData['imageURL']) {
+    $ewrapper->field_hasimage->set(1);
+    $ewrapper->field_image_url->set($nodeData['imageURL']);
+  }
+
+  if (!empty($nodeData['category'])) {
+    $ewrapper->field_categories_event->set($nodeData['category']);
+  }
+
+
+  $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
+  $schedule_item->setHostEntity('entity', $entity);
+  $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
+  // Time
+  $start_time = strtotime($nodeData['startTime']);
+  if (date('H:i', $start_time) == '00:00') {
+    $start_time = strtotime("-5 minutes", $start_time);
+  }
+
+  $sch = [
+    'value' => $start_time,
+    'value2' => NULL
+  ];
+
+
+  $schedule_wrapper->field_schedule_date[0]->set($sch);
+
+  //$latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
+  //$city_id = getCityArea($latlng);
+  //$place = getAddress($latlng); // We can use this to get address from google maps API
+
+  /* if ($city_id) {
+    $schedule_wrapper->field_schedule_city_id->set($city_id);
+    } */
+
+  $schedule_wrapper->field_schedule_place->set($nodeData['address']);
+  //$ewrapper->field_map_latlng->set($latlng);
+  //$ewrapper->field_map_markers->set($latlng);
+  //korraldaja
+  if (isset($nodeData['organizerCompany'])) {
+    $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
+    $korraldaja_item->setHostEntity('entity', $entity);
+    $korraldaja_wrapper = entity_metadata_wrapper('field_collection_item', $korraldaja_item);
+    $korraldaja_wrapper->field_korraldaja_nimi->set($nodeData['organizerCompany']);
+  }
+  $ewrapper->save();
+}
+
+/**
+ * checkIfNodeExist()
+ * This function will check if item exist node.
+ * 
+ * @param $pui
+ *    Piletilevi ID
+ */
+function checkIfPMNodeExist($pmui) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_pmui', 'value', $pmui, '=');
+
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+/**
+ * loadNodeByPUI()
+ * This function will load item.
+ * 
+ * @param $pui
+ *    Piletilevi ID.
+ */
+function loadNodeByPMUI($pmui) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->fieldCondition('field_pmui', 'value', $pmui, '=');
+
+  $result = $query->execute();
+  if ($result) {
+    foreach ($result['node'] as $key => $val) {
+      $entity_load = entity_load('node', array($key));
+      foreach ($entity_load as $ekey => $eval) {
+        $entity = $eval;
+      }
+      return $entity;
+    }
+  }
+  else {
+    return null;
+  }
+}
+
+/*
+ * return Google Geo json
+ */
+
+function getGeoByAddress($address) {
+  $api_key = variable_get('geolocation_googlemaps_api_key', '');
+  $url = 'https://maps.googleapis.com/maps/api/geocode/json?key=' . $api_key . '&address=' . urlencode($address);
+  $json = @file_get_contents($url);
+  print_r($json);
+  $data = json_decode($json);
+  return $data->geometry->location;
+}
