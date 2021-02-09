@@ -76,7 +76,7 @@ function getFeed() {
     if ((count($cats) != 0) && isset($value->id)) {
       // Reformat and fill data.
       $response[$counter]['category'] = $cats;
-      $response[$counter]['pui'] = $value->id;
+      $response[$counter]['id'] = $value->id;
       $response[$counter]['title'] = $value->decoratedTitle;
       $response[$counter]['body'] = $value->description;
       $start = $value->startTime->year . '-' . $value->startTime->month . '-' . $value->startTime->date . 'T' . $value->startTime->time . ':00';
@@ -234,8 +234,8 @@ function saveEvent($nodeData) {
 
   global $user;
 
-  if (checkIfNodeExist($nodeData['pui'])) {
-    $entity = loadNodeByPUI($nodeData['pui']);
+  if (checkIfNodeExist($nodeData['id'])) {
+    $entity = loadNodeByPUI($nodeData['id']);
   }
   else {
 // entity_create replaces the procedural steps in the first example of
@@ -255,8 +255,8 @@ function saveEvent($nodeData) {
   $ewrapper = entity_metadata_wrapper('node', $entity);
   $ewrapper->title->set($nodeData['title']);
   $ewrapper->field_description->value = $nodeData['body'];
-  $ewrapper->field_pui->set($nodeData['pui']);
-  $ewrapper->field_source->set(1); //1 - rest service
+  $ewrapper->field_id->set($nodeData['id']);
+  $ewrapper->field_source->set(4); //1 - rest service
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price->set($nodeData['minPrice'] . ' - ' . $nodeData['maxPrice']);
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
@@ -347,10 +347,11 @@ function saveEvent($nodeData) {
  * @param $pui
  *    Piletilevi ID
  */
-function checkIfNodeExist($pui) {
+function checkIfNodeExist($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_pui', 'value', $pui, '=');
+    ->fieldCondition('field_id', 'value', $id, '=')
+    ->fieldCondition('field_source','value', 4,  '=');
 
   $result = $query->execute();
   if (isset($result['node'])) {
@@ -368,10 +369,11 @@ function checkIfNodeExist($pui) {
  * @param $pui
  *    Piletilevi ID.
  */
-function loadNodeByPUI($pui) {
+function loadNodeByPUI($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_pui', 'value', $pui, '=');
+    ->fieldCondition('field_id', 'value', $id, '=')
+    ->fieldCondition('field_source','value', 4,  '=');
 
   $result = $query->execute();
   if ($result) {
