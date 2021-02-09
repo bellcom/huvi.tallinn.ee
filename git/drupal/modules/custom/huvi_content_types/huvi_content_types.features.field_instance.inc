@@ -1343,64 +1343,6 @@ function huvi_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_pui'.
-  $field_instances['node-event-field_pui'] = array(
-    'bundle' => 'event',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'banner' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'banner_big' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => '',
-        ),
-        'type' => 'number_integer',
-        'weight' => 29,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_pui',
-    'label' => 'Piletilevi Unique ID',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 30,
-    ),
-  );
-
   // Exported field_instance: 'node-event-field_schedule'.
   $field_instances['node-event-field_schedule'] = array(
     'bundle' => 'event',
@@ -2004,7 +1946,6 @@ function huvi_content_types_field_default_field_instances() {
   t('Pikem kirjeldus ürituse kohta.');
   t('Pildid');
   t('Pildid Slideshow');
-  t('Piletilevi Unique ID');
   t('Piletite edasimüüja veebiaadress sündmusele');
   t('Pre description');
   t('Selekteeri kui tegemist on suurema üritusega, mille alla oleks vaja lehel luua alamüritusi.');
