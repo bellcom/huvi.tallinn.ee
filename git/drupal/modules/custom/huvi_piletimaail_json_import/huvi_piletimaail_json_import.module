@@ -90,7 +90,7 @@ function getPiletimaailFeed() {
           'address' => $item->location_address_address,
           'location' => $item->location_venue_name,
           'category' => $cat,
-          'pmui' => $item->event_id
+          'id' => $item->event_id
         ];
         array_push($items, $formatted_item);
       }
@@ -111,8 +111,8 @@ function getPiletimaailFeed() {
 function savePiletimaailEvent($nodeData) {
   global $user;
 
-  if (checkIfPMNodeExist($nodeData['pmui'])) {
-    $entity = loadNodeByPMUI($nodeData['pmui']);
+  if (checkIfPMNodeExist($nodeData['id'])) {
+    $entity = loadNodeByPMUI($nodeData['id']);
   }
   else {
 // entity_create replaces the procedural steps in the first example of
@@ -132,12 +132,12 @@ function savePiletimaailEvent($nodeData) {
   $ewrapper = entity_metadata_wrapper('node', $entity);
   $ewrapper->title->set($nodeData['title']);
   $ewrapper->field_description->value = $nodeData['body'];
-  $ewrapper->field_pmui->set($nodeData['pmui']);
+  $ewrapper->field_id->set($nodeData['id']);
   $ewrapper->field_source->set(5); //5 - Piletimaail
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
 
-  echo urlencode($nodeData['title']).'</br>';
+ 
   if (isset($nodeData['buyLink']) && !empty($nodeData['buyLink']))
     $ewrapper->field_tickets->set([$nodeData['buyLink']]);
   
@@ -195,10 +195,11 @@ function savePiletimaailEvent($nodeData) {
  * @param $pui
  *    Piletilevi ID
  */
-function checkIfPMNodeExist($pmui) {
+function checkIfPMNodeExist($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_pmui', 'value', $pmui, '=');
+    ->fieldCondition('field_id', 'value', $id, '=')
+    ->fieldCondition('field_source','value', 5,  '=');
 
   $result = $query->execute();
   if (isset($result['node'])) {
@@ -216,10 +217,11 @@ function checkIfPMNodeExist($pmui) {
  * @param $pui
  *    Piletilevi ID.
  */
-function loadNodeByPMUI($pmui) {
+function loadNodeByPMUI($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_pmui', 'value', $pmui, '=');
+    ->fieldCondition('field_id', 'value', $id, '=')
+    ->fieldCondition('field_source','value', 5,  '=');
 
   $result = $query->execute();
   if ($result) {
