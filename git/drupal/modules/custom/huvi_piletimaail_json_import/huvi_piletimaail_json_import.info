@@ -1,0 +1,4 @@
+name = Huvi Piletimaail JSON import
+description = Integration https://www.piletimaail.ee/
+core = 7.x
+package = HUVI
