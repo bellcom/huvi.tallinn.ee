@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-function huvi_piletilev_json_import_menu() {
+function huvi_piletilevi_json_import_menu() {
   $items = array();
 
-  // Route admin/config/services/piletilev for setting
-  $items['admin/config/services/piletilev'] = array(
+  // Route admin/config/services/piletilevi for setting
+  $items['admin/config/services/piletilevi'] = array(
     'title' => 'Piletilevi Integration settings',
     'description' => 'Global settings piletilevi Integration.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('huvi_piletilev_json_import_settings_form'),
-    'file' => 'huvi_piletilev_json_import.admin.inc',
+    'page arguments' => array('huvi_piletilevi_json_import_settings_form'),
+    'file' => 'huvi_piletilevi_json_import.admin.inc',
     'access arguments' => array('Administrator configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -34,7 +34,7 @@ function huvi_piletilev_json_import_menu() {
 /**
  * Implements hook_cron().
  */
-function huvi_piletilev_json_import_cron() {
+function huvi_piletilevi_json_import_cron() {
   getFeed();
 }
 
@@ -45,7 +45,7 @@ function huvi_piletilev_json_import_cron() {
 function getFeed() {
 
   // Get API url from setting
-  $json_url = variable_get('huvi_piletilev_json_url', '');
+  $json_url = variable_get('huvi_piletilevi_json_url', '');
 
   // Fetch data from feed
   $data = @file_get_contents($json_url);
@@ -137,7 +137,7 @@ function getFeed() {
  * 
  */
 function catMapping($catId, $cats) {
-  // Mapping teater categories IDs from Piletilev. 
+  // Mapping teater categories IDs from Piletilevi. 
 
   /*
     Cat list

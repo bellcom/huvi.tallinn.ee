@@ -6,25 +6,25 @@
  * and open the template in the editor.
  */
 
-function huvi_piletimaail_json_import_menu() {
+function huvi_piletimaailm_json_import_menu() {
   $items = array();
 
-  // Route admin/config/services/piletimaail for setting
-  $items['admin/config/services/piletimaail'] = array(
-    'title' => 'Piletimaail Integration settings',
-    'description' => 'Global settings piletimaail Integration.',
+  // Route admin/config/services/piletimaailm for setting
+  $items['admin/config/services/piletimaailm'] = array(
+    'title' => 'Piletimaailm Integration settings',
+    'description' => 'Global settings piletimaailm Integration.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('huvi_piletimaail_json_import_settings_form'),
-    'file' => 'huvi_piletimaail_json_import.admin.inc',
+    'page arguments' => array('huvi_piletimaailm_json_import_settings_form'),
+    'file' => 'huvi_piletimaailm_json_import.admin.inc',
     'access arguments' => array('Administrator configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
 
-  // Route piletimaail/test for module test
-  $items['piletimaail/import'] = array(
-    'title' => 'Piletimaail import route',
-    'description' => 'Piletimaail import route for feed check',
-    'page callback' => 'getPiletimaailFeed',
+  // Route piletimaailm/test for module test
+  $items['piletimaailm/import'] = array(
+    'title' => 'Piletimaailm import route',
+    'description' => 'Piletimaailm import route for feed check',
+    'page callback' => 'getPiletimaailmFeed',
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
   );
@@ -34,18 +34,18 @@ function huvi_piletimaail_json_import_menu() {
 /**
  * Implements hook_cron().
  */
-function huvi_piletimaail_json_import_cron() {
-  getPiletimaailFeed();
+function huvi_piletimaailm_json_import_cron() {
+  getPiletimaailmFeed();
 }
 
 /**
  * getFedd()
- * This function will connect to Piletimaail JSON Feed and read it to use internally.
+ * This function will connect to Piletimaailm JSON Feed and read it to use internally.
  */
-function getPiletimaailFeed() {
+function getPiletimaailmFeed() {
 
   // Get API url from setting
-  $json_url = variable_get('huvi_piletimaail_json_url', '');
+  $json_url = variable_get('huvi_piletimaailm_json_url', '');
 
   // Fetch data from feed
   $data = @file_get_contents($json_url);
@@ -96,7 +96,7 @@ function getPiletimaailFeed() {
       }
   }
   foreach ($items as $item) {
-    savePiletimaailEvent($item);
+    savePiletimaailmEvent($item);
     //print_r(getGeoByAddress($formatted_item['address']));
   }
 }
@@ -108,7 +108,7 @@ function getPiletimaailFeed() {
  * @param $nodeData
  *    Node data as array.
  */
-function savePiletimaailEvent($nodeData) {
+function savePiletimaailmEvent($nodeData) {
   global $user;
 
   if (checkIfPMNodeExist($nodeData['id'])) {
@@ -133,7 +133,7 @@ function savePiletimaailEvent($nodeData) {
   $ewrapper->title->set($nodeData['title']);
   $ewrapper->field_description->value = $nodeData['body'];
   $ewrapper->field_id->set($nodeData['id']);
-  $ewrapper->field_source->set(5); //5 - Piletimaail
+  $ewrapper->field_source->set(5); //5 - Piletimaailm
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
 
