@@ -1,4 +1,4 @@
-name = Huvi Piletimaail JSON import
-description = Integration https://www.piletimaail.ee/
+name = Huvi Piletimaailm JSON import
+description = Integration https://www.piletimaailm.com/
 core = 7.x
 package = HUVI
