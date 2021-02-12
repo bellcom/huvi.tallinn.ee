@@ -57,7 +57,7 @@ function getFeed() {
   $organizers = (isset($decodedData->responseData->promoter) && is_array($decodedData->responseData->promoter)) ? (array) $decodedData->responseData->promoter : [];
   $shows = is_array($decodedData->responseData->show) ? (array) $decodedData->responseData->show : [];
 
-  // Store reformatted data from Piletilevi feed. 
+  // Store reformatted data from Piletilevi feed.
   $response = [];
 
   // Items counter.
@@ -134,10 +134,10 @@ function getFeed() {
 /**
  * catMapping()
  * This function will return array of categories.
- * 
+ *
  */
 function catMapping($catId, $cats) {
-  // Mapping teater categories IDs from Piletilevi. 
+  // Mapping teater categories IDs from Piletilevi.
 
   /*
     Cat list
@@ -226,7 +226,7 @@ function catMapping($catId, $cats) {
 /**
  * saveEvent()
  * This function will create/update node.
- * 
+ *
  * @param $nodeData
  *    Node data as array.
  */
@@ -256,11 +256,11 @@ function saveEvent($nodeData) {
   $ewrapper->title->set($nodeData['title']);
   $ewrapper->field_description->value = $nodeData['body'];
   $ewrapper->field_id->set($nodeData['id']);
-  $ewrapper->field_source->set(4); //1 - rest service
+  $ewrapper->field_source->set(4); //4 - Piletilevi
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price->set($nodeData['minPrice'] . ' - ' . $nodeData['maxPrice']);
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
-
+  $ewrapper->field_tickets->set([$nodeData['buyLink']]);
   if ($nodeData['imageURL']) {
     $ewrapper->field_hasimage->set(1);
     $ewrapper->field_image_url->set($nodeData['imageURL']);
@@ -290,10 +290,10 @@ function saveEvent($nodeData) {
     $start_time = strtotime("-5 minutes", $start_time);
   }
   $sch = [];
-  
+
   if ($nodeData['endTime'] != null) {
     $end_time = strtotime($nodeData['endTime']);
-    if ((date('H:i', $end_time) == '00:00') || (date('H:i', $end_time) == '23:59'))  { 
+    if ((date('H:i', $end_time) == '00:00') || (date('H:i', $end_time) == '23:59'))  {
       $sch = [
         'value' => $start_time,
         'value2' => NULL
@@ -343,7 +343,7 @@ function saveEvent($nodeData) {
 /**
  * checkIfNodeExist()
  * This function will check if item exist node.
- * 
+ *
  * @param $pui
  *    Piletilevi ID
  */
@@ -365,7 +365,7 @@ function checkIfNodeExist($id) {
 /**
  * loadNodeByPUI()
  * This function will load item.
- * 
+ *
  * @param $pui
  *    Piletilevi ID.
  */
@@ -393,7 +393,7 @@ function loadNodeByPUI($id) {
 /**
  * getCityArea()
  * Get city area code.
- * 
+ *
  * @param $latlng
  *    Coordination.
  */
@@ -424,7 +424,7 @@ function getCityArea($latlng) {
 /**
  * getGeoCode()
  * Get geo data.
- * 
+ *
  * @param $latlng
  *    Coordination.
  */
@@ -439,7 +439,7 @@ function getGeoCode($latlng) {
 /**
  * findLongNameGivenType()
  * Get additional data.
- * 
+ *
  * @param $type
  *    Information type.
  * @param $type
@@ -460,7 +460,7 @@ function findLongNameGivenType($type, $array, $short_name = false) {
 /**
  * getAddress()
  * Get address data.
- * 
+ *
  * @param $latlng
  *    Coordination.
  */
