@@ -7,27 +7,27 @@
  */
 
 function huvi_piletilevi_json_import_menu() {
-  $items = array();
+  $items = [];
 
   // Route admin/config/services/piletilevi for setting
-  $items['admin/config/services/piletilevi'] = array(
+  $items['admin/config/services/piletilevi'] = [
     'title' => 'Piletilevi Integration settings',
     'description' => 'Global settings piletilevi Integration.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('huvi_piletilevi_json_import_settings_form'),
+    'page arguments' => ['huvi_piletilevi_json_import_settings_form'],
     'file' => 'huvi_piletilevi_json_import.admin.inc',
-    'access arguments' => array('Administrator configuration'),
+    'access arguments' => ['Administrator configuration'],
     'type' => MENU_NORMAL_ITEM,
-  );
+  ];
 
   // Route piletilevi/test for module test
-  $items['piletilevi/import'] = array(
+  $items['piletilevi/import'] = [
     'title' => 'Piletilevi import route',
     'description' => 'Piletilevi import route for feed check',
     'page callback' => 'getFeed',
     'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
-  );
+  ];
   return $items;
 }
 
@@ -40,7 +40,8 @@ function huvi_piletilevi_json_import_cron() {
 
 /**
  * getFedd()
- * This function will connect to Piletilevi JSON Feed and read it to use internally.
+ * This function will connect to Piletilevi JSON Feed and read it to use
+ * internally.
  */
 function getFeed() {
 
@@ -85,7 +86,7 @@ function getFeed() {
         $end = $value->endTime->year . '-' . $value->endTime->month . '-' . $value->endTime->date . 'T' . $value->endTime->time . ':00';
       }
       else {
-        $end = null;
+        $end = NULL;
       }
 
       $response[$counter]['startTime'] = $start;
@@ -93,8 +94,8 @@ function getFeed() {
       $response[$counter]['moreInfoLink'] = $value->link;
       // Prices
       $prices = explode("-", $value->prices);
-      $minPrice = array_key_exists(0, $prices) ? trim($prices[0]) : null;
-      $maxPrice = array_key_exists(1, $prices) ? trim($prices[1]) : null;
+      $minPrice = array_key_exists(0, $prices) ? trim($prices[0]) : NULL;
+      $maxPrice = array_key_exists(1, $prices) ? trim($prices[1]) : NULL;
       $response[$counter]['imageURL'] = $value->imageUrl;
       $response[$counter]['priceType'] = 'range';
       $response[$counter]['minPrice'] = $minPrice;
@@ -106,10 +107,11 @@ function getFeed() {
       foreach ($events as $event) {
         if ($value->venueId == $event->id) {
           $response[$counter]['eventAddress'] = $event->address;
-          $response[$counter]['eventLocation'] = $event->decoratedTitle;
+          $response[$counter]['eventLocation'] = $value->venueDecoratedTitle;
+
           $geo = $pieces = explode(",", $event->coordinates);
-          $response[$counter]['eventLat'] = array_key_exists(0, $geo) ? trim($geo[0]) : null;
-          $response[$counter]['eventLng'] = array_key_exists(1, $geo) ? trim($geo[1]) : null;
+          $response[$counter]['eventLat'] = array_key_exists(0, $geo) ? trim($geo[0]) : NULL;
+          $response[$counter]['eventLng'] = array_key_exists(1, $geo) ? trim($geo[1]) : NULL;
         }
       }
 
@@ -152,65 +154,127 @@ function catMapping($catId, $cats) {
     8 => Varia
    */
 
-  $map = array(
+  $map = [
     0 => [
-      1372, 1349, 1332,
-      1231, 1094, 1016,
-      1451, 1286, 1451,
-      1032, 1348, 1144,
-      1002, 1363, 1251,
-      1031, 1014, 1323,
-      1299, 1112, 1017,
-      1106, 1287, 1324,
-      1207, 1350, 1243,
-      1071, 1058, 1006,
-      1394
+      1372,
+      1349,
+      1332,
+      1231,
+      1094,
+      1016,
+      1451,
+      1286,
+      1451,
+      1032,
+      1348,
+      1144,
+      1002,
+      1363,
+      1251,
+      1031,
+      1014,
+      1323,
+      1299,
+      1112,
+      1017,
+      1106,
+      1287,
+      1324,
+      1207,
+      1350,
+      1243,
+      1071,
+      1058,
+      1006,
+      1394,
     ],
     1 => [
-      1035, 1256, 1168,
-      1289, 1290, 1013,
-      1030, 1015, 1054,
-      1037, 1261, 1021,
-      1419, 1319, 1020,
-      1029, 1062, 1129,
-      1006, 1394, 1019,
+      1035,
+      1256,
+      1168,
+      1289,
+      1290,
+      1013,
+      1030,
+      1015,
+      1054,
+      1037,
+      1261,
+      1021,
+      1419,
+      1319,
+      1020,
+      1029,
+      1062,
+      1129,
+      1006,
+      1394,
+      1019,
       1022,
-      1003, 1291, 1195, // Teaters
-      1114
+      1003,
+      1291,
+      1195, // Teaters
+      1114,
     ],
     2 => [
-      1230, 1317, 1028
+      1230,
+      1317,
+      1028,
     ],
     3 => [
-      1038
+      1038,
     ],
     4 => [
-      1333, 1055, 1005,
-      1076, 1065, 1427,
-      1024
+      1333,
+      1055,
+      1005,
+      1076,
+      1065,
+      1427,
+      1024,
     ],
     5 => [
-      1391, 1056, 1202,
-      1161, 1298, 1006,
-      1394
+      1391,
+      1056,
+      1202,
+      1161,
+      1298,
+      1006,
+      1394,
     ],
     6 => [
-      1220, 1153, 1033,
-      1010, 1071, 1006,
-      1394
+      1220,
+      1153,
+      1033,
+      1010,
+      1071,
+      1006,
+      1394,
     ],
     7 => [
-      1224, 1021, 1004,
-      1396, 1058
+      1224,
+      1021,
+      1004,
+      1396,
+      1058,
     ],
     8 => [
-      1364, 1075, 1300,
-      1383, 1341, 1284,
-      1301, 1004, 1396,
-      1071, 1058, 1322,
-      1280, 1315
-    ]
-  );
+      1364,
+      1075,
+      1300,
+      1383,
+      1341,
+      1284,
+      1301,
+      1004,
+      1396,
+      1071,
+      1058,
+      1322,
+      1280,
+      1315,
+    ],
+  ];
 
   foreach ($map as $key => $value) {
     if (in_array($catId, $value)) {
@@ -238,17 +302,17 @@ function saveEvent($nodeData) {
     $entity = loadNodeByPUI($nodeData['id']);
   }
   else {
-// entity_create replaces the procedural steps in the first example of
-// creating a new object $node and setting its 'type' and uid property
+    // entity_create replaces the procedural steps in the first example of
+    // creating a new object $node and setting its 'type' and uid property
 
-    $values = array(
+    $values = [
       'type' => 'event',
       'uid' => $user->uid,
       'status' => 1,
       'comment' => 0,
       'promote' => 0,
-      'language' => 'et'
-    );
+      'language' => 'et',
+    ];
     $entity = entity_create('node', $values);
   }
 
@@ -272,7 +336,7 @@ function saveEvent($nodeData) {
 
   //schedule
   if (!empty($entity->field_schedule['und'])) {
-    $s_values = array();
+    $s_values = [];
     foreach ($entity->field_schedule['und'] as $s_key => $s_val) {
       $s_values[] = $s_val['value'];
       unset($entity->field_schedule['und'][$s_key]);
@@ -281,7 +345,7 @@ function saveEvent($nodeData) {
       entity_delete_multiple('field_collection_item', $s_values);
     }
   }
-  $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
+  $schedule_item = entity_create('field_collection_item', ['field_name' => 'field_schedule']);
   $schedule_item->setHostEntity('entity', $entity);
   $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
   // Time
@@ -291,12 +355,12 @@ function saveEvent($nodeData) {
   }
   $sch = [];
 
-  if ($nodeData['endTime'] != null) {
+  if ($nodeData['endTime'] != NULL) {
     $end_time = strtotime($nodeData['endTime']);
-    if ((date('H:i', $end_time) == '00:00') || (date('H:i', $end_time) == '23:59'))  {
+    if ((date('H:i', $end_time) == '00:00') || (date('H:i', $end_time) == '23:59')) {
       $sch = [
         'value' => $start_time,
-        'value2' => NULL
+        'value2' => NULL,
       ];
     }
     else {
@@ -310,27 +374,36 @@ function saveEvent($nodeData) {
   else {
     $sch = [
       'value' => $start_time,
-      'value2'=> NULL
+      'value2' => NULL,
     ];
   }
 
   $schedule_wrapper->field_schedule_date[0]->set($sch);
 
   $latlng = $nodeData['eventLat'] . ',' . $nodeData['eventLng'];
-  $city_id = getCityArea($latlng);
-  //$place = getAddress($latlng); // We can use this to get address from google maps API
-
-  if ($city_id) {
-    $schedule_wrapper->field_schedule_city_id->set($city_id);
-  }
-
-  $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
   $ewrapper->field_map_latlng->set($latlng);
   $ewrapper->field_map_markers->set($latlng);
 
+  $schedule_wrapper->field_schedule_place->set($nodeData['eventAddress']);
+  // Set location taxonomy.
+  if (isset($nodeData['eventLocation'])) {
+    if ($toimumiskoht_term = taxonomy_get_term_by_name($nodeData['eventLocation'], 'toimumiskoht')) {
+      $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht_term));
+    }
+    else {
+      $toimumiskoht_vocab = taxonomy_vocabulary_machine_name_load('toimumiskoht');
+      $toimumiskoht_term = new stdClass();
+      $toimumiskoht_term->name = $nodeData['eventLocation'];
+      $toimumiskoht_term->vid = $toimumiskoht_vocab->vid;
+      taxonomy_term_save($toimumiskoht_term);
+
+      $schedule_wrapper->field_schedule_toimumis->set($toimumiskoht_term->tid);
+    }
+  }
+
   //korraldaja
   if (isset($nodeData['organizerCompany'])) {
-    $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
+    $korraldaja_item = entity_create('field_collection_item', ['field_name' => 'field_korraldaja']);
     $korraldaja_item->setHostEntity('entity', $entity);
     $korraldaja_wrapper = entity_metadata_wrapper('field_collection_item', $korraldaja_item);
     $korraldaja_wrapper->field_korraldaja_nimi->set($nodeData['organizerCompany']);
@@ -351,14 +424,14 @@ function checkIfNodeExist($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->fieldCondition('field_id', 'value', $id, '=')
-    ->fieldCondition('field_source','value', 4,  '=');
+    ->fieldCondition('field_source', 'value', 4, '=');
 
   $result = $query->execute();
   if (isset($result['node'])) {
-    return true;
+    return TRUE;
   }
   else {
-    return false;
+    return FALSE;
   }
 }
 
@@ -373,12 +446,12 @@ function loadNodeByPUI($id) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->fieldCondition('field_id', 'value', $id, '=')
-    ->fieldCondition('field_source','value', 4,  '=');
+    ->fieldCondition('field_source', 'value', 4, '=');
 
   $result = $query->execute();
   if ($result) {
     foreach ($result['node'] as $key => $val) {
-      $entity_load = entity_load('node', array($key));
+      $entity_load = entity_load('node', [$key]);
       foreach ($entity_load as $ekey => $eval) {
         $entity = $eval;
       }
@@ -386,7 +459,7 @@ function loadNodeByPUI($id) {
     }
   }
   else {
-    return null;
+    return NULL;
   }
 }
 
@@ -398,7 +471,7 @@ function loadNodeByPUI($id) {
  *    Coordination.
  */
 function getCityArea($latlng) {
-  $city_areas = array(
+  $city_areas = [
     2944195 => 'Põhja-Tallinn',
     2944191 => 'Kesklinn',
     2944187 => 'Haabersti',
@@ -407,17 +480,17 @@ function getCityArea($latlng) {
     2944193 => 'Mustamäe',
     2920234 => 'Pirita',
     2944194 => 'Nõmme',
-  );
+  ];
 
   $data = getGeoCode($latlng);
   $status = $data->status;
   if ($status == "OK") {
-    $city_area = findLongNameGivenType("sublocality_level_1", $data->results[0]->address_components, true);
+    $city_area = findLongNameGivenType("sublocality_level_1", $data->results[0]->address_components, TRUE);
     $result = array_pop(array_keys($city_areas, $city_area));
     return $result;
   }
   else {
-    return false;
+    return FALSE;
   }
 }
 
@@ -445,13 +518,15 @@ function getGeoCode($latlng) {
  * @param $type
  *    Data array.
  */
-function findLongNameGivenType($type, $array, $short_name = false) {
+function findLongNameGivenType($type, $array, $short_name = FALSE) {
   foreach ($array as $value) {
     if (in_array($type, $value->types)) {
-      if ($short_name)
+      if ($short_name) {
         return $value->short_name;
-      else
+      }
+      else {
         return $value->long_name;
+      }
     }
   }
   return FALSE;
@@ -469,10 +544,10 @@ function getAddress($latlng) {
   $status = $data->status;
   if ($status == "OK") {
     $address = "";
-    $place = findLongNameGivenType("premise", $data->results[0]->address_components, true);
-    $street_number = findLongNameGivenType("street_number", $data->results[0]->address_components, true);
-    $street = findLongNameGivenType("route", $data->results[0]->address_components, false);
-    $town = findLongNameGivenType("locality", $data->results[0]->address_components, true);
+    $place = findLongNameGivenType("premise", $data->results[0]->address_components, TRUE);
+    $street_number = findLongNameGivenType("street_number", $data->results[0]->address_components, TRUE);
+    $street = findLongNameGivenType("route", $data->results[0]->address_components, FALSE);
+    $town = findLongNameGivenType("locality", $data->results[0]->address_components, TRUE);
     if ($place) {
       $address .= $place . ', ';
     }
@@ -484,6 +559,6 @@ function getAddress($latlng) {
     return $address;
   }
   else {
-    return false;
+    return FALSE;
   }
 }
