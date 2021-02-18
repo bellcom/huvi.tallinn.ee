@@ -104,7 +104,7 @@ function getPiletimaailmFeed() {
 /**
  * saveEvent()
  * This function will create/update node.
- * 
+ *
  * @param $nodeData
  *    Node data as array.
  */
@@ -137,10 +137,10 @@ function savePiletimaailmEvent($nodeData) {
   $ewrapper->field_type->set('uritus');
   $ewrapper->field_price_information->set($nodeData['moreInfoLink']);
 
- 
+
   if (isset($nodeData['buyLink']) && !empty($nodeData['buyLink']))
     $ewrapper->field_tickets->set([$nodeData['buyLink']]);
-  
+
   if ($nodeData['imageURL']) {
     $ewrapper->field_hasimage->set(1);
     $ewrapper->field_image_url->set($nodeData['imageURL']);
@@ -160,11 +160,11 @@ function savePiletimaailmEvent($nodeData) {
       entity_delete_multiple('field_collection_item', $s_values);
     }
   }
- 
+
   $schedule_item = entity_create('field_collection_item', array('field_name' => 'field_schedule'));
   $schedule_item->setHostEntity('entity', $entity);
   $schedule_wrapper = entity_metadata_wrapper('field_collection_item', $schedule_item);
-  
+
   // Time
   $start_time = strtotime($nodeData['startTime']);
   if (date('H:i', $start_time) == '00:00') {
@@ -174,10 +174,24 @@ function savePiletimaailmEvent($nodeData) {
   $sch = [
     'value' => $start_time
   ];
-  
+
   $schedule_wrapper->field_schedule_date[0]->set($sch);
   $schedule_wrapper->field_schedule_place->set($nodeData['address']);
+  // Set location taxonomy.
+  if (isset($nodeData['location'])) {
+    if ($toimumiskoht_term = taxonomy_get_term_by_name($nodeData['location'], 'toimumiskoht')) {
+      $schedule_wrapper->field_schedule_toimumis->set(key($toimumiskoht_term));
+    }
+    else {
+      $toimumiskoht_vocab = taxonomy_vocabulary_machine_name_load('toimumiskoht');
+      $toimumiskoht_term = new stdClass();
+      $toimumiskoht_term->name = $nodeData['location'];
+      $toimumiskoht_term->vid = $toimumiskoht_vocab->vid;
+      taxonomy_term_save($toimumiskoht_term);
 
+      $schedule_wrapper->field_schedule_toimumis->set($toimumiskoht_term->tid);
+    }
+  }
   //korraldaja
   if (isset($nodeData['organizerCompany'])) {
     $korraldaja_item = entity_create('field_collection_item', array('field_name' => 'field_korraldaja'));
@@ -191,7 +205,7 @@ function savePiletimaailmEvent($nodeData) {
 /**
  * checkIfNodeExist()
  * This function will check if item exist node.
- * 
+ *
  * @param $pui
  *    Piletilevi ID
  */
@@ -213,7 +227,7 @@ function checkIfPMNodeExist($id) {
 /**
  * loadNodeByPUI()
  * This function will load item.
- * 
+ *
  * @param $pui
  *    Piletilevi ID.
  */
