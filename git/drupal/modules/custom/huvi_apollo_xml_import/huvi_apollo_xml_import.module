@@ -73,11 +73,18 @@ function processApolloScheduleEvents()
 {
     $apolloEventList = retrieveApolloEventsData();
     $apolloScheduleDateList = retrieveApolloData('scheduleDates');
-    $apolloTheatreAreas = retrieveApolloData('theatreList');
+
+    // Full list of areas: https://www.apollokino.ee/xml/TheatreAreas
+    // Selected only "1004 Tallinn - Kõik kinod" schedule to prevent double reading
+    $apolloTheatreAreas = [(object)['ID' => 1004]];
+    // If necessary to read schedule data for all areas -> uncomment
+    // ATTENTION: there are groups and individual elements of these groups are also in the list -> double reading
+    //            eg "1004 Tallinn - Kõik kinod" and "1005 Tallinn - Apollo Kino Solaris"
+    //$apolloTheatreAreas = retrieveApolloData('theatreList');
+
     foreach ($apolloTheatreAreas as $area) {
         foreach ($apolloScheduleDateList as $scheduleDate) {
             $apolloSchedule = retrieveApolloData('schedule', ['area' => $area->ID, 'dt' => date('d.m.Y', strtotime($scheduleDate))]);
-
             if (isset($apolloSchedule->Shows)) {
                 foreach ($apolloSchedule->Shows as $apolloScheduledEvent) {
                     $apolloEvent = (isset($apolloEventList[$apolloScheduledEvent->EventID])) ? $apolloEventList[$apolloScheduledEvent->EventID] : null;
