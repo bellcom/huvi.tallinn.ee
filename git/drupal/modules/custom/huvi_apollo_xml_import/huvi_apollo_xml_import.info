@@ -1,0 +1,4 @@
+name = Huvi Apollo XML import
+description = Integration https://www.apollokino.ee/xml
+core = 7.x
+package = HUVI

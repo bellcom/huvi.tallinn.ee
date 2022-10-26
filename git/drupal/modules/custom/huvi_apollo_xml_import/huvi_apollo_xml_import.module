@@ -1,0 +1,345 @@
+<?php
+// Apollo import constants
+const LOG_TITLE = 'Apollo import';
+const APOLLO_SOURCE_ID = 6;
+const APOLLO_CATEGORY_MAP = [
+    0 => [], // Muusika
+    1 => [], // Etendused
+    2 => [], // Näitus, muuseum
+    3 => [], // Mess, laat
+    4 => [], // Sport
+    5 => ['movie'], // Kino
+    6 => [], // Pidu, klubid
+    7 => [], // Lapsele
+    8 => [], // Varia
+];
+
+const APOLLO_CITY_MAP = [
+    1040 => 2944193, // Mustamäe - Apollo Kino Mustamäe
+    1038 => 2944191, // Kesklinn - "Apollo Kino Solaris
+    1046 => 2944190, // Lasnamäe - "Apollo Kino Ülemiste
+    1051 => 2944191, // Kesklinn - "Apollo Kino Coca-Cola Plaza
+    1044 => 2944189, // Kristiine - "Apollo Kino Kristiine
+    1045 => 2244888, // Mujal Eestis - "Apollo Kino Eeden
+    1042 => 2244888, // Mujal Eestis - "Apollo Kino Lõunakeskus
+    1037 => 2244888, // Mujal Eestis - "Apollo Kino Pärnu
+    1043 => 2244888, // Mujal Eestis - "Apollo Kino Saaremaa
+    1041 => 2244888, // Mujal Eestis - "Apollo Kino Astri
+    1049 => 2244888, // Mujal Eestis - "Apollo Kino Jõhvi
+];
+
+const APOLLo_DEFAULT_CITY = 2244888; // 'Mujal Eestis';
+
+function huvi_apollo_xml_import_menu()
+{
+    $items = [];
+
+    // Route admin/config/services/apollo for setting
+    $items['admin/config/services/apollo'] = [
+        'title' => 'Apollo Integration settings',
+        'description' => 'Global settings apollo Integration.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => ['huvi_apollo_xml_import_settings_form'],
+        'file' => 'huvi_apollo_xml_import.admin.inc',
+        'access arguments' => ['Administrator configuration'],
+        'type' => MENU_NORMAL_ITEM,
+    ];
+
+    // Route apollo/test for module test
+    $items['apollo/import'] = [
+        'title' => 'Apollo import route',
+        'description' => 'Apollo import route for feed check',
+        'page callback' => 'getFeed',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    ];
+    return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function huvi_apollo_xml_import_cron()
+{
+    processApolloScheduleEvents();
+}
+
+/**
+ * processApolloScheduleEvents()
+ * Connect and process Apollo XML data
+ * internally.
+ */
+function processApolloScheduleEvents()
+{
+    $apolloEventList = retrieveApolloEventsData();
+    $apolloScheduleDateList = retrieveApolloData('scheduleDates');
+    $apolloTheatreAreas = retrieveApolloData('theatreList');
+    foreach ($apolloTheatreAreas as $area) {
+        foreach ($apolloScheduleDateList as $scheduleDate) {
+            $apolloSchedule = retrieveApolloData('schedule', ['area' => $area->ID, 'dt' => date('d.m.Y', strtotime($scheduleDate))]);
+
+            if (isset($apolloSchedule->Shows)) {
+                foreach ($apolloSchedule->Shows as $apolloScheduledEvent) {
+                    $apolloEvent = (isset($apolloEventList[$apolloScheduledEvent->EventID])) ? $apolloEventList[$apolloScheduledEvent->EventID] : null;
+                    $scheduledEvent = [
+                        'id' => $apolloScheduledEvent->ID,
+                        'title' => ($apolloEvent) ? $apolloEvent->Title : $apolloScheduledEvent->Title,
+                        'body' => ($apolloEvent) ? $apolloEvent->Synopsis : '',
+                        'category' => [mapApolloCategory($apolloScheduledEvent->EventType)],
+                        'startTime' => $apolloScheduledEvent->dttmShowStart,
+                        'endTime' => $apolloScheduledEvent->dttmShowEnd,
+                        'moreInfoLink' => $apolloScheduledEvent->EventURL,
+                        'imageURL' => ($apolloEvent) ? $apolloEvent->Images->EventMediumImagePortrait : $apolloScheduledEvent->Images->EventMediumImagePortrait,
+                        'buyLink' => $apolloScheduledEvent->ShowURL,
+                        'ticketAvailability' => 'link', //???
+                        'eventLocation' => $apolloScheduledEvent->TheatreAndAuditorium,
+                        'organizerCompany' => ($apolloEvent) ? $apolloEvent->LocalDistributorName : '',
+                        'city' => mapApolloCity($apolloScheduledEvent->TheatreID)
+                    ];
+                    saveApolloEvent($scheduledEvent);
+                }
+            }
+        }
+    }
+}
+
+/**
+ * saveEvent()
+ * This function will create/update node.
+ *
+ * @param $nodeData
+ *    Node data as array.
+ */
+function saveApolloEvent($nodeData)
+{
+    global $user;
+
+    if (isNodeExist($nodeData['id'])) { // Take existed
+        $entity = loadNodeByApolloId($nodeData['id']);
+    } else { // Create new one
+        $values = [
+            'type' => 'event',
+            'uid' => $user->uid,
+            'status' => 1,
+            'comment' => 0,
+            'promote' => 0,
+            'language' => 'et',
+        ];
+        $entity = entity_create('node', $values);
+    }
+
+    $apolloEventWrapper = entity_metadata_wrapper('node', $entity);
+
+    // Source reference data
+    $apolloEventWrapper->field_id->set($nodeData['id']);
+    $apolloEventWrapper->field_source->set(APOLLO_SOURCE_ID);
+
+    // Common fields
+    $apolloEventWrapper->title->set($nodeData['title']);
+    $apolloEventWrapper->field_description->value = $nodeData['body'];
+    $apolloEventWrapper->field_type->set('uritus');
+
+    // Buying options
+    $apolloEventWrapper->field_price_information->set($nodeData['moreInfoLink']);
+    $apolloEventWrapper->field_tickets->set([$nodeData['buyLink']]);
+
+    // Image
+    if ($nodeData['imageURL']) {
+        $apolloEventWrapper->field_hasimage->set(1);
+        $apolloEventWrapper->field_image_url->set($nodeData['imageURL']);
+    }
+
+    // Category
+    if (!empty($nodeData['category'])) {
+        $apolloEventWrapper->field_categories_event->set($nodeData['category']);
+    }
+
+    // Schedule
+    $apolloEventScheduleWrapper = makeApolloEventScheduleItem($entity, $nodeData['startTime'], $nodeData['endTime']);
+    $apolloEventScheduleWrapper->field_schedule_place->set($nodeData['eventAddress']);
+    $apolloEventScheduleWrapper->field_schedule_city_id->set($nodeData['city']);
+
+    // Set location taxonomy.
+    if (isset($nodeData['eventLocation'])) {
+        if ($apolloEventLocation = taxonomy_get_term_by_name($nodeData['eventLocation'], 'toimumiskoht')) {
+            $apolloEventScheduleWrapper->field_schedule_toimumis->set(key($apolloEventLocation));
+        } else {
+            $toimumiskoht_vocab = taxonomy_vocabulary_machine_name_load('toimumiskoht');
+            $apolloEventLocation = new stdClass();
+            $apolloEventLocation->name = $nodeData['eventLocation'];
+            $apolloEventLocation->vid = $toimumiskoht_vocab->vid;
+            taxonomy_term_save($apolloEventLocation);
+
+            $apolloEventScheduleWrapper->field_schedule_toimumis->set($apolloEventLocation->tid);
+        }
+    }
+
+    //korraldaja
+    if (isset($nodeData['organizerCompany'])) { // ???????
+        $apolloDistributorItem = entity_create('field_collection_item', ['field_name' => 'field_korraldaja']);
+        $apolloDistributorItem->setHostEntity('entity', $entity);
+        $apolloDistributorWrapper = entity_metadata_wrapper('field_collection_item', $apolloDistributorItem);
+        $apolloDistributorWrapper->field_korraldaja_nimi->set($nodeData['organizerCompany']);
+    }
+
+    $apolloEventWrapper->save();
+}
+
+/**
+ * retrieveApolloData()
+ * Common retrieve function for all Apollo URL requests
+ *
+ * @param string $method
+ * @param array $params
+ *
+ * @return JSON
+ */
+function retrieveApolloData($method, array $params = [])
+{
+    $urlVariable = null;
+    $title = '';
+
+    switch ($method) {
+        case 'eventList':
+            $title = 'Events XML';
+            $urlVariable = 'huvi_apollo_events_xml_url';
+            break;
+        case 'theatreList':
+            $title = 'Areas XML';
+            $urlVariable = 'huvi_apollo_theatre_areas_xml_url';
+            break;
+        case 'schedule':
+            $title = 'Schedule Dates XML';
+            $urlVariable = 'huvi_apollo_schedule_xml_url';
+            break;
+        case 'scheduleDates':
+            $title = 'Schedule XML';
+            $urlVariable = 'huvi_apollo_schedule_dates_xml_url';
+            break;
+    }
+
+    if ($urlVariable === false) {
+        watchdog(LOG_TITLE, "Tried to retrieve unknown URL", null, WATCHDOG_ERROR);
+        return;
+    }
+
+    $url = variable_get($urlVariable, false);
+    if ($url === false) {
+        watchdog(LOG_TITLE, "Appolo " . $title . " URL not set", null, WATCHDOG_ERROR);
+        return;
+    }
+
+    if (count($params) > 0) {
+        $urlParams = [];
+        foreach ($params as $key => $value) $urlParams[] = $key . '=' . $value;
+        $url .= '?' . implode('&', $urlParams);
+    }
+
+    $result = [];
+    try {
+        $result = json_decode(@file_get_contents($url));
+    } catch (Exception $e) {
+        watchdog(LOG_TITLE, "Error on " . $title . " reading: %errException", ["%errException" => $e->getMessage()], WATCHDOG_ERROR);
+    }
+
+    return $result;
+}
+
+/**
+ * getApolloEventsData()
+ * Retrieve events full data from Apollo URL
+ */
+function retrieveApolloEventsData()
+{
+    $eventList = retrieveApolloData('eventList');
+    foreach ($eventList as $apolloEvent) {
+        if (isset($apolloEvent->ID)) $result[$apolloEvent->ID] = $apolloEvent;
+    }
+    return $result;
+}
+
+/**
+ * isNodeExist()
+ * check if item alreay exist
+ *
+ * @param $id
+ *    Apollo ID
+ */
+function isNodeExist($id)
+{
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+        ->fieldCondition('field_id', 'value', $id, '=')
+        ->fieldCondition('field_source', 'value', APOLLO_SOURCE_ID, '=');
+
+    $result = $query->execute();
+
+    return isset($result['node']);
+}
+
+/**
+ * loadNodeByApolloId()
+ * Load existed item by id
+ *
+ * @param int $id
+ *
+ */
+function loadNodeByApolloId($id)
+{
+    $query = new EntityFieldQuery();
+    $result = $query->entityCondition('entity_type', 'node')
+        ->fieldCondition('field_id', 'value', $id, '=')
+        ->fieldCondition('field_source', 'value', APOLLO_SOURCE_ID, '=')
+        ->execute();
+
+    if ($result) {
+        foreach ($result['node'] as $key => $val) {
+            $entity_load = entity_load('node', [$key]);
+            foreach ($entity_load as $ekey => $eval) {
+                $entity = $eval;
+            }
+            return $entity;
+        }
+    }
+}
+
+function makeApolloEventScheduleItem(&$entity, $startDateTime, $endDateTime)
+{
+    // Clear previouse schedule if exist
+    if (!empty($entity->field_schedule['und'])) {
+        $scheduleItems = [];
+        foreach ($entity->field_schedule['und'] as $scheduleItemKey => $scheduleItemValue) {
+            $scheduleItems[] = $scheduleItemValue['value'];
+            unset($entity->field_schedule['und'][$scheduleItemKey]);
+        }
+        if (!empty($scheduleItems)) {
+            entity_delete_multiple('field_collection_item', $scheduleItems);
+        }
+    }
+    // Add new schedule item
+    $scheduleItem = entity_create('field_collection_item', ['field_name' => 'field_schedule']);
+    $scheduleItem->setHostEntity('entity', $entity);
+    $apolloEventScheduleWrapper = entity_metadata_wrapper('field_collection_item', $scheduleItem);
+    $scheduleTime = [
+        'value' => strtotime($startDateTime),
+        'value2' => strtotime($endDateTime)
+    ];
+    $apolloEventScheduleWrapper->field_schedule_date[0]->set($scheduleTime);
+
+    return $apolloEventScheduleWrapper;
+}
+
+function mapApolloCategory(string $eventType)
+{
+    $eventType = strtolower(trim($eventType));
+    foreach (APOLLO_CATEGORY_MAP as $categoryKey => $apolloCategories) {
+        if (in_array($eventType, $apolloCategories)) return $categoryKey;
+    }
+    return false;
+}
+
+function mapApolloCity($theatreId)
+{
+    return ((APOLLO_CITY_MAP[$theatreId] !== null) ? APOLLO_CITY_MAP[$theatreId] : APOLLo_DEFAULT_CITY);
+}

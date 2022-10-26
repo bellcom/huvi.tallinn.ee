@@ -779,6 +779,7 @@ function huvi_content_types_field_default_field_bases() {
         3 => 'kultuurikava',
         4 => 'piletilevi',
         5 => 'piletimaailm',
+        6 => 'apollo',
       ),
       'allowed_values_function' => '',
     ),
