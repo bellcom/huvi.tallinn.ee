@@ -28,7 +28,13 @@ const APOLLO_CITY_MAP = [
     1049 => 2244888, // Mujal Eestis - "Apollo Kino Jõhvi
 ];
 
-const APOLLo_DEFAULT_CITY = 2244888; // 'Mujal Eestis';
+const APOLLO_DEFAULT_CITY = 2244888; // 'Mujal Eestis';
+
+const APOLLO_DETAILS = [
+    'name' => 'Apollo Kino OÜ',
+    'email' => 'info@apollokino.ee',
+    'phone' => '+372 6 800 700'
+];
 
 function huvi_apollo_xml_import_menu()
 {
@@ -186,7 +192,9 @@ function saveApolloEvent($nodeData)
         $apolloDistributorItem = entity_create('field_collection_item', ['field_name' => 'field_korraldaja']);
         $apolloDistributorItem->setHostEntity('entity', $entity);
         $apolloDistributorWrapper = entity_metadata_wrapper('field_collection_item', $apolloDistributorItem);
-        $apolloDistributorWrapper->field_korraldaja_nimi->set($nodeData['organizerCompany']);
+        $apolloDistributorWrapper->field_korraldaja_nimi->set(APOLLO_DETAILS['name']);
+        $apolloDistributorWrapper->field_korraldaja_kontakttelefon->set(APOLLO_DETAILS['phone']);
+        $apolloDistributorWrapper->field_korraldaja_e_post->set(APOLLO_DETAILS['email']);
     }
 
     $apolloEventWrapper->save();
@@ -348,5 +356,5 @@ function mapApolloCategory(string $eventType)
 
 function mapApolloCity($theatreId)
 {
-    return ((APOLLO_CITY_MAP[$theatreId] !== null) ? APOLLO_CITY_MAP[$theatreId] : APOLLo_DEFAULT_CITY);
+    return ((APOLLO_CITY_MAP[$theatreId] !== null) ? APOLLO_CITY_MAP[$theatreId] : APOLLO_DEFAULT_CITY);
 }
