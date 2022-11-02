@@ -649,7 +649,6 @@
     if (categorySelectedTabs === 0 || isCinemaSelected) {
       checkboxExcludeCinema.prop('checked', false);
     } else if(categorySelectedTabs > 0 && !isCinemaSelected) {
-      console.log(categorySelectedTabs, isCinemaSelected);
       checkboxExcludeCinema.prop('checked', true);
     }
   }
