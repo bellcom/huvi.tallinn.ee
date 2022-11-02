@@ -1023,8 +1023,10 @@ header.l-header {
 #edit-field-isfree-value-wrapper {
   text-align: right;
   margin-top: 6px;
-  display: inline-block;
+  // display: inline-block;
   margin-left: 5%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form-item.form-type-checkbox.form-item-free > label, #edit-field-isfree-value-wrapper > label {
@@ -3570,7 +3572,7 @@ header.l-header {
 @media (min-width: 70em) {
   #events_search_form .views-submit-button, .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     right: auto;
-    margin-left: 580px;
+    margin-left: 624px;
   }
   #edit-field-categories-activity-value-i18n-muu-wrapper legend {
     display: block;
@@ -5953,7 +5955,7 @@ body.blue-scheme #huvi-loader {
     .views-widget-filter-combine {
       display: inline-block;
       width: auto;
-      margin-left: 255px;
+      margin-left: 300px;
       .views-widget {
         width: auto;
         input {
@@ -5968,10 +5970,12 @@ body.blue-scheme #huvi-loader {
       }
     }
     #edit-field-isfree-value-wrapper {
-      display: inline-block;
+      // display: inline-block;
       width: auto;
-      margin-left: -520px;
+      // margin-left: -520px;
       margin-top: 12px;
+      display: flex;
+      margin-left: -647px;
     }
     .views-reset-button {
       display: inline-block;
@@ -6024,7 +6028,7 @@ ul.quicktabs-tabs {
 body.logged-in.page-user-edit {
   #edit-metatags, .tabs.tabs--primary.links--inline {
     display: none;
-  }  
+  }
 }
 .user-custom-menu {
   margin: 0 !important;

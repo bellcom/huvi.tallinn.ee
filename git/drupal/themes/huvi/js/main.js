@@ -18,8 +18,6 @@
         }
       });
 
-
-
       // Event filters tabs.
       $('.view-event-listing-fixed .views-widget .form-type-bef-checkbox label').once('huviEvents').click(function (event) {
         if ($(this).prev().is(':checked')) {
@@ -31,7 +29,6 @@
         url_path = createUrl();
         window.history.pushState({urlPath: url_path}, "", url_path);
       });
-
       $('.views-widget-filter-field_categories_event_value_i18n', context).once('huviEvents').click(function (event) {
         mobileClick($(this).find('.views-widget'));
       });
@@ -41,19 +38,54 @@
       $('.views-widget-filter-field_categories_activity_value_i18n', context).once('huviEvents').click(function (event) {
         mobileClick($(this).find('.views-widget'));
       });
+      $('.form-item-field-wo-cinema-value .bef-select-as-checkboxes').once('huviEvents').click(function (event) {
+        //Find all category elements
+        var cinemaTab = null,
+            categoryTabs = 0;
+            categorySelectedTabs = 0;
+        $('#edit-field-categories-event-value-i18n-wrapper .form-item').each(function(indx){
+          if($(this).find('input').val() == 5) cinemaTab = $(this); //Find Cinema tab
+          if($(this).find('input').prop('checked') === true) categorySelectedTabs++; //Count selected categories
+          categoryTabs++; //Count total categories
+        });
+
+        // Cinema deactivation
+        var isCinemaSelected = cinemaTab.find('input').prop('checked');
+        var checkboxExcludeCinema = $('.form-item-field-wo-cinema-value .bef-select-as-checkboxes input');
+        if(checkboxExcludeCinema.prop('checked') === true) {
+          if(categorySelectedTabs === 0 || (categorySelectedTabs === 1 && isCinemaSelected === true)){
+            // HUVI-123:
+            // 1. No category selected: clicking on the checkbox -> all categories selected except cinema
+            // or
+            // 4. Only cinema category selected: clicking on the checkbox -> all categories selected except cinema
+            $('#edit-field-categories-event-value-i18n-wrapper .form-item input').click();
+            if(categorySelectedTabs === 1 && isCinemaSelected === true) cinemaTab.find('input').click();
+            cinemaTab.find('label').click();
+          } else if(categorySelectedTabs > 1 && isCinemaSelected === true) {
+            // HUVI-123: 2. Some categories selected including cinema: clicking on the checkbox -> deselect cinema category
+            cinemaTab.find('label').click();
+          }
+        } else if (categorySelectedTabs > 0 && isCinemaSelected === false) {
+          // HUVI-123: 3. Some categories selected except cinema: clicking on the checkbox -> select cinema category
+          if(categoryTabs - 1 === categorySelectedTabs){
+            $('#edit-field-categories-event-value-i18n-wrapper .form-item input').click();
+          }
+          cinemaTab.find('label').click();
+        }
+      });
 
       if (categoriesOpen ) {
-            $('#edit-field-categories-event-value-i18n-wrapper .views-widget').addClass('mobileOpen');
-            $('#edit-field-categories-event-value-i18n-wrapper ').addClass('open');
-        }
-        if (citiesOpen) {
-            $('#edit-field-schedule-city-id-value-wrapper .views-widget').addClass('mobileOpen');
-            $('#edit-field-schedule-city-id-value-wrapper').addClass('open');
-        }
-        if (activityCatOpen) {
-            $('#edit-field-categories-activity-value-i18n-wrapper .views-widget').addClass('mobileOpen');
-            $('#edit-field-categories-activity-value-i18n-wrapper').addClass('open');
-        }
+          $('#edit-field-categories-event-value-i18n-wrapper .views-widget').addClass('mobileOpen');
+          $('#edit-field-categories-event-value-i18n-wrapper ').addClass('open');
+      }
+      if (citiesOpen) {
+          $('#edit-field-schedule-city-id-value-wrapper .views-widget').addClass('mobileOpen');
+          $('#edit-field-schedule-city-id-value-wrapper').addClass('open');
+      }
+      if (activityCatOpen) {
+          $('#edit-field-categories-activity-value-i18n-wrapper .views-widget').addClass('mobileOpen');
+          $('#edit-field-categories-activity-value-i18n-wrapper').addClass('open');
+      }
 
       // Toggle "Show all" button on event page.
       $('.schedule-show-all', context).once('huviEvents').click(function () {
@@ -151,8 +183,6 @@
   $('.view-advertisement').hover( function() {$('.view-advertisement .views-slideshow-controls-bottom').show()},function() {$('.view-advertisement .views-slideshow-controls-bottom').hide()});
   }
   }
-
-
 
   var currentDate = new Date();
   var dateRangePickerConfig = {
@@ -307,13 +337,11 @@
             'date1': dates[0],
             'date2': dates[1],
           };
-
         } else if (item.match(/\d{2}.\d{2}.\d{4}/g)) {
           selected_tabs['period'] = {
             'date1': item,
             'date2': item,
           };
-
         }
       });
       return selected_tabs;
@@ -346,7 +374,7 @@
         date_part_url = "";
       }
     }
-    if (date_part_url.length > 0) {
+    if (date_part_url != undefined && date_part_url.length > 0) {
       url = url + '/' + date_part_url;
     }
     var districts = [];
@@ -385,7 +413,6 @@
     }
     if (categories.length > 0)
       url = url + '/' + categories.join('_');
-
     return url;
   }
 
@@ -491,10 +518,6 @@
         $('#date-period').parent('li').addClass('active');
       }
     }
-
-
-
-
   });
 
   var categoriesOpen;
@@ -610,6 +633,45 @@
       }
     }
   }());
+
+  function initWoCinemaCheckboxState(){
+    //Find all category elements
+    var cinemaTab = null,
+    categorySelectedTabs = 0;
+    $('#edit-field-categories-event-value-i18n-wrapper .form-item').each(function(indx){
+      if($(this).find('input').val() == 5) cinemaTab = $(this); //Find Cinema tab
+      if($(this).find('input').prop('checked') === true) categorySelectedTabs++; //Count selected categories
+    });
+
+    var isCinemaSelected = cinemaTab.find('input').prop('checked');
+    var checkboxExcludeCinema = $('.form-item-field-wo-cinema-value .bef-select-as-checkboxes input');
+    // HUVI-123
+    if (categorySelectedTabs === 0 || isCinemaSelected) {
+      checkboxExcludeCinema.prop('checked', false);
+    } else if(categorySelectedTabs > 0 && !isCinemaSelected) {
+      console.log(categorySelectedTabs, isCinemaSelected);
+      checkboxExcludeCinema.prop('checked', true);
+    }
+  }
+
+  function changeWoCinemaCheckboxParent() {
+    const woCinemaValueCheckBox = document.querySelector(".form-item-field-wo-cinema-value")
+    const editFieldIsfreeValueWrapper = document.querySelector("#edit-field-isfree-value-wrapper")
+
+    if(woCinemaValueCheckBox && editFieldIsfreeValueWrapper) {
+      editFieldIsfreeValueWrapper.appendChild(woCinemaValueCheckBox);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', (event) => {
+    changeWoCinemaCheckboxParent();
+    initWoCinemaCheckboxState();
+  });
+
+  $(window).ajaxComplete(function() {
+    changeWoCinemaCheckboxParent();
+    initWoCinemaCheckboxState();
+  });
 
 })(jQuery);
 
@@ -749,4 +811,3 @@ function getPathParts() {
   pathname = pathname.substring(1, pathname.length);
   return pathname.split('/');
 }
-

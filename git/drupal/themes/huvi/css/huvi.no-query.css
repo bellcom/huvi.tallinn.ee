@@ -945,8 +945,10 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 #edit-field-isfree-value-wrapper {
   text-align: right;
   margin-top: 6px;
-  display: inline-block;
+  /* display: inline-block; */
   margin-left: 5%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form-item.form-type-checkbox.form-item-free > label, #edit-field-isfree-value-wrapper > label {
@@ -2796,7 +2798,7 @@ header.l-header .top-bar .top-bar-right #block-block-6 .logout-link a {
 @media (min-width: 70em) {
   #events_search_form .views-submit-button, .view-event-listing-fixed .views-exposed-widgets .views-submit-button {
     right: auto;
-    margin-left: 580px;
+    margin-left: 624px;
   }
 
   #edit-field-categories-activity-value-i18n-muu-wrapper legend {
@@ -4926,7 +4928,7 @@ body.blue-scheme #huvi-loader {
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine {
     display: inline-block;
     width: auto;
-    margin-left: 255px;
+    margin-left: 300px;
   }
   .quicktabs-wrapper .views-exposed-form .views-widget-filter-combine .views-widget {
     width: auto;

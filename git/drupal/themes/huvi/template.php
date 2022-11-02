@@ -37,3 +37,22 @@ function huvi_omega_layout_alter(&$layout) {
     $layout = 'landing';
   }
 }
+
+function huvi_form_alter(&$form, &$form_state, $form_id) {
+  switch($form_id) {
+    case 'views_exposed_form':
+      $view = $form_state['view'];
+      if ($view->name == 'event_listing_fixed' && $view->current_display == 'events') {
+        $form['field_wo_cinema_value'] = [
+          '#theme' => 'select_as_checkboxes',
+          '#id' => 'field_wo_cinema_value',
+          '#options' => [1 => t('Kinokavadeta')],
+          '#type' => 'select',
+          '#default_value' => 0,
+          '#size' => 1,
+          '#multiply' => false,
+        ];
+      }
+      break;
+  }
+}
