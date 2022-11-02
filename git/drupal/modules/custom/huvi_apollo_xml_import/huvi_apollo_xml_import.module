@@ -55,7 +55,7 @@ function huvi_apollo_xml_import_menu()
     $items['apollo/import'] = [
         'title' => 'Apollo import route',
         'description' => 'Apollo import route for feed check',
-        'page callback' => 'getFeed',
+        'page callback' => 'processApolloScheduleEvents',
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     ];
