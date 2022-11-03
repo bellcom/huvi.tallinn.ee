@@ -52,25 +52,34 @@
         // Cinema deactivation
         var isCinemaSelected = cinemaTab.find('input').prop('checked');
         var checkboxExcludeCinema = $('.form-item-field-wo-cinema-value .bef-select-as-checkboxes input');
+
+        // HUVI-123:
         if(checkboxExcludeCinema.prop('checked') === true) {
-          if(categorySelectedTabs === 0 || (categorySelectedTabs === 1 && isCinemaSelected === true)){
-            // HUVI-123:
+          if(categorySelectedTabs === 0){
             // 1. No category selected: clicking on the checkbox -> all categories selected except cinema
-            // or
-            // 4. Only cinema category selected: clicking on the checkbox -> all categories selected except cinema
             $('#edit-field-categories-event-value-i18n-wrapper .form-item input').click();
-            if(categorySelectedTabs === 1 && isCinemaSelected === true) cinemaTab.find('input').click();
+            cinemaTab.find('input').click();
+            cinemaTab.closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+            url_path = createUrl();
+            window.history.pushState({urlPath: url_path}, "", url_path);
+          } else if (categorySelectedTabs === 1 && isCinemaSelected === true) {
+            // 4. Only cinema category selected: clicking on the checkbox -> all categories selected except cinema
             cinemaTab.find('label').click();
           } else if(categorySelectedTabs > 1 && isCinemaSelected === true) {
             // HUVI-123: 2. Some categories selected including cinema: clicking on the checkbox -> deselect cinema category
             cinemaTab.find('label').click();
           }
         } else if (categorySelectedTabs > 0 && isCinemaSelected === false) {
-          // HUVI-123: 3. Some categories selected except cinema: clicking on the checkbox -> select cinema category
+          // 3. Some categories selected except cinema: clicking on the checkbox -> select cinema category
           if(categoryTabs - 1 === categorySelectedTabs){
             $('#edit-field-categories-event-value-i18n-wrapper .form-item input').click();
+            cinemaTab.find('input').click();
+            cinemaTab.closest('.block--views').find('.views-submit-button input.form-submit').trigger('click');
+            url_path = createUrl();
+            window.history.pushState({urlPath: url_path}, "", url_path);
+          } else {
+            cinemaTab.find('label').click();
           }
-          cinemaTab.find('label').click();
         }
       });
 
