@@ -331,7 +331,7 @@ function saveEvent($nodeData) {
   }
 
   if (!empty($nodeData['category'])) {
-    $ewrapper->field_categories_event->set($nodeData['category']);
+    $ewrapper->field_categories_event->set(array_unique($nodeData['category']));
   }
 
   //schedule
