@@ -274,22 +274,22 @@
   function checkDateFilters(date_tab) {
     switch (date_tab) {
       case "all":
-        $('#edit-field-schedule-date-value-min-value-date').val('');
-        $('#edit-field-schedule-date-value-max-value-date').val('');
+        $('input[name^="field_schedule_date_value_min"]').val('');
+        $('input[name^="field_schedule_date_value_max"]').val('');
         $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
 
         break;
       case "tana":
         var date = new Date();
-        $('#edit-field-schedule-date-value-min-value-date').val(formatDate(date));
-        $('#edit-field-schedule-date-value-max-value-date').val(formatDate(date));
+        $('input[name^="field_schedule_date_value_min"]').val(formatDate(date));
+        $('input[name^="field_schedule_date_value_max"]').val(formatDate(date));
         $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
         break;
       case "homme":
         var tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
-        $('#edit-field-schedule-date-value-min-value-date').val(formatDate(tomorrow));
-        $('#edit-field-schedule-date-value-max-value-date').val(formatDate(tomorrow));
+        $('input[name^="field_schedule_date_value_min"]').val(formatDate(tomorrow));
+        $('input[name^="field_schedule_date_value_max"]').val(formatDate(tomorrow));
         $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
         break;
       case "reede-kuni-puhapaev":
@@ -300,16 +300,16 @@
         var date_max = new Date();
         var lastday = date_max.getDate() - (date_max.getDay() - 1) + 6;
         var sunday = new Date(date_max.setDate(lastday));
-        $('#edit-field-schedule-date-value-min-value-date').val(formatDate(friday));
-        $('#edit-field-schedule-date-value-max-value-date').val(formatDate(sunday));
+        $('input[name^="field_schedule_date_value_min"]').val(formatDate(friday));
+        $('input[name^="field_schedule_date_value_max"]').val(formatDate(sunday));
         $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
         break;
       case "sel-kuul":
         var date = new Date(), y = date.getFullYear(), m = date.getMonth();
         var firstDay = new Date(y, m, 1);
         var lastDay = new Date(y, m + 1, 0);
-        $('#edit-field-schedule-date-value-min-value-date').val(formatDate(firstDay));
-        $('#edit-field-schedule-date-value-max-value-date').val(formatDate(lastDay));
+        $('input[name^="field_schedule_date_value_min"]').val(formatDate(firstDay));
+        $('input[name^="field_schedule_date_value_max"]').val(formatDate(lastDay));
         $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click')
 
         break;
@@ -371,8 +371,8 @@
     if (typeof date_part_url == 'undefined') {
       date_part_url = $('.quicktabs-tabs').find('li.active a').attr('id');
       if (date_part_url == 'date-period') {
-        date1 = $('#edit-field-schedule-date-value-min-value-date').val();
-        date2 = $('#edit-field-schedule-date-value-max-value-date').val()
+        date1 = $('input[name^="field_schedule_date_value_min"]').val();
+        date2 = $('input[name^="field_schedule_date_value_max"]').val()
         if (date1 == date2) {
           date_part_url = date1;
         } else {
@@ -489,14 +489,15 @@
 
           case "tana":
             var date = new Date();
-            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(date));
-            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(date));
+            console.log($('input[name^="field_schedule_date_value_min"]'));
+            $('input[name^="field_schedule_date_value_min"]').val(formatDate(date));
+            $('input[name^="field_schedule_date_value_max"]').val(formatDate(date));
             break;
           case "homme":
             var tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
-            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(tomorrow));
-            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(tomorrow));
+            $('input[name^="field_schedule_date_value_min"]').val(formatDate(tomorrow));
+            $('input[name^="field_schedule_date_value_max"]').val(formatDate(tomorrow));
             break;
           case "reede-kuni-puhapaev":
             var date_min = new Date();
@@ -506,23 +507,23 @@
             var date_max = new Date();
             var lastday = date_max.getDate() - (date_max.getDay() - 1) + 6;
             var sunday = new Date(date_max.setDate(lastday));
-            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(friday));
-            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(sunday));
+            $('input[name^="field_schedule_date_value_min"]').val(formatDate(friday));
+            $('input[name^="field_schedule_date_value_max"]').val(formatDate(sunday));
             break;
           case "sel-kuul":
             var date = new Date(), y = date.getFullYear(), m = date.getMonth();
             var firstDay = new Date(y, m, 1);
             var lastDay = new Date(y, m + 1, 0);
-            $('#edit-field-schedule-date-value-min-value-date').val(formatDate(firstDay));
-            $('#edit-field-schedule-date-value-max-value-date').val(formatDate(lastDay));
+            $('input[name^="field_schedule_date_value_min"]').val(formatDate(firstDay));
+            $('input[name^="field_schedule_date_value_max"]').val(formatDate(lastDay));
 
             break;
         }
       }
       if (typeof url_parts['period'] !== 'undefined') {
         $('#date-period').data('dateRangePicker').setDateRange(url_parts['period']['date1'], url_parts['period']['date2']);
-        $('#edit-field-schedule-date-value-max-value-date').attr('value', url_parts['period']['date2']);
-        $('#edit-field-schedule-date-value-min-value-date').attr('value', url_parts['period']['date1']);
+        $('input[name^="field_schedule_date_value_max"]').attr('value', url_parts['period']['date2']);
+        $('input[name^="field_schedule_date_value_min"]').attr('value', url_parts['period']['date1']);
         $('ul.quicktabs-tabs li.active').removeClass('active');
         $('#date-period').parent('li').addClass('active');
       }
@@ -565,8 +566,8 @@
       $(this).prop('checked', false);
     });
 
-    $('#edit-field-schedule-date-value-min-value-date').val("");
-    $('#edit-field-schedule-date-value-max-value-date').val("");
+    $('input[name^="field_schedule_date_value_min"]').val("");
+    $('input[name^="field_schedule_date_value_max"]').val("");
     $('ul.quicktabs-tabs li.active').removeClass('active');
     $("#all").parent('li').addClass('active');
     url_path = createUrl();
@@ -598,8 +599,8 @@
                         + (obj.date2.getMonth() + 1) : (obj.date2.getMonth() + 1)) + '.' + obj.date2.getFullYear()
               }
 
-              $('#edit-field-schedule-date-value-max-value-date').val(obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear());
-              $('#edit-field-schedule-date-value-min-value-date').val(obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear());
+              $('input[name^="field_schedule_date_value_max"]').val(obj.date2.getDate() + '.' + (obj.date2.getMonth() + 1) + '.' + obj.date2.getFullYear());
+              $('input[name^="field_schedule_date_value_min"]').val(obj.date1.getDate() + '.' + (obj.date1.getMonth() + 1) + '.' + obj.date1.getFullYear());
               this.innerHTML = obj.value;
               $('.view-event-listing-fixed').find('.views-submit-button input.form-submit').trigger('click');
               url_path = createUrl(url_date_part);
